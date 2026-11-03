@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Module d'autoformation JTIpilot pour community manager freelance : métier, missions, business et prospection.">
+  <meta name="theme-color" content="#153e3b">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; connect-src 'none'; img-src 'self' data:; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>Community manager freelance | JTIpilot</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./formation.css">
+  <script src="./sources.js" defer></script>
+  <script src="./contenu.js" defer></script>
+  <script src="./contenu-apprendre.js" defer></script>
+  <script src="./contenu-entrainer.js" defer></script>
+  <script src="./contenu-business.js" defer></script>
+  <script src="./contenu-clients.js" defer></script>
+  <script src="./moteur.js" defer></script>
+  <script src="./formation.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#principal">Aller au contenu</a>
+  <div id="application"></div>
+  <p id="annonce" class="sr-only" role="status" aria-live="polite"></p>
+  <dialog id="sauvegarde" aria-labelledby="titre-sauvegarde">
+    <div class="dialog-entete"><h2 id="titre-sauvegarde">Ta progression, à emporter</h2><button type="button" data-action="fermer-sauvegarde" class="bouton discret">Fermer</button></div>
+    <p>Tes réponses, ton carnet et tes simulations sont enregistrés dans ce navigateur. Garde une copie en fichier : elle peut être perdue si tu vides les données du navigateur.</p>
+    <button type="button" data-action="exporter" class="bouton primaire large">Exporter ma progression (JSON)</button>
+    <div class="import-zone"><label for="fichier-progression">Restaurer une progression</label><input id="fichier-progression" type="file" accept=".json,application/json"><p class="petit">Fichier exporté depuis ce module, 200 Ko maximum. Il remplace ta progression actuelle.</p></div>
+    <p id="message-import" role="status" aria-live="polite"></p>
+    <button type="button" data-action="reinitialiser" class="bouton danger">Tout réinitialiser</button>
+  </dialog>
+  <dialog id="confirmation" aria-labelledby="confirmation-texte">
+    <p id="confirmation-texte"></p>
+    <div class="actions"><button type="button" id="confirmation-ok" class="bouton primaire">Confirmer</button><button type="button" id="confirmation-non" class="bouton discret">Annuler</button></div>
+  </dialog>
+  <noscript><main><h1>Ce module nécessite JavaScript</h1><p>Active JavaScript pour accéder aux leçons. Aucune donnée n’est envoyée.</p></main></noscript>
+</body>
+</html>
