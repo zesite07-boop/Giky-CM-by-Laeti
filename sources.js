@@ -35,7 +35,17 @@
     twitchAttaques: { nom: 'Twitch : combattre les attaques ciblées (hate raids)', url: 'https://safety.twitch.tv/s/article/Combating-Targeted-Attacks?language=en_US' },
     twitchModeration: { nom: 'Twitch : gérer le harcèlement (warn, timeout, ban, signalement)', url: 'https://safety.twitch.tv/s/article/Managing-Harassment?language=en_US' },
     pharos: { nom: 'Service-Public : signaler un contenu illicite (Pharos)', url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/R17674' },
-    cyberharcelement: { nom: 'Service-Public : cyberharcèlement', url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F32239' }
+    cyberharcelement: { nom: 'Service-Public : cyberharcèlement', url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F32239' },
+    declarerCA: { nom: 'Service-Public Entreprendre : quand et comment déclarer son chiffre d’affaires (même à 0 €)', url: 'https://entreprendre.service-public.gouv.fr/vosdroits/F23257' },
+    devises: { nom: 'economie.gouv.fr : comment facturer dans une monnaie étrangère ?', url: 'https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/comment-facturer-dans-une-monnaie-etrangere' },
+    mentionsEco: { nom: 'economie.gouv.fr : mentions obligatoires d’une facture (devises, langue)', url: 'https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/gerer-sa-comptabilite-et-ses-demarches/mentions-obligatoires-dune-facture-tout-savoir' },
+    bofipDevises: { nom: 'BOFiP : facturation dans une monnaie autre que l’euro (TVA en euros)', url: 'https://bofip.impots.gouv.fr/bofip/140-PGP.html/identifiant=BOI-TVA-DECLA-30-20-20-10-20121231' },
+    assujettis: { nom: 'impots.gouv.fr : prestations entre assujettis (Autoliquidation, art. 259-1 du CGI)', url: 'https://www.impots.gouv.fr/professionnel/prestations-entre-assujettis' },
+    bce: { nom: 'Banque centrale européenne : taux de change de référence de l’euro', url: 'https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.fr.html' },
+    simulateurUrssaf: { nom: 'Urssaf : simulateur officiel auto-entrepreneur (mon-entreprise)', url: 'https://mon-entreprise.urssaf.fr/simulateurs/auto-entrepreneur' },
+    loiInfluence: { nom: 'Légifrance : loi du 9 juin 2023 sur l’influence commerciale', url: 'https://www.legifrance.gouv.fr/loda/id/JORFTEXT000047663185' },
+    arppCM: { nom: 'ARPP : certificat Animateurs de communautés responsables', url: 'https://www.arpp.org/influence-responsable/certificat-animateurs-de-communautes-responsables/' },
+    twitchAutomod: { nom: 'Twitch : utiliser AutoMod', url: 'https://help.twitch.tv/s/article/how-to-use-automod' }
   };
   /* Repères chiffrés : une seule source de vérité pour le cours ET les simulateurs. */
   const reperes = {
@@ -57,7 +67,10 @@
     cfeSeuil: 5000,         // exonération de cotisation minimum de CFE (F23999)
     efactureReception: '1er septembre 2026',
     efactureEmission: '1er septembre 2027',
-    contratInfluence: 1000  // contrat écrit obligatoire au-delà de 1 000 € HT (A18674)
+    contratInfluence: 1000, // contrat écrit obligatoire au-delà de 1 000 € HT (A18674)
+    /* Taux de référence BCE du 2 novembre 2026 (1 € = x devise). Modifiables dans la boîte à outils. */
+    change: { date: '2026-11-02', USD: 1.1216, GBP: 0.8358, source: 'BCE' },
+    tvaNormal: 20
   };
   return { verifie, sources, reperes };
 }));
