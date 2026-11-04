@@ -3,11 +3,12 @@
 (function () {
   'use strict';
   const C = window.CMContenu, M = window.CMMoteur, S = window.CMSources, R = S.reperes;
-  const SC = window.CMScenarios || [], RS = window.CMRessources || [];
+  const SC = window.CMScenarios || [], RS = window.CMRessources || [], G = window.CMGestion;
   const depot = M.stockage(() => window.localStorage, C);
   let etat = depot.etat, drafts = {}, dernierFocus = null;
   let combo = 0, eclair = null, jeu = null, conv = { montant: 500, devise: 'USD' }, sprint = null, toastTimer = null;
   const toutes = M.toutes(C);
+  let pf = {}, revision = null, semaineDebut = G.lundi(new Date().toLocaleDateString('sv-SE')), installPrompt = null, sansXp = false;
   const $ = s => document.querySelector(s);
   const esc = v => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const SYMB = { EUR: '€', USD: '$', GBP: '£' }, NOMS = { EUR: 'euros', USD: 'dollars US', GBP: 'livres sterling' };
@@ -102,7 +103,7 @@
       return `<div class="nav-groupe"><p class="sur-titre">${esc(p.nom)}</p>${ls.map(l => lienNav(l.id, marque(l), l.titre)).join('')}</div>`;
     }).join('');
     return `${lienNav('accueil', '<span class="nav-num">⌂</span>', 'Accueil')}
-      <div class="nav-groupe"><p class="sur-titre">Jouer et s’outiller</p>${lienNav('simulateurs', '<span class="nav-num">€$£</span>', 'Boîte à outils')}${lienNav('scenarios', '<span class="nav-num">▶</span>', 'Scénarios')}${lienNav('eclair', '<span class="nav-num">⚡</span>', 'Quiz éclair')}${lienNav('ressources', '<span class="nav-num">★</span>', 'Ressources')}</div>
+      <div class="nav-groupe"><p class="sur-titre">Jouer et s’outiller</p>${lienNav('simulateurs', '<span class="nav-num">€$£</span>', 'Boîte à outils')}${lienNav('scenarios', '<span class="nav-num">▶</span>', 'Scénarios')}${lienNav('eclair', '<span class="nav-num">⚡</span>', 'Quiz éclair')}${lienNav('revision', '<span class="nav-num">↻</span>', 'Révision espacée')}${lienNav('ressources', '<span class="nav-num">★</span>', 'Ressources')}</div>
       ${groupes}
       <div class="nav-groupe"><p class="sur-titre">Pour finir</p>${lienNav('final', marque(C.final), 'Épreuve finale')}</div>
       <div class="nav-groupe"><p class="sur-titre">Mes affaires</p>${lienNav('carnet', '<span class="nav-num">≡</span>', 'Mon carnet')}${lienNav('sources', '<span class="nav-num">§</span>', 'Sources officielles')}</div>`;
@@ -150,7 +151,8 @@
         <div class="grille-jeux">
           <button class="tuile" data-view="scenarios"><span class="tuile-icone" aria-hidden="true">▶</span><strong>Scénarios</strong><span>${SC.length} histoires dont tu es l’héroïne</span></button>
           <button class="tuile" data-view="eclair"><span class="tuile-icone" aria-hidden="true">⚡</span><strong>Quiz éclair</strong><span>5 questions au hasard${etat.eclair.meilleur ? ` · record ${etat.eclair.meilleur}/5` : ''}</span></button>
-          <button class="tuile" data-view="simulateurs"><span class="tuile-icone" aria-hidden="true">€$£</span><strong>Boîte à outils</strong><span>Cotisations, budget, reporting, devis</span></button>
+          <button class="tuile" data-view="revision"><span class="tuile-icone" aria-hidden="true">↻</span><strong>Révision espacée</strong><span>${G.aReviser(etat.revision, aujourdhui()).length} à revoir aujourd’hui</span></button>
+          <button class="tuile" data-view="simulateurs"><span class="tuile-icone" aria-hidden="true">€$£</span><strong>Boîte à outils</strong><span>Recettes, plafonds, échéances, contrat, devis</span></button>
           <button class="tuile" data-view="ressources"><span class="tuile-icone" aria-hidden="true">★</span><strong>Ressources</strong><span>${RS.reduce((a, c) => a + c.liens.length, 0)} outils et liens triés</span></button>
         </div>
         ${qj ? `<section class="carte qdj"><p class="sur-titre">Question du jour · ${esc(qj.l.code)}</p><h2>${esc(qj.q.titre)}</h2><p>${esc(qj.q.texte)}</p><div class="actions"><button class="bouton primaire" data-action="qdj" data-lecon="${qj.l.id}" data-i="${qj.i}">${repondu(qj.q) ? 'Revoir ma réponse' : 'Y répondre'} <span aria-hidden="true">→</span></button></div></section>` : ''}
@@ -189,7 +191,7 @@
     const ok = M.correcte(q, val);
     const attendue = q.type === 'nombre' ? `${nb(q.bonne, 2)} ${q.unite}` : q.type === 'multiple' ? q.bonne.map(i => q.options[i]).join(' · ') : q.options[q.bonne];
     const fete = ok ? `<span class="fete" aria-hidden="true">${'<i></i>'.repeat(12)}</span>` : '';
-    return `<section id="correction" class="feedback ${ok ? 'gagne' : q.critique ? 'critique' : 'erreur'}" tabindex="-1" aria-label="Correction">${fete}<h3>${ok ? ['Bien joué.', 'Exactement.', 'Dans le mille.', 'Pro.'][Math.floor(Math.random() * 4)] : q.critique ? 'Erreur critique : à reprendre.' : 'Pas tout à fait.'}${ok && combo > 1 ? ` <span class="combo">Combo ×${combo}</span>` : ''}${ok ? ' <span class="gain">+10 XP</span>' : ''}</h3>${!ok ? `<p><strong>Réponse attendue :</strong> ${esc(attendue)}</p>` : ''}<p>${esc(q.explication)}</p></section>`;
+    return `<section id="correction" class="feedback ${ok ? 'gagne' : q.critique ? 'critique' : 'erreur'}" tabindex="-1" aria-label="Correction">${fete}<h3>${ok ? ['Bien joué.', 'Exactement.', 'Dans le mille.', 'Pro.'][Math.floor(Math.random() * 4)] : q.critique ? 'Erreur critique : à reprendre.' : 'Pas tout à fait.'}${ok && combo > 1 ? ` <span class="combo">Combo ×${combo}</span>` : ''}${ok && !sansXp ? ' <span class="gain">+10 XP</span>' : ''}</h3>${!ok ? `<p><strong>Réponse attendue :</strong> ${esc(attendue)}</p>` : ''}<p>${esc(q.explication)}</p></section>`;
   }
   function pointsQuestions(l) {
     return `<ol class="points-q" aria-label="Avancement des questions">${l.questions.map((q, i) => {
@@ -336,7 +338,7 @@
       <p class="taux-croises" id="taux-croises">${tauxCroises()}</p>
       <p class="minuscule">Le bouton interroge un service public de taux (Frankfurter, données BCE) : c’est la seule requête réseau du module. Taux de référence publiés vers 16 h les jours ouvrés.</p></section>`;
   }
-  const ONGLETS = [['devises', 'Convertir'], ['cotis', 'Cotisations'], ['revenu', 'Tarif → revenu'], ['treso', 'Trésorerie'], ['pipeline', 'Prospection'], ['budget', 'Budget'], ['reporting', 'Reporting'], ['doc', 'Devis & facture']];
+  const ONGLETS = [['devises', 'Convertir'], ['cotis', 'Cotisations'], ['revenu', 'Tarif → revenu'], ['treso', 'Trésorerie'], ['pipeline', 'Prospection'], ['budget', 'Budget'], ['reporting', 'Reporting'], ['doc', 'Devis & facture'], ['recettes', 'Livre des recettes'], ['plafonds', 'Plafonds'], ['echeances', 'Échéances'], ['planning', 'Planning'], ['contrat', 'Contrat & CGV'], ['efacture', 'Facture électronique']];
 
   function resultatDevises() {
     const eur = M.enEuros(conv.montant, conv.devise, T());
@@ -519,11 +521,11 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     return `${r.alertes.length ? `<div class="alertes-doc" role="status">${r.alertes.map(a => `<p class="alerte-sim">${esc(a)}</p>`).join('')}</div>` : '<p class="ok-doc">Les mentions principales sont là. Relis avant d’envoyer.</p>'}
       <div class="calcul-sortie">${ligneTriple(r.avecTva ? 'Total TTC' : 'Total à payer', r.eur.ttc, etat.doc.devise, 'total')}</div>
       ${papier()}
-      <div class="actions"><button class="bouton primaire" data-action="imprimer-doc">Imprimer ou enregistrer en PDF</button>${etat.doc.type === 'devis' ? '<button class="bouton" data-action="vers-facture">Devis accepté : en faire une facture</button>' : ''}</div>`;
+      <div class="actions"><button class="bouton primaire" data-action="imprimer-doc">Imprimer ou enregistrer en PDF</button>${etat.doc.type === 'devis' ? '<button class="bouton" data-action="vers-facture">Devis accepté : en faire une facture</button>' : '<button class="bouton" data-action="recette-depuis-doc">Enregistrer dans le livre des recettes</button>'}</div>`;
   }
   function outilDoc() {
     const d = etat.doc;
-    return `<div class="calcul-champs">${champSelect('doc', 'type', 'Document', d.type, [['devis', 'Devis'], ['facture', 'Facture']])}${champTexte('doc', 'numero', 'Numéro', d.numero, 40)}${champTexte('doc', 'date', 'Date', d.date, 10, '', 'date')}
+    return `<div class="calcul-champs">${champSelect('doc', 'type', 'Document', d.type, [['devis', 'Devis'], ['facture', 'Facture']])}${champTexte('doc', 'numero', 'Numéro', d.numero, 40)}${d.type === 'facture' ? '<div class="champ-bouton"><button class="bouton" data-action="numero-suivant">Prochain numéro libre</button></div>' : ''}${champTexte('doc', 'date', 'Date', d.date, 10, '', 'date')}
       ${champNum('doc', 'delai', d.type === 'devis' ? 'Validité (jours)' : 'Délai de paiement (jours)', d.delai, 0, 60, 1)}${champSelect('doc', 'devise', 'Devise de facturation', d.devise, optDevises())}${champSelect('doc', 'situation', 'Situation TVA', d.situation, SITUATIONS)}
       ${d.situation === 'tva-fr' ? champNum('doc', 'tauxTva', 'Taux de TVA (%)', d.tauxTva, 0, 100, 0.1) : ''}${d.type === 'devis' ? champNum('doc', 'acompte', 'Acompte à la signature (%)', d.acompte, 0, 100, 5) : ''}</div>
       <details class="bloc-plie" open><summary>Toi et ton client</summary><div class="calcul-champs">${champTexte('doc', 'emetteur.nom', 'Ton nom (EI ajouté)', d.emetteur.nom, 120, 'Laetitia Exemple')}${champTexte('doc', 'emetteur.siret', 'SIRET', d.emetteur.siret, 20)}${champTexte('doc', 'emetteur.email', 'E-mail', d.emetteur.email, 120)}
@@ -536,10 +538,205 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
       <p class="minuscule">Modèle pédagogique : vérifie les mentions obligatoires sur les sources officielles liées. À partir du ${esc(R.efactureReception)}, tu dois pouvoir recevoir des factures électroniques ; l’émission devient obligatoire pour les micro-entreprises au ${esc(R.efactureEmission)}.</p>
       ${liensSources(['factures', 'mentionsEco', 'devises', 'bofipDevises', 'assujettis', 'tvaFranchise', 'delais', 'efacture'])}`;
   }
-  const OUTIL_RENDU = { devises: [outilDevises, resultatDevises], cotis: [outilCotis, resultatCotis], revenu: [outilRevenu, resultatRevenu], treso: [outilTreso, resultatTreso], pipeline: [outilPipeline, resultatPipeline], budget: [outilBudget, resultatBudget], reporting: [outilReporting, resultatReporting], doc: [outilDoc, resultatDoc] };
+  /* ---------- Gestion : recettes, plafonds, échéances, planning, contrat, facture électronique ---------- */
+  const annee = () => Number(aujourdhui().slice(0, 4));
+  const nouvelId = () => 'i' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+  const telecharger = (contenu, type, nom) => {
+    const url = URL.createObjectURL(new Blob([contenu], { type })), a = document.createElement('a');
+    a.href = url; a.download = nom; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+  };
+  function champPf(groupe, cle, libelle, val, type, extra) {
+    const id = `pf-${groupe}-${cle}`;
+    return `<div><label for="${id}">${libelle}</label><input id="${id}" data-pf="${groupe}.${cle}" type="${type || 'text'}" ${type === 'number' ? 'inputmode="decimal" min="0" step="0.01"' : 'maxlength="200"'} value="${esc(val)}" ${extra || ''}></div>`;
+  }
+  function selectPf(groupe, cle, libelle, val, options, rerender) {
+    const id = `pf-${groupe}-${cle}`;
+    return `<div><label for="${id}">${libelle}</label><select id="${id}" data-pf="${groupe}.${cle}" ${rerender ? 'data-rerender="1"' : ''}>${options.map(([v, t]) => `<option value="${esc(v)}" ${String(val) === String(v) ? 'selected' : ''}>${esc(t)}</option>`).join('')}</select></div>`;
+  }
+  const kpi = (libelle, valeur, note) => `<div class="kpi"><span class="petit">${esc(libelle)}</span><strong>${valeur}</strong>${note ? `<span class="minuscule">${note}</span>` : ''}</div>`;
+
+  /* Livre des recettes */
+  function pfRecette() {
+    if (!pf.recette) pf.recette = { date: aujourdhui(), num: G.numeroSuivant(etat.recettes, annee()), client: '', desc: '', montant: '', devise: 'EUR', statut: 'attente', datePaiement: '', mode: 'virement' };
+    return pf.recette;
+  }
+  function resultatRecettes() {
+    const rs = G.trier(etat.recettes), y = annee(), t = G.totauxRecettes(rs, y), tr = G.trous(rs, y), dbl = G.doublons(rs);
+    const alertes = [];
+    if (tr.length) alertes.push(`Numéros manquants dans ta série ${y} : ${tr.join(', ')}. Une facture ne se supprime pas : si tu l’annules, garde son numéro et émets un avoir.`);
+    if (dbl.length) alertes.push(`Numéro utilisé deux fois : ${dbl.join(', ')}. Chaque facture a un numéro unique.`);
+    return `<div class="kpis">${kpi(`Encaissé en ${y}`, euro(t.encaisse), `${t.nbPaye} paiement${t.nbPaye > 1 ? 's' : ''}`)}${kpi('Facturé, pas encore payé', euro(t.attente), `${t.nbAttente} facture${t.nbAttente > 1 ? 's' : ''}`)}${kpi('Prochain numéro', esc(G.numeroSuivant(rs, y)), 'Série continue, sans trou')}</div>
+      ${alertes.map(a => `<p class="alerte-sim">${esc(a)}</p>`).join('')}
+      ${rs.length ? `<div class="table-defile"><table class="table-cash"><caption>Livre des recettes, classé par date</caption><thead><tr><th scope="col">Date</th><th scope="col">N°</th><th scope="col">Client</th><th scope="col">Désignation</th><th scope="col">Montant HT</th><th scope="col">Statut</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+        <tbody>${rs.map(r => `<tr class="${r.statut === 'paye' ? '' : 'en-attente'}"><td>${esc(dateCourte(r.statut === 'paye' ? r.datePaiement : r.date))}</td><td>${esc(r.num || '—')}</td><td>${esc(r.client || '—')}</td><td>${esc(r.desc || '—')}</td>
+          <td>${argent(r.montant, r.devise, 2)}${r.devise !== 'EUR' ? `<br><small>≈ ${argent(G.eur(r), 'EUR', 2)}</small>` : ''}</td>
+          <td>${r.statut === 'paye' ? `Payé · ${esc(G.MODES_NOMS[r.mode])}` : 'En attente'}</td>
+          <td class="cellule-actions"><button class="bouton discret" data-action="recette-paye" data-id="${esc(r.id)}">${r.statut === 'paye' ? 'Remettre en attente' : 'Marquer payé'}</button><button class="bouton discret" data-action="recette-suppr" data-id="${esc(r.id)}" aria-label="Supprimer ${esc(r.num || r.desc || 'cette ligne')}">✕</button></td></tr>`).join('')}</tbody></table></div>`
+      : '<p class="petit">Aucune ligne pour l’instant. Ajoute ta première facture ci-dessus, ou enregistre-la depuis l’outil Devis &amp; facture.</p>'}
+      <div class="actions"><button class="bouton primaire" data-action="csv-recettes" ${rs.length ? '' : 'disabled'}>Exporter en CSV (Excel, comptable)</button></div>`;
+  }
+  function outilRecettes() {
+    const f = pfRecette();
+    return `<p class="petit">Le livre des recettes liste chaque encaissement, dans l’ordre, avec la date, le client, la nature de la prestation, le montant et le mode de règlement. Il reste obligatoire en micro-entreprise, même avec une plateforme de facturation. Tes factures y gardent une numérotation continue.</p>
+      <details class="bloc-plie" open><summary>Ajouter une facture ou un encaissement</summary><div class="calcul-champs">
+        ${champPf('recette', 'num', 'Numéro de facture', f.num, 'text', 'maxlength="40"')}${champPf('recette', 'date', 'Date de la facture', f.date, 'date')}${champPf('recette', 'client', 'Client', f.client, 'text', 'list="clients-connus"')}
+        ${champPf('recette', 'desc', 'Désignation', f.desc)}${champPf('recette', 'montant', 'Montant HT', f.montant, 'number')}${selectPf('recette', 'devise', 'Devise', f.devise, optDevises())}
+        ${selectPf('recette', 'statut', 'Statut', f.statut, [['attente', 'En attente de paiement'], ['paye', 'Déjà payée']], true)}
+        ${f.statut === 'paye' ? champPf('recette', 'datePaiement', 'Date de paiement', f.datePaiement || aujourdhui(), 'date') + selectPf('recette', 'mode', 'Mode de règlement', f.mode, G.MODES.map(m => [m, G.MODES_NOMS[m]])) : ''}</div>
+        <datalist id="clients-connus">${G.clientsConnus(etat.planning, etat.recettes).map(c => `<option value="${esc(c)}"></option>`).join('')}</datalist>
+        <p id="erreur-recette" class="validation" role="alert"></p>
+        <div class="actions"><button class="bouton primaire" data-action="recette-ajouter">Ajouter au livre</button><button class="bouton" data-action="recette-depuis-doc">Reprendre ma facture en cours (Devis &amp; facture)</button></div></details>
+      <div id="resultat-recettes" aria-live="polite">${resultatRecettes()}</div>
+      <p class="minuscule">Les montants en dollars et en livres sont convertis au taux affiché en haut de la page à l’instant de la saisie. Le chiffre d’affaires déclaré à l’Urssaf est le montant HT réellement encaissé, en euros.</p>
+      ${liensSources(['declarerCA', 'factures'])}`;
+  }
+  const dateCourte = iso => { if (!iso) return '—'; const d = new Date(iso + 'T12:00:00Z'); return isNaN(d) ? iso : d.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric', timeZone: 'UTC' }); };
+
+  /* Tableau de bord des plafonds */
+  function resultatPlafonds() {
+    const p = G.plafonds(etat.recettes, annee(), aujourdhui(), etat.plafonds, R);
+    return `<div class="kpis">${kpi(`Chiffre d’affaires ${annee()}`, euro(p.ca), 'Encaissé, HT, en euros')}${kpi('Facturé en attente', euro(p.attente), 'Pas encore compté')}${kpi('Projection sur l’année', euro(Math.round(p.projection)), `Au rythme de ${p.ecoules} jours`)}</div>
+      ${p.alertes.map(a => `<p class="alerte-sim">${esc(a)}</p>`).join('')}
+      <div class="pile seuils">${p.seuils.map(s => `<article class="seuil niveau-${s.niveau}"><div class="seuil-tete"><h3>${esc(s.nom)}</h3><span class="etiquette">${esc(G.NIVEAUX_NOMS[s.niveau])}</span></div>
+        <div class="jauge ${s.niveau === 'alerte' || s.niveau === 'depasse' ? 'alerte' : ''}" role="img" aria-label="${nb(s.pct, 0)} % du seuil de ${nb(s.valeur, 0)} euros"><span data-w="${Math.min(100, s.pct)}"></span></div>
+        <p class="petit"><strong>${euro(p.ca)}</strong> sur ${euro(s.valeur)} (${nb(s.pct, 0)} %) · ${s.reste > 0 ? `reste ${euro(s.reste)}` : `dépassé de ${euro(-s.reste)}`}</p>
+        <p class="minuscule">${esc(s.info)}${s.jour ? ` À ce rythme, tu franchirais ce seuil vers le ${esc(dateFr(s.jour))}.` : ''}</p></article>`).join('')}</div>`;
+  }
+  function outilPlafonds() {
+    const pl = etat.plafonds;
+    return `<p class="petit">Le tableau se remplit tout seul avec les paiements du livre des recettes. Ajoute ce que tu as déjà encaissé cette année en dehors de l’outil.</p>
+      <div class="calcul-champs deux">${champNum('plafonds', 'anterieur', `Déjà encaissé en ${annee()} hors outil (€ HT)`, pl.anterieur, 0, 1000000000, 100)}${champNum('plafonds', 'caN1', `Chiffre d’affaires de ${annee() - 1} (€ HT)`, pl.caN1, 0, 1000000000, 100)}</div>
+      <div id="resultat-plafonds" aria-live="polite">${resultatPlafonds()}</div>
+      <p class="minuscule">Repères ${R.annee} : plafond micro ${euro(R.plafondServices)}, franchise de TVA ${euro(R.tvaBase)} (majoré ${euro(R.tvaMajore)}). Repères pédagogiques : vérifie sur les sources officielles.</p>
+      ${liensSources(['seuilsMicro', 'tvaFranchise', 'microSocial'])}`;
+  }
+
+  /* Calendrier des échéances */
+  function listeEcheances() {
+    const y = annee(), vus = new Set(), tout = [];
+    for (const e of G.echeances(y, etat.echeances).concat(G.echeances(y + 1, etat.echeances))) if (!vus.has(e.id)) { vus.add(e.id); tout.push(e); }
+    const limite = G.ajouter(aujourdhui(), 400);
+    return tout.filter(e => (e.date && e.date >= aujourdhui() && e.date <= limite) || (!e.date && e.id === `impot-${y}`));
+  }
+  function resultatEcheances() {
+    const liste = listeEcheances(), dates = liste.filter(e => e.date), sans = liste.filter(e => !e.date);
+    const carte = e => `<li class="echeance type-${e.type}"><div class="echeance-date"><strong>${e.date ? esc(dateFr(e.date)) : 'Date variable'}</strong>${e.fixe ? '' : '<span class="etiquette">À vérifier</span>'}</div><div><h3>${esc(e.titre)}</h3><p class="petit">${esc(e.detail)}</p>${e.date ? `<a class="lien-action" href="${esc(G.lienGoogleAgenda(e))}" target="_blank" rel="noopener noreferrer">Ajouter à Google Agenda <span class="sr-only">(nouvel onglet)</span></a>` : ''}</div></li>`;
+    return `<ul class="echeances">${dates.map(carte).join('')}${sans.map(carte).join('')}</ul>
+      <div class="actions"><button class="bouton primaire" data-action="telecharger-ics">Tout exporter vers mon agenda (.ics)</button></div>
+      <p class="minuscule">Le fichier .ics s’importe dans Google Agenda (Paramètres → Importer), Apple Calendrier ou Outlook. Un rappel est ajouté 3 jours avant chaque échéance. Les dates marquées « À vérifier » changent selon l’année ou ton avis : confirme-les sur ton avis ou sur impots.gouv.fr.</p>`;
+  }
+  function outilEcheances() {
+    const e = etat.echeances;
+    return `<div class="calcul-champs deux">${champSelect('echeances', 'periodicite', 'Je déclare mon chiffre d’affaires', e.periodicite, [['mois', 'Chaque mois'], ['trimestre', 'Chaque trimestre']])}</div>
+      <div class="options-sim">${caseSim('echeances', 'cfe', 'Je suis soumise à la CFE (pas la première année)', e.cfe)}</div>
+      <div id="resultat-echeances" aria-live="polite">${resultatEcheances()}</div>
+      ${liensSources(['declarerCA', 'cfe', 'fiscMicro', 'efacture'])}`;
+  }
+
+  /* Planning éditorial */
+  function pfPlan() {
+    if (!pf.plan) pf.plan = { date: aujourdhui(), heure: '', client: '', type: 'live', titre: '' };
+    return pf.plan;
+  }
+  function resultatPlanning() {
+    const w = G.semaine(etat.planning, semaineDebut, pf.filtreClient || ''), fin = G.ajouter(semaineDebut, 6);
+    const jourFr = iso => new Date(iso + 'T12:00:00Z').toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
+    const cl = Object.entries(w.parClient);
+    return `<div class="semaine-nav"><button class="bouton" data-action="sem" data-d="-1" aria-label="Semaine précédente">←</button><strong>Du ${esc(dateFr(semaineDebut))} au ${esc(dateFr(fin))}</strong><button class="bouton" data-action="sem" data-d="1" aria-label="Semaine suivante">→</button><button class="bouton discret" data-action="sem" data-d="0">Cette semaine</button></div>
+      <p class="petit">${w.total ? `${w.fait} sur ${w.total} fait${w.total > 1 ? 's' : ''} cette semaine.` : 'Rien de prévu cette semaine.'}</p>
+      ${cl.length ? `<div class="kpis">${cl.map(([nom, c]) => kpi(nom, `${c.total}`, `${c.live} live${c.live > 1 ? 's' : ''} · ${c.clip} clip${c.clip > 1 ? 's' : ''} · ${c.post} post${c.post > 1 ? 's' : ''}${c.autre ? ` · ${c.autre} autre${c.autre > 1 ? 's' : ''}` : ''}`)).join('')}</div>` : ''}
+      <ol class="semaine">${w.jours.map(j => `<li class="${j.date === aujourdhui() ? 'aujourdhui' : ''}"><h3>${esc(jourFr(j.date))}</h3>${j.items.length ? `<ul>${j.items.map(x => `<li class="plan-item type-${x.type} ${x.fait ? 'fait' : ''}"><label class="plan-case"><input type="checkbox" data-action="plan-fait" data-id="${esc(x.id)}" ${x.fait ? 'checked' : ''}><span><span class="etiquette">${esc(G.TYPES_PLANNING[x.type])}</span> ${x.heure ? `<strong>${esc(x.heure)}</strong> ` : ''}${esc(x.titre || '—')} <em>· ${esc(x.client || 'Sans client')}</em></span></label><button class="bouton discret" data-action="plan-suppr" data-id="${esc(x.id)}" aria-label="Supprimer ${esc(x.titre || 'cet élément')}">✕</button></li>`).join('')}</ul>` : '<p class="minuscule">—</p>'}</li>`).join('')}</ol>`;
+  }
+  function outilPlanning() {
+    const f = pfPlan(), clients = G.clientsConnus(etat.planning, etat.recettes);
+    return `<p class="petit">Planifie par client tes lives, tes clips et tes publications, semaine par semaine. Coche quand c’est fait.</p>
+      <details class="bloc-plie" open><summary>Ajouter au planning</summary><div class="calcul-champs">
+        ${champPf('plan', 'titre', 'Quoi ?', f.titre, 'text', 'placeholder="Live Zelda, clip du boss…"')}${champPf('plan', 'client', 'Client', f.client, 'text', 'list="clients-connus-plan"')}${selectPf('plan', 'type', 'Type', f.type, Object.entries(G.TYPES_PLANNING))}
+        ${champPf('plan', 'date', 'Jour', f.date, 'date')}${champPf('plan', 'heure', 'Heure (facultatif)', f.heure, 'time')}</div>
+        <datalist id="clients-connus-plan">${clients.map(c => `<option value="${esc(c)}"></option>`).join('')}</datalist>
+        <p id="erreur-plan" class="validation" role="alert"></p><div class="actions"><button class="bouton primaire" data-action="plan-ajouter">Ajouter</button></div></details>
+      <div class="calcul-champs deux"><div><label for="pf-filtre-client">Afficher un seul client</label><select id="pf-filtre-client" data-pf="filtre.client" data-rerender="1"><option value="">Tous les clients</option>${clients.map(c => `<option value="${esc(c)}" ${pf.filtreClient === c ? 'selected' : ''}>${esc(c)}</option>`).join('')}</select></div></div>
+      <div id="resultat-planning" aria-live="polite">${resultatPlanning()}</div>`;
+  }
+
+  /* Contrat et CGV */
+  function resultatContrat() {
+    const c = etat.contrat, texte = c.type === 'cgv' ? G.cgv(c, R) : G.contrat(c, R, aujourdhui());
+    return `<div class="avertissement"><p><strong>Modèle pédagogique, pas un conseil juridique.</strong> Remplace les passages entre crochets, adapte chaque clause à ton cas, puis fais relire par un juriste ou une structure d’accompagnement avant de signer, surtout pour la cession de droits.</p></div>
+      <article class="papier contrat-texte" aria-label="Aperçu du ${c.type === 'cgv' ? 'CGV' : 'contrat'}">${esc(texte)}</article>
+      <div class="actions"><button class="bouton primaire" data-action="copier-contrat">Copier le texte</button><button class="bouton" data-action="imprimer-contrat">Imprimer ou enregistrer en PDF</button></div>`;
+  }
+  function outilContrat() {
+    const c = etat.contrat;
+    return `<div class="calcul-champs deux">${champSelect('contrat', 'type', 'Document', c.type, [['contrat', 'Contrat de prestation (avec ses clauses)'], ['cgv', 'Conditions générales de vente (CGV)']])}${champTexte('contrat', 'ville', 'Ville de signature', c.ville, 80)}</div>
+      <details class="bloc-plie" open><summary>Toi et ton client</summary><div class="calcul-champs">${champTexte('contrat', 'prestataire.nom', 'Ton nom', c.prestataire.nom, 120)}${champTexte('contrat', 'prestataire.siret', 'SIRET', c.prestataire.siret, 20)}${champTexte('contrat', 'prestataire.email', 'E-mail', c.prestataire.email, 120)}
+        ${champTexte('contrat', 'prestataire.adresse', 'Ton adresse', c.prestataire.adresse, 200)}${champTexte('contrat', 'client.nom', 'Client (nom ou société)', c.client.nom, 120)}${champTexte('contrat', 'client.adresse', 'Adresse du client', c.client.adresse, 200)}${champTexte('contrat', 'client.representant', 'Représentant du client', c.client.representant, 120)}</div></details>
+      <details class="bloc-plie" open><summary>Mission, prix et paiement</summary><div class="calcul-champs">${champTexte('contrat', 'prestation', 'Missions', c.prestation, 600)}${champTexte('contrat', 'debut', 'Début', c.debut, 10, '', 'date')}${champNum('contrat', 'duree', 'Durée en mois (0 = indéterminée)', c.duree, 0, 120, 1)}
+        ${champNum('contrat', 'preavis', 'Préavis de résiliation (jours)', c.preavis, 0, 365, 1)}${champNum('contrat', 'prix', 'Prix HT', c.prix, 0, 100000000, 10)}${champSelect('contrat', 'devise', 'Devise', c.devise, optDevises())}
+        ${champSelect('contrat', 'modalite', 'Prix', c.modalite, [['mois', 'Par mois'], ['mission', 'Par mission'], ['forfait', 'Au forfait']])}${champSelect('contrat', 'tva', 'TVA', c.tva, [['franchise', 'Franchise de TVA (art. 293 B)'], ['tva', 'Je facture la TVA'], ['etranger', 'Client pro étranger']])}
+        ${champNum('contrat', 'acompte', 'Acompte à la signature (%)', c.acompte, 0, 100, 5)}${champNum('contrat', 'delai', 'Délai de paiement (jours)', c.delai, 0, 365, 1)}${champTexte('contrat', 'penalites', 'Taux des pénalités de retard', c.penalites, 120)}</div></details>
+      <details class="bloc-plie"><summary>Droits d’auteur et droit à l’image</summary><div class="options-sim">${caseSim('contrat', 'cession', 'Inclure la cession des droits d’auteur sur mes créations', c.cession)}${caseSim('contrat', 'cessionPrix', 'La cession est comprise dans le prix', c.cessionPrix)}${caseSim('contrat', 'droitImage', 'Inclure la clause de droit à l’image', c.droitImage)}</div>
+        <div class="calcul-champs">${champTexte('contrat', 'cessionObjet', 'Contenus concernés', c.cessionObjet, 200)}${champTexte('contrat', 'cessionSupports', 'Supports autorisés', c.cessionSupports, 300)}${champTexte('contrat', 'cessionTerritoire', 'Territoire', c.cessionTerritoire, 80)}${champTexte('contrat', 'cessionDuree', 'Durée', c.cessionDuree, 40)}</div>
+        <p class="minuscule">La loi demande, pour chaque droit cédé, d’indiquer l’étendue, la destination, le lieu et la durée de la cession. Un droit non mentionné n’est pas cédé.</p></details>
+      <div id="resultat-contrat" aria-live="polite">${resultatContrat()}</div>
+      ${liensSources(['cession', 'inpiAuteur', 'image', 'cnilImage', 'delais', 'influenceContrat'])}`;
+  }
+
+  /* Facture électronique */
+  function resultatEfacture() {
+    const a = G.avancementEfact(etat.efact);
+    return `<div class="jauge" role="img" aria-label="${a.faits} étapes sur ${a.total}"><span data-w="${Math.round(a.faits / a.total * 100)}"></span></div><p class="petit"><strong>${a.faits} / ${a.total}</strong> étapes faites.${a.meilleur && a.meilleur.score > 0 ? ` Plateforme en tête de ta grille : <strong>${esc(a.meilleur.nom)}</strong> (${a.meilleur.score} / ${G.CRITERES.length}).` : ''}</p>`;
+  }
+  function outilEfacture() {
+    const ef = etat.efact;
+    return `<section class="lecon-bloc"><h3>À retenir en 2 minutes</h3>
+      <ul class="liste-simple"><li><strong>Facture électronique</strong> : entre professionnels établis en France, la facture passe par une <strong>plateforme agréée</strong> (ex-« PDP »), pas par un simple PDF envoyé par e-mail.</li>
+        <li><strong>Calendrier</strong> : recevoir des factures électroniques est obligatoire pour toutes les entreprises depuis le ${esc(R.efactureReception)} ; émettre l’est pour les micro-entreprises au ${esc(R.efactureEmission)}.</li>
+        <li><strong>Pas de facture électronique, mais un e-reporting</strong> : pour les clients à l’étranger (dollars, livres) et les particuliers, on te demandera de transmettre des données de transaction, pas une facture structurée.</li>
+        <li><strong>Formats</strong> : les plateformes gèrent les formats structurés (Factur-X, UBL, CII). Toi, tu saisis ta facture comme d’habitude.</li>
+        <li><strong>Tu gardes</strong> : numérotation continue, mentions obligatoires, livre des recettes, conservation 10 ans.</li></ul>
+      <p class="minuscule">Les modalités précises (liste des plateformes, e-reporting, sanctions) évoluent : vérifie sur la page officielle ci-dessous avant d’agir.</p></section>
+      <h3>Ma checklist</h3><div id="resultat-efacture" aria-live="polite">${resultatEfacture()}</div>
+      <div class="checklist">${G.CHECKLIST.map(([id, t]) => caseSim('efact', `coches.${id}`, t, ef.coches[id])).join('')}</div>
+      <h3>Choisir ma plateforme</h3><p class="petit">Note 2 ou 3 plateformes de la liste officielle et coche les critères remplis. Demande le prix et les conditions par écrit.</p>
+      <div class="table-defile"><table class="table-cash grille-choix"><caption>Grille de choix</caption><thead><tr><th scope="col">Plateforme</th>${G.CRITERES.map(([, n]) => `<th scope="col">${esc(n)}</th>`).join('')}</tr></thead>
+        <tbody>${ef.choix.map((c, i) => `<tr><th scope="row"><label class="sr-only" for="efact-choix-${i}-nom">Nom de la plateforme ${i + 1}</label><input id="efact-choix-${i}-nom" data-sim="efact" data-cle="choix.${i}.nom" type="text" maxlength="80" value="${esc(c.nom)}" placeholder="Plateforme ${i + 1}"></th>${G.CRITERES.map(([k, n]) => `<td><label class="choix case"><input type="checkbox" data-sim="efact" data-cle="choix.${i}.${k}" ${c[k] ? 'checked' : ''}><span class="sr-only">${esc(n)}</span></label></td>`).join('')}</tr>`).join('')}</tbody></table></div>
+      ${liensSources(['efacture', 'factures', 'delais'])}`;
+  }
+
+  /* Révision espacée */
+  const parQuestion = {}; toutes.forEach(l => l.questions.forEach(q => { parQuestion[q.id] = { l, q }; }));
+  function amorcerRevision() { G.amorcer(etat.revision, etat.reponses, Object.values(parQuestion), M.correcte, aujourdhui()); }
+  function nouvelleRevision() {
+    const ids = G.aReviser(etat.revision, aujourdhui()).filter(id => parQuestion[id]).slice(0, 10);
+    revision = { qs: ids.map(id => parQuestion[id]), i: 0, rep: {}, fini: false };
+  }
+  function vueRevision() {
+    const st = G.statsRevision(etat.revision, aujourdhui());
+    const tete = `<header class="en-tete"><p class="sur-titre">Jouer · Révision espacée</p><h1 tabindex="-1">Les questions à revoir, au bon moment</h1><p class="intro">Tes questions ratées reviennent après 1, 3, 7, 16 puis 35 jours. Tu les réussis ? Elles s’éloignent. Tu les rates ? Elles reviennent demain. ${st.total ? `${st.total} suivie${st.total > 1 ? 's' : ''} · ${st.maitrisees} maîtrisée${st.maitrisees > 1 ? 's' : ''}.` : ''}</p></header>`;
+    if (!revision || (!revision.qs.length && st.dues)) nouvelleRevision();
+    if (!revision.qs.length) {
+      return `${tete}<section class="carte"><h2>${st.total ? 'Rien à revoir aujourd’hui.' : 'Aucune question à revoir pour l’instant.'}</h2><p>${st.prochaine ? `Prochaine révision le ${esc(dateFr(st.prochaine))}.` : 'Les questions que tu rates dans les leçons et les quiz arrivent ici automatiquement.'}</p><div class="actions"><button class="bouton primaire" data-view="eclair">Faire un quiz éclair</button><button class="bouton discret" data-view="accueil">Retour à l’accueil</button></div></section>`;
+    }
+    if (revision.fini) {
+      const bonnes = revision.qs.filter(x => M.correcte(x.q, revision.rep[x.q.id])).length, reste = G.aReviser(etat.revision, aujourdhui()).length;
+      return `${tete}<section class="carte"><div class="resume-score"><p class="score">${bonnes} / ${revision.qs.length}</p></div><div class="feedback ${bonnes === revision.qs.length ? 'gagne' : ''}"><h3>${bonnes === revision.qs.length ? 'Tout est revenu en mémoire.' : 'Les autres reviendront bientôt.'}</h3><p>${reste ? `Il en reste ${reste} à revoir aujourd’hui.` : 'Plus rien pour aujourd’hui. Bravo.'}</p></div>
+        <div class="actions">${reste ? '<button class="bouton primaire" data-action="rev-rejouer">Continuer</button>' : ''}<button class="bouton discret" data-view="accueil">Faire une pause</button></div></section>`;
+    }
+    const { l, q } = revision.qs[revision.i], faite = Object.prototype.hasOwnProperty.call(revision.rep, q.id), val = faite ? revision.rep[q.id] : drafts[q.id];
+    sansXp = true;
+    const fb = faite ? feedbackQuestion(q, val) : ''; sansXp = false;
+    const e = etat.revision[q.id];
+    return `${tete}<section class="carte question"><ol class="points-q" aria-hidden="true">${revision.qs.map((x, i) => { const r = Object.prototype.hasOwnProperty.call(revision.rep, x.q.id); return `<li class="${i === revision.i ? 'actuelle' : ''} ${r ? (M.correcte(x.q, revision.rep[x.q.id]) ? 'juste' : 'faux') : ''}"></li>`; }).join('')}</ol>
+      <p class="q-compteur">Révision · ${revision.i + 1} / ${revision.qs.length} · ${esc(l.code)}${e ? ` · boîte ${e.boite} sur 5` : ''}</p><h2 tabindex="-1">${esc(q.titre)}</h2><p>${esc(q.texte)}</p>
+      <form id="form-question" data-mode="revision" novalidate>${champsQuestion(q, val, faite)}<p id="erreur-question" class="validation" role="alert"></p>${!faite ? '<div class="actions"><button type="submit" class="bouton primaire">Vérifier</button></div>' : ''}</form>${fb}
+      ${faite ? `<div class="actions"><button class="bouton primaire" data-action="rev-suivante">${revision.i === revision.qs.length - 1 ? 'Voir mon score' : 'Suivante'} <span aria-hidden="true">→</span></button><button class="bouton discret" data-view="${l.id}">Revoir ${esc(l.code)}</button></div>` : ''}</section>`;
+  }
+
+  const OUTIL_RENDU = { devises: [outilDevises, resultatDevises], cotis: [outilCotis, resultatCotis], revenu: [outilRevenu, resultatRevenu], treso: [outilTreso, resultatTreso], pipeline: [outilPipeline, resultatPipeline], budget: [outilBudget, resultatBudget], reporting: [outilReporting, resultatReporting], doc: [outilDoc, resultatDoc], recettes: [outilRecettes, resultatRecettes], plafonds: [outilPlafonds, resultatPlafonds], echeances: [outilEcheances, resultatEcheances], planning: [outilPlanning, resultatPlanning], contrat: [outilContrat, resultatContrat], efacture: [outilEfacture, resultatEfacture] };
   function simulateurs() {
     const o = etat.outil;
-    return `<header class="en-tete"><p class="sur-titre">S’outiller · Piloter mon business</p><h1 tabindex="-1">Boîte à outils</h1><p class="intro">Huit outils pour décider avec des chiffres, en euros, dollars et livres sterling. Les taux viennent des sources officielles vérifiées le ${esc(S.verifie)} : ce sont des repères pédagogiques, pas un conseil fiscal.</p></header>
+    return `<header class="en-tete"><p class="sur-titre">S’outiller · Piloter mon business</p><h1 tabindex="-1">Boîte à outils</h1><p class="intro">${ONGLETS.length} outils pour décider avec des chiffres, en euros, dollars et livres sterling. Les taux viennent des sources officielles vérifiées le ${esc(S.verifie)} : ce sont des repères pédagogiques, pas un conseil fiscal.</p></header>
       ${barreTaux()}
       <div class="onglets" role="tablist" aria-label="Outils">${ONGLETS.map(([id, n]) => `<button role="tab" id="onglet-${id}" aria-controls="panneau-outil" aria-selected="${o === id}" tabindex="${o === id ? 0 : -1}" data-action="onglet" data-outil="${id}">${esc(n)}</button>`).join('')}</div>
       <section class="carte panneau-outil" id="panneau-outil" role="tabpanel" aria-labelledby="onglet-${o}"><h2>${esc(ONGLETS.find(x => x[0] === o)[1])}</h2>${OUTIL_RENDU[o][0]()}</section>`;
@@ -554,7 +751,8 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
         const n = etat.notes[l.id];
         return `<article class="carte note-carnet ${n.fait ? 'faite' : ''}"><p class="sur-titre">${esc(l.code)} · ${esc(l.titre)}</p><p class="note-texte">${esc(n.action || '—')}</p><p class="petit">${n.echeance ? 'Pour : ' + esc(n.echeance) + ' · ' : ''}${n.fait ? 'Réalisé' : 'À faire'}</p><div class="actions"><button class="bouton discret" data-view="${l.id}" data-ancrage="1">Modifier</button></div></article>`;
       }).join('') : '<section class="carte"><p>Aucune action notée pour l’instant.</p><div class="actions"><button class="bouton primaire" data-view="accueil">Retour à l’accueil</button></div></section>'}
-      <section class="carte"><h2>Garder une copie</h2><p class="petit">Ta progression vit dans ce navigateur. Exporte-la en fichier pour la garder ou changer d’appareil.</p><div class="actions"><button class="bouton" data-action="sauvegarde">Sauvegarder ou restaurer</button><button class="bouton discret" data-action="imprimer">Imprimer le carnet</button></div></section></div>`;
+      <section class="carte"><h2>Garder une copie</h2><p class="petit">Ta progression vit dans ce navigateur. Exporte-la en fichier pour la garder ou changer d’appareil.</p><div class="actions"><button class="bouton" data-action="sauvegarde">Sauvegarder ou restaurer</button><button class="bouton discret" data-action="imprimer">Imprimer le carnet</button></div></section>
+      <section class="carte"><h2>Sur ton téléphone, même sans connexion</h2><p class="petit">Installe le module comme une application : il s’ouvre en plein écran et marche hors connexion (seule l’actualisation des taux BCE demande internet). Sur Android et sur ordinateur : bouton « Installer l’app » en haut. Sur iPhone : Partager, puis « Sur l’écran d’accueil ». Pense à exporter ta progression de temps en temps : elle reste sur cet appareil.</p></section></div>`;
   }
   function sources() {
     const t = R.change;
@@ -580,23 +778,23 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   function contenuVue() {
     const l = getLecon();
     if (l) return lecon(l);
-    const v = { simulateurs, carnet, sources, scenarios: vueScenarios, eclair: vueEclair, ressources: vueRessources }[etat.vue];
+    const v = { simulateurs, carnet, sources, scenarios: vueScenarios, eclair: vueEclair, revision: vueRevision, ressources: vueRessources }[etat.vue];
     return v ? v() : accueil();
   }
   function fil() {
     const l = getLecon();
     if (l) return `${esc(parcoursDe(l).nom)}<span>${esc(l.code)}</span>`;
-    return { simulateurs: 'Outils<span>Boîte à outils</span>', carnet: 'Mes affaires<span>Mon carnet</span>', sources: 'Mes affaires<span>Sources</span>', scenarios: 'Jouer<span>Scénarios</span>', eclair: 'Jouer<span>Quiz éclair</span>', ressources: 'Outils<span>Ressources</span>' }[etat.vue] || 'Module CM<span>Accueil</span>';
+    return { simulateurs: 'Outils<span>Boîte à outils</span>', carnet: 'Mes affaires<span>Mon carnet</span>', sources: 'Mes affaires<span>Sources</span>', scenarios: 'Jouer<span>Scénarios</span>', eclair: 'Jouer<span>Quiz éclair</span>', revision: 'Jouer<span>Révision espacée</span>', ressources: 'Outils<span>Ressources</span>' }[etat.vue] || 'Module CM<span>Accueil</span>';
   }
   function boutonsBarre() {
     const sombre = document.documentElement.dataset.theme === 'sombre';
     return `<div class="sprint-zone"><details class="sprint"><summary class="bouton">${sprint ? 'Sprint en cours' : 'Sprint'}</summary><div class="sprint-menu" role="group" aria-label="Durée du sprint">${[5, 10, 15, 25].map(m => `<button class="bouton" data-action="sprint" data-minutes="${m}">${m} min</button>`).join('')}${sprint ? '<button class="bouton discret" data-action="stop-sprint">Arrêter</button>' : ''}</div></details><span id="minuteur" class="minuteur" ${sprint ? '' : 'hidden'} role="timer" aria-live="off"></span></div>
       <button class="bouton" data-action="theme" aria-pressed="${sombre}" title="Basculer le mode sombre">${sombre ? '☀ Clair' : '☾ Sombre'}</button>
       <button class="bouton" data-action="aere" aria-pressed="${!!etat.aere}" title="Agrandir l’interlignage">Texte aéré</button>
-      <button class="bouton" data-action="focus" aria-pressed="${etat.focus}">Focus</button><button class="bouton" data-action="sauvegarde">Sauvegarder</button>`;
+      <button class="bouton" data-action="focus" aria-pressed="${etat.focus}">Focus</button><button class="bouton" data-action="sauvegarde">Sauvegarder</button>${installPrompt ? '<button class="bouton primaire" data-action="installer">Installer l’app</button>' : ''}`;
   }
   function render(focusSel) {
-    appliquerTheme();
+    appliquerTheme(); amorcerRevision();
     document.body.classList.toggle('focus', etat.focus);
     $('#application').innerHTML = `<div class="coquille"><aside class="rail" aria-label="Navigation du module"><div><p class="marque">JTIpilot<span aria-hidden="true"></span></p><p class="sous-marque">Community manager freelance</p></div>${blocXp(true)}<nav aria-label="Leçons">${menu()}</nav><div class="rail-bas"><strong>Repères ${R.annee}</strong>Vérifiés le ${esc(S.verifie)} sur les sources officielles.</div></aside>
       <div class="zone"><div class="barre"><p class="fil">${fil()}</p><div class="outils">${boutonsBarre()}</div></div>
@@ -612,6 +810,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     const l = toutes.find(x => x.id === view);
     etat.vue = view; etat.question = 0; drafts = {};
     if (view === 'eclair' && (!eclair || eclair.fini)) nouvelEclair();
+    if (view === 'revision') { amorcerRevision(); nouvelleRevision(); }
     if (view !== 'scenarios') jeu = null;
     if (l) {
       etat.derniere = l.id;
@@ -663,8 +862,8 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   document.addEventListener('submit', e => {
     if (e.target.id !== 'form-question') return;
     e.preventDefault();
-    const modeEclair = e.target.dataset.mode === 'eclair';
-    const q = modeEclair ? eclair.qs[eclair.i].q : qActuelle(), err = $('#erreur-question');
+    const modeEclair = e.target.dataset.mode === 'eclair', modeRev = e.target.dataset.mode === 'revision';
+    const q = modeRev ? revision.qs[revision.i].q : modeEclair ? eclair.qs[eclair.i].q : qActuelle(), err = $('#erreur-question');
     let v;
     if (q.type === 'nombre') { const raw = $('#nombre-reponse').value.replace(',', '.'); v = raw === '' ? NaN : Number(raw); }
     else { const vals = [...document.querySelectorAll('input[name="choix"]:checked')].map(x => Number(x.value)); v = q.type === 'multiple' ? vals : vals[0]; }
@@ -673,11 +872,19 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     const ok = M.correcte(q, v);
     combo = ok ? combo + 1 : 0;
     marquerJour();
-    if (modeEclair) eclair.rep[q.id] = v; else etat.reponses[q.id] = v;
+    if (modeRev) revision.rep[q.id] = v; else if (modeEclair) eclair.rep[q.id] = v; else etat.reponses[q.id] = v;
+    G.apresReponse(etat.revision, q.id, ok, aujourdhui(), modeRev);
     delete drafts[q.id];
     render('#correction');
     annoncer(ok ? `Bonne réponse${combo > 1 ? `, combo de ${combo}` : ''}.` : 'Réponse incorrecte, la correction est affichée.');
   });
+  const qCourante = () => etat.vue === 'revision' && revision && revision.qs.length ? revision.qs[revision.i].q : etat.vue === 'eclair' && eclair ? eclair.qs[eclair.i].q : qActuelle();
+  function majPf(t) {
+    const [g, k] = t.dataset.pf.split('.');
+    if (g === 'filtre') pf.filtreClient = t.value;
+    else if (pf[g]) pf[g][k] = t.value;
+    if (t.dataset.rerender) render(`#${t.id}`);
+  }
   function chemin(obj, cle, valeur) {
     const parts = cle.split('.'); let o = obj;
     for (let i = 0; i < parts.length - 1; i++) { o = o[/^\d+$/.test(parts[i]) ? Number(parts[i]) : parts[i]]; if (o == null) return; }
@@ -724,12 +931,14 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
       document.querySelectorAll('.res-cat').forEach(c => { c.hidden = ![...c.querySelectorAll('li')].some(li => !li.hidden); });
       $('#res-vide').hidden = vus > 0;
     }
-    if (t.name === 'nombre') { const q = etat.vue === 'eclair' && eclair ? eclair.qs[eclair.i].q : qActuelle(); if (q) drafts[q.id] = t.value; }
+    if (t.name === 'nombre') { const q = qCourante(); if (q) drafts[q.id] = t.value; }
+    if (t.matches('[data-pf]') && t.tagName !== 'SELECT') majPf(t);
   });
   document.addEventListener('change', e => {
     const t = e.target;
-    if (t.name === 'choix') { const q = etat.vue === 'eclair' && eclair ? eclair.qs[eclair.i].q : qActuelle(); const vals = [...document.querySelectorAll('input[name="choix"]:checked')].map(x => Number(x.value)); drafts[q.id] = q.type === 'multiple' ? vals : vals[0]; }
+    if (t.name === 'choix') { const q = qCourante(); const vals = [...document.querySelectorAll('input[name="choix"]:checked')].map(x => Number(x.value)); drafts[q.id] = q.type === 'multiple' ? vals : vals[0]; }
     if (t.matches('[data-sim]') && (t.type === 'checkbox' || t.tagName === 'SELECT')) majSim(t);
+    if (t.matches('select[data-pf]')) majPf(t);
     if (t.matches('[data-conv="devise"]')) { conv.devise = t.value; $('#resultat-devises').innerHTML = resultatDevises(); }
     if (t.matches('[data-note="fait"]')) { const l = getLecon(); etat.notes[l.id] = Object.assign({ action: '', echeance: '', fait: false }, etat.notes[l.id], { fait: t.checked }); sauver(); annoncer(t.checked ? 'Défi marqué comme réalisé.' : 'Défi marqué à faire.'); }
     if (t.id === 'fichier-progression') importerFichier(t.files[0]);
@@ -770,7 +979,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     }
     if (a === 'retirer-ligne') { const g = b.dataset.groupe; etat[g].lignes.splice(Number(b.dataset.i), 1); render(`[data-action="ajouter-ligne"][data-groupe="${g}"]`); return; }
     if (a === 'imprimer-doc') { document.body.classList.add('impression-doc'); window.print(); setTimeout(() => document.body.classList.remove('impression-doc'), 500); return; }
-    if (a === 'vers-facture') { etat.doc.type = 'facture'; etat.doc.numero = etat.doc.numero.replace(/^D/, 'F'); etat.doc.date = aujourdhui(); render('#doc-type'); toast('C’est une facture. Vérifie le numéro : il doit suivre ta numérotation, sans trou.'); return; }
+    if (a === 'vers-facture') { etat.doc.type = 'facture'; etat.doc.numero = G.numeroSuivant(etat.recettes, Number(aujourdhui().slice(0, 4))); etat.doc.date = aujourdhui(); render('#doc-type'); toast('C’est une facture. Vérifie le numéro : il doit suivre ta numérotation, sans trou.'); return; }
     if (a === 'jouer') { jeu = { id: b.dataset.id, etape: 0, points: 0, choix: [] }; render('h1'); window.scrollTo(0, 0); return; }
     if (a === 'quitter-jeu') { jeu = null; render('h1'); return; }
     if (a === 'choisir') {
@@ -813,12 +1022,72 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
       for (const q of l.questions) delete etat.reponses[q.id];
       etat.question = 0; etat.etape = 'exercice'; drafts = {}; render('.question h2'); annoncer('Nouvelle tentative.'); return;
     }
+    if (a === 'recette-ajouter') {
+      const f = pfRecette(), err = $('#erreur-recette'), m = Number(String(f.montant).replace(',', '.')), iso = /^\d{4}-\d{2}-\d{2}$/;
+      if (!iso.test(f.date)) { err.textContent = 'Indique la date de la facture.'; return; }
+      if (f.montant === '' || !Number.isFinite(m) || m < 0) { err.textContent = 'Indique un montant HT (0 ou plus).'; return; }
+      if (!f.client.trim()) { err.textContent = 'Indique le client.'; return; }
+      if (f.num.trim() && etat.recettes.some(r => r.num === f.num.trim())) { err.textContent = `Le numéro ${f.num.trim()} existe déjà. Chaque facture a un numéro unique.`; return; }
+      if (etat.recettes.length >= 1500) { err.textContent = 'Le livre est plein (1 500 lignes). Exporte-le en CSV puis fais le ménage.'; return; }
+      const paye = f.statut === 'paye';
+      etat.recettes.push({ id: nouvelId(), num: f.num.trim().slice(0, 40), date: f.date, client: f.client.trim().slice(0, 120), desc: f.desc.trim().slice(0, 200), montant: m, devise: f.devise, taux: f.devise === 'EUR' ? 1 : T()[f.devise],
+        statut: paye ? 'paye' : 'attente', datePaiement: paye ? (iso.test(f.datePaiement) ? f.datePaiement : aujourdhui()) : '', mode: f.mode });
+      pf.recette = null; render('#pf-recette-num'); toast('Ajouté au livre des recettes.'); return;
+    }
+    if (a === 'recette-depuis-doc') {
+      const d = etat.doc; if (d.type !== 'facture') { toast('Passe d’abord ton document en « Facture ».'); return; }
+      const r = M.calculerDocument(d, T(), R);
+      if (!r || r.ht <= 0) { toast('Ajoute au moins une ligne avec un prix.'); return; }
+      if (d.numero && etat.recettes.some(x => x.num === d.numero)) { toast(`La facture ${d.numero} est déjà dans le livre des recettes.`); return; }
+      if (etat.recettes.length >= 1500) { toast('Le livre est plein (1 500 lignes). Exporte-le en CSV.'); return; }
+      etat.recettes.push({ id: nouvelId(), num: d.numero.slice(0, 40), date: d.date, client: d.client.nom.slice(0, 120) || 'Client', desc: ((r.lignes.find(x => x.desc) || {}).desc || `Facture ${d.numero}`).slice(0, 200), montant: r.ht, devise: d.devise,
+        taux: d.devise === 'EUR' ? 1 : T()[d.devise], statut: 'attente', datePaiement: '', mode: 'virement' });
+      pf.recette = null; render('[data-action="recette-depuis-doc"]'); toast(`Facture ${d.numero} ajoutée, en attente de paiement. Marque-la payée à l’encaissement.`); return;
+    }
+    if (a === 'numero-suivant') { etat.doc.numero = G.numeroSuivant(etat.recettes, Number(etat.doc.date.slice(0, 4)) || annee()); render('#doc-numero'); return; }
+    if (a === 'recette-paye') {
+      const r = etat.recettes.find(x => x.id === b.dataset.id); if (!r) return;
+      if (r.statut === 'paye') { r.statut = 'attente'; r.datePaiement = ''; } else { r.statut = 'paye'; r.datePaiement = aujourdhui(); }
+      render(`[data-action="recette-paye"][data-id="${r.id}"]`); annoncer(r.statut === 'paye' ? 'Marqué payé.' : 'Remis en attente.'); return;
+    }
+    if (a === 'recette-suppr') {
+      if (!(await confirmer('Supprimer cette ligne du livre ? Si c’est une facture déjà envoyée, garde plutôt son numéro et émets un avoir : la numérotation ne doit pas avoir de trou.', 'Supprimer'))) return;
+      etat.recettes = etat.recettes.filter(x => x.id !== b.dataset.id); render('#panneau-outil h2'); return;
+    }
+    if (a === 'csv-recettes') { telecharger(G.csvRecettes(etat.recettes), 'text/csv;charset=utf-8', `livre-des-recettes-${annee()}.csv`); toast('Fichier CSV prêt. Il s’ouvre dans Excel ou Google Sheets.'); return; }
+    if (a === 'telecharger-ics') { telecharger(G.exportIcs(listeEcheances()), 'text/calendar;charset=utf-8', 'echeances-cm-freelance.ics'); toast('Fichier agenda prêt. Importe-le dans Google Agenda ou ton calendrier.'); return; }
+    if (a === 'sem') { const dd = Number(b.dataset.d); semaineDebut = dd === 0 ? G.lundi(aujourdhui()) : G.ajouter(semaineDebut, 7 * dd); render(`[data-action="sem"][data-d="${dd}"]`); return; }
+    if (a === 'plan-ajouter') {
+      const f = pfPlan(), err = $('#erreur-plan');
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(f.date)) { err.textContent = 'Choisis un jour.'; return; }
+      if (!f.titre.trim()) { err.textContent = 'Dis ce que c’est : « Live Zelda », « Clip du boss »…'; return; }
+      if (etat.planning.length >= 1500) { err.textContent = 'Le planning est plein (1 500 éléments). Supprime les anciens.'; return; }
+      etat.planning.push({ id: nouvelId(), date: f.date, heure: /^\d{2}:\d{2}$/.test(f.heure) ? f.heure : '', client: f.client.trim().slice(0, 80), type: f.type, titre: f.titre.trim().slice(0, 120), fait: false });
+      semaineDebut = G.lundi(f.date); pf.plan = Object.assign({}, f, { titre: '', heure: '' });
+      render('#pf-plan-titre'); toast('Ajouté au planning.'); return;
+    }
+    if (a === 'plan-fait') { const x = etat.planning.find(y => y.id === b.dataset.id); if (!x) return; x.fait = b.checked; render(`[data-action="plan-fait"][data-id="${x.id}"]`); return; }
+    if (a === 'plan-suppr') { etat.planning = etat.planning.filter(y => y.id !== b.dataset.id); render('#pf-plan-titre'); return; }
+    if (a === 'copier-contrat') {
+      const c = etat.contrat, txt = c.type === 'cgv' ? G.cgv(c, R) : G.contrat(c, R, aujourdhui());
+      try { await navigator.clipboard.writeText(txt); toast('Texte copié. Colle-le dans un document pour le relire et l’adapter.'); }
+      catch (err) { const sel = window.getSelection(), rg = document.createRange(), el = $('.contrat-texte'); rg.selectNodeContents(el); sel.removeAllRanges(); sel.addRange(rg); toast('Texte sélectionné : fais Ctrl+C (ou Cmd+C) pour le copier.'); }
+      return;
+    }
+    if (a === 'imprimer-contrat') { document.body.classList.add('impression-contrat'); window.print(); setTimeout(() => document.body.classList.remove('impression-contrat'), 500); return; }
+    if (a === 'rev-suivante') { if (revision.i < revision.qs.length - 1) { revision.i++; drafts = {}; render('.question h2'); } else { revision.fini = true; render('h1'); } return; }
+    if (a === 'rev-rejouer') { nouvelleRevision(); drafts = {}; render(revision.qs.length ? '.question h2' : 'h1'); return; }
+    if (a === 'installer') {
+      if (!installPrompt) return;
+      installPrompt.prompt(); try { await installPrompt.userChoice; } catch (err) { /* ignoré */ }
+      installPrompt = null; b.remove(); return;
+    }
     if (a === 'exporter') { exporter(); return; }
     if (a === 'imprimer') { window.print(); return; }
     if (a === 'reinitialiser') {
       $('#sauvegarde').close();
       if (!(await confirmer('Effacer toute ta progression et ton carnet ? Exporte d’abord si tu veux garder une copie.', 'Tout effacer'))) return;
-      etat = M.neuf(); drafts = {}; eclair = null; jeu = null; render('h1'); annoncer('Le module a été réinitialisé.'); return;
+      etat = M.neuf(); drafts = {}; eclair = null; jeu = null; pf = {}; revision = null; render('h1'); annoncer('Le module a été réinitialisé.'); return;
     }
   });
   function exporter() {
@@ -832,11 +1101,11 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     if (!file) return;
     const msg = $('#message-import');
     try {
-      if (file.size > M.MAX_FICHIER) throw new Error('Le fichier dépasse 200 Ko. Rien n’a été modifié.');
+      if (file.size > M.MAX_FICHIER) throw new Error('Le fichier dépasse 1 Mo. Rien n’a été modifié.');
       const prochain = M.importer(await file.text(), C);
       $('#sauvegarde').close();
       if (!(await confirmer('Remplacer ta progression actuelle par ce fichier ?', 'Remplacer'))) return;
-      etat = prochain; drafts = {}; eclair = null; jeu = null; render('h1'); annoncer('Progression restaurée.');
+      etat = prochain; drafts = {}; eclair = null; jeu = null; pf = {}; revision = null; render('h1'); annoncer('Progression restaurée.');
     } catch (err) { msg.textContent = err.message || 'Import impossible. Ta progression est conservée.'; }
     finally { $('#fichier-progression').value = ''; }
   }
@@ -845,5 +1114,14 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     const suivre = () => { if (!etat.theme) render(); };
     if (mq.addEventListener) mq.addEventListener('change', suivre);
   }
+  window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault(); installPrompt = e;
+    const zone = document.querySelector('.barre .outils');
+    if (zone && !zone.querySelector('[data-action="installer"]')) zone.insertAdjacentHTML('beforeend', '<button class="bouton primaire" data-action="installer">Installer l’app</button>');
+  });
+  window.addEventListener('appinstalled', () => { installPrompt = null; document.querySelectorAll('[data-action="installer"]').forEach(x => x.remove()); toast('Application installée.'); });
+  window.addEventListener('offline', () => toast('Tu es hors connexion. Tout marche, sauf l’actualisation des taux BCE.'));
+  window.addEventListener('online', () => toast('De retour en ligne.'));
+  if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) window.addEventListener('load', () => { navigator.serviceWorker.register('./sw.js').catch(() => {}); });
   render();
 }());

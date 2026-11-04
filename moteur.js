@@ -9,13 +9,15 @@
   'use strict';
   const CLE = 'jtipilot_formation_cm_v1';
   const VERSION = 1;
-  const MAX_FICHIER = 200000;
+  const MAX_FICHIER = 1000000;
+  const G = (typeof module === 'object' && module.exports) ? require('./gestion.js') : globalThis.CMGestion;
   const SEUIL = 80;
   const texte = (v, n) => typeof v === 'string' ? v.slice(0, n || 1500) : '';
   const nombre = (v, min, max) => typeof v === 'number' && Number.isFinite(v) && v >= min && v <= max;
 
   const DEVISES = ['EUR', 'USD', 'GBP'];
-  const OUTILS = ['devises', 'cotis', 'revenu', 'treso', 'pipeline', 'budget', 'reporting', 'doc'];
+  const OUTILS = ['devises', 'cotis', 'revenu', 'treso', 'pipeline', 'budget', 'reporting', 'doc', 'recettes', 'plafonds', 'echeances', 'planning', 'contrat', 'efacture'];
+  const ID_RE = /^[A-Za-z0-9_-]{1,40}$/, ISO_RE = /^\d{4}-\d{2}-\d{2}$/;
   const SITUATIONS = ['franchise', 'tva-fr', 'ue-pro', 'hors-ue-pro'];
   function defauts() {
     return {
@@ -35,7 +37,16 @@
         emetteur: { nom: '', siret: '', adresse: '', email: '' },
         client: { nom: '', adresse: '', tva: '', pro: true },
         lignes: [{ desc: 'Animation du serveur Discord (1 mois)', qte: 1, pu: 600 }, { desc: 'Clips verticaux sous-titrés', qte: 8, pu: 40 }],
-        penalites: 'trois fois le taux d’intérêt légal', notes: '' }
+        penalites: 'trois fois le taux d’intérêt légal', notes: '' },
+      plafonds: { anterieur: 0, caN1: 0 },
+      echeances: { periodicite: 'mois', cfe: true },
+      contrat: { prestataire: { nom: '', siret: '', adresse: '', email: '' }, client: { nom: '', adresse: '', representant: '' },
+        prestation: 'Animation du chat et du serveur Discord, modération, clips verticaux sous-titrés, planification des publications',
+        debut: '2026-11-03', duree: 3, preavis: 15, prix: 600, devise: 'EUR', modalite: 'mois', tva: 'franchise', acompte: 30, delai: 30,
+        penalites: 'trois fois le taux d’intérêt légal', cession: true, cessionObjet: 'clips, montages, visuels, textes de publications', cessionPrix: true,
+        cessionSupports: 'les réseaux sociaux, les plateformes de diffusion en direct et le site du Client', cessionTerritoire: 'le monde entier', cessionDuree: '5 ans',
+        droitImage: true, ville: '', type: 'contrat' },
+      efact: { coches: Object.fromEntries(G.EFACT_IDS.map(id => [id, false])), choix: [0, 1, 2].map(() => ({ nom: '', p: false, d: false, r: false, x: false, s: false })) }
     };
   }
   function neuf() {
@@ -44,6 +55,7 @@
       reponses: {}, notes: {}, derniere: null,
       theme: null, aere: false, energie: null, jours: [], outil: 'devises',
       scenarios: {}, eclair: { meilleur: 0, parties: 0, bonnes: 0 },
+      recettes: [], planning: [], revision: {},
       revenu: { tjm: 250, jours: 3, semaines: 45, regime: 'bnc', vfl: false, acre: false, frais: 1200 },
       treso: { solde: 1500, provision: 28, depenses: 1600, ca: [2500, 900, 3200, 1800, 0, 2600] },
       pipeline: { contacts: 6, reponse: 25, rdv: 50, signature: 30, panier: 900, objectif: 3000 }
@@ -115,7 +127,7 @@
       throw new Error('Format non compatible. Utilise une sauvegarde de ce module (version 1).');
     }
     const out = neuf(), lecons = toutes(contenu), ids = lecons.map(l => l.id);
-    out.vue = [...ids, 'accueil', 'carnet', 'simulateurs', 'sources', 'scenarios', 'eclair', 'ressources'].includes(obj.vue) ? obj.vue : 'accueil';
+    out.vue = [...ids, 'accueil', 'carnet', 'simulateurs', 'sources', 'scenarios', 'eclair', 'ressources', 'revision'].includes(obj.vue) ? obj.vue : 'accueil';
     out.etape = ['cours', 'exercice', 'ancrage'].includes(obj.etape) ? obj.etape : 'cours';
     out.question = Number.isInteger(obj.question) && obj.question >= 0 && obj.question < 20 ? obj.question : 0;
     out.focus = obj.focus === true;
@@ -179,6 +191,44 @@
     out.doc.situation = enumere(out.doc.situation, SITUATIONS, 'franchise');
     if (!/^\d{4}-\d{2}-\d{2}$/.test(out.doc.date)) out.doc.date = d.doc.date;
     out.doc.lignes.forEach(l => { l.desc = l.desc.slice(0, 300); if (!nombre(l.qte, 0, 1e6)) l.qte = 0; if (!nombre(l.pu, 0, 1e8)) l.pu = 0; });
+    out.plafonds = fusion(d.plafonds, obj.plafonds);
+    for (const k of ['anterieur', 'caN1']) if (!nombre(out.plafonds[k], 0, 1e9)) out.plafonds[k] = 0;
+    out.echeances = fusion(d.echeances, obj.echeances); out.echeances.periodicite = enumere(out.echeances.periodicite, ['mois', 'trimestre'], 'mois');
+    out.contrat = fusion(d.contrat, obj.contrat);
+    out.contrat.devise = enumere(out.contrat.devise, DEVISES, 'EUR'); out.contrat.modalite = enumere(out.contrat.modalite, ['mois', 'mission', 'forfait'], 'mois');
+    out.contrat.tva = enumere(out.contrat.tva, ['franchise', 'tva', 'etranger'], 'franchise'); out.contrat.type = enumere(out.contrat.type, ['contrat', 'cgv'], 'contrat');
+    if (!ISO_RE.test(out.contrat.debut)) out.contrat.debut = d.contrat.debut;
+    for (const [k, mx] of [['duree', 120], ['preavis', 365], ['prix', 1e8], ['acompte', 100], ['delai', 365]]) if (!nombre(out.contrat[k], 0, mx)) out.contrat[k] = d.contrat[k];
+    const ef = obj.efact && typeof obj.efact === 'object' ? obj.efact : {};
+    out.efact = fusion(d.efact, { coches: ef.coches, choix: ef.choix });
+    out.efact.choix = out.efact.choix.slice(0, 3); while (out.efact.choix.length < 3) out.efact.choix.push(clone(d.efact.choix[0]));
+    out.efact.choix.forEach(c => { c.nom = c.nom.slice(0, 80); });
+    /* Livre des recettes, planning, révision : listes d'objets validés un par un. */
+    if (Array.isArray(obj.recettes)) {
+      const vus = new Set();
+      for (const r of obj.recettes.slice(0, 1500)) {
+        if (!r || typeof r !== 'object' || !ID_RE.test(r.id) || vus.has(r.id) || !ISO_RE.test(r.date) || !nombre(r.montant, 0, 1e9) || !nombre(r.taux, 0.0001, 10000)) continue;
+        vus.add(r.id);
+        out.recettes.push({ id: r.id, num: texte(r.num, 40), date: r.date, client: texte(r.client, 120), desc: texte(r.desc, 200), montant: r.montant, devise: enumere(r.devise, DEVISES, 'EUR'),
+          taux: r.devise === 'EUR' || !DEVISES.includes(r.devise) ? 1 : r.taux, statut: r.statut === 'paye' ? 'paye' : 'attente',
+          datePaiement: r.statut === 'paye' && ISO_RE.test(r.datePaiement) ? r.datePaiement : (r.statut === 'paye' ? r.date : ''), mode: enumere(r.mode, G.MODES, 'virement') });
+      }
+    }
+    if (Array.isArray(obj.planning)) {
+      const vus = new Set();
+      for (const x of obj.planning.slice(0, 1500)) {
+        if (!x || typeof x !== 'object' || !ID_RE.test(x.id) || vus.has(x.id) || !ISO_RE.test(x.date)) continue;
+        vus.add(x.id);
+        out.planning.push({ id: x.id, date: x.date, heure: /^\d{2}:\d{2}$/.test(x.heure) ? x.heure : '', client: texte(x.client, 80), type: enumere(x.type, Object.keys(G.TYPES_PLANNING), 'post'), titre: texte(x.titre, 120), fait: x.fait === true });
+      }
+    }
+    if (obj.revision && typeof obj.revision === 'object' && !Array.isArray(obj.revision)) {
+      const connues = new Set(lecons.flatMap(l => l.questions.map(q => q.id)));
+      for (const [k, v] of Object.entries(obj.revision).slice(0, 600)) {
+        if (!connues.has(k) || !v || typeof v !== 'object' || !Number.isInteger(v.boite) || v.boite < 1 || v.boite > G.MAITRISEE || !ISO_RE.test(v.due)) continue;
+        out.revision[k] = { boite: v.boite, due: v.due };
+      }
+    }
     if (ids.includes(out.vue)) {
       const l = lecons.find(x => x.id === out.vue);
       out.question = Math.min(out.question, l.questions.length - 1);
@@ -187,7 +237,7 @@
     return out;
   }
   function importer(json, contenu) {
-    if (typeof json !== 'string' || json.length > MAX_FICHIER) throw new Error('Le fichier dépasse la taille autorisée (200 Ko).');
+    if (typeof json !== 'string' || json.length > MAX_FICHIER) throw new Error('Le fichier dépasse la taille autorisée (1 Mo).');
     let obj;
     try { obj = JSON.parse(json); } catch (_) { throw new Error('Ce fichier ne contient pas un JSON valide. Ta progression est conservée.'); }
     return normaliser(obj, contenu);

@@ -378,3 +378,49 @@ html[data-theme="sombre"] .badge.obtenu strong{color:var(--accent)}
   body.impression-doc .papier{box-shadow:none;border:0;margin:0;padding:0}
 }
 .skip:not(:focus){opacity:0;pointer-events:none}
+
+/* ---------- Gestion : recettes, plafonds, échéances, planning, contrat, facture électronique ---------- */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:var(--s3);margin:var(--s4) 0}
+.table-defile{overflow-x:auto;margin:var(--s4) 0;border-radius:12px}
+.table-defile .table-cash{min-width:640px}
+.table-cash tr.en-attente td{color:var(--secondaire)}
+.cellule-actions{white-space:nowrap}
+.champ-bouton{display:flex;align-items:flex-end}
+.seuils{gap:var(--s4)}
+.seuil{padding:var(--s4);border:1px solid var(--ligne);border-radius:12px;background:var(--surface)}
+.seuil-tete{display:flex;justify-content:space-between;gap:var(--s3);align-items:center;flex-wrap:wrap;margin-bottom:var(--s2)}
+.seuil-tete h3{margin:0;font-size:1rem}
+.seuil .jauge{margin:var(--s2) 0 var(--s3)}
+.seuil.niveau-alerte,.seuil.niveau-depasse{border-color:var(--erreur)}
+.seuil.niveau-vigilance{border-color:var(--orange)}
+.echeances{list-style:none;padding:0;margin:var(--s4) 0;display:flex;flex-direction:column;gap:var(--s3)}
+.echeance{display:grid;grid-template-columns:minmax(150px,200px) minmax(0,1fr);gap:var(--s4);padding:var(--s4);border:1px solid var(--ligne);border-radius:12px;background:var(--surface)}
+.echeance h3{margin:0 0 var(--s1);font-size:1rem}
+.echeance-date{display:flex;flex-direction:column;gap:var(--s2);align-items:flex-start}
+.echeance.type-urssaf{border-left:4px solid var(--accent)}.echeance.type-cfe{border-left:4px solid var(--orange)}.echeance.type-impots{border-left:4px solid var(--rose)}
+.semaine-nav{display:flex;gap:var(--s3);align-items:center;flex-wrap:wrap;margin:var(--s4) 0}
+.semaine{list-style:none;padding:0;margin:var(--s4) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--s3)}
+.semaine>li{padding:var(--s3);border:1px solid var(--ligne);border-radius:12px;background:var(--surface);min-width:0}
+.semaine>li.aujourdhui{border-color:var(--accent);background:var(--accent-clair)}
+.semaine h3{margin:0 0 var(--s2);font-size:.9375rem;text-transform:capitalize}
+.semaine ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:var(--s2)}
+.plan-item{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--s2);padding:var(--s2);border-radius:8px;background:var(--fond);overflow-wrap:anywhere}
+.plan-item.fait .plan-case>span{text-decoration:line-through;color:var(--secondaire)}
+.plan-case{display:flex;gap:var(--s2);align-items:flex-start;cursor:pointer;font-size:var(--text-sm)}
+.plan-case input{margin-top:5px;width:18px;height:18px;flex:0 0 auto}
+.contrat-texte{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.9375rem;line-height:1.55}
+.avertissement{padding:var(--s3) var(--s4);border-radius:10px;background:var(--attention-fond);color:var(--attention);font-size:var(--text-sm);margin:var(--s4) 0}
+.avertissement p{margin:0;color:inherit}
+.checklist{display:flex;flex-direction:column;gap:var(--s2);margin:var(--s3) 0 var(--s6)}
+.liste-simple{padding-left:var(--s5)}.liste-simple li{margin-bottom:var(--s2)}
+.grille-choix th[scope="row"] input{width:100%;min-width:140px}
+.grille-choix td{text-align:center}
+@media (max-width:640px){.echeance{grid-template-columns:1fr}.semaine{grid-template-columns:1fr}}
+@media print{
+  body.impression-contrat .zone>*:not(main),body.impression-contrat main>*{display:none!important}
+  body.impression-contrat main>.panneau-outil{display:block!important;border:0;padding:0}
+  body.impression-contrat .panneau-outil>*:not(#resultat-contrat){display:none!important}
+  body.impression-contrat #resultat-contrat>*:not(.papier){display:none!important}
+  body.impression-contrat .rail,body.impression-contrat .mobile-nav,body.impression-contrat .ruban{display:none!important}
+  body.impression-contrat .papier{box-shadow:none;border:0;margin:0;padding:0}
+}
