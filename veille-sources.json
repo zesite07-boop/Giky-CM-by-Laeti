@@ -1,15 +1,59 @@
 {
   "_aide": "Sources de la veille. type: rss (RSS ou Atom). categorie: actu, communaute ou alerte. Pour ajouter une alerte Google : créer l'alerte sur google.com/alerts, choisir « Flux RSS » comme destination, puis coller l'adresse du flux ici avec categorie alerte.",
   "sources": [
-    { "id": "gnews-twitch-fr", "nom": "Google Actualités · Twitch France", "categorie": "alerte", "url": "https://news.google.com/rss/search?q=twitch+france&hl=fr&gl=FR&ceid=FR:fr" },
-    { "id": "gnews-streamers", "nom": "Google Actualités · streamers et streaming", "categorie": "alerte", "url": "https://news.google.com/rss/search?q=streamer+OR+streaming+twitch+OR+kick&hl=fr&gl=FR&ceid=FR:fr" },
-    { "id": "gnews-jeux-sorties", "nom": "Google Actualités · sorties jeux vidéo", "categorie": "alerte", "url": "https://news.google.com/rss/search?q=sortie+jeu+vid%C3%A9o+when:7d&hl=fr&gl=FR&ceid=FR:fr" },
-    { "id": "dexerto-fr", "nom": "Dexerto FR", "categorie": "actu", "url": "https://www.dexerto.fr/feed/" },
-    { "id": "journaldugeek", "nom": "Journal du Geek", "categorie": "actu", "url": "https://www.journaldugeek.com/feed/" },
-    { "id": "numerama", "nom": "Numerama", "categorie": "actu", "url": "https://www.numerama.com/feed/" },
-    { "id": "gamekult", "nom": "Gamekult", "categorie": "actu", "url": "https://www.gamekult.com/feed.xml" },
-    { "id": "jeuxvideo", "nom": "jeuxvideo.com", "categorie": "actu", "url": "https://www.jeuxvideo.com/rss/rss.xml" },
-    { "id": "reddit-twitch", "nom": "Reddit · r/Twitch", "categorie": "communaute", "url": "https://www.reddit.com/r/Twitch/.rss" },
-    { "id": "reddit-lsf", "nom": "Reddit · r/LivestreamFail", "categorie": "communaute", "url": "https://www.reddit.com/r/LivestreamFail/.rss" }
+    {
+      "id": "gnews-twitch-fr",
+      "nom": "Google Actualités · Twitch France",
+      "categorie": "alerte",
+      "url": "https://news.google.com/rss/search?q=twitch+france&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-streamers",
+      "nom": "Google Actualités · streamers et streaming",
+      "categorie": "alerte",
+      "url": "https://news.google.com/rss/search?q=streamer+OR+streaming+twitch+OR+kick&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-jeux-sorties",
+      "nom": "Google Actualités · sorties jeux vidéo",
+      "categorie": "alerte",
+      "url": "https://news.google.com/rss/search?q=sortie+jeu+vid%C3%A9o+when:7d&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "dexerto-fr",
+      "nom": "Dexerto FR",
+      "categorie": "actu",
+      "url": "https://www.dexerto.fr/feed/"
+    },
+    {
+      "id": "journaldugeek",
+      "nom": "Journal du Geek",
+      "categorie": "actu",
+      "url": "https://www.journaldugeek.com/feed/"
+    },
+    {
+      "id": "numerama",
+      "nom": "Numerama",
+      "categorie": "actu",
+      "url": "https://www.numerama.com/feed/"
+    },
+    {
+      "id": "gamekult",
+      "nom": "Gamekult",
+      "categorie": "actu",
+      "url": "https://www.gamekult.com/feed.xml"
+    },
+    {
+      "id": "jeuxvideo",
+      "nom": "jeuxvideo.com",
+      "categorie": "actu",
+      "url": "https://www.jeuxvideo.com/rss/rss.xml"
+    },
+    {
+      "id": "reddit-twitch",
+      "nom": "Reddit · r/Twitch",
+      "categorie": "communaute",
+      "url": "https://www.reddit.com/r/Twitch/.rss"
+    }
   ]
 }
