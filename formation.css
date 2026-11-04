@@ -80,7 +80,7 @@ main{max-width:1260px;margin:auto;padding:var(--s10)}
 progress{display:block;width:100%;height:6px;border:0;border-radius:10px;overflow:hidden;accent-color:var(--accent);background:var(--ligne)}
 progress::-webkit-progress-bar{background:var(--ligne)}progress::-webkit-progress-value{background:var(--accent)}
 .chemin{margin-top:var(--s4)}.chemin label{display:block;font-size:var(--text-sm);margin-bottom:var(--s2)}
-select,input[type="number"],input[type="text"],textarea{border:1px solid var(--champ-bord);border-radius:8px;padding:var(--s3);min-height:44px;background:var(--champ-fond);color:var(--encre);max-width:100%;width:100%}
+select,input[type="number"],input[type="text"],input[type="url"],textarea{border:1px solid var(--champ-bord);border-radius:8px;padding:var(--s3);min-height:44px;background:var(--champ-fond);color:var(--encre);max-width:100%;width:100%}
 textarea{min-height:116px;resize:vertical;line-height:1.5}select{font-size:var(--text-sm)}
 .liste-simple{padding-left:var(--s5);margin:var(--s3) 0 0;color:var(--secondaire);font-size:var(--text-sm)}.liste-simple li+li{margin-top:var(--s2)}
 .separateur{border:0;border-top:1px solid var(--ligne);margin:var(--s6) 0}
@@ -434,3 +434,4 @@ html[data-theme="sombre"] .badge.obtenu strong{color:var(--accent)}
 .idee-actions select{min-height:44px}
 .idee.statut-publie{opacity:.7}
 @media (max-width:640px){.flux-item,.idee{flex-direction:column}.idee-actions{justify-content:flex-start}}
+@media (max-width:640px){.calcul-champs{grid-template-columns:minmax(0,1fr)}}

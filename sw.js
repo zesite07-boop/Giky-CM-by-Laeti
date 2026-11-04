@@ -2,7 +2,7 @@
    Stratégie : on sert la copie en cache tout de suite, puis on la met à jour en arrière-plan.
    Pour forcer une mise à jour chez tout le monde, change VERSION. Aucune donnée personnelle n'est mise en cache. */
 'use strict';
-const VERSION = 'cm-v4';
+const VERSION = 'cm-v5';
 const FICHIERS = ['./', './index.html', './manifest.webmanifest', './theme.js', './formation.css', './sources.js', './contenu.js', './contenu-apprendre.js', './contenu-entrainer.js',
   './contenu-business.js', './contenu-clients.js', './contenu-bonus.js', './scenarios.js', './ressources.js', './gestion.js', './data/veille.json', './moteur.js', './formation.js',
   './fonts/ibm-plex-sans-400.woff2', './fonts/ibm-plex-sans-600.woff2', './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png'];
