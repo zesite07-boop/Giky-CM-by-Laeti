@@ -20,6 +20,7 @@ Module d'autoformation pour une community manager freelance spécialisée Twitch
 - Version 3 : 6 nouveaux outils dans la boîte à outils (14 au total) : livre des recettes (numérotation continue, statut payé ou en attente, export CSV, lien avec Devis & facture), plafonds (micro, franchise de TVA, alerte et projection), échéances (Urssaf, CFE, export .ics et Google Agenda), planning éditorial (semaine, par client), contrat et CGV (cession de droits, droit à l'image), facture électronique (leçon, checklist, grille de choix de plateforme).
 - Révision espacée : les questions ratées reviennent après 1, 3, 7, 16 puis 35 jours (boîtes de Leitner).
 - Veille et idées : actualités et alertes Google collectées chaque heure par GitHub Actions (`scripts/veille.js`, `veille-sources.json` → `data/veille.json`), boîte à idées avec partage depuis le téléphone (Android) et envoi vers le planning.
+- Accueil par énergie du jour, barre du bas sur téléphone, réglages regroupés, série douce, rappel de sauvegarde mensuel.
 - Application installable (PWA) qui marche sans connexion : `manifest.webmanifest`, `sw.js`, `icons/`.
 
 ## Fichiers

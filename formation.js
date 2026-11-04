@@ -8,6 +8,8 @@
   let etat = depot.etat, drafts = {}, dernierFocus = null;
   let combo = 0, eclair = null, jeu = null, conv = { montant: 500, devise: 'USD' }, sprint = null, toastTimer = null;
   const toutes = M.toutes(C);
+  if (!etat.debut) etat.debut = new Date().toLocaleDateString('sv-SE');
+  let reglagesOuvert = false;
   let pf = {}, revision = null, semaineDebut = G.lundi(new Date().toLocaleDateString('sv-SE')), installPrompt = null, sansXp = false;
   const $ = s => document.querySelector(s);
   const esc = v => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -27,6 +29,20 @@
   const repondu = q => Object.prototype.hasOwnProperty.call(etat.reponses, q.id);
   const parcoursDe = l => C.parcours.find(p => p.id === l.parcours);
   const T = () => etat.devises;
+  const IC = {
+    jeu: '<rect x="2" y="7" width="20" height="11" rx="5"/><path d="M7 10v5M4.5 12.5h5M16 11h.01M18.5 14h.01"/>',
+    eclair: '<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
+    revision: '<path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v5h-5"/>',
+    veille: '<path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1.5"/>',
+    outils: '<rect x="3" y="8" width="18" height="12" rx="2"/><path d="M9 8V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/>',
+    etoile: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>',
+    flamme: '<path d="M12 3c1 3 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/>',
+    reglages: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/>',
+    accueil: '<path d="M3 11l9-8 9 8M5 10v10h14V10"/>',
+    livre: '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 19V5"/>',
+    fleche: '<path d="M5 12h14M13 6l6 6-6 6"/>'
+  };
+  const icone = (n, t) => `<svg aria-hidden="true" width="${t || 24}" height="${t || 24}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${IC[n]}</svg>`;
 
   /* Un montant en euros affiché dans les trois devises, la devise choisie mise en avant. */
   function triplet(eur, choisie, d) {
@@ -127,43 +143,79 @@
     const j = aujourdhui(); let h = 0; for (const c of j) h = (h * 31 + c.charCodeAt(0)) % 100003;
     return toutesQ[h % toutesQ.length];
   }
-  const ENERGIES = {
-    basse: ['Batterie faible', 'Fais un quiz éclair (2 minutes) ou relis un mémo. C’est déjà gagné.', 'eclair', 'Lancer le quiz éclair'],
-    moyenne: ['Batterie moyenne', 'Une leçon de 8 minutes avec un sprint de 10 minutes, puis pause.', 'reprise', 'Reprendre ma leçon'],
-    haute: ['Batterie pleine', 'Joue un scénario, puis attaque un outil de la boîte à outils avec un vrai chiffre.', 'scenarios', 'Jouer un scénario']
-  };
+  const ENERGIES = { basse: ['Faible', 'Doux', 1], moyenne: ['Moyenne', 'Normal', 2], haute: ['Pleine', 'À fond', 3] };
+  const aReponses = l => l.questions.some(q => repondu(q));
+  const libelleLecon = l => M.bilan(l, etat.reponses).reussi ? 'Revoir' : aReponses(l) ? 'Reprendre' : 'Commencer';
+  function prochaineAction(e, pr) {
+    if (e === 'basse') return { etiq: 'Pour une énergie douce', titre: 'Quiz éclair', meta: '3 min · 5 questions', texte: 'Cinq questions au hasard. Zéro pression, tu peux t’arrêter quand tu veux.', bouton: 'Lancer le quiz', vue: 'eclair' };
+    if (e === 'haute') {
+      const m = C.lecons.find(l => /^m\d/.test(l.id) && !M.bilan(l, etat.reponses).reussi);
+      if (m) return { etiq: 'Pour une énergie à fond', titre: `${m.code} · ${m.titre}`, meta: `${m.duree} · mission`, texte: m.objectif, bouton: aReponses(m) ? 'Reprendre la mission' : 'Jouer la mission', vue: m.id };
+      return { etiq: 'Pour une énergie à fond', titre: 'Scénarios', meta: `${SC.length} histoires`, texte: 'Joue une histoire dont tu es l’héroïne.', bouton: 'Jouer un scénario', vue: 'scenarios' };
+    }
+    const p = pr.prochaine;
+    if (!p) return { etiq: 'Pour une énergie normale', titre: 'Module terminé', meta: 'Bravo', texte: 'Tout est validé. Ton carnet garde tes actions concrètes.', bouton: 'Ouvrir mon carnet', vue: 'carnet' };
+    return { etiq: 'Pour une énergie normale', titre: `${p.code} · ${p.titre}`, meta: `${p.duree} · 3 étapes`, texte: p.objectif, bouton: aReponses(p) ? 'Reprendre la leçon' : 'Commencer la leçon', vue: p.id };
+  }
+  function rappelSauvegarde() {
+    const donnees = Object.keys(etat.reponses).length || etat.recettes.length || etat.planning.length || etat.idees.length || Object.keys(etat.notes).length;
+    const ref = etat.sauvegarde || etat.debut;
+    if (!donnees || !ref) return '';
+    const jours = Math.floor((Date.parse(aujourdhui()) - Date.parse(ref)) / 864e5);
+    if (!(jours >= 30)) return '';
+    return `<section class="rappel-sauvegarde" role="status"><span>${etat.sauvegarde ? `Dernière sauvegarde il y a ${jours} jours.` : 'Tu n’as encore jamais sauvegardé ta progression.'} Un fichier de secours évite de tout perdre.</span><button class="bouton" data-action="sauvegarde">Sauvegarder</button></section>`;
+  }
+  const tuile = (vue, cls, ic, titre, sous) => `<button class="tuile t-${cls}" data-view="${vue}"><span class="tuile-icone">${icone(ic)}</span><strong>${titre}</strong><span>${sous}</span></button>`;
+  const tuilesJeu = () => [
+    tuile('scenarios', 'cerise', 'jeu', 'Scénarios', `${SC.length} histoires dont tu es l’héroïne`),
+    tuile('eclair', 'or', 'eclair', 'Quiz éclair', `5 questions au hasard${etat.eclair.meilleur ? ` · record ${etat.eclair.meilleur}/5` : ''}`),
+    tuile('revision', 'turquoise', 'revision', 'Révision', `${G.aReviser(etat.revision, aujourdhui()).length} à revoir aujourd’hui`)
+  ].join('');
   function accueil() {
+    const pr = M.progression(C, etat), e = etat.energie || 'moyenne', x = M.xp(C, etat), sj = M.serie(etat.jours, aujourdhui());
+    const a = prochaineAction(e, pr), qj = questionDuJour();
+    const classes = ['f-mauve', 'f-cerise', 'f-turquoise', 'f-or'];
+    return `<div class="accueil-colonne"><h1 class="sr-only" tabindex="-1">Accueil du module community manager</h1>
+      <div class="salut"><span class="logo-cm" aria-hidden="true">CM</span><div><p>Module community manager</p><strong>Salut Laetitia</strong></div><span class="pastille-niveau">${icone('etoile', 16)} Niv. ${x.niveau}</span></div>
+      ${rappelSauvegarde()}
+      <section class="energie-bloc"><h2>Ton énergie du jour ?</h2><div class="energie-choix" role="group" aria-label="Niveau d’énergie">${Object.entries(ENERGIES).map(([k, v]) => `<button class="energie-btn e-${k}" data-action="energie" data-energie="${k}" aria-pressed="${e === k}"><span class="barres" aria-hidden="true">${[1, 2, 3].map(i => `<i class="${i <= v[2] ? 'on' : ''}"></i>`).join('')}</span>${esc(v[0])}<small>${esc(v[1])}</small></button>`).join('')}</div></section>
+      <section class="prochaine" aria-label="Ta prochaine action"><span class="etiq">${esc(a.etiq)}</span><h2>${esc(a.titre)}</h2><p class="meta">${esc(a.meta)}</p><p>${esc(a.texte)}</p>
+        <button class="bouton-cerise" data-view="${esc(a.vue)}">${esc(a.bouton)} ${icone('fleche', 20)}</button><button class="bouton secondaire" data-action="sprint" data-minutes="10">Sprint de 10 minutes</button></section>
+      <section class="progres-carte" aria-label="Ta progression"><div class="progres-ligne"><div><span class="serie">${icone('flamme', 20)}<span class="chiffre">${sj} j</span></span><span class="legende">de suite</span></div>
+        <div class="milieu"><span class="legende"><span>${x.suivant ? `Vers ${esc(x.suivant.nom)}` : `Niveau ${esc(x.nom)}`}</span><b>${nb(x.points, 0)}${x.suivant ? ` / ${nb(x.suivant.seuil, 0)}` : ''} XP</b></span><span class="jauge-turquoise" role="img" aria-label="${x.pct} % vers le niveau suivant"><span data-w="${x.pct}"></span></span></div>
+        <div class="droite"><span class="chiffre">${pr.reussies} / ${pr.total}</span><span class="legende">étapes</span></div></div>
+        <p class="petit">Série douce : un jour de pause ne casse rien.</p></section>
+      <h2 class="titre-section">Jouer et s’outiller</h2>
+      <div class="grille-jeux">${tuilesJeu()}
+        ${tuile('veille', 'mauve', 'veille', 'Veille', `${etat.idees.length} idée${etat.idees.length > 1 ? 's' : ''} · actus Twitch France`)}
+        ${tuile('simulateurs', 'or', 'outils', 'Boîte à outils', 'Recettes, plafonds, devis')}
+        ${tuile('ressources', 'turquoise', 'etoile', 'Ressources', `${RS.reduce((n, c) => n + c.liens.length, 0)} outils et liens triés`)}</div>
+      ${qj ? `<section class="carte qdj"><div class="tete-qdj"><span class="etiq-cerise">Question du jour · ${esc(qj.l.code)}</span><span class="puce-xp">+10 XP</span></div><h2>${esc(qj.q.titre)}</h2><p>${esc(qj.q.texte)}</p><div class="actions"><button class="bouton primaire" data-action="qdj" data-lecon="${qj.l.id}" data-i="${qj.i}">${repondu(qj.q) ? 'Revoir ma réponse' : 'Y répondre'} <span aria-hidden="true">→</span></button></div></section>` : ''}
+      <div class="titre-liste"><h2 class="titre-section">Tout le programme</h2><span class="petit">${C.lecons.length} leçons</span></div>
+      <div class="familles">${C.parcours.filter(p => p.id !== 'final').map((p, i) => { const n = C.lecons.filter(l => l.parcours === p.id).length, r = pr.parcours[p.id].reussies; return `<button class="famille ${classes[i % 4]}" data-action="famille" data-id="${p.id}"><strong>${esc(p.nom)}</strong><span class="piste"><span data-w="${Math.max(6, Math.round(100 * r / n))}"></span></span><span class="petit">${r} / ${n}</span></button>`; }).join('')}</div>
+      <div class="liens-bas"><button class="lien-action" data-view="programme">Voir toutes les leçons</button><button class="lien-action" data-view="carnet">Mon carnet</button></div></div>`;
+  }
+  function programme() {
     const pr = M.progression(C, etat);
-    const prochaine = pr.prochaine;
-    const derniere = etat.derniere ? toutes.find(l => l.id === etat.derniere) : null;
-    const debut = pr.reussies === 0 && !Object.keys(etat.reponses).length;
-    const reprise = debut ? 'Commence par la première leçon : 8 minutes, quelques questions, zéro pression.'
-      : `Tu as validé ${pr.reussies} leçon${pr.reussies > 1 ? 's' : ''}${derniere ? `, la dernière ouverte était « ${derniere.titre} »` : ''}. Il en reste ${pr.reste}. ${prochaine ? `Prochaine étape : ${prochaine.code}, ${prochaine.titre}.` : 'Tout est validé.'}`;
-    const qj = questionDuJour();
-    const en = etat.energie && ENERGIES[etat.energie];
-    return `<header class="en-tete"><p class="sur-titre">JTIpilot · Module ${esc(C.titre)}</p><h1>Ton métier, ton business, tes clients.</h1><p class="intro">Des leçons de 8 à 12 minutes, une question à la fois, des scénarios à jouer et une boîte à outils en euros, dollars et livres. Tu peux recommencer autant que tu veux.</p></header>
-      <div class="disposition"><div class="pile">
-        <section class="depart"><p class="sur-titre">${debut ? 'Bienvenue' : 'Ta reprise'}</p><h2>${prochaine ? esc(prochaine.titre) : 'Module terminé.'}</h2><p>${esc(reprise)}</p>
-          <button class="bouton" data-view="${prochaine ? prochaine.id : 'carnet'}">${debut ? 'Commencer' : prochaine ? 'Reprendre' : 'Ouvrir mon carnet'} <span aria-hidden="true">→</span></button></section>
-        <section class="carte energie"><h2>Ton énergie du jour ?</h2><p class="petit">Choisis, je te propose une activité à ta mesure.</p>
-          <div class="segments" role="group" aria-label="Niveau d’énergie">${Object.entries(ENERGIES).map(([k, v]) => `<button class="segment" data-action="energie" data-energie="${k}" aria-pressed="${etat.energie === k}">${esc(v[0])}</button>`).join('')}</div>
-          ${en ? `<p class="suggestion">${esc(en[1])}</p><div class="actions"><button class="bouton primaire" ${en[2] === 'reprise' ? `data-view="${prochaine ? prochaine.id : 'accueil'}"` : `data-view="${en[2]}"`}>${esc(en[3])} <span aria-hidden="true">→</span></button><button class="bouton" data-action="sprint" data-minutes="10">Sprint de 10 minutes</button></div>` : ''}</section>
-        <div class="grille-jeux">
-          <button class="tuile" data-view="scenarios"><span class="tuile-icone" aria-hidden="true">▶</span><strong>Scénarios</strong><span>${SC.length} histoires dont tu es l’héroïne</span></button>
-          <button class="tuile" data-view="eclair"><span class="tuile-icone" aria-hidden="true">⚡</span><strong>Quiz éclair</strong><span>5 questions au hasard${etat.eclair.meilleur ? ` · record ${etat.eclair.meilleur}/5` : ''}</span></button>
-          <button class="tuile" data-view="revision"><span class="tuile-icone" aria-hidden="true">↻</span><strong>Révision espacée</strong><span>${G.aReviser(etat.revision, aujourdhui()).length} à revoir aujourd’hui</span></button>
-          <button class="tuile" data-view="veille"><span class="tuile-icone" aria-hidden="true">◉</span><strong>Veille et idées</strong><span>${etat.idees.length} idée${etat.idees.length > 1 ? 's' : ''} · actus Twitch France</span></button>
-          <button class="tuile" data-view="simulateurs"><span class="tuile-icone" aria-hidden="true">€$£</span><strong>Boîte à outils</strong><span>Recettes, plafonds, échéances, contrat, devis</span></button>
-          <button class="tuile" data-view="ressources"><span class="tuile-icone" aria-hidden="true">★</span><strong>Ressources</strong><span>${RS.reduce((a, c) => a + c.liens.length, 0)} outils et liens triés</span></button>
-        </div>
-        ${qj ? `<section class="carte qdj"><p class="sur-titre">Question du jour · ${esc(qj.l.code)}</p><h2>${esc(qj.q.titre)}</h2><p>${esc(qj.q.texte)}</p><div class="actions"><button class="bouton primaire" data-action="qdj" data-lecon="${qj.l.id}" data-i="${qj.i}">${repondu(qj.q) ? 'Revoir ma réponse' : 'Y répondre'} <span aria-hidden="true">→</span></button></div></section>` : ''}
-        ${C.parcours.filter(p => p.id !== 'final').map(p => {
-          const ls = C.lecons.filter(l => l.parcours === p.id);
-          return `<section><div class="titre-liste"><div><h2>${esc(p.nom)}</h2><p class="petit">${esc(p.image)}</p></div><span class="etiquette">${pr.parcours[p.id].reussies} / ${ls.length} validées</span></div>
-            <div class="ateliers">${ls.map(l => `<article class="atelier-ligne ${M.bilan(l, etat.reponses).reussi ? 'validee' : ''}"><span class="numero">${esc(l.code)}</span><div><h3>${esc(l.titre)}</h3><p class="petit">${esc(l.duree)} · ${esc(statut(l))}</p></div><button class="lien-action" data-view="${l.id}" aria-label="Ouvrir ${esc(l.code)} : ${esc(l.titre)}">Ouvrir <span aria-hidden="true">↗</span></button></article>`).join('')}</div></section>`;
-        }).join('')}
+    return `<header class="en-tete"><p class="sur-titre">Apprendre</p><h1 tabindex="-1">Tout le programme</h1><p class="intro">${C.lecons.length} leçons de 8 à 12 minutes, dans l’ordre que tu veux. Chacune se rejoue autant de fois que tu veux.</p></header>
+      <div class="disposition"><div class="pile">${C.parcours.filter(p => p.id !== 'final').map(p => {
+        const ls = C.lecons.filter(l => l.parcours === p.id);
+        return `<section id="fam-${p.id}"><div class="titre-liste"><div><h2>${esc(p.nom)}</h2><p class="petit">${esc(p.image)}</p></div><span class="etiquette">${pr.parcours[p.id].reussies} / ${ls.length} validées</span></div>
+          <div class="ateliers">${ls.map(l => `<article class="atelier-ligne ${M.bilan(l, etat.reponses).reussi ? 'validee' : ''}"><span class="numero">${esc(l.code)}</span><div><h3>${esc(l.titre)}</h3><p class="petit">${esc(l.duree)} · ${esc(statut(l))}</p></div><button class="lien-action" data-view="${l.id}" aria-label="${libelleLecon(l)} ${esc(l.code)} : ${esc(l.titre)}">${libelleLecon(l)}</button></article>`).join('')}</div></section>`;
+      }).join('')}
         <section class="carte invitation"><p class="sur-titre">Le boss de fin</p><h2>${esc(C.final.titre)}</h2><p>${esc(C.final.court)} ${C.final.questions.length} questions, 80 % et aucune erreur critique.</p><div class="actions"><button class="bouton primaire" data-view="final">Ouvrir l’épreuve</button><span class="petit">${esc(statut(C.final))}</span></div></section>
       </div>${panneau(pr)}</div>`;
+  }
+  function jouer() {
+    return `<header class="en-tete"><p class="sur-titre">Jouer</p><h1 tabindex="-1">Jouer pour apprendre</h1><p class="intro">Trois façons de t’entraîner, sans pression et sans chrono imposé.</p></header><div class="grille-jeux">${tuilesJeu()}</div>`;
+  }
+  function victoire(l, suivante) {
+    const x = M.xp(C, etat);
+    return `<section class="victoire" aria-label="Leçon validée"><span class="fete" aria-hidden="true">${'<i></i>'.repeat(12)}</span><span class="medaille" aria-hidden="true">${icone('etoile', 60)}</span>
+      <h3>Leçon validée !</h3><p>${esc(l.code)} · ${esc(l.titre)}</p><span class="gain">+25 XP</span>
+      <div class="vers"><div class="legende"><span>${x.suivant ? `Vers ${esc(x.suivant.nom)}` : 'Niveau maximum'}</span><b>${nb(x.points, 0)}${x.suivant ? ` / ${nb(x.suivant.seuil, 0)}` : ''} XP</b></div><span class="jauge-turquoise"><span data-w="${x.pct}"></span></span>${x.suivant ? `<p>Encore ${nb(x.suivant.reste, 0)} XP pour ${esc(x.suivant.nom)}.</p>` : ''}</div>
+      <p>${esc(l.memo)}</p>
+      <div class="actions">${suivante ? `<button class="bouton-cerise" data-view="${suivante.id}">Leçon suivante : ${esc(suivante.code)} ${icone('fleche', 20)}</button>` : '<button class="bouton-cerise" data-view="carnet">Voir mon carnet</button>'}<button class="bouton" data-view="accueil">Retour à l’accueil</button></div></section>`;
   }
   function panneau(pr) {
     pr = pr || M.progression(C, etat);
@@ -235,13 +287,13 @@
     const idx = toutes.indexOf(l), suivante = toutes.slice(idx + 1).find(x => !M.bilan(x, etat.reponses).reussi) || toutes.find(x => !M.bilan(x, etat.reponses).reussi);
     const message = b.reussi ? 'Leçon validée. +25 XP.' : b.critiques ? `${b.critiques} erreur${b.critiques > 1 ? 's' : ''} critique${b.critiques > 1 ? 's' : ''} : la leçon n’est pas validée, même avec un bon score.` : `Il faut 80 % pour valider. Tu y es presque.`;
     return `<section class="carte"><p class="sur-titre">Ton bilan</p><div class="resume-score"><p class="score">${b.score} %<span> · ${b.bonnes} / ${b.total} bonnes réponses</span></p></div>
-      <div class="feedback ${b.reussi ? 'gagne' : b.critiques ? 'critique' : 'erreur'}">${b.reussi ? `<span class="fete" aria-hidden="true">${'<i></i>'.repeat(12)}</span>` : ''}<h3>${esc(message)}</h3><p>${b.reussi ? esc(l.memo) : 'Relis le cours, puis rejoue la leçon. Tes notes sont conservées.'}</p></div>
+      ${b.reussi ? victoire(l, suivante) : `<div class="feedback ${b.critiques ? 'critique' : 'erreur'}"><h3>${esc(message)}</h3><p>Relis le cours, puis rejoue la leçon. Tes notes sont conservées.</p></div>`}
       <section class="cours-bloc"><h2>Ton mini-défi</h2><p>${esc(l.defi)}</p></section>
       <div class="champ"><label for="note-action">Mon action concrète</label><textarea id="note-action" data-note="action" maxlength="1500" placeholder="Ce que je fais pour de vrai…">${esc(note.action)}</textarea></div>
       <div class="deux-champs"><div class="champ"><label for="note-echeance">Pour quand ?</label><input id="note-echeance" data-note="echeance" type="text" maxlength="120" value="${esc(note.echeance)}" placeholder="Ex. jeudi soir"></div>
       <div class="champ"><span class="label-faux">Où j’en suis</span><label class="choix case"><input type="checkbox" data-note="fait" ${note.fait ? 'checked' : ''}><span>Défi réalisé</span></label></div></div>
       <p class="sauve-note" data-note-etat>Enregistré automatiquement dans ton carnet.</p>
-      <div class="actions">${suivante ? `<button class="bouton primaire" data-view="${suivante.id}">Suivante : ${esc(suivante.code)} <span aria-hidden="true">→</span></button>` : '<button class="bouton primaire" data-view="carnet">Voir mon carnet</button>'}<button class="bouton discret" data-action="rejouer">Rejouer la leçon</button><button class="bouton discret" data-view="accueil">Faire une pause</button></div>
+      <div class="actions">${b.reussi ? '' : suivante ? `<button class="bouton primaire" data-view="${suivante.id}">Suivante : ${esc(suivante.code)} <span aria-hidden="true">→</span></button>` : '<button class="bouton primaire" data-view="carnet">Voir mon carnet</button>'}<button class="bouton discret" data-action="rejouer">Rejouer la leçon</button><button class="bouton discret" data-view="accueil">Faire une pause</button></div>
       ${liensSources(l.sources)}</section>`;
   }
 
@@ -735,11 +787,11 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     if (!veille.data) return '<p class="alerte-sim" role="status">La veille n’est pas disponible pour l’instant (hors connexion pour la première fois ?). Réessaie plus tard : la boîte à idées marche déjà.</p>';
     const d = veille.data, q = (f.q || '').trim().toLowerCase();
     const liste = d.items.map((x, i) => Object.assign({ i }, x)).filter(x => (!f.cat || x.categorie === f.cat) && (!q || (x.titre + ' ' + x.resume + ' ' + x.source).toLowerCase().includes(q)));
-    const pannes = d.sources.filter(s => s.statut !== 'ok');
+    const pannes = d.sources.filter(s => s.statut !== 'ok'), max = (f.cat || q || veille.tout) ? 60 : 5;
     return `<p class="petit">${d.maj ? `Dernière nouveauté ${esc(ilYa(d.maj))}.` : 'Aucune collecte pour l’instant.'} ${d.items.length} éléments de ${d.sources.filter(s => s.statut === 'ok').length} source${d.sources.filter(s => s.statut === 'ok').length > 1 ? 's' : ''}.${veille.etat === 'erreur' ? ' Affichage de la dernière copie : tu es peut-être hors connexion.' : ''}</p>
       ${pannes.length ? `<details class="bloc-plie"><summary>${pannes.length} source${pannes.length > 1 ? 's' : ''} sans réponse</summary><p class="petit">${pannes.map(s => esc(s.nom)).join(' · ')}. Ce n’est pas grave : les autres continuent, et les anciens éléments sont conservés.</p></details>` : ''}
-      ${liste.length ? `<ul class="flux-veille">${liste.slice(0, 60).map(x => `<li class="flux-item"><div><p class="petit"><span class="etiquette">${esc(x.editeur || x.source)}</span> ${esc(ilYa(x.date))}</p><h3><a href="${esc(x.lien)}" target="_blank" rel="noopener noreferrer">${esc(x.titre)} <span class="sr-only">(nouvel onglet)</span></a></h3>${x.resume ? `<p class="petit">${esc(x.resume)}</p>` : ''}</div>
-        <button class="bouton" data-action="veille-idee" data-i="${x.i}">Garder comme idée</button></li>`).join('')}</ul>${liste.length > 60 ? `<p class="minuscule">${liste.length - 60} autres : affine avec le filtre.</p>` : ''}` : '<p class="petit">Rien ne correspond à ce filtre.</p>'}`;
+      ${liste.length ? `<ul class="flux-veille">${liste.slice(0, max).map(x => `<li class="flux-item"><div><p class="petit"><span class="etiquette">${esc(x.editeur || x.source)}</span> ${esc(ilYa(x.date))}</p><h3><a href="${esc(x.lien)}" target="_blank" rel="noopener noreferrer">${esc(x.titre)} <span class="sr-only">(nouvel onglet)</span></a></h3>${x.resume ? `<p class="petit">${esc(x.resume)}</p>` : ''}</div>
+        <button class="bouton" data-action="veille-idee" data-i="${x.i}">Garder comme idée</button></li>`).join('')}</ul>${liste.length > max ? (max === 5 ? `<button class="bouton voir-plus" data-action="veille-tout">Voir plus (${liste.length - 5} autres)</button>` : `<p class="minuscule">${liste.length - 60} autres : affine avec le filtre.</p>`) : ''}` : '<p class="petit">Rien ne correspond à ce filtre.</p>'}`;
   }
   const STATUTS_IDEE = [['a-faire', 'À faire'], ['en-cours', 'En cours'], ['publie', 'Publié']];
   function vueVeille() {
@@ -836,30 +888,36 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   function contenuVue() {
     const l = getLecon();
     if (l) return lecon(l);
-    const v = { simulateurs, carnet, sources, scenarios: vueScenarios, eclair: vueEclair, revision: vueRevision, veille: vueVeille, ressources: vueRessources }[etat.vue];
+    const v = { simulateurs, carnet, sources, programme, jouer, scenarios: vueScenarios, eclair: vueEclair, revision: vueRevision, veille: vueVeille, ressources: vueRessources }[etat.vue];
     return v ? v() : accueil();
   }
   function fil() {
     const l = getLecon();
     if (l) return `${esc(parcoursDe(l).nom)}<span>${esc(l.code)}</span>`;
-    return { simulateurs: 'Outils<span>Boîte à outils</span>', carnet: 'Mes affaires<span>Mon carnet</span>', sources: 'Mes affaires<span>Sources</span>', scenarios: 'Jouer<span>Scénarios</span>', eclair: 'Jouer<span>Quiz éclair</span>', revision: 'Jouer<span>Révision espacée</span>', veille: 'Ma veille<span>Veille et idées</span>', ressources: 'Outils<span>Ressources</span>' }[etat.vue] || 'Module CM<span>Accueil</span>';
+    return { programme: 'Apprendre<span>Tout le programme</span>', jouer: 'Jouer<span>Jouer pour apprendre</span>', simulateurs: 'Outils<span>Boîte à outils</span>', carnet: 'Mes affaires<span>Mon carnet</span>', sources: 'Mes affaires<span>Sources</span>', scenarios: 'Jouer<span>Scénarios</span>', eclair: 'Jouer<span>Quiz éclair</span>', revision: 'Jouer<span>Révision espacée</span>', veille: 'Ma veille<span>Veille et idées</span>', ressources: 'Outils<span>Ressources</span>' }[etat.vue] || 'Module CM<span>Accueil</span>';
   }
   function boutonsBarre() {
     const sombre = document.documentElement.dataset.theme === 'sombre';
-    return `<div class="sprint-zone"><details class="sprint"><summary class="bouton">${sprint ? 'Sprint en cours' : 'Sprint'}</summary><div class="sprint-menu" role="group" aria-label="Durée du sprint">${[5, 10, 15, 25].map(m => `<button class="bouton" data-action="sprint" data-minutes="${m}">${m} min</button>`).join('')}${sprint ? '<button class="bouton discret" data-action="stop-sprint">Arrêter</button>' : ''}</div></details><span id="minuteur" class="minuteur" ${sprint ? '' : 'hidden'} role="timer" aria-live="off"></span></div>
-      <button class="bouton" data-action="theme" aria-pressed="${sombre}" title="Basculer le mode sombre">${sombre ? '☀ Clair' : '☾ Sombre'}</button>
-      <button class="bouton" data-action="aere" aria-pressed="${!!etat.aere}" title="Agrandir l’interlignage">Texte aéré</button>
-      <button class="bouton" data-action="focus" aria-pressed="${etat.focus}">Focus</button><button class="bouton" data-action="sauvegarde">Sauvegarder</button>${installPrompt ? '<button class="bouton primaire" data-action="installer">Installer l’app</button>' : ''}`;
+    return `<span id="minuteur" class="minuteur" ${sprint ? '' : 'hidden'} role="timer" aria-live="off"></span>${installPrompt ? '<button class="bouton primaire" data-action="installer">Installer l’app</button>' : ''}
+      <details class="reglages" ${reglagesOuvert ? 'open' : ''}><summary aria-label="Réglages">${icone('reglages', 22)}<span class="reglages-lib">Réglages</span></summary><div class="reglages-panneau">
+        <div class="sprint-zone"><details class="sprint"><summary class="bouton">${sprint ? 'Sprint en cours' : 'Sprint'}</summary><div class="sprint-menu" role="group" aria-label="Durée du sprint">${[5, 10, 15, 25].map(m => `<button class="bouton" data-action="sprint" data-minutes="${m}">${m} min</button>`).join('')}${sprint ? '<button class="bouton discret" data-action="stop-sprint">Arrêter</button>' : ''}</div></details></div>
+        <button class="bouton" data-action="theme" aria-pressed="${sombre}" title="Basculer le mode sombre">${sombre ? '☀ Clair' : '☾ Sombre'}</button>
+        <button class="bouton" data-action="aere" aria-pressed="${!!etat.aere}" title="Agrandir l’interlignage">Texte aéré</button>
+        <button class="bouton" data-action="focus" aria-pressed="${etat.focus}">Focus</button><button class="bouton" data-action="sauvegarde">Sauvegarder</button>
+        <p class="minuscule">Ta progression reste dans ce navigateur. Seul le bouton « Actualiser les taux BCE » contacte un service externe, à ta demande.</p></div></details>`;
+  }
+  function barreBas() {
+    const v = etat.vue, actif = { accueil: v === 'accueil', apprendre: !!getLecon() || v === 'programme' || v === 'final', jouer: ['jouer', 'scenarios', 'eclair', 'revision'].includes(v), business: ['simulateurs', 'ressources'].includes(v), veille: v === 'veille' };
+    const t = (id, vue, ic, lib) => `<button data-view="${vue}" ${actif[id] ? 'aria-current="page"' : ''}>${icone(ic, 22)}${lib}</button>`;
+    return `<nav class="bas" aria-label="Navigation principale">${t('accueil', 'accueil', 'accueil', 'Accueil')}${t('apprendre', 'programme', 'livre', 'Apprendre')}${t('jouer', 'jouer', 'jeu', 'Jouer')}${t('business', 'simulateurs', 'outils', 'Business')}${t('veille', 'veille', 'veille', 'Veille')}</nav>`;
   }
   function render(focusSel) {
     appliquerTheme(); amorcerRevision();
     document.body.classList.toggle('focus', etat.focus);
     $('#application').innerHTML = `<div class="coquille"><aside class="rail" aria-label="Navigation du module"><div><p class="marque">JTIpilot<span aria-hidden="true"></span></p><p class="sous-marque">Community manager freelance</p></div>${blocXp(true)}<nav aria-label="Leçons">${menu()}</nav><div class="rail-bas"><strong>Repères ${R.annee}</strong>Vérifiés le ${esc(S.verifie)} sur les sources officielles.</div></aside>
       <div class="zone"><div class="barre"><p class="fil">${fil()}</p><div class="outils">${boutonsBarre()}</div></div>
-      <p class="ruban"><span class="point" aria-hidden="true"></span>Ta progression reste dans ce navigateur. Seul le bouton « Actualiser les taux BCE » contacte un service externe, à ta demande.</p>
       <p id="stockage-avertissement" class="stockage-alerte" ${depot.persistant ? 'hidden' : ''}>${esc(depot.avertissement)}</p>
-      <details class="mobile-nav"><summary>Menu : leçons, jeux et outils</summary>${blocXp(true)}<nav aria-label="Leçons (mobile)">${menu()}</nav></details>
-      <main id="principal">${contenuVue()}<footer class="pied"><span>JTIpilot · Module ${esc(C.titre)} · contenu ${esc(C.version)} revu le ${esc(C.revue)}. Les chiffres légaux et fiscaux sont des repères pédagogiques : vérifier sur la source officielle liée.</span><button class="lien-action" data-view="sources">Sources</button></footer></main></div></div>`;
+      <main id="principal">${contenuVue()}<footer class="pied"><span>JTIpilot · Module ${esc(C.titre)} · contenu ${esc(C.version)} revu le ${esc(C.revue)}. Les chiffres légaux et fiscaux sont des repères pédagogiques : vérifier sur la source officielle liée.</span><button class="lien-action" data-view="sources">Sources</button></footer></main></div></div>${barreBas()}`;
     largeurs(); majMinuteur();
     sauver();
     if (focusSel) { const el = $(focusSel); if (el) el.focus({ preventScroll: false }); }
@@ -896,6 +954,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     if (sprint) clearInterval(sprint.id);
     sprint = { fin: Date.now() + minutes * 60000, duree: minutes, id: setInterval(majMinuteur, 1000) };
     const d = document.querySelector('details.sprint'); if (d) d.open = false;
+    reglagesOuvert = false; const rg = document.querySelector('details.reglages'); if (rg) rg.open = false;
     const s = document.querySelector('.sprint summary'); if (s) s.textContent = 'Sprint en cours';
     majMinuteur(); toast(`Sprint de ${minutes} minutes lancé. Une seule chose à la fois.`);
   }
@@ -1018,9 +1077,11 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     if (a === 'focus') { etat.focus = !etat.focus; render('.barre [data-action="focus"]'); annoncer(etat.focus ? 'Mode focus activé.' : 'Mode focus désactivé.'); return; }
     if (a === 'theme') { const sombre = document.documentElement.dataset.theme === 'sombre'; etat.theme = sombre ? 'clair' : 'sombre'; render('.barre [data-action="theme"]'); annoncer(etat.theme === 'sombre' ? 'Mode sombre activé.' : 'Mode clair activé.'); return; }
     if (a === 'aere') { etat.aere = !etat.aere; render('.barre [data-action="aere"]'); annoncer(etat.aere ? 'Texte aéré activé.' : 'Texte aéré désactivé.'); return; }
+    if (a === 'famille') { ouvrir('programme'); const el = document.getElementById('fam-' + b.dataset.id); if (el) el.scrollIntoView(); return; }
+    if (a === 'veille-tout') { veille.tout = true; majVeilleZone(); return; }
     if (a === 'sprint') { lancerSprint(Number(b.dataset.minutes) || 10); return; }
     if (a === 'stop-sprint') { if (sprint) clearInterval(sprint.id); sprint = null; render('.sprint summary'); toast('Sprint arrêté. Pas grave : tu reprends quand tu veux.'); return; }
-    if (a === 'energie') { etat.energie = b.dataset.energie; render('.energie [aria-pressed="true"]'); return; }
+    if (a === 'energie') { etat.energie = b.dataset.energie; render('.energie-bloc [aria-pressed="true"]'); return; }
     if (a === 'qdj') { const lq = toutes.find(x => x.id === b.dataset.lecon); etat.vue = lq.id; etat.derniere = lq.id; etat.etape = 'exercice'; etat.question = Number(b.dataset.i); drafts = {}; render('.question h2'); window.scrollTo(0, 0); return; }
     if (a === 'outil') { etat.outil = b.dataset.outil; ouvrir('simulateurs'); return; }
     if (a === 'onglet') { etat.outil = b.dataset.outil; render(`#onglet-${etat.outil}`); return; }
@@ -1064,7 +1125,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
       render('h1'); return;
     }
     if (a === 'eclair-rejouer') { nouvelEclair(); drafts = {}; render('.question h2'); return; }
-    if (a === 'sauvegarde') { dernierFocus = b; $('#message-import').textContent = ''; $('#sauvegarde').showModal(); return; }
+    if (a === 'sauvegarde') { reglagesOuvert = false; const rg = document.querySelector('details.reglages'); if (rg) rg.open = false; dernierFocus = b; $('#message-import').textContent = ''; $('#sauvegarde').showModal(); return; }
     if (a === 'fermer-sauvegarde') { $('#sauvegarde').close(); if (dernierFocus && dernierFocus.isConnected) dernierFocus.focus(); return; }
     if (a === 'exercice') { etat.etape = 'exercice'; const i = l.questions.findIndex(q => !repondu(q)); etat.question = i === -1 ? 0 : i; render('.question h2'); return; }
     if (a === 'cours') { etat.etape = 'cours'; render('h1'); return; }
@@ -1177,6 +1238,8 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     const url = URL.createObjectURL(blob), a = document.createElement('a');
     a.href = url; a.download = `jtipilot-module-cm-${new Date().toISOString().slice(0, 10)}.json`;
     document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+    etat.sauvegarde = aujourdhui(); sauver();
+    const rappel = document.querySelector('.rappel-sauvegarde'); if (rappel) rappel.remove();
     $('#message-import').textContent = 'Fichier préparé. Garde-le en lieu sûr : il contient tes notes.';
   }
   async function importerFichier(file) {
@@ -1191,6 +1254,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     } catch (err) { msg.textContent = err.message || 'Import impossible. Ta progression est conservée.'; }
     finally { $('#fichier-progression').value = ''; }
   }
+  document.addEventListener('toggle', e => { if (e.target.classList && e.target.classList.contains('reglages')) reglagesOuvert = e.target.open; }, true);
   if (window.matchMedia) {
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
     const suivre = () => { if (!etat.theme) render(); };

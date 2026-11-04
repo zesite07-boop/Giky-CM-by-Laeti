@@ -70,6 +70,8 @@ assert.strictEqual(M.ajouterJours('2026-02-27', 2), '2026-03-01');
 assert.strictEqual(M.serie(['2026-11-01', '2026-11-02', '2026-11-03'], '2026-11-03'), 3);
 assert.strictEqual(M.serie(['2026-11-01', '2026-11-02'], '2026-11-03'), 2);
 assert.strictEqual(M.serie(['2026-10-30'], '2026-11-03'), 0);
+assert.strictEqual(M.serie(['2026-11-01', '2026-11-03'], '2026-11-03'), 2, 'un jour de pause ne casse pas la série');
+assert.strictEqual(M.serie(['2026-10-29', '2026-11-03'], '2026-11-03'), 1, 'deux jours de pause cassent la série');
 const ex = M.neuf(); assert.strictEqual(M.xp(C, ex).points, 0); assert.strictEqual(M.xp(C, ex).nom, 'Viewer');
 for (const q of C.lecons[0].questions) ex.reponses[q.id] = q.bonne;
 ex.scenarios.raid = { meilleur: 6, parties: 1 }; ex.eclair.bonnes = 4;

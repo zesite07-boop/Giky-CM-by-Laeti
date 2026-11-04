@@ -69,6 +69,18 @@ Limites : fichier d'import 1 Mo ; 1 500 lignes maximum pour les recettes et pour
 - **Boîte à idées** (`etat.idees`, 500 maximum) : statut à faire, en cours, publié ; bouton « Mettre au planning ».
 - **Clips Twitch** : aucune source gratuite de clips français mise à jour n'a été trouvée pour une intégration directe. Piste officielle : API Twitch « Get Clips » (jeton d'application, application développeur à créer) ; non faite. La réutilisation de clips d'un tiers demande l'accord du streamer.
 
+### Redesign « accueil par énergie » (4 novembre 2026, maquette validée par JT)
+
+- **Accueil** : énergie du jour en premier (faible / moyenne / pleine, clé d'état `energie` = basse / moyenne / haute), carte « Prochaine action » (faible → quiz éclair, moyenne → prochaine leçon, pleine → prochaine mission M*, sinon scénarios), progression (série, XP, niveau, étapes), 6 tuiles colorées, question du jour (+10 XP), 4 familles de leçons avec barre de progression. Fonctions : `accueil`, `prochaineAction`, `programme` (liste complète des 29 leçons + épreuve finale), `jouer` (3 tuiles), `victoire` (fin de leçon validée).
+- **Navigation** : barre du bas à 5 onglets sur téléphone (≤ 800 px) : Accueil, Apprendre (`programme`), Jouer (`jouer`), Business (`simulateurs`), Veille. Le rail de gauche reste sur grand écran. Les 5 boutons du haut sont regroupés dans « Réglages » (Sprint, Sombre, Texte aéré, Focus, Sauvegarder) ; le panneau reste ouvert pendant les réglages (`reglagesOuvert`). Le bandeau permanent a été retiré, sa phrase est dans Réglages.
+- **Couleurs** : mauve conservé ; accents cerise `--cerise` (action principale), turquoise `--turquoise` (progression), or `--or-vif` (récompenses), versions « texte » plus foncées pour le contraste, variantes mode sombre. Police des titres Chakra Petch (fichiers dans `fonts/`, licence OFL).
+- **Série douce** : `M.serie` tolère maintenant un jour de pause (deux jours de suite sans jouer la cassent).
+- **Veille** : 5 éléments puis « Voir plus » (sans filtre).
+- **Rappel de sauvegarde** : champs d'état `debut` et `sauvegarde` (dates ISO). Carte sur l'accueil quand il y a des données et que 30 jours ont passé depuis la dernière sauvegarde (ou le premier lancement). Effacée après un export.
+- **Boutons de leçon** : Commencer / Reprendre / Revoir au lieu de « Ouvrir ↗ ».
+- Service worker `cm-v6`. Vérifié : tests unitaires, e2e (dont hors connexion), veille 5 + voir plus, sécurité d'affichage, rappel de sauvegarde, rendu 390 px et 1280 px, mode clair et sombre.
+- Non vérifié : appareil réel de Laetitia.
+
 ## 5. Vérifications faites
 
 - `node tests/moteur.test.js` et `node tests/gestion.test.js` passent (calculs, numérotation, plafonds, échéances, ICS, Leitner, planning, contrat, normalisation défensive, aller-retour export/import, taille maximale).

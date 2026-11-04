@@ -53,7 +53,7 @@
     return Object.assign({
       version: VERSION, vue: 'accueil', etape: 'cours', question: 0, focus: false,
       reponses: {}, notes: {}, derniere: null,
-      theme: null, aere: false, energie: null, jours: [], outil: 'devises',
+      theme: null, aere: false, energie: null, debut: '', sauvegarde: '', jours: [], outil: 'devises',
       scenarios: {}, eclair: { meilleur: 0, parties: 0, bonnes: 0 },
       recettes: [], planning: [], revision: {}, idees: [],
       revenu: { tjm: 250, jours: 3, semaines: 45, regime: 'bnc', vfl: false, acre: false, frais: 1200 },
@@ -127,7 +127,7 @@
       throw new Error('Format non compatible. Utilise une sauvegarde de ce module (version 1).');
     }
     const out = neuf(), lecons = toutes(contenu), ids = lecons.map(l => l.id);
-    out.vue = [...ids, 'accueil', 'carnet', 'simulateurs', 'sources', 'scenarios', 'eclair', 'ressources', 'revision', 'veille'].includes(obj.vue) ? obj.vue : 'accueil';
+    out.vue = [...ids, 'accueil', 'carnet', 'simulateurs', 'sources', 'scenarios', 'eclair', 'ressources', 'revision', 'veille', 'programme', 'jouer'].includes(obj.vue) ? obj.vue : 'accueil';
     out.etape = ['cours', 'exercice', 'ancrage'].includes(obj.etape) ? obj.etape : 'cours';
     out.question = Number.isInteger(obj.question) && obj.question >= 0 && obj.question < 20 ? obj.question : 0;
     out.focus = obj.focus === true;
@@ -167,6 +167,8 @@
     out.theme = enumere(obj.theme, ['clair', 'sombre'], null);
     out.aere = obj.aere === true;
     out.energie = enumere(obj.energie, ['basse', 'moyenne', 'haute'], null);
+    out.debut = typeof obj.debut === 'string' && ISO_RE.test(obj.debut) ? obj.debut : '';
+    out.sauvegarde = typeof obj.sauvegarde === 'string' && ISO_RE.test(obj.sauvegarde) ? obj.sauvegarde : '';
     out.outil = enumere(obj.outil, OUTILS, 'devises');
     if (Array.isArray(obj.jours)) out.jours = [...new Set(obj.jours.filter(j => typeof j === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(j)))].sort().slice(-400);
     if (obj.scenarios && typeof obj.scenarios === 'object' && !Array.isArray(obj.scenarios)) {
@@ -417,9 +419,12 @@
   }
   function serie(jours, aujourdhui) {
     const set = new Set(jours || []);
-    let n = 0, j = aujourdhui;
-    if (!set.has(j)) j = ajouterJours(j, -1);
-    while (j && set.has(j)) { n++; j = ajouterJours(j, -1); }
+    let n = 0, manques = 0, j = aujourdhui;
+    if (!set.has(j)) j = ajouterJours(j, -1); // aujourd'hui pas encore joué : ce n'est pas un manque
+    for (let k = 0; k < 1000 && manques <= 1; k++) { // un seul jour de pause est toléré, il ne compte pas dans le total
+      if (set.has(j)) { n++; manques = 0; } else manques++;
+      j = ajouterJours(j, -1);
+    }
     return n;
   }
   /* Score d'un scénario → palier. */
