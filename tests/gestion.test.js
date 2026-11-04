@@ -120,4 +120,10 @@ const gros = M.neuf(); gros.recettes = Array.from({ length: 1500 }, (_, i) => re
 gros.planning = Array.from({ length: 1500 }, (_, i) => ({ id: 'p' + i, date: '2026-11-04', heure: '10:00', client: 'Client ' + i, type: 'live', titre: 'Live numéro ' + i, fait: false }));
 const js = JSON.stringify(M.normaliser(gros, C), null, 2); assert(js.length < M.MAX_FICHIER, 'export < limite : ' + js.length);
 assert.strictEqual(M.importer(js, C).recettes.length, 1500);
+// Boîte à idées
+const si = M.neuf(); si.idees = [{ id: 'a1', titre: 'Idée <b>', lien: 'https://tiktok.com/x', note: 'n', statut: 'en-cours', date: '2026-11-04', source: 'partage' },
+  { id: 'a2', titre: '', lien: 'javascript:alert(1)' }, { id: 'a3', titre: 'Sans lien', lien: 'ftp://x', statut: 'zz', source: 'zz', date: 'x' }, { id: 'a1', titre: 'doublon' }, { id: 'bad id', titre: 'x' }, null];
+const bi = M.importer(JSON.stringify(si), C);
+assert.deepStrictEqual(bi.idees.map(x => x.id), ['a1', 'a3']); assert.strictEqual(bi.idees[0].statut, 'en-cours'); assert.strictEqual(bi.idees[1].lien, ''); assert.strictEqual(bi.idees[1].statut, 'a-faire'); assert.strictEqual(bi.idees[1].source, 'manuel'); assert.strictEqual(bi.idees[1].date, '');
+assert.deepStrictEqual(M.importer(JSON.stringify(Object.assign(M.neuf(), { vue: 'veille' })), C).vue, 'veille');
 console.log('OK gestion');

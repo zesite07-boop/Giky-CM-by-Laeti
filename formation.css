@@ -424,3 +424,13 @@ html[data-theme="sombre"] .badge.obtenu strong{color:var(--accent)}
   body.impression-contrat .rail,body.impression-contrat .mobile-nav,body.impression-contrat .ruban{display:none!important}
   body.impression-contrat .papier{box-shadow:none;border:0;margin:0;padding:0}
 }
+
+/* ---------- Veille et idées ---------- */
+.flux-veille,.idees{list-style:none;padding:0;margin:var(--s4) 0;display:flex;flex-direction:column;gap:var(--s3)}
+.flux-item,.idee{display:flex;justify-content:space-between;gap:var(--s4);align-items:flex-start;padding:var(--s4);border:1px solid var(--ligne);border-radius:12px;background:var(--surface)}
+.flux-item h3,.idee h3{margin:var(--s1) 0;font-size:1rem;overflow-wrap:anywhere}
+.flux-item p,.idee p{margin:0}
+.idee-actions{display:flex;gap:var(--s2);align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.idee-actions select{min-height:44px}
+.idee.statut-publie{opacity:.7}
+@media (max-width:640px){.flux-item,.idee{flex-direction:column}.idee-actions{justify-content:flex-start}}

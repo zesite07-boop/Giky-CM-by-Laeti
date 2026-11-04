@@ -60,6 +60,15 @@ Limites : fichier d'import 1 Mo ; 1 500 lignes maximum pour les recettes et pour
 8. **Contrat et CGV** : générateur de texte (missions, durée, préavis, prix, acompte, pénalités et indemnité de 40 €, cession de droits d'auteur avec étendue, supports, territoire et durée, clause de droit à l'image, confidentialité, RGPD, droit applicable). Copie et impression PDF. **Modèle pédagogique, à faire relire.**
 9. **Version installable hors connexion (PWA)** : manifeste, service worker (cache puis mise à jour en arrière-plan), icônes 192/512/maskable, bouton « Installer l'app » (Android, ordinateur), mode d'emploi iPhone dans « Mon carnet ».
 
+### Veille et idées (ajout du 4 novembre 2026, après la v3)
+
+- **Collecte** : `.github/workflows/veille.yml` lance `scripts/veille.js` toutes les heures (et à la demande depuis l'onglet Actions). Le script lit `veille-sources.json`, récupère chaque flux RSS ou Atom, écrit `data/veille.json` et ne commite que si le contenu change. Une source en panne garde ses anciens éléments et apparaît dans « sources sans réponse ». Le site lit ce fichier (même origine, donc la CSP reste stricte), le service worker le sert réseau d'abord puis copie en cache hors connexion.
+- **Sources par défaut** : 3 recherches Google Actualités (Twitch France, streamers, sorties de jeux), Dexerto FR, Journal du Geek, Numerama, Gamekult, jeuxvideo.com, Reddit r/Twitch et r/LivestreamFail. **Vérifiés vivants le 4/11/2026** : Dexerto FR, Journal du Geek. Les autres n'ont pas pu être contrôlés depuis l'environnement de développement : consulter le journal d'une exécution du workflow (OK ou ERREUR par source). Reddit bloque parfois les serveurs GitHub.
+- **Alertes Google** : créer l'alerte sur google.com/alerts, destination « Flux RSS », puis ajouter l'adresse dans `veille-sources.json` avec `"categorie": "alerte"`.
+- **TikTok et Instagram** : pas de flux officiel gratuit, pas de collecte automatique. À la place : partage depuis le téléphone (`share_target` du manifeste, Android) qui crée une idée, ou lien collé à la main.
+- **Boîte à idées** (`etat.idees`, 500 maximum) : statut à faire, en cours, publié ; bouton « Mettre au planning ».
+- **Clips Twitch** : aucune source gratuite de clips français mise à jour n'a été trouvée pour une intégration directe. Piste officielle : API Twitch « Get Clips » (jeton d'application, application développeur à créer) ; non faite. La réutilisation de clips d'un tiers demande l'accord du streamer.
+
 ## 5. Vérifications faites
 
 - `node tests/moteur.test.js` et `node tests/gestion.test.js` passent (calculs, numérotation, plafonds, échéances, ICS, Leitner, planning, contrat, normalisation défensive, aller-retour export/import, taille maximale).

@@ -19,6 +19,7 @@ Module d'autoformation pour une community manager freelance spécialisée Twitch
 - Progression dans le navigateur (localStorage), export et import JSON (1 Mo maximum) ; une sauvegarde v1 reste importable.
 - Version 3 : 6 nouveaux outils dans la boîte à outils (14 au total) : livre des recettes (numérotation continue, statut payé ou en attente, export CSV, lien avec Devis & facture), plafonds (micro, franchise de TVA, alerte et projection), échéances (Urssaf, CFE, export .ics et Google Agenda), planning éditorial (semaine, par client), contrat et CGV (cession de droits, droit à l'image), facture électronique (leçon, checklist, grille de choix de plateforme).
 - Révision espacée : les questions ratées reviennent après 1, 3, 7, 16 puis 35 jours (boîtes de Leitner).
+- Veille et idées : actualités et alertes Google collectées chaque heure par GitHub Actions (`scripts/veille.js`, `veille-sources.json` → `data/veille.json`), boîte à idées avec partage depuis le téléphone (Android) et envoi vers le planning.
 - Application installable (PWA) qui marche sans connexion : `manifest.webmanifest`, `sw.js`, `icons/`.
 
 ## Fichiers
@@ -35,10 +36,11 @@ Module d'autoformation pour une community manager freelance spécialisée Twitch
 | `ressources.js` | Ressources et outils par catégorie |
 | `theme.js` | Applique le thème du système avant l’affichage (le choix enregistré est appliqué par `formation.js`) |
 | `gestion.js` | Recettes, plafonds, échéances, révision espacée, planning, contrat et CGV, facture électronique (fonctions pures) |
+| `scripts/veille.js`, `veille-sources.json`, `data/veille.json`, `.github/workflows/veille.yml` | Collecte horaire des flux RSS (aucune dépendance) |
 | `sw.js`, `manifest.webmanifest`, `icons/` | Version installable et hors connexion |
 | `moteur.js` | Correction, barème, sauvegarde, calculs (devises, cotisations, budget, reporting, devis/facture), XP et série |
 | `formation.js` | Interface |
-| `tests/moteur.test.js`, `tests/gestion.test.js` | Tests : `node tests/moteur.test.js && node tests/gestion.test.js` |
+| `tests/moteur.test.js`, `tests/gestion.test.js` | Tests : `node tests/moteur.test.js && node tests/gestion.test.js && node tests/veille.test.js` |
 | `VERIFICATION-SOURCES.md` | Vérification des chiffres sur les sources officielles |
 
 ## Mettre à jour un taux

@@ -1,0 +1,30 @@
+name: Veille
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: veille
+  cancel-in-progress: false
+jobs:
+  collecter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Collecter les flux
+        run: node scripts/veille.js
+      - name: Enregistrer si la veille a changé
+        run: |
+          if [ -n "$(git status --porcelain data/veille.json)" ]; then
+            git config user.name "veille-bot"
+            git config user.email "veille-bot@users.noreply.github.com"
+            git add data/veille.json
+            git commit -m "Veille : mise à jour automatique"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push
+          fi

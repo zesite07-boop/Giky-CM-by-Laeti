@@ -55,7 +55,7 @@
       reponses: {}, notes: {}, derniere: null,
       theme: null, aere: false, energie: null, jours: [], outil: 'devises',
       scenarios: {}, eclair: { meilleur: 0, parties: 0, bonnes: 0 },
-      recettes: [], planning: [], revision: {},
+      recettes: [], planning: [], revision: {}, idees: [],
       revenu: { tjm: 250, jours: 3, semaines: 45, regime: 'bnc', vfl: false, acre: false, frais: 1200 },
       treso: { solde: 1500, provision: 28, depenses: 1600, ca: [2500, 900, 3200, 1800, 0, 2600] },
       pipeline: { contacts: 6, reponse: 25, rdv: 50, signature: 30, panier: 900, objectif: 3000 }
@@ -127,7 +127,7 @@
       throw new Error('Format non compatible. Utilise une sauvegarde de ce module (version 1).');
     }
     const out = neuf(), lecons = toutes(contenu), ids = lecons.map(l => l.id);
-    out.vue = [...ids, 'accueil', 'carnet', 'simulateurs', 'sources', 'scenarios', 'eclair', 'ressources', 'revision'].includes(obj.vue) ? obj.vue : 'accueil';
+    out.vue = [...ids, 'accueil', 'carnet', 'simulateurs', 'sources', 'scenarios', 'eclair', 'ressources', 'revision', 'veille'].includes(obj.vue) ? obj.vue : 'accueil';
     out.etape = ['cours', 'exercice', 'ancrage'].includes(obj.etape) ? obj.etape : 'cours';
     out.question = Number.isInteger(obj.question) && obj.question >= 0 && obj.question < 20 ? obj.question : 0;
     out.focus = obj.focus === true;
@@ -220,6 +220,17 @@
         if (!x || typeof x !== 'object' || !ID_RE.test(x.id) || vus.has(x.id) || !ISO_RE.test(x.date)) continue;
         vus.add(x.id);
         out.planning.push({ id: x.id, date: x.date, heure: /^\d{2}:\d{2}$/.test(x.heure) ? x.heure : '', client: texte(x.client, 80), type: enumere(x.type, Object.keys(G.TYPES_PLANNING), 'post'), titre: texte(x.titre, 120), fait: x.fait === true });
+      }
+    }
+    if (Array.isArray(obj.idees)) {
+      const vus = new Set();
+      for (const x of obj.idees.slice(0, 500)) {
+        if (!x || typeof x !== 'object' || !ID_RE.test(x.id) || vus.has(x.id)) continue;
+        const lien = typeof x.lien === 'string' && /^https?:\/\/[^\s<>"']+$/i.test(x.lien) ? x.lien.slice(0, 500) : '', titre = texte(x.titre, 200);
+        if (!titre && !lien) continue;
+        vus.add(x.id);
+        out.idees.push({ id: x.id, titre: titre || lien, lien, note: texte(x.note, 500), statut: enumere(x.statut, ['a-faire', 'en-cours', 'publie'], 'a-faire'),
+          date: ISO_RE.test(x.date) ? x.date : '', source: enumere(x.source, ['manuel', 'partage', 'veille'], 'manuel') });
       }
     }
     if (obj.revision && typeof obj.revision === 'object' && !Array.isArray(obj.revision)) {

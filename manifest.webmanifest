@@ -33,5 +33,27 @@
       "type": "image/png",
       "purpose": "maskable"
     }
+  ],
+  "share_target": {
+    "action": "./index.html",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "shortcuts": [
+    {
+      "name": "Veille et idées",
+      "short_name": "Veille",
+      "url": "./index.html?vue=veille",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
   ]
 }

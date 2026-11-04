@@ -103,7 +103,7 @@
       return `<div class="nav-groupe"><p class="sur-titre">${esc(p.nom)}</p>${ls.map(l => lienNav(l.id, marque(l), l.titre)).join('')}</div>`;
     }).join('');
     return `${lienNav('accueil', '<span class="nav-num">⌂</span>', 'Accueil')}
-      <div class="nav-groupe"><p class="sur-titre">Jouer et s’outiller</p>${lienNav('simulateurs', '<span class="nav-num">€$£</span>', 'Boîte à outils')}${lienNav('scenarios', '<span class="nav-num">▶</span>', 'Scénarios')}${lienNav('eclair', '<span class="nav-num">⚡</span>', 'Quiz éclair')}${lienNav('revision', '<span class="nav-num">↻</span>', 'Révision espacée')}${lienNav('ressources', '<span class="nav-num">★</span>', 'Ressources')}</div>
+      <div class="nav-groupe"><p class="sur-titre">Jouer et s’outiller</p>${lienNav('simulateurs', '<span class="nav-num">€$£</span>', 'Boîte à outils')}${lienNav('scenarios', '<span class="nav-num">▶</span>', 'Scénarios')}${lienNav('eclair', '<span class="nav-num">⚡</span>', 'Quiz éclair')}${lienNav('revision', '<span class="nav-num">↻</span>', 'Révision espacée')}${lienNav('veille', '<span class="nav-num">◉</span>', 'Veille et idées')}${lienNav('ressources', '<span class="nav-num">★</span>', 'Ressources')}</div>
       ${groupes}
       <div class="nav-groupe"><p class="sur-titre">Pour finir</p>${lienNav('final', marque(C.final), 'Épreuve finale')}</div>
       <div class="nav-groupe"><p class="sur-titre">Mes affaires</p>${lienNav('carnet', '<span class="nav-num">≡</span>', 'Mon carnet')}${lienNav('sources', '<span class="nav-num">§</span>', 'Sources officielles')}</div>`;
@@ -152,6 +152,7 @@
           <button class="tuile" data-view="scenarios"><span class="tuile-icone" aria-hidden="true">▶</span><strong>Scénarios</strong><span>${SC.length} histoires dont tu es l’héroïne</span></button>
           <button class="tuile" data-view="eclair"><span class="tuile-icone" aria-hidden="true">⚡</span><strong>Quiz éclair</strong><span>5 questions au hasard${etat.eclair.meilleur ? ` · record ${etat.eclair.meilleur}/5` : ''}</span></button>
           <button class="tuile" data-view="revision"><span class="tuile-icone" aria-hidden="true">↻</span><strong>Révision espacée</strong><span>${G.aReviser(etat.revision, aujourdhui()).length} à revoir aujourd’hui</span></button>
+          <button class="tuile" data-view="veille"><span class="tuile-icone" aria-hidden="true">◉</span><strong>Veille et idées</strong><span>${etat.idees.length} idée${etat.idees.length > 1 ? 's' : ''} · actus Twitch France</span></button>
           <button class="tuile" data-view="simulateurs"><span class="tuile-icone" aria-hidden="true">€$£</span><strong>Boîte à outils</strong><span>Recettes, plafonds, échéances, contrat, devis</span></button>
           <button class="tuile" data-view="ressources"><span class="tuile-icone" aria-hidden="true">★</span><strong>Ressources</strong><span>${RS.reduce((a, c) => a + c.liens.length, 0)} outils et liens triés</span></button>
         </div>
@@ -704,6 +705,63 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
       ${liensSources(['efacture', 'factures', 'delais'])}`;
   }
 
+  /* Veille et idées */
+  let veille = { etat: 'idle', data: null };
+  const CAT_VEILLE = [['', 'Tout'], ['actu', 'Actualités'], ['communaute', 'Communauté'], ['alerte', 'Alertes Google']];
+  function nettoyerVeille(d) {
+    const s = (v, n) => typeof v === 'string' ? v.slice(0, n) : '';
+    const items = Array.isArray(d && d.items) ? d.items.slice(0, 300).filter(x => x && typeof x === 'object' && /^https?:\/\/[^\s<>"']+$/i.test(x.lien)).map(x => ({
+      titre: s(x.titre, 200), lien: x.lien.slice(0, 600), date: s(x.date, 40), resume: s(x.resume, 240), source: s(x.source, 80), categorie: s(x.categorie, 20), editeur: s(x.editeur, 80) })) : [];
+    const sources = Array.isArray(d && d.sources) ? d.sources.slice(0, 50).map(x => ({ nom: s(x && x.nom, 80), statut: x && x.statut === 'ok' ? 'ok' : 'erreur', nb: Number(x && x.nb) || 0 })) : [];
+    return { maj: s(d && d.maj, 40) || null, items, sources };
+  }
+  function chargerVeille() {
+    if (veille.etat === 'chargement') return;
+    veille = { etat: 'chargement', data: veille.data };
+    fetch('./data/veille.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error('http'); return r.json(); })
+      .then(d => { veille = { etat: 'ok', data: nettoyerVeille(d) }; })
+      .catch(() => { veille = { etat: 'erreur', data: veille.data }; })
+      .finally(() => { if (etat.vue === 'veille') majVeilleZone(); });
+  }
+  function majVeilleZone() { const z = $('#veille-flux'); if (z) z.innerHTML = fluxVeille(); }
+  function ilYa(iso) {
+    const t = Date.parse(iso); if (!Number.isFinite(t)) return '';
+    const m = Math.max(0, Math.round((Date.now() - t) / 60000));
+    return m < 60 ? `il y a ${Math.max(1, m)} min` : m < 1440 ? `il y a ${Math.round(m / 60)} h` : `il y a ${Math.round(m / 1440)} j`;
+  }
+  function fluxVeille() {
+    const f = pf.veille || { cat: '', q: '' };
+    if (veille.etat === 'idle' || (veille.etat === 'chargement' && !veille.data)) return '<p class="petit" role="status">Chargement de la veille…</p>';
+    if (!veille.data) return '<p class="alerte-sim" role="status">La veille n’est pas disponible pour l’instant (hors connexion pour la première fois ?). Réessaie plus tard : la boîte à idées marche déjà.</p>';
+    const d = veille.data, q = (f.q || '').trim().toLowerCase();
+    const liste = d.items.map((x, i) => Object.assign({ i }, x)).filter(x => (!f.cat || x.categorie === f.cat) && (!q || (x.titre + ' ' + x.resume + ' ' + x.source).toLowerCase().includes(q)));
+    const pannes = d.sources.filter(s => s.statut !== 'ok');
+    return `<p class="petit">${d.maj ? `Dernière nouveauté ${esc(ilYa(d.maj))}.` : 'Aucune collecte pour l’instant.'} ${d.items.length} éléments de ${d.sources.filter(s => s.statut === 'ok').length} source${d.sources.filter(s => s.statut === 'ok').length > 1 ? 's' : ''}.${veille.etat === 'erreur' ? ' Affichage de la dernière copie : tu es peut-être hors connexion.' : ''}</p>
+      ${pannes.length ? `<details class="bloc-plie"><summary>${pannes.length} source${pannes.length > 1 ? 's' : ''} sans réponse</summary><p class="petit">${pannes.map(s => esc(s.nom)).join(' · ')}. Ce n’est pas grave : les autres continuent, et les anciens éléments sont conservés.</p></details>` : ''}
+      ${liste.length ? `<ul class="flux-veille">${liste.slice(0, 60).map(x => `<li class="flux-item"><div><p class="petit"><span class="etiquette">${esc(x.editeur || x.source)}</span> ${esc(ilYa(x.date))}</p><h3><a href="${esc(x.lien)}" target="_blank" rel="noopener noreferrer">${esc(x.titre)} <span class="sr-only">(nouvel onglet)</span></a></h3>${x.resume ? `<p class="petit">${esc(x.resume)}</p>` : ''}</div>
+        <button class="bouton" data-action="veille-idee" data-i="${x.i}">Garder comme idée</button></li>`).join('')}</ul>${liste.length > 60 ? `<p class="minuscule">${liste.length - 60} autres : affine avec le filtre.</p>` : ''}` : '<p class="petit">Rien ne correspond à ce filtre.</p>'}`;
+  }
+  const STATUTS_IDEE = [['a-faire', 'À faire'], ['en-cours', 'En cours'], ['publie', 'Publié']];
+  function vueVeille() {
+    if (veille.etat === 'idle') chargerVeille();
+    if (!pf.veille) pf.veille = { cat: '', q: '' };
+    if (!pf.idee) pf.idee = { titre: '', lien: '', note: '' };
+    const i = pf.idee, f = pf.veille;
+    return `<header class="en-tete"><p class="sur-titre">Ma veille · Twitch France</p><h1 tabindex="-1">Veille et idées</h1><p class="intro">Les actualités et alertes arrivent toutes seules, une collecte par heure. Garde ce qui peut devenir un contenu dans ta boîte à idées, puis envoie-le dans le planning.</p></header>
+      <section class="carte"><h2>Ma boîte à idées</h2>
+        <p class="petit">Sur Android, partage une vidéo TikTok, un tweet ou une page vers l’application installée : l’idée arrive ici toute seule. Sur iPhone, colle le lien à la main.</p>
+        <div class="calcul-champs">${champPf('idee', 'titre', 'Idée', i.titre, 'text', 'placeholder="Réaction au clip du boss, format 3 questions…"')}${champPf('idee', 'lien', 'Lien (facultatif)', i.lien, 'url')}${champPf('idee', 'note', 'Note (facultatif)', i.note)}</div>
+        <p id="erreur-idee" class="validation" role="alert"></p><div class="actions"><button class="bouton primaire" data-action="idee-ajouter">Ajouter l’idée</button></div>
+        ${etat.idees.length ? `<ul class="idees">${etat.idees.map(x => `<li class="idee statut-${x.statut}"><div><h3>${x.lien ? `<a href="${esc(x.lien)}" target="_blank" rel="noopener noreferrer">${esc(x.titre)} <span class="sr-only">(nouvel onglet)</span></a>` : esc(x.titre)}</h3>${x.note ? `<p class="petit">${esc(x.note)}</p>` : ''}<p class="minuscule">${x.date ? esc(dateFr(x.date)) + ' · ' : ''}${x.source === 'partage' ? 'Partagée depuis le téléphone' : x.source === 'veille' ? 'Gardée depuis la veille' : 'Ajoutée à la main'}</p></div>
+          <div class="idee-actions"><label class="sr-only" for="st-${esc(x.id)}">Statut de ${esc(x.titre)}</label><select id="st-${esc(x.id)}" data-idee-statut="${esc(x.id)}">${STATUTS_IDEE.map(([v, n]) => `<option value="${v}" ${x.statut === v ? 'selected' : ''}>${n}</option>`).join('')}</select>
+          <button class="bouton" data-action="idee-planning" data-id="${esc(x.id)}">Mettre au planning</button><button class="bouton discret" data-action="idee-suppr" data-id="${esc(x.id)}" aria-label="Supprimer l’idée ${esc(x.titre)}">✕</button></div></li>`).join('')}</ul>` : '<p class="petit">Aucune idée pour l’instant.</p>'}</section>
+      <section class="carte"><h2>Le fil du jour</h2>
+        <div class="calcul-champs deux"><div><label for="veille-cat">Catégorie</label><select id="veille-cat" data-pf="veille.cat">${CAT_VEILLE.map(([v, n]) => `<option value="${v}" ${f.cat === v ? 'selected' : ''}>${n}</option>`).join('')}</select></div>
+          <div><label for="veille-q">Chercher</label><input id="veille-q" data-pf="veille.q" type="search" maxlength="80" value="${esc(f.q)}" placeholder="un jeu, un streamer…"></div></div>
+        <div id="veille-flux" aria-live="polite">${fluxVeille()}</div>
+        <p class="minuscule">Sources et alertes : liste dans le fichier veille-sources.json du dépôt. Pour suivre un nouveau mot-clé, crée une alerte Google en choisissant « Flux RSS » et donne l’adresse du flux à ton développeur.</p></section>`;
+  }
+
   /* Révision espacée */
   const parQuestion = {}; toutes.forEach(l => l.questions.forEach(q => { parQuestion[q.id] = { l, q }; }));
   function amorcerRevision() { G.amorcer(etat.revision, etat.reponses, Object.values(parQuestion), M.correcte, aujourdhui()); }
@@ -778,13 +836,13 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   function contenuVue() {
     const l = getLecon();
     if (l) return lecon(l);
-    const v = { simulateurs, carnet, sources, scenarios: vueScenarios, eclair: vueEclair, revision: vueRevision, ressources: vueRessources }[etat.vue];
+    const v = { simulateurs, carnet, sources, scenarios: vueScenarios, eclair: vueEclair, revision: vueRevision, veille: vueVeille, ressources: vueRessources }[etat.vue];
     return v ? v() : accueil();
   }
   function fil() {
     const l = getLecon();
     if (l) return `${esc(parcoursDe(l).nom)}<span>${esc(l.code)}</span>`;
-    return { simulateurs: 'Outils<span>Boîte à outils</span>', carnet: 'Mes affaires<span>Mon carnet</span>', sources: 'Mes affaires<span>Sources</span>', scenarios: 'Jouer<span>Scénarios</span>', eclair: 'Jouer<span>Quiz éclair</span>', revision: 'Jouer<span>Révision espacée</span>', ressources: 'Outils<span>Ressources</span>' }[etat.vue] || 'Module CM<span>Accueil</span>';
+    return { simulateurs: 'Outils<span>Boîte à outils</span>', carnet: 'Mes affaires<span>Mon carnet</span>', sources: 'Mes affaires<span>Sources</span>', scenarios: 'Jouer<span>Scénarios</span>', eclair: 'Jouer<span>Quiz éclair</span>', revision: 'Jouer<span>Révision espacée</span>', veille: 'Ma veille<span>Veille et idées</span>', ressources: 'Outils<span>Ressources</span>' }[etat.vue] || 'Module CM<span>Accueil</span>';
   }
   function boutonsBarre() {
     const sombre = document.documentElement.dataset.theme === 'sombre';
@@ -881,6 +939,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   const qCourante = () => etat.vue === 'revision' && revision && revision.qs.length ? revision.qs[revision.i].q : etat.vue === 'eclair' && eclair ? eclair.qs[eclair.i].q : qActuelle();
   function majPf(t) {
     const [g, k] = t.dataset.pf.split('.');
+    if (g === 'veille') { pf.veille = pf.veille || { cat: '', q: '' }; pf.veille[k] = t.value; majVeilleZone(); return; }
     if (g === 'filtre') pf.filtreClient = t.value;
     else if (pf[g]) pf[g][k] = t.value;
     if (t.dataset.rerender) render(`#${t.id}`);
@@ -939,6 +998,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     if (t.name === 'choix') { const q = qCourante(); const vals = [...document.querySelectorAll('input[name="choix"]:checked')].map(x => Number(x.value)); drafts[q.id] = q.type === 'multiple' ? vals : vals[0]; }
     if (t.matches('[data-sim]') && (t.type === 'checkbox' || t.tagName === 'SELECT')) majSim(t);
     if (t.matches('select[data-pf]')) majPf(t);
+    if (t.matches('[data-idee-statut]')) { const x = etat.idees.find(y => y.id === t.dataset.ideeStatut); if (x) { x.statut = ['a-faire', 'en-cours', 'publie'].includes(t.value) ? t.value : 'a-faire'; sauver(); annoncer('Statut mis à jour.'); } }
     if (t.matches('[data-conv="devise"]')) { conv.devise = t.value; $('#resultat-devises').innerHTML = resultatDevises(); }
     if (t.matches('[data-note="fait"]')) { const l = getLecon(); etat.notes[l.id] = Object.assign({ action: '', echeance: '', fait: false }, etat.notes[l.id], { fait: t.checked }); sauver(); annoncer(t.checked ? 'Défi marqué comme réalisé.' : 'Défi marqué à faire.'); }
     if (t.id === 'fichier-progression') importerFichier(t.files[0]);
@@ -1082,6 +1142,28 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
       installPrompt.prompt(); try { await installPrompt.userChoice; } catch (err) { /* ignoré */ }
       installPrompt = null; b.remove(); return;
     }
+    if (a === 'idee-ajouter') {
+      const f = pf.idee || { titre: '', lien: '', note: '' }, err = $('#erreur-idee'), lien = f.lien.trim();
+      if (!f.titre.trim() && !lien) { err.textContent = 'Écris l’idée ou colle un lien.'; return; }
+      if (lien && !/^https?:\/\/[^\s<>"']+$/i.test(lien)) { err.textContent = 'Le lien doit commencer par https://'; return; }
+      if (etat.idees.length >= 500) { err.textContent = 'La boîte est pleine (500 idées). Supprime les anciennes.'; return; }
+      etat.idees.unshift({ id: nouvelId(), titre: (f.titre.trim() || lien).slice(0, 200), lien: lien.slice(0, 500), note: f.note.trim().slice(0, 500), statut: 'a-faire', date: aujourdhui(), source: 'manuel' });
+      pf.idee = null; render('#pf-idee-titre'); toast('Idée ajoutée.'); return;
+    }
+    if (a === 'veille-idee') {
+      const x = veille.data && veille.data.items[Number(b.dataset.i)]; if (!x) return;
+      if (etat.idees.some(y => y.lien === x.lien)) { toast('Cette idée est déjà dans ta boîte.'); return; }
+      if (etat.idees.length >= 500) { toast('La boîte est pleine (500 idées).'); return; }
+      etat.idees.unshift({ id: nouvelId(), titre: x.titre.slice(0, 200), lien: x.lien.slice(0, 500), note: `${x.editeur || x.source}`.slice(0, 500), statut: 'a-faire', date: aujourdhui(), source: 'veille' });
+      render(`[data-action="veille-idee"][data-i="${b.dataset.i}"]`); toast('Gardée dans ta boîte à idées.'); return;
+    }
+    if (a === 'idee-planning') {
+      const x = etat.idees.find(y => y.id === b.dataset.id); if (!x) return;
+      if (etat.planning.length >= 1500) { toast('Le planning est plein (1 500 éléments).'); return; }
+      etat.planning.push({ id: nouvelId(), date: aujourdhui(), heure: '', client: '', type: 'post', titre: x.titre.slice(0, 120), fait: false });
+      x.statut = 'en-cours'; render(`[data-action="idee-planning"][data-id="${x.id}"]`); toast('Ajoutée au planning d’aujourd’hui. Change le jour dans l’outil Planning.'); return;
+    }
+    if (a === 'idee-suppr') { etat.idees = etat.idees.filter(y => y.id !== b.dataset.id); render('#pf-idee-titre'); return; }
     if (a === 'exporter') { exporter(); return; }
     if (a === 'imprimer') { window.print(); return; }
     if (a === 'reinitialiser') {
@@ -1123,5 +1205,20 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   window.addEventListener('offline', () => toast('Tu es hors connexion. Tout marche, sauf l’actualisation des taux BCE.'));
   window.addEventListener('online', () => toast('De retour en ligne.'));
   if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) window.addEventListener('load', () => { navigator.serviceWorker.register('./sw.js').catch(() => {}); });
+  /* Partage depuis le téléphone : l'adresse reçue devient une idée. */
+  function traiterPartage() {
+    const p = new URLSearchParams(location.search);
+    if (p.get('vue') === 'veille') { etat.vue = 'veille'; history.replaceState(null, '', location.pathname); return false; }
+    if (!p.has('url') && !p.has('text') && !p.has('title')) return false;
+    const m = /https?:\/\/[^\s<>"']+/.exec([p.get('url'), p.get('text')].filter(Boolean).join(' ')), lien = m ? m[0].slice(0, 500) : '';
+    const titre = (p.get('title') || (p.get('text') || '').replace(/https?:\/\/\S+/g, '').trim() || lien).slice(0, 200);
+    history.replaceState(null, '', location.pathname);
+    if (!titre && !lien) return false;
+    etat.vue = 'veille';
+    if (!(lien && etat.idees.some(y => y.lien === lien)) && etat.idees.length < 500) etat.idees.unshift({ id: nouvelId(), titre: titre || lien, lien, note: '', statut: 'a-faire', date: aujourdhui(), source: 'partage' });
+    return true;
+  }
+  const partage = traiterPartage();
   render();
+  if (partage) toast('Idée ajoutée depuis le partage.');
 }());
