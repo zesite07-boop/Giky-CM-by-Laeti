@@ -1,11 +1,11 @@
 {
- "maj": "2026-11-04T12:13:36.460Z",
+ "maj": "2026-11-04T19:44:33.267Z",
  "sources": [
   {
    "id": "gnews-twitch-fr",
    "nom": "Google Actualités · Twitch France",
    "statut": "ok",
-   "nb": 57,
+   "nb": 56,
    "message": ""
   },
   {
@@ -47,7 +47,7 @@
    "id": "gamekult",
    "nom": "Gamekult",
    "statut": "ok",
-   "nb": 44,
+   "nb": 43,
    "message": ""
   },
   {
@@ -63,33 +63,593 @@
    "statut": "ok",
    "nb": 25,
    "message": ""
-  },
-  {
-   "id": "reddit-lsf",
-   "nom": "Reddit · r/LivestreamFail",
-   "statut": "erreur",
-   "nb": 0,
-   "message": "HTTP 429"
   }
  ],
  "items": [
   {
-   "titre": "Netflix lance son IA pour jouer avec vos envies et vos désirs",
-   "lien": "https://www.journaldugeek.com/2026/11/04/netflix-lance-son-ia-pour-jouer-avec-vos-envies-et-vos-desirs/",
-   "date": "2026-11-04T12:00:43.000Z",
-   "resume": "Netflix innove encore et cette fois, c'est dans son interface que ça se joue ! La plateforme de streaming a mis en place une IA permettant à chaque utilisateur de lui demander exactement ce qu'il veut.",
+   "titre": "Dragon Ball Daima censure un personnage historique pour son arrivée sur Gulli",
+   "lien": "https://www.journaldugeek.com/2026/11/04/dragon-ball-daima-censure-un-personnage-historique-pour-son-arrivee-sur-gulli/",
+   "date": "2026-11-04T19:30:10.000Z",
+   "resume": "Le moins que l'on puisse dire, c'est que Dragon Ball Daima fait une entrée vraiment remarquée sur Gulli. D'abord la grogne des comédiens de doublage et maintenant, la censure de certaines scènes.",
    "source": "Journal du Geek",
    "categorie": "actu",
    "editeur": ""
   },
   {
-   "titre": "Le jeu de la dernière chance pour ce studio PlayStation et sa nouvelle exclusivité PS5 - JeuxVideo.com",
-   "lien": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPcW5rUjFweE1oY0htZnVTNThJeVVnVUg4el9LNUNOc0Rja1BQN29GaWxYdWdMQi1QRWREQ1k0TlVWYUJnV19KRFNuOHc3SDNmUUxsdWU2bllaTkFVamtaNGFsbGdZdHRDZThjNEtwNU01a3kxQktSNUl2dnYyWWVhZ0UtREZET0ttYmVzUXY1d1lJTnY1bDFMeDZ1aGNSNDg2OXp1WkR1OFpHWFAyeW5ieFZfN0tuOV9wY3hLU0RmUXNVcnQ3bXNJUQ?oc=5",
-   "date": "2026-11-04T11:50:09.000Z",
-   "resume": "Le jeu de la dernière chance pour ce studio PlayStation et sa nouvelle exclusivité PS5 JeuxVideo.com",
+   "titre": "Mais pourquoi les produits dérivés de GTA 6 sont aussi moches ? - JeuxVideo.com",
+   "lien": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOLXBpajhYcEV4QTBaMlhjSGpXNVhTV29yLWRmNm1TYUZ3OUFOUjlOWDRLeTBGR19ndHFRbEdHRl8ySFk4Y1dKYzFWOUEyWU5USmJ2bm5TMlZYaENSMXFPY0VsZ1dWekRfZVBfeEctWUN0ejFwSGVUMGotdWRMc3h1elpwNExrOWl0ZGcxNTlIdGY3V2tBMnAxUlFkcVJzR0ZSS0JkRGluSQ?oc=5",
+   "date": "2026-11-04T19:10:07.000Z",
+   "resume": "Mais pourquoi les produits dérivés de GTA 6 sont aussi moches ? JeuxVideo.com",
    "source": "Google Actualités · sorties jeux vidéo",
    "categorie": "alerte",
    "editeur": "JeuxVideo.com"
+  },
+  {
+   "titre": "Des scientifiques ont connecté des neurones humains à un chien robot, qui peut désormais se déplacer grâce à eux : les premiers pas de l’informatique biologique",
+   "lien": "https://www.journaldugeek.com/2026/11/04/scientifiques-connecte-neurones-humains-chien-robot-peut-deplacer-grace-eux-premiers-pas-linformatique-biologique/",
+   "date": "2026-11-04T19:02:36.000Z",
+   "resume": "Ce quadrupède mécanique est dénué de cerveau ou de modèle d'IA, mais grâce à des neurones humains maintenus en vie dans un boîtier à quelques mètres de lui, il peut savoir dans quelle direction se déplacer. Un peu glauque décrit comme ça,…",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "City of None : le jeu de plateformes du cocréateur de Celeste confirme son arrivée sur Switch et Switch 2",
+   "lien": "https://www.gamekult.com/actualite/city-of-none-le-jeu-de-plateformes-du-cocreateur-de-celeste-confirme-son-arrivee-sur-switch-et-switch-2-3050872767.html",
+   "date": "2026-11-04T18:45:00.000Z",
+   "resume": "Initialement annoncé sur PC (Steam), City of None a profité d'une nouvelle communication pour officialiser son arrivée sur la Nintendo Switch actuelle, mais également sur sa petite sœur, la Switch 2, pour l'horizon 2027.",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Silver Palace : le RPG en monde ouvert fixe sa date de sortie et dévoile son univers - Sortir à Paris",
+   "lien": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPc013aVMxVl9zX0E2dTFKOEk3MTJjTWtkS2FlbW12M2ltZGtZVUJfY1FuVkJ2UUxydDlLNzBNQ20xellXSGstOWk3anVZLVVVMWF6ZG9iemR5NGh2ako3QWpsSXJEVGpnekNuWl9jT2hvLVpOSDFBaEloeEJTd1ozS1NXeFFjbS1FRlZUeTRtUlp4aE1LcjBvcmFWUmZKWWtxbGZJRzJsbG0wUlBUTGpwNi1lcEV4SnFDS25CRHU3SjZQMG44M2VTaW43Z1VSWF9HRmhqbGpsd2ZwUQ?oc=5",
+   "date": "2026-11-04T18:33:27.000Z",
+   "resume": "Silver Palace : le RPG en monde ouvert fixe sa date de sortie et dévoile son univers Sortir à Paris",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Sortir à Paris"
+  },
+  {
+   "titre": "Le prix de GTA 6 pourrait s’envoler à cause de la taxe gigaoctet",
+   "lien": "https://www.journaldugeek.com/2026/11/04/le-prix-de-gta-6-pourrait-senvoler-a-cause-de-la-taxe-gigaoctet/",
+   "date": "2026-11-04T18:30:03.000Z",
+   "resume": "L'addition pourrait bien finir sur le ticket de caisse des joueurs.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "God of War Laufey ne sortira pas en février 2027",
+   "lien": "https://www.journaldugeek.com/2026/11/04/god-of-war-laufey-ne-sortira-pas-en-fevrier-2027/",
+   "date": "2026-11-04T18:18:44.000Z",
+   "resume": "Comme on pouvait s'en douter, Santa Monica Studio est allé un peu vite en besogne en annonçant la sortie de son prochain opus de la saga God of War. Le jeu ne sortira finalement pas le 16 février.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Zhuo bi, le gardien de la porte Phantom Blade Zero : Comment battre ce boss ?",
+   "lien": "https://www.jeuxvideo.com/news/2112159/zhuo-bi-le-gardien-de-la-porte-phantom-blade-zero-comment-battre-ce-boss.htm",
+   "date": "2026-11-04T18:15:08.000Z",
+   "resume": "Un ennemi blindé doté d'un immense bouclier barre la route de Soul dans le village de Lu dans Phantom Blade Zero. Découvrez une vidéo du combat ainsi qu'un guide écrit.",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Le gros carton Phantom Blade Zero connaît déjà une mise à jour importante. On fait le point sur les changements - Journal du Geek",
+   "lien": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxORVJTTTkwWXFyS0xDLXJtM1c4SWFSME1WdGRkcDlsd1Q1U012ZlRRN0JfNU5Yek5QQmdVVkVJWUlrS25DSUdlMEoyR1RvZ2N3ZEdVU3JwZFVTLWg5M0daem5WQktLRm1CMHg3R3A5Wm9iNEZ2Vi1RU2lCNFg0QXQtUDluUVh5dUVBdkFjNjI1MnBLYUtxRVBBa3M1dlVYcGJOa1ppV1M1V2I0dXRPMnBDNGFoTE84Z0YzZjJvYTNhVk5lbUxva0MxZXI2WmxDRjJSNGRlbXBPbjhicjhYSmtWRGVnMTlNZDA?oc=5",
+   "date": "2026-11-04T18:00:40.000Z",
+   "resume": "Le gros carton Phantom Blade Zero connaît déjà une mise à jour importante. On fait le point sur les changements Journal du Geek",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Journal du Geek"
+  },
+  {
+   "titre": "Le gros carton Phantom Blade Zero connaît déjà une mise à jour importante. On fait le point sur les changements",
+   "lien": "https://www.journaldugeek.com/2026/11/04/le-gros-carton-phantom-blade-zero-connait-deja-une-mise-a-jour-importante-on-fait-le-point-sur-les-changements/",
+   "date": "2026-11-04T18:00:40.000Z",
+   "resume": "Phantom Blade Zero, la dernière pépite de l'industrie chinoise, fête dignement son excellente santé financière en s'offrant une première mise à jour avec plusieurs correctifs.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Soulframe : le RPG des créateurs de Warframe ouvre son alpha à tous les joueurs sur PC - Sortir à Paris",
+   "lien": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNWnY5Q3dReXJHN094aWZvM3hrWU5aZTBsSVJKcmpsVWRHYlBsb3FoS0VOdjZQLW1oRm9teU1OTHNPcl83ZUp4ci1fOE1lUXl4eDZKVF9qYUxrVUVZdmlGdER0SzZ2VlNUcW1LTDQ1Nkx5cmh0bGFNV0NXV1hpMThPMktEZU1IRkhoR1puMTFweVRQaVMtWFhzVFVGdTNFYkxZdV9Ebk9uSFRjSV96SWs0WDBkT21tX194bnhFekJjU0dzdEk1MnJvMUc4WUl5OEN3MkJYSEpWcXdSQ0Nq?oc=5",
+   "date": "2026-11-04T17:56:55.000Z",
+   "resume": "Soulframe : le RPG des créateurs de Warframe ouvre son alpha à tous les joueurs sur PC Sortir à Paris",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Sortir à Paris"
+  },
+  {
+   "titre": "GTA 6 aurait déjà généré 750 millions de dollars avant même sa sortie",
+   "lien": "https://www.dexerto.fr/gta/gta-6-aurait-deja-genere-750-millions-dollars-avant-meme-sortie-1663381/",
+   "date": "2026-11-04T17:47:11.000Z",
+   "resume": "GTA 6 aurait déjà généré 751 millions de dollars grâce à 7,7 millions de précommandes avant même sa sortie officielle.",
+   "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Shigeru Miyamoto, papa de Mario et Zelda, s’exprime sur l’IA : « Même si elle devait tout faire, nous aurons toujours un rôle à jouer »",
+   "lien": "https://www.jeuxvideo.com/news/2112004/shigeru-miyamoto-papa-de-mario-et-zelda-s-exprime-sur-l-ia-meme-si-elle-devait-tout-faire-nous-aurons-toujours-un-role-a-jouer.htm",
+   "date": "2026-11-04T17:45:07.000Z",
+   "resume": "Interrogé sur l'intelligence artificielle, Shigeru Miyamoto se montre serein et compare cette technologie à l'arrivée des procesadores de texte. Le créateur de Nintendo estime que, même si l'IA venait à tout gérer, la créativité humaine co…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "« Prenez votre temps » God of War Laufey annonce une mauvaise nouvelle aux joueurs PS5 - Gameblog",
+   "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPa3FCcTRzb0s5MFNrOVZ6U2xHbk9iMEpfazlkZnNFc2xrcFJjVEluWVM5dG9kd2liMnJTLWxLNmNZa1pTTGR6LWpKRUp2dlA5RWx3MGpHWFd4b3JaZXlOWHlOZjdlbEUzbUFUOGUyaWw4M2NaMkJaSS1HMDdvSkhYNHBGVndwN1BNN2dZZ3IxMXEtdnBfSXBoMlRVUlUwak16bnc?oc=5",
+   "date": "2026-11-04T17:44:02.000Z",
+   "resume": "« Prenez votre temps » God of War Laufey annonce une mauvaise nouvelle aux joueurs PS5 Gameblog",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Gameblog"
+  },
+  {
+   "titre": "Harry Potter : oubliez l’ancien Poudlard, voici le nouveau !",
+   "lien": "https://www.journaldugeek.com/2026/11/04/harry-potter-une-affiche-revele-larchitecture-du-nouveau-poudlard/",
+   "date": "2026-11-04T17:42:18.000Z",
+   "resume": "Une nouvelle affiche de la série Harry Potter confirme ce que l'on imaginait déjà : la maquette des films n'a pas été utilisée. Poudlard change de visage.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Final Fantasy Brave Exvius ressuscité hors ligne par une poignée de fans acharnés",
+   "lien": "https://www.gamekult.com/actualite/final-fantasy-brave-exvius-ressuscite-hors-ligne-par-une-poignee-de-fans-acharnes-3050872766.html",
+   "date": "2026-11-04T17:36:00.000Z",
+   "resume": "Fin 2025, Square Enix débranchait sans ménagement les serveurs de Final Fantasy Brave Exvius, expédiant près d'une décennie de gros pixels, de nostalgie et de microtransactions dans le gigantesque cimetière des jeux-services. Une issue tra…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Elon Musk fait n’importe quoi en faisant tourner son IA avec des moteurs de Boeing 747, les voisins n’en peuvent plus",
+   "lien": "https://www.journaldugeek.com/2026/11/04/elon-musk-fait-nimporte-quoi-en-faisant-tourner-son-ia-avec-des-moteurs-de-boeing-747-les-voisins-nen-peuvent-plus/",
+   "date": "2026-11-04T17:31:33.000Z",
+   "resume": "xAI, la société d’intelligence artificielle d’Elon Musk, a installé dans le Mississippi huit turbines construites à partir de moteurs d’avion, les mêmes que ceux des Boeing 747, pour alimenter son centre de données Colossus 2. L’associatio…",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Sony reporte la sortie de God of War Laufey, rendez-vous au printemps 2027",
+   "lien": "https://www.gamekult.com/actualite/sony-reporte-la-sortie-de-god-of-war-laufey-rendez-vous-au-printemps-2027-3050872777.html",
+   "date": "2026-11-04T17:25:00.000Z",
+   "resume": "Changement de programme chez PlayStation. Alors que Sony comptait sur Santa Monica Studio pour faire briller son début d'année (et la fin de son exercice fiscal) aux côtés d'Until Dawn 2, God of War Laufay est finalement retardé de trois m…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Engineers at twitch. How are you guys preparing for mass streaming of gta 6??💀💀",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xnu3vg/engineers_at_twitch_how_are_you_guys_preparing/",
+   "date": "2026-11-04T17:23:23.000Z",
+   "resume": "The title is the question. submitted by /u/TuHaiKon [link] [comments]",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "God of War Laufey : les aventures de Faye dans l'au-delà repoussées, la nouvelle date de sortie - Sortir à Paris",
+   "lien": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPOTNxa3BLME41VHY1cWViaXY2X2haVTVpbW1yT0YtUGowMEdmdUpVLVNsdUVtblpIby1BU1JOQngta1hnbDhZSUxmNW05a3JFTVJaM0dOMVhDQ1BJWGV3dkRXcTNtR0hKd1NxdWMxaVZ3aTlmc2puSUUyLWQzY2huUm52anJZRHlwM0NIdVhpTnYzdWFBa0N3SnUtdlIyMEJrZGJyZWdOVVdsZDlKcm1GNmpxSGc5aEVfSThFUDRSNmQtQ0l3TmkzaW16dUhRbnZEQUVVckFWRDlrd3V4ckk5cDBiM2x4OVE?oc=5",
+   "date": "2026-11-04T17:17:33.000Z",
+   "resume": "God of War Laufey : les aventures de Faye dans l'au-delà repoussées, la nouvelle date de sortie Sortir à Paris",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Sortir à Paris"
+  },
+  {
+   "titre": "GTA 6 pourrait battre un record de GTA 5 avant sa sortie - 24 heures",
+   "lien": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOWlRSVDNrVloyanJrczNPTTBKeTRJZlY1UDBwNzZ2Rnp3QUxzYmEtZlloVHpybXlMTDY5bDB3T3ZMZ0otc2cwN3V0Yk9qdW1ueWVBSU5IUmVlTjdmd0txVFUyX0xYY0hwOEVNZGlfX1E3VTZNZEFlQnpTdFQwTzJBZ25nSFlCTzZjZTl1cEEyLXZ6dG5lV0E?oc=5",
+   "date": "2026-11-04T17:16:39.000Z",
+   "resume": "GTA 6 pourrait battre un record de GTA 5 avant sa sortie 24 heures",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "24 heures"
+  },
+  {
+   "titre": "Lords of War, la suite du film culte avec Nicolas Cage, surprend tout le monde avec un trailer surprise",
+   "lien": "https://www.numerama.com/pop-culture/2367981-lords-of-war-la-suite-du-film-culte-avec-nicolas-cage-surprend-tout-le-monde-avec-un-trailer-surprise.html",
+   "date": "2026-11-04T17:15:00.000Z",
+   "resume": "22 ans après avoir incarné le cynique marchand d'armes Yuri Orlov, Nicolas Cage rempile pour une suite aussi musclée qu'inattendue. Intitulé Lords of War, ce nouveau chapitre piloté par Andrew Niccol dévoile une première bande-annonce saig…",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Voici toutes les voitures électriques à moins de 25 000 € disponibles en France",
+   "lien": "https://www.numerama.com/vroom/2082393-voici-toutes-les-voitures-electriques-a-moins-de-25-000-e-disponibles-en-france.html",
+   "date": "2026-11-04T17:10:00.000Z",
+   "resume": "En 2026, le seuil des 25 000 € est devenu le nouveau champ de bataille des constructeurs. Citroën, Renault, Hyundai et sans oublier Dacia : voici les meilleures voitures électriques vendues sous cette barre symbolique.",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "GTA 6 : véhicules, map, date de sortie, précommande, tout savoir sur le prochain jeu Rockstar Games",
+   "lien": "https://www.journaldugeek.com/dossier/gta-6-vehicules-map-date-de-sortie-precommande-tout-savoir-sur-le-prochain-jeu-rockstar-games/",
+   "date": "2026-11-04T17:02:02.000Z",
+   "resume": "Découvrez dès maintenant notre gigantesque dossier pour TOUT savoir autour du prochain jeu de Rockstar Games : GTA VI.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Rockstar Games interdit la publication de la fin et d'autres spoilers concernant GTA 6 - EGW.News",
+   "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOcGhlUV9UeHpLUXVhV003bndaWHNGVm91dE5KcEtaS0laUTI1RjIxcXFWMmU4NlFPc3FnQWhLVlBUZURZR1N6ejI0Q01TT1dRTEJ6eEYyLWlGWGZRYmpqOEpQWFJfVGdSbGNOOVpOR0JiTmQ5WjNqSlQ0M0hLR2ZUTDRyb1Q4eEtJTDdhZk9MemxOZENCNzctdXZqQjlGMFU?oc=5",
+   "date": "2026-11-04T16:59:48.000Z",
+   "resume": "Rockstar Games interdit la publication de la fin et d'autres spoilers concernant GTA 6 EGW.News",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "EGW.News"
+  },
+  {
+   "titre": "The Elder Scrolls VI: Sentinel : Bethesda dévoile le nom officiel du prochain RPG - Sortir à Paris",
+   "lien": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNdFBtaVFYZEVlYk0tUHRpX2ttU3lzN0pEclE4ZF91R0Q4MUZEamt3WTJRVXplMWZCQnpJZG8tTm1NZ0g3VjNBNUtZQXdUN3lUcWd6cGR3MzZtWTROZERhTTRGQk9Ha0NQaVRheFNqYmd5ZkM4SE5wbk1vcEd2ejY2V1FpNC1IWUQxdW5HTkFuVzljZVdHcXZzVW5KV29iX0pReWVlVTI5d290VmdOSHVqRTNNRC1BbWN1WDh3ODI0UF9iejVqMXFaTGRONmV0dWdSTjVDRg?oc=5",
+   "date": "2026-11-04T16:55:25.000Z",
+   "resume": "The Elder Scrolls VI: Sentinel : Bethesda dévoile le nom officiel du prochain RPG Sortir à Paris",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Sortir à Paris"
+  },
+  {
+   "titre": "EDF Tempo : pourquoi vous ne paierez plus votre électricité au prix fort le 24 et le 31 décembre",
+   "lien": "https://www.numerama.com/sciences/2367287-edf-tempo-pourquoi-vous-ne-paierez-plus-votre-electricite-au-prix-fort-le-24-et-le-31-decembre.html",
+   "date": "2026-11-04T16:55:23.000Z",
+   "resume": "Depuis le 1er novembre 2026, les 24 et 31 décembre ne peuvent plus être des jours rouges pour les quelques 900 000 abonnés à l'option Tempo d'EDF. Le 31 décembre 2025 avait été facturé au tarif rouge.",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Looking for recommendations from ART STREAMERS on cameras and lighting",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xnt8xh/looking_for_recommendations_from_art_streamers_on/",
+   "date": "2026-11-04T16:51:46.000Z",
+   "resume": "I’m still new to streaming and have just been doing my best with what I have. But I want to eventually make upgrades to my camera and lighting setup so people can see my art as clearly as possible. With my current setup, the colors sometim…",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "Grève du 5 novembre : quelles lignes de métro/RER ou stations sont impactées en Île-de-France ?",
+   "lien": "https://www.journaldugeek.com/2026/11/04/greve-du-5-novembre-quelles-lignes-de-metro-rer-ou-stations-sont-impactees-en-ile-de-france/",
+   "date": "2026-11-04T16:45:48.000Z",
+   "resume": "Ce jeudi 5 novembre 2026, le mécontentement va continuer à se faire entendre dans les rues du pays, impactant les transports en commun. On fait le point sur la situation des métros/RER et des stations touchées.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Revolut va désactiver ses anciens IBAN : attention si vous recevez votre salaire sur la néobanque",
+   "lien": "https://www.numerama.com/tech/2367849-revolut-va-desactiver-ses-anciens-iban-gare-si-vous-recevez-votre-salaire-sur-la-neobanque.html",
+   "date": "2026-11-04T16:44:17.000Z",
+   "resume": "Revolut désactivera définitivement le 4 janvier 2027 les anciens IBAN lituaniens encore rattachés aux comptes de ses clients français. Passé cette date, les virements et prélèvements envoyés vers ces numéros seront rejetés.",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Comment savoir si vos données ont fuité ? 6 outils à connaître absolument",
+   "lien": "https://www.numerama.com/cyberguerre/1164940-5-sites-pour-savoir-si-vos-infos-ont-fuite-sur-le-web.html",
+   "date": "2026-11-04T16:38:11.000Z",
+   "resume": "Des milliards d'identifiants volés circulent et se revendent sur des forums de hackers et le darknet. Voici 6 sites pour vérifier si vos identifiants font partie des listes fuitées.",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "L’IA a-t-elle raccourci nos journées de travail ? Ce que cette étude révèle va vous surprendre",
+   "lien": "https://www.journaldugeek.com/2026/11/04/lia-a-t-elle-raccourci-nos-journees-de-travail-ce-que-cette-etude-revele-va-vous-surprendre/",
+   "date": "2026-11-04T16:31:12.000Z",
+   "resume": "Une étude compare les journées de travail de ceux qui utilisent l’IA et celles de ceux qui ne l’utilisent pas. Basée sur des données réelles, celle-ci vient de casser une croyance populaire.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Les plus gros budgets de transfert dans Football Manager 27",
+   "lien": "https://www.dexerto.fr/football-manager/football-manager-27-plus-gros-budgets-transfert-1663364/",
+   "date": "2026-11-04T16:21:34.000Z",
+   "resume": "Découvrez les clubs les plus riches de FM27 et choisissez la meilleure équipe pour lancer votre carrière.",
+   "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Victoire démocrate aux États-Unis : Pourquoi la défaite de Trump pourrait sauver le jeu vidéo de l'IA et du dématérialisé",
+   "lien": "https://www.jeuxvideo.com/news/2112308/victoire-democrate-aux-etats-unis-pourquoi-la-defaite-de-trump-pourrait-sauver-le-jeu-video-de-l-ia-et-du-dematerialise.htm",
+   "date": "2026-11-04T16:15:10.000Z",
+   "resume": "La bascule politique issue des élections de mi-mandat aux États-Unis relance les espoirs d'une régulation forte du numérique. Mais entre l'impasse institutionnelle à Washington, les limites des lois locales et les délocalisations technique…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Pour célébrer les 20 ans de la franchise, Company of Heroes 3 passe en 3.0 et prépare une nouvelle campagne solo",
+   "lien": "https://www.gamekult.com/actualite/pour-celebrer-les-20-ans-de-la-franchise-company-of-heroes-3-passe-en-3-0-et-prepare-une-nouvelle-campagne-solo-3050872765.html",
+   "date": "2026-11-04T16:08:00.000Z",
+   "resume": "Malgré des retours un peu mitigés, Relic Entertainment continue fidèlement d'alimenter Company of Heroes 3 en DLCs et mises à jour, et le 20ème anniversaire de la franchise cette année est un bon prétexte pour remettre une pièce dans la ma…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "The Wolf Among Us 2 : tout ce que l’on sait à ce jour (infos, annonces, date de sortie, personnages…) - Journal du Geek",
+   "lien": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPU1cwNHFNT3dkV1ljSllaNFBqaHpGWkgtT0g4M2J0SGcyX2tfQnBSbnBmRlhhZ1UtTXlhdmQwSTJrejhGRWduTkpKS19DYmc2cHFpVVlGM0RnU19LOExRUElpZUpBODBNV21wYjJ3a29Wa0hXUVAyTG5jNzR3N1FkanhxOFZpSzhVekkydjJnUW54OVM3YXZjQXBRVmlJUFRCMTdXT3RJbGFxTFp4UFdvcWFtLTBqNjhZWUU1b3U5SUVQNDMxZFpudWRWOA?oc=5",
+   "date": "2026-11-04T16:02:13.000Z",
+   "resume": "The Wolf Among Us 2 : tout ce que l’on sait à ce jour (infos, annonces, date de sortie, personnages…) Journal du Geek",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Journal du Geek"
+  },
+  {
+   "titre": "The Wolf Among Us 2 : tout ce que l’on sait à ce jour (infos, annonces, date de sortie, personnages…)",
+   "lien": "https://www.journaldugeek.com/dossier/the-wolf-among-us-2-tout-ce-que-lon-sait-a-ce-jour-infos-annonces-date-de-sortie-personnages/",
+   "date": "2026-11-04T16:02:13.000Z",
+   "resume": "Après de très nombreuses années d'attente, The Wolf Among Us 2 devrait enfin arriver en 2027. Voici tout ce que vous devez savoir !",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "5 choses à savoir sur L’Impératrice remariée, le K-drama événement de Disney+",
+   "lien": "https://www.dexerto.fr/films-series/5-choses-a-savoir-limperatrice-remariee-k-drama-webtoon-1663365/",
+   "date": "2026-11-04T15:54:52.000Z",
+   "resume": "L’Impératrice remariée fait des débuts remarqués sur Disney+ : voici cinq choses à connaître sur la série et ses origines.",
+   "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Les gagnants de ce concours de court-métrage nous ont fait changer d’avis sur l’IA en vidéo (et ils sont repartis avec 1 million de dollars)",
+   "lien": "https://www.numerama.com/tech/2367773-les-gagnants-de-ce-concours-de-court-metrage-nous-ont-fait-changer-davis-sur-lia-en-video-et-ils-sont-repartis-avec-1-million-de-dollars.html",
+   "date": "2026-11-04T15:50:47.000Z",
+   "resume": "5 000 films, 176 pays, un million de dollars de prix : le festival de cinéma IA de la start-up Higgsfield a livré son podium. Et les gagnants ont produit des œuvres hallucinantes, loin du slop vu et revu sur les réseaux sociaux.",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Il humilie l'élite de Twitch sans jamais montrer son visage : qui est le mystérieux joueur OP ? - Consollection",
+   "lien": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPeHpIOFl5ZmxpRTJCdnBBWmRYOXBMOGpIREo4TG1lN193UV9tY3FSQi1SYV9NVkkzUzJ6Nk1lTVdEQkRQTVJMNExuMVRhMFJleU9LYTMtRXB0THBnZW1PX2pxYW5KSnNzZUdWSVM0ejliRlJ5UG9fSkduY2tlMjBHVkFXYUI0djBmaWdyU182OEs1MHhxbFo1QXJrS3lWdUpuU1VESjd4VUZ1ZVVwaUF5WV9iR1JVbUV3YmxBUlo4QnZoQQ?oc=5",
+   "date": "2026-11-04T15:45:26.000Z",
+   "resume": "Il humilie l'élite de Twitch sans jamais montrer son visage : qui est le mystérieux joueur OP ? Consollection",
+   "source": "Google Actualités · streamers et streaming",
+   "categorie": "alerte",
+   "editeur": "Consollection"
+  },
+  {
+   "titre": "GTA VI : faut-il faire du vide sur sa PS5 ou ajouter un SSD ? - Sortir à Paris",
+   "lien": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPVmJfdUNZNmI2WHNHQzBvSGU0bDQ0aEpnWjdQNFFxYW56OVd3OVMyYUJGeDlzSUNrZ2x5MzBNRXlPNjFib0xDS1VjOW5JSnBQdEZJMWxseldVbjgxTEhSQ212dXo1ZE1ZY0c0LVJIZ3ZaWi1CSEtrYWVqWjY3R0YwUk1sRlkzTGJoN0N3RUJvY2t0ODhvUksycGZyVVRRY0U1NUhMUFpCNDdrN3RFMVdnQXFheVBKSnd0?oc=5",
+   "date": "2026-11-04T15:40:58.000Z",
+   "resume": "GTA VI : faut-il faire du vide sur sa PS5 ou ajouter un SSD ? Sortir à Paris",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Sortir à Paris"
+  },
+  {
+   "titre": "Test Faraway – Un pur moment de jeu vidéo - New Game Plus",
+   "lien": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE44RzYtU0tnU3hKR1B3ZjdBWVE5ODIzdVdCWVRDYUFEMHEzVkxUTkcwR3M2RnpsNTc4X2ptT2xXZ3dkMkdxaUhtZEc1ZWEzdXM?oc=5",
+   "date": "2026-11-04T15:40:00.000Z",
+   "resume": "Test Faraway – Un pur moment de jeu vidéo New Game Plus",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "New Game Plus"
+  },
+  {
+   "titre": "Marvel’s Blade : le gros jeu AAA bientôt sauvé par Ubisoft ?",
+   "lien": "https://www.numerama.com/pop-culture/2367797-marvels-blade-le-gros-jeu-aaa-bientot-sauve-par-ubisoft.html",
+   "date": "2026-11-04T15:39:47.000Z",
+   "resume": "Microsoft poursuit la réorganisation engagée cet été dans sa division Xbox. Le sort d'Arkane Studios doit être fixé d'ici au 13 décembre 2026. Le studio français, actuellement à l'œuvre sur le très attendu Marvel’s Blade, attire les convoi…",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "PC Game Pass : Warhammer Survivors et Escape Academy 2 arrivent dès leur sortie - GinjFo",
+   "lien": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNYVhCSjdoQ2FRV0FhMUN6ZF9pUFdFMEM0Z1N2SnNkRXNvSTJhSmdhWTg1azNqbC1XTGNMVE9yR3hqb0g1V1NNb1A5LVItdFM2THJBdlI1dnRtMDk0REtpQkhDLUtIWUZYUzRlN3p0QTJQZjhwT1hFTmxTVFpVOUoyN3gydFUzdnpGZjliazlXTk52Y1dIblhLMjRvYkMtNFNsbHA1QTR5VVh4Mk5weEYzRmVEcFJILUlONlNnSXk4b1ZTZ3hzUmg3NjJ0RC1zQ0RaLWJpRzRpZV9PX1RYVGEtVy1FNkZuQQ?oc=5",
+   "date": "2026-11-04T15:36:51.000Z",
+   "resume": "PC Game Pass : Warhammer Survivors et Escape Academy 2 arrivent dès leur sortie GinjFo",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "GinjFo"
+  },
+  {
+   "titre": "Free offre deux chaînes TV à tous ses abonnés dès maintenant",
+   "lien": "https://www.journaldugeek.com/2026/11/04/free-offre-deux-chaines-tv-tous-abonnes-maintenant/",
+   "date": "2026-11-04T15:34:22.000Z",
+   "resume": "Les abonnés Freebox et les utilisateurs de Free TV n'ont rien à faire pour en profiter.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Larian Studios a partagé des nouvelles sur le nouveau Divinity: « Il reste encore beaucoup de travail - EGW.News",
+   "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPTTAwa0FBbXFlWlpEZFZWb1NyS2QteEx6cUQwZzgzRURUMHFCY2pLNVd5aUlRRC11VmJiSGE0RDltaVowaUVkOVhZdnJfUUlPdlVCZDNKVXRzcWFVSzdBZlU0R0syZG9NM1NYRWJnSlJ0eVJJSFhMMi12VXpBS1hsMFQtQXlFdk12US1TQ0ZiX3pNOUM5d09fOHFERTNqZDA?oc=5",
+   "date": "2026-11-04T15:30:15.000Z",
+   "resume": "Larian Studios a partagé des nouvelles sur le nouveau Divinity: « Il reste encore beaucoup de travail EGW.News",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "EGW.News"
+  },
+  {
+   "titre": "Agenda - Les jeux Xbox Game Pass de novembre 2026 avec Warhammer Survivors - Gamekult",
+   "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOM3dFQlpJSHk0aHQtQldtalZmbUR1V1ZyU1ZsQUlvTzhpemhCUjdmOVhDamNsdkZVN3FCdnZCb29fNk9UcnhOQlFITUxUV2hidTl1Wl8xMXVBVDJWc3pEdHFTRWtQTFo1Y3hCR2NCdk9SbGpJUC11eHJYTXFpVWF1ZFBBeUxMXzE5QzJVekljODZuQVRwQ1ZWeWhDV0FYTU9KbFIxMWRQc2VHdTBpSXlWTHBPX0xiZ3c?oc=5",
+   "date": "2026-11-04T15:09:00.000Z",
+   "resume": "Agenda - Les jeux Xbox Game Pass de novembre 2026 avec Warhammer Survivors Gamekult",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Gamekult"
+  },
+  {
+   "titre": "Agenda - Les jeux Xbox Game Pass de novembre 2026 avec Warhammer Survivors",
+   "lien": "https://www.gamekult.com/actualite/les-jeux-xbox-game-pass-de-novembre-2026-avec-warhammer-survivors-3050872764.html",
+   "date": "2026-11-04T15:09:00.000Z",
+   "resume": "Alors que toute l'industrie (ou presque) cherche à esquiver la fenêtre de sortie de GTA 6, partant du principe que tous les êtres vivants recensés sur la planète vont y investir temps et argent, le Game Pass du mois est bien obligé de se p…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "On a enfin des nouvelles de La Reine des Neiges 3 !",
+   "lien": "https://www.journaldugeek.com/2026/11/04/plus-puissante-quelsa-la-reine-des-neiges-3-introduit-une-nouvelle-mechante/",
+   "date": "2026-11-04T15:04:49.000Z",
+   "resume": "Dans un peu plus d'un an, une déferlante givrée va s'abattre sur les salles obscures. Huit ans après le deuxième film, la franchise La Reine des Neiges prépare son retour chez Disney. Le producteur lève le mystère sur le troisième film.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Les développeurs de la génération Z ont eu un rôle très particulier dans le remake de Zelda Ocarina of Time : juger le look du jeu !",
+   "lien": "https://www.jeuxvideo.com/news/2112116/les-developpeurs-de-la-generation-z-ont-eu-un-role-tres-particulier-dans-le-remake-de-zelda-ocarina-of-time-juger-le-look-du-jeu.htm",
+   "date": "2026-11-04T15:00:09.000Z",
+   "resume": "Vous pensez que le remake d'Ocarina of Time a été exclusivement fait par des tauliers de Nintendo ? Figurez-vous que non : il y avait pas mal de “petits jeunes”, et c’est intéressant de se pencher sur leur rôle.",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Pour tester son futur missile nucléaire M51.4, la France mise sur une fusée bien plus petite",
+   "lien": "https://www.numerama.com/tech/2367725-pour-tester-son-futur-missile-nucleaire-m51-4-la-france-mise-sur-une-fusee-bien-plus-petite.html",
+   "date": "2026-11-04T15:00:00.000Z",
+   "resume": "La fusée-sonde SyLEx d'ArianeGroup a réussi son deuxième tir depuis Biscarrosse, dans les Landes. 11 mois après un vol de démonstration, elle emportait cette fois des expériences au profit du futur missile nucléaire M51.4.",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "En visant les marques chinoises, l’Europe s’apprête à pénaliser une marque qui n’avait rien demandé",
+   "lien": "https://www.numerama.com/vroom/2367737-en-visant-les-marques-chinoises-leurope-sapprete-a-penaliser-une-marque-qui-navait-rien-demande.html",
+   "date": "2026-11-04T14:48:33.000Z",
+   "resume": "Pour toucher des aides publiques, une voiture électrique vendue dans l'Union européenne devrait bientôt y être assemblée et tirer de l'UE 70 % de la valeur de ses composants, hors batterie. Toyota, qui importe ses modèles électriques du Ja…",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Faux entretien d’embauche : voici comment des hackers ont piégé un ingénieur de Binance pour voler 6,3 milliards de dollars de cryptomonnaies",
+   "lien": "https://www.journaldugeek.com/2026/11/04/faux-entretien-dembauche-voici-comment-des-hackers-ont-piege-un-ingenieur-de-binance-pour-voler-63-milliards-de-dollars-de-cryptomonnaies/",
+   "date": "2026-11-04T14:31:46.000Z",
+   "resume": "Binance en dit plus sur le piratage qui a permis a des hackers de lui voler plus de 6 milliards de dollars en cryptos.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "À l'heure où les budgets font tant parler, le patron de CI Games dévoile le coût exact de Lords of the Fallen 2",
+   "lien": "https://www.gamekult.com/actualite/a-l-heure-ou-les-budgets-font-tant-parler-le-patron-de-ci-games-devoile-le-cout-exact-de-lords-of-the-fallen-2-3050872760.html",
+   "date": "2026-11-04T14:15:00.000Z",
+   "resume": "Enfermée dans une culture du secret historique, la question du coût et de la rentabilité des jeux vidéo est rarement abordée frontalement par les éditeurs, et nombre de soi-disant budgets en circulation partent de rumeurs qui tendent à se…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "The Elder Scrolls VI : Sentinel ne devrait pas arriver avant… 2029",
+   "lien": "https://www.journaldugeek.com/2026/11/04/the-elder-scrolls-vi-sentinel-ne-devrait-pas-arriver-avant-2029/",
+   "date": "2026-11-04T14:10:09.000Z",
+   "resume": "Encore beaucoup de patience pour jouer à The Elder Scrolls VI : Sentinel qui ne sortirait pas avant la prochaine génération en 2029.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Naruto donne une excellente nouvelle à ses fans",
+   "lien": "https://www.numerama.com/pop-culture/2367661-naruto-sony-et-lionsgate-officialisent-le-film-live-avec-un-realisateur-rassurant.html",
+   "date": "2026-11-04T14:10:00.000Z",
+   "resume": "Le village de Konoha s'apprête à débarquer en prises de vues réelles sur grand écran. Lionsgate vient de sceller un partenariat de poids avec Sony Pictures pour porter l'immense Naruto au cinéma, avec un maestro du blockbuster aux commande…",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Les data centers étaient aussi soumis au vote aux États-Unis : les premiers résultats sont sans appel",
+   "lien": "https://www.numerama.com/tech/2367597-les-data-centers-etaient-aussi-soumis-au-vote-aux-etats-unis-les-premiers-resultats-sont-sans-appel.html",
+   "date": "2026-11-04T13:57:33.000Z",
+   "resume": "Aux États-Unis, les électeurs de plusieurs dizaines de collectivités ont aussi voté sur les data centers. Les premiers résultats traduisent un net rejet de leur développement : les votes favorables à de nouvelles restrictions ou opposés à…",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Les meilleurs entraîneurs et staffs à recruter dans Football Manager 27",
+   "lien": "https://www.dexerto.fr/football-manager/football-manager-27-meilleurs-membres-staff-1663331/",
+   "date": "2026-11-04T13:51:30.000Z",
+   "resume": "Découvrez quels sont les meilleurs entraîneurs de FM27 et renforcez votre staff pour faire progresser vos joueurs et votre équipe.",
+   "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Dual PC streaming setup audio issue",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xno42t/dual_pc_streaming_setup_audio_issue/",
+   "date": "2026-11-04T13:24:37.000Z",
+   "resume": "Hey everyone! I’m fairly new to streaming and trying to do dual-PC setup. I’ve run into a couple of major audio issue that I’m struggling to solve. Would appreciate any advice or best-practice tips or setup. My Current Setup: PCs: Gaming P…",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "Paranormal Activity : le développeur de The Mortuary Assistant partage le prototype de son jeu annulé",
+   "lien": "https://www.gamekult.com/actualite/paranormal-activity-le-developpeur-de-the-mortuary-assistant-partage-le-prototype-de-son-jeu-annule-3050872761.html",
+   "date": "2026-11-04T13:03:00.000Z",
+   "resume": "Mandaté par l'éditeur DreadXP pour réaliser Paranormal Activity : Threshold , le développeur indépendant Brian Clarke (The Mortuary Assistant) a finalement abandonné le projet en début d'année, estimant que les deadlines imposées par la Pa…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Le singles Day 2026 bat son plein : les meilleures offres du Black Friday chinois sont ici",
+   "lien": "https://www.numerama.com/tech/2365399-le-singles-day-2026-bat-son-plein-les-meilleures-offres-du-black-friday-chinois-sont-ici.html",
+   "date": "2026-11-04T13:00:15.000Z",
+   "resume": "Le Singles Day, c'est l'équivalent du Black Friday, mais sur Aliexpress. Associé au 11 novembre, l'événement commence depuis le 1er novembre 2026, avec des promotions sur des milliers de produits tech, jusqu'au 18 novembre. Numerama sélect…",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Comment jouer à GTA 6 en avance sur Xbox et PS5 avec l’astuce de la Nouvelle-Zélande",
+   "lien": "https://www.dexerto.fr/gta/comment-jouer-gta-6-en-avance-xbox-ps5-astuce-nouvelle-zelande-1663318/",
+   "date": "2026-11-04T12:55:20.000Z",
+   "resume": "Découvrez comment jouer à GTA 6 en avance sur Xbox et PS5 grâce à l’astuce de la Nouvelle-Zélande, avec les étapes et l’heure de déblocage en France.",
+   "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "WoW Forever : Les meilleures combinaisons classe + race pour le PVE et le PVP",
+   "lien": "https://www.jeuxvideo.com/news/2109838/wow-forever-les-meilleures-combinaisons-classe-race-pour-le-pve-et-le-pvp.htm",
+   "date": "2026-11-04T12:40:07.000Z",
+   "resume": "Découvrez notre sélection des meilleures combinaisons de classes et de races pour bien débuter dans World of Warcraft Forever. Une liste susceptible d'être mise à jour régulièrement en fonction des mises à jour d'équilibrage déployées par…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "La comédie culte Bill & Ted revient en jeu vidéo avec un beat'em up rétro et Keanu Reeves au doublage",
+   "lien": "https://www.gamekult.com/actualite/la-comedie-culte-bill-ted-revient-en-jeu-video-avec-un-beat-em-up-retro-et-keanu-reeves-au-doublage-3050872759.html",
+   "date": "2026-11-04T12:16:00.000Z",
+   "resume": "Les plus vieux routards se souviennent de la comédie culte des années 80 L'Excellente Aventure de Bill et Ted, qui a notamment révélé au monde un certain Keanu Reeves (après son passage dans Les Liaisons Dangereuses). Celle-ci s'apprête à…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Le jeu de la dernière chance pour ce studio PlayStation et sa nouvelle exclusivité PS5",
+   "lien": "https://www.jeuxvideo.com/news/2112032/le-jeu-de-la-derniere-chance-pour-ce-studio-playstation-et-sa-nouvelle-exclusivite-ps5.htm",
+   "date": "2026-11-04T11:50:09.000Z",
+   "resume": "Depuis la sortie de Days Gone 7 ans plus tôt, Bend Studio n’a plus proposé de jeu, son dernier titre ayant été annulé. Après avoir dû licencier une partie de ses équipes, le studio sortirait pourtant un nouveau titre l’année prochaine. Le…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
   },
   {
    "titre": "SCX 26 : Naval Group ose le canon électromagnétique, arme que l’US Navy a abandonné après 500 millions de dollars",
@@ -97,15 +657,6 @@
    "date": "2026-11-04T11:31:00.000Z",
    "resume": "Naval Group a dévoilé ce mardi 3 novembre au salon Euronaval le SCX 26, un concept de navire de combat de 8 000 tonnes armé d'un canon électromagnétique. La marine américaine a abandonné cette arme en 2021, après quinze ans de développemen…",
    "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "LEGO dévoile son Godzilla gigantesque, mais le résultat n’est pas à la hauteur",
-   "lien": "https://www.journaldugeek.com/2026/11/04/lego-devoile-son-godzilla-gigantesque-mais-le-resultat-nest-pas-a-la-hauteur/",
-   "date": "2026-11-04T11:30:58.000Z",
-   "resume": "Un anniversaire qui casse des briques ? Godzilla fête son 72ᵉ anniversaire avec la sortie en salles de Godzilla Minus Zero et un set LEGO dédié à la créature atomique. Mais celui-ci va faire débat.",
-   "source": "Journal du Geek",
    "categorie": "actu",
    "editeur": ""
   },
@@ -128,29 +679,11 @@
    "editeur": ""
   },
   {
-   "titre": "Après les supermarchés, les pirates des frigos s’attaquent aux réserves de sang françaises, et c’est un vrai probléme !",
-   "lien": "https://www.journaldugeek.com/2026/11/04/apres-les-supermarches-les-pirates-des-frigos-sattaquent-aux-reserves-de-sang-francaises-et-cest-un-vrai-probleme/",
-   "date": "2026-11-04T11:14:27.000Z",
-   "resume": "La vague de piratage d’installations frigorifiques qui a frappé l’Europe dans la nuit du 1er au 2 novembre 2026 a aussi visé des congélateurs de l’Établissement français du sang (EFS), révèle Le Canard enchaîné. Leur consigne de températur…",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "Test The Legend of Zelda : Ocarina of Time sur Switch 2",
    "lien": "https://www.jeuxvideo.com/test/2111342/zelda-ocarina-of-time-switch-2-sublime-visuellement-mais-que-reste-t-il-de-ce-chef-d-oeuvre-en-2026-notre-test.htm",
    "date": "2026-11-04T11:01:08.000Z",
    "resume": "28 ans après sa sortie, fondatrice pour la licence, sur Nintendo 64, The Legend of Zelda : Ocarina of Time fait son grand retour dans un remake exclusif sur Nintendo Switch 2. Graphismes somptueux, fluidité à 60 images par seconde et donjo…",
    "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "The Legend of Zelda Ocarina of Time : la Switch 2 tient son chef-d’œuvre",
-   "lien": "https://www.journaldugeek.com/test/the-legend-of-zelda-ocarina-of-time-la-switch-2-tient-son-chef-doeuvre/",
-   "date": "2026-11-04T11:00:26.000Z",
-   "resume": "Un écran titre, quelques notes d’ocarina, et me voilà la gorge serrée avant même d’avoir appuyé sur start.",
-   "source": "Journal du Geek",
    "categorie": "actu",
    "editeur": ""
   },
@@ -173,92 +706,11 @@
    "editeur": ""
   },
   {
-   "titre": "Zelda Ocarina of Time sort demain : ne le payez pas 70 €",
-   "lien": "https://www.numerama.com/pop-culture/2367589-zelda-ocarina-of-time-precommandes.html",
-   "date": "2026-11-04T10:56:31.000Z",
-   "resume": "Le remake de The Legend of Zelda: Ocarina of Time sort ce jeudi 5 novembre 2026 sur Switch 2. À la veille de sa sortie, la version boîte reste moins chère que sur l’eShop. Voici où la réserver, et ce qu’il faut savoir avant de retrouver Hy…",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Un VPN gratuit, illimité et sans pub : Avast se lance en France, mais il y a une condition",
-   "lien": "https://www.journaldugeek.com/2026/11/04/un-vpn-gratuit-illimite-et-sans-pub-avast-se-lance-en-france-mais-il-y-a-une-condition/",
-   "date": "2026-11-04T10:46:44.000Z",
-   "resume": "Avast lance ce mercredi 4 novembre 2026 en France un VPN entièrement gratuit, sans limite de données, sans publicité et utilisable sur autant d’appareils que l’on veut, mais il y a une contrepartie importante.",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Piratage du Crédit Mutuel Arkéa : ce que l’on sait et qui est réellement concerné",
-   "lien": "https://www.numerama.com/cyberguerre/2367485-piratage-du-credit-mutuel-arkea-ce-que-lon-sait-et-qui-est-reellement-concerne.html",
-   "date": "2026-11-04T10:38:02.000Z",
-   "resume": "Le Crédit Mutuel Arkéa a confirmé ce mercredi 4 novembre avoir subi une cyberattaque, sans donner de montant. Les fonds auraient été convertis en cryptomonnaies, mais la banque assure que ses clients ne subiront aucune conséquence financiè…",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "Codes Depth Incremental (Novembre 2026)",
    "lien": "https://www.dexerto.fr/roblox/codes-depth-incremental-1663301/",
    "date": "2026-11-04T10:34:13.000Z",
    "resume": "Voici tous les codes actifs dans Roblox Depth Incremental qui offrent différentsbonus pour améliorer vos chances de trouver des fossiles.",
    "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Netflix va proposer une nouvelle fonctionnalité qui va vous faire gagner un temps fou",
-   "lien": "https://www.numerama.com/pop-culture/2367345-netflix-va-proposer-une-nouvelle-fonctionnalite-qui-va-vous-faire-gagner-un-temps-fou.html",
-   "date": "2026-11-04T10:33:41.000Z",
-   "resume": "On a tous connu ce moment de solitude sur son canapé, à scroller sans jamais rien lancer. Netflix a enfin décidé d'en finir avec cette torture psychologique en testant AI Discover, une IA qui comprend enfin ce que vous voulez vraiment.",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Zelda: Ocarina of Time : des retards de livraison inquiètent les joueurs à la veille de la sortie",
-   "lien": "https://www.numerama.com/pop-culture/2367339-zelda-ocarina-of-time-des-retards-de-livraison-inquietent-les-joueurs-a-la-veille-de-la-sortie.html",
-   "date": "2026-11-04T10:30:18.000Z",
-   "resume": "Le remake de Zelda: Ocarina of Time sort le 5 novembre sur Switch 2, mais certains joueurs craignent de ne pas recevoir leur précommande à temps. Entre suivis de livraison figés et mails annonçant du retard, voici ce que l’on sait.",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Dune 3 : on sait combien de temps dure le film, une première défaite pour Avengers Doomsday ?",
-   "lien": "https://www.journaldugeek.com/2026/11/04/dune-3-on-sait-combien-de-temps-dure-le-film-et-cest-une-premiere-defaite-pour-avengers-doomsday/",
-   "date": "2026-11-04T10:30:15.000Z",
-   "resume": "Dans la guerre que vont se livrer Dune 3 et Avengers : Doomsday le 16 décembre prochain dans nos salles (et le 18 aux États-Unis), le film de Denis Villeneuve vient de gagner une petite bataille en ce qui concerne sa durée.",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "EDF Tempo : bonne nouvelle, les réveillons des 24 et 31 décembre ne seront plus jamais des jours rouges",
-   "lien": "https://www.numerama.com/sciences/2367287-edf-tempo-bonne-nouvelle-les-reveillons-des-24-et-31-decembre-ne-seront-plus-jamais-des-jours-rouges.html",
-   "date": "2026-11-04T10:30:00.000Z",
-   "resume": "Depuis le 1er novembre 2026, les 24 et 31 décembre ne peuvent plus être des jours rouges pour les quelques 900 000 abonnés à l'option Tempo d'EDF. Le 31 décembre 2025 avait été facturé au tarif rouge.",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Pour le Black Friday, la carte Fnac+ Jackpot arrive avec 30 € déjà chargés dans la cagnotte",
-   "lien": "https://www.numerama.com/pop-culture/2367331-pour-le-black-friday-la-carte-fnac-jackpot-arrive-avec-30-e-deja-charges-dans-la-cagnotte.html",
-   "date": "2026-11-04T10:25:00.000Z",
-   "resume": "[Deal du jour] Pendant le Black Friday, la Fnac vend sa carte Fnac+ Jackpot 19,99 €. Elle arrive avec 30 € déjà chargés dans la cagnotte, à dépenser pendant l'événement.",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Black Friday : voici les offres à ne pas rater ce mercredi (EN DIRECT)",
-   "lien": "https://www.numerama.com/tech/2363357-pre-black-friday-november-2026-meilleures-offres.html",
-   "date": "2026-11-04T10:20:46.000Z",
-   "resume": "Boulanger, Amazon, la Fnac, Darty : le Black Friday 2026 a démarré avec trois semaines d’avance chez certains. Smartphones, consoles, TV, maison connectée… Nous faisons le tri dans les promos, et les meilleures sont ici, mises à jour en co…",
-   "source": "Numerama",
    "categorie": "actu",
    "editeur": ""
   },
@@ -290,74 +742,11 @@
    "editeur": ""
   },
   {
-   "titre": "Une grande banque française piratée : jusqu’à 118 millions d’euros partis en cryptomonnaies !",
-   "lien": "https://www.journaldugeek.com/2026/11/04/une-grande-banque-francaise-piratee-jusqua-118-millions-deuros-partis-en-cryptomonnaies/",
-   "date": "2026-11-04T10:05:25.000Z",
-   "resume": "Le Crédit Mutuel Arkéa, la banque bretonne qui regroupe notamment le Crédit Mutuel de Bretagne et Fortuneo, a annoncé ce mercredi 4 novembre 2026 avoir été victime d’une attaque informatique.",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Dégouté par le résultat des midterms malgré tout l’argent versé, Elon Musk songe à replier ses data centers dans l’espace",
-   "lien": "https://www.numerama.com/politique/2367251-degoute-par-le-resultat-des-midterms-malgre-tout-largent-verse-elon-musk-songe-a-replier-ses-data-centers-dans-lespace.html",
-   "date": "2026-11-04T10:00:34.000Z",
-   "resume": "Dans la nuit de mardi à ce mercredi 4 novembre, Elon Musk a jugé sur X les data centers dans l'espace « plutôt attrayants », quelques heures après la victoire des démocrates au Texas. Selon Axios, il avait dépensé environ 446 millions de d…",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Réseaux sociaux interdits aux ados : l’Europe met un coup d’arrêt à la France (mais pas que)",
-   "lien": "https://www.journaldugeek.com/2026/11/04/reseaux-sociaux-interdits-aux-ados-leurope-met-un-coup-darret-a-la-france-mais-pas-que/",
-   "date": "2026-11-04T10:00:09.000Z",
-   "resume": "Bruxelles veut une règle unique pour 27 pays, quitte à faire attendre tout le monde.",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Un faux entretien et un Homebrew piégé : voici les dessous du vol de 6,3 milliards de dollars chez Binance",
-   "lien": "https://www.numerama.com/cyberguerre/2367259-un-faux-entretien-et-un-homebrew-piege-voici-les-dessous-du-vol-de-63-milliards-de-dollars-chez-binance.html",
-   "date": "2026-11-04T09:43:59.000Z",
-   "resume": "Binance a publié le 3 novembre 2026 son premier rapport sur le piratage du 29 octobre. Il retrace la préparation de l’attaque, qui a notamment reposé sur un faux entretien d’embauche.",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Black Friday sur le PlayStation Store : Sony brade les jeux, on en a retenu 5 faire avant l’arivée de GTA 6",
-   "lien": "https://www.numerama.com/pop-culture/2367253-black-friday-sur-le-playstation-store-sony-brade-les-jeux-on-en-a-retenu-5-faire-avant-larivee-de-gta-6.html",
-   "date": "2026-11-04T09:40:52.000Z",
-   "resume": "Jusqu’au 30 novembre, le PlayStation Store solde des milliers de jeux et contenus PS5, PS4 et PS VR2. Voici les cinq jeux qui méritent vos soirées avant l’arrivée de GTA 6, le 19 novembre.",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Jeu vidéo : sortie de « World of Warcraft Forever », la carte de la nostalgie mais du contenu inédit - Courrier picard",
-   "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNbWZiMnltcVp6bWVBbXZ3VVliWGc1ZnlZQ01mTC1uX29Tb21RM2xXTGtWRE82cTJDdHRiTlM0N3JtRXk5aGQ3SE91Yk9UYlBXR1FsSFhmYll5YkdsTFRHelpLS3hmWEhMZENoQzlscTY4Z0FRbjR6MmxITktCVXpJVHJlYkVGT3VtcmZIMy1oVjdnb3hveVBmeHNvNEtfLS1xV3VnUzBEUjB2eWxMU0czWW9xMUlWX080Ti1ab1V1c3Q5cl9DRXR2MEhXaXVValYtYnJZUWZjbw?oc=5",
-   "date": "2026-11-04T09:38:59.000Z",
-   "resume": "Jeu vidéo : sortie de « World of Warcraft Forever », la carte de la nostalgie mais du contenu inédit Courrier picard",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "Courrier picard"
-  },
-  {
    "titre": "Face aux diverses polémiques récentes, Steam durcit ses contrôles avant publication de jeux sur la plateforme",
    "lien": "https://www.gamekult.com/actualite/face-aux-diverses-polemiques-recentes-steam-durcit-ses-controles-avant-publication-de-jeux-sur-la-plateforme-3050872757.html",
    "date": "2026-11-04T09:38:00.000Z",
    "resume": "Aujourd'hui, Valve a annoncé un certain nombre de changements dans la procédure de validation des jeux avant leur sortie sur Steam, après avoir constaté \"une augmentation significative\" des soumissions de pages et de builds ces derniers mo…",
    "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "BMW va proposer l’équivalent du Tesla FSD en Europe début 2027 (vidéo)",
-   "lien": "https://www.numerama.com/vroom/2367267-bmw-va-proposer-lequivalent-du-tesla-fsd-en-europe-debut-2027-video.html",
-   "date": "2026-11-04T09:34:33.000Z",
-   "resume": "Début 2027, BMW va étendre les capacités de sa conduite semi-autonome aux zones urbaines, auparavant limitée aux autoroutes uniquement. Le lancement débutera en Allemagne, avant un déploiement dans d’autres pays.",
-   "source": "Numerama",
    "categorie": "actu",
    "editeur": ""
   },
@@ -380,15 +769,6 @@
    "editeur": ""
   },
   {
-   "titre": "Il sera possible de jouer à GTA 6 douze heures avant tout le monde avec cette astuce simplissime",
-   "lien": "https://www.journaldugeek.com/2026/11/04/il-sera-possible-de-jouer-a-gta-6-douze-heures-avant-tout-le-monde-avec-cette-astuce-simplissime/",
-   "date": "2026-11-04T09:28:26.000Z",
-   "resume": "Vous pensiez jouer à GTA 6 le jour de la sortie le 19 novembre comme tout le monde ? C’était sans compter sur cette astuce simplissime qui vous permettra d’y jouer dès le 18 novembre à midi.",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "Beginner-friendly USB/XLR dynamic mic for PS5 Pro and PC?",
    "lien": "https://www.reddit.com/r/Twitch/comments/1xnjwi3/beginnerfriendly_usbxlr_dynamic_mic_for_ps5_pro/",
    "date": "2026-11-04T09:28:15.000Z",
@@ -398,30 +778,12 @@
    "editeur": ""
   },
   {
-   "titre": "Après les supermarchés, une cyberattaque menace les réserves de plasma de l’Établissement français du sang",
-   "lien": "https://www.numerama.com/cyberguerre/2367257-apres-les-supermarches-une-cyberattaque-menace-les-reserves-de-plasma-de-letablissement-francais-du-sang.html",
-   "date": "2026-11-04T09:18:02.000Z",
-   "resume": "Un prestataire de l’Établissement français du sang a été piraté, avec des chambres froides reprogrammées pour atteindre 110 °C, révèle Le Canard enchaîné. Les autorités assurent que l’incident a été repéré à temps. Il intervient alors que…",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Calendriers de l’Avent 2026 : notre sélection pour profiter de Noël avant tout le monde",
-   "lien": "https://www.journaldugeek.com/dossier/calendriers-de-lavent-2026-notre-selection-pour-profiter-de-noel-avant-tout-le-monde/",
-   "date": "2026-11-04T09:16:22.000Z",
-   "resume": "En 2026, le calendrier de l'Avent n'a plus grand-chose à voir avec du chocolat.",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Pokémon 30 ans : voici les 5 cartes les plus chères (dépêchez-vous de les vendre)",
-   "lien": "https://www.journaldugeek.com/2026/11/04/pokemon-30-ans-voici-les-5-cartes-les-plus-cheres-depechez-vous-de-les-vendre/",
-   "date": "2026-11-04T09:06:03.000Z",
-   "resume": "Quelques jours avant la sortie de la nouvelle vague de l'extension 30ᵉ Anniversaire, les valeur des cartes s'effondrent déjà.",
-   "source": "Journal du Geek",
-   "categorie": "actu",
+   "titre": "Alt accounts and giveaways",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xnjptw/alt_accounts_and_giveaways/",
+   "date": "2026-11-04T09:15:46.000Z",
+   "resume": "Hey guys! I’m having a problem. I’ve been doing some giveaways in my stream and I’m running into an issue. Alt accounts. Not bots, alts. I have been doing my giveaways as “follower only” and I have strict e-mail verification and phone veri…",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
    "editeur": ""
   },
   {
@@ -430,15 +792,6 @@
    "date": "2026-11-04T08:43:00.000Z",
    "resume": "Selon Jason Schreier de Bloomberg, plusieurs entreprises ont fait des offres à Microsoft pour racheter Arkane Lyon, le studio français derrière Dishonored et Marvel’s Blade, le titre en développement actuellement chez le studio. Parmi tout…",
    "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Flirter avec une IA ? Pour Apple, c’est 18 ans minimum",
-   "lien": "https://www.journaldugeek.com/2026/11/04/flirter-avec-une-ia-pour-apple-cest-18-ans-minimum/",
-   "date": "2026-11-04T08:31:17.000Z",
-   "resume": "Apple va demander aux développeurs de préciser si leurs apps proposent des rencontres, des relations avec un compagnon virtuel ou du partage de position. Les fonctions d'ordre romantiques ou sexuelles entraîneront une classification de 18…",
-   "source": "Journal du Geek",
    "categorie": "actu",
    "editeur": ""
   },
@@ -452,15 +805,6 @@
    "editeur": ""
   },
   {
-   "titre": "Prolifération d’apps de deepfakes sexuels sur l’App Store et Google Play",
-   "lien": "https://www.journaldugeek.com/2026/11/04/proliferation-dapps-de-deepfakes-sexuels-sur-lapp-store-et-google-play/",
-   "date": "2026-11-04T07:58:24.000Z",
-   "resume": "Des applications pour créer des portraits d’animaux ou de coaching sportif cachaient des outils de création de deepfakes sexuels. Un réseau de plus de 400 domaines et apps, distribuées chez Apple et Google et promues sur les plateformes de…",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "L'Attaque des Titans revient sur le devant de la scène avec un jeu vidéo centré sur un personnage inédit absent du manga original",
    "lien": "https://www.jeuxvideo.com/news/2111941/l-attaque-des-titans-revient-sur-le-devant-de-la-scene-avec-un-jeu-video-centre-sur-un-personnage-inedit-absent-du-manga-original.htm",
    "date": "2026-11-04T07:40:08.000Z",
@@ -468,51 +812,6 @@
    "source": "jeuxvideo.com",
    "categorie": "actu",
    "editeur": ""
-  },
-  {
-   "titre": "5 choses que vous devez absolument savoir avant Les Anneaux de pouvoir saison 3",
-   "lien": "https://www.journaldugeek.com/dossier/5-choses-que-vous-devez-absolument-savoir-avant-les-anneaux-de-pouvoir-saison-3/",
-   "date": "2026-11-04T07:34:11.000Z",
-   "resume": "La série inspirée des romans Le Seigneur des anneaux : les anneaux de pouvoir revient pour une saison 3. Fini la longue mise en route, la production Prime Video entre dans le vif du sujet. Mais avant, il faut savoir 5 choses pour tout comp…",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "GTA 6 : Rockstar avance la date du téléchargement et confirme une taille qui risque de surprendre - La Crème Du Gaming",
-   "lien": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQV1BHYi00dXFTYzN1SmY0UWlSUDNTZENKU0JXMVNwc0ZuekNtOWhTY1RrSnBwM2N5ai1UdjRYVkQ2bkFCeTRuNkpoMU56Yll2UTctMmhZRTQ0NUlOQVpfVmd4MjFSQkJpSktQeVA5QmNTUjhpaTd5TU16eFVJMXlNeVFRTmxXZDExdU15VDI0XzEwZmdBdGFJSjZacHZ1NGxyUFhvRVdwVGp6ck55UXNWN09FbnRhOTdhUE1WSTdTVW95dENnYlNMM3hyVWNYV2ZPVjgxQUpmSTZRUWQwX05BbmhmRGRpQXYt?oc=5",
-   "date": "2026-11-04T07:30:39.000Z",
-   "resume": "GTA 6 : Rockstar avance la date du téléchargement et confirme une taille qui risque de surprendre La Crème Du Gaming",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "La Crème Du Gaming"
-  },
-  {
-   "titre": "Le Big Three : en novembre 2026, il y a 3 énormes jeux vidéo qui sortent - JeuxVideo.com",
-   "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOUXFCZFQ1dHY2MFpRekRHZGxoeGtGMnA1aGRYVkU0U0pOUlFoWEJPalYzclpxcGROallLSlR4OGtTdVJOUVNxbEwtODlwZ0VDaHB5YW1Ga1pKXzRYa3J5TDJUclhhWDNfQ18zTEFIcHd6dmhaMnBOTjR0ajFIaGZ4aUY3c2RYN3FMajhVWFdnaGU0SWFPUlUzV3lHQlFrRmNILXNEb3hGNFJoc3JUbzF2azBB?oc=5",
-   "date": "2026-11-04T07:28:31.000Z",
-   "resume": "Le Big Three : en novembre 2026, il y a 3 énormes jeux vidéo qui sortent JeuxVideo.com",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "JeuxVideo.com"
-  },
-  {
-   "titre": "Des milliers de suppressions de postes chez Disney en vue",
-   "lien": "https://www.journaldugeek.com/2026/11/04/des-milliers-de-suppressions-de-postes-chez-disney-en-vue/",
-   "date": "2026-11-04T07:02:35.000Z",
-   "resume": "Disney taille dans ses dépenses. Le géant aux grandes oreilles préparerait plusieurs milliers de suppressions de postes, d'après d'inquiétantes rumeurs. Des responsables ont été « invités » à réaliser de grosses économies dans l’objectif d…",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "PS5 : les 6 sorties de jeux que vous ne pouvez pas manquer en novembre 2026 - WorldOfGeek",
-   "lien": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE94YU1PclZscUJZZklXMUxEZTRFSWhZUDdJNURwX0hzWUNlRVVURDZGQVZpYUllcERZcVBjcmVkWVN6UUlvVElLamJaUUp2WUlVSDdhRlFQcHlKZFBTVlVXaVRDOGIzOXc?oc=5",
-   "date": "2026-11-04T07:00:00.000Z",
-   "resume": "PS5 : les 6 sorties de jeux que vous ne pouvez pas manquer en novembre 2026 WorldOfGeek",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "WorldOfGeek"
   },
   {
    "titre": "Des bonnes nouvelles à nuancer pour Remedy : Control Resonant triple le chiffre d’affaires de la firme, mais le trimestre se referme à peine à l’équilibre",
@@ -533,15 +832,6 @@
    "editeur": ""
   },
   {
-   "titre": "Godzilla: Destroy All Monsters Melee Remastered : le jeu disponible sur PC et Switch 2 - Sortir à Paris",
-   "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPSEVGQ0RQVEFoYVBVVkxCT3ZCMXlZOUdVUEN1S05FYlZFZFI4VWRmSlg4WFIzWFVQVlNMX0s1T0JFNFRiSGJZbklubHcyTi1DZjgtWjlPWHdZNHgtRFBkM0pJbW84M2wwUEoxaktLS3JIZTJXRlZpQzlCR0VxeE5jSllsdno4SkF5c0d6eFNNVEJtVWRlVjgyNUdSVzdSRng0UUlOZHFSNU5NeUVXVlIxVTdlSkhoUldHZkppWWZNR1BobW9WcTF5NmFfYTdXLVFPT3RsWFFYSTlIa0k?oc=5",
-   "date": "2026-11-04T06:22:05.000Z",
-   "resume": "Godzilla: Destroy All Monsters Melee Remastered : le jeu disponible sur PC et Switch 2 Sortir à Paris",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "Sortir à Paris"
-  },
-  {
    "titre": "Noté 19/20, ce jeu disponible sur Nintendo Switch 2 est 3 fois plus grand que GTA 6",
    "lien": "https://www.jeuxvideo.com/news/2111934/note-19-20-ce-jeu-disponible-sur-nintendo-switch-2-est-3-fois-plus-grand-que-gta-6.htm",
    "date": "2026-11-04T06:05:10.000Z",
@@ -549,15 +839,6 @@
    "source": "jeuxvideo.com",
    "categorie": "actu",
    "editeur": ""
-  },
-  {
-   "titre": "Game Pass novembre 2026 : Banjo arrive, GoldenEye s’en va - SpiritGamer",
-   "lien": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBWX01ON3M1SVg5dnVqQXczS0Q1WXM1WW14X3N3V05xY1hwMUJRX213cDY0M2xQN0U0Zkk2TkFpRVh3b1NaWDJ3U3NwcGVNQzZJbnRhMXd0QU1pd3NiNTl4OUItc2ZINklScFp4cXB3?oc=5",
-   "date": "2026-11-04T05:21:45.000Z",
-   "resume": "Game Pass novembre 2026 : Banjo arrive, GoldenEye s’en va SpiritGamer",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "SpiritGamer"
   },
   {
    "titre": "Sur Twitch, \"La Convergence des Streams\" récolte de l'argent au profit de la LDH afin de \"soutenir le mouvement social en cours\" - franceinfo",
@@ -605,15 +886,6 @@
    "editeur": ""
   },
   {
-   "titre": "Les sorties jeux vidéo les plus attendues du mois de novembre 2026 - L'Éclaireur Fnac",
-   "lien": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZkhCc3Vkd3JMYTNmUWEwcTBSSW9seXV2SDZJUUQxVS1XV0xEVldkcXhkeU9tNmZwcFVNcE51WTRDSUw3QVBzNUlNTVZsdURpWDRUNzZNNW5lQWZIaG0zNGtMOVNnT1JQdFRfNDJfTmtqdkxWcHNSdXNWY0VTei1xbVpRSnBCdWhFOFVaenRBd0d1azg4cmQ2dHR1M3IzSk5CWXRfTXJUWHVweTlrdzFMakp6OA?oc=5",
-   "date": "2026-11-04T02:00:43.000Z",
-   "resume": "Les sorties jeux vidéo les plus attendues du mois de novembre 2026 L'Éclaireur Fnac",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "L'Éclaireur Fnac"
-  },
-  {
    "titre": "Unable to buy bits no matter what I do.",
    "lien": "https://www.reddit.com/r/Twitch/comments/1xnbwfa/unable_to_buy_bits_no_matter_what_i_do/",
    "date": "2026-11-04T01:57:13.000Z",
@@ -630,15 +902,6 @@
    "source": "Reddit · r/Twitch",
    "categorie": "communaute",
    "editeur": ""
-  },
-  {
-   "titre": "Xbox Game Pass novembre 2026 : les sorties day one réservées à Ultimate et au PC - Martin Cid Magazine",
-   "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOekdWVzR6ZnlSaFhpYkdoZ01iRU5sRXdVWWFCaWtyaU15RWQwazZQWnhudVRXbXZBcURIUzdTUldSMGNNSEdrQnQ4eWlyRGE0WXJQY2hINkp6N2QydWJtanlXdmdWT3pmVU5uOXlvbVJsTTFmMWtrQ1ljTmdNTjNNRGxLbGNYVXllaFd5ZUJRNS1zQzB1V1VmNjlmVjRPMGVlWEpyVDZ1UXdKczdoNTZWSnNFTFJ2TGc?oc=5",
-   "date": "2026-11-03T22:41:40.000Z",
-   "resume": "Xbox Game Pass novembre 2026 : les sorties day one réservées à Ultimate et au PC Martin Cid Magazine",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "Martin Cid Magazine"
   },
   {
    "titre": "Le jeu vidéo Phantom Blade Zero trop facile pour certains joueurs ?",
@@ -659,74 +922,11 @@
    "editeur": ""
   },
   {
-   "titre": "WoW Forever : Quelle race choisir ?",
-   "lien": "https://www.jeuxvideo.com/news/2109841/wow-forever-quelle-race-choisir.htm",
-   "date": "2026-11-03T19:30:08.000Z",
-   "resume": "Avec la classe, voici l'autre choix très important que vous aurez à faire lorsque vous créerez votre personnage sur les méga-serveurs de World of Warcraft Forever. Dans ce guide, nous verrons tout ce qu'il y a à savoir pour que vous puissi…",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Carte, boussole, objet de boss : pourquoi la formule sacrée de Zelda Ocarina of Time était aussi son pire piège",
-   "lien": "https://www.jeuxvideo.com/news/2111690/carte-boussole-objet-de-boss-pourquoi-la-formule-sacree-de-zelda-ocarina-of-time-etait-aussi-son-pire-piege.htm",
-   "date": "2026-11-03T19:10:08.000Z",
-   "resume": "Considéré comme l'un des piliers fondateurs du jeu vidéo en 3D, The Legend of Zelda : Ocarina of Time a instauré une formule des donjons si efficace qu'elle est devenue intouchable pendant deux décennies. Mais en réalité, cette structure d…",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Soulframe : le prochain jeu des créateurs de Warframe ouvre enfin ses portes à tout le monde",
-   "lien": "https://www.gamekult.com/actualite/soulframe-le-prochain-jeu-des-createurs-de-warframe-ouvre-enfin-ses-portes-a-tout-le-monde-3050872740.html",
-   "date": "2026-11-03T19:05:00.000Z",
-   "resume": "Annoncé en juillet 2022, Soulframe n'est pas du genre à précipiter son développement, c'est le moins que l'on puisse dire. Depuis décembre 2023, Digital Extremes façonne le jeu avec une petite partie de la communauté dans le cadre des Soul…",
-   "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Manoir rouge Phantom Blade Zero : Comment ouvrir la porte ?",
-   "lien": "https://www.jeuxvideo.com/news/2111656/manoir-rouge-phantom-blade-zero-comment-ouvrir-la-porte.htm",
-   "date": "2026-11-03T18:15:09.000Z",
-   "resume": "Le Manoir rouge est un lieu clé dans Phantom Blade Zero, mais résoudre l'énigme de la porte marionnette demande du temps, des efforts et les bons objets. Découvrez comment faire dans ce guide.",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Booster indé du 3 novembre : MyDear.exe, Lucky Punk - SpiritGamer",
-   "lien": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1PR3hneHpuakcyWE0xNTNUdWQ0V0NPVmRQSndreWZPUzdHUzhRNzM4NlBxOUVPaHpTcE9DSVpKNkxXdWhDUmItT3ZpYzVYa3R4TXpQYXd4b2VxX0VLTEJVZEtHcWU1TXc5QXc?oc=5",
-   "date": "2026-11-03T18:00:00.000Z",
-   "resume": "Booster indé du 3 novembre : MyDear.exe, Lucky Punk SpiritGamer",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "SpiritGamer"
-  },
-  {
-   "titre": "Personne ne l’avait vu venir : Guild Wars premier du nom se met au roguelite avec la nouvelle extension Afterlife",
-   "lien": "https://www.gamekult.com/actualite/personne-ne-l-avait-vu-venir-guild-wars-premier-du-nom-se-met-au-roguelite-avec-la-nouvelle-extension-afterlife-3050872746.html",
-   "date": "2026-11-03T18:00:00.000Z",
-   "resume": "Il y a fort longtemps, les concepteurs d'ArenaNet clamaient leur volonté de voir les différents épisodes de la franchise évoluer conjointement. Une promesse qui prend aujourd'hui une tournure quasi nécromantique. Eh oui, le mythique premie…",
-   "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "Les meilleurs joueurs sans contrat dans Football Manager 27",
    "lien": "https://www.dexerto.fr/football-manager/football-manager-27-meilleurs-joueurs-sans-contrat-1663271/",
    "date": "2026-11-03T17:47:23.000Z",
    "resume": "Découvrez les meilleurs joueurs sans contrat de Football Manager 27 et renforcez votre effectif sans indemnité, du gardien au buteur.",
    "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Les chiffres sont tombés : en deux ans à peine, l'IA s'est déjà emparée de la moitié de nos jeux PC",
-   "lien": "https://www.jeuxvideo.com/news/2112024/les-chiffres-sont-tombes-en-deux-ans-a-peine-l-ia-s-est-deja-emparee-de-la-moitie-de-nos-jeux-pc.htm",
-   "date": "2026-11-03T17:45:08.000Z",
-   "resume": "En à peine trois ans, l'IA générative a fait basculer la création de jeux sur PC dans une nouvelle ère. Sur Steam, près d'un jeu sur deux sorti à l'automne 2026 reconnaît intégrer du contenu généré par de l'IA. Retour sur cette transformat…",
-   "source": "jeuxvideo.com",
    "categorie": "actu",
    "editeur": ""
   },
@@ -740,110 +940,11 @@
    "editeur": ""
   },
   {
-   "titre": "GTA 6 sera disponible en magasin plus tôt que prévu, voici toutes les infos pour l'avoir au bon moment - Journal du Geek",
-   "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPaVpwMjhacnNuOUJFOXVxWDZPakVZMEl0eE5YSGtSMWtaVUJqUDVsUVVDb1U4ZWl5TG1PMF9PWWgzb3p4dHNpWFY3aVlQRUp1YXRzMGlwQWFRZlJQZVFsQVBLTVcweTRYYjZfRjlpZVpkM2swZWtFMVdxSTliM3JnZ09PT3QyQ1dZMnk5M0E0ZFE2MW5XZ0U5MUkxOUN1QXduN1ljMTVGbU1VUlR1eTZwOEtuR1NWQzBYaFpkMDlhaW02NXg0WXJRZkpLOU4taFNNY2E0NjRDaWNGOFU?oc=5",
-   "date": "2026-11-03T17:42:01.000Z",
-   "resume": "GTA 6 sera disponible en magasin plus tôt que prévu, voici toutes les infos pour l'avoir au bon moment Journal du Geek",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "Journal du Geek"
-  },
-  {
-   "titre": "Thief The Dark Project Remastered se faufile jusqu'à décembre sur PC et consoles",
-   "lien": "https://www.gamekult.com/actualite/thief-the-dark-project-remastered-se-faufile-jusqu-a-decembre-sur-pc-et-consoles-3050872741.html",
-   "date": "2026-11-03T17:31:00.000Z",
-   "resume": "Le légendaire Thief: The Dark Project, le monument de l'infiltration en vue subjective, s'apprête à faire son grand retour sous la houlette experte de Nightdive Studios, avec un dépoussiérage en règle, édité conjointement avec Atari et Eid…",
-   "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "GTA 6: la date de préchargement et la taille du jeu enfin connues - 24 heures",
-   "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOR2Q3VW9mRVhsSzVoWmxPcGFoanJWOFdCZnExWkl4MTlkX0xSQ0N6RnMyX19KSEpHa0lxbWNOV0dVWGh6a2lmY19zTEpKWXJoWUpyNEZzOHRuMFdGRDVtOU96bmJjS195Q2V5NTQ5Mlc0dVZEb2g1eHg0RG55eHZoYm5Cc0hjNGlQM1V2REo0ZHc2ZzZvQXZVckZyLVVrRG82?oc=5",
-   "date": "2026-11-03T17:23:16.000Z",
-   "resume": "GTA 6: la date de préchargement et la taille du jeu enfin connues 24 heures",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "24 heures"
-  },
-  {
-   "titre": "Warframe: Tau : un nouveau système stellaire à explorer dans la mise à jour gratuite - Sortir à Paris",
-   "lien": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPTEx3dWsyV1B6MDA5ZnZBUkZibXZ1SmF5Y2hiZ0x0RGdTMzhaakw1QVZ6bmRheWx2d1I1enExWDdYZ2h2Y0FNdW4zU041NmVwSWlxWEwzUUJHcWxZcGN5YWFOQmt3Um5pU3Yzakh1R2IwTGs3NUIxa2VZaUVtS2tRaGlpU2g0V1VjY1gzWmQtUmNEMlF1aUFUS1R2cmdvNWJzQ2J4MnNEN0ZEUTRYZEY0b3dXWjJyZl9JN2tuN19RVHpUMFNNb19nT3V3M2h6Q25GTFF1aXc2akI?oc=5",
-   "date": "2026-11-03T17:06:46.000Z",
-   "resume": "Warframe: Tau : un nouveau système stellaire à explorer dans la mise à jour gratuite Sortir à Paris",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "Sortir à Paris"
-  },
-  {
-   "titre": "GTA 6 : date de préchargement et taille officielle, voici quand vous pourrez télécharger le jeu et il est colossal - Gameblog",
-   "lien": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQaklTT3FEWlJ2SWtqNUVld3JqNjVzZ2Nkc3FGa3YxMWYzbUJHS1F5TjJLS1hDbGVoTzFjZVdxcHdkSmZSS1I5R1FzTWJzdi1sXzhNSHhfWTRIMnFYMG50c2x4eG5DaUlFX1lZUmJRQk9FdVVxVWllTDU4ajVvamN0WEVjR1QyMnNxTnhPN1FNWWZZTkhySUNqeWhvQVI?oc=5",
-   "date": "2026-11-03T17:04:32.000Z",
-   "resume": "GTA 6 : date de préchargement et taille officielle, voici quand vous pourrez télécharger le jeu et il est colossal Gameblog",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "Gameblog"
-  },
-  {
    "titre": "Un joueur Call of Duty affirme avoir été sauvé d’une balle perdue par son écran gaming",
    "lien": "https://www.dexerto.fr/call-of-duty/joueur-call-of-duty-affirme-avoir-ete-sauve-balle-perdue-par-son-ecran-gaming-1663266/",
    "date": "2026-11-03T16:59:51.000Z",
    "resume": "Un joueur Call of Duty affirme avoir échappé au pire grâce à son écran Asus qui aurait arrêté une balle perdue et le fabricant a réagi à son histoire.",
    "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "The Elder Scrolls 6 Sentinel : la nouvelle vidéo révèle un élément important",
-   "lien": "https://www.jeuxvideo.com/news/2112196/the-elder-scroll-6-sentinel-la-nouvelle-video-revele-un-element-important.htm",
-   "date": "2026-11-03T16:26:07.000Z",
-   "resume": "MAIS NON ! Bethesda vient de dévoiler un nouveau teaser pour The Elder Scrolls 6. Au programme : nom officiel, premiers détails sur le scénario et une citation très intéressante…",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "WoW Forever : J'ai pu visiter la toute nouvelle zone du Mont Hyjal et voici mes impressions !",
-   "lien": "https://www.jeuxvideo.com/news/2111550/wow-forever-j-ai-pu-visiter-la-toute-nouvelle-zone-du-mont-hyjal-et-voici-mes-impressions.htm",
-   "date": "2026-11-03T16:15:08.000Z",
-   "resume": "On a eu la chance de s'approcher du Mont Hyjal, l'ultime zone que vous foulerez du pied lors de la progression de votre personnage. Région inédite chargée d'histoire, cette dernière a également représenté un sacré challenge pour les dévelo…",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "GTA 6 : Rockstar Games annonce les dernières infos officielles avant la sortie du jeu - IGN France",
-   "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQUktmdnVVVTJRdlYtaWRjRlpVWXpTN3MxdEQ0T2dOTVlqUDJwSnVCMmlJSzBrNU1vZVRGOWM2b0c4b19fVHlyQ3dBaWVUYklocEtjd1ZsSnpNV1J5QXhfS1JPYTJyQ2xVck00UlQ2M3hfb1REU1NRSFhkNXR4U0JBTy1pcVprX0RXamZRMzBaMVVZb3BWek1Va09hbDNOU2d5dVlYd1hzbU1TZ3hhenB4bzJUVW5GeWVKNXFfV3cybnh0YnRYOXc?oc=5",
-   "date": "2026-11-03T15:43:00.000Z",
-   "resume": "GTA 6 : Rockstar Games annonce les dernières infos officielles avant la sortie du jeu IGN France",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "IGN France"
-  },
-  {
-   "titre": "Pour ses 40 ans, Bethesda confirme The Elder Scrolls VI : Sentinel",
-   "lien": "https://www.gamekult.com/actualite/pour-ses-40-ans-bethesda-confirme-the-elder-scrolls-vi-sentinel-3050872745.html",
-   "date": "2026-11-03T15:42:00.000Z",
-   "resume": "Allez, réjouissez-vous : à défaut de montrer des images, Bethesda a confirmé le titre d'Elder Scrolls 6 et (probablement) sa région. Voici The Elder Scrolls VI : Sentinel.",
-   "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Yakuza Kenzan ! enfin jouable en anglais grâce à une traduction amateure titanesque",
-   "lien": "https://www.gamekult.com/actualite/yakuza-kenzan-enfin-jouable-en-anglais-grace-a-une-traduction-amateure-titanesque-3050872739.html",
-   "date": "2026-11-03T15:36:00.000Z",
-   "resume": "L'attente aura duré la bagatelle de dix-huit ans. L'illustre Ryū ga Gotoku : Kenzan ! (ou Yakuza : Kenzan !, ou Like a Dragon : Kenzan !, à votre guise), épisode dérivé de la prolifique franchise Yakuza exclusif à la PlayStation 3, vient e…",
-   "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "GTA 6 : voici exactement quel jour et à quelle heure vous pourrez précharger les 212 Go du jeu",
-   "lien": "https://www.gamekult.com/actualite/gta-6-voici-exactement-quel-jour-et-a-quelle-heure-vous-pourrez-precharger-les-212-go-du-jeu-3050872744.html",
-   "date": "2026-11-03T15:29:00.000Z",
-   "resume": "À J-16 du plus grand événement vidéoludique de l'année (et même un peu plus que ça), Rockstar Games vient de confirmer que les joueurs ayant précommandé Grand Theft Auto VI pourront précharger le jeu dans leur console à partir du 10 novemb…",
-   "source": "Gamekult",
    "categorie": "actu",
    "editeur": ""
   },
@@ -862,24 +963,6 @@
    "date": "2026-11-03T15:04:30.000Z",
    "resume": "Près de 50 % des jeux sortis sur Steam en octobre 2026 déclarent utiliser l’IA générative. Une étude révèle comment les développeurs l’exploitent.",
    "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Et si le prochain Grasshopper n'était pas un jeu d'action ? Suda replonge à l'époque d'avant No More Heroes",
-   "lien": "https://www.gamekult.com/actualite/et-si-le-prochain-grasshopper-n-etait-pas-un-jeu-d-action-suda-replonge-a-l-epoque-d-avant-no-more-heroes-3050872736.html",
-   "date": "2026-11-03T14:48:00.000Z",
-   "resume": "Gōichi Suda aurait-il la sensation de commencer à tourner en rond avec ses jeux d'action décalés ? Après Romeo is a Dead Man et alors que la soixantaine se rapproche, le directeur de Grasshopper Manufacture profite du nouveau chapitre qui…",
-   "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Build A Rocket Boy (MindsEye) s'effondre avec le lancement catastrophique de Handle With Care",
-   "lien": "https://www.gamekult.com/actualite/build-a-rocket-boy-mindseye-s-effondre-avec-le-lancement-catastrophique-de-handle-with-care-3050872735.html",
-   "date": "2026-11-03T13:51:00.000Z",
-   "resume": "Le studio Build A Rocket Boy continue sa descente aux enfers avec le naufrage de son nouveau jeu coopératif Handle With Care, couplé à de pathétiques accusations de manipulation d'audience sur les réseaux sociaux.",
-   "source": "Gamekult",
    "categorie": "actu",
    "editeur": ""
   },
@@ -915,33 +998,6 @@
    "lien": "https://www.dexerto.fr/films-series/calendrier-limperatrice-remariee-sortie-episodes-1663214/",
    "date": "2026-11-03T11:41:28.000Z",
    "resume": "Un classique des webtoons de romance s’offre une adaptation ambitieuse en série : voici le calendrier de sortie des épisodes pour ne rien rater.",
-   "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Un jeu Portal annulé par Valve devient enfin jouable grâce aux fans",
-   "lien": "https://www.dexerto.fr/jeux-video/jeu-portal-annule-par-valve-devient-jouable-grace-fans-1663195/",
-   "date": "2026-11-03T11:22:23.000Z",
-   "resume": "F-Stop, un préquel de Portal annulé par Valve, devient partiellement jouable grâce à des fans et à des fichiers ayant fuité.",
-   "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Résumé et calendrier de Black Doves : planning de la saison 2 et récap de la saison 1 sur Netflix",
-   "lien": "https://www.dexerto.fr/films-series/black-doves-resume-saisons-precedentes-1663186/",
-   "date": "2026-11-03T10:31:21.000Z",
-   "resume": "Les colombes noires reviennent pour un nouveau chapitre, et on vous fait le récap de ce qu’il faut savoir avant la saison 2 de Black Doves.",
-   "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "La MAJ Modern Warfare 4 du 2 novembre réduit les tours de reconnaissance dans DMZ",
-   "lien": "https://www.dexerto.fr/call-of-duty/maj-modern-warfare-4-2-novembre-2026-reduit-tours-reconnaissance-dmz-1663171/",
-   "date": "2026-11-03T10:16:31.000Z",
-   "resume": "Découvrez le contenu de la mise à jour du 2 novembre de Modern Warfare 4 qui apporte des ajustements en multijoueur et DMZ.",
    "source": "Dexerto FR",
    "categorie": "actu",
    "editeur": ""
@@ -983,69 +1039,6 @@
    "editeur": ""
   },
   {
-   "titre": "Twitch taking money 20+ days after I cancelled my turbo subscription",
-   "lien": "https://www.reddit.com/r/Twitch/comments/1xmf8by/twitch_taking_money_20_days_after_i_cancelled_my/",
-   "date": "2026-11-03T01:04:23.000Z",
-   "resume": "Hello guys just wanted to post this as I wanted to see if this has happened to anyone else, I canceled my turbo subscription 20+ days ago and they for some reason charged me for $15.99 yesterday which is the price of turbo in my country, I…",
-   "source": "Reddit · r/Twitch",
-   "categorie": "communaute",
-   "editeur": ""
-  },
-  {
-   "titre": "Latest IOS Update Broke Twitch App",
-   "lien": "https://www.reddit.com/r/Twitch/comments/1xmdzui/latest_ios_update_broke_twitch_app/",
-   "date": "2026-11-03T00:07:42.000Z",
-   "resume": "For IPhone XR, twitch is aware and has no timeline for a fix submitted by /u/jafromnj [link] [comments]",
-   "source": "Reddit · r/Twitch",
-   "categorie": "communaute",
-   "editeur": ""
-  },
-  {
-   "titre": "Does anyone know what I can do to increase my recordings quality?",
-   "lien": "https://www.reddit.com/r/Twitch/comments/1xm9htc/does_anyone_know_what_i_can_do_to_increase_my/",
-   "date": "2026-11-02T21:05:26.000Z",
-   "resume": "I am looking back and my stream VOD on Twitch seems to be fine, but I am looking at my recordings and they look very grainy and blocky. It should both be at 720p. My Rate Control is CRF and Quality is set at 23 currently on OBS(Macbook) fo…",
-   "source": "Reddit · r/Twitch",
-   "categorie": "communaute",
-   "editeur": ""
-  },
-  {
-   "titre": "When you cannot connect with Twitch support because of AI...",
-   "lien": "https://www.reddit.com/r/Twitch/comments/1xm8gah/when_you_cannot_connect_with_twitch_support/",
-   "date": "2026-11-02T20:25:28.000Z",
-   "resume": "https://preview.redd.it/r6eq0ciid9zh1.png?width=512&format=png&auto=webp&s=4aa13794a8ecdd6c4e50d837ba14f97a0e76f033 https://preview.redd.it/31efta3ld9zh1.png?width=482&format=png&auto=webp&s=c9c840db9c23494f29a5bb858617aacfd20c2d26 24 hour…",
-   "source": "Reddit · r/Twitch",
-   "categorie": "communaute",
-   "editeur": ""
-  },
-  {
-   "titre": "Warzone va retirer Verdansk et Rebirth Island dès la Saison 1, mais pas définitivement",
-   "lien": "https://www.dexerto.fr/call-of-duty/warzone-retire-verdansk-et-rebirth-island-des-saison-1-mais-pas-definitivement-1663149/",
-   "date": "2026-11-02T18:06:51.000Z",
-   "resume": "Verdansk et Rebirth Island vont disparaître temporairement de Warzone à l’occasion de la Saison 1 de Modern Warfare 4.",
-   "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Calendrier de Stick Saison 2, dates et heure de sortie des épisodes sur Apple TV",
-   "lien": "https://www.dexerto.fr/films-series/calendrier-stick-saison-2-sortie-episodes-1663151/",
-   "date": "2026-11-02T18:04:24.000Z",
-   "resume": "La série Stick revient dans une saison 2, et on vous détaille son calendrier de sortie des épisodes pour ne rien rater.",
-   "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Classement Twitch : Audiences Top 20 Streamers (Octobre 2026) - ActuStream",
-   "lien": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9WMTRHd2U1Wi04S2N1aHJPMzlfZ282d0RjOEo1UHh5YTUtN2U4a0k0cm9GWWhENnBzZXVGVURfcFZDeUZGbVFkcm1oX2N5VkdqeVZGR1Z6Um5oU1dNN1hhT3dzU2VxcC1uaDVhblBEZDF0ZzVJeFg1RUw0WlNHMlE?oc=5",
-   "date": "2026-11-02T12:13:01.000Z",
-   "resume": "Classement Twitch : Audiences Top 20 Streamers (Octobre 2026) ActuStream",
-   "source": "Google Actualités · streamers et streaming",
-   "categorie": "alerte",
-   "editeur": "ActuStream"
-  },
-  {
    "titre": "Halloween : Sur Twitch, une année record pour donner des frissons - 20 Minutes",
    "lien": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNNTRtYUdHdll6SFA5cE5Fc20zQ3lGYkljU1dNS1FfRFpoc0UxVGhQODFVRnpGN3JGdGNnN1R0cWJIZWE3M05qRWxUbmUwOVpEcDM2YW03N0l0TVlYNDRJNlA2ZTB3SkpMZnBvdWtJbFBWbkZwMU9iUDd6WEFDUUhZaHRHeVllT2FFRFNYVXBHcjRvUllaRC1XdDlmUlJNMEpTTjRiOGdwS0k?oc=5",
    "date": "2026-10-31T14:02:00.000Z",
@@ -1053,6 +1046,15 @@
    "source": "Google Actualités · Twitch France",
    "categorie": "alerte",
    "editeur": "20 Minutes"
+  },
+  {
+   "titre": "Les 20 streamers Twitch les plus suivis en France - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOQzBSbXZfREc4ak9KVkRxX2hXOXlBZ0xSb1JqaGkwOTNUdHlpQ09rckV0WUNZT2hxWU5VbHpOdmNYMS01OG1sek8yZ1M1X1dmRldoWTNtRldzNDVTbjhJT0NUUVVWT3FPZlZaLThMaVpqZ0tDR2pNMTF2b0NzSFk2R1J6SkZvSUFtdHVZSWQ1bzFRRGdLSTF3VlpxVXV2ZjA3cEhjOWo0MA?oc=5",
+   "date": "2026-10-28T17:30:28.000Z",
+   "resume": "Les 20 streamers Twitch les plus suivis en France Dexerto.fr",
+   "source": "Google Actualités · Twitch France",
+   "categorie": "alerte",
+   "editeur": "Dexerto.fr"
   },
   {
    "titre": "Streamers français les plus suivis en 2026, notre sélection - Gaming Campus",
