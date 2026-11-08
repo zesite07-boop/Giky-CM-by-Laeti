@@ -131,7 +131,7 @@
       "id": "gnews-events-streamers",
       "nom": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
       "categorie": "evenements",
-      "url": "https://news.google.com/rss/search?q=TwitchCon+OR+%22Z+Event%22+OR+ZLAN+OR+%22Gamers+Assembly%22+OR+%22%C3%A9v%C3%A9nement+streamers%22+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
+      "url": "https://news.google.com/rss/search?q=TwitchCon+OR+%22Z+Event%22+OR+ZLAN+OR+%22%C3%A9v%C3%A9nement+streamers%22+OR+%22soir%C3%A9e+streamers%22+OR+%22stream+caritatif%22+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
     },
     {
       "id": "gnews-events-salons",
@@ -141,9 +141,9 @@
     },
     {
       "id": "gnews-events-esport",
-      "nom": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+      "nom": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
       "categorie": "evenements",
-      "url": "https://news.google.com/rss/search?q=%22Esports+World+Cup%22+OR+%22Karmine+Corp%22+OR+%22tournoi+e-sport%22+OR+%22Gamers+Assembly%22+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
+      "url": "https://news.google.com/rss/search?q=%22Esports+World+Cup%22+OR+%22Gamers+Assembly%22+OR+%22LAN+party%22+OR+%22tournoi+streamers%22+OR+%22Gamescom%22+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
     },
     {
       "id": "gnews-events-marques",
