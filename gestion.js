@@ -116,6 +116,18 @@
   function prochaines(liste, aujourdhui) {
     return liste.filter(e => e.date && e.date >= aujourdhui);
   }
+  /* Alertes : échéances non faites, de 10 jours en retard à 7 jours à venir. delai = jours restants (négatif = en retard). */
+  function alertes(liste, faites, aujourdhui) {
+    const f = new Set(Array.isArray(faites) ? faites : []), vus = new Set(), out = [];
+    for (const e of liste) {
+      if (!e.date || f.has(e.id) || vus.has(e.id)) continue;
+      vus.add(e.id);
+      const delai = Math.round((Date.parse(e.date) - Date.parse(aujourdhui)) / 864e5);
+      if (!(delai >= -10 && delai <= 7)) continue;
+      out.push(Object.assign({}, e, { delai, niveau: delai < 0 ? 'retard' : delai === 0 ? 'jour' : delai <= 3 ? 'proche' : 'a-venir' }));
+    }
+    return out.sort((a, b) => a.delai - b.delai);
+  }
   const ics = v => String(v).replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n');
   function plier(ligne) {
     const out = []; let s = ligne;
@@ -309,7 +321,7 @@
   }
 
   return { ajouter, finDeMois, MODES, MODES_NOMS, eur, trier, numeroSuivant, trous, doublons, totauxRecettes, csvRecettes,
-    plafonds, niveau, NIVEAUX_NOMS, echeances, prochaines, exportIcs, lienGoogleAgenda,
+    plafonds, niveau, NIVEAUX_NOMS, echeances, prochaines, alertes, exportIcs, lienGoogleAgenda,
     INTERVALLES, MAITRISEE, LOIN, apresReponse, amorcer, aReviser, statsRevision,
     TYPES_PLANNING, lundi, semaine, clientsConnus, contrat, cgv, CHECKLIST, CRITERES, EFACT_IDS, avancementEfact };
 }));

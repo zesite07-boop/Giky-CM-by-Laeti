@@ -20,7 +20,7 @@ Site statique (GitHub Pages, `.nojekyll`). Pas de build. Scripts classiques char
 | `formation.css` | Styles (variables `--accent`, `--ligne`, etc., mode sombre via `data-theme`) |
 | `theme.js` | Thème système avant affichage |
 | `sources.js` | **Source de vérité** des liens officiels et des repères chiffrés (`reperes`) |
-| `contenu.js` + `contenu-*.js` | 4 parcours, 29 leçons, 151 questions, épreuve finale |
+| `contenu.js` + `contenu-*.js` | 6 parcours, 43 leçons, 259 questions, épreuve finale |
 | `scenarios.js` | 12 scénarios à embranchements |
 | `ressources.js` | 66 ressources en 11 catégories |
 | `gestion.js` | **Nouveau (v3)** : calculs purs des outils de gestion, révision, contrat, checklist |
@@ -71,7 +71,7 @@ Limites : fichier d'import 1 Mo ; 1 500 lignes maximum pour les recettes et pour
 
 ### Redesign « accueil par énergie » (4 novembre 2026, maquette validée par JT)
 
-- **Accueil** : énergie du jour en premier (faible / moyenne / pleine, clé d'état `energie` = basse / moyenne / haute), carte « Prochaine action » (faible → quiz éclair, moyenne → prochaine leçon, pleine → prochaine mission M*, sinon scénarios), progression (série, XP, niveau, étapes), 6 tuiles colorées, question du jour (+10 XP), 4 familles de leçons avec barre de progression. Fonctions : `accueil`, `prochaineAction`, `programme` (liste complète des 29 leçons + épreuve finale), `jouer` (3 tuiles), `victoire` (fin de leçon validée).
+- **Accueil** : énergie du jour en premier (faible / moyenne / pleine, clé d'état `energie` = basse / moyenne / haute), carte « Prochaine action » (faible → quiz éclair, moyenne → prochaine leçon, pleine → prochaine mission M*, sinon scénarios), progression (série, XP, niveau, étapes), 6 tuiles colorées, question du jour (+10 XP), 4 familles de leçons avec barre de progression. Fonctions : `accueil`, `prochaineAction`, `programme` (liste complète des 43 leçons + épreuve finale), `jouer` (3 tuiles), `victoire` (fin de leçon validée).
 - **Navigation** : barre du bas à 5 onglets sur téléphone (≤ 800 px) : Accueil, Apprendre (`programme`), Jouer (`jouer`), Business (`simulateurs`), Veille. Le rail de gauche reste sur grand écran. Les 5 boutons du haut sont regroupés dans « Réglages » (Sprint, Sombre, Texte aéré, Focus, Sauvegarder) ; le panneau reste ouvert pendant les réglages (`reglagesOuvert`). Le bandeau permanent a été retiré, sa phrase est dans Réglages.
 - **Couleurs** : mauve conservé ; accents cerise `--cerise` (action principale), turquoise `--turquoise` (progression), or `--or-vif` (récompenses), versions « texte » plus foncées pour le contraste, variantes mode sombre. Police des titres Chakra Petch (fichiers dans `fonts/`, licence OFL).
 - **Série douce** : `M.serie` tolère maintenant un jour de pause (deux jours de suite sans jouer la cassent).
@@ -80,6 +80,10 @@ Limites : fichier d'import 1 Mo ; 1 500 lignes maximum pour les recettes et pour
 - **Boutons de leçon** : Commencer / Reprendre / Revoir au lieu de « Ouvrir ↗ ».
 - Service worker `cm-v6`. Vérifié : tests unitaires, e2e (dont hors connexion), veille 5 + voir plus, sécurité d'affichage, rappel de sauvegarde, rendu 390 px et 1280 px, mode clair et sombre.
 - Non vérifié : appareil réel de Laetitia.
+
+- **v4 (novembre 2026)** : parcours `calculs` (C1–C4) et `expert` (X1–X10) ajoutés SANS toucher aux leçons existantes (progression conservée ; total 29 → 44 avec l'épreuve). Niveaux 1–4 (`C.niveaux`, `C.niveauDe`), ordre des options mélangé de façon déterministe (`C.melanger`). `toutes()` triée par ordre de parcours et mise en cache. Mascotte Mochi (SVG inline, classes CSS, réglage `mascotte`). Outil `pourcent` (`pourcentages.js`, tests dédiés). Quiz éclair avec choix de niveau. Service worker `cm-v7`. Tests Node + e2e Chrome OK. Non testé sur le téléphone réel de Laetitia.
+
+- **v5 (8/11/2026)** : `G.alertes(liste, faites, auj)` (pur, testé) ; état `echeancesFaites` (ids) et `suggestions` ; `carteAlertes` (accueil), `bandeauAlertes` (autres pages), pastilles `.pastille-alerte` (rail + barre du bas), `navigator.setAppBadge` si disponible. Vue `suggestions` : `mailto:` vers JT (adresse assemblée dans `CONTACT`, formation.js) ; lire les messages en cherchant « [Giky CM] » dans la boîte mail. Veille : catégorie `createurs` (6 alertes Google, Tubefilter, Passionfruit vérifiés ; Blog du Modérateur non vérifiable depuis l'atelier, le journal du workflow dira OK ou ERREUR). Repli : tant qu'aucun élément `createurs` n'existe, la veille affiche tout. SW `cm-v8`.
 
 ## 5. Vérifications faites
 

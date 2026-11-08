@@ -11,12 +11,13 @@
   const VERSION = 1;
   const MAX_FICHIER = 1000000;
   const G = (typeof module === 'object' && module.exports) ? require('./gestion.js') : globalThis.CMGestion;
+  const P = (typeof module === 'object' && module.exports) ? require('./pourcentages.js') : globalThis.CMPourcent;
   const SEUIL = 80;
   const texte = (v, n) => typeof v === 'string' ? v.slice(0, n || 1500) : '';
   const nombre = (v, min, max) => typeof v === 'number' && Number.isFinite(v) && v >= min && v <= max;
 
   const DEVISES = ['EUR', 'USD', 'GBP'];
-  const OUTILS = ['devises', 'cotis', 'revenu', 'treso', 'pipeline', 'budget', 'reporting', 'doc', 'recettes', 'plafonds', 'echeances', 'planning', 'contrat', 'efacture'];
+  const OUTILS = ['devises', 'cotis', 'revenu', 'treso', 'pipeline', 'budget', 'reporting', 'doc', 'recettes', 'plafonds', 'echeances', 'planning', 'contrat', 'efacture', 'pourcent'];
   const ID_RE = /^[A-Za-z0-9_-]{1,40}$/, ISO_RE = /^\d{4}-\d{2}-\d{2}$/;
   const SITUATIONS = ['franchise', 'tva-fr', 'ue-pro', 'hors-ue-pro'];
   function defauts() {
@@ -38,6 +39,7 @@
         client: { nom: '', adresse: '', tva: '', pro: true },
         lignes: [{ desc: 'Animation du serveur Discord (1 mois)', qte: 1, pu: 600 }, { desc: 'Clips verticaux sous-titrés', qte: 8, pu: 40 }],
         penalites: 'trois fois le taux d’intérêt légal', notes: '' },
+      pourcent: { mode: 'part', a: 450, b: 20 },
       plafonds: { anterieur: 0, caN1: 0 },
       echeances: { periodicite: 'mois', cfe: true },
       contrat: { prestataire: { nom: '', siret: '', adresse: '', email: '' }, client: { nom: '', adresse: '', representant: '' },
@@ -53,9 +55,9 @@
     return Object.assign({
       version: VERSION, vue: 'accueil', etape: 'cours', question: 0, focus: false,
       reponses: {}, notes: {}, derniere: null,
-      theme: null, aere: false, energie: null, debut: '', sauvegarde: '', jours: [], outil: 'devises',
+      theme: null, aere: false, mascotte: true, energie: null, debut: '', sauvegarde: '', jours: [], outil: 'devises',
       scenarios: {}, eclair: { meilleur: 0, parties: 0, bonnes: 0 },
-      recettes: [], planning: [], revision: {}, idees: [],
+      recettes: [], planning: [], revision: {}, idees: [], echeancesFaites: [], suggestions: [],
       revenu: { tjm: 250, jours: 3, semaines: 45, regime: 'bnc', vfl: false, acre: false, frais: 1200 },
       treso: { solde: 1500, provision: 28, depenses: 1600, ca: [2500, 900, 3200, 1800, 0, 2600] },
       pipeline: { contacts: 6, reponse: 25, rdv: 50, signature: 30, panier: 900, objectif: 3000 }
@@ -78,7 +80,14 @@
   }
   const enumere = (v, liste, def) => liste.includes(v) ? v : def;
 
-  function toutes(contenu) { return [...contenu.lecons, contenu.final]; }
+  /* Ordre des leçons : celui des parcours (Apprendre, Pourcentages, Missions, Business, Clients, Défis de pro), puis l’épreuve finale. */
+  function toutes(contenu) {
+    if (contenu._ordre && contenu._ordre.n === contenu.lecons.length) return contenu._ordre.liste;
+    const rang = contenu.parcours.map(p => p.id);
+    const liste = [...contenu.lecons].sort((a, b) => rang.indexOf(a.parcours) - rang.indexOf(b.parcours)).concat([contenu.final]);
+    Object.defineProperty(contenu, '_ordre', { value: { n: contenu.lecons.length, liste }, configurable: true, writable: true, enumerable: false });
+    return liste;
+  }
 
   function valeurValide(q, v) {
     if (q.type === 'nombre') return nombre(v, -1e9, 1e9);
@@ -127,7 +136,7 @@
       throw new Error('Format non compatible. Utilise une sauvegarde de ce module (version 1).');
     }
     const out = neuf(), lecons = toutes(contenu), ids = lecons.map(l => l.id);
-    out.vue = [...ids, 'accueil', 'carnet', 'simulateurs', 'sources', 'scenarios', 'eclair', 'ressources', 'revision', 'veille', 'programme', 'jouer'].includes(obj.vue) ? obj.vue : 'accueil';
+    out.vue = [...ids, 'accueil', 'carnet', 'simulateurs', 'sources', 'scenarios', 'eclair', 'ressources', 'revision', 'veille', 'programme', 'jouer', 'suggestions'].includes(obj.vue) ? obj.vue : 'accueil';
     out.etape = ['cours', 'exercice', 'ancrage'].includes(obj.etape) ? obj.etape : 'cours';
     out.question = Number.isInteger(obj.question) && obj.question >= 0 && obj.question < 20 ? obj.question : 0;
     out.focus = obj.focus === true;
@@ -166,6 +175,7 @@
     /* Champs v2 (facultatifs : une sauvegarde v1 reste importable). */
     out.theme = enumere(obj.theme, ['clair', 'sombre'], null);
     out.aere = obj.aere === true;
+    out.mascotte = obj.mascotte !== false;
     out.energie = enumere(obj.energie, ['basse', 'moyenne', 'haute'], null);
     out.debut = typeof obj.debut === 'string' && ISO_RE.test(obj.debut) ? obj.debut : '';
     out.sauvegarde = typeof obj.sauvegarde === 'string' && ISO_RE.test(obj.sauvegarde) ? obj.sauvegarde : '';
@@ -197,6 +207,7 @@
     for (const k of ['anterieur', 'caN1']) if (!nombre(out.plafonds[k], 0, 1e9)) out.plafonds[k] = 0;
     out.echeances = fusion(d.echeances, obj.echeances); out.echeances.periodicite = enumere(out.echeances.periodicite, ['mois', 'trimestre'], 'mois');
     out.contrat = fusion(d.contrat, obj.contrat);
+    out.pourcent = fusion(d.pourcent, obj.pourcent); out.pourcent.mode = enumere(out.pourcent.mode, P.MODES_IDS, 'part');
     out.contrat.devise = enumere(out.contrat.devise, DEVISES, 'EUR'); out.contrat.modalite = enumere(out.contrat.modalite, ['mois', 'mission', 'forfait'], 'mois');
     out.contrat.tva = enumere(out.contrat.tva, ['franchise', 'tva', 'etranger'], 'franchise'); out.contrat.type = enumere(out.contrat.type, ['contrat', 'cgv'], 'contrat');
     if (!ISO_RE.test(out.contrat.debut)) out.contrat.debut = d.contrat.debut;
@@ -222,6 +233,16 @@
         if (!x || typeof x !== 'object' || !ID_RE.test(x.id) || vus.has(x.id) || !ISO_RE.test(x.date)) continue;
         vus.add(x.id);
         out.planning.push({ id: x.id, date: x.date, heure: /^\d{2}:\d{2}$/.test(x.heure) ? x.heure : '', client: texte(x.client, 80), type: enumere(x.type, Object.keys(G.TYPES_PLANNING), 'post'), titre: texte(x.titre, 120), fait: x.fait === true });
+      }
+    }
+    if (Array.isArray(obj.echeancesFaites)) out.echeancesFaites = [...new Set(obj.echeancesFaites.filter(x => typeof x === 'string' && /^[A-Za-z0-9_-]{1,60}$/.test(x)))].slice(0, 400);
+    if (Array.isArray(obj.suggestions)) {
+      const vus = new Set();
+      for (const x of obj.suggestions.slice(0, 200)) {
+        if (!x || typeof x !== 'object' || !ID_RE.test(x.id) || vus.has(x.id)) continue;
+        const t = texte(x.texte, 1000); if (!t.trim()) continue;
+        vus.add(x.id);
+        out.suggestions.push({ id: x.id, date: ISO_RE.test(x.date) ? x.date : '', type: enumere(x.type, ['idee', 'probleme', 'contenu', 'autre'], 'idee'), texte: t, envoye: x.envoye === true });
       }
     }
     if (Array.isArray(obj.idees)) {

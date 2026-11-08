@@ -127,3 +127,24 @@ const bi = M.importer(JSON.stringify(si), C);
 assert.deepStrictEqual(bi.idees.map(x => x.id), ['a1', 'a3']); assert.strictEqual(bi.idees[0].statut, 'en-cours'); assert.strictEqual(bi.idees[1].lien, ''); assert.strictEqual(bi.idees[1].statut, 'a-faire'); assert.strictEqual(bi.idees[1].source, 'manuel'); assert.strictEqual(bi.idees[1].date, '');
 assert.deepStrictEqual(M.importer(JSON.stringify(Object.assign(M.neuf(), { vue: 'veille' })), C).vue, 'veille');
 console.log('OK gestion');
+
+/* v5 : alertes d'échéances et nouveaux champs d'état */
+{
+  const liste = [
+    { id: 'a', date: '2026-11-08', titre: 'jour', fixe: true }, { id: 'b', date: '2026-11-10', titre: 'proche', fixe: true },
+    { id: 'c', date: '2026-11-14', titre: 'semaine', fixe: true }, { id: 'd', date: '2026-11-20', titre: 'loin', fixe: true },
+    { id: 'e', date: '2026-11-05', titre: 'retard', fixe: true }, { id: 'f', date: '2026-10-01', titre: 'trop ancien', fixe: true },
+    { id: 'g', date: null, titre: 'sans date', fixe: false }, { id: 'h', date: '2026-11-09', titre: 'faite', fixe: true },
+  ];
+  const al = G.alertes(liste, ['h'], '2026-11-08');
+  assert.deepStrictEqual(al.map(x => x.id), ['e', 'a', 'b', 'c']);
+  assert.deepStrictEqual(al.map(x => x.niveau), ['retard', 'jour', 'proche', 'a-venir']);
+  assert.deepStrictEqual(al.map(x => x.delai), [-3, 0, 2, 6]);
+  assert.deepStrictEqual(G.alertes(liste, undefined, '2026-11-08').length, 5);
+  const n = M.normaliser({ version: 1, echeancesFaites: ['urssaf-2026-10', 'a b', 5, 'urssaf-2026-10', '<x>'], suggestions: [{ id: 's1', date: '2026-11-08', type: 'zzz', texte: '  ', envoye: true }, { id: 's2', date: 'nimporte', type: 'probleme', texte: 'Bug <b>x</b>', envoye: 1 }, { id: 's2', texte: 'doublon' }] }, C);
+  assert.deepStrictEqual(n.echeancesFaites, ['urssaf-2026-10']);
+  assert.strictEqual(n.suggestions.length, 1);
+  assert.deepStrictEqual(n.suggestions[0], { id: 's2', date: '', type: 'probleme', texte: 'Bug <b>x</b>', envoye: false });
+  assert.deepStrictEqual(M.normaliser({ version: 1 }, C).suggestions, []);
+  console.log('OK alertes');
+}

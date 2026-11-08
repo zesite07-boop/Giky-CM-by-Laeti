@@ -4,11 +4,19 @@ Module d'autoformation pour une community manager freelance spécialisée Twitch
 
 ## Contenu (version 3.0)
 
-- 4 parcours, 29 leçons, 151 questions avec une explication pour chaque option :
+- 6 parcours, 43 leçons + épreuve finale, 259 questions avec une explication pour chaque option, 4 niveaux de difficulté (1 facile → 4 expert) :
   - Apprendre le métier (T1 à T8)
   - S'entraîner sur des missions (M1 à M6)
   - Piloter mon business (B1 à B9, dont B7 « Clients à l'étranger : dollars et livres sterling », B8 « Devis et facture pas à pas », B9 « Budget pro et reporting client »)
   - Décrocher des clients (P1 à P6)
+  - **Calculs** (C1 à C4) : pourcentages de tête et à la calculatrice, coefficients, évolutions, calcul inverse
+  - **Défis de pro** (X1 à X10) : questions techniques pour 8 ans d'expérience (niveaux 3 et 4)
+- **Mochi**, mascotte originale : réagit aux bonnes et mauvaises réponses et à la fin des quiz (désactivable dans Réglages).
+- **Outil Pourcentages** (Simulateurs) : 8 modes, formule, touches de calculatrice, calcul de tête, piège à éviter, fiche mémo.
+- Quiz éclair filtrable par niveau.
+- **Alertes d'échéances** : carte clignotante sur l'accueil, bandeau sur les autres pages, pastille sur « Business », bouton « C'est fait » (de 10 jours de retard à 7 jours avant).
+- **Veille créateurs Twitch** : filtre « Créateurs Twitch » par défaut (6 alertes Google ciblées, Tubefilter, Passionfruit).
+- **Mes idées pour le logiciel** : message préparé par e-mail pour JT (objet « [Giky CM] … »), historique local.
 - Une épreuve finale de 10 questions. Validation : 80 % de bonnes réponses et aucune erreur critique.
 - Jeux : 12 scénarios à embranchements (3 décisions, médailles), quiz éclair de 5 questions au hasard, question du jour.
 - Pensé pour un cerveau TDAH : une question à la fois, points d'avancement, XP et niveaux (Viewer → Légende), série de jours, combos et célébration (désactivée si « réduire les animations »), check-in d'énergie, sprints minutés de 5 à 25 minutes avec rappel de pause, mode focus, texte aéré.
@@ -32,6 +40,8 @@ Module d'autoformation pour une community manager freelance spécialisée Twitch
 | `sources.js` | Sources officielles et repères chiffrés (une seule source de vérité) |
 | `contenu.js` | Parcours et métadonnées |
 | `contenu-apprendre.js`, `contenu-entrainer.js`, `contenu-business.js`, `contenu-clients.js` | Leçons par parcours, épreuve finale dans `contenu-clients.js` |
+| `pourcentages.js` | Module pur du calcul de pourcentages (8 modes, fiche) |
+| `contenu-calculs.js`, `contenu-expert.js`, `contenu-expert-2.js` | Parcours Calculs et Défis de pro |
 | `contenu-bonus.js` | Questions supplémentaires, leçons B7 à B9, questions de l'épreuve finale ajoutées |
 | `scenarios.js` | Les 12 scénarios |
 | `ressources.js` | Ressources et outils par catégorie |

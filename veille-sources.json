@@ -1,5 +1,5 @@
 {
-  "_aide": "Sources de la veille. type: rss (RSS ou Atom). categorie: actu, communaute ou alerte. Pour ajouter une alerte Google : créer l'alerte sur google.com/alerts, choisir « Flux RSS » comme destination, puis coller l'adresse du flux ici avec categorie alerte.",
+  "_aide": "Sources de la veille. type: rss (RSS ou Atom). categorie: createurs, actu, communaute ou alerte (createurs = ce qui concerne les créateurs de contenu Twitch/YouTube). Pour ajouter une alerte Google : créer l'alerte sur google.com/alerts, choisir « Flux RSS » comme destination, puis coller l'adresse du flux ici avec categorie alerte.",
   "sources": [
     {
       "id": "gnews-twitch-fr",
@@ -54,6 +54,60 @@
       "nom": "Reddit · r/Twitch",
       "categorie": "communaute",
       "url": "https://www.reddit.com/r/Twitch/.rss"
+    },
+    {
+      "id": "gnews-createurs-twitch",
+      "nom": "Google Actualités · créateurs de contenu Twitch",
+      "categorie": "createurs",
+      "url": "https://news.google.com/rss/search?q=%22cr%C3%A9ateurs+de+contenu%22+twitch+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-streamers-youtubeurs",
+      "nom": "Google Actualités · streamers et YouTubeurs",
+      "categorie": "createurs",
+      "url": "https://news.google.com/rss/search?q=streamer+twitch+youtubeur+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-monetisation",
+      "nom": "Google Actualités · monétisation et revenus des streamers",
+      "categorie": "createurs",
+      "url": "https://news.google.com/rss/search?q=twitch+mon%C3%A9tisation+OR+abonnements+OR+sponsoring+streamers+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-regles-twitch",
+      "nom": "Google Actualités · règles, modération et sanctions Twitch",
+      "categorie": "createurs",
+      "url": "https://news.google.com/rss/search?q=twitch+r%C3%A8gles+OR+mod%C3%A9ration+OR+bannissement+OR+partenaire+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-multiplateforme",
+      "nom": "Google Actualités · Twitch, YouTube et Kick",
+      "categorie": "createurs",
+      "url": "https://news.google.com/rss/search?q=streamers+twitch+youtube+kick+plateforme+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-creators-en",
+      "nom": "Google Actualités · Twitch creators (international)",
+      "categorie": "createurs",
+      "url": "https://news.google.com/rss/search?q=twitch+creators+streamers+update+when%3A14d&hl=en&gl=US&ceid=US:en"
+    },
+    {
+      "id": "tubefilter",
+      "nom": "Tubefilter (économie des créateurs)",
+      "categorie": "createurs",
+      "url": "https://www.tubefilter.com/feed/"
+    },
+    {
+      "id": "passionfruit",
+      "nom": "Passionfruit (créateurs)",
+      "categorie": "createurs",
+      "url": "https://passionfru.it/feed/"
+    },
+    {
+      "id": "blogdumoderateur",
+      "nom": "Blog du Modérateur (réseaux sociaux)",
+      "categorie": "actu",
+      "url": "https://www.blogdumoderateur.com/feed/"
     }
   ]
 }

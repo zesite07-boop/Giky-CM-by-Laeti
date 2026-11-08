@@ -525,3 +525,58 @@ html[data-theme="sombre"] .tuile .badge-nouveau{color:#2a1840}
 .accueil-colonne{max-width:720px}
 @media(max-width:420px){.reglages-lib{display:none}}
 .reglages-panneau .sprint,.reglages-panneau .sprint-zone{width:100%}.reglages-panneau .sprint>summary{display:flex;width:100%;min-height:44px;align-items:center}
+
+/* ---------- Niveaux, mascotte Mochi, pourcentages (v4) ---------- */
+.niveau{display:inline-flex;align-items:center;gap:6px;font-size:.75rem;font-weight:700;color:var(--secondaire);margin-top:var(--s1)}
+.niv-points{display:inline-flex;gap:2px}.niv-points i{width:6px;height:10px;border-radius:2px;background:var(--ligne)}
+.niveau.n1 .niv-points i.on{background:var(--turquoise)}.niveau.n2 .niv-points i.on{background:var(--accent)}.niveau.n3 .niv-points i.on{background:var(--or-vif)}.niveau.n4 .niv-points i.on{background:var(--cerise)}
+.niveaux-bloc h2{margin-bottom:var(--s3)}
+.niveaux-choix{display:flex;flex-wrap:wrap;gap:var(--s2);margin-bottom:var(--s3)}
+.puce-niveau{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-height:48px;padding:var(--s2) var(--s4);border-radius:12px;border:2px solid var(--ligne);background:var(--surface);color:var(--encre);font-weight:700;font-size:var(--text-sm);cursor:pointer}
+.puce-niveau small{font-weight:500;color:var(--secondaire);font-size:.75rem}
+.puce-niveau[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-clair)}
+.puce-niveau.n3[aria-pressed="true"]{border-color:var(--or-vif)}.puce-niveau.n4[aria-pressed="true"]{border-color:var(--cerise)}.puce-niveau.n1[aria-pressed="true"]{border-color:var(--turquoise)}
+.fb-corps{display:flex;align-items:flex-start;gap:var(--s4)}.fb-texte{min-width:0;flex:1}
+.mascotte{width:84px;height:84px;flex:0 0 auto;overflow:visible}
+.m-corps{fill:var(--accent)}.m-oreille{fill:var(--rose)}.m-ventre{fill:#fff;opacity:.25}.m-ombre{fill:var(--encre);opacity:.12}
+.m-arc{fill:none;stroke:var(--or-vif);stroke-width:5;stroke-linecap:round}.m-coque{fill:var(--cerise)}.m-micro{fill:none;stroke:var(--cerise);stroke-width:3;stroke-linecap:round}
+.m-joue{fill:var(--cerise);opacity:.4}.m-oeil{fill:#2a1840}.m-reflet{fill:#fff}
+.m-trait{fill:none;stroke:#2a1840;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.m-trait.fin{stroke-width:2.5}.m-bouche{fill:#2a1840}
+.m-bras{fill:none;stroke:var(--accent);stroke-width:9;stroke-linecap:round}.m-etoile{fill:var(--or-vif)}.m-coeur{fill:var(--rose)}
+.m-fete{animation:m-saut .7s ease 2}.m-content{animation:m-hoche .6s ease 1}.m-rassure{animation:m-hoche .9s ease 1}
+@keyframes m-saut{0%,100%{transform:translateY(0)}40%{transform:translateY(-12px)}}
+@keyframes m-hoche{0%,100%{transform:rotate(0)}30%{transform:rotate(-4deg)}70%{transform:rotate(4deg)}}
+.mascotte-parole{font-style:italic;color:var(--accent-sombre);margin-top:var(--s2)}
+.mascotte-bloc{display:flex;align-items:center;gap:var(--s3);margin:var(--s3) 0}.mascotte-bloc .mascotte-parole{margin:0}
+.victoire .mascotte-bloc{justify-content:center}
+.table-defile{overflow-x:auto;margin:var(--s4) 0}.table-lecon th,.table-lecon td{text-align:left;vertical-align:top}.table-lecon td code{white-space:nowrap}
+.resultat-pc{display:flex;flex-direction:column;gap:var(--s1);margin:var(--s5) 0;padding:var(--s4);border-radius:14px;background:var(--turquoise-fond)}
+.resultat-pc strong{font-family:var(--font-t,inherit);font-size:2rem;color:var(--turquoise-texte);font-variant-numeric:tabular-nums}
+.pc-bloc{margin-top:var(--s4)}.pc-bloc h3{font-size:var(--text-sm);margin-bottom:var(--s2)}
+.formule{font-variant-numeric:tabular-nums;font-weight:600}.touches{margin:0;padding-left:var(--s5)}
+.touches code,.table-lecon code{background:var(--accent-clair);padding:2px 6px;border-radius:6px;font-size:.9em}
+.fiche{margin-top:var(--s5);border:1px solid var(--ligne);border-radius:12px;padding:var(--s3) var(--s4)}.fiche summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center}
+@media(max-width:520px){.mascotte{width:64px;height:64px}.fb-corps{gap:var(--s3)}}
+@media(prefers-reduced-motion:reduce){.m-fete,.m-content,.m-rassure{animation:none}}
+
+/* v5 : alertes d'échéances, pastilles, suggestions */
+.al-point{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--or-texte);flex:none;margin-right:8px}
+.alertes-carte{background:var(--or-fond);color:var(--or-texte);border-radius:16px;padding:16px;margin-bottom:var(--s5);border:2px solid transparent}
+.alertes-carte.urgent{border-color:var(--cerise-texte,#b3123f)}
+.alertes-carte h2{font-size:1.1rem;margin:0 0 10px;display:flex;align-items:center}
+.alertes-liste{list-style:none;margin:0 0 10px;padding:0;display:grid;gap:10px}
+.alerte-ligne{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.alerte-ligne>div{flex:1 1 200px;display:flex;flex-direction:column;gap:2px}
+.alerte-ligne .bouton,.bandeau-alerte .bouton{min-height:44px}
+.alerte-ligne .al-point{display:none}
+.al-retard .al-point,.al-jour .al-point,.urgent>h2 .al-point,.bandeau-alerte.urgent .al-point{background:var(--cerise-texte,#b3123f);animation:al-pulse 1.4s ease-in-out infinite}
+.bandeau-alerte{display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:var(--or-fond);color:var(--or-texte);padding:10px 16px;border-bottom:2px solid transparent}
+.bandeau-alerte.urgent{border-bottom-color:var(--cerise-texte,#b3123f)}
+.bandeau-texte{flex:1 1 220px}
+@keyframes al-pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.55}}
+.pastille-alerte{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:var(--cerise-texte,#b3123f);color:#fff;font-size:.75rem;font-weight:700;margin-left:6px;animation:al-pulse 1.6s ease-in-out infinite}
+.bas button{position:relative}
+.bas .pastille-alerte{position:absolute;top:2px;right:calc(50% - 26px);margin:0}
+.echeance.faite{opacity:.6}
+textarea[data-sug]{width:100%;min-height:140px;font:inherit}
+@media(prefers-reduced-motion:reduce){.al-point,.pastille-alerte{animation:none!important}}

@@ -3,11 +3,13 @@
 (function () {
   'use strict';
   const C = window.CMContenu, M = window.CMMoteur, S = window.CMSources, R = S.reperes;
-  const SC = window.CMScenarios || [], RS = window.CMRessources || [], G = window.CMGestion;
+  const SC = window.CMScenarios || [], RS = window.CMRessources || [], G = window.CMGestion, PC = window.CMPourcent;
   const depot = M.stockage(() => window.localStorage, C);
   let etat = depot.etat, drafts = {}, dernierFocus = null;
   let combo = 0, eclair = null, jeu = null, conv = { montant: 500, devise: 'USD' }, sprint = null, toastTimer = null;
   const toutes = M.toutes(C);
+  const NIV = C.niveaux, niveauDe = l => C.niveauDe(l);
+  let niveauEclair = 0;
   if (!etat.debut) etat.debut = new Date().toLocaleDateString('sv-SE');
   let reglagesOuvert = false;
   let pf = {}, revision = null, semaineDebut = G.lundi(new Date().toLocaleDateString('sv-SE')), installPrompt = null, sansXp = false;
@@ -109,9 +111,9 @@
   }
 
   /* ---------- Navigation ---------- */
-  function lienNav(view, num, libelle) {
+  function lienNav(view, num, libelle, pastille) {
     const actif = etat.vue === view;
-    return `<button class="nav-lien" data-view="${view}" ${actif ? 'aria-current="page"' : ''}>${num}<span>${esc(libelle)}</span></button>`;
+    return `<button class="nav-lien" data-view="${view}" ${actif ? 'aria-current="page"' : ''}>${num}<span>${esc(libelle)}</span>${pastille ? `<span class="pastille-alerte" aria-label="${pastille} échéance${pastille > 1 ? 's' : ''} à traiter">${pastille}</span>` : ''}</button>`;
   }
   function menu() {
     const groupes = C.parcours.filter(p => p.id !== 'final').map(p => {
@@ -119,10 +121,10 @@
       return `<div class="nav-groupe"><p class="sur-titre">${esc(p.nom)}</p>${ls.map(l => lienNav(l.id, marque(l), l.titre)).join('')}</div>`;
     }).join('');
     return `${lienNav('accueil', '<span class="nav-num">⌂</span>', 'Accueil')}
-      <div class="nav-groupe"><p class="sur-titre">Jouer et s’outiller</p>${lienNav('simulateurs', '<span class="nav-num">€$£</span>', 'Boîte à outils')}${lienNav('scenarios', '<span class="nav-num">▶</span>', 'Scénarios')}${lienNav('eclair', '<span class="nav-num">⚡</span>', 'Quiz éclair')}${lienNav('revision', '<span class="nav-num">↻</span>', 'Révision espacée')}${lienNav('veille', '<span class="nav-num">◉</span>', 'Veille et idées')}${lienNav('ressources', '<span class="nav-num">★</span>', 'Ressources')}</div>
+      <div class="nav-groupe"><p class="sur-titre">Jouer et s’outiller</p>${lienNav('simulateurs', '<span class="nav-num">€$£</span>', 'Boîte à outils', listeAlertes().length)}${lienNav('scenarios', '<span class="nav-num">▶</span>', 'Scénarios')}${lienNav('eclair', '<span class="nav-num">⚡</span>', 'Quiz éclair')}${lienNav('revision', '<span class="nav-num">↻</span>', 'Révision espacée')}${lienNav('veille', '<span class="nav-num">◉</span>', 'Veille et idées')}${lienNav('ressources', '<span class="nav-num">★</span>', 'Ressources')}</div>
       ${groupes}
       <div class="nav-groupe"><p class="sur-titre">Pour finir</p>${lienNav('final', marque(C.final), 'Épreuve finale')}</div>
-      <div class="nav-groupe"><p class="sur-titre">Mes affaires</p>${lienNav('carnet', '<span class="nav-num">≡</span>', 'Mon carnet')}${lienNav('sources', '<span class="nav-num">§</span>', 'Sources officielles')}</div>`;
+      <div class="nav-groupe"><p class="sur-titre">Mes affaires</p>${lienNav('carnet', '<span class="nav-num">≡</span>', 'Mon carnet')}${lienNav('sources', '<span class="nav-num">§</span>', 'Sources officielles')}${lienNav('suggestions', '<span class="nav-num">✎</span>', 'Mes idées pour le logiciel')}</div>`;
   }
   function blocXp(compact) {
     const x = M.xp(C, etat), sj = M.serie(etat.jours, aujourdhui());
@@ -157,6 +159,34 @@
     if (!p) return { etiq: 'Pour une énergie normale', titre: 'Module terminé', meta: 'Bravo', texte: 'Tout est validé. Ton carnet garde tes actions concrètes.', bouton: 'Ouvrir mon carnet', vue: 'carnet' };
     return { etiq: 'Pour une énergie normale', titre: `${p.code} · ${p.titre}`, meta: `${p.duree} · 3 étapes`, texte: p.objectif, bouton: aReponses(p) ? 'Reprendre la leçon' : 'Commencer la leçon', vue: p.id };
   }
+  /* ---------- Alertes d'échéances ---------- */
+  function listeAlertes() {
+    const y = annee(), vus = new Set(), tout = [];
+    for (const e of [].concat(G.echeances(y - 1, etat.echeances), G.echeances(y, etat.echeances), G.echeances(y + 1, etat.echeances))) if (!vus.has(e.id)) { vus.add(e.id); tout.push(e); }
+    return G.alertes(tout, etat.echeancesFaites, aujourdhui());
+  }
+  const NIVEAUX_ALERTE = { retard: 'En retard', jour: 'Aujourd’hui', proche: 'Très bientôt', 'a-venir': 'Cette semaine' };
+  function quand(a) {
+    return a.delai < 0 ? `En retard de ${-a.delai} jour${a.delai < -1 ? 's' : ''}` : a.delai === 0 ? 'Aujourd’hui' : a.delai === 1 ? 'Demain' : `Dans ${a.delai} jours`;
+  }
+  function ligneAlerte(a) {
+    return `<li class="alerte-ligne al-${a.niveau}"><span class="al-point" aria-hidden="true"></span><div><strong>${esc(quand(a))} · ${esc(a.titre)}</strong>${a.fixe ? '' : '<span class="etiquette">Date indicative</span>'}<span class="minuscule">${esc(dateFr(a.date))}</span></div><button class="bouton" data-action="echeance-fait" data-id="${esc(a.id)}">C’est fait</button></li>`;
+  }
+  function carteAlertes() {
+    const al = listeAlertes(); if (!al.length) return '';
+    const urgent = al.some(a => a.niveau === 'retard' || a.niveau === 'jour');
+    return `<section class="alertes-carte ${urgent ? 'urgent' : ''}" role="region" aria-label="Échéances à traiter"><h2><span class="al-point" aria-hidden="true"></span>${urgent ? 'Échéance à traiter maintenant' : 'Échéances à venir cette semaine'}</h2><ul class="alertes-liste">${al.map(ligneAlerte).join('')}</ul><button class="lien-action" data-action="outil" data-outil="echeances">Voir tout le calendrier des échéances</button></section>`;
+  }
+  /* Bandeau fin sur les autres pages : l'échéance la plus urgente. */
+  function bandeauAlertes() {
+    if (etat.vue === 'accueil') return '';
+    const al = listeAlertes(); if (!al.length) return '';
+    const a = al[0], urgent = a.niveau === 'retard' || a.niveau === 'jour';
+    return `<div class="bandeau-alerte al-${a.niveau} ${urgent ? 'urgent' : ''}" role="status"><span class="al-point" aria-hidden="true"></span><span class="bandeau-texte"><strong>${esc(quand(a))}</strong> : ${esc(a.titre)}${al.length > 1 ? ` (+ ${al.length - 1} autre${al.length > 2 ? 's' : ''})` : ''}</span><button class="bouton" data-action="outil" data-outil="echeances">Voir</button><button class="bouton" data-action="echeance-fait" data-id="${esc(a.id)}">C’est fait</button></div>`;
+  }
+  function badgeApp() {
+    try { const n = listeAlertes().length; if (n && navigator.setAppBadge) navigator.setAppBadge(n); else if (navigator.clearAppBadge) navigator.clearAppBadge(); } catch (_) { /* non pris en charge */ }
+  }
   function rappelSauvegarde() {
     const donnees = Object.keys(etat.reponses).length || etat.recettes.length || etat.planning.length || etat.idees.length || Object.keys(etat.notes).length;
     const ref = etat.sauvegarde || etat.debut;
@@ -168,7 +198,7 @@
   const tuile = (vue, cls, ic, titre, sous) => `<button class="tuile t-${cls}" data-view="${vue}"><span class="tuile-icone">${icone(ic)}</span><strong>${titre}</strong><span>${sous}</span></button>`;
   const tuilesJeu = () => [
     tuile('scenarios', 'cerise', 'jeu', 'Scénarios', `${SC.length} histoires dont tu es l’héroïne`),
-    tuile('eclair', 'or', 'eclair', 'Quiz éclair', `5 questions au hasard${etat.eclair.meilleur ? ` · record ${etat.eclair.meilleur}/5` : ''}`),
+    tuile('eclair', 'or', 'eclair', 'Quiz éclair', `5 questions au hasard, à ton niveau${etat.eclair.meilleur ? ` · record ${etat.eclair.meilleur}/5` : ''}`),
     tuile('revision', 'turquoise', 'revision', 'Révision', `${G.aReviser(etat.revision, aujourdhui()).length} à revoir aujourd’hui`)
   ].join('');
   function accueil() {
@@ -178,6 +208,7 @@
     return `<div class="accueil-colonne"><h1 class="sr-only" tabindex="-1">Accueil du module community manager</h1>
       <div class="salut"><span class="logo-cm" aria-hidden="true">CM</span><div><p>Module community manager</p><strong>Salut Laetitia</strong></div><span class="pastille-niveau">${icone('etoile', 16)} Niv. ${x.niveau}</span></div>
       ${rappelSauvegarde()}
+      ${carteAlertes()}
       <section class="energie-bloc"><h2>Ton énergie du jour ?</h2><div class="energie-choix" role="group" aria-label="Niveau d’énergie">${Object.entries(ENERGIES).map(([k, v]) => `<button class="energie-btn e-${k}" data-action="energie" data-energie="${k}" aria-pressed="${e === k}"><span class="barres" aria-hidden="true">${[1, 2, 3].map(i => `<i class="${i <= v[2] ? 'on' : ''}"></i>`).join('')}</span>${esc(v[0])}<small>${esc(v[1])}</small></button>`).join('')}</div></section>
       <section class="prochaine" aria-label="Ta prochaine action"><span class="etiq">${esc(a.etiq)}</span><h2>${esc(a.titre)}</h2><p class="meta">${esc(a.meta)}</p><p>${esc(a.texte)}</p>
         <button class="bouton-cerise" data-view="${esc(a.vue)}">${esc(a.bouton)} ${icone('fleche', 20)}</button><button class="bouton secondaire" data-action="sprint" data-minutes="10">Sprint de 10 minutes</button></section>
@@ -187,13 +218,15 @@
         <p class="petit">Série douce : un jour de pause ne casse rien.</p></section>
       <h2 class="titre-section">Jouer et s’outiller</h2>
       <div class="grille-jeux">${tuilesJeu()}
-        ${tuile('veille', 'mauve', 'veille', 'Veille', `${etat.idees.length} idée${etat.idees.length > 1 ? 's' : ''} · actus Twitch France`)}
+        ${tuile('veille', 'mauve', 'veille', 'Veille', `${etat.idees.length} idée${etat.idees.length > 1 ? 's' : ''} · actus créateurs Twitch`)}
         ${tuile('simulateurs', 'or', 'outils', 'Boîte à outils', 'Recettes, plafonds, devis')}
-        ${tuile('ressources', 'turquoise', 'etoile', 'Ressources', `${RS.reduce((n, c) => n + c.liens.length, 0)} outils et liens triés`)}</div>
+        ${tuile('ressources', 'turquoise', 'etoile', 'Ressources', `${RS.reduce((n, c) => n + c.liens.length, 0)} outils et liens triés`)}
+        <button class="tuile t-cerise" data-action="outil" data-outil="pourcent"><span class="tuile-icone">${icone('outils')}</span><strong>Pourcentages</strong><span>Formules, calculatrice, calcul de tête</span></button>
+        <button class="tuile t-mauve" data-action="famille" data-id="expert"><span class="tuile-icone">${icone('flamme')}</span><strong>Défis de pro</strong><span>${C.lecons.filter(l => l.parcours === 'expert').length} cas difficiles, niveaux 3 et 4</span></button></div>
       ${qj ? `<section class="carte qdj"><div class="tete-qdj"><span class="etiq-cerise">Question du jour · ${esc(qj.l.code)}</span><span class="puce-xp">+10 XP</span></div><h2>${esc(qj.q.titre)}</h2><p>${esc(qj.q.texte)}</p><div class="actions"><button class="bouton primaire" data-action="qdj" data-lecon="${qj.l.id}" data-i="${qj.i}">${repondu(qj.q) ? 'Revoir ma réponse' : 'Y répondre'} <span aria-hidden="true">→</span></button></div></section>` : ''}
       <div class="titre-liste"><h2 class="titre-section">Tout le programme</h2><span class="petit">${C.lecons.length} leçons</span></div>
       <div class="familles">${C.parcours.filter(p => p.id !== 'final').map((p, i) => { const n = C.lecons.filter(l => l.parcours === p.id).length, r = pr.parcours[p.id].reussies; return `<button class="famille ${classes[i % 4]}" data-action="famille" data-id="${p.id}"><strong>${esc(p.nom)}</strong><span class="piste"><span data-w="${Math.max(6, Math.round(100 * r / n))}"></span></span><span class="petit">${r} / ${n}</span></button>`; }).join('')}</div>
-      <div class="liens-bas"><button class="lien-action" data-view="programme">Voir toutes les leçons</button><button class="lien-action" data-view="carnet">Mon carnet</button></div></div>`;
+      <div class="liens-bas"><button class="lien-action" data-view="programme">Voir toutes les leçons</button><button class="lien-action" data-view="carnet">Mon carnet</button><button class="lien-action" data-view="suggestions">Mes idées pour le logiciel</button></div></div>`;
   }
   function programme() {
     const pr = M.progression(C, etat);
@@ -201,7 +234,7 @@
       <div class="disposition"><div class="pile">${C.parcours.filter(p => p.id !== 'final').map(p => {
         const ls = C.lecons.filter(l => l.parcours === p.id);
         return `<section id="fam-${p.id}"><div class="titre-liste"><div><h2>${esc(p.nom)}</h2><p class="petit">${esc(p.image)}</p></div><span class="etiquette">${pr.parcours[p.id].reussies} / ${ls.length} validées</span></div>
-          <div class="ateliers">${ls.map(l => `<article class="atelier-ligne ${M.bilan(l, etat.reponses).reussi ? 'validee' : ''}"><span class="numero">${esc(l.code)}</span><div><h3>${esc(l.titre)}</h3><p class="petit">${esc(l.duree)} · ${esc(statut(l))}</p></div><button class="lien-action" data-view="${l.id}" aria-label="${libelleLecon(l)} ${esc(l.code)} : ${esc(l.titre)}">${libelleLecon(l)}</button></article>`).join('')}</div></section>`;
+          <div class="ateliers">${ls.map(l => `<article class="atelier-ligne ${M.bilan(l, etat.reponses).reussi ? 'validee' : ''}"><span class="numero">${esc(l.code)}</span><div><h3>${esc(l.titre)}</h3><p class="petit">${esc(l.duree)} · ${esc(statut(l))}</p>${pastilleNiveau(l)}</div><button class="lien-action" data-view="${l.id}" aria-label="${libelleLecon(l)} ${esc(l.code)} : ${esc(l.titre)}">${libelleLecon(l)}</button></article>`).join('')}</div></section>`;
       }).join('')}
         <section class="carte invitation"><p class="sur-titre">Le boss de fin</p><h2>${esc(C.final.titre)}</h2><p>${esc(C.final.court)} ${C.final.questions.length} questions, 80 % et aucune erreur critique.</p><div class="actions"><button class="bouton primaire" data-view="final">Ouvrir l’épreuve</button><span class="petit">${esc(statut(C.final))}</span></div></section>
       </div>${panneau(pr)}</div>`;
@@ -212,7 +245,7 @@
   function victoire(l, suivante) {
     const x = M.xp(C, etat);
     return `<section class="victoire" aria-label="Leçon validée"><span class="fete" aria-hidden="true">${'<i></i>'.repeat(12)}</span><span class="medaille" aria-hidden="true">${icone('etoile', 60)}</span>
-      <h3>Leçon validée !</h3><p>${esc(l.code)} · ${esc(l.titre)}</p><span class="gain">+25 XP</span>
+      <h3>Leçon validée !</h3>${blocMascotte('fete', l.id)}<p>${esc(l.code)} · ${esc(l.titre)}</p><span class="gain">+25 XP</span>
       <div class="vers"><div class="legende"><span>${x.suivant ? `Vers ${esc(x.suivant.nom)}` : 'Niveau maximum'}</span><b>${nb(x.points, 0)}${x.suivant ? ` / ${nb(x.suivant.seuil, 0)}` : ''} XP</b></div><span class="jauge-turquoise"><span data-w="${x.pct}"></span></span>${x.suivant ? `<p>Encore ${nb(x.suivant.reste, 0)} XP pour ${esc(x.suivant.nom)}.</p>` : ''}</div>
       <p>${esc(l.memo)}</p>
       <div class="actions">${suivante ? `<button class="bouton-cerise" data-view="${suivante.id}">Leçon suivante : ${esc(suivante.code)} ${icone('fleche', 20)}</button>` : '<button class="bouton-cerise" data-view="carnet">Voir mon carnet</button>'}<button class="bouton" data-view="accueil">Retour à l’accueil</button></div></section>`;
@@ -240,11 +273,65 @@
       return `<label class="choix ${classe}"><input type="${q.type === 'multiple' ? 'checkbox' : 'radio'}" name="choix" value="${i}" ${coche ? 'checked' : ''} ${faite ? 'disabled' : ''}><span><span class="lettre" aria-hidden="true">${'ABCDEF'[i]}</span>${esc(o)}${faite && (coche || classe === 'juste') ? `<small class="retour-option">${esc(q.retours[i])}</small>` : ''}</span></label>`;
     }).join('')}</fieldset>`;
   }
+  /* ---------- Niveaux de difficulté ---------- */
+  const pastilleNiveau = l => {
+    const n = niveauDe(l);
+    return `<span class="niveau n${n}" title="Niveau ${n} sur 4 : ${NIV[n]}"><span class="niv-points" aria-hidden="true">${[1, 2, 3, 4].map(i => `<i class="${i <= n ? 'on' : ''}"></i>`).join('')}</span>Niveau ${n} · ${NIV[n]}</span>`;
+  };
+
+  /* ---------- Mochi, la mascotte (SVG sans script ni style en ligne) ---------- */
+  const PAROLES = {
+    fete: ['Série en or ! Tu es en feu.', 'Là, c’est du niveau pro. Bravo !', 'High five virtuel : tu l’as bien mérité.', 'Propre, rapide, juste. On continue ?', 'Tu me fais danser, là !'],
+    content: ['Bien vu, ça rentre.', 'Exactement ça. Mochi approuve.', 'Net. Une de plus dans la poche.', 'Ça, c’est le bon réflexe métier.', 'Tu l’as : ça se retient mieux après un succès.'],
+    rassure: ['Pas grave : une erreur, c’est un souvenir qui s’installe.', 'Regarde la réponse, respire, on y revient tout à l’heure.', 'Même les pros se trompent ici. Tu t’en souviendras mieux.', 'On ne te juge pas, on apprend. Prochaine !', 'Cette question reviendra en révision : tu auras ta revanche.'],
+    attentif: ['Celle-ci compte vraiment dans le métier. Relis le cours tranquillement, puis réessaie.', 'Point critique : prends ton temps, c’est le genre d’erreur qui coûte cher en vrai.', 'On souffle. Ce point-là vaut la peine d’être bien compris.']
+  };
+  /* Message choisi à partir d’une graine (identifiant de question) : il ne change pas à chaque rafraîchissement de l’écran. */
+  const parole = (humeur, graine) => {
+    const t = PAROLES[humeur]; let h = 7;
+    for (const c of String(graine || '') + humeur) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+    return t[h % t.length];
+  };
+  const mascotteActive = () => etat.mascotte !== false;
+  function mascotte(humeur) {
+    const yeuxBase = '<circle class="m-oeil" cx="47" cy="66" r="4.5"/><circle class="m-oeil" cx="73" cy="66" r="4.5"/><circle class="m-reflet" cx="48.6" cy="64.4" r="1.5"/><circle class="m-reflet" cx="74.6" cy="64.4" r="1.5"/>';
+    const yeux = {
+      content: yeuxBase,
+      fete: '<path class="m-trait" d="M41 69 Q47 59 53 69"/><path class="m-trait" d="M67 69 Q73 59 79 69"/>',
+      rassure: yeuxBase + '<path class="m-trait fin" d="M40 57 Q47 52 54 58"/><path class="m-trait fin" d="M66 58 Q73 52 80 57"/>',
+      attentif: '<circle class="m-oeil" cx="47" cy="66" r="5.5"/><circle class="m-oeil" cx="73" cy="66" r="5.5"/><circle class="m-reflet" cx="48.8" cy="64" r="1.8"/><circle class="m-reflet" cx="74.8" cy="64" r="1.8"/><path class="m-trait fin" d="M40 56 L54 56"/><path class="m-trait fin" d="M66 56 L80 56"/>'
+    }[humeur];
+    const bouche = {
+      content: '<path class="m-trait" d="M52 78 Q60 87 68 78"/>',
+      fete: '<path class="m-bouche" d="M48 76 Q60 98 72 76 Z"/>',
+      rassure: '<path class="m-trait" d="M53 81 Q60 86 67 81"/>',
+      attentif: '<path class="m-trait" d="M54 83 L66 83"/>'
+    }[humeur];
+    const bras = humeur === 'fete'
+      ? '<path class="m-bras" d="M24 82 Q8 70 10 46"/><path class="m-bras" d="M96 82 Q112 70 110 46"/><circle class="m-corps" cx="10" cy="43" r="7"/><circle class="m-corps" cx="110" cy="43" r="7"/>'
+      : '<ellipse class="m-corps" cx="22" cy="92" rx="9" ry="7"/><ellipse class="m-corps" cx="98" cy="92" rx="9" ry="7"/>';
+    const extra = {
+      fete: '<path class="m-etoile" d="M18 22 l2.4 5 5.4 .8 -3.9 3.8 .9 5.4 -4.8 -2.6 -4.8 2.6 .9 -5.4 -3.9 -3.8 5.4 -.8z"/><path class="m-etoile" d="M102 14 l2 4.2 4.5 .7 -3.3 3.2 .8 4.5 -4 -2.2 -4 2.2 .8 -4.5 -3.3 -3.2 4.5 -.7z"/><circle class="m-etoile" cx="60" cy="9" r="3"/>',
+      content: '<path class="m-etoile" d="M100 22 l2 4.2 4.5 .7 -3.3 3.2 .8 4.5 -4 -2.2 -4 2.2 .8 -4.5 -3.3 -3.2 4.5 -.7z"/>',
+      rassure: '<path class="m-coeur" d="M100 36 C92 28 92 20 98 20 C101 20 102 23 100 25 C102 23 107 20 110 24 C112 28 106 33 100 36 Z"/>',
+      attentif: ''
+    }[humeur];
+    return `<svg class="mascotte m-${humeur}" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+      <ellipse class="m-ombre" cx="60" cy="110" rx="30" ry="5"/>${bras}
+      <path class="m-corps" d="M26 46 L22 16 L50 32 Z"/><path class="m-corps" d="M94 46 L98 16 L70 32 Z"/><path class="m-oreille" d="M29 40 L27 24 L42 33 Z"/><path class="m-oreille" d="M91 40 L93 24 L78 33 Z"/>
+      <path class="m-corps" d="M60 30 C88 30 101 52 101 74 C101 97 83 108 60 108 C37 108 19 97 19 74 C19 52 32 30 60 30 Z"/><ellipse class="m-ventre" cx="60" cy="94" rx="20" ry="11"/>
+      <path class="m-arc" d="M25 66 C22 30 98 30 95 66"/><rect class="m-coque" x="15" y="58" width="12" height="22" rx="6"/><rect class="m-coque" x="93" y="58" width="12" height="22" rx="6"/><path class="m-micro" d="M99 78 Q99 92 82 93"/><circle class="m-coque" cx="80" cy="93" r="4"/>
+      <circle class="m-joue" cx="37" cy="77" r="5.5"/><circle class="m-joue" cx="83" cy="77" r="5.5"/>${yeux}${bouche}${extra}</svg>`;
+  }
+  /* Mochi et sa phrase. Vide si la mascotte est désactivée dans les réglages. */
+  const blocMascotte = (humeur, graine) => mascotteActive() ? `<div class="mascotte-bloc">${mascotte(humeur)}<p class="mascotte-parole">${esc(parole(humeur, graine))}</p></div>` : '';
+
   function feedbackQuestion(q, val) {
     const ok = M.correcte(q, val);
     const attendue = q.type === 'nombre' ? `${nb(q.bonne, 2)} ${q.unite}` : q.type === 'multiple' ? q.bonne.map(i => q.options[i]).join(' · ') : q.options[q.bonne];
     const fete = ok ? `<span class="fete" aria-hidden="true">${'<i></i>'.repeat(12)}</span>` : '';
-    return `<section id="correction" class="feedback ${ok ? 'gagne' : q.critique ? 'critique' : 'erreur'}" tabindex="-1" aria-label="Correction">${fete}<h3>${ok ? ['Bien joué.', 'Exactement.', 'Dans le mille.', 'Pro.'][Math.floor(Math.random() * 4)] : q.critique ? 'Erreur critique : à reprendre.' : 'Pas tout à fait.'}${ok && combo > 1 ? ` <span class="combo">Combo ×${combo}</span>` : ''}${ok && !sansXp ? ' <span class="gain">+10 XP</span>' : ''}</h3>${!ok ? `<p><strong>Réponse attendue :</strong> ${esc(attendue)}</p>` : ''}<p>${esc(q.explication)}</p></section>`;
+    const humeur = ok ? (combo > 2 ? 'fete' : 'content') : q.critique ? 'attentif' : 'rassure', m = mascotteActive();
+    return `<section id="correction" class="feedback ${ok ? 'gagne' : q.critique ? 'critique' : 'erreur'}" tabindex="-1" aria-label="Correction">${fete}<div class="fb-corps">${m ? mascotte(humeur) : ''}<div class="fb-texte"><h3>${ok ? ['Bien joué.', 'Exactement.', 'Dans le mille.', 'Pro.'][Math.floor(Math.random() * 4)] : q.critique ? 'Erreur critique : à reprendre.' : 'Pas tout à fait.'}${ok && combo > 1 ? ` <span class="combo">Combo ×${combo}</span>` : ''}${ok && !sansXp ? ' <span class="gain">+10 XP</span>' : ''}</h3>${m ? `<p class="mascotte-parole">${esc(parole(humeur, q.id))}</p>` : ''}${!ok ? `<p><strong>Réponse attendue :</strong> ${esc(attendue)}</p>` : ''}<p>${esc(q.explication)}</p></div></div></section>`;
   }
   function pointsQuestions(l) {
     return `<ol class="points-q" aria-label="Avancement des questions">${l.questions.map((q, i) => {
@@ -262,13 +349,15 @@
     const p = parcoursDe(l);
     const corps = etat.etape === 'exercice' ? renduQuestion(l) : etat.etape === 'ancrage' ? ancrage(l) : cours(l);
     return `<button class="retour" data-view="accueil"><span aria-hidden="true">←</span> Accueil</button>
-      <header class="lecon-entete"><div class="meta"><span class="etiquette">${esc(p.nom)}</span><span>${esc(l.code)} · ${esc(l.duree)}</span><span>${esc(statut(l))}</span></div><h1 tabindex="-1">${esc(l.titre)}</h1><p class="intro">${esc(l.objectif)}</p></header>
+      <header class="lecon-entete"><div class="meta"><span class="etiquette">${esc(p.nom)}</span><span>${esc(l.code)} · ${esc(l.duree)}</span><span>${esc(statut(l))}</span>${pastilleNiveau(l)}</div><h1 tabindex="-1">${esc(l.titre)}</h1><p class="intro">${esc(l.objectif)}</p></header>
       ${etapes()}${corps}`;
   }
+  const tableauLecon = t => `<div class="table-defile"><table class="table-cash table-lecon"><caption>${esc(t.legende)}</caption><thead><tr>${t.entetes.map(h => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${t.lignes.map(r => `<tr>${r.map((c, i) => i === 0 ? `<th scope="row">${esc(c)}</th>` : `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
   function cours(l) {
-    const outil = { b2: 'cotis', b3: 'cotis', b4: 'revenu', b5: 'doc', b6: 'treso', b7: 'devises', b8: 'doc', b9: 'budget', p1: 'pipeline', p2: 'pipeline', t8: 'reporting' }[l.id];
+    const outil = { c1: 'pourcent', c2: 'pourcent', c3: 'pourcent', c4: 'pourcent', b2: 'cotis', b3: 'cotis', b4: 'revenu', b5: 'doc', b6: 'treso', b7: 'devises', b8: 'doc', b9: 'budget', p1: 'pipeline', p2: 'pipeline', t8: 'reporting' }[l.id];
     return `<section class="carte"><div class="situation"><p class="sur-titre">La situation</p><p>${esc(l.situation)}</p></div>
       ${l.cours.map(([t, x], i) => `<section class="cours-bloc"><h2><span class="puce-num" aria-hidden="true">${i + 1}</span>${esc(t)}</h2><p>${esc(x)}</p></section>`).join('')}
+      ${l.tableau ? tableauLecon(l.tableau) : ''}
       <div class="memo"><strong>À retenir</strong>${esc(l.memo)}</div>
       ${outil ? `<div class="actions"><button class="bouton" data-action="outil" data-outil="${outil}">Tester dans la boîte à outils</button></div>` : ''}
       <div class="actions"><button class="bouton primaire" data-action="exercice">${M.bilan(l, etat.reponses).fini ? 'Revoir mes réponses' : 'Passer aux questions'} <span aria-hidden="true">→</span></button><span class="petit">${l.questions.length} questions · sans chrono</span></div>
@@ -299,9 +388,15 @@
 
   /* ---------- Quiz éclair ---------- */
   function nouvelEclair() {
-    const pool = []; toutes.forEach(l => l.questions.forEach(q => pool.push({ l, q })));
+    let pool = []; toutes.filter(l => !niveauEclair || niveauDe(l) === niveauEclair).forEach(l => l.questions.forEach(q => pool.push({ l, q })));
+    if (pool.length < 5) { pool = []; toutes.forEach(l => l.questions.forEach(q => pool.push({ l, q }))); }
     for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]]; }
     eclair = { qs: pool.slice(0, 5), i: 0, rep: {}, fini: false };
+  }
+  function choixNiveau() {
+    const nbQ = n => toutes.filter(l => !n || niveauDe(l) === n).reduce((t, l) => t + l.questions.length, 0);
+    const libs = [[0, 'Tous niveaux'], [1, 'Facile'], [2, 'Intermédiaire'], [3, 'Difficile'], [4, 'Expert']];
+    return `<section class="carte niveaux-bloc"><h2>Ton niveau du moment</h2><div class="niveaux-choix" role="group" aria-label="Niveau de difficulté">${libs.map(([n, lib]) => `<button class="puce-niveau ${n ? 'n' + n : ''}" data-action="eclair-niveau" data-niveau="${n}" aria-pressed="${niveauEclair === n}">${lib}<small>${nbQ(n)} questions</small></button>`).join('')}</div><p class="petit">Facile : les bases. Intermédiaire : les missions et le business. Difficile et Expert : les défis de pro, pour quelqu’un qui connaît déjà le métier.</p></section>`;
   }
   function vueEclair() {
     if (!eclair) nouvelEclair();
@@ -309,12 +404,12 @@
     if (eclair.fini) {
       const bonnes = eclair.qs.filter(x => M.correcte(x.q, eclair.rep[x.q.id])).length;
       const ratees = eclair.qs.filter(x => !M.correcte(x.q, eclair.rep[x.q.id]));
-      return `${tete}<section class="carte"><div class="resume-score"><p class="score">${bonnes} / 5<span> · +${bonnes * 5} XP</span></p></div>
-        <div class="feedback ${bonnes >= 4 ? 'gagne' : bonnes >= 3 ? '' : 'erreur'}">${bonnes >= 4 ? `<span class="fete" aria-hidden="true">${'<i></i>'.repeat(12)}</span>` : ''}<h3>${bonnes === 5 ? 'Sans faute. Légendaire.' : bonnes >= 3 ? 'Solide. Encore une ?' : 'Échauffement terminé. On rejoue ?'}</h3>${ratees.length ? `<p>À revoir : ${ratees.map(x => `<button class="lien-action en-ligne" data-view="${x.l.id}">${esc(x.l.code)} ${esc(x.l.titre)}</button>`).join(' · ')}</p>` : ''}</div>
+      return `${tete}${choixNiveau()}<section class="carte"><div class="resume-score"><p class="score">${bonnes} / 5<span> · +${bonnes * 5} XP</span></p></div>
+        ${blocMascotte(bonnes >= 4 ? 'fete' : bonnes >= 3 ? 'content' : 'rassure', 'eclair' + bonnes)}<div class="feedback ${bonnes >= 4 ? 'gagne' : bonnes >= 3 ? '' : 'erreur'}">${bonnes >= 4 ? `<span class="fete" aria-hidden="true">${'<i></i>'.repeat(12)}</span>` : ''}<h3>${bonnes === 5 ? 'Sans faute. Légendaire.' : bonnes >= 3 ? 'Solide. Encore une ?' : 'Échauffement terminé. On rejoue ?'}</h3>${ratees.length ? `<p>À revoir : ${ratees.map(x => `<button class="lien-action en-ligne" data-view="${x.l.id}">${esc(x.l.code)} ${esc(x.l.titre)}</button>`).join(' · ')}</p>` : ''}</div>
         <div class="actions"><button class="bouton primaire" data-action="eclair-rejouer">Nouvelle partie <span aria-hidden="true">↻</span></button><button class="bouton discret" data-view="accueil">Faire une pause</button></div></section>`;
     }
     const { l, q } = eclair.qs[eclair.i], faite = Object.prototype.hasOwnProperty.call(eclair.rep, q.id), val = faite ? eclair.rep[q.id] : drafts[q.id];
-    return `${tete}<section class="carte question"><ol class="points-q" aria-hidden="true">${eclair.qs.map((x, i) => { const r = Object.prototype.hasOwnProperty.call(eclair.rep, x.q.id); return `<li class="${i === eclair.i ? 'actuelle' : ''} ${r ? (M.correcte(x.q, eclair.rep[x.q.id]) ? 'juste' : 'faux') : ''}"></li>`; }).join('')}</ol>
+    return `${tete}${eclair.i === 0 && !Object.keys(eclair.rep).length ? choixNiveau() : ''}<section class="carte question"><ol class="points-q" aria-hidden="true">${eclair.qs.map((x, i) => { const r = Object.prototype.hasOwnProperty.call(eclair.rep, x.q.id); return `<li class="${i === eclair.i ? 'actuelle' : ''} ${r ? (M.correcte(x.q, eclair.rep[x.q.id]) ? 'juste' : 'faux') : ''}"></li>`; }).join('')}</ol>
       <p class="q-compteur">Éclair · ${eclair.i + 1} / 5 · tirée de ${esc(l.code)}</p><h2 tabindex="-1">${esc(q.titre)}</h2><p>${esc(q.texte)}</p>
       <form id="form-question" data-mode="eclair" novalidate>${champsQuestion(q, val, faite)}<p id="erreur-question" class="validation" role="alert"></p>${!faite ? '<div class="actions"><button type="submit" class="bouton primaire">Vérifier</button></div>' : ''}</form>${faite ? feedbackQuestion(q, val) : ''}
       ${faite ? `<div class="actions"><button class="bouton primaire" data-action="eclair-suivante">${eclair.i === 4 ? 'Voir mon score' : 'Suivante'} <span aria-hidden="true">→</span></button></div>` : ''}</section>`;
@@ -391,7 +486,7 @@
       <p class="taux-croises" id="taux-croises">${tauxCroises()}</p>
       <p class="minuscule">Le bouton interroge un service public de taux (Frankfurter, données BCE) : c’est la seule requête réseau du module. Taux de référence publiés vers 16 h les jours ouvrés.</p></section>`;
   }
-  const ONGLETS = [['devises', 'Convertir'], ['cotis', 'Cotisations'], ['revenu', 'Tarif → revenu'], ['treso', 'Trésorerie'], ['pipeline', 'Prospection'], ['budget', 'Budget'], ['reporting', 'Reporting'], ['doc', 'Devis & facture'], ['recettes', 'Livre des recettes'], ['plafonds', 'Plafonds'], ['echeances', 'Échéances'], ['planning', 'Planning'], ['contrat', 'Contrat & CGV'], ['efacture', 'Facture électronique']];
+  const ONGLETS = [['pourcent', 'Pourcentages'], ['devises', 'Convertir'], ['cotis', 'Cotisations'], ['revenu', 'Tarif → revenu'], ['treso', 'Trésorerie'], ['pipeline', 'Prospection'], ['budget', 'Budget'], ['reporting', 'Reporting'], ['doc', 'Devis & facture'], ['recettes', 'Livre des recettes'], ['plafonds', 'Plafonds'], ['echeances', 'Échéances'], ['planning', 'Planning'], ['contrat', 'Contrat & CGV'], ['efacture', 'Facture électronique']];
 
   function resultatDevises() {
     const eur = M.enEuros(conv.montant, conv.devise, T());
@@ -673,7 +768,8 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   }
   function resultatEcheances() {
     const liste = listeEcheances(), dates = liste.filter(e => e.date), sans = liste.filter(e => !e.date);
-    const carte = e => `<li class="echeance type-${e.type}"><div class="echeance-date"><strong>${e.date ? esc(dateFr(e.date)) : 'Date variable'}</strong>${e.fixe ? '' : '<span class="etiquette">À vérifier</span>'}</div><div><h3>${esc(e.titre)}</h3><p class="petit">${esc(e.detail)}</p>${e.date ? `<a class="lien-action" href="${esc(G.lienGoogleAgenda(e))}" target="_blank" rel="noopener noreferrer">Ajouter à Google Agenda <span class="sr-only">(nouvel onglet)</span></a>` : ''}</div></li>`;
+    const faite = e => etat.echeancesFaites.includes(e.id);
+    const carte = e => `<li class="echeance type-${e.type} ${faite(e) ? 'faite' : ''}"><div class="echeance-date"><strong>${e.date ? esc(dateFr(e.date)) : 'Date variable'}</strong>${e.fixe ? '' : '<span class="etiquette">À vérifier</span>'}</div><div><h3>${esc(e.titre)}</h3><p class="petit">${esc(e.detail)}</p>${e.date ? `<a class="lien-action" href="${esc(G.lienGoogleAgenda(e))}" target="_blank" rel="noopener noreferrer">Ajouter à Google Agenda <span class="sr-only">(nouvel onglet)</span></a> ` : ''}${e.date ? `<button class="bouton discret" data-action="${faite(e) ? 'echeance-defaire' : 'echeance-fait'}" data-id="${esc(e.id)}" aria-pressed="${faite(e)}">${faite(e) ? 'Fait ✓ (annuler)' : 'Marquer comme fait'}</button>` : ''}</div></li>`;
     return `<ul class="echeances">${dates.map(carte).join('')}${sans.map(carte).join('')}</ul>
       <div class="actions"><button class="bouton primaire" data-action="telecharger-ics">Tout exporter vers mon agenda (.ics)</button></div>
       <p class="minuscule">Le fichier .ics s’importe dans Google Agenda (Paramètres → Importer), Apple Calendrier ou Outlook. Un rappel est ajouté 3 jours avant chaque échéance. Les dates marquées « À vérifier » changent selon l’année ou ton avis : confirme-les sur ton avis ou sur impots.gouv.fr.</p>`;
@@ -759,7 +855,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
 
   /* Veille et idées */
   let veille = { etat: 'idle', data: null };
-  const CAT_VEILLE = [['', 'Tout'], ['actu', 'Actualités'], ['communaute', 'Communauté'], ['alerte', 'Alertes Google']];
+  const CAT_VEILLE = [['createurs', 'Créateurs Twitch'], ['', 'Tout'], ['actu', 'Actualités'], ['communaute', 'Communauté'], ['alerte', 'Alertes Google']];
   function nettoyerVeille(d) {
     const s = (v, n) => typeof v === 'string' ? v.slice(0, n) : '';
     const items = Array.isArray(d && d.items) ? d.items.slice(0, 300).filter(x => x && typeof x === 'object' && /^https?:\/\/[^\s<>"']+$/i.test(x.lien)).map(x => ({
@@ -782,13 +878,14 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     return m < 60 ? `il y a ${Math.max(1, m)} min` : m < 1440 ? `il y a ${Math.round(m / 60)} h` : `il y a ${Math.round(m / 1440)} j`;
   }
   function fluxVeille() {
-    const f = pf.veille || { cat: '', q: '' };
+    const f = pf.veille || { cat: 'createurs', q: '' };
     if (veille.etat === 'idle' || (veille.etat === 'chargement' && !veille.data)) return '<p class="petit" role="status">Chargement de la veille…</p>';
     if (!veille.data) return '<p class="alerte-sim" role="status">La veille n’est pas disponible pour l’instant (hors connexion pour la première fois ?). Réessaie plus tard : la boîte à idées marche déjà.</p>';
     const d = veille.data, q = (f.q || '').trim().toLowerCase();
-    const liste = d.items.map((x, i) => Object.assign({ i }, x)).filter(x => (!f.cat || x.categorie === f.cat) && (!q || (x.titre + ' ' + x.resume + ' ' + x.source).toLowerCase().includes(q)));
-    const pannes = d.sources.filter(s => s.statut !== 'ok'), max = (f.cat || q || veille.tout) ? 60 : 5;
-    return `<p class="petit">${d.maj ? `Dernière nouveauté ${esc(ilYa(d.maj))}.` : 'Aucune collecte pour l’instant.'} ${d.items.length} éléments de ${d.sources.filter(s => s.statut === 'ok').length} source${d.sources.filter(s => s.statut === 'ok').length > 1 ? 's' : ''}.${veille.etat === 'erreur' ? ' Affichage de la dernière copie : tu es peut-être hors connexion.' : ''}</p>
+    const attente = f.cat === 'createurs' && !d.items.some(x => x.categorie === 'createurs'), cat = attente ? '' : f.cat;
+    const liste = d.items.map((x, i) => Object.assign({ i }, x)).filter(x => (!cat || x.categorie === cat) && (!q || (x.titre + ' ' + x.resume + ' ' + x.source).toLowerCase().includes(q)));
+    const pannes = d.sources.filter(s => s.statut !== 'ok'), max = (q || veille.tout) ? 60 : 5;
+    return `${attente ? '<p class="petit" role="status">Les sources spécialisées créateurs Twitch arrivent à la prochaine collecte (dans l’heure). En attendant, tout est affiché.</p>' : ''}<p class="petit">${d.maj ? `Dernière nouveauté ${esc(ilYa(d.maj))}.` : 'Aucune collecte pour l’instant.'} ${d.items.length} éléments de ${d.sources.filter(s => s.statut === 'ok').length} source${d.sources.filter(s => s.statut === 'ok').length > 1 ? 's' : ''}.${veille.etat === 'erreur' ? ' Affichage de la dernière copie : tu es peut-être hors connexion.' : ''}</p>
       ${pannes.length ? `<details class="bloc-plie"><summary>${pannes.length} source${pannes.length > 1 ? 's' : ''} sans réponse</summary><p class="petit">${pannes.map(s => esc(s.nom)).join(' · ')}. Ce n’est pas grave : les autres continuent, et les anciens éléments sont conservés.</p></details>` : ''}
       ${liste.length ? `<ul class="flux-veille">${liste.slice(0, max).map(x => `<li class="flux-item"><div><p class="petit"><span class="etiquette">${esc(x.editeur || x.source)}</span> ${esc(ilYa(x.date))}</p><h3><a href="${esc(x.lien)}" target="_blank" rel="noopener noreferrer">${esc(x.titre)} <span class="sr-only">(nouvel onglet)</span></a></h3>${x.resume ? `<p class="petit">${esc(x.resume)}</p>` : ''}</div>
         <button class="bouton" data-action="veille-idee" data-i="${x.i}">Garder comme idée</button></li>`).join('')}</ul>${liste.length > max ? (max === 5 ? `<button class="bouton voir-plus" data-action="veille-tout">Voir plus (${liste.length - 5} autres)</button>` : `<p class="minuscule">${liste.length - 60} autres : affine avec le filtre.</p>`) : ''}` : '<p class="petit">Rien ne correspond à ce filtre.</p>'}`;
@@ -796,10 +893,10 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   const STATUTS_IDEE = [['a-faire', 'À faire'], ['en-cours', 'En cours'], ['publie', 'Publié']];
   function vueVeille() {
     if (veille.etat === 'idle') chargerVeille();
-    if (!pf.veille) pf.veille = { cat: '', q: '' };
+    if (!pf.veille) pf.veille = { cat: 'createurs', q: '' };
     if (!pf.idee) pf.idee = { titre: '', lien: '', note: '' };
     const i = pf.idee, f = pf.veille;
-    return `<header class="en-tete"><p class="sur-titre">Ma veille · Twitch France</p><h1 tabindex="-1">Veille et idées</h1><p class="intro">Les actualités et alertes arrivent toutes seules, une collecte par heure. Garde ce qui peut devenir un contenu dans ta boîte à idées, puis envoie-le dans le planning.</p></header>
+    return `<header class="en-tete"><p class="sur-titre">Ma veille · Twitch France</p><h1 tabindex="-1">Veille et idées</h1><p class="intro">Les actualités sur les créateurs de contenu Twitch et YouTube (revenus, règles, plateformes, tendances) arrivent toutes seules, une collecte par heure. Garde ce qui peut devenir un contenu dans ta boîte à idées, puis envoie-le dans le planning.</p></header>
       <section class="carte"><h2>Ma boîte à idées</h2>
         <p class="petit">Sur Android, partage une vidéo TikTok, un tweet ou une page vers l’application installée : l’idée arrive ici toute seule. Sur iPhone, colle le lien à la main.</p>
         <div class="calcul-champs">${champPf('idee', 'titre', 'Idée', i.titre, 'text', 'placeholder="Réaction au clip du boss, format 3 questions…"')}${champPf('idee', 'lien', 'Lien (facultatif)', i.lien, 'url')}${champPf('idee', 'note', 'Note (facultatif)', i.note)}</div>
@@ -830,7 +927,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     }
     if (revision.fini) {
       const bonnes = revision.qs.filter(x => M.correcte(x.q, revision.rep[x.q.id])).length, reste = G.aReviser(etat.revision, aujourdhui()).length;
-      return `${tete}<section class="carte"><div class="resume-score"><p class="score">${bonnes} / ${revision.qs.length}</p></div><div class="feedback ${bonnes === revision.qs.length ? 'gagne' : ''}"><h3>${bonnes === revision.qs.length ? 'Tout est revenu en mémoire.' : 'Les autres reviendront bientôt.'}</h3><p>${reste ? `Il en reste ${reste} à revoir aujourd’hui.` : 'Plus rien pour aujourd’hui. Bravo.'}</p></div>
+      return `${tete}<section class="carte"><div class="resume-score"><p class="score">${bonnes} / ${revision.qs.length}</p></div>${blocMascotte(bonnes === revision.qs.length ? 'fete' : bonnes ? 'content' : 'rassure', 'rev' + bonnes)}<div class="feedback ${bonnes === revision.qs.length ? 'gagne' : ''}"><h3>${bonnes === revision.qs.length ? 'Tout est revenu en mémoire.' : 'Les autres reviendront bientôt.'}</h3><p>${reste ? `Il en reste ${reste} à revoir aujourd’hui.` : 'Plus rien pour aujourd’hui. Bravo.'}</p></div>
         <div class="actions">${reste ? '<button class="bouton primaire" data-action="rev-rejouer">Continuer</button>' : ''}<button class="bouton discret" data-view="accueil">Faire une pause</button></div></section>`;
     }
     const { l, q } = revision.qs[revision.i], faite = Object.prototype.hasOwnProperty.call(revision.rep, q.id), val = faite ? revision.rep[q.id] : drafts[q.id];
@@ -843,7 +940,33 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
       ${faite ? `<div class="actions"><button class="bouton primaire" data-action="rev-suivante">${revision.i === revision.qs.length - 1 ? 'Voir mon score' : 'Suivante'} <span aria-hidden="true">→</span></button><button class="bouton discret" data-view="${l.id}">Revoir ${esc(l.code)}</button></div>` : ''}</section>`;
   }
 
-  const OUTIL_RENDU = { devises: [outilDevises, resultatDevises], cotis: [outilCotis, resultatCotis], revenu: [outilRevenu, resultatRevenu], treso: [outilTreso, resultatTreso], pipeline: [outilPipeline, resultatPipeline], budget: [outilBudget, resultatBudget], reporting: [outilReporting, resultatReporting], doc: [outilDoc, resultatDoc], recettes: [outilRecettes, resultatRecettes], plafonds: [outilPlafonds, resultatPlafonds], echeances: [outilEcheances, resultatEcheances], planning: [outilPlanning, resultatPlanning], contrat: [outilContrat, resultatContrat], efacture: [outilEfacture, resultatEfacture] };
+
+  /* ---------- Pourcentages : calculatrice commentée, fiche de formules, calcul de tête ---------- */
+  function resultatPourcent() {
+    const p = etat.pourcent, r = PC.calculer(p.mode, p.a, p.b);
+    if (r.erreur) return `<p class="validation" role="alert">${esc(r.erreur)}</p>`;
+    const val = r.unite === '%' ? `${nb(r.valeur, 2)} %` : r.unite ? `${nb(r.valeur, 2)} ${r.unite}` : nb(r.valeur, 2);
+    return `<div class="resultat-pc"><span class="petit">Résultat</span><strong>${esc(val)}</strong><p>${esc(r.lecture)}</p></div>
+      <div class="pc-bloc"><h3>Le calcul</h3><p class="formule">${esc(r.formule)}</p></div>
+      <div class="pc-bloc"><h3>Sur la calculatrice</h3><ol class="touches">${r.touches.map(t => `<li><code>${esc(t)}</code></li>`).join('')}</ol></div>
+      <div class="pc-bloc"><h3>De tête</h3><ul class="liste-simple">${r.tete.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div>
+      <div class="feedback erreur"><h3>Le piège à éviter</h3><p>${esc(r.piege)}</p></div>`;
+  }
+  function outilPourcent() {
+    const p = etat.pourcent, m = PC.MODES.find(x => x.id === p.mode) || PC.MODES[0];
+    return `<p class="petit">Choisis ce que tu cherches et tape tes deux nombres : tu obtiens le résultat, la formule, les touches de la calculatrice et l’astuce pour le faire de tête.</p>
+      <div class="calcul-champs">${champSelect('pourcent', 'mode', 'Je veux…', p.mode, PC.MODES.map(x => [x.id, x.nom]))}${champNum('pourcent', 'a', esc(m.a), p.a, -1000000000, 1000000000, 'any')}${champNum('pourcent', 'b', esc(m.b), p.b, -1000000000, 1000000000, 'any')}</div>
+      <div id="resultat-pourcent" aria-live="polite">${resultatPourcent()}</div>
+      <details class="fiche" open><summary>Fiche des formules : quoi utiliser, et quand</summary><div class="table-defile"><table class="table-cash table-lecon"><caption>Une ligne par besoin. Sur la calculatrice, tape exactement ce qui est écrit.</caption>
+        <thead><tr><th scope="col">Je veux…</th><th scope="col">Formule</th><th scope="col">Touches</th><th scope="col">Exemple</th><th scope="col">Quand ?</th></tr></thead>
+        <tbody>${PC.FICHE.map(f => `<tr><th scope="row">${esc(f.besoin)}</th><td>${esc(f.formule)}</td><td><code>${esc(f.touches)}</code></td><td>${esc(f.exemple)}</td><td>${esc(f.quand)}</td></tr>`).join('')}</tbody></table></div></details>
+      <details class="fiche"><summary>Calcul de tête : les pourcentages qu’on fait sans calculatrice</summary><div class="table-defile"><table class="table-cash table-lecon"><caption>Exemple sur 240 (abonnés, euros, vues…)</caption>
+        <thead><tr><th scope="col">Pourcentage</th><th scope="col">Comment faire</th><th scope="col">Résultat sur 240</th></tr></thead>
+        <tbody>${PC.tableTete(240).map(x => `<tr><th scope="row">${nb(x.pourcent, 0)} %</th><td>${esc(x.astuce)}</td><td>${nb(x.valeur, 2)}</td></tr>`).join('')}</tbody></table></div>
+        <p class="petit">Avec 10 % et 1 %, tu fabriques presque tous les autres : 30 % = 10 % × 3, 12 % = 10 % + 2 × 1 %.</p></details>`;
+  }
+
+  const OUTIL_RENDU = { pourcent: [outilPourcent, resultatPourcent], devises: [outilDevises, resultatDevises], cotis: [outilCotis, resultatCotis], revenu: [outilRevenu, resultatRevenu], treso: [outilTreso, resultatTreso], pipeline: [outilPipeline, resultatPipeline], budget: [outilBudget, resultatBudget], reporting: [outilReporting, resultatReporting], doc: [outilDoc, resultatDoc], recettes: [outilRecettes, resultatRecettes], plafonds: [outilPlafonds, resultatPlafonds], echeances: [outilEcheances, resultatEcheances], planning: [outilPlanning, resultatPlanning], contrat: [outilContrat, resultatContrat], efacture: [outilEfacture, resultatEfacture] };
   function simulateurs() {
     const o = etat.outil;
     return `<header class="en-tete"><p class="sur-titre">S’outiller · Piloter mon business</p><h1 tabindex="-1">Boîte à outils</h1><p class="intro">${ONGLETS.length} outils pour décider avec des chiffres, en euros, dollars et livres sterling. Les taux viennent des sources officielles vérifiées le ${esc(S.verifie)} : ce sont des repères pédagogiques, pas un conseil fiscal.</p></header>
@@ -884,17 +1007,39 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
       <section class="carte"><h2>Toutes les sources</h2><ul class="liste-sources">${Object.values(S.sources).map(s => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.nom)} <span class="sr-only">(nouvel onglet)</span></a></li>`).join('')}</ul></section>`;
   }
 
+  /* ---------- Suggestions d'amélioration : le message part par e-mail vers le développeur ---------- */
+  const TYPES_SUG = [['idee', 'Une idée'], ['probleme', 'Un problème'], ['contenu', 'Un contenu qui manque'], ['autre', 'Autre chose']];
+  const CONTACT = ['zesite07', 'gmail.com'].join('@');
+  let sugBrouillon = { type: 'idee', texte: '' };
+  function vueSuggestions() {
+    const liste = etat.suggestions.slice().reverse();
+    return `<header class="en-tete"><p class="sur-titre">Mes affaires</p><h1 tabindex="-1">Mes idées pour le logiciel</h1><p class="intro">Un truc qui t’agace, une idée, un contenu qui manque ? Écris-le ici : ça prépare un e-mail pour JT, qui s’en sert pour améliorer le logiciel.</p></header>
+      <section class="carte"><div class="calcul-champs"><div><label for="sug-type">C’est…</label><select id="sug-type" data-sug="type">${TYPES_SUG.map(([v, n]) => `<option value="${v}" ${sugBrouillon.type === v ? 'selected' : ''}>${n}</option>`).join('')}</select></div></div>
+        <label for="sug-texte">Ton message</label><textarea id="sug-texte" data-sug="texte" rows="6" maxlength="1000" placeholder="Ex. Quand je fais le quiz sur les pourcentages, j’aimerais pouvoir revoir la formule sans quitter la question.">${esc(sugBrouillon.texte)}</textarea>
+        <div class="actions"><button class="bouton primaire" data-action="suggestion-envoyer">Envoyer à JT par e-mail</button></div>
+        <p class="minuscule">Ça ouvre ton application e-mail avec le message déjà écrit : il faut ensuite appuyer sur « Envoyer » dans ton e-mail. Rien ne part tout seul.</p></section>
+      ${liste.length ? `<section><h2>Mes messages</h2><ul class="idees">${liste.map(x => `<li class="idee"><div><p class="petit"><span class="etiquette">${esc((TYPES_SUG.find(t => t[0] === x.type) || TYPES_SUG[0])[1])}</span> ${x.date ? esc(dateFr(x.date)) : ''}</p><p>${esc(x.texte)}</p><p class="minuscule">${x.envoye ? 'E-mail préparé' : 'Pas encore envoyé'}</p></div><div class="actions"><button class="bouton" data-action="suggestion-renvoyer" data-id="${esc(x.id)}">${x.envoye ? 'Renvoyer' : 'Envoyer'}</button><button class="bouton discret" data-action="suggestion-supprimer" data-id="${esc(x.id)}">Supprimer</button></div></li>`).join('')}</ul></section>` : ''}`;
+  }
+  function ouvrirMail(s) {
+    const lib = (TYPES_SUG.find(t => t[0] === s.type) || TYPES_SUG[0])[1];
+    const sujet = `[Giky CM] ${lib} : ${s.texte.replace(/\s+/g, ' ').slice(0, 50)}`;
+    const corps = `${s.texte}\n\n— Laetitia (envoyé depuis le module CM, contenu ${C.version})`;
+    const a = document.createElement('a');
+    a.href = `mailto:${CONTACT}?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(corps)}`;
+    a.rel = 'noopener'; document.body.appendChild(a); a.click(); a.remove();
+  }
+
   /* ---------- Rendu ---------- */
   function contenuVue() {
     const l = getLecon();
     if (l) return lecon(l);
-    const v = { simulateurs, carnet, sources, programme, jouer, scenarios: vueScenarios, eclair: vueEclair, revision: vueRevision, veille: vueVeille, ressources: vueRessources }[etat.vue];
+    const v = { simulateurs, carnet, sources, programme, jouer, scenarios: vueScenarios, eclair: vueEclair, revision: vueRevision, veille: vueVeille, ressources: vueRessources, suggestions: vueSuggestions }[etat.vue];
     return v ? v() : accueil();
   }
   function fil() {
     const l = getLecon();
     if (l) return `${esc(parcoursDe(l).nom)}<span>${esc(l.code)}</span>`;
-    return { programme: 'Apprendre<span>Tout le programme</span>', jouer: 'Jouer<span>Jouer pour apprendre</span>', simulateurs: 'Outils<span>Boîte à outils</span>', carnet: 'Mes affaires<span>Mon carnet</span>', sources: 'Mes affaires<span>Sources</span>', scenarios: 'Jouer<span>Scénarios</span>', eclair: 'Jouer<span>Quiz éclair</span>', revision: 'Jouer<span>Révision espacée</span>', veille: 'Ma veille<span>Veille et idées</span>', ressources: 'Outils<span>Ressources</span>' }[etat.vue] || 'Module CM<span>Accueil</span>';
+    return { programme: 'Apprendre<span>Tout le programme</span>', jouer: 'Jouer<span>Jouer pour apprendre</span>', simulateurs: 'Outils<span>Boîte à outils</span>', carnet: 'Mes affaires<span>Mon carnet</span>', sources: 'Mes affaires<span>Sources</span>', scenarios: 'Jouer<span>Scénarios</span>', eclair: 'Jouer<span>Quiz éclair</span>', revision: 'Jouer<span>Révision espacée</span>', veille: 'Ma veille<span>Veille et idées</span>', ressources: 'Outils<span>Ressources</span>', suggestions: 'Mes affaires<span>Mes idées pour le logiciel</span>' }[etat.vue] || 'Module CM<span>Accueil</span>';
   }
   function boutonsBarre() {
     const sombre = document.documentElement.dataset.theme === 'sombre';
@@ -903,12 +1048,14 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
         <div class="sprint-zone"><details class="sprint"><summary class="bouton">${sprint ? 'Sprint en cours' : 'Sprint'}</summary><div class="sprint-menu" role="group" aria-label="Durée du sprint">${[5, 10, 15, 25].map(m => `<button class="bouton" data-action="sprint" data-minutes="${m}">${m} min</button>`).join('')}${sprint ? '<button class="bouton discret" data-action="stop-sprint">Arrêter</button>' : ''}</div></details></div>
         <button class="bouton" data-action="theme" aria-pressed="${sombre}" title="Basculer le mode sombre">${sombre ? '☀ Clair' : '☾ Sombre'}</button>
         <button class="bouton" data-action="aere" aria-pressed="${!!etat.aere}" title="Agrandir l’interlignage">Texte aéré</button>
+        <button class="bouton" data-action="mascotte" aria-pressed="${mascotteActive()}" title="Afficher ou masquer Mochi, la mascotte">Mascotte</button>
         <button class="bouton" data-action="focus" aria-pressed="${etat.focus}">Focus</button><button class="bouton" data-action="sauvegarde">Sauvegarder</button>
         <p class="minuscule">Ta progression reste dans ce navigateur. Seul le bouton « Actualiser les taux BCE » contacte un service externe, à ta demande.</p></div></details>`;
   }
   function barreBas() {
     const v = etat.vue, actif = { accueil: v === 'accueil', apprendre: !!getLecon() || v === 'programme' || v === 'final', jouer: ['jouer', 'scenarios', 'eclair', 'revision'].includes(v), business: ['simulateurs', 'ressources'].includes(v), veille: v === 'veille' };
-    const t = (id, vue, ic, lib) => `<button data-view="${vue}" ${actif[id] ? 'aria-current="page"' : ''}>${icone(ic, 22)}${lib}</button>`;
+    const nA = listeAlertes().length;
+    const t = (id, vue, ic, lib) => `<button data-view="${vue}" ${actif[id] ? 'aria-current="page"' : ''}>${icone(ic, 22)}${lib}${id === 'business' && nA ? `<span class="pastille-alerte" aria-label="${nA} échéance${nA > 1 ? 's' : ''} à traiter">${nA}</span>` : ''}</button>`;
     return `<nav class="bas" aria-label="Navigation principale">${t('accueil', 'accueil', 'accueil', 'Accueil')}${t('apprendre', 'programme', 'livre', 'Apprendre')}${t('jouer', 'jouer', 'jeu', 'Jouer')}${t('business', 'simulateurs', 'outils', 'Business')}${t('veille', 'veille', 'veille', 'Veille')}</nav>`;
   }
   function render(focusSel) {
@@ -917,8 +1064,9 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     $('#application').innerHTML = `<div class="coquille"><aside class="rail" aria-label="Navigation du module"><div><p class="marque">JTIpilot<span aria-hidden="true"></span></p><p class="sous-marque">Community manager freelance</p></div>${blocXp(true)}<nav aria-label="Leçons">${menu()}</nav><div class="rail-bas"><strong>Repères ${R.annee}</strong>Vérifiés le ${esc(S.verifie)} sur les sources officielles.</div></aside>
       <div class="zone"><div class="barre"><p class="fil">${fil()}</p><div class="outils">${boutonsBarre()}</div></div>
       <p id="stockage-avertissement" class="stockage-alerte" ${depot.persistant ? 'hidden' : ''}>${esc(depot.avertissement)}</p>
+      ${bandeauAlertes()}
       <main id="principal">${contenuVue()}<footer class="pied"><span>JTIpilot · Module ${esc(C.titre)} · contenu ${esc(C.version)} revu le ${esc(C.revue)}. Les chiffres légaux et fiscaux sont des repères pédagogiques : vérifier sur la source officielle liée.</span><button class="lien-action" data-view="sources">Sources</button></footer></main></div></div>${barreBas()}`;
-    largeurs(); majMinuteur();
+    largeurs(); majMinuteur(); badgeApp();
     sauver();
     if (focusSel) { const el = $(focusSel); if (el) el.focus({ preventScroll: false }); }
   }
@@ -998,7 +1146,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   const qCourante = () => etat.vue === 'revision' && revision && revision.qs.length ? revision.qs[revision.i].q : etat.vue === 'eclair' && eclair ? eclair.qs[eclair.i].q : qActuelle();
   function majPf(t) {
     const [g, k] = t.dataset.pf.split('.');
-    if (g === 'veille') { pf.veille = pf.veille || { cat: '', q: '' }; pf.veille[k] = t.value; majVeilleZone(); return; }
+    if (g === 'veille') { pf.veille = pf.veille || { cat: 'createurs', q: '' }; pf.veille[k] = t.value; majVeilleZone(); return; }
     if (g === 'filtre') pf.filtreClient = t.value;
     else if (pf[g]) pf[g][k] = t.value;
     if (t.dataset.rerender) render(`#${t.id}`);
@@ -1025,6 +1173,11 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
       const ts = $('#taux-source'); if (ts) ts.textContent = `Source : saisie manuelle du ${dateFr(etat.devises.date)}. Modifiables à la main.`;
       const tc = $('#taux-croises'); if (tc) tc.innerHTML = tauxCroises();
     }
+    if (g === 'pourcent' && k === 'mode') {
+      const m = PC.MODES.find(x => x.id === etat.pourcent.mode);
+      if (m) { etat.pourcent.a = m.exemple.a; etat.pourcent.b = m.exemple.b; }
+      render(`#${t.id}`); sauver(); return;
+    }
     /* Les champs dont le libellé dépend d'un choix demandent un rendu complet. */
     if (g === 'doc' && ['type', 'situation', 'devise'].includes(k)) { render(`#${t.id}`); sauver(); return; }
     const cible = $(`#resultat-${etat.outil}`);
@@ -1033,6 +1186,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   }
   document.addEventListener('input', e => {
     const t = e.target;
+    if (t.matches('[data-sug]')) { sugBrouillon[t.dataset.sug] = t.dataset.sug === 'type' ? (TYPES_SUG.some(x => x[0] === t.value) ? t.value : 'idee') : t.value.slice(0, 1000); return; }
     if (t.matches('[data-note]') && t.type !== 'checkbox') {
       const l = getLecon(); if (!l) return;
       etat.notes[l.id] = Object.assign({ action: '', echeance: '', fait: false }, etat.notes[l.id], { [t.dataset.note]: t.value.slice(0, t.dataset.note === 'action' ? 1500 : 120) });
@@ -1076,6 +1230,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     const a = b.dataset.action, l = getLecon();
     if (a === 'focus') { etat.focus = !etat.focus; render('.barre [data-action="focus"]'); annoncer(etat.focus ? 'Mode focus activé.' : 'Mode focus désactivé.'); return; }
     if (a === 'theme') { const sombre = document.documentElement.dataset.theme === 'sombre'; etat.theme = sombre ? 'clair' : 'sombre'; render('.barre [data-action="theme"]'); annoncer(etat.theme === 'sombre' ? 'Mode sombre activé.' : 'Mode clair activé.'); return; }
+    if (a === 'mascotte') { etat.mascotte = !mascotteActive(); render('.barre [data-action="mascotte"]'); annoncer(etat.mascotte ? 'Mascotte affichée.' : 'Mascotte masquée.'); return; }
     if (a === 'aere') { etat.aere = !etat.aere; render('.barre [data-action="aere"]'); annoncer(etat.aere ? 'Texte aéré activé.' : 'Texte aéré désactivé.'); return; }
     if (a === 'famille') { ouvrir('programme'); const el = document.getElementById('fam-' + b.dataset.id); if (el) el.scrollIntoView(); return; }
     if (a === 'veille-tout') { veille.tout = true; majVeilleZone(); return; }
@@ -1084,6 +1239,17 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     if (a === 'energie') { etat.energie = b.dataset.energie; render('.energie-bloc [aria-pressed="true"]'); return; }
     if (a === 'qdj') { const lq = toutes.find(x => x.id === b.dataset.lecon); etat.vue = lq.id; etat.derniere = lq.id; etat.etape = 'exercice'; etat.question = Number(b.dataset.i); drafts = {}; render('.question h2'); window.scrollTo(0, 0); return; }
     if (a === 'outil') { etat.outil = b.dataset.outil; ouvrir('simulateurs'); return; }
+    if (a === 'echeance-fait') { if (!etat.echeancesFaites.includes(b.dataset.id)) etat.echeancesFaites.push(b.dataset.id); render(); toast('Échéance marquée comme faite.'); return; }
+    if (a === 'echeance-defaire') { etat.echeancesFaites = etat.echeancesFaites.filter(x => x !== b.dataset.id); render(); toast('Échéance remise à faire.'); return; }
+    if (a === 'suggestion-envoyer') {
+      const texte = sugBrouillon.texte.trim();
+      if (!texte) { toast('Écris d’abord ton message.', 'erreur'); return; }
+      const s = { id: nouvelId(), date: aujourdhui(), type: sugBrouillon.type, texte, envoye: true };
+      etat.suggestions.push(s); sugBrouillon = { type: 'idee', texte: '' };
+      render('h1'); ouvrirMail(s); toast('Ton e-mail est prêt : appuie sur « Envoyer » dans ton application e-mail.'); return;
+    }
+    if (a === 'suggestion-renvoyer') { const s = etat.suggestions.find(x => x.id === b.dataset.id); if (s) { s.envoye = true; sauver(); ouvrirMail(s); } return; }
+    if (a === 'suggestion-supprimer') { etat.suggestions = etat.suggestions.filter(x => x.id !== b.dataset.id); render('h1'); return; }
     if (a === 'onglet') { etat.outil = b.dataset.outil; render(`#onglet-${etat.outil}`); return; }
     if (a === 'maj-taux') { majTaux(b); return; }
     if (a === 'copier') {
@@ -1124,6 +1290,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
       etat.eclair = { meilleur: Math.max(etat.eclair.meilleur, bonnes), parties: etat.eclair.parties + 1, bonnes: etat.eclair.bonnes + bonnes };
       render('h1'); return;
     }
+    if (a === 'eclair-niveau') { niveauEclair = Number(b.dataset.niveau) || 0; nouvelEclair(); drafts = {}; render('.niveaux-choix [aria-pressed="true"]'); return; }
     if (a === 'eclair-rejouer') { nouvelEclair(); drafts = {}; render('.question h2'); return; }
     if (a === 'sauvegarde') { reglagesOuvert = false; const rg = document.querySelector('details.reglages'); if (rg) rg.open = false; dernierFocus = b; $('#message-import').textContent = ''; $('#sauvegarde').showModal(); return; }
     if (a === 'fermer-sauvegarde') { $('#sauvegarde').close(); if (dernierFocus && dernierFocus.isConnected) dernierFocus.focus(); return; }
