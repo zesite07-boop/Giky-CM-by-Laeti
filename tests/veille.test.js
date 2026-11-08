@@ -27,5 +27,5 @@ const tout = assembler([{ source: sA, items: parseFeed(rss, NOW) }, { source: sB
 assert.deepStrictEqual(tout.map(x => x.titre), ['Récent', 'Twitch & clips : la nouveauté', 'Google'], 'récent d’abord, doublon et ancien retirés');
 assert.strictEqual(tout[0].categorie, 'alerte'); assert.strictEqual(tout[1].source, 'A');
 const beaucoup = assembler([{ source: sA, items: Array.from({ length: 40 }, (_, i) => ({ titre: 't' + i, lien: 'https://e.fr/' + i, date: NOW, resume: '', editeur: '' })) }], NOW);
-assert.strictEqual(beaucoup.length, 15, '15 par source maximum');
+assert.strictEqual(beaucoup.length, 20, '20 par source maximum');
 console.log('OK veille');

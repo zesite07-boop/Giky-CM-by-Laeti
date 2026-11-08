@@ -116,15 +116,16 @@
   function prochaines(liste, aujourdhui) {
     return liste.filter(e => e.date && e.date >= aujourdhui);
   }
-  /* Alertes : échéances non faites, de 10 jours en retard à 7 jours à venir. delai = jours restants (négatif = en retard). */
+  /* Alertes : échéances non faites, de 30 jours passées à 7 jours à venir. delai = jours restants (négatif = passée).
+     retard = passée depuis 3 jours au plus (alerte forte) ; passee = plus ancienne : simple vérification, sans clignotement. */
   function alertes(liste, faites, aujourdhui) {
     const f = new Set(Array.isArray(faites) ? faites : []), vus = new Set(), out = [];
     for (const e of liste) {
       if (!e.date || f.has(e.id) || vus.has(e.id)) continue;
       vus.add(e.id);
       const delai = Math.round((Date.parse(e.date) - Date.parse(aujourdhui)) / 864e5);
-      if (!(delai >= -10 && delai <= 7)) continue;
-      out.push(Object.assign({}, e, { delai, niveau: delai < 0 ? 'retard' : delai === 0 ? 'jour' : delai <= 3 ? 'proche' : 'a-venir' }));
+      if (!(delai >= -30 && delai <= 7)) continue;
+      out.push(Object.assign({}, e, { delai, niveau: delai < -3 ? 'passee' : delai < 0 ? 'retard' : delai === 0 ? 'jour' : delai <= 3 ? 'proche' : 'a-venir' }));
     }
     return out.sort((a, b) => a.delai - b.delai);
   }

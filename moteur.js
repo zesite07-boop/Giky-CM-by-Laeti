@@ -242,7 +242,7 @@
         if (!x || typeof x !== 'object' || !ID_RE.test(x.id) || vus.has(x.id)) continue;
         const t = texte(x.texte, 1000); if (!t.trim()) continue;
         vus.add(x.id);
-        out.suggestions.push({ id: x.id, date: ISO_RE.test(x.date) ? x.date : '', type: enumere(x.type, ['idee', 'probleme', 'contenu', 'autre'], 'idee'), texte: t, envoye: x.envoye === true });
+        out.suggestions.push({ id: x.id, date: ISO_RE.test(x.date) ? x.date : '', type: enumere(x.type, ['idee', 'probleme', 'contenu', 'createur', 'autre'], 'idee'), texte: t, envoye: x.envoye === true });
       }
     }
     if (Array.isArray(obj.idees)) {

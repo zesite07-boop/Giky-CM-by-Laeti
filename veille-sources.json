@@ -1,5 +1,5 @@
 {
-  "_aide": "Sources de la veille. type: rss (RSS ou Atom). categorie: createurs, actu, communaute ou alerte (createurs = ce qui concerne les créateurs de contenu Twitch/YouTube). Pour ajouter une alerte Google : créer l'alerte sur google.com/alerts, choisir « Flux RSS » comme destination, puis coller l'adresse du flux ici avec categorie alerte.",
+  "_aide": "Sources de la veille. type: rss (RSS ou Atom). categorie: createurs, actu, communaute ou alerte (createurs = ce qui concerne les créateurs de contenu Twitch/YouTube). Pour ajouter une alerte Google : créer l'alerte sur google.com/alerts, choisir « Flux RSS » comme destination, puis coller l'adresse du flux ici avec categorie alerte. Les sources « Google Actualités · <noms> » suivent des créateurs précis : pour en ajouter un, ajouter son nom dans l'une de ces requêtes (4 noms maximum par requête).",
   "sources": [
     {
       "id": "gnews-twitch-fr",
@@ -108,6 +108,24 @@
       "nom": "Blog du Modérateur (réseaux sociaux)",
       "categorie": "actu",
       "url": "https://www.blogdumoderateur.com/feed/"
+    },
+    {
+      "id": "gnews-createurs-1",
+      "nom": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+      "categorie": "createurs",
+      "url": "https://news.google.com/rss/search?q=Squeezie+OR+Gotaga+OR+Kameto+OR+Michou+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-createurs-2",
+      "nom": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+      "categorie": "createurs",
+      "url": "https://news.google.com/rss/search?q=Inoxtag+OR+Ponce+OR+Locklear+OR+Zerator+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-createurs-3",
+      "nom": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+      "categorie": "createurs",
+      "url": "https://news.google.com/rss/search?q=Domingo+OR+Maghla+OR+Doigby+OR+Jiraya+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
     }
   ]
 }

@@ -133,14 +133,14 @@ console.log('OK gestion');
   const liste = [
     { id: 'a', date: '2026-11-08', titre: 'jour', fixe: true }, { id: 'b', date: '2026-11-10', titre: 'proche', fixe: true },
     { id: 'c', date: '2026-11-14', titre: 'semaine', fixe: true }, { id: 'd', date: '2026-11-20', titre: 'loin', fixe: true },
-    { id: 'e', date: '2026-11-05', titre: 'retard', fixe: true }, { id: 'f', date: '2026-10-01', titre: 'trop ancien', fixe: true },
+    { id: 'e', date: '2026-11-05', titre: 'retard', fixe: true }, { id: 'f', date: '2026-10-01', titre: 'trop ancien', fixe: true }, { id: 'i', date: '2026-10-31', titre: 'passee', fixe: true },
     { id: 'g', date: null, titre: 'sans date', fixe: false }, { id: 'h', date: '2026-11-09', titre: 'faite', fixe: true },
   ];
   const al = G.alertes(liste, ['h'], '2026-11-08');
-  assert.deepStrictEqual(al.map(x => x.id), ['e', 'a', 'b', 'c']);
-  assert.deepStrictEqual(al.map(x => x.niveau), ['retard', 'jour', 'proche', 'a-venir']);
-  assert.deepStrictEqual(al.map(x => x.delai), [-3, 0, 2, 6]);
-  assert.deepStrictEqual(G.alertes(liste, undefined, '2026-11-08').length, 5);
+  assert.deepStrictEqual(al.map(x => x.id), ['i', 'e', 'a', 'b', 'c']);
+  assert.deepStrictEqual(al.map(x => x.niveau), ['passee', 'retard', 'jour', 'proche', 'a-venir']);
+  assert.deepStrictEqual(al.map(x => x.delai), [-8, -3, 0, 2, 6]);
+  assert.deepStrictEqual(G.alertes(liste, undefined, '2026-11-08').length, 6);
   const n = M.normaliser({ version: 1, echeancesFaites: ['urssaf-2026-10', 'a b', 5, 'urssaf-2026-10', '<x>'], suggestions: [{ id: 's1', date: '2026-11-08', type: 'zzz', texte: '  ', envoye: true }, { id: 's2', date: 'nimporte', type: 'probleme', texte: 'Bug <b>x</b>', envoye: 1 }, { id: 's2', texte: 'doublon' }] }, C);
   assert.deepStrictEqual(n.echeancesFaites, ['urssaf-2026-10']);
   assert.strictEqual(n.suggestions.length, 1);

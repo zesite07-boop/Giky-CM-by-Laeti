@@ -121,7 +121,7 @@
       return `<div class="nav-groupe"><p class="sur-titre">${esc(p.nom)}</p>${ls.map(l => lienNav(l.id, marque(l), l.titre)).join('')}</div>`;
     }).join('');
     return `${lienNav('accueil', '<span class="nav-num">⌂</span>', 'Accueil')}
-      <div class="nav-groupe"><p class="sur-titre">Jouer et s’outiller</p>${lienNav('simulateurs', '<span class="nav-num">€$£</span>', 'Boîte à outils', listeAlertes().length)}${lienNav('scenarios', '<span class="nav-num">▶</span>', 'Scénarios')}${lienNav('eclair', '<span class="nav-num">⚡</span>', 'Quiz éclair')}${lienNav('revision', '<span class="nav-num">↻</span>', 'Révision espacée')}${lienNav('veille', '<span class="nav-num">◉</span>', 'Veille et idées')}${lienNav('ressources', '<span class="nav-num">★</span>', 'Ressources')}</div>
+      <div class="nav-groupe"><p class="sur-titre">Jouer et s’outiller</p>${lienNav('simulateurs', '<span class="nav-num">€$£</span>', 'Boîte à outils', alertesFortes().length)}${lienNav('scenarios', '<span class="nav-num">▶</span>', 'Scénarios')}${lienNav('eclair', '<span class="nav-num">⚡</span>', 'Quiz éclair')}${lienNav('revision', '<span class="nav-num">↻</span>', 'Révision espacée')}${lienNav('veille', '<span class="nav-num">◉</span>', 'Veille et idées')}${lienNav('ressources', '<span class="nav-num">★</span>', 'Ressources')}</div>
       ${groupes}
       <div class="nav-groupe"><p class="sur-titre">Pour finir</p>${lienNav('final', marque(C.final), 'Épreuve finale')}</div>
       <div class="nav-groupe"><p class="sur-titre">Mes affaires</p>${lienNav('carnet', '<span class="nav-num">≡</span>', 'Mon carnet')}${lienNav('sources', '<span class="nav-num">§</span>', 'Sources officielles')}${lienNav('suggestions', '<span class="nav-num">✎</span>', 'Mes idées pour le logiciel')}</div>`;
@@ -165,27 +165,43 @@
     for (const e of [].concat(G.echeances(y - 1, etat.echeances), G.echeances(y, etat.echeances), G.echeances(y + 1, etat.echeances))) if (!vus.has(e.id)) { vus.add(e.id); tout.push(e); }
     return G.alertes(tout, etat.echeancesFaites, aujourdhui());
   }
-  const NIVEAUX_ALERTE = { retard: 'En retard', jour: 'Aujourd’hui', proche: 'Très bientôt', 'a-venir': 'Cette semaine' };
-  function quand(a) {
-    return a.delai < 0 ? `En retard de ${-a.delai} jour${a.delai < -1 ? 's' : ''}` : a.delai === 0 ? 'Aujourd’hui' : a.delai === 1 ? 'Demain' : `Dans ${a.delai} jours`;
+  const alertesFortes = () => listeAlertes().filter(a => a.niveau !== 'passee');
+  function prochaineEcheance() {
+    const y = annee(), vus = new Set(), tout = [];
+    for (const e of [].concat(G.echeances(y, etat.echeances), G.echeances(y + 1, etat.echeances))) if (!vus.has(e.id)) { vus.add(e.id); tout.push(e); }
+    const auj = aujourdhui();
+    const p = tout.filter(e => e.date && e.date > auj && !etat.echeancesFaites.includes(e.id)).sort((a, b) => a.date.localeCompare(b.date))[0];
+    return p ? { e: p, delai: Math.round((Date.parse(p.date) - Date.parse(auj)) / 864e5) } : null;
+  }
+    function quand(a) {
+    return a.niveau === 'passee' ? `Date passée le ${dateFr(a.date)}` : a.delai < 0 ? `En retard de ${-a.delai} jour${a.delai < -1 ? 's' : ''}` : a.delai === 0 ? 'Aujourd’hui' : a.delai === 1 ? 'Demain' : `Dans ${a.delai} jours`;
   }
   function ligneAlerte(a) {
     return `<li class="alerte-ligne al-${a.niveau}"><span class="al-point" aria-hidden="true"></span><div><strong>${esc(quand(a))} · ${esc(a.titre)}</strong>${a.fixe ? '' : '<span class="etiquette">Date indicative</span>'}<span class="minuscule">${esc(dateFr(a.date))}</span></div><button class="bouton" data-action="echeance-fait" data-id="${esc(a.id)}">C’est fait</button></li>`;
   }
+  function lignePassee(a) {
+    return `<li class="alerte-ligne al-passee"><div><strong>${esc(a.titre)}</strong><span class="minuscule">Date passée le ${esc(dateFr(a.date))}. Tu l’as déjà faite ?</span></div><button class="bouton" data-action="echeance-fait" data-id="${esc(a.id)}">Oui, c’est fait</button></li>`;
+  }
+  function ligneProchaine() {
+    const p = prochaineEcheance(); if (!p) return '';
+    return `<p class="petit prochaine-ech">Prochaine échéance : <strong>${esc(p.e.titre)}</strong>, le ${esc(dateFr(p.e.date))} (dans ${p.delai} jour${p.delai > 1 ? 's' : ''}).</p>`;
+  }
   function carteAlertes() {
-    const al = listeAlertes(); if (!al.length) return '';
-    const urgent = al.some(a => a.niveau === 'retard' || a.niveau === 'jour');
-    return `<section class="alertes-carte ${urgent ? 'urgent' : ''}" role="region" aria-label="Échéances à traiter"><h2><span class="al-point" aria-hidden="true"></span>${urgent ? 'Échéance à traiter maintenant' : 'Échéances à venir cette semaine'}</h2><ul class="alertes-liste">${al.map(ligneAlerte).join('')}</ul><button class="lien-action" data-action="outil" data-outil="echeances">Voir tout le calendrier des échéances</button></section>`;
+    const al = listeAlertes(), fortes = al.filter(a => a.niveau !== 'passee'), passees = al.filter(a => a.niveau === 'passee');
+    if (!al.length) return ligneProchaine();
+    const urgent = fortes.some(a => a.niveau === 'retard' || a.niveau === 'jour');
+    return `${fortes.length ? `<section class="alertes-carte ${urgent ? 'urgent' : ''}" role="region" aria-label="Échéances à traiter"><h2><span class="al-point" aria-hidden="true"></span>${urgent ? 'Échéance à traiter maintenant' : 'Échéances à venir cette semaine'}</h2><ul class="alertes-liste">${fortes.map(ligneAlerte).join('')}</ul><button class="lien-action" data-action="outil" data-outil="echeances">Voir tout le calendrier des échéances</button></section>` : ''}
+      ${passees.length ? `<section class="alertes-passees" role="region" aria-label="Dates passées à vérifier"><h2>À vérifier</h2><ul class="alertes-liste">${passees.map(lignePassee).join('')}</ul></section>` : ''}${ligneProchaine()}`;
   }
   /* Bandeau fin sur les autres pages : l'échéance la plus urgente. */
   function bandeauAlertes() {
     if (etat.vue === 'accueil') return '';
-    const al = listeAlertes(); if (!al.length) return '';
+    const al = alertesFortes(); if (!al.length) return '';
     const a = al[0], urgent = a.niveau === 'retard' || a.niveau === 'jour';
     return `<div class="bandeau-alerte al-${a.niveau} ${urgent ? 'urgent' : ''}" role="status"><span class="al-point" aria-hidden="true"></span><span class="bandeau-texte"><strong>${esc(quand(a))}</strong> : ${esc(a.titre)}${al.length > 1 ? ` (+ ${al.length - 1} autre${al.length > 2 ? 's' : ''})` : ''}</span><button class="bouton" data-action="outil" data-outil="echeances">Voir</button><button class="bouton" data-action="echeance-fait" data-id="${esc(a.id)}">C’est fait</button></div>`;
   }
   function badgeApp() {
-    try { const n = listeAlertes().length; if (n && navigator.setAppBadge) navigator.setAppBadge(n); else if (navigator.clearAppBadge) navigator.clearAppBadge(); } catch (_) { /* non pris en charge */ }
+    try { const n = alertesFortes().length; if (n && navigator.setAppBadge) navigator.setAppBadge(n); else if (navigator.clearAppBadge) navigator.clearAppBadge(); } catch (_) { /* non pris en charge */ }
   }
   function rappelSauvegarde() {
     const donnees = Object.keys(etat.reponses).length || etat.recettes.length || etat.planning.length || etat.idees.length || Object.keys(etat.notes).length;
@@ -858,7 +874,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   const CAT_VEILLE = [['createurs', 'Créateurs Twitch'], ['', 'Tout'], ['actu', 'Actualités'], ['communaute', 'Communauté'], ['alerte', 'Alertes Google']];
   function nettoyerVeille(d) {
     const s = (v, n) => typeof v === 'string' ? v.slice(0, n) : '';
-    const items = Array.isArray(d && d.items) ? d.items.slice(0, 300).filter(x => x && typeof x === 'object' && /^https?:\/\/[^\s<>"']+$/i.test(x.lien)).map(x => ({
+    const items = Array.isArray(d && d.items) ? d.items.slice(0, 500).filter(x => x && typeof x === 'object' && /^https?:\/\/[^\s<>"']+$/i.test(x.lien)).map(x => ({
       titre: s(x.titre, 200), lien: x.lien.slice(0, 600), date: s(x.date, 40), resume: s(x.resume, 240), source: s(x.source, 80), categorie: s(x.categorie, 20), editeur: s(x.editeur, 80) })) : [];
     const sources = Array.isArray(d && d.sources) ? d.sources.slice(0, 50).map(x => ({ nom: s(x && x.nom, 80), statut: x && x.statut === 'ok' ? 'ok' : 'erreur', nb: Number(x && x.nb) || 0 })) : [];
     return { maj: s(d && d.maj, 40) || null, items, sources };
@@ -877,18 +893,23 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     const m = Math.max(0, Math.round((Date.now() - t) / 60000));
     return m < 60 ? `il y a ${Math.max(1, m)} min` : m < 1440 ? `il y a ${Math.round(m / 60)} h` : `il y a ${Math.round(m / 1440)} j`;
   }
+  const sansAccent = t => String(t).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  function liensRecherche(q) {
+    const e = encodeURIComponent(q);
+    return `<p class="petit">Cherche-le directement :</p><div class="actions"><a class="bouton" href="https://news.google.com/search?q=${e}&hl=fr&gl=FR&ceid=FR:fr" target="_blank" rel="noopener noreferrer">Google Actualités <span class="sr-only">(nouvel onglet)</span></a><a class="bouton" href="https://www.youtube.com/results?search_query=${e}" target="_blank" rel="noopener noreferrer">YouTube <span class="sr-only">(nouvel onglet)</span></a><a class="bouton" href="https://www.twitch.tv/search?term=${e}" target="_blank" rel="noopener noreferrer">Twitch <span class="sr-only">(nouvel onglet)</span></a></div><p class="minuscule">Pour qu’un créateur soit suivi automatiquement, envoie-le à JT depuis « Mes idées pour le logiciel » (type « Un créateur à suivre »).</p>`;
+  }
   function fluxVeille() {
     const f = pf.veille || { cat: 'createurs', q: '' };
     if (veille.etat === 'idle' || (veille.etat === 'chargement' && !veille.data)) return '<p class="petit" role="status">Chargement de la veille…</p>';
     if (!veille.data) return '<p class="alerte-sim" role="status">La veille n’est pas disponible pour l’instant (hors connexion pour la première fois ?). Réessaie plus tard : la boîte à idées marche déjà.</p>';
-    const d = veille.data, q = (f.q || '').trim().toLowerCase();
-    const attente = f.cat === 'createurs' && !d.items.some(x => x.categorie === 'createurs'), cat = attente ? '' : f.cat;
-    const liste = d.items.map((x, i) => Object.assign({ i }, x)).filter(x => (!cat || x.categorie === cat) && (!q || (x.titre + ' ' + x.resume + ' ' + x.source).toLowerCase().includes(q)));
+    const d = veille.data, q = (f.q || '').trim(), mots = sansAccent(q).split(/\s+/).filter(Boolean);
+    const attente = f.cat === 'createurs' && !d.items.some(x => x.categorie === 'createurs'), cat = (attente || q) ? '' : f.cat;
+    const liste = d.items.map((x, i) => Object.assign({ i }, x)).filter(x => (!cat || x.categorie === cat) && (!mots.length || mots.every(m => sansAccent(x.titre + ' ' + x.resume + ' ' + x.source + ' ' + x.editeur).includes(m))));
     const pannes = d.sources.filter(s => s.statut !== 'ok'), max = (q || veille.tout) ? 60 : 5;
     return `${attente ? '<p class="petit" role="status">Les sources spécialisées créateurs Twitch arrivent à la prochaine collecte (dans l’heure). En attendant, tout est affiché.</p>' : ''}<p class="petit">${d.maj ? `Dernière nouveauté ${esc(ilYa(d.maj))}.` : 'Aucune collecte pour l’instant.'} ${d.items.length} éléments de ${d.sources.filter(s => s.statut === 'ok').length} source${d.sources.filter(s => s.statut === 'ok').length > 1 ? 's' : ''}.${veille.etat === 'erreur' ? ' Affichage de la dernière copie : tu es peut-être hors connexion.' : ''}</p>
       ${pannes.length ? `<details class="bloc-plie"><summary>${pannes.length} source${pannes.length > 1 ? 's' : ''} sans réponse</summary><p class="petit">${pannes.map(s => esc(s.nom)).join(' · ')}. Ce n’est pas grave : les autres continuent, et les anciens éléments sont conservés.</p></details>` : ''}
       ${liste.length ? `<ul class="flux-veille">${liste.slice(0, max).map(x => `<li class="flux-item"><div><p class="petit"><span class="etiquette">${esc(x.editeur || x.source)}</span> ${esc(ilYa(x.date))}</p><h3><a href="${esc(x.lien)}" target="_blank" rel="noopener noreferrer">${esc(x.titre)} <span class="sr-only">(nouvel onglet)</span></a></h3>${x.resume ? `<p class="petit">${esc(x.resume)}</p>` : ''}</div>
-        <button class="bouton" data-action="veille-idee" data-i="${x.i}">Garder comme idée</button></li>`).join('')}</ul>${liste.length > max ? (max === 5 ? `<button class="bouton voir-plus" data-action="veille-tout">Voir plus (${liste.length - 5} autres)</button>` : `<p class="minuscule">${liste.length - 60} autres : affine avec le filtre.</p>`) : ''}` : '<p class="petit">Rien ne correspond à ce filtre.</p>'}`;
+        <button class="bouton" data-action="veille-idee" data-i="${x.i}">Garder comme idée</button></li>`).join('')}</ul>${liste.length > max ? (max === 5 ? `<button class="bouton voir-plus" data-action="veille-tout">Voir plus (${liste.length - 5} autres)</button>` : `<p class="minuscule">${liste.length - 60} autres : affine avec le filtre.</p>`) : ''}` : `<p class="petit">${q ? `Rien dans la veille pour « ${esc(q)} » (elle ne garde que les 30 derniers jours).` : 'Rien ne correspond à ce filtre.'}</p>${q ? liensRecherche(q) : ''}`}`;
   }
   const STATUTS_IDEE = [['a-faire', 'À faire'], ['en-cours', 'En cours'], ['publie', 'Publié']];
   function vueVeille() {
@@ -1008,7 +1029,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   }
 
   /* ---------- Suggestions d'amélioration : le message part par e-mail vers le développeur ---------- */
-  const TYPES_SUG = [['idee', 'Une idée'], ['probleme', 'Un problème'], ['contenu', 'Un contenu qui manque'], ['autre', 'Autre chose']];
+  const TYPES_SUG = [['idee', 'Une idée'], ['probleme', 'Un problème'], ['contenu', 'Un contenu qui manque'], ['createur', 'Un créateur à suivre dans la veille'], ['autre', 'Autre chose']];
   const CONTACT = ['zesite07', 'gmail.com'].join('@');
   let sugBrouillon = { type: 'idee', texte: '' };
   function vueSuggestions() {
@@ -1054,7 +1075,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   }
   function barreBas() {
     const v = etat.vue, actif = { accueil: v === 'accueil', apprendre: !!getLecon() || v === 'programme' || v === 'final', jouer: ['jouer', 'scenarios', 'eclair', 'revision'].includes(v), business: ['simulateurs', 'ressources'].includes(v), veille: v === 'veille' };
-    const nA = listeAlertes().length;
+    const nA = alertesFortes().length;
     const t = (id, vue, ic, lib) => `<button data-view="${vue}" ${actif[id] ? 'aria-current="page"' : ''}>${icone(ic, 22)}${lib}${id === 'business' && nA ? `<span class="pastille-alerte" aria-label="${nA} échéance${nA > 1 ? 's' : ''} à traiter">${nA}</span>` : ''}</button>`;
     return `<nav class="bas" aria-label="Navigation principale">${t('accueil', 'accueil', 'accueil', 'Accueil')}${t('apprendre', 'programme', 'livre', 'Apprendre')}${t('jouer', 'jouer', 'jeu', 'Jouer')}${t('business', 'simulateurs', 'outils', 'Business')}${t('veille', 'veille', 'veille', 'Veille')}</nav>`;
   }

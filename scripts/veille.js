@@ -4,7 +4,7 @@
 'use strict';
 const fs = require('fs'), path = require('path');
 const RACINE = path.join(__dirname, '..');
-const MAX_PAR_SOURCE = 15, JOURS = 30, MAX_TOTAL = 250, MAX_OCTETS = 3e6;
+const MAX_PAR_SOURCE = 20, JOURS = 30, MAX_TOTAL = 400, MAX_OCTETS = 3e6;
 const ENTITES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', rsquo: '’', lsquo: '‘', hellip: '…', laquo: '«', raquo: '»' };
 
 function decoder(s) {
