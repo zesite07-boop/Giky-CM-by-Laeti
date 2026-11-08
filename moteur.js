@@ -60,7 +60,7 @@
       reponses: {}, notes: {}, derniere: null,
       theme: null, aere: false, mascotte: true, energie: null, debut: '', sauvegarde: '', jours: [], outil: 'devises',
       scenarios: {}, eclair: { meilleur: 0, parties: 0, bonnes: 0 },
-      recettes: [], planning: [], revision: {}, kits: [], idees: [], echeancesFaites: [], suggestions: [], favoris: [], rappels: {},
+      recettes: [], planning: [], revision: {}, kits: [], idees: [], echeancesFaites: [], suggestions: [], favoris: [], rappels: {}, domaine: 'cm',
       revenu: { tjm: 250, jours: 3, semaines: 45, regime: 'bnc', vfl: false, acre: false, frais: 1200 },
       treso: { solde: 1500, provision: 28, depenses: 1600, ca: [2500, 900, 3200, 1800, 0, 2600] },
       pipeline: { contacts: 6, reponse: 25, rdv: 50, signature: 30, panier: 900, objectif: 3000 }
@@ -253,6 +253,7 @@
       }
     }
     if (Array.isArray(obj.echeancesFaites)) out.echeancesFaites = [...new Set(obj.echeancesFaites.filter(x => typeof x === 'string' && /^[A-Za-z0-9_-]{1,60}$/.test(x)))].slice(0, 400);
+    if (obj.domaine === 'cm' || obj.domaine === 'biz') out.domaine = obj.domaine;
     if (Array.isArray(obj.favoris)) out.favoris = [...new Set(obj.favoris.filter(x => typeof x === 'string' && /^[a-z]{2,12}$/.test(x)))].slice(0, 3);
     if (obj.rappels && typeof obj.rappels === 'object' && !Array.isArray(obj.rappels)) {
       for (const [k, v] of Object.entries(obj.rappels).slice(0, 400)) if (/^[A-Za-z0-9_-]{1,60}$/.test(k) && typeof v === 'string' && ISO_RE.test(v)) out.rappels[k] = v;

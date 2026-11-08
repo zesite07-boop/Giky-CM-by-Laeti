@@ -131,3 +131,10 @@ Kit média Twitch et grille de tarifs, certificat imprimable, planning exporté 
 - Visuels de leçon `VISUELS` (t3, b1, b5) ; focus/minuteur/« sauvegardé automatiquement » dans la leçon.
 - Icônes SVG partout (plus d'emoji dans menus/familles) ; XP affiché une fois (accueil + victoire) ; carte « prochaine action » agrandie.
 - Test : /home/claude/e2e/e2e9.py (nouveautés), e2e10.py (rappel avec horloge simulée).
+
+## v12 (cm-v17) — segmentation Métier de CM / Business + menu plat
+- `etat.domaine` ('cm'|'biz'), `DOMAINES`, `domaineLecon()` (X4, X5, X9 forcés en biz ; business/clients/calculs = biz), `selecteurDomaine()`.
+- Apprendre, S'entraîner, quiz éclair, révision, scénarios, question du jour : filtrés par domaine.
+- Business = outils seulement (plus de bascule « Les leçons »). `#/business/lecons` redirige vers Apprendre/Business.
+- Menu latéral plat : Accueil, Apprendre, S'entraîner, Business, Outils, Mon carnet. Les pages secondaires (scénarios, éclair, veille…) s'ouvrent depuis les tuiles.
+- Tests : /home/claude/e2e/runner.py <script> (shim data-view), e2e11.py = domaines.

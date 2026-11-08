@@ -709,3 +709,9 @@ textarea[data-sug]{width:100%;min-height:140px;font:inherit}
 .vl-frise{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--s3);border-left:3px solid var(--accent);padding-left:var(--s4)}.vl-frise li{display:flex;flex-direction:column}.vl-frise b{color:var(--accent-sombre)}
 @media(max-width:420px){.vl-trois{grid-template-columns:1fr}}
 .prochaine{padding:32px 24px;gap:16px}.prochaine h2{font-size:1.75rem}.prochaine p{font-size:1.0625rem}.prochaine .bouton-cerise{min-height:64px;font-size:1.1875rem}
+
+/* v12 : menu latéral plat */
+.nav-espace{min-height:56px;align-items:center}.nav-ico{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--fond);flex:none}
+.nav-espace[aria-current="page"] .nav-ico{background:var(--surface)}
+.nav-txt{display:flex;flex-direction:column;min-width:0}.nav-txt b{font-size:1rem}.nav-txt small{font-size:.875rem;color:var(--secondaire);font-weight:400}
+.nav-sep{margin:var(--s4) var(--s3) var(--s2);font-size:.875rem;font-weight:700;color:var(--secondaire);text-transform:uppercase;letter-spacing:.04em}
