@@ -1,11 +1,11 @@
 {
- "maj": "2026-11-08T07:26:24.753Z",
+ "maj": "2026-11-08T07:43:45.264Z",
  "sources": [
   {
    "id": "gnews-twitch-fr",
    "nom": "Google Actualités · Twitch France",
    "statut": "ok",
-   "nb": 53,
+   "nb": 54,
    "message": ""
   },
   {
@@ -19,7 +19,7 @@
    "id": "gnews-jeux-sorties",
    "nom": "Google Actualités · sorties jeux vidéo",
    "statut": "ok",
-   "nb": 98,
+   "nb": 96,
    "message": ""
   },
   {
@@ -159,14 +159,14 @@
    "id": "gnews-events-salons",
    "nom": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
    "statut": "ok",
-   "nb": 55,
+   "nb": 54,
    "message": ""
   },
   {
    "id": "gnews-events-esport",
    "nom": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
    "statut": "ok",
-   "nb": 19,
+   "nb": 20,
    "message": ""
   },
   {
@@ -196,9 +196,69 @@
    "statut": "ok",
    "nb": 7,
    "message": ""
+  },
+  {
+   "id": "gnews-decouverte-4",
+   "nom": "Google Actualités · streamers qui gagnent le plus d’abonnés",
+   "statut": "ok",
+   "nb": 0,
+   "message": ""
+  },
+  {
+   "id": "gnews-decouverte-5",
+   "nom": "Google Actualités · nouvelle star de Twitch",
+   "statut": "ok",
+   "nb": 7,
+   "message": ""
+  },
+  {
+   "id": "suivis-1",
+   "nom": "Google Actualités · créateurs suivis : Inespnj, PunisherEnLive, Mawkzy, Mastu",
+   "statut": "ok",
+   "nb": 3,
+   "message": ""
+  },
+  {
+   "id": "suivis-2",
+   "nom": "Google Actualités · créateurs suivis : Anyme023, IkariuTV, TheKAIRI78, Kaatsup",
+   "statut": "ok",
+   "nb": 10,
+   "message": ""
+  },
+  {
+   "id": "suivis-3",
+   "nom": "Google Actualités · créateurs suivis : Little Big Whale, Cameliaaa92, KmSenKangoo, Fausthea",
+   "statut": "ok",
+   "nb": 0,
+   "message": ""
+  },
+  {
+   "id": "suivis-4",
+   "nom": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
+   "statut": "ok",
+   "nb": 16,
+   "message": ""
   }
  ],
  "items": [
+  {
+   "titre": "Recharge électrique : pourquoi il vaut mieux être un client volage",
+   "lien": "https://www.numerama.com/vroom/2369955-recharge-electrique-pourquoi-il-vaut-mieux-etre-un-client-volage.html",
+   "date": "2026-11-08T07:28:00.000Z",
+   "resume": "Installer des bornes ne suffit plus. Pour survivre, les opérateurs doivent désormais convaincre les automobilistes de leur rester fidèles. Et ce n'est pas gagné !",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Skulltulas d'or Zelda Ocarina of Time : Où trouver les 100 collectibles du remake Switch 2 ?",
+   "lien": "https://www.jeuxvideo.com/news/2113222/skulltulas-d-or-zelda-ocarina-of-time-ou-trouver-les-100-collectibles-du-remake-switch-2.htm",
+   "date": "2026-11-08T06:30:07.000Z",
+   "resume": "Découvrez l'emplacement des 100 skulltulas d'or du remake Switch 2 de Zelda OOT, la plus grosse quête fil rouge du jeu culte de Nintendo. Pour obtenir un quart de coeur et d'autres super récompenses, comme une bourse agrandie, on vous file…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
   {
    "titre": "WoW Forever a-t-il relancé World of Warcraft ? Twitch et bêta face à l'âge d'or de 2010 - GeeksLands",
    "lien": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4wMDF3YW12QVdwQnNxZzc4Yl9rempBMFF0RFphNDl5Vi1mZTRPXzR0R0lLdU5tZnloNzBmbEZjSW9hcTdNVm90RXJPTlU0OEx5SDdHc3BVU2U4dGotd3FWa0p0UFhQRTNVWHAzRA?oc=5",
@@ -956,15 +1016,6 @@
    "editeur": "JeuxVideo.com"
   },
   {
-   "titre": "Zelda Ocarina of Time sur Switch 2 : Nintendo a gardé les temps de chargement pour faire comme à l'époque, mais ont-il vraiment eu le choix ?",
-   "lien": "https://www.jeuxvideo.com/news/2113129/zelda-ocarina-of-time-sur-switch-2-nintendo-a-garde-les-temps-de-chargement-pour-faire-comme-a-l-epoque-mais-ont-il-vraiment-eu-le-choix.htm",
-   "date": "2026-11-07T06:40:07.000Z",
-   "resume": "Sorti le 5 novembre 2026 sur Nintendo Switch 2, le remake de The Legend of Zelda : Ocarina of Time déchaîne déjà les passions. 28 ans après la sortie du jeu original, le maintien d'écrans de transition entre les régions emblématiques d'Hyr…",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "Gaming : les expériences à tester d'urgence à Paris et en Île-de-France pour les fans de jeux-vidéo - Sortir à Paris",
    "lien": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNdjhCX1pNek5RUnRxNWZ2c1loWlk1bmw2Vk0tejk4eUdLRWxyZHFZTU4zV3NDdkc5RUdFa2RmUWpJeHhLWFNMeEQ1RFFQbWtmbkpQM1EtWWdlTFMwZDFPM0szdkxmT2x4MkVVRU56NHhfdkhhYXM4aU40SVljNVdfQm80Z1hLeXpScFhSQ0pPcUFYZnZwUTB3eDdoV19mb0dCejNnSFNEdlJaNzBWUkJqT1FMeDFNZGYwWGI1bXBsMmtOOEpVMHJScHlTNTJ3bnpQQzcyelliYlduSUo0cmV6RTU2UnByS3hiMlhz?oc=5",
    "date": "2026-11-07T06:17:52.000Z",
@@ -1118,6 +1169,15 @@
    "editeur": ""
   },
   {
+   "titre": "EN DIRECT – Backyard de Clemquicourt : Mathieu Blanchard abandonne après 4 boucles, déjà 100 000 € récoltés - u-Trail",
+   "lien": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOTzdVM3pvRVhKVExZcFdfLUpVTGd6UFlwNENjWGhYT21xMjZSQjVCZXdvRnM1MVptbl9wNTVnVmdsUnFkOGVYVXZ2dWRXM2ZzMS1WcUhVamk2RHl4RDhmdFN2NFBBYnNnX2ZnTkNNdHN3bkg1QVNid21WMC1SNTBQRXc0VTdzWlhhVTFpXzlWNFNuWThLdkFOZjFod2FkSlRpR3BVZ3NMWXV0RWQyeEdGSHZsUmE3djFFN0hrUGp3cEpwWHlFNk84?oc=5",
+   "date": "2026-11-06T19:50:39.000Z",
+   "resume": "EN DIRECT – Backyard de Clemquicourt : Mathieu Blanchard abandonne après 4 boucles, déjà 100 000 € récoltés u-Trail",
+   "source": "Google Actualités · créateurs suivis : Anyme023, IkariuTV, TheKAIRI78, Kaatsup",
+   "categorie": "decouverte",
+   "editeur": "u-Trail"
+  },
+  {
    "titre": "Non, Waze et Google Maps ne sont pas obligés de vous faire rouler moins vite, voici pourquoi",
    "lien": "https://www.journaldugeek.com/2026/11/06/non-waze-et-google-maps-ne-sont-pas-obliges-de-vous-faire-rouler-moins-vite-voici-pourquoi/",
    "date": "2026-11-06T19:39:16.000Z",
@@ -1233,15 +1293,6 @@
    "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
    "categorie": "createurs",
    "editeur": "RTL"
-  },
-  {
-   "titre": "Black Friday 2026 : voici les seules offres qui méritent votre argent chez Amazon, Fnac, Boulanger",
-   "lien": "https://www.numerama.com/tech/2363357-black-friday-2026-voici-les-offres-qui-meritent-votre-argent-chez-amazon-fnac-boulanger-ce-vendredi.html",
-   "date": "2026-11-06T16:20:27.000Z",
-   "resume": "Une semaine de « Black November » derrière nous, et déjà de belles affaires chez Amazon, la Fnac, Boulanger ou Darty. On a fait le tri, et ce live s’enrichit chaque jour de nos nouvelles trouvailles.",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
   },
   {
    "titre": "Bandai Namco déballe ses chiffres : Little Nightmares s'invite parmi les grands, Tekken menacé par Street Fighter",
@@ -2324,6 +2375,15 @@
    "editeur": "Dexerto.fr"
   },
   {
+   "titre": "Tyler1 veut plafonner ses dons sur Twitch pour éviter de “surjouer” - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPam9yY1A0Zlphd3o3dlNLekNhWHpCNWZxTG5hYWF1QWFGZDNJV0FNZWFhdVV5VjVhQUhnYmJzNllIVTVNZHpUcFZIM1A3Q28wUW9sekt0ZDdNUFRBR01wNkFvRmtWTHhjYUhDUENnT3R4UEJKNU1YMlhqdExZZ1pNYVZNX2ZqamxOMDVCT0dGa0M4ajFBek9YdG1SajZZOXFZZ2xVX3hnSklzN1RRLUktdDF3?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Tyler1 veut plafonner ses dons sur Twitch pour éviter de “surjouer” Dexerto.fr",
+   "source": "Google Actualités · monétisation et revenus des streamers",
+   "categorie": "createurs",
+   "editeur": "Dexerto.fr"
+  },
+  {
    "titre": "Une streameuse en larmes après avoir été à nouveau bannie “par erreur” - Dexerto.fr",
    "lien": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQVpjR1Qzay1SR0s0cVh1XzlLaE1XVjdhUWdoZUVqaS1HVUdwVE56b0RHVWthSEM1RHVXblNYT1E5QWdPZG84Mnlfb0hpdDBhQ3ZwQ0VYMkdKemtBWHlsaUNBMDdhT3d1UFBGdmd0X3RfaV8zYnBScXdEOEZpU1BWZS1NMDB4UHF3WDNUOVVEVkcyZw?oc=5",
    "date": "2026-11-03T08:00:00.000Z",
@@ -2396,19 +2456,19 @@
    "editeur": "Dexerto.fr"
   },
   {
-   "titre": "Pokimane explique pourquoi elle avait besoin d’un garde du corps à la TwitchCon - Dexerto.fr",
-   "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNblFrSmlDajduZjdCMFV5UlJfZ3FMREgtdVBTaDFFVDRXVjB3WmVEMTJ0VXZTMlI1ZXJuMlN1ZVVLbURmRTNKV1V3Ny1GZ2lLOUo3cFg3bHpyNDc2bndNajNSQ1lBdWRGd0VzdXdrRkxvRzM1TzNZSGZnUlY2WHh0c1p1UnJOcjBmNV9TVFhkeDgyRGEyOEpkekNBTFUwMGxqbzlwRFNzeHNpR1hx?oc=5",
+   "titre": "Z Event 2020 : Tous les donations goals des streamers - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOR1RXdFRYZDJrWnpJUDc2dmpkSGdaQTV4cHJkcWVyZks2RzZWUldna0xFQmw4c2poMWVSX0lMVERlM0tqX2tGMmthQXY5ZjhLdUpUYXN5RHRMaGF3ZGZra1YwTUQxd3JFa0c1Zm5wRDQ4cjNBSWNPZkw1UlBwOEtHSXlkR3M5bEk0eFkwSWlYUjFFSl9uMHRCOWFLZy01R2M?oc=5",
    "date": "2026-11-03T08:00:00.000Z",
-   "resume": "Pokimane explique pourquoi elle avait besoin d’un garde du corps à la TwitchCon Dexerto.fr",
+   "resume": "Z Event 2020 : Tous les donations goals des streamers Dexerto.fr",
    "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
    "categorie": "evenements",
    "editeur": "Dexerto.fr"
   },
   {
-   "titre": "ZeratoR annonce l’arrivée de son tournoi FFA international sur Age of Empire - Dexerto.fr",
-   "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPWlcwNXpCcVhfUkJJMUpvY3ZUY3VfektEOThad20tampiZFJ0ZUo1U3BLLXBnSlZmNFZVM1AzcFNXenBPZUFRY1piUjBPcFdMa1FPWHcxZk5QR2RFMTFMR0R3bDhVcEdON24ybTNINlB6czVBdlZtWmI5VnJzZWxlckxFZzI3OTdneW10WUNSa3Z2N1dBN3VuUmpiNlFFdTRXZ1hETU9NeHRTUk1ma0pEX2N6cEpJY3RSTXd1eW93VQ?oc=5",
+   "titre": "Pokimane explique pourquoi elle avait besoin d’un garde du corps à la TwitchCon - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNblFrSmlDajduZjdCMFV5UlJfZ3FMREgtdVBTaDFFVDRXVjB3WmVEMTJ0VXZTMlI1ZXJuMlN1ZVVLbURmRTNKV1V3Ny1GZ2lLOUo3cFg3bHpyNDc2bndNajNSQ1lBdWRGd0VzdXdrRkxvRzM1TzNZSGZnUlY2WHh0c1p1UnJOcjBmNV9TVFhkeDgyRGEyOEpkekNBTFUwMGxqbzlwRFNzeHNpR1hx?oc=5",
    "date": "2026-11-03T08:00:00.000Z",
-   "resume": "ZeratoR annonce l’arrivée de son tournoi FFA international sur Age of Empire Dexerto.fr",
+   "resume": "Pokimane explique pourquoi elle avait besoin d’un garde du corps à la TwitchCon Dexerto.fr",
    "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
    "categorie": "evenements",
    "editeur": "Dexerto.fr"
@@ -2486,6 +2546,24 @@
    "editeur": "Dexerto.fr"
   },
   {
+   "titre": "Gaël Monfils débarque sur Twitch - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNS3A4cm9WZEo3aVFfRlV4RFgzYmd3TVhPWkx5VDhtSGN0bGxheXU2MHBhMEF2UGtyUzJSN0l4dVBadzRVa3JzSUdmOGQ2RUtSVTAydnRHOV9Ldlgyb216amhFNXc5TVA1S2c2UG12WnEzQm01VkZCdVJ2WFRWeGRfUFg3UlJnZw?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Gaël Monfils débarque sur Twitch Dexerto.fr",
+   "source": "Google Actualités · nouvelle star de Twitch",
+   "categorie": "decouverte",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Twitter : TheKairi s’est fait supprimer temporairement son compte - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPVTdPd2RhUGVlZFQ1OE9Gb3NXRW1yYlJrRGZJZFlXSFFiWDRadWY1bUl4RmY2Tm00dnNmb1JYR3V5NnV0YUEwTGRmb05jaXozVFlMUzlpajlJUEdhYVF3SkwwMGIwenNScm9EMW05bWQ0a3RQa0V5V0hPS252SmhrSWpGQkxPUUp4djAxWHBxczRnU25OeXRGU0RFdHF5X3F6?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Twitter : TheKairi s’est fait supprimer temporairement son compte Dexerto.fr",
+   "source": "Google Actualités · créateurs suivis : Anyme023, IkariuTV, TheKAIRI78, Kaatsup",
+   "categorie": "decouverte",
+   "editeur": "Dexerto.fr"
+  },
+  {
    "titre": "Dead by Daylight fait polémique, Behaviour admet ses torts - INFINITY AREA",
    "lien": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQcl8xOHZuemk1M2NORTRKWmZEcFZodUhfaUlXclQxSWdxZHB0VE51UVVPWUxFUUhvRkRFME9YZkFUN0JwekRKbEF1VzRTVURXVDZ6TnR3ZXZ5N3FlTjBEVjAwLWJKbS02aXVSUkhxNjNHNmJBRklEbVJmT053ZFNJcWJDc2tmb214azRYTUxDYjY2dFhaQ1E?oc=5",
    "date": "2026-11-03T07:56:00.000Z",
@@ -2555,6 +2633,24 @@
    "resume": "Squeezie : Infos, Actualités et Setup du Youtubeur/Streamer ActuStream",
    "source": "Google Actualités · streamers et YouTubeurs",
    "categorie": "createurs",
+   "editeur": "ActuStream"
+  },
+  {
+   "titre": "Kaatsup dévoile les participants à la première édition de Fokus, son événement sportif - Les Gens d'Internet",
+   "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPakdpdFVNakw0R2FkenpVYzIxcXBoYjVmZ0lHUlc4R1FLbGxwS0RBXzc2WnMtWWdGS29lclhCaU1UZ3VPcWtLaEx4bjBCblRTdThubmt2RWZ1YU9pWXJncGgtLThJVEtMMUNXbkVJMVZPUkd3UzNiajZXejFFMWpKc1JoMTdCRkktQjdDYWREZjlSYmpwRmlOckpNaHNQVExqeUdWdElzS3R1TW16U2lYcWlEeFhFNkVvYjBJZVJ1RdIBxAFBVV95cUxPZ1c1aGtpYmEwX3ZhRkVxY083UWJEbndzWDd0TW5uMkhXOENUR3p6UUVaNW5vRFZMVTlEVjZ3cUVXNFJUSDZaNjZvd1kxcXNVRlc5cHJ0SkY1UXZFX3RzeVdEV002SWs2MHB3ZGhfeDlaSm1ObnM3Q2M2VUZTdU5GVk5RY2w1aWFxbzRHNlJiMXdyc1ZFSUpqX2JhUXpNSVVmeWQ4QTZSWWk5aWJ5ZzlXVDBUdzRTWDVKWktkUmFYLTRPUFNq?oc=5",
+   "date": "2026-11-02T12:13:46.000Z",
+   "resume": "Kaatsup dévoile les participants à la première édition de Fokus, son événement sportif Les Gens d'Internet",
+   "source": "Google Actualités · créateurs suivis : Anyme023, IkariuTV, TheKAIRI78, Kaatsup",
+   "categorie": "decouverte",
+   "editeur": "Les Gens d'Internet"
+  },
+  {
+   "titre": "Classement Twitch : Audiences Top 20 Streamers (Octobre 2026) - ActuStream",
+   "lien": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9WMTRHd2U1Wi04S2N1aHJPMzlfZ282d0RjOEo1UHh5YTUtN2U4a0k0cm9GWWhENnBzZXVGVURfcFZDeUZGbVFkcm1oX2N5VkdqeVZGR1Z6Um5oU1dNN1hhT3dzU2VxcC1uaDVhblBEZDF0ZzVJeFg1RUw0WlNHMlE?oc=5",
+   "date": "2026-11-02T12:13:01.000Z",
+   "resume": "Classement Twitch : Audiences Top 20 Streamers (Octobre 2026) ActuStream",
+   "source": "Google Actualités · créateurs suivis : Inespnj, PunisherEnLive, Mawkzy, Mastu",
+   "categorie": "decouverte",
    "editeur": "ActuStream"
   },
   {
@@ -2801,15 +2897,6 @@
    "editeur": "Net Influencer"
   },
   {
-   "titre": "L’ancien patron de Movistar Plus, Domingo Corral, revient sur son accord avec HBO et explique pourquoi une télévision de qualité peut aussi être commerciale - Mezha.net",
-   "lien": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQQkI0akFkdW5ET2tCbmVkWXhNUmRnbS1aTnFuamg1dDBrZzM0UVdDbFhseC1PQmxWV3NkU25JVnZ3dW40U2tyakluZ0U0UEVPUUZoXzNJQmhlU1FQU1dfWHl2bzBnQS1haUpaNkVUNWIxOHgxdGhGRWdHRk84dXk4TzgwRUt4anFocUxKeU5vdDZRRGY1?oc=5",
-   "date": "2026-10-30T09:16:18.000Z",
-   "resume": "L’ancien patron de Movistar Plus, Domingo Corral, revient sur son accord avec HBO et explique pourquoi une télévision de qualité peut aussi être commerciale Mezha.net",
-   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
-   "categorie": "createurs",
-   "editeur": "Mezha.net"
-  },
-  {
    "titre": "OBS Studio vs Streamlabs : Gratuit, 2x Moins de RAM [2026] - shattered.io",
    "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE8zOFJMSUpmWHZaR0Nwel9zVEhKaEktRXJibWRkOHN4cnh2dEZoX2pSNU9VQ203T0lqVjFnTFJ4UHBXWWFVaEVpUUF0RmVTV21rQ2JONjE1M0plcS1tWGc?oc=5",
    "date": "2026-10-30T07:00:00.000Z",
@@ -2837,6 +2924,15 @@
    "editeur": "Dexerto"
   },
   {
+   "titre": "TMC va diffuser “The Final Slam”, événement Twitch organisé par AmineMaTue et Squeezie - Ecran total",
+   "lien": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQTU5zbExJOU42TWlPUlRiREwxYXhJYkRIeTJMYjlZeVBjSERaU3pOXzM5RzNJaFoweTNMcjRTc0lDQTRiNVZiNlN6X3RJeDRtRG1LT0dDSFpCVEJTX1BZdUduc3JGS2hram4xSkVQRnotazZVUW92eTIzdnNpc0ZzV0JvNDdHcGtwMWRPNFJ4TllNN2NhZnRZazNpMWJpWEQtdTEzLTlyQVFHS01WbEY2YnVZbTFxTC1CVlE?oc=5",
+   "date": "2026-10-30T07:00:00.000Z",
+   "resume": "TMC va diffuser “The Final Slam”, événement Twitch organisé par AmineMaTue et Squeezie Ecran total",
+   "source": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
+   "categorie": "decouverte",
+   "editeur": "Ecran total"
+  },
+  {
    "titre": "Why has Hasan been banned by Twitch? Streamer responds to controversial ban [UPDATED] - Dexerto",
    "lien": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdnFJRHpVMUI4c1ZSNVI4Ql9zendpUXFUMlp4bU9Wb0dTenNaWXFSd3FOTzZvYjlzQkVxaEtzX2VwUkdSQXZpNmlFVFc5ZGZwZ3d5VmpkUTk4ekV5QVFEeTBjNHJFbEVCWDVGXzhSTVlwOE9HdkJ4OTdiSTRldnJidDZXQTNEYXZON190b2pqMWhDaEk5T1phRmZ5Q1daOHV1RGhyWVJiVWNVa3p2WnFLdTA0WXQ2WlFaVFlEMA?oc=5",
    "date": "2026-10-29T18:48:10.000Z",
@@ -2855,13 +2951,13 @@
    "editeur": "01net.com"
   },
   {
-   "titre": "Tyler1 veut plafonner ses dons sur Twitch pour éviter de “surjouer” - Dexerto.fr",
-   "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPam9yY1A0Zlphd3o3dlNLekNhWHpCNWZxTG5hYWF1QWFGZDNJV0FNZWFhdVV5VjVhQUhnYmJzNllIVTVNZHpUcFZIM1A3Q28wUW9sekt0ZDdNUFRBR01wNkFvRmtWTHhjYUhDUENnT3R4UEJKNU1YMlhqdExZZ1pNYVZNX2ZqamxOMDVCT0dGa0M4ajFBek9YdG1SajZZOXFZZ2xVX3hnSklzN1RRLUktdDF3?oc=5",
-   "date": "2026-10-28T17:30:28.000Z",
-   "resume": "Tyler1 veut plafonner ses dons sur Twitch pour éviter de “surjouer” Dexerto.fr",
-   "source": "Google Actualités · monétisation et revenus des streamers",
+   "titre": "GGCON: onKOL Brings TwitchCon-like Experience to Creators and Online Communities - Gadget Pilipinas",
+   "lien": "https://news.google.com/rss/articles/CBMic0FVX3lxTE13dGY4aUdQMVR5OUJaMi10RWp0UHlZTHpWYk12ZHlFZ0M2T0VSYUlCVjZHQWxOMGVxUUc5YUJXTDNLTHZsbS1PeTVoRlI2ajhvQy1PUGptWklVN0VMY2pVS2NwX1d4aUU5QTNKTXVmeWF3SEk?oc=5",
+   "date": "2026-10-29T07:00:00.000Z",
+   "resume": "GGCON: onKOL Brings TwitchCon-like Experience to Creators and Online Communities Gadget Pilipinas",
+   "source": "Google Actualités · Twitch creators (international)",
    "categorie": "createurs",
-   "editeur": "Dexerto.fr"
+   "editeur": "Gadget Pilipinas"
   },
   {
    "titre": "L’invité mystère de Zack en Roue Libre était… Jiraya - Dexerto.fr",
@@ -2999,13 +3095,22 @@
    "editeur": "E.SPORT.FR"
   },
   {
-   "titre": "How Twitch and Discord Are Shaping Menswear’s Next Generation - The Business of Fashion",
-   "lien": "https://news.google.com/rss/articles/CBMilwFBVV95cUxORkFZeERKWEJnRWpuYUpGZFk0SVF1a1VYMVhKVENSVzhQSVo2VTlqYkczYlc4V245TlJzOXJobllaNTlTSGlzQk1XVFZmX2l6elNaR0VmM1FsYndhNXJTdW50Nk9oQnZuZnBZYTZUSGdrNENBMFk2LUgwSkxIaWc5U1Y0YlFESlRaT2k4WEoyQk5DeThIUjZR?oc=5",
+   "titre": "Squeezie et AmineMaTue vont s'affronter sur le ring lors du 'plus grand show de catch français' - RTBF",
+   "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNLXkxX2x6c1VZX2JKbUItUzdKSGE1eDJJY0pWTmNRSkhtVHZENEFLYjNTMGlMYW5tNkt3WmpEY1BaSUVwdm1YLXI1MWFHdDJvb0o2Sl9OSmU1S3dmcDZxcjFmbEpKYjlFLVV3REF5WGZVNTdPVmIzRW51a2lwSFpfdGdsNnNpOW5EbTJVbl9JemxIcUVTcnFpTXU3eUN2X2VGTVkwblZLMGZsMkRIVFZBRUs5bVF1THBaRFc1amRLbFU0cFJ2VzY1MHFB?oc=5",
    "date": "2026-10-28T07:00:00.000Z",
-   "resume": "How Twitch and Discord Are Shaping Menswear’s Next Generation The Business of Fashion",
-   "source": "Google Actualités · Twitch creators (international)",
-   "categorie": "createurs",
-   "editeur": "The Business of Fashion"
+   "resume": "Squeezie et AmineMaTue vont s'affronter sur le ring lors du 'plus grand show de catch français' RTBF",
+   "source": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
+   "categorie": "decouverte",
+   "editeur": "RTBF"
+  },
+  {
+   "titre": "Squeezie contre AmineMaTue : The FinalSlam arrive en direct sur TMC avec une star de la WWE et un Royal Rumble géant - ActuaNews.fr",
+   "lien": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOZ3ExZUVtNkZodnZ3Vm5vemFiSVVDQ1J0WEliUTBVZUtHTVhmNXFhLWVMckhGZ3FhZ3NBLTloZHpBVExZU1dPRFB3OFdPZEZRd3BhbGhyYS1QT0JZNWd5QjczY2xKdm90QWQtT1U5YzlxRWI3bm9jODJQa3c0U1NqV0tlcXVVbjNaa3J2cEs0ckhSR1VDdXdBcGxCQlBORjN6c2hzbFpRSUlvZE4xTWFPRGp3QjFyVHRPRG43cWxQdXRESGpySXF2S0RaVHpGeFNPUHZoTXdadGRzRjZYeldRVQ?oc=5",
+   "date": "2026-10-28T07:00:00.000Z",
+   "resume": "Squeezie contre AmineMaTue : The FinalSlam arrive en direct sur TMC avec une star de la WWE et un Royal Rumble géant ActuaNews.fr",
+   "source": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
+   "categorie": "decouverte",
+   "editeur": "ActuaNews.fr"
   },
   {
    "titre": "Gamescom 2026 : nos impressions sur le remake de Heroes of Might and Magic III - big-n.fr",
@@ -3080,6 +3185,24 @@
    "editeur": "big-n.fr"
   },
   {
+   "titre": "\"The FinalSlam\" : TMC va diffuser en direct la compétition événement de Squeezie - puremedias",
+   "lien": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPOXNJN0FPdVlsR2tsX2ZLZkNRRWtfSmViUHJNME9MSEJRdFVIalBHZEp4S0x1czhDc0x3WWExcjJST01QbnNGRlB1Nnp4cGpwV0NnT0JRNXdzcUJQT2xyOGlDRjNGVjg0QlpKQjJ3TV9FbmFfQ2NFNzlQaGhIbXI0enR4Y184QlZySERUcE5NTnBHRFJaVlg5bW5nRGRQekpKQVZaXzJqNFFjbUUtYWc?oc=5",
+   "date": "2026-10-27T07:00:00.000Z",
+   "resume": "\"The FinalSlam\" : TMC va diffuser en direct la compétition événement de Squeezie puremedias",
+   "source": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
+   "categorie": "decouverte",
+   "editeur": "puremedias"
+  },
+  {
+   "titre": "The FinalSlam d’AmineMaTue : Date, combats, participants, billetterie et live - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBQVnZST3dBTTE0cnI3cUFpeVl4VVJxN085d2ZyOVpVbXpPN1lCTmpXdENyNjY3TDlBRVBjNHBwd3NTNUl6LWpVcTBpcjJUTHI3QktoYUdSUGpwejZRVVI3TnFWU2l2c0p4cDZzdEVGWGhUM211MmpFdVpTeXMtQQ?oc=5",
+   "date": "2026-10-27T07:00:00.000Z",
+   "resume": "The FinalSlam d’AmineMaTue : Date, combats, participants, billetterie et live Dexerto.fr",
+   "source": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
+   "categorie": "decouverte",
+   "editeur": "Dexerto.fr"
+  },
+  {
    "titre": "Charted: Where Social Media Audiences Skew Male, by Region",
    "lien": "https://passionfru.it/social-media-gender-by-region-166656/",
    "date": "2026-10-26T23:35:41.000Z",
@@ -3134,6 +3257,15 @@
    "editeur": "Demócrata"
   },
   {
+   "titre": "The FinalSlam : Les places du show d’AmineMaTue en vente ce lundi - VoxCatch",
+   "lien": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBnSWM4b2pWcHhtTW1YWFB6dDU4MDNER3A0NXBnOGJvZjI3RjFqT3B6VmVUWWVmc0o3R05ucVdKT1JnNk5KVzJla0tXblpZZzJ4em5zSFQ5a1JVTVBNSWtoZFcwLTh3TDl2M1lJZDBiSUMwcy1DOGc?oc=5",
+   "date": "2026-10-26T07:00:00.000Z",
+   "resume": "The FinalSlam : Les places du show d’AmineMaTue en vente ce lundi VoxCatch",
+   "source": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
+   "categorie": "decouverte",
+   "editeur": "VoxCatch"
+  },
+  {
    "titre": "Sonya Yoncheva et Domingo Hindoyan à la conquête des États-Unis - БНР Новини",
    "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxPNEZBd0c2WG9ILXF4WmdyVG93R0N1OGRnWm1BcVNQVjM1cm1WSVJyMVZWUDFlZHo2bkJWQ3gxR25FNHota2xoRmpYUmc5blRXTm1UaWtlWGFVb0ZUR0FBREJSTmtybENCRnBMczk2M3k1eG9YT0NvV3p1MHhieHU5N2l5RWVsd0ppRGhpZnplUkFwb2JWWHFBMlYyVGpSZw?oc=5",
    "date": "2026-10-25T11:00:00.000Z",
@@ -3159,6 +3291,15 @@
    "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
    "categorie": "evenements",
    "editeur": "www.francetelevisions.fr"
+  },
+  {
+   "titre": "VIDÉO. Le premier jeu « Tomb Raider », avec Lara Croft, fête ses 30 ans - Ouest-France",
+   "lien": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNVkRGbHBRa1FvUmJKcmJ2Z1RELVpVeEZuTEZMUzVJeTZVc1hGdDc0QUZsQm5rRHFaSzNqaF94dGVtUHdnX1UzbjVKdnkzNnQ2WW5nOVdqSnBuYXJIMTFwdzAwMVpXNTZfMTh5Y2ZOa29UNWgwSi1IZC0zUHM4OWE3QjRaU2NsNlRTVldSUEpPZWJ1NmNSaFpmbVlma3ZVZ1I4NHRxcU1JUzNxLUtsYUlZMklyZEZ2LUFodzZrZ1JXVE5iZDkyLU9nbUtpQjNPb3I0cUYtbFdJdzQzb256UVJFOA?oc=5",
+   "date": "2026-10-25T07:00:00.000Z",
+   "resume": "VIDÉO. Le premier jeu « Tomb Raider », avec Lara Croft, fête ses 30 ans Ouest-France",
+   "source": "Google Actualités · créateurs suivis : Inespnj, PunisherEnLive, Mawkzy, Mastu",
+   "categorie": "decouverte",
+   "editeur": "Ouest-France"
   },
   {
    "titre": "\"Un mariage de raison\": des Bleuets avec Zack Nani à la NFL avec Domingo, comment les créateurs de contenu s’invitent dans la bataille des droits sportifs - BFM",
@@ -3287,6 +3428,24 @@
    "editeur": "Unidivers"
   },
   {
+   "titre": "Karmine Corp : de Twitch aux Worlds, une ascension fulgurante - Red Bull",
+   "lien": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1HY1pFWVVlOF9jVzFXMnFQSU8yUkpGY1RJVDdraHYycFNiY05ac04yQU5sMkJrdGNhbGFZR2ZJTDR1dW1wc0lIMWNXc05mc3V2MmF0Vk1hcDJBSE9TVDc1bw?oc=5",
+   "date": "2026-10-23T07:00:00.000Z",
+   "resume": "Karmine Corp : de Twitch aux Worlds, une ascension fulgurante Red Bull",
+   "source": "Google Actualités · nouvelle star de Twitch",
+   "categorie": "decouverte",
+   "editeur": "Red Bull"
+  },
+  {
+   "titre": "Anyme (NRJ Music Awards) : streamer, chanteur, humoriste… que sait-on de ce jeune homme de 23 ans suivi par 11 millions de personnes ? - Gala",
+   "lien": "https://news.google.com/rss/articles/CBMihgJBVV95cUxObnRGbjlCUVZlbTA0MGYyUDZ2b3hlMlFNbzhVai1Yd2llM1lDemlEb3VjdnJiOTZsT2VSdEJsdHJtb0k0cGpVV1ZndF9YUW5HbnZSR0pSeGlEUWktVmVXaFFxdzgtOGNqMjNZcXA0MkljUVIzb0xOd1ZqTzVDMHVIWGlXVjBCSE4xZGxoa1BJckd6Q2dTaFpfRlV3RzZyTDRKczQ4Ym9XdE9Vb2NoYUVEb3gzZEltZEl6NC1WSlVFUXdEekpyYkFsV3ZDNHQ0X2ZrdnN0djdvaXJVTzFqbllCblZ3TjJnWHh0XzljWm1WUjRBTUNnRy1XVnVxRjF1T2VVVUY0NWZB?oc=5",
+   "date": "2026-10-23T07:00:00.000Z",
+   "resume": "Anyme (NRJ Music Awards) : streamer, chanteur, humoriste… que sait-on de ce jeune homme de 23 ans suivi par 11 millions de personnes ? Gala",
+   "source": "Google Actualités · créateurs suivis : Anyme023, IkariuTV, TheKAIRI78, Kaatsup",
+   "categorie": "decouverte",
+   "editeur": "Gala"
+  },
+  {
    "titre": "Mort d'un célèbre influenceur de 30 ans : il s'immole par le feu en plein direct sur Twitch - Voici",
    "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPRnJGMHhtQlJHcDZMdTZBMU51blJWT0VfRDQyMG5kY2lidktzSlU4YjIwRjQ3VzRCQjNfdkZOZmRUZW9hQ05sWUZaVkRLUXl4dTJta1lrN0tRWTFyWDVscGE5TkNVdGZEM3ltNDNCX2xjbVJwTTQtWjBtWWNDSURIN29WZzhXbDlhTGhMSExDOUJhc25IWGJiYVBaWDl4d3VKQlJXZU5lRHJjanhxbmlYUHJpWU1vbnZzQ0lpd0NJaWdiRldoM0hzMHp3?oc=5",
    "date": "2026-10-22T07:00:00.000Z",
@@ -3312,6 +3471,15 @@
    "source": "Google Actualités · streamers et YouTubeurs",
    "categorie": "createurs",
    "editeur": "Le Dauphiné Libéré"
+  },
+  {
+   "titre": "Le point infirmerie - Montpellier Hérault Rugby",
+   "lien": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1XMHUzODlkTTBIeklmWksyTmM0ZkhTTnZFaE1jWmJKOHVKbTdtMFBoX2w5VHJzQnRYYVBsMXVkWFpnTEpDY2g3T1FKRHd3MmhDMUNIVWxhS2E0R1JFQ3hoRHY5Nkg1clowLVBGWg?oc=5",
+   "date": "2026-10-22T07:00:00.000Z",
+   "resume": "Le point infirmerie Montpellier Hérault Rugby",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Montpellier Hérault Rugby"
   },
   {
    "titre": "Un streamer de Sion joue pour la bonne cause: un marathon caritatif version Twitch arrive en Suisse romande - Le Nouvelliste",
@@ -3350,6 +3518,33 @@
    "editeur": "Région Ile-de-France"
   },
   {
+   "titre": "Toei Games fera ses débuts à gamescom asia avec trois démos jouables pour PC - Foro3D",
+   "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOYml1MHJheFFydmZQN0pVRmt5WGdDVUxZQkRrN3FiUERSa25keVpBMDYtWjdmUHl2UjBQZ0hWYVNPT05zVktoZDJjc0IwWmh6NG5UdFIzZVVwZU1vSnowSEhtbkt0UUVJSlpVMk5vYTZCX1pjbkFla0hHWmctVkJOUnBrSi1sRFE5a0VNeHd3NWN3U2RaWkNXMWdEQ0ZXd0lnaE91aE1Da2ZSX3Rt?oc=5",
+   "date": "2026-10-22T07:00:00.000Z",
+   "resume": "Toei Games fera ses débuts à gamescom asia avec trois démos jouables pour PC Foro3D",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "Foro3D"
+  },
+  {
+   "titre": "Amine, Squeezie, Anyme, GregMMA et Mister V bientôt réunis pour un grand show de catch près de Paris - Ouest-France",
+   "lien": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOMFk5V3hMd3lES0wxeVdoWGZHTWZGQkpmMmEydXdoSmowQTlqTFJIcXh3UUdacGxVYlZsbHFDZWI3a2FkR3JTb1VHSm5vcVpOeTctWkFfQ0o0RlViT01ReDExZFFwdHRTRlN3TGVDdE92QlYtMUszVkM3dmpDMURSQWR1WkFKVkEwdHAySVRFekpWTDBUSjJWSGRYUEN2bHFBbVZWLVNqVGMwTHpha3JBQjJqZk9PMTRKZml4OWs0dklnNlQ2T2xpNEJxVWI0ei1KSVE4UzdiRWEtYXpRRDR6ZTVFMDJZd3hQNTIxSFNwWXdMdFctV3FJWHo3dkk1Z3ZuZFM4RUdFd3pHVkRzRzFCamNvNzJwZzU2MzlV?oc=5",
+   "date": "2026-10-22T07:00:00.000Z",
+   "resume": "Amine, Squeezie, Anyme, GregMMA et Mister V bientôt réunis pour un grand show de catch près de Paris Ouest-France",
+   "source": "Google Actualités · créateurs suivis : Anyme023, IkariuTV, TheKAIRI78, Kaatsup",
+   "categorie": "decouverte",
+   "editeur": "Ouest-France"
+  },
+  {
+   "titre": "Amine et Squeezie vont s'affronter lors d'un show de catch à la Plenitude Arena - Actu.fr",
+   "lien": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQS090b1VMVWpYbW5Bc2h2aVd4YUtpZ1V6MEdZcUNVQ2NVdG1wdVZmTWQzYnNaNmMyVHRCNFk2TGpEc0FhR3BiNE9IT2FYa0trMkxuSTFuNXdBMjJkd0RvSV9aRk9fRzVOdmFxdzV1cll2dDhvRHprVWtSMHVHLXJpWjVaLWNKVGUtRzFaMW9NMTBLUWRjb3JSSWhIOHBvajBXdUwwcjBDZlJmbDd2NTFROVhFN0stSTNLTkMxOUlZeThxT2NzakdfSHZVNUZqU1hIRzh2TQ?oc=5",
+   "date": "2026-10-22T07:00:00.000Z",
+   "resume": "Amine et Squeezie vont s'affronter lors d'un show de catch à la Plenitude Arena Actu.fr",
+   "source": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
+   "categorie": "decouverte",
+   "editeur": "Actu.fr"
+  },
+  {
    "titre": "Le “streamer” Domingo diffuse le NFL Paris Game sur Twitch et YouTube - Ecran total",
    "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQcFNaRVNzOFIzODJyQmNEcklublRha1Bnd2lnNk1ndk5lRXVJcThEQ25yUlVQdVBpRHJTMW5vbzR0NjViREN3SFpNZ3NEbUpOVEdVMmZNX3p0X2ZpSXdiekZpTVNCYmZUSzZiSnNMYTYtTmJvU3p5QkRiVzhFQ25yQnc1aHdibDA3QXgtaFkxUWgxWVItOExKSENaVmF5WlpqU0pkMA?oc=5",
    "date": "2026-10-21T07:00:00.000Z",
@@ -3357,6 +3552,24 @@
    "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
    "categorie": "createurs",
    "editeur": "Ecran total"
+  },
+  {
+   "titre": "FINAL SLAM : Le show de catch d'Aminematue avec des streamers dont Squeezie - ActuStream",
+   "lien": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5zb2k0ajQtTW45R0VyRGUxRGRBdU5DMm9KX1RsQ0xUVzFobnRWRkVNWE1TYzVTTzNQWkZCUlptSEpkbkJOM3h2aWV6WEdTSEkyM2hZWUhWZkxrRm8?oc=5",
+   "date": "2026-10-21T07:00:00.000Z",
+   "resume": "FINAL SLAM : Le show de catch d'Aminematue avec des streamers dont Squeezie ActuStream",
+   "source": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
+   "categorie": "decouverte",
+   "editeur": "ActuStream"
+  },
+  {
+   "titre": "The Final Slam : l’événement de catch organisé par AmineMaTue - J'ai un pote dans la com",
+   "lien": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNU3E4OXpOcnZ4OC1oS25xaDBDYW9jZXVUa1duU09hWmtpUklJZnNFbHVhVUlGcUR5ZlEwQWFidHlPdFhsQlJweDJuUU9uMkZSNTNZQWMyRFJIRk1MX3hMTXFUQkJoMDJ0djFEcG9EMS1hd2t6QTVYbDlfYXIwZDlUYlVVWVUyUQ?oc=5",
+   "date": "2026-10-21T07:00:00.000Z",
+   "resume": "The Final Slam : l’événement de catch organisé par AmineMaTue J'ai un pote dans la com",
+   "source": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
+   "categorie": "decouverte",
+   "editeur": "J'ai un pote dans la com"
   },
   {
    "titre": "S'abonner pour obtenir des badges de chat Apple TV et Ted Lasso - Twitch Blog",
@@ -3404,6 +3617,42 @@
    "editeur": "FPSNews"
   },
   {
+   "titre": "AmineMaTue va régler ses comptes avec Squeezie dans un combat de catch - Konbini",
+   "lien": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNcWF5Nkx3ZWhCMHprU2NhRExSMEVlWHZSbTBDd05lZko1cTQ2YTlrUkgxSl9KQW1CVV9hby1iN0o4TC1zTlZnVW56eWNNYWh3ZjRUUEpteTM2NEFBTUpkbzVzMW9VMkhxR3NpN29GY3JGM0l0VmszRC1aYVlEVWZwZVVVRDhUZkxUdmVxVWV5WHBORjVsQ0lVVmpTM2hxNnlzcFJ6M21CNA?oc=5",
+   "date": "2026-10-20T07:00:00.000Z",
+   "resume": "AmineMaTue va régler ses comptes avec Squeezie dans un combat de catch Konbini",
+   "source": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
+   "categorie": "decouverte",
+   "editeur": "Konbini"
+  },
+  {
+   "titre": "AmineMaTue contre Squeezie, GregMMA face à IbraTV... une soirée catch entre streamers en novembre - RMC Sport",
+   "lien": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQUnBscXAwNktDTEROYzJPeWkwVXB1ZndOZ1Vad1BFX3VGMnRkOUNnZzBqNkt5aTltSjI3RWtva25UWXcxNEhhbE1vUWl0Z25BZ2RDTk5yQ21EcEx1d2dST0NGeUZfSGFUS2J1Y0VfOVBHaDZxQnBzUGtCSlRjcWVxVUEzWUh3Wm9BWXRFZ2VZMExKbGMwLWRxaFBvUV9MUHN0MGhjQ1JZNGJibkxxeGtUSjIzcmFONjR4SmlrTnh6Qkh6Y1REQ2l2U2dIZVUxVGFid2J4eHNYamR6bXg0aWpaMzR6dG1YOEV1Z3NIWExnTmpOemRD?oc=5",
+   "date": "2026-10-20T07:00:00.000Z",
+   "resume": "AmineMaTue contre Squeezie, GregMMA face à IbraTV... une soirée catch entre streamers en novembre RMC Sport",
+   "source": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
+   "categorie": "decouverte",
+   "editeur": "RMC Sport"
+  },
+  {
+   "titre": "Final Slam : Squeezie contre AmineMaTue, combats de GregMMA, Anyme, IbraTV et Inoxtag... Une inédite soirée de catch annoncée à la Plenitude Arena - Le Parisien",
+   "lien": "https://news.google.com/rss/articles/CBMitwJBVV95cUxNWnVYdWhIcUFoaDZ5UE5aMXl4a1d4Z3k3ZGpCT2Q5VzFfcTU5NjhQWE5OWThBZm5ldXZFZkN0TmZ4aTd0MFdCdld6S1JRZW9vcEtCLVJQVVRyZlpGTkpmb1BGajkwWlo1Yi1ld3V1Z0h3OTdnODQ1dVp5ZUJXaElNRWZDRXo3bGIxU0FqMlcyd2Jmb2hGdFVqamJxMGh2TWp6Sk1mLXJzak82bExiOEp1NzJTWjJYakVKOFg5d2NLMUlWSTQ2TWE5WjlNTVVPWEk1bjlqeFQ3S2h4WGJ2NlJ6eFFhNThvbjdEVFh4bnJuTWw0S3pWQUV6QVVtWXMzTDByOFVxRzZLM1hLSmJCZmlicEp3WV9JR0hFdFdEWTNMTnR1VGFWSjFKTnJLMF9tMjVrU2NnbmxsVQ?oc=5",
+   "date": "2026-10-20T07:00:00.000Z",
+   "resume": "Final Slam : Squeezie contre AmineMaTue, combats de GregMMA, Anyme, IbraTV et Inoxtag... Une inédite soirée de catch annoncée à la Plenitude Arena Le Parisien",
+   "source": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
+   "categorie": "decouverte",
+   "editeur": "Le Parisien"
+  },
+  {
+   "titre": "« Le plus grand événement de catch français » : AmineMaTue défiera Squeezie lors du Final Slam ! - Le10Sport",
+   "lien": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNQTEyTzR3aGNraXJPaDVDNUttRmVfeml3VlVETFQza0ZkUzlTWFBUcFR0TXphcWxkalN6SU1yS1Rya3pYazQtZXQ1UFV1aThtZk1RblFLWjd4eEdSWjRCTTVuTFVSZFVCRHZjQVVjS1hnM1AzOUN4RnlxRllZQ0JJYjBla1U4OVM4SWRVWjg2cmpzcDBaUk5WVlljTE9teVdNWC1tMmdjYmF2ejNJdW5pNFVaaVVkOXVKWXJVOUVMWkR5UQ?oc=5",
+   "date": "2026-10-20T07:00:00.000Z",
+   "resume": "« Le plus grand événement de catch français » : AmineMaTue défiera Squeezie lors du Final Slam ! Le10Sport",
+   "source": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
+   "categorie": "decouverte",
+   "editeur": "Le10Sport"
+  },
+  {
    "titre": "NFL à Paris : Domingo va diffuser le match sur Twitch et Youtube - Touchdown Actu",
    "lien": "https://news.google.com/rss/articles/CBMinAFBVV95cUxONHE3dVI4ZjVBWTQ3aGd5QUFzWjZ6XzRuVnlON1ZOUFZBVThvcHVIdzA5V1hoUTJyYnM4WDBxZktxU3VEV3psYllkZEg3RnlqWEE2dDByZVpiSnFubGpQWGMyOEY1RVNSeGJRRFF1ZTBfUmdlbWlsSk50MnE1MUJpUDBvNUJzcFdidDJYQ21XdG9ueHVTQ05nTFFoaUU?oc=5",
    "date": "2026-10-19T07:00:00.000Z",
@@ -3440,6 +3689,15 @@
    "editeur": "Gamekult"
   },
   {
+   "titre": "AmineMaTue lance le plus grand show de catch français avec ''FinalSlam'' - Catch-Newz",
+   "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQUXNVcGdndFJFWTdaN2hCak9KQkJtZTJGcHhBeFJEeU1oT0NkNFdXMWxCSWVmdEY1LWhxSEJ3MndZMm1JdmIyNWh0NVdIcGpEWDdUSldub2g5bzVtNW4zNjVVckRPcG1LRlo2eVJ1ODBBS09QOVN5S0NNalpJZXd0UTkxbzNoN1lSVzUydGFQcWlodHIzUmVIcVBRTUJoMDBMcS1IOXBDdk9haHZfakJXd19jS1JWb2c?oc=5",
+   "date": "2026-10-19T07:00:00.000Z",
+   "resume": "AmineMaTue lance le plus grand show de catch français avec ''FinalSlam'' Catch-Newz",
+   "source": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
+   "categorie": "decouverte",
+   "editeur": "Catch-Newz"
+  },
+  {
    "titre": "Votre aventure Pokémon continue : les évolutions et la famille Ectoplasma débarquent aujourd'hui - Twitch Blog",
    "lien": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBSYkpTN2o4aXQxZnh3emZjYU1UOEtrc2VTRkhLS1pFbmxjeWJEN2dhQTFuU3BYZC1EdElwYjJjVTFpUVpiOTQwRmpnTWFQTVZNbzRpZWIwM3hiOGNBUDV0amt3YnVibnZjVU1hdC1uOGlaZkZpS2oyb09DN3dFZw?oc=5",
    "date": "2026-10-16T07:00:00.000Z",
@@ -3456,6 +3714,15 @@
    "source": "Google Actualités · Twitch, YouTube et Kick",
    "categorie": "createurs",
    "editeur": "La Vie éco"
+  },
+  {
+   "titre": "Anyme, le gamer star qui ne jure que par son parfum Christian Louboutin - Paris Match",
+   "lien": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNcXBZMWdzTFF2TUYwWFliN3VoUm5KOEZLd0tGSENfYmhpUElIR3lVN2JFRjJwZFpCR2VIeElpbDlDNjFGN2N6el9QTS1Vb3lGVWE3X29sRXNMVzNibHZKUmxsRTNMbkkwRW9MU0VVcHhjSEZUMW9oSWMxcmYzS1psX1FmdnpOMWtCREpDY2pUV3Vfd3FUQjg2dTBHQnZNWE5MYzQ2ZjJHR3E5NUx3bV9oampfSWNYcXpyZmNoag?oc=5",
+   "date": "2026-10-16T07:00:00.000Z",
+   "resume": "Anyme, le gamer star qui ne jure que par son parfum Christian Louboutin Paris Match",
+   "source": "Google Actualités · créateurs suivis : Anyme023, IkariuTV, TheKAIRI78, Kaatsup",
+   "categorie": "decouverte",
+   "editeur": "Paris Match"
   },
   {
    "titre": "Streamers français les plus suivis en 2026, notre sélection - Gaming Campus",
@@ -3510,6 +3777,15 @@
    "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
    "categorie": "evenements",
    "editeur": "Le nouvel Économiste"
+  },
+  {
+   "titre": "Kaatsup annonce Fokus, son événement sportif annuel avec des créateurs - Les Gens d'Internet",
+   "lien": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNY3JiZk5vdXFSZkt6eHRqeDRJaVJyNmROWVN5SmRYOW8xNFZUSFJqNXpiMWtwSzQ5TndjQkl6aXZieEtUal9vWi13TmZqUGx2akQwcHlLd0trODVKNWpkYlMtbnV3S3hNOFh1WHZEZElYaUpqb0FqWFU1VlFfbmFBR1A2c0xuTm5mTXFkT2Z3NGVxdTUtZnNfYldQRUYzUnEzeGdnMEl1dnd1QdIBrwFBVV95cUxQMWVNSXRRTDZvM2FNRldUX1BJb0hjMlJDdmlUcE9lUmJxMmRNdkNFdG5yd1lmbzBMTEtVX3VpOXhxTk1VMU1XNXFBOUZEMUxjUUlUaTUtZUZmem5DMWNlZlNYRDU5N3hDby05YkVrdUFDdF84QjJleW4tTXU2QjdFTEx0dHdtTGdvTUFkTmYtblhDOENRZ1JYQ3VaZENSOUd1eTZWSmRvMnZ0alNRNnFv?oc=5",
+   "date": "2026-10-12T07:00:00.000Z",
+   "resume": "Kaatsup annonce Fokus, son événement sportif annuel avec des créateurs Les Gens d'Internet",
+   "source": "Google Actualités · créateurs suivis : Anyme023, IkariuTV, TheKAIRI78, Kaatsup",
+   "categorie": "decouverte",
+   "editeur": "Les Gens d'Internet"
   }
  ]
 }
