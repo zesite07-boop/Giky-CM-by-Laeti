@@ -120,10 +120,11 @@
   function groupesDe(view) {
     const l = toutes.find(x => x.id === view);
     if (l) { const e = espaceLecon(l); return l.id === 'final' ? [GROUPE_ESPACE[e]] : [GROUPE_ESPACE[e], 'app-' + l.parcours]; }
-    if (['carnet', 'suggestions', 'sources'].includes(view)) return ['aff'];
+    if (['carnet', 'suggestions'].includes(view)) return ['aff'];
+    if (view === 'pcimages') return ['app'];
     if (['scenarios', 'eclair', 'revision', 'jouer'].includes(view)) return ['jeu'];
     if (view === 'business') return ['biz'];
-    if (['simulateurs', 'veille', 'ressources', 'pcimages'].includes(view)) return ['out'];
+    if (['simulateurs', 'veille', 'ressources', 'sources'].includes(view)) return ['out'];
     if (view === 'programme') return ['app'];
     return [];
   }
@@ -136,11 +137,11 @@
     }).join('');
     const nbNotes = Object.values(etat.notes).filter(n => n && (n.action || n.echeance)).length;
     return `${lienNav('accueil', '<span class="nav-num">⌂</span>', 'Accueil')}
-      ${groupeMenu('app', '📚', 'Apprendre', `${nbReussies(PARCOURS_ESPACE.apprendre, pr)} / ${nbLecons(PARCOURS_ESPACE.apprendre)} leçons du métier`, lienNav('programme', '<span class="nav-num">☰</span>', 'Toutes les leçons du métier') + parcours('apprendre'))}
-      ${groupeMenu('jeu', '🎮', 'S’entraîner', 'Quiz · scénarios · missions', lienNav('scenarios', '<span class="nav-num">▶</span>', 'Scénarios') + lienNav('eclair', '<span class="nav-num">⚡</span>', 'Quiz éclair') + lienNav('revision', '<span class="nav-num">↻</span>', 'Révision espacée') + lienNav('jouer', '<span class="nav-num">☰</span>', 'Missions et défis') + parcours('entrainer') + lienNav('final', marque(C.final), 'Épreuve finale'))}
+      ${groupeMenu('app', '📚', 'Apprendre', `${nbReussies(PARCOURS_ESPACE.apprendre, pr)} / ${nbLecons(PARCOURS_ESPACE.apprendre)} leçons du métier`, lienNav('programme', '<span class="nav-num">☰</span>', 'Toutes les leçons du métier') + lienNav('pcimages', '<span class="nav-num">%</span>', 'Pourcentages en images') + parcours('apprendre'))}
+      ${groupeMenu('jeu', '🎮', 'S’entraîner', 'Quiz · scénarios · missions', lienNav('scenarios', '<span class="nav-num">▶</span>', 'Scénarios') + lienNav('eclair', '<span class="nav-num">⚡</span>', 'Quiz éclair') + lienNav('revision', '<span class="nav-num">↻</span>', 'Révision') + lienNav('jouer', '<span class="nav-num">☰</span>', 'Missions et défis') + parcours('entrainer') + lienNav('final', marque(C.final), 'Épreuve finale'))}
       ${groupeMenu('biz', '💼', 'Business', 'Mon activité de freelance', lienNav('business', '<span class="nav-num">€</span>', 'Mes outils et leçons business', nA) + parcours('business'))}
-      ${groupeMenu('out', '🧰', 'Outils et ressources', 'Veille · liens · petits outils', lienNav('simulateurs', '<span class="nav-num">€$£</span>', 'Outils de travail') + lienNav('pcimages', '<span class="nav-num">%</span>', 'Pourcentages en images') + lienNav('veille', '<span class="nav-num">◉</span>', 'Veille et idées') + lienNav('ressources', '<span class="nav-num">★</span>', 'Ressources'))}
-      ${groupeMenu('aff', '🗂️', 'Mes affaires', `Carnet · idées · sources`, lienNav('carnet', '<span class="nav-num">≡</span>', 'Mon carnet' + (nbNotes ? ` (${nbNotes})` : '')) + lienNav('suggestions', '<span class="nav-num">✎</span>', 'Mes idées pour le logiciel') + lienNav('sources', '<span class="nav-num">§</span>', 'Sources officielles'))}`;
+      ${groupeMenu('out', '🧰', 'Outils', 'Veille · ressources · petits outils', lienNav('simulateurs', '<span class="nav-num">€$£</span>', 'Petits outils') + lienNav('veille', '<span class="nav-num">◉</span>', 'Veille et idées') + lienNav('ressources', '<span class="nav-num">★</span>', 'Ressources et sources'))}
+      ${groupeMenu('aff', '🗂️', 'Mes affaires', `Carnet d’actions`, lienNav('carnet', '<span class="nav-num">≡</span>', 'Mon carnet' + (nbNotes ? ` (${nbNotes})` : '')))}`;
   }
   function blocXp(compact) {
     const x = M.xp(C, etat), sj = M.serie(etat.jours, aujourdhui());
@@ -164,16 +165,21 @@
   const ENERGIES = { basse: ['Faible', 'Doux', 1], moyenne: ['Moyenne', 'Normal', 2], haute: ['Pleine', 'À fond', 3] };
   const aReponses = l => l.questions.some(q => repondu(q));
   const libelleLecon = l => M.bilan(l, etat.reponses).reussi ? 'Revoir' : aReponses(l) ? 'Reprendre' : 'Commencer';
+  /* Une seule action principale : reprendre la leçon commencée, sinon la suivante ; l’énergie règle la taille de l’effort. */
+  const EFFET_ENERGIE = { basse: 'Énergie faible : une toute petite action, 3 minutes.', moyenne: 'Énergie moyenne : une leçon de 8 à 12 minutes.', haute: 'Pleine énergie : une mission ou un scénario complet.' };
   function prochaineAction(e, pr) {
-    if (e === 'basse') return { etiq: 'Pour une énergie douce', titre: 'Quiz éclair', meta: '3 min · 5 questions', texte: 'Cinq questions au hasard. Zéro pression, tu peux t’arrêter quand tu veux.', bouton: 'Lancer le quiz', vue: 'eclair' };
+    const p = pr.prochaine, reprise = !!(p && aReponses(p));
+    if (e === 'basse') {
+      if (reprise) return { etiq: 'Énergie faible', titre: `${p.code} · ${p.titre}`, meta: '3 min : une seule question', texte: 'Tu as déjà commencé cette leçon. Réponds juste à la prochaine question, puis tu peux t’arrêter.', bouton: `Reprendre ${p.code} · 3 min`, vue: p.id };
+      return { etiq: 'Énergie faible', titre: 'Quiz éclair', meta: '3 min · 5 questions', texte: 'Cinq questions au hasard. Zéro pression, tu peux t’arrêter quand tu veux.', bouton: 'Lancer le quiz · 3 min', vue: 'eclair' };
+    }
     if (e === 'haute') {
       const m = C.lecons.find(l => /^m\d/.test(l.id) && !M.bilan(l, etat.reponses).reussi);
-      if (m) return { etiq: 'Pour une énergie à fond', titre: `${m.code} · ${m.titre}`, meta: `${m.duree} · mission`, texte: m.objectif, bouton: aReponses(m) ? 'Reprendre la mission' : 'Jouer la mission', vue: m.id };
-      return { etiq: 'Pour une énergie à fond', titre: 'Scénarios', meta: `${SC.length} histoires`, texte: 'Joue une histoire dont tu es l’héroïne.', bouton: 'Jouer un scénario', vue: 'scenarios' };
+      if (m) return { etiq: 'Pleine énergie', titre: `${m.code} · ${m.titre}`, meta: `${m.duree} · mission`, texte: m.objectif, bouton: `${aReponses(m) ? 'Reprendre' : 'Jouer'} ${m.code} · ${m.duree}`, vue: m.id };
+      return { etiq: 'Pleine énergie', titre: 'Scénarios', meta: `${SC.length} histoires`, texte: 'Joue une histoire dont tu es l’héroïne.', bouton: 'Jouer un scénario', vue: 'scenarios' };
     }
-    const p = pr.prochaine;
-    if (!p) return { etiq: 'Pour une énergie normale', titre: 'Module terminé', meta: 'Bravo', texte: 'Tout est validé. Ton carnet garde tes actions concrètes.', bouton: 'Ouvrir mon carnet', vue: 'carnet' };
-    return { etiq: 'Pour une énergie normale', titre: `${p.code} · ${p.titre}`, meta: `${p.duree} · 3 étapes`, texte: p.objectif, bouton: aReponses(p) ? 'Reprendre la leçon' : 'Commencer la leçon', vue: p.id };
+    if (!p) return { etiq: 'Énergie moyenne', titre: 'Module terminé', meta: 'Bravo', texte: 'Tout est validé. Ton carnet garde tes actions concrètes.', bouton: 'Ouvrir mon carnet', vue: 'carnet' };
+    return { etiq: 'Énergie moyenne', titre: `${p.code} · ${p.titre}`, meta: `${p.duree} · 3 étapes`, texte: p.objectif, bouton: `${reprise ? 'Reprendre' : 'Commencer'} ${p.code} · ${p.duree}`, vue: p.id };
   }
   /* ---------- Alertes d'échéances ---------- */
   function listeAlertes() {
@@ -192,11 +198,13 @@
     function quand(a) {
     return a.niveau === 'passee' ? `Date passée le ${dateFr(a.date)}` : a.delai < 0 ? `En retard de ${-a.delai} jour${a.delai < -1 ? 's' : ''}` : a.delai === 0 ? 'Aujourd’hui' : a.delai === 1 ? 'Demain' : `Dans ${a.delai} jours`;
   }
+  const COMMENT_FAIRE = `<details class="comment-faire"><summary>Comment faire (3 étapes)</summary><ol class="liste-simple"><li>Ouvre <a href="https://www.autoentrepreneur.urssaf.fr" target="_blank" rel="noopener noreferrer">autoentrepreneur.urssaf.fr</a> et connecte-toi.</li><li>Choisis « Déclarer et payer », puis la période concernée.</li><li>Saisis le chiffre d’affaires encaissé (0 s’il n’y en a pas), valide, puis paie.</li></ol></details>`;
+  const commentFaire = a => /urssaf/i.test(a.titre) ? COMMENT_FAIRE : '';
   function ligneAlerte(a) {
-    return `<li class="alerte-ligne al-${a.niveau}"><span class="al-point" aria-hidden="true"></span><div><strong>${esc(quand(a))} · ${esc(a.titre)}</strong>${a.fixe ? '' : '<span class="etiquette">Date indicative</span>'}<span class="minuscule">${esc(dateFr(a.date))}</span></div><button class="bouton" data-action="echeance-fait" data-id="${esc(a.id)}">C’est fait</button></li>`;
+    return `<li class="alerte-ligne al-${a.niveau}"><span class="al-point" aria-hidden="true"></span><div><strong>${esc(quand(a))} · ${esc(a.titre)}</strong>${a.fixe ? '' : '<span class="etiquette">Date indicative</span>'}<span class="minuscule">${esc(dateFr(a.date))}</span>${commentFaire(a)}</div><button class="bouton" data-action="echeance-fait" data-id="${esc(a.id)}">C’est fait</button></li>`;
   }
   function lignePassee(a) {
-    return `<li class="alerte-ligne al-passee"><div><strong>${esc(a.titre)}</strong><span class="minuscule">Date passée le ${esc(dateFr(a.date))}. Tu l’as déjà faite ?</span></div><button class="bouton" data-action="echeance-fait" data-id="${esc(a.id)}">Oui, c’est fait</button></li>`;
+    return `<li class="alerte-ligne al-passee"><div><strong>${esc(a.titre)}</strong><span class="minuscule">Date passée le ${esc(dateFr(a.date))}. Tu l’as déjà faite ?</span>${commentFaire(a)}</div><button class="bouton" data-action="echeance-fait" data-id="${esc(a.id)}">Oui, c’est fait</button></li>`;
   }
   function ligneProchaine() {
     const p = prochaineEcheance(); if (!p) return '';
@@ -235,27 +243,19 @@
   ].join('');
   function accueil() {
     const pr = M.progression(C, etat), e = etat.energie || 'moyenne', x = M.xp(C, etat), sj = M.serie(etat.jours, aujourdhui());
-    const a = prochaineAction(e, pr), qj = questionDuJour();
+    const a = prochaineAction(e, pr);
     const classes = ['f-mauve', 'f-cerise', 'f-turquoise', 'f-or'];
     return `<div class="accueil-colonne"><h1 class="sr-only" tabindex="-1">Accueil du module community manager</h1>
-      <div class="salut"><span class="logo-cm" aria-hidden="true">CM</span><div><p>Module community manager</p><strong>Salut Laetitia</strong></div><span class="pastille-niveau">${icone('etoile', 16)} Niv. ${x.niveau}</span></div>
+      <div class="salut"><span class="logo-cm" aria-hidden="true">CM</span><div><p>Module community manager</p><strong>Salut Laetitia</strong></div></div>
       ${rappelSauvegarde()}
       ${carteAlertes()}${carteRelances()}
-      <section class="energie-bloc"><h2>Ton énergie du jour ?</h2><div class="energie-choix" role="group" aria-label="Niveau d’énergie">${Object.entries(ENERGIES).map(([k, v]) => `<button class="energie-btn e-${k}" data-action="energie" data-energie="${k}" aria-pressed="${e === k}"><span class="barres" aria-hidden="true">${[1, 2, 3].map(i => `<i class="${i <= v[2] ? 'on' : ''}"></i>`).join('')}</span>${esc(v[0])}<small>${esc(v[1])}</small></button>`).join('')}</div></section>
+      <section class="energie-bloc"><h2>Ton énergie du jour ?</h2><div class="energie-choix" role="group" aria-label="Niveau d’énergie">${Object.entries(ENERGIES).map(([k, v]) => `<button class="energie-btn e-${k}" data-action="energie" data-energie="${k}" aria-pressed="${e === k}"><span class="barres" aria-hidden="true">${[1, 2, 3].map(i => `<i class="${i <= v[2] ? 'on' : ''}"></i>`).join('')}</span>${esc(v[0])}<small>${esc(v[1])}</small></button>`).join('')}</div><p class="petit energie-effet">${esc(EFFET_ENERGIE[e] || EFFET_ENERGIE.moyenne)}</p></section>
       <section class="prochaine" aria-label="Ta prochaine action"><span class="etiq">${esc(a.etiq)}</span><h2>${esc(a.titre)}</h2><p class="meta">${esc(a.meta)}</p><p>${esc(a.texte)}</p>
-        <button class="bouton-cerise" data-view="${esc(a.vue)}">${esc(a.bouton)} ${icone('fleche', 20)}</button><button class="bouton secondaire" data-action="sprint" data-minutes="10">Sprint de 10 minutes</button></section>
+        <button class="bouton-cerise" data-view="${esc(a.vue)}">${esc(a.bouton)} ${icone('fleche', 20)}</button><button class="lien-action" data-action="sprint" data-minutes="10">Avec un minuteur de 10 minutes</button></section>
       <section class="progres-carte" aria-label="Ta progression"><div class="progres-ligne"><div><span class="serie">${icone('flamme', 20)}<span class="chiffre">${sj} j</span></span><span class="legende">de suite</span></div>
         <div class="milieu"><span class="legende"><span>${x.suivant ? `Vers ${esc(x.suivant.nom)}` : `Niveau ${esc(x.nom)}`}</span><b>${nb(x.points, 0)}${x.suivant ? ` / ${nb(x.suivant.seuil, 0)}` : ''} XP</b></span><span class="jauge-turquoise" role="img" aria-label="${x.pct} % vers le niveau suivant"><span data-w="${x.pct}"></span></span></div>
-        <div class="droite"><span class="chiffre">${pr.reussies} / ${pr.total}</span><span class="legende">étapes</span></div></div>
+        <div class="droite"><span class="chiffre">${leconsValidees()} / ${C.lecons.length}</span><span class="legende">leçons</span></div></div>
         <p class="petit">Série douce : un jour de pause ne casse rien.</p></section>
-      <h2 class="titre-section">Mes espaces</h2>
-      <div class="grille-jeux">${tuile('programme', 'turquoise', 'livre', 'Apprendre', `Les leçons du métier · ${nbReussies(PARCOURS_ESPACE.apprendre, pr)} / ${nbLecons(PARCOURS_ESPACE.apprendre)}`)}
-        ${tuile('jouer', 'cerise', 'eclair', 'S’entraîner', `Quiz, scénarios, missions · ${G.aReviser(etat.revision, aujourdhui()).length} à revoir`)}
-        ${tuile('business', 'or', 'outils', 'Business', `Clients, prix, cotisations · ${nbReussies(PARCOURS_ESPACE.business, pr)} / ${nbLecons(PARCOURS_ESPACE.business)} leçons`)}
-        ${tuile('simulateurs', 'mauve', 'veille', 'Outils et ressources', `Veille · ${veilleResume()}`)}</div>
-      <h2 class="titre-section">Mes affaires</h2>
-      <div class="grille-jeux">${tuile('carnet', 'mauve', 'livre', 'Mon carnet', `${Object.values(etat.notes).filter(n => n && (n.action || n.echeance)).length} défi${Object.values(etat.notes).filter(n => n && (n.action || n.echeance)).length > 1 ? 's' : ''} noté${Object.values(etat.notes).filter(n => n && (n.action || n.echeance)).length > 1 ? 's' : ''}`)}${tuile('suggestions', 'or', 'etoile', 'Mes idées pour le logiciel', 'Dis à JT ce qui manque')}${tuile('sources', 'turquoise', 'livre', 'Sources officielles', 'Liens vérifiés')}</div>
-      ${qj ? `<section class="carte qdj"><div class="tete-qdj"><span class="etiq-cerise">Question du jour · ${esc(qj.l.code)}</span><span class="puce-xp">+10 XP</span></div><h2>${esc(qj.q.titre)}</h2><p>${esc(qj.q.texte)}</p><div class="actions"><button class="bouton primaire" data-action="qdj" data-lecon="${qj.l.id}" data-i="${qj.i}">${repondu(qj.q) ? 'Revoir ma réponse' : 'Y répondre'} <span aria-hidden="true">→</span></button></div></section>` : ''}
     </div>`;
   }
   /* Espaces : chaque parcours de leçons appartient à un seul espace (Apprendre, S’entraîner ou Business). */
@@ -275,12 +275,19 @@
   function programme() {
     const pr = M.progression(C, etat), ids = PARCOURS_ESPACE.apprendre;
     return `<header class="en-tete"><p class="sur-titre">Apprendre</p><h1 tabindex="-1">Les leçons du métier</h1><p class="intro">${nbLecons(ids)} leçons de 8 à 12 minutes sur le métier de community manager, dans l’ordre que tu veux. Le business est dans l’espace Business, les quiz et missions dans S’entraîner.</p></header>
+      <section class="carte invitation"><p class="sur-titre">Pour comprendre d’abord</p><h2>Les pourcentages en images</h2><p>${CARTES_PCV.length} cartes animées, 3 minutes, avant les leçons de calcul.</p><div class="actions"><button class="bouton primaire" data-view="pcimages">Voir les cartes</button></div></section>
       <div class="disposition"><div class="pile">${listeParcours(ids, pr)}</div>${panneau(pr)}</div>`;
   }
+  function carteQdj() {
+    const qj = questionDuJour();
+    return qj ? `<section class="carte qdj"><div class="tete-qdj"><span class="etiq-cerise">Question du jour · ${esc(qj.l.code)}</span><span class="puce-xp">+10 XP</span></div><h2>${esc(qj.q.titre)}</h2><p>${esc(qj.q.texte)}</p><div class="actions"><button class="bouton primaire" data-action="qdj" data-lecon="${qj.l.id}" data-i="${qj.i}">${repondu(qj.q) ? 'Revoir ma réponse' : 'Y répondre'} <span aria-hidden="true">→</span></button></div></section>` : '';
+  }
+  const leconsValidees = () => C.lecons.filter(l => M.bilan(l, etat.reponses).reussi).length;
   function jouer() {
     const pr = M.progression(C, etat), ids = PARCOURS_ESPACE.entrainer;
-    return `<header class="en-tete"><p class="sur-titre">S’entraîner</p><h1 tabindex="-1">Quiz, scénarios et missions</h1><p class="intro">Ici, on pratique, sans pression et sans chrono imposé. Les leçons à lire sont dans Apprendre et Business.</p></header>
-      <h2 class="titre-section">Quiz et jeux</h2><div class="grille-jeux">${tuilesJeu()}</div>
+    return `<header class="en-tete"><p class="sur-titre">S’entraîner</p><h1 tabindex="-1">Quiz, scénarios et missions</h1><p class="intro">Ici, on pratique, sans pression et sans chrono imposé. Trois niveaux : le quiz (5 minutes), les scénarios (une histoire), les missions et défis de pro (cas complets). Les leçons à lire sont dans Apprendre et Business.</p></header>
+      ${carteQdj()}
+      <h2 class="titre-section">Niveau 1 et 2 : quiz et scénarios</h2><div class="grille-jeux">${tuilesJeu()}</div>
       <div class="disposition"><div class="pile">${listeParcours(ids, pr)}
         <section class="carte invitation"><p class="sur-titre">Le boss de fin</p><h2>${esc(C.final.titre)}</h2><p>${esc(C.final.court)} ${C.final.questions.length} questions, 80 % et aucune erreur critique.</p><div class="actions"><button class="bouton primaire" data-view="final">Ouvrir l’épreuve</button><span class="petit">${esc(statut(C.final))}</span></div></section>
       </div>${panneau(pr)}</div>`;
@@ -304,7 +311,7 @@
   }
   function panneau(pr) {
     pr = pr || M.progression(C, etat);
-    return `<aside class="panneau" aria-label="Repères"><section class="carte"><h2>Ton avancée</h2>${blocXp()}<div class="progression-texte"><span>Leçons validées</span><strong>${pr.reussies} / ${pr.total}</strong></div><progress value="${pr.reussies}" max="${pr.total}" aria-label="${pr.reussies} leçons validées sur ${pr.total}"></progress>${badges(pr)}</section>
+    return `<aside class="panneau" aria-label="Repères"><section class="carte"><h2>Ton avancée</h2>${blocXp()}<div class="progression-texte"><span>Leçons validées</span><strong>${leconsValidees()} / ${C.lecons.length}</strong></div><progress value="${leconsValidees()}" max="${C.lecons.length}" aria-label="${pr.reussies} leçons validées sur ${pr.total}"></progress>${badges(pr)}</section>
       <section class="carte"><p class="sur-titre">Comment gagner des XP</p><ul class="liste-simple"><li>10 XP par bonne réponse.</li><li>25 XP par leçon validée.</li><li>5 XP par point de scénario.</li><li>5 XP par bonne réponse au quiz éclair.</li></ul><p class="petit">Validé à 80 % sans erreur critique. Pas de chrono imposé.</p></section>
       <section class="carte"><h2>Besoin de souffler ?</h2><p class="petit">Le mode focus masque tout sauf la leçon. Le texte aéré agrandit l’interlignage. Ta progression est sauvegardée à chaque réponse.</p><div class="actions"><button class="bouton" data-action="focus">${etat.focus ? 'Quitter le mode focus' : 'Activer le mode focus'}</button></div></section></aside>`;
   }
@@ -422,7 +429,7 @@
       ${l.cours.map(([t, x], i) => `<section class="cours-bloc"><h2><span class="puce-num" aria-hidden="true">${i + 1}</span>${esc(t)}</h2><p>${esc(x)}</p></section>`).join('')}
       ${l.tableau ? tableauLecon(l.tableau) : ''}
       ${blocMascotte('retient', l.id + 'm')}<div class="memo"><strong>À retenir</strong>${esc(l.memo)}</div>
-      ${outil ? `<div class="actions"><button class="bouton" data-action="outil" data-outil="${outil}">Tester dans la boîte à outils</button></div>` : ''}
+      ${outil ? `<div class="actions"><button class="bouton" data-action="outil" data-outil="${outil}">Tester dans l’outil</button></div>` : ''}
       <div class="actions"><button class="bouton primaire" data-action="exercice">${M.bilan(l, etat.reponses).fini ? 'Revoir mes réponses' : 'Passer aux questions'} <span aria-hidden="true">→</span></button><span class="petit">${l.questions.length} questions · sans chrono</span></div>
       ${liensSources(l.sources)}</section>`;
   }
@@ -512,11 +519,12 @@
   }
 
   /* ---------- Ressources ---------- */
+  const RS_ORDRE = () => RS.slice().sort((x, y) => (y.id === 'tdah') - (x.id === 'tdah'));
   function vueRessources() {
     return `<header class="en-tete"><p class="sur-titre">S’outiller · Ressources</p><h1 tabindex="-1">La boîte à liens de la CM</h1><p class="intro">Des outils et des sources triés par usage. Exemples sans partenariat : les offres et les prix changent, vérifie sur chaque site.</p></header>
-      <nav class="puces-nav" aria-label="Catégories">${RS.map(c => `<a class="puce" href="#res-${c.id}">${esc(c.titre)}</a>`).join('')}</nav>
+      <nav class="puces-nav" aria-label="Catégories">${RS_ORDRE().map(c => `<a class="puce" href="#res-${c.id}">${esc(c.titre)}</a>`).join('')}</nav>
       <div class="champ filtre"><label for="filtre-res">Filtrer</label><input id="filtre-res" type="text" placeholder="Ex. Discord, gratuit, facture…" data-filtre="res"></div>
-      <div class="pile">${RS.map(c => `<section class="carte res-cat" id="res-${c.id}"><h2>${esc(c.titre)}</h2><p class="astuce"><strong>Astuce :</strong> ${esc(c.astuce)}</p>
+      <div class="pile">${RS_ORDRE().map(c => `<section class="carte res-cat" id="res-${c.id}"><h2>${esc(c.titre)}</h2><p class="astuce"><strong>Astuce :</strong> ${esc(c.astuce)}</p>
         <ul class="res-liste">${c.liens.map(r => `<li data-texte="${esc((r.nom + ' ' + r.desc + ' ' + r.prix + ' ' + c.titre).toLowerCase())}"><a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.nom)} <span class="sr-only">(nouvel onglet)</span></a><span class="res-desc">${esc(r.desc)}</span><span class="etiquette prix">${esc(r.prix)}</span></li>`).join('')}</ul></section>`).join('')}
         <p class="petit" id="res-vide" hidden>Aucun résultat pour ce filtre.</p></div>`;
   }
@@ -542,6 +550,7 @@
     const t = T();
     return `<span>1 € = ${nb(t.USD, 4)} $</span><span>1 € = ${nb(t.GBP, 4)} £</span><span>1 $ = ${nb(M.croise('USD', 'EUR', t), 4)} €</span><span>1 £ = ${nb(M.croise('GBP', 'EUR', t), 4)} €</span><span>1 £ = ${nb(M.croise('GBP', 'USD', t), 4)} $</span>`;
   }
+  const noteTaux = () => `<p class="petit note-taux">Taux de change : ${esc(T().source)}. <button class="lien-action" data-action="outil" data-outil="devises">Voir ou modifier dans Devises</button></p>`;
   function barreTaux() {
     const t = T();
     return `<section class="carte taux"><div class="taux-tete"><div><p class="sur-titre">Taux utilisés partout</p><p class="petit" id="taux-source">Source : ${esc(t.source)} du ${esc(dateFr(t.date))}. Modifiables à la main.</p></div><button class="bouton" data-action="maj-taux" id="maj-taux">Actualiser les taux BCE</button></div>
@@ -998,7 +1007,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   }
   function vueRevision() {
     const st = G.statsRevision(etat.revision, aujourdhui());
-    const tete = `<header class="en-tete"><p class="sur-titre">Jouer · Révision espacée</p><h1 tabindex="-1">Les questions à revoir, au bon moment</h1><p class="intro">Tes questions ratées reviennent après 1, 3, 7, 16 puis 35 jours. Tu les réussis ? Elles s’éloignent. Tu les rates ? Elles reviennent demain. ${st.total ? `${st.total} suivie${st.total > 1 ? 's' : ''} · ${st.maitrisees} maîtrisée${st.maitrisees > 1 ? 's' : ''}.` : ''}</p></header>`;
+    const tete = `<header class="en-tete"><p class="sur-titre">S’entraîner · Révision</p><h1 tabindex="-1">Les questions à revoir, au bon moment</h1><p class="intro">Tes questions ratées reviennent après 1, 3, 7, 16 puis 35 jours. Tu les réussis ? Elles s’éloignent. Tu les rates ? Elles reviennent demain. ${st.total ? `${st.total} suivie${st.total > 1 ? 's' : ''} · ${st.maitrisees} maîtrisée${st.maitrisees > 1 ? 's' : ''}.` : ''}</p></header>`;
     if (!revision || (!revision.qs.length && st.dues)) nouvelleRevision();
     if (!revision.qs.length) {
       return `${tete}<section class="carte"><h2>${st.total ? 'Rien à revoir aujourd’hui.' : 'Aucune question à revoir pour l’instant.'}</h2><p>${st.prochaine ? `Prochaine révision le ${esc(dateFr(st.prochaine))}.` : 'Les questions que tu rates dans les leçons et les quiz arrivent ici automatiquement.'}</p><div class="actions"><button class="bouton primaire" data-view="eclair">Faire un quiz éclair</button><button class="bouton discret" data-view="accueil">Retour à l’accueil</button></div></section>`;
@@ -1048,23 +1057,28 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
 
   /* ---------- Kit de prospection : générateur, copie, suivi des relances ---------- */
   const textareaKit = (id, texte, lignes) => `<textarea id="${id}" readonly rows="${lignes}">${esc(texte)}</textarea>`;
+  /* Kit prospect en 4 étapes : une par écran (le client, toi, tes tarifs, ton kit). */
+  let kitEtape = 1;
+  const KIT_ETAPES = ['Le client', 'Toi', 'Tes tarifs', 'Ton kit'];
   function outilKit() {
-    const k = etat.kit;
-    return `<p class="petit">Choisis le client et la demande : le message, les pièces du portfolio, les 3 offres et les relances se construisent tout seuls. Relis toujours avant d’envoyer.</p>
-      <details class="bloc-plie" open><summary>1. Le client</summary><div class="calcul-champs deux">
+    const k = etat.kit, n = kitEtape;
+    const nav = `<ol class="kit-etapes" aria-label="Étapes du kit">${KIT_ETAPES.map((t, i) => `<li class="${i + 1 === n ? 'actif' : ''} ${i + 1 < n ? 'fait' : ''}"><button data-action="kit-etape" data-n="${i + 1}" ${i + 1 === n ? 'aria-current="step"' : ''}><span class="kit-num">${i + 1}</span>${t}</button></li>`).join('')}</ol>`;
+    const pied = `<div class="actions kit-nav">${n > 1 ? `<button class="bouton" data-action="kit-etape" data-n="${n - 1}"><span aria-hidden="true">←</span> Précédent</button>` : ''}${n < 4 ? `<button class="bouton primaire" data-action="kit-etape" data-n="${n + 1}">Suivant <span aria-hidden="true">→</span></button>` : ''}</div>`;
+    let corps;
+    if (n === 1) corps = `<p class="petit">Choisis le client et la demande : le message, les pièces du portfolio, les 3 offres et les relances se construisent tout seuls. Relis toujours avant d’envoyer.</p><div class="calcul-champs deux">
         ${champSelect('kit', 'typeClient', 'Type de client', k.typeClient, Object.entries(KIT.TYPES_CLIENT).map(([v, x]) => [v, x.nom]))}${champSelect('kit', 'demande', 'Type de demande', k.demande, Object.entries(KIT.DEMANDES))}
         ${champTexte('kit', 'client', 'Nom du client (pour ton suivi)', k.client, 120)}${champTexte('kit', 'contact', 'Prénom du contact', k.contact, 80)}
-        ${champTexte('kit', 'chaine', 'Chaîne ou événement', k.chaine, 120)}${champSelect('kit', 'ton', 'Tutoiement ou vouvoiement', k.ton, [['auto', 'Automatique selon le client'], ['tu', 'Tutoiement'], ['vous', 'Vouvoiement']])}</div></details>
-      <details class="bloc-plie" open><summary>2. Toi</summary><div class="calcul-champs deux">
+        ${champTexte('kit', 'chaine', 'Chaîne ou événement', k.chaine, 120)}${champSelect('kit', 'ton', 'Tutoiement ou vouvoiement', k.ton, [['auto', 'Automatique selon le client'], ['tu', 'Tutoiement'], ['vous', 'Vouvoiement']])}</div>`;
+    else if (n === 2) corps = `<p class="petit">Ces informations se retrouvent dans tous tes kits.</p><div class="calcul-champs deux">
         ${champTexte('kit', 'moi', 'Ton prénom et nom', k.moi, 80)}${champTexte('kit', 'marque', 'Ton activité', k.marque, 80, 'Ex. Giky CM')}
         ${champTexte('kit', 'portfolio', 'Lien de ton portfolio', k.portfolio, 200, 'https://')}${champTexte('kit', 'email', 'Ton e-mail pro', k.email, 120)}
-        ${champTexte('kit', 'preuve', 'Une preuve chiffrée (facultatif)', k.preuve, 300, 'Ex. J’ai fait passer une chaîne de 800 à 1 400 abonnés en 3 mois.')}</div></details>
-      <details class="bloc-plie"><summary>3. Tes tarifs</summary><div class="calcul-champs deux">
+        ${champTexte('kit', 'preuve', 'Une preuve chiffrée (facultatif)', k.preuve, 300, 'Ex. J’ai fait passer une chaîne de 800 à 1 400 abonnés en 3 mois.')}</div>`;
+    else if (n === 3) corps = `<p class="petit">Trois offres : une d’entrée, une que tu veux vendre, une complète.</p><div class="calcul-champs deux">
         ${champNum('kit', 'offre1', 'Offre 1 · Essentiel (€)', k.offre1, 0, 10000000, 10)}${champNum('kit', 'offre2', 'Offre 2 · Régulier (€)', k.offre2, 0, 10000000, 10)}${champNum('kit', 'offre3', 'Offre 3 · Complet (€)', k.offre3, 0, 10000000, 10)}
         ${champSelect('kit', 'tva', 'TVA', k.tva, [['franchise', 'Franchise de TVA (art. 293 B)'], ['tva', 'Je facture la TVA (prix HT)']])}
-        ${champNum('kit', 'validite', 'Validité du devis (jours)', k.validite, 0, 365, 1)}${champNum('kit', 'acompte', 'Acompte (%)', k.acompte, 0, 100, 5)}${champNum('kit', 'delai', 'Délai de paiement (jours)', k.delai, 0, 365, 1)}</div></details>
-      <div id="resultat-kit" aria-live="polite">${resultatKit()}</div>
-      ${liensSources(['delais', 'influenceContrat', 'tvaFranchise'])}`;
+        ${champNum('kit', 'validite', 'Validité du devis (jours)', k.validite, 0, 365, 1)}${champNum('kit', 'acompte', 'Acompte (%)', k.acompte, 0, 100, 5)}${champNum('kit', 'delai', 'Délai de paiement (jours)', k.delai, 0, 365, 1)}</div>`;
+    else corps = `<div id="resultat-kit" aria-live="polite">${resultatKit()}</div>${liensSources(['delais', 'influenceContrat', 'tvaFranchise'])}`;
+    return `${nav}${corps}${pied}`;
   }
   function resultatKit() {
     const k = etat.kit, g = KIT.genererKit(k), auj = aujourdhui();
@@ -1072,14 +1086,14 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     const copier = (id, msg) => `<button class="bouton" data-action="copier" data-cible="#${id}" data-msg="${msg}">Copier</button>`;
     const mail = `mailto:?subject=${encodeURIComponent(g.objet)}&body=${encodeURIComponent(g.message).slice(0, 1800)}`;
     return `<p class="petit">Ton utilisé : <b>${g.tonUtilise === 'tu' ? 'tutoiement' : 'vouvoiement'}</b>. Les crochets [ ] sont à compléter.</p>
-      ${bloc('1. Le message', `<label for="kit-objet">Objet</label><input id="kit-objet" readonly value="${esc(g.objet)}">${textareaKit('kit-message', g.message, 14)}
+      ${bloc('Le message', `<label for="kit-objet">Objet</label><input id="kit-objet" readonly value="${esc(g.objet)}">${textareaKit('kit-message', g.message, 14)}
         <div class="actions">${copier('kit-message', 'Message copié. Colle-le dans ton mail.')}<a class="bouton" href="${mail}">Ouvrir dans ma messagerie</a></div>`)}
-      ${bloc('2. Les pièces du portfolio à joindre', `<ol class="liste-simple">${g.portfolio.map(p => `<li>${esc(p)}</li>`).join('')}</ol>${textareaKit('kit-pieces', KIT.textePortfolio(g), Math.min(8, g.portfolio.length + 1))}<div class="actions">${copier('kit-pieces', 'Liste copiée.')}</div>
+      ${bloc('Les pièces du portfolio à joindre', `<ol class="liste-simple">${g.portfolio.map(p => `<li>${esc(p)}</li>`).join('')}</ol>${textareaKit('kit-pieces', KIT.textePortfolio(g), Math.min(8, g.portfolio.length + 1))}<div class="actions">${copier('kit-pieces', 'Liste copiée.')}</div>
         <p class="minuscule">Mets chaque pièce sur une page, avec le résultat chiffré en premier. Moins de 5 pièces : on les regarde vraiment.</p>`)}
-      ${bloc('3. Tes trois offres', `<div class="table-defile"><table class="table-cash"><caption>Offres adaptées à la demande</caption><thead><tr>${g.offres.map(o => `<th scope="col">${esc(o.nom)}</th>`).join('')}</tr></thead>
+      ${bloc('Tes trois offres', `<div class="table-defile"><table class="table-cash"><caption>Offres adaptées à la demande</caption><thead><tr>${g.offres.map(o => `<th scope="col">${esc(o.nom)}</th>`).join('')}</tr></thead>
         <tbody><tr>${g.offres.map(o => `<td><strong>${esc(nb(o.prix, 0))} €${k.tva === 'tva' ? ' HT' : ''}</strong><ul class="liste-simple">${o.contenu.map(c => `<li>${esc(c)}</li>`).join('')}</ul></td>`).join('')}</tr></tbody></table></div>
         <p class="petit">${esc(g.mentions)}</p>${textareaKit('kit-offres', KIT.texteOffres(g, k), 12)}<div class="actions">${copier('kit-offres', 'Offres copiées.')}</div>`)}
-      ${bloc('4. Le plan de relances', `<p class="petit">Envoi aujourd’hui, puis ${KIT.datesSuivi(auj).map(d => `J+${d.j} (${esc(dateFr(d.date))})`).join(', ')}. Jamais plus de trois messages.</p>
+      ${bloc('Le plan de relances', `<p class="petit">Envoi aujourd’hui, puis ${KIT.datesSuivi(auj).map(d => `J+${d.j} (${esc(dateFr(d.date))})`).join(', ')}. Jamais plus de trois messages.</p>
         ${g.suivi.map((s, i) => `<details class="bloc-plie"><summary>J+${s.j} · ${esc(s.titre)}</summary>${textareaKit('kit-relance-' + i, s.texte, 9)}<div class="actions">${copier('kit-relance-' + i, 'Relance copiée.')}</div></details>`).join('')}
         <div class="table-defile"><table class="table-cash"><caption>Selon sa réponse</caption><thead><tr><th scope="col">Si…</th><th scope="col">Alors</th></tr></thead><tbody>${g.cas.map(c => `<tr><th scope="row">${esc(c[0])}</th><td>${esc(c[1])}</td></tr>`).join('')}</tbody></table></div>`)}
       <div class="actions"><button class="bouton primaire" data-action="kit-enregistrer">J’ai envoyé ce kit : l’ajouter à mon suivi</button></div>
@@ -1119,15 +1133,15 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   function panneauOutils(espace) {
     const o = etat.outil, fam = familleDe(o), fams = FAMILLES.filter(x => x[5] === espace);
     const tabs = ONGLETS.filter(x => fam[4].includes(x[0])).sort((a, b) => fam[4].indexOf(a[0]) - fam[4].indexOf(b[0]));
-    return `${barreTaux()}
+    return `${o === 'devises' ? barreTaux() : (['cotis', 'treso', 'budget', 'reporting', 'doc', 'recettes'].includes(o) ? noteTaux() : '')}
       ${fams.length > 1 ? `<div class="fam-outils" role="group" aria-label="Familles d’outils">${fams.map(x => `<button class="fam-outil ${x === fam ? 'active' : ''}" data-action="famille-outil" data-outil="${x[4][0]}" aria-pressed="${x === fam}"><span class="fam-ico" aria-hidden="true">${x[1]}</span><b>${esc(x[2])}</b><small>${esc(x[3])}</small></button>`).join('')}</div>` : ''}
       <div class="onglets" role="tablist" aria-label="Outils de la famille ${esc(fam[2])}">${tabs.map(([id, n]) => `<button role="tab" id="onglet-${id}" aria-controls="panneau-outil" aria-selected="${o === id}" tabindex="${o === id ? 0 : -1}" data-action="onglet" data-outil="${id}">${esc(n)}</button>`).join('')}</div>
       <section class="carte panneau-outil" id="panneau-outil" role="tabpanel" aria-labelledby="onglet-${o}"><h2>${esc(ONGLETS.find(x => x[0] === o)[1])}</h2>${OUTIL_RENDU[o][0]()}</section>`;
   }
   /* Espace Outils et ressources : veille, ressources, pourcentages en images, puis les outils de travail. */
   function simulateurs() {
-    return `<header class="en-tete"><p class="sur-titre">Outils et ressources</p><h1 tabindex="-1">Mes outils de travail</h1><p class="intro">Veille, liens utiles et petits outils du quotidien. Ce qui touche à ton activité de freelance (clients, prix, cotisations) est dans Business.</p></header>
-      <div class="grille-jeux">${tuile('veille', 'mauve', 'veille', 'Veille', veilleResume())}${tuile('ressources', 'turquoise', 'etoile', 'Ressources', `${RS.reduce((n, c) => n + c.liens.length, 0)} outils et liens triés`)}${tuile('pcimages', 'cerise', 'etoile', 'Pourcentages en images', '7 cartes animées, 3 minutes')}</div>
+    return `<header class="en-tete"><p class="sur-titre">Outils</p><h1 tabindex="-1">Veille, ressources et petits outils</h1><p class="intro">Ce dont tu te sers au quotidien. Ce qui touche à ton activité de freelance (clients, prix, cotisations) est dans Business.</p></header>
+      <div class="grille-jeux">${tuile('veille', 'mauve', 'veille', 'Veille', veilleResume())}${tuile('ressources', 'turquoise', 'etoile', 'Ressources', `${RS.reduce((n, c) => n + c.liens.length, 0)} outils et liens triés`)}</div>
       <h2 class="titre-section">Petits outils</h2>${panneauOutils('outils')}`;
   }
 
@@ -1198,7 +1212,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   }
   function vuePcImages() {
     const n = CARTES_PCV.length, c = CARTES_PCV[pcv.i]();
-    return `<header class="en-tete"><p class="sur-titre">Comprendre en images</p><h1 tabindex="-1">Les pourcentages, en images</h1><p class="intro">${n} cartes, une idée par carte. Tu avances à ton rythme.</p></header>
+    return `<header class="en-tete"><p class="sur-titre">Apprendre · en images</p><h1 tabindex="-1">Les pourcentages, en images</h1><p class="intro">${n} cartes, une idée par carte. Tu avances à ton rythme.</p></header>
       <section class="pcv" aria-roledescription="carrousel" aria-label="Pourcentages en images">
         <div class="pcv-points" role="group" aria-label="Choisir une carte">${CARTES_PCV.map((_, k) => `<button class="pcv-point ${k === pcv.i ? 'actif' : k < pcv.i ? 'vu' : ''}" data-action="pcv-va" data-i="${k}" aria-label="Carte ${k + 1} sur ${n}" ${k === pcv.i ? 'aria-current="step"' : ''}></button>`).join('')}</div>
         <article class="pcv-carte" aria-live="polite"><p class="sur-titre">Carte ${pcv.i + 1} sur ${n}</p><div class="pcv-tete">${pcv.i === n - 1 ? `<span class="pcv-mascotte">${mascotte('content')}</span>` : ''}<h2>${esc(c.titre)}</h2></div><p class="pcv-texte">${esc(c.texte)}</p><div class="pcv-visuel">${c.visuel}</div></article>
@@ -1229,16 +1243,33 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   }
 
   /* ---------- Rendu ---------- */
+  const PARENT = { scenarios: 'jouer', eclair: 'jouer', revision: 'jouer', pcimages: 'programme', veille: 'simulateurs', ressources: 'simulateurs', sources: 'simulateurs', suggestions: 'accueil', carnet: 'accueil' };
+  const LIB_PARENT = { jouer: 'S’entraîner', programme: 'Apprendre', simulateurs: 'Outils', ressources: 'Ressources', accueil: 'Accueil' };
+  function espaceVue() {
+    const l = getLecon(), v = etat.vue;
+    if (l) return espaceLecon(l);
+    if (['programme', 'pcimages'].includes(v)) return 'apprendre';
+    if (['jouer', 'scenarios', 'eclair', 'revision'].includes(v)) return 'entrainer';
+    if (v === 'business') return 'business';
+    if (['simulateurs', 'veille', 'ressources', 'sources'].includes(v)) return 'outils';
+    return 'accueil';
+  }
   function contenuVue() {
     const l = getLecon();
     if (l) return lecon(l);
     const v = { simulateurs, business, carnet, sources, programme, jouer, scenarios: vueScenarios, eclair: vueEclair, revision: vueRevision, veille: vueVeille, ressources: vueRessources, suggestions: vueSuggestions, pcimages: vuePcImages }[etat.vue];
-    return v ? v() : accueil();
+    let html = v ? v() : accueil();
+    const par = PARENT[etat.vue];
+    if (etat.vue === 'ressources' || etat.vue === 'sources') {
+      const seg = `<div class="fam-outils" role="group" aria-label="Ressources ou sources officielles"><button class="fam-outil ${etat.vue === 'ressources' ? 'active' : ''}" data-view="ressources" aria-pressed="${etat.vue === 'ressources'}"><span class="fam-ico" aria-hidden="true">★</span><b>Liens et outils</b><small>${RS.reduce((n, c) => n + c.liens.length, 0)} liens triés par usage</small></button><button class="fam-outil ${etat.vue === 'sources' ? 'active' : ''}" data-view="sources" aria-pressed="${etat.vue === 'sources'}"><span class="fam-ico" aria-hidden="true">§</span><b>Sources officielles</b><small>Taux, lois, démarches</small></button></div>`;
+      html = html.replace('</header>', '</header>' + seg);
+    }
+    return par && !/class="retour"/.test(html) ? `<button class="retour" data-view="${par}"><span aria-hidden="true">←</span> ${LIB_PARENT[par]}</button>${html}` : html;
   }
   function fil() {
     const l = getLecon();
     if (l) return `${esc(parcoursDe(l).nom)}<span>${esc(l.code)}</span>`;
-    return { programme: 'Apprendre<span>Les leçons du métier</span>', jouer: 'S’entraîner<span>Quiz et missions</span>', business: 'Business<span>Mon activité</span>', simulateurs: 'Outils<span>Outils de travail</span>', carnet: 'Mes affaires<span>Mon carnet</span>', sources: 'Mes affaires<span>Sources</span>', scenarios: 'S’entraîner<span>Scénarios</span>', eclair: 'S’entraîner<span>Quiz éclair</span>', revision: 'S’entraîner<span>Révision espacée</span>', veille: 'Ma veille<span>Veille et idées</span>', ressources: 'Outils<span>Ressources</span>', suggestions: 'Mes affaires<span>Mes idées pour le logiciel</span>', pcimages: 'Outils<span>Pourcentages en images</span>' }[etat.vue] || 'Module CM<span>Accueil</span>';
+    return { programme: 'Apprendre<span>Les leçons du métier</span>', jouer: 'S’entraîner<span>Quiz et missions</span>', business: 'Business<span>Mon activité</span>', simulateurs: 'Outils<span>Petits outils</span>', carnet: 'Mes affaires<span>Mon carnet</span>', sources: 'Mes affaires<span>Sources</span>', scenarios: 'S’entraîner<span>Scénarios</span>', eclair: 'S’entraîner<span>Quiz éclair</span>', revision: 'S’entraîner<span>Révision</span>', veille: 'Outils<span>Veille</span>', ressources: 'Outils<span>Ressources</span>', suggestions: 'Mes affaires<span>Mes idées pour le logiciel</span>', pcimages: 'Apprendre<span>Pourcentages en images</span>' }[etat.vue] || 'Module CM<span>Accueil</span>';
   }
   function boutonsBarre() {
     const sombre = document.documentElement.dataset.theme === 'sombre';
@@ -1253,7 +1284,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   }
   function barreBas() {
     const v = etat.vue, l = getLecon(), e = l ? espaceLecon(l) : '';
-    const actif = { accueil: v === 'accueil', apprendre: e === 'apprendre' || v === 'programme', jouer: e === 'entrainer' || ['jouer', 'scenarios', 'eclair', 'revision', 'final'].includes(v), business: e === 'business' || v === 'business', outils: ['simulateurs', 'ressources', 'veille', 'pcimages'].includes(v) };
+    const actif = { accueil: v === 'accueil', apprendre: e === 'apprendre' || ['programme', 'pcimages'].includes(v), jouer: e === 'entrainer' || ['jouer', 'scenarios', 'eclair', 'revision', 'final'].includes(v), business: e === 'business' || v === 'business', outils: ['simulateurs', 'ressources', 'veille', 'sources'].includes(v) };
     const nA = alertesFortes().length;
     const t = (id, vue, ic, lib) => `<button data-view="${vue}" ${actif[id] ? 'aria-current="page"' : ''}>${icone(ic, 22)}${lib}${id === 'business' && nA ? `<span class="pastille-alerte" aria-label="${nA} échéance${nA > 1 ? 's' : ''} à traiter">${nA}</span>` : ''}</button>`;
     return `<nav class="bas" aria-label="Navigation principale">${t('accueil', 'accueil', 'accueil', 'Accueil')}${t('apprendre', 'programme', 'livre', 'Apprendre')}${t('jouer', 'jouer', 'jeu', 'S’entraîner')}${t('business', 'business', 'outils', 'Business')}${t('outils', 'simulateurs', 'veille', 'Outils')}</nav>`;
@@ -1266,11 +1297,54 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
       <div class="zone"><div class="barre"><p class="fil">${fil()}</p><div class="outils">${boutonsBarre()}</div></div>
       <p id="stockage-avertissement" class="stockage-alerte" ${depot.persistant ? 'hidden' : ''}>${esc(depot.avertissement)}</p>
       ${bandeauAlertes()}
-      <main id="principal">${contenuVue()}<footer class="pied"><span>JTIpilot · Module ${esc(C.titre)} · contenu ${esc(C.version)} revu le ${esc(C.revue)}. Les chiffres légaux et fiscaux sont des repères pédagogiques : vérifier sur la source officielle liée.</span><button class="lien-action" data-view="sources">Sources</button></footer></main></div></div>${barreBas()}`;
+      <button class="haut" data-action="haut" hidden aria-label="Revenir en haut de la page">↑ Haut</button>
+      <main id="principal" class="esp-${espaceVue()}">${contenuVue()}<footer class="pied"><span>JTIpilot · Module ${esc(C.titre)} · contenu ${esc(C.version)} revu le ${esc(C.revue)}. Les chiffres légaux et fiscaux sont des repères pédagogiques : vérifier sur la source officielle liée.</span><button class="lien-action" data-view="sources">Sources officielles</button><button class="lien-action" data-view="suggestions">Une idée pour le logiciel ?</button></footer></main></div></div>${barreBas()}`;
     largeurs(); majMinuteur(); badgeApp(); if (etat.vue === 'pcimages') majPcv();
+    majAdresse(); majHaut();
     sauver();
     if (focusSel) { const el = $(focusSel); if (el) el.focus({ preventScroll: false }); }
   }
+  /* ---------- Adresses : une adresse par page (#/…), le bouton Précédent reste dans le site ---------- */
+  const ROUTES = { programme: 'apprendre', jouer: 'entrainer', pcimages: 'pourcentages' };
+  const ROUTES_INV = { apprendre: 'programme', entrainer: 'jouer', pourcentages: 'pcimages' };
+  const VUES_SIMPLES = ['accueil', 'programme', 'jouer', 'business', 'simulateurs', 'veille', 'ressources', 'pcimages', 'carnet', 'suggestions', 'sources', 'scenarios', 'eclair', 'revision'];
+  const outilValide = (id, espace) => ONGLETS.some(x => x[0] === id) && espaceOutil(id) === espace ? id : null;
+  function adresseDe() {
+    const v = etat.vue;
+    if (v === 'accueil') return '#/';
+    if (getLecon()) return '#/lecon/' + v;
+    if (v === 'business') return sousBiz === 'lecons' ? '#/business/lecons' : '#/business/' + etat.outil;
+    if (v === 'simulateurs') return '#/outils/' + etat.outil;
+    return '#/' + (ROUTES[v] || v);
+  }
+  function lireAdresse(h) {
+    const p = String(h || '').replace(/^#\/?/, '').split('/').filter(Boolean);
+    if (!p.length) return { vue: 'accueil' };
+    if (p[0] === 'lecon') return toutes.some(l => l.id === p[1]) ? { vue: p[1] } : null;
+    if (p[0] === 'business') return p[1] === 'lecons' ? { vue: 'business', sous: 'lecons' } : { vue: 'business', sous: 'outils', outil: outilValide(p[1], 'business') };
+    if (p[0] === 'outils') return { vue: 'simulateurs', outil: outilValide(p[1], 'outils') };
+    const vue = ROUTES_INV[p[0]] || p[0];
+    return VUES_SIMPLES.includes(vue) ? { vue } : null;
+  }
+  let adresseMode = 'ajoute';
+  function majAdresse() {
+    const h = adresseDe();
+    if (h === (location.hash || '#/')) return;
+    try { history[adresseMode === 'remplace' ? 'replaceState' : 'pushState'](null, '', h); } catch (_) { /* adresse non modifiable (aperçu) */ }
+  }
+  function ouvrirAdresse() {
+    const r = lireAdresse(location.hash);
+    if (!r) return false;
+    if (r.vue === 'business') { sousBiz = r.sous; if (r.outil) etat.outil = r.outil; }
+    if (r.vue === 'simulateurs' && r.outil) etat.outil = r.outil;
+    adresseMode = 'remplace';
+    try { ouvrir(r.vue); } finally { adresseMode = 'ajoute'; }
+    return true;
+  }
+  window.addEventListener('popstate', () => { if (!ouvrirAdresse()) { adresseMode = 'remplace'; try { ouvrir('accueil'); } finally { adresseMode = 'ajoute'; } } });
+  /* Bouton « Haut » : visible après un écran et demi. */
+  function majHaut() { const b = document.querySelector('.haut'); if (b) b.hidden = window.scrollY < window.innerHeight * 1.5; }
+  window.addEventListener('scroll', majHaut, { passive: true });
   function ouvrir(view, ancrer) {
     const l = toutes.find(x => x.id === view);
     etat.vue = view; etat.question = 0; drafts = {};
@@ -1445,6 +1519,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     if (a === 'energie') { etat.energie = b.dataset.energie; render('.energie-bloc [aria-pressed="true"]'); return; }
     if (a === 'qdj') { const lq = toutes.find(x => x.id === b.dataset.lecon); etat.vue = lq.id; etat.derniere = lq.id; etat.etape = 'exercice'; etat.question = Number(b.dataset.i); drafts = {}; render('.question h2'); window.scrollTo(0, 0); return; }
     if (a === 'outil') { etat.outil = b.dataset.outil; if (espaceOutil(etat.outil) === 'business') { sousBiz = 'outils'; ouvrir('business'); } else ouvrir('simulateurs'); return; }
+    if (a === 'haut') { window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); const h1 = document.querySelector('h1'); if (h1) h1.focus({ preventScroll: true }); return; }
     if (a === 'sous-biz') { sousBiz = b.dataset.sous === 'lecons' ? 'lecons' : 'outils'; render(`[data-sous="${sousBiz}"]`); return; }
     if (a === 'pcv-suiv') { pcv.i = Math.min(CARTES_PCV.length - 1, pcv.i + 1); render('.pcv-carte h2'); window.scrollTo(0, 0); return; }
     if (a === 'pcv-prec') { pcv.i = Math.max(0, pcv.i - 1); render('.pcv-carte h2'); window.scrollTo(0, 0); return; }
@@ -1462,6 +1537,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     if (a === 'suggestion-renvoyer') { const s = etat.suggestions.find(x => x.id === b.dataset.id); if (s) { s.envoye = true; sauver(); ouvrirMail(s); } return; }
     if (a === 'suggestion-supprimer') { etat.suggestions = etat.suggestions.filter(x => x.id !== b.dataset.id); render('h1'); return; }
     if (a === 'famille-outil') { etat.outil = b.dataset.outil; render(`.fam-outil[data-outil="${b.dataset.outil}"]`); return; }
+    if (a === 'kit-etape') { kitEtape = Math.max(1, Math.min(4, Number(b.dataset.n) || 1)); render('.kit-etapes .actif button'); const pn = document.getElementById('panneau-outil'); if (pn) window.scrollTo(0, Math.max(0, pn.getBoundingClientRect().top + window.scrollY - 70)); return; }
     if (a === 'kit-enregistrer') {
       const k = etat.kit; if (!k.client.trim()) { toast('Donne un nom au client (case « Nom du client »).'); const c = $('#kit-client'); if (c) c.focus(); return; }
       etat.kits.unshift({ id: nouvelId(), date: aujourdhui(), client: k.client.trim().slice(0, 120), contact: k.contact.slice(0, 80), typeClient: k.typeClient, demande: k.demande, statut: 'envoye', faites: 0 });
@@ -1670,7 +1746,8 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     return true;
   }
   const partage = traiterPartage();
+  if (!partage && location.hash && location.hash !== '#/') ouvrirAdresse();
   groupesDe(etat.vue).forEach(g => menuOuvert.add(g));
-  render();
+  adresseMode = 'remplace'; render(); adresseMode = 'ajoute';
   if (partage) toast('Idée ajoutée depuis le partage.');
 }());

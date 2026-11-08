@@ -115,3 +115,10 @@ Kit média Twitch et grille de tarifs, certificat imprimable, planning exporté 
 - **v8 (8/11/2026)** : `kit.js` (UMD `CMKit`, testé) génère le kit prospect (6 types de client × 6 demandes, ton auto, 3 offres, mentions TVA/acompte/délai, relances J+3/J+7/J+14) ; état `kits` (suivi des envois, rappels `relanceDue` sur l'accueil). Boîte à outils découpée en 4 familles (`FAMILLES`, `famille-outil`). Mochi : humeurs `salut`/`pense`, présente dans les cours (`mascotte-cours`) et réactive aux réponses. Leçons P7 et P8 (kit de prospection). Veille : liste `createurs_suivis` (noms cherchés par lots de 4 dans Google Actualités, catégorie découverte) ; option API Twitch (secrets `TWITCH_CLIENT_ID` / `TWITCH_CLIENT_SECRET` → chaînes FR en direct de 25 à 1 500 spectateurs). SW `cm-v12`. 50 leçons, 297 questions.
 
 - **v9 (8/11/2026, cm-v14)** : refonte de la navigation en 4 espaces distincts. Apprendre (`programme` : parcours apprendre + calculs), S'entraîner (`jouer` : quiz, scénarios, missions, défis de pro, épreuve finale), Business (`business` : outils + leçons business/clients, bascule `sousBiz`), Outils et ressources (`simulateurs` : veille, ressources, pourcentages en images, outils de travail). `PARCOURS_ESPACE` range chaque parcours dans un seul espace ; `FAMILLES` porte l'espace en 6e élément ; `panneauOutils(espace)`. Barre du bas : Accueil · Apprendre · S'entraîner · Business · Outils (la Veille est dans Outils). Cotisations : ajout d'une note (impôt sans versement libératoire, CFE, aucune charge déduite). Scripts e2e à jour (les vues se rejoignent par `[data-view]`).
+
+## v10 (cm-v15) — audit JT
+- Routes hash (`#/business/kit`, `#/lecon/t3`…) : le bouton Retour du navigateur reste dans le site.
+- « ← Retour » unique, « ↑ Haut », puces collantes Ressources/Sources, accueil réduit à l'essentiel, texte ≥ 14 px.
+- Kit prospect en 4 étapes (`kitEtape`, action `kit-etape`) ; `#resultat-kit` n'existe qu'à l'étape 4.
+- Échéance Urssaf : « Comment faire (3 étapes) ».
+- Reste : favoris « Mes 3 outils », suivi unique, glossaire, rappel 1 semaine, cartes image (plafonds, relances, T3).
