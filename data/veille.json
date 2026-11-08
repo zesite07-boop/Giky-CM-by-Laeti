@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-08T07:24:54.666Z",
+ "maj": "2026-11-08T07:26:24.753Z",
  "sources": [
   {
    "id": "gnews-twitch-fr",
@@ -159,14 +159,14 @@
    "id": "gnews-events-salons",
    "nom": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
    "statut": "ok",
-   "nb": 54,
+   "nb": 55,
    "message": ""
   },
   {
    "id": "gnews-events-esport",
-   "nom": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "nom": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
    "statut": "ok",
-   "nb": 79,
+   "nb": 19,
    "message": ""
   },
   {
@@ -199,15 +199,6 @@
   }
  ],
  "items": [
-  {
-   "titre": "IEM Beijing : la finale The MongolZ – MOUZ en direct - E.SPORT.FR",
-   "lien": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdTFOYUdPeU9pb3FIeVNHNkJMZWJjSWkzem5NaEoyM1U1OWc0cVVadHRLZTBLcTctTnBiSlZ6QmtYZVEtOXpGc3JFOGlwM1J6Rml3amhQNUhXX3VtVzdzWHBZNWhPREFiYTFGVkFzRkNHZEEtRVI3blN5eTRXcmxIcFNjaGVnM0haR3Q3UQ?oc=5",
-   "date": "2026-11-08T07:15:00.000Z",
-   "resume": "IEM Beijing : la finale The MongolZ – MOUZ en direct E.SPORT.FR",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "E.SPORT.FR"
-  },
   {
    "titre": "WoW Forever a-t-il relancé World of Warcraft ? Twitch et bêta face à l'âge d'or de 2010 - GeeksLands",
    "lien": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4wMDF3YW12QVdwQnNxZzc4Yl9rempBMFF0RFphNDl5Vi1mZTRPXzR0R0lLdU5tZnloNzBmbEZjSW9hcTdNVm90RXJPTlU0OEx5SDdHc3BVU2U4dGotd3FWa0p0UFhQRTNVWHAzRA?oc=5",
@@ -317,33 +308,6 @@
    "editeur": ""
   },
   {
-   "titre": "« Cette année a été vraiment difficile » : Reapered fait le bilan de la Karmine Corp - E.SPORT.FR",
-   "lien": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOSHI1bFlkZXNEeHZyeFBfUmNHc3hxeFBURHMxMm8zX2FVdXVENndXVWg3UWFKUUQ0cjhDYUV1LU40ckxXa2lCckVJN2p0M2M3b1lOeW1HdHVqQTlsaGhrenJaa1VTRmk1ZnlOV0dBOVRKckJzRnNnYlJFZGhHWFNzTEJuMGkzY0xZUXplcERQQUFMdU5YeWliR28yTXpSVTlmOU13U3h4MmdpbDVHeThFSC1uQ1E?oc=5",
-   "date": "2026-11-07T19:00:00.000Z",
-   "resume": "« Cette année a été vraiment difficile » : Reapered fait le bilan de la Karmine Corp E.SPORT.FR",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "E.SPORT.FR"
-  },
-  {
-   "titre": "Karmine Corp aux Worlds 2026 : du Play-In à T1, le bilan d'un premier parcours mondial - GeeksLands",
-   "lien": "https://news.google.com/rss/articles/CBMib0FVX3lxTE03Q25NWW1GWTNVSkJlUlNFZnRicVVHb0tCcFE3UGdxMXdGQzJRM3Q2TkNfSG9JdDd3YXd5U0J0OWVWN0NFdmd5MGV0QUJTUktmbjNNUkZfald5aThPVWVzbTdTdXlYLWhxNmN4cklySQ?oc=5",
-   "date": "2026-11-07T19:00:00.000Z",
-   "resume": "Karmine Corp aux Worlds 2026 : du Play-In à T1, le bilan d'un premier parcours mondial GeeksLands",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "GeeksLands"
-  },
-  {
-   "titre": "Mercato LoL LEC : très courtisé en LCK et LPL, kyeahoo négocierait une prolongation au prix fort avec la Karmine Corp - Team-aAa",
-   "lien": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOZTRqRV9ma2t1MU1hQmo0Sk9PQmxwUENrSVVXQkF0T0huNVE0NU5yVENHZzhGdFp5eEpRbW5wRUR5QXhJdGJuMWtnOFY0TVFhemlRODdqQmpWVml2dTVDSUxHZzNmX1NJX1puTFRVSmpsdFdFSk5zSEFtbC1hOVdSS2VrZUdEdHc2aVA3bXZvUTA5SWtXaktPelpGbkRnQXZoemt1Y2hIOTBHN0tPM09yb05pclFFWG9iSjVpakRMVkRwdFFUeWVUNEZxMC0xZ3o4ZEdjaENPaVc5YTQ5clZPaXlicm5ydnJJeHlyTVM3cUI?oc=5",
-   "date": "2026-11-07T18:30:48.000Z",
-   "resume": "Mercato LoL LEC : très courtisé en LCK et LPL, kyeahoo négocierait une prolongation au prix fort avec la Karmine Corp Team-aAa",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "Team-aAa"
-  },
-  {
    "titre": "Stranger Things revient sur Netflix : on décrypte le teaser de la nouvelle série",
    "lien": "https://www.journaldugeek.com/2026/11/07/le-vrai-spin-off-de-stranger-things-arrive-en-2028-et-il-a-un-titre/",
    "date": "2026-11-07T18:27:32.000Z",
@@ -396,15 +360,6 @@
    "source": "jeuxvideo.com",
    "categorie": "actu",
    "editeur": ""
-  },
-  {
-   "titre": "Sources: Looki re-signe avec Karmine Corp Blue en LFL 2027 - Howl.Link",
-   "lien": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE9oS0ljYjZDcDRFN05rRS14YjI2NnpvcnJxTmhUeXRrNGRyTnR4VF9kbkNPYVAzWmFkejlV?oc=5",
-   "date": "2026-11-07T17:34:00.000Z",
-   "resume": "Sources: Looki re-signe avec Karmine Corp Blue en LFL 2027 Howl.Link",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "Howl.Link"
   },
   {
    "titre": "Le jour où les astronautes d’Apollo 11 ont suivi un entraînement spécial pour ne pas dire de gros mots",
@@ -477,15 +432,6 @@
    "source": "Google Actualités · sorties jeux vidéo",
    "categorie": "alerte",
    "editeur": "JeuxVideo.com"
-  },
-  {
-   "titre": "Caliste après l'élimination de la Karmine Corp aux Worlds : « Je ferai tout pour revenir et gagner ce foutu trophée » - L'Équipe",
-   "lien": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNWmpBLW1zcFdRYnJKbHlUVzA4djEtbmVZUGVXR0pnd0JieXFPUmo1UlVyd3JlclREOVQ2TzZ4NDJOQW9TRDlidjJPM2lOYWE5SXhWXzQwdk9QY21ib25IZks3Z3kwNTdQckFIUzdyZlBKMUFKUjZIcmtvaXRLU3czRzV0LUttZzRzdW5RcWowamJneE1qQXBTclhVWWU4Zkh5OFNmQ0xQR3R3NGJ3aURoRm1nUEJELV9IVjVkdEZzOUtFZ3pFQm40VDBTd0hXNU51ajdlaWt4RlNSODRJdjFoVEtrSW5XR1c5RjZtcGRuZE1XZw?oc=5",
-   "date": "2026-11-07T15:54:53.000Z",
-   "resume": "Caliste après l'élimination de la Karmine Corp aux Worlds : « Je ferai tout pour revenir et gagner ce foutu trophée » L'Équipe",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "L'Équipe"
   },
   {
    "titre": "Quarts de coeur Zelda Ocarina of Time : Où trouver tous les fragments du remake Switch 2 ?",
@@ -591,7 +537,7 @@
    "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNWXF2U0dtYTlQTDQtN1I0RmZrTXJvNHo3bVdUeWh1T0FVakZuUUh1bFJJTC1Ld3dhajR1VHlXYUJTWFFSN3ZWTzd0RU9OU0FTTkF2Mi1aMDZSaFRKZV9fa0d4MUUtOGNPMWJibDM3blJqdWZRTTN3YjhKZVYySHhHUkdDc1h5aFk3SFU5blN6MlVVUWV5anZRWHgtdG43ZEtUQlFpYWlQWU13VS1mc2VPTU1aUUhsV0JldWVJcVZWZkk2V2tBZUVzT2tR?oc=5",
    "date": "2026-11-07T14:00:00.000Z",
    "resume": "Plus de 200 geeks en décousent à La Hune à Saint-Benoît lanouvellerepublique.fr",
-   "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
    "categorie": "evenements",
    "editeur": "lanouvellerepublique.fr"
   },
@@ -603,24 +549,6 @@
    "source": "jeuxvideo.com",
    "categorie": "actu",
    "editeur": ""
-  },
-  {
-   "titre": "Worlds 2026: Karmine Corp vs. T1 – Quarterfinal Player Ratings - Sheep Esports",
-   "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPbmZ0M3c4bUI5bU5IRXBtam42aTIzZnJEaWVLanRLblpuX2dibWk5MTl3VzI0NWo3RzRLVE1RWUE4bTZxaGJkNVVrbDJtdUlaYjhsaXB4RGZvZ184V3cxYkJZMGVaRWlQTzFPU280amg3SkxYalltRzUtcjhhR2lXS1BQN1p2UFVFamY2UnFLbzlnRUdLWG1qckxtZVB0X2xNVmVFYg?oc=5",
-   "date": "2026-11-07T13:30:00.000Z",
-   "resume": "Worlds 2026: Karmine Corp vs. T1 – Quarterfinal Player Ratings Sheep Esports",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "Sheep Esports"
-  },
-  {
-   "titre": "Worlds 2026 : l'élimination de la Karmine Corp par T1 dépasse les 2,7 millions de spectateurs - Team-aAa",
-   "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPYVV3YWE5Yjc5LUdRaFN6anBhbl94NU93NUE2ajUzX0ZhZjVub3dTMC03S3VDVmlTbnRTLURIZm9UVkNoNUl5OEoxa3phbDRPOXVMOHNfYk5aYm9xblM0T193NUkwSXRQbk9qempVbE1CM2M2c2NWUmVGQ1RnenZYZ2FKeHpIRGE3N0RBWk0zUTl3cTJRTU90elJEVlViYldqN2VjVUE4S3VmWXRMZzEwMWxKVTVEZGk1RXA4NURDN3MwNXNSY29RYU44dHFhOE1p?oc=5",
-   "date": "2026-11-07T13:23:35.000Z",
-   "resume": "Worlds 2026 : l'élimination de la Karmine Corp par T1 dépasse les 2,7 millions de spectateurs Team-aAa",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "Team-aAa"
   },
   {
    "titre": "Final Fantasy 10 a directement été inspiré par Star Wars et ses courses de pods",
@@ -713,15 +641,6 @@
    "editeur": ""
   },
   {
-   "titre": "Worlds 2026 : la Karmine Corp éliminée par T1, le rêve européen s’arrête en route - MCE TV",
-   "lien": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5GT1pJb0tWS09lcHpWTHVJNlFtdmdyMFpWbEE2QnQzVEVrQlo0RUc2R2NsdjJxaXZUYUtKdlV5LVI0SklVMmRpaHhyLUY1T2NGVGFkYnplYVFiQjVlR2VZQTJlUlNtblc2OXRJR2hLejRjS2ZUTWc?oc=5",
-   "date": "2026-11-07T12:03:04.000Z",
-   "resume": "Worlds 2026 : la Karmine Corp éliminée par T1, le rêve européen s’arrête en route MCE TV",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "MCE TV"
-  },
-  {
    "titre": "Ce jeu à l’humour noir assumé est déjà l’un de nos coups de cœur de l’année !",
    "lien": "https://www.journaldugeek.com/test/ce-jeu-a-lhumour-noir-assume-est-deja-lun-de-nos-coups-de-coeur-de-lannee/",
    "date": "2026-11-07T12:00:50.000Z",
@@ -729,15 +648,6 @@
    "source": "Journal du Geek",
    "categorie": "actu",
    "editeur": ""
-  },
-  {
-   "titre": "Faker prévient Bilibili Gaming : « C’est dommage pour eux de tomber sur T1 » - E.SPORT.FR",
-   "lien": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPcEdQUjFSV05tNE9KUkdRUjBOYmZJUlJtZnQ1TnoyVUpiR29NSFg2cEN1UC11clVvcERyVFRSQkliTGx3T1A5VzJSdWZpbnFGandQM1g0dXRGRjJlclhnVzFnNTV6TkFneWlkdEpFek95eTRBY1ZuVWV0dTZ4bUtKTUxHRUtnSDhPRTRqZFR2Q0ppQ004cU9GUWNNM09ZTXZKN3doWWIwckY?oc=5",
-   "date": "2026-11-07T12:00:00.000Z",
-   "resume": "Faker prévient Bilibili Gaming : « C’est dommage pour eux de tomber sur T1 » E.SPORT.FR",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "E.SPORT.FR"
   },
   {
    "titre": "À bord de sa station spatiale, la Chine frôle le zéro absolu et bat un record du monde",
@@ -765,15 +675,6 @@
    "source": "Google Actualités · sorties jeux vidéo",
    "categorie": "alerte",
    "editeur": "Le Parisien"
-  },
-  {
-   "titre": "La Karmine Corp fait honneur à la France aux Worlds de League of Legends - Fédération Française de la Lose",
-   "lien": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPbFZtc2xGNFoxalBUUzdERmhYN1hWX1lYSjJYZmdPOG82UHk5WWtfYW1rd1RiUVVpWjJCaWtNTUd1NzRQSjNiWjgybFNEbXhmdUZuejdiRkVxa1VFTF9rUTFZRWM2ZmY1NG9yUHVFWXRHbmFNcmFZdWhLNl8xRWRhZnpGaldZMlJrWTBPd0VLdDlVa0QzaW9r?oc=5",
-   "date": "2026-11-07T11:41:06.000Z",
-   "resume": "La Karmine Corp fait honneur à la France aux Worlds de League of Legends Fédération Française de la Lose",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "Fédération Française de la Lose"
   },
   {
    "titre": "Forteresse Gerudo Zelda Ocarina of Time : Comment atteindre le Temple de l'Esprit ?",
@@ -819,15 +720,6 @@
    "source": "Google Actualités · créateurs de contenu Twitch",
    "categorie": "createurs",
    "editeur": "NextPlz"
-  },
-  {
-   "titre": "Worlds 2026 : les réactions des membres de la Karmine Corp après l'élimination face à T1 - Team-aAa",
-   "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQSjZMNy1FTlNoWWhiRTh5bUV4N0JnZEJSYTdGRjVUVTQtVnc2enU1eWlwTkpOSEtTb08xU2YyS2RBeXcwblp4ZTI5SVpwemlLQ2FyWER5STlsNmpkWnh4U3Z6ZXBCb1BOVjRfRU5nR2VkcF83c1FPLTJnQlFtdzBkREk3TFVjU0x6RS1RZnZmSUhQaVgyWFUxQVZxeHlMNmdjaHJOQmhjdWY5T3prZlZ1U3NzVHNfN05uX0FObzBxak5TbVZTTkRLX2Z3?oc=5",
-   "date": "2026-11-07T10:56:14.000Z",
-   "resume": "Worlds 2026 : les réactions des membres de la Karmine Corp après l'élimination face à T1 Team-aAa",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "Team-aAa"
   },
   {
    "titre": "Ubisoft veut \"traiter les joueurs comme des rois\" : ne pas jouer à GTA 6 à sa sortie sera récompensé dans Rainbow Six Siege",
@@ -956,15 +848,6 @@
    "editeur": "La Voix du Nord"
   },
   {
-   "titre": "Du Play-In à Los Angeles aux quarts : la Karmine Corp, dernier Européen des Worlds 2026, stoppée par T1 (3-1) - Le Tribunal du Net",
-   "lien": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOcERCdEk5NkN3bW5yVzlYOXdCYkc5clBsdlRrWFptYUYxWTVSY1FHY0luTmNsbDBaX2JzdW04alg4Qy05RzBYLWFNTzdXRDZuZzJ6c0lMbThfb3JzOUh2bk1Xdi1zNjAtNnhBVzVReVRVcXFPZ3RJdEFmX2tzRHlzV3Y3UkM4bFR0cDc0emZMYw?oc=5",
-   "date": "2026-11-07T09:19:00.000Z",
-   "resume": "Du Play-In à Los Angeles aux quarts : la Karmine Corp, dernier Européen des Worlds 2026, stoppée par T1 (3-1) Le Tribunal du Net",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "Le Tribunal du Net"
-  },
-  {
    "titre": "El Niño record : 2027 a 96 % de chances de battre tous les records de chaleur",
    "lien": "https://www.numerama.com/sciences/2369951-el-nino-record-2027-a-96-de-chances-de-battre-tous-les-records-de-chaleur.html",
    "date": "2026-11-07T09:05:00.000Z",
@@ -1037,15 +920,6 @@
    "editeur": ""
   },
   {
-   "titre": "Worlds League of Legends - T1 douche les espoirs européens en éliminant la Karmine Corp des Worlds - La Libre.be",
-   "lien": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxQcEhJbGtoRVRKcEZxUWRtQndyWEpHS2VlNjd4bjh3VG1CQnJ4c05LM05FQjdxbktjM09nWTgxcG9kZHVabVBveWVFMmtIeDZqdm0xSlJWRVNBVnFyX2J5V0ZoS3RSOTRPa1NqWVpLS2FSQi00MncwLUdVNzFOVk1hV3Vjald1MFowYjZnUVBQV1RRbFRITkJBV01FN3NCSl9XV043NVQ0WEY2T25LSEJFRGtmdDdzN1VCMUt4X1U0aGpMNkhocFgtS0hWQkRCM2ItTHdYS2NnYml3X3EyM2RjZmtYZVFMdDE3VTM4OUlmY2pRNjVUVUZCZ3JjdlhXSWhUY0xfdkxtMzc?oc=5",
-   "date": "2026-11-07T08:04:00.000Z",
-   "resume": "Worlds League of Legends - T1 douche les espoirs européens en éliminant la Karmine Corp des Worlds La Libre.be",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "La Libre.be"
-  },
-  {
    "titre": "Mémoire cash - GoldenEye 007, quand le FPS a changé de dimension sur console",
    "lien": "https://www.gamekult.com/actualite/goldeneye-007-quand-le-fps-a-change-de-dimension-sur-console-101-3050866583.html",
    "date": "2026-11-07T08:00:00.000Z",
@@ -1073,15 +947,6 @@
    "editeur": "Le Figaro"
   },
   {
-   "titre": "Worlds 2026 : la Karmine Corp tombe les armes à la main face à T1 - E.SPORT.FR",
-   "lien": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNcmZXT3JFOWRYODV0X21halM4ZV9yM29ibTA5dlZmQUZLaW85elFLQlFrVm0wSTNIUk5aZ0RsZi1FMzdxYVVzWnZlVnpQRTJBUU5CU2NjRmdVSGtxb3pFbG5LdFkxaW5pRUxqN29aRENackZYU0NZbEtSWWs5V0xmcVpKbXg1UnE1T0F1enBvVk5DcmhKQ2lEMFV4WkY2bWd3TGtaZlFIUQ?oc=5",
-   "date": "2026-11-07T07:00:00.000Z",
-   "resume": "Worlds 2026 : la Karmine Corp tombe les armes à la main face à T1 E.SPORT.FR",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "E.SPORT.FR"
-  },
-  {
    "titre": "Zelda Ocarina of Time sur Switch 2 : Nintendo a gardé les temps de chargement pour faire comme à l'époque, mais ont-il vraiment eu le choix - JeuxVideo.com",
    "lien": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQSTJoS05HOFN3WjRjeW5kb0pfYm9POUtfUmNoc0MzbWZjZzM5RVpXcjBUelZnWEQ4akQtTmJ3d3lwMk96ems4YWU2TDEzYXNxYzNRLWZzMnNxSmI0N015Rk05aU1lekFfRFF3T3g2YXJzbVRGdEc4QlUwdzRQbHkta3VES2djOGZJVV85ZVhVTHE2N1RVTEtTd3VlYnhBNE44Wm5kZzF0N2hXSmxacWJiemlrakRyam5oYkdvXzV2akRYSTkwLW5FSkItVzZ2MDBoOUVObVZNWUh4NzU2bWpUQ1c0TUNsZ2x2X1h1R1ZJVWtCWDc2a3o5MTFYcXR6VExxSW5XWFRPRjkya2c?oc=5",
    "date": "2026-11-07T06:40:07.000Z",
@@ -1098,15 +963,6 @@
    "source": "jeuxvideo.com",
    "categorie": "actu",
    "editeur": ""
-  },
-  {
-   "titre": "Aux Mondiaux de League of Legends, la Karmine Corp chute avec les honneurs face à T1 - L'Équipe",
-   "lien": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNTnBqV0x2OUh5NWprbVhOenRHSFVYaDlBekItV0tPV1F5eG9DSVBCVmZGTVpfZldjVFJXQ2lHSC0tRkk4MWU2UEg5UTk0U0o3Rzd5bHlzSXg4emZkR2d4YURDZTRFbmdjZ3owSDNqMXZ0eDdTZzM1YWQ5eG1mUlQtZDFQdFJiOV9FSkNLZUU3aFBUM3BINW1YakJYMmVRX0dQam9uNXNNMkRpbGpLcUZVeXlEZ0pYejVBRlJ0VHBIM2ZzTUJrX0xKbw?oc=5",
-   "date": "2026-11-07T06:36:55.000Z",
-   "resume": "Aux Mondiaux de League of Legends, la Karmine Corp chute avec les honneurs face à T1 L'Équipe",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "L'Équipe"
   },
   {
    "titre": "Gaming : les expériences à tester d'urgence à Paris et en Île-de-France pour les fans de jeux-vidéo - Sortir à Paris",
@@ -1127,15 +983,6 @@
    "editeur": "Actu.fr"
   },
   {
-   "titre": "IEM Beijing : The MongolZ – NAVI en direct - E.SPORT.FR",
-   "lien": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBLWnVRQ21xQ3NxVkxsRC12QU80cTExVEVOaE1DN2RkUkxUc19qSENISFNucmMtQ19Bb3MxOVJJVVNtVm82cmNpV0k4UE9OeU1zVUxnQUNXWVJCQmg5RGdUR2ZNajhGU2pMbUNHcXd1bURsT0tITlluMUlNWmdpNEU?oc=5",
-   "date": "2026-11-07T06:15:00.000Z",
-   "resume": "IEM Beijing : The MongolZ – NAVI en direct E.SPORT.FR",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "E.SPORT.FR"
-  },
-  {
    "titre": "Vers le Rafale du futur, une facture à l’élu qui veut taxer les gigaoctets et la preuve secrète d’OpenAI – le recap’ tech de la semaine",
    "lien": "https://www.numerama.com/tech/2369173-vers-le-rafale-du-futur-une-facture-a-lelu-qui-veut-taxer-les-gigaoctets-et-la-preuve-secrete-dopenai-le-recap-tech-de-la-semaine.html",
    "date": "2026-11-07T06:05:00.000Z",
@@ -1143,15 +990,6 @@
    "source": "Numerama",
    "categorie": "actu",
    "editeur": ""
-  },
-  {
-   "titre": "Worlds 2026 : fin de parcours pour la Karmine Corp, éliminée par T1 - Team-aAa",
-   "lien": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNNGN3SEZRejhpa2kzV2EzLTVOT2pCM0RELUtDRHI1UjJ1QVZFOEZrOU02WDF1N252SFZUS3hRVzUtdHpVTm83U3lkZ09saGlsMzlqSGRTR0ZHanI2cGlMekN2ajJQdTJoTy0wSWlIQ25qclBUbG0wYkd3NEs4d2hsTjRLaWVOc3JycDM3WnliejdGSUoybHJmZTJYQVpzQXMxTVl1Ymx6MGtscm5YOEE?oc=5",
-   "date": "2026-11-07T06:02:00.000Z",
-   "resume": "Worlds 2026 : fin de parcours pour la Karmine Corp, éliminée par T1 Team-aAa",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "Team-aAa"
   },
   {
    "titre": "\"Une dramaturgie naturelle\" : de Clem Qui Court à Squeezie, pourquoi les créateurs de contenu envahissent l'événementiel sportif - RTL",
@@ -1215,15 +1053,6 @@
    "source": "Reddit · r/Twitch",
    "categorie": "communaute",
    "editeur": ""
-  },
-  {
-   "titre": "Worlds 2026 : la Karmine Corp éliminée 3-1 par T1 en quart de finale - GeeksLands",
-   "lien": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9sM3pjY3pycTkwekhBdHhnNHZ1YzVRTTRXZTdONjlURjFXNWFuemxrWkZNOW4zOFRORTV4WjJhMmtKMDdNdlNkdXJwUmZ2OWI0N3JDcU1ZNk0zSWxGamlmZ29QVFJ6bDItRVEyS0pEeGltMXM?oc=5",
-   "date": "2026-11-07T01:53:31.000Z",
-   "resume": "Worlds 2026 : la Karmine Corp éliminée 3-1 par T1 en quart de finale GeeksLands",
-   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
-   "categorie": "evenements",
-   "editeur": "GeeksLands"
   },
   {
    "titre": "Have you heard? Ethan and Hila’s divorce, Harvard’s creator summit, and Brandon Herrera’s defeat.",
@@ -1377,6 +1206,15 @@
    "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
    "categorie": "createurs",
    "editeur": "L'Équipe"
+  },
+  {
+   "titre": "Esports World Cup 2027 : les échecs de retour, Magnus Carlsen vise un triplé historique - E.SPORT.FR",
+   "lien": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNZXc1UXNNRFp6dmk4bWgzNEJabjhyREdNTG5oZ0pvOVM1ZE12dUNqcFQyUFE1WEYxWGNWaW50MlZhM1d6RU5RcEg2T292T0w0bVNpTmg0eE1RU1lKMDZ6UkhtVVFuQzlUREkwTjVBYnNIdzhINTFyX1FsUTMzb2JpcE4ycFNfVUV1YUpPSFhKN3NVZS1nT204Nl9xV3YybEUxbEdRcnM2Y1JYdUp6RU1Oa1U1dnJvWWFKTjREag?oc=5",
+   "date": "2026-11-06T17:00:00.000Z",
+   "resume": "Esports World Cup 2027 : les échecs de retour, Magnus Carlsen vise un triplé historique E.SPORT.FR",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "E.SPORT.FR"
   },
   {
    "titre": "« Être une femme, ça aide » : l’astronaute Sophie Adenot raconte comment son corps a vécu l’espace",
@@ -1982,6 +1820,24 @@
    "editeur": ""
   },
   {
+   "titre": "gamescom 2026 - NCsoft annonce le « jeu de tir de survie » Like or Die - JeuxOnLine",
+   "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQLTVfTzVYZ21VTDRVX05DeE44THlIQlh1NW1YelRGNGtfYmptZkxHX3hSOGQ5UkNjLXFNNFVVU1pUcWt4MFNLcTNZMjZzVG5OVWxxVV8tOEhCYnJnbGJCTFFFZ0JfQV9HNW1hcDZxU2luZHdsZ3ZkSFRWQ1QySG1IOFk2eWI4QmhEcVRNRExTQWxiSjdZSWZTcmN4Ymh1dzBFQlZfRDF4NDB0U1VyLUM4VXZlWjItbDhNRElrR3hwOGdObkRsekhKRVg1VWo0cURyb3FSUWpEUWIzYTg?oc=5",
+   "date": "2026-11-05T13:44:12.000Z",
+   "resume": "gamescom 2026 - NCsoft annonce le « jeu de tir de survie » Like or Die JeuxOnLine",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "JeuxOnLine"
+  },
+  {
+   "titre": "gamescom 2026 - Le RPG d'action Exodus fixe sa date de sortie au 7 avril 2027 - JeuxOnLine",
+   "lien": "https://news.google.com/rss/articles/CBMisgJBVV95cUxQTkNLdlQzNy1VRWliaXNjc3dLX1JvaWF3eW5hbzVCSHZWVE9MNTc5OTlhZnRaU3ZLamRJaWYxSWpfSDNBN3VYdENKTzV2UzQxY01UNHp0MzFIdjJoRGMzOXVZMU4yLTdIajR0QmNoU09FbzgxYnZqdkVtY1NzWXY0NWFTYnFxcnF4Qmo2NlhzTUJUN3VRVFFPUlFEQ3IzUkk4VmRoaW5Gb1BILW4xUnQ1LTJFY0xwaWxySUNYbDJaQ05YU3c0amg2UWtqdVQweWVtZ19ScFBGRXl5ZXU4Q3RmQ2twbS1LVi0wMUd3Y0dpc1lNWW1vY3lROHNNZFRJcF9OMVFwVEw1VldTTUw1T0xIbmgzeUVkdnhhUjdUekVjNTl1Y0g4UmpXbml3dFF1emZVYmc?oc=5",
+   "date": "2026-11-05T13:41:35.000Z",
+   "resume": "gamescom 2026 - Le RPG d'action Exodus fixe sa date de sortie au 7 avril 2027 JeuxOnLine",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "JeuxOnLine"
+  },
+  {
    "titre": "Glitch, or horrible incompetent new update?",
    "lien": "https://www.reddit.com/r/Twitch/comments/1xohxck/glitch_or_horrible_incompetent_new_update/",
    "date": "2026-11-05T12:55:01.000Z",
@@ -2117,6 +1973,15 @@
    "editeur": "M6+"
   },
   {
+   "titre": "Honor of Kings: World s'annonce à la gamescom 2026 - JeuxOnLine",
+   "lien": "https://news.google.com/rss/articles/CBMilwJBVV95cUxOdTRsS1B6ajZpREhkYm04UEVyZ2FORWdPQTBHZVlXOE9rWFd4WXdHQnRISjF6SHlQX080NWpMMzRNWXJrVXR4WXFHLXV3RVRDMFc0TS1CRWVTQ0U1endDc2FiUGVrYzNqdVdyOXdYTjhTbmw5OWIwZHpOVjVBWXBsMERmRndDQWE3NHh3VmZuSER5YzhPaTBjWXM4MXBhQnNwRUllOTdrSXVBNGEzTDlWenk1dTRGYjBMQU9oMHpVb2N5TVBjdTJMaVhVc1ZIQkhtVDltREtaNGtUTloweG5zNVVBdjkxV3VkMnhsa0dmaS1XRnZWMGZqcFk2Zy0td0tETzhlY29VeS1wZk9GSV9RTVVVV0NfR00?oc=5",
+   "date": "2026-11-05T06:54:10.000Z",
+   "resume": "Honor of Kings: World s'annonce à la gamescom 2026 JeuxOnLine",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "JeuxOnLine"
+  },
+  {
    "titre": "7 chaînes YouTube à suivre pour se former à l’IA",
    "lien": "https://www.blogdumoderateur.com/7-chaines-youtube-former-ia/",
    "date": "2026-11-05T06:00:26.000Z",
@@ -2193,7 +2058,7 @@
    "lien": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxPYUgwM0ZpYjhYZU5QNzAxa0dZaWhBcElueVFXZU5YVHM2OEdMT3FXQXZEZUNEbzRGNXVWTENKU3o0elRWdzBqUF9jcURDdy1QTnhuUUZadDRNQ3ZTLTFicWg4MHZKWndDMmUtbFY3a213bmh4LXcyczR6dHM4SVVuMGViOFVBam55YnFvUVJqTjhqbnFnYWJ2REo3cWRQaldNZm5VQ2d4NkZfS21XcnREcU92TWVreVN2UWhabUllOXE4UzBlRHpwOE1rT0dabEpnUGdVeUFLaXUxQlltM1NwclUybHVpUGdacVZVVmtXMzQ0SUEzVWFrM3B3dw?oc=5",
    "date": "2026-11-04T14:30:00.000Z",
    "resume": "La passion du jeu vidéo va réunir 260 geeks ce week-end à la Gamers Assembly de Saint-Benoît lanouvellerepublique.fr",
-   "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
    "categorie": "evenements",
    "editeur": "lanouvellerepublique.fr"
   },
@@ -2342,6 +2207,15 @@
    "editeur": "Le Progrès"
   },
   {
+   "titre": "Fatal Fury de retour à l’Esports World Cup 2027 - E.SPORT.FR",
+   "lien": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNM2Q1RFFuWXUyZ0FRS3JmdzZVd3piMVhEWGZKNEx0Vmd2b1ROMndPWmJPc2QzRU1QT1A2YmFVN3V4em9kTDlXQ0lROTFndE5IZnEwR3VIcmVhZ3d4bkVmbFEtaGZHRVMxVFZ3d00xNlZiUllSY0p0dmVKZ2xEY25YSkpNN1ZQU0NwTFE?oc=5",
+   "date": "2026-11-03T17:00:00.000Z",
+   "resume": "Fatal Fury de retour à l’Esports World Cup 2027 E.SPORT.FR",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "E.SPORT.FR"
+  },
+  {
    "titre": "Inoxtag s'offre son premier rôle au cinéma dans un thriller avec Juliette Binoche - BFM",
    "lien": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNRlRXVThFYk9BbzJ6cWpXcldHMkRxMDR6LWI3VTc1SUNxNk9lNkQ4WE8zNF9fNF9pQU5BUU5nTXpZZV9ESkRxZWU2aVVmWk9IZDNfNUgtODVmUEdyZkY2ZUd3LVRzVF9PNGFRcXBsTlBKU2V2dEd6YU5oQ2FoVWFZTkM0RTdXZVZrVXRnTjhxYk9FNVprdVBCMWt3OWI2MFg4UHE1VEE3MmZabjZYZzI3bnVQZ1gwYlNkU2NhWGVvMmRQbXJyS19fWmNVY2RsbmpvZzRPQ2U5VWJ4TzY1QmNB?oc=5",
    "date": "2026-11-03T16:25:34.000Z",
@@ -2450,15 +2324,6 @@
    "editeur": "Dexerto.fr"
   },
   {
-   "titre": "Tyler1 veut plafonner ses dons sur Twitch pour éviter de “surjouer” - Dexerto.fr",
-   "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPam9yY1A0Zlphd3o3dlNLekNhWHpCNWZxTG5hYWF1QWFGZDNJV0FNZWFhdVV5VjVhQUhnYmJzNllIVTVNZHpUcFZIM1A3Q28wUW9sekt0ZDdNUFRBR01wNkFvRmtWTHhjYUhDUENnT3R4UEJKNU1YMlhqdExZZ1pNYVZNX2ZqamxOMDVCT0dGa0M4ajFBek9YdG1SajZZOXFZZ2xVX3hnSklzN1RRLUktdDF3?oc=5",
-   "date": "2026-11-03T08:00:00.000Z",
-   "resume": "Tyler1 veut plafonner ses dons sur Twitch pour éviter de “surjouer” Dexerto.fr",
-   "source": "Google Actualités · monétisation et revenus des streamers",
-   "categorie": "createurs",
-   "editeur": "Dexerto.fr"
-  },
-  {
    "titre": "Une streameuse en larmes après avoir été à nouveau bannie “par erreur” - Dexerto.fr",
    "lien": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQVpjR1Qzay1SR0s0cVh1XzlLaE1XVjdhUWdoZUVqaS1HVUdwVE56b0RHVWthSEM1RHVXblNYT1E5QWdPZG84Mnlfb0hpdDBhQ3ZwQ0VYMkdKemtBWHlsaUNBMDdhT3d1UFBGdmd0X3RfaV8zYnBScXdEOEZpU1BWZS1NMDB4UHF3WDNUOVVEVkcyZw?oc=5",
    "date": "2026-11-03T08:00:00.000Z",
@@ -2531,19 +2396,19 @@
    "editeur": "Dexerto.fr"
   },
   {
-   "titre": "Z Event 2020 : Tous les donations goals des streamers - Dexerto.fr",
-   "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOR1RXdFRYZDJrWnpJUDc2dmpkSGdaQTV4cHJkcWVyZks2RzZWUldna0xFQmw4c2poMWVSX0lMVERlM0tqX2tGMmthQXY5ZjhLdUpUYXN5RHRMaGF3ZGZra1YwTUQxd3JFa0c1Zm5wRDQ4cjNBSWNPZkw1UlBwOEtHSXlkR3M5bEk0eFkwSWlYUjFFSl9uMHRCOWFLZy01R2M?oc=5",
+   "titre": "Pokimane explique pourquoi elle avait besoin d’un garde du corps à la TwitchCon - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNblFrSmlDajduZjdCMFV5UlJfZ3FMREgtdVBTaDFFVDRXVjB3WmVEMTJ0VXZTMlI1ZXJuMlN1ZVVLbURmRTNKV1V3Ny1GZ2lLOUo3cFg3bHpyNDc2bndNajNSQ1lBdWRGd0VzdXdrRkxvRzM1TzNZSGZnUlY2WHh0c1p1UnJOcjBmNV9TVFhkeDgyRGEyOEpkekNBTFUwMGxqbzlwRFNzeHNpR1hx?oc=5",
    "date": "2026-11-03T08:00:00.000Z",
-   "resume": "Z Event 2020 : Tous les donations goals des streamers Dexerto.fr",
+   "resume": "Pokimane explique pourquoi elle avait besoin d’un garde du corps à la TwitchCon Dexerto.fr",
    "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
    "categorie": "evenements",
    "editeur": "Dexerto.fr"
   },
   {
-   "titre": "Pokimane explique pourquoi elle avait besoin d’un garde du corps à la TwitchCon - Dexerto.fr",
-   "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNblFrSmlDajduZjdCMFV5UlJfZ3FMREgtdVBTaDFFVDRXVjB3WmVEMTJ0VXZTMlI1ZXJuMlN1ZVVLbURmRTNKV1V3Ny1GZ2lLOUo3cFg3bHpyNDc2bndNajNSQ1lBdWRGd0VzdXdrRkxvRzM1TzNZSGZnUlY2WHh0c1p1UnJOcjBmNV9TVFhkeDgyRGEyOEpkekNBTFUwMGxqbzlwRFNzeHNpR1hx?oc=5",
+   "titre": "ZeratoR annonce l’arrivée de son tournoi FFA international sur Age of Empire - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPWlcwNXpCcVhfUkJJMUpvY3ZUY3VfektEOThad20tampiZFJ0ZUo1U3BLLXBnSlZmNFZVM1AzcFNXenBPZUFRY1piUjBPcFdMa1FPWHcxZk5QR2RFMTFMR0R3bDhVcEdON24ybTNINlB6czVBdlZtWmI5VnJzZWxlckxFZzI3OTdneW10WUNSa3Z2N1dBN3VuUmpiNlFFdTRXZ1hETU9NeHRTUk1ma0pEX2N6cEpJY3RSTXd1eW93VQ?oc=5",
    "date": "2026-11-03T08:00:00.000Z",
-   "resume": "Pokimane explique pourquoi elle avait besoin d’un garde du corps à la TwitchCon Dexerto.fr",
+   "resume": "ZeratoR annonce l’arrivée de son tournoi FFA international sur Age of Empire Dexerto.fr",
    "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
    "categorie": "evenements",
    "editeur": "Dexerto.fr"
@@ -2801,6 +2666,15 @@
    "editeur": "Dexerto"
   },
   {
+   "titre": "Xsolla analyse le marché de l'Asie du Sud-Est à gamescom asia Bangkok - Foro3D",
+   "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPM1dfVXEtTjFRRmswVHVvT1NLVHZ6eG1kNkZUbURLN2g3UmhTeEdLbU1wbHNsalIzVkd4Zkt3VlNCWEVOY2JabzdjRFN4UTN3SzZxLWl2MURfS0ZITm8wSWpKdkl5Q1NnTkdndThEVmloT2lnZWNMY1czM2dfU0Rkbkxld3FHMndLc3NvRjlDelhuNGNxeURFNWh0WHl1Q01seU5Ic0pwQUZvaWJKQzFr?oc=5",
+   "date": "2026-10-31T17:58:36.000Z",
+   "resume": "Xsolla analyse le marché de l'Asie du Sud-Est à gamescom asia Bangkok Foro3D",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "Foro3D"
+  },
+  {
    "titre": "Squeezie répond à une internaute qui l’insulte de « gauchi*sse » (vidéo) - Le Tribunal du Net",
    "lien": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPdm5xN1B4cjJLUjUySHNLcF9jdmRfN1hXd1I5bHNRZnZ5a3huMFVTLUxnbk9vdUJKa0NNWEJLdzhCa3ZjQmt6N3dfRUNsM1ZveXJuR1FZR2t2YXpUQWY2NjQzT3JwT0V6MHpTcHVxWnRjWGJlNGU4c3pvX0ZPOW5pNkEySWE5ZV9oQ3EyNFpNZzF3QQ?oc=5",
    "date": "2026-10-31T15:51:00.000Z",
@@ -2963,6 +2837,15 @@
    "editeur": "Dexerto"
   },
   {
+   "titre": "Why has Hasan been banned by Twitch? Streamer responds to controversial ban [UPDATED] - Dexerto",
+   "lien": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdnFJRHpVMUI4c1ZSNVI4Ql9zendpUXFUMlp4bU9Wb0dTenNaWXFSd3FOTzZvYjlzQkVxaEtzX2VwUkdSQXZpNmlFVFc5ZGZwZ3d5VmpkUTk4ekV5QVFEeTBjNHJFbEVCWDVGXzhSTVlwOE9HdkJ4OTdiSTRldnJidDZXQTNEYXZON190b2pqMWhDaEk5T1phRmZ5Q1daOHV1RGhyWVJiVWNVa3p2WnFLdTA0WXQ2WlFaVFlEMA?oc=5",
+   "date": "2026-10-29T18:48:10.000Z",
+   "resume": "Why has Hasan been banned by Twitch? Streamer responds to controversial ban [UPDATED] Dexerto",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "Dexerto"
+  },
+  {
    "titre": "Télécharger Kick: Live Streaming pour Web, iOS, Android - Telecharger.com - 01net.com",
    "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNajQ2Y2hJZk5GRVRjRlhzTjJhQlVhdU9QME1QdWQ0RTNYal94SWpLYXdIVjkyQnFJd3FUQnpHV1BZMHZJUW1jeFA1Z3VHMEswQkNKTlBrZGdkZUxycTIzRzZWSk5BemduMXhCMDk0emMwWTAtb0JCOGdLMWttS2ZOT2FSNjRZYWZ1QkRsakhRZTFlcW1qelo4U093?oc=5",
    "date": "2026-10-29T07:00:00.000Z",
@@ -2970,6 +2853,15 @@
    "source": "Google Actualités · Twitch, YouTube et Kick",
    "categorie": "createurs",
    "editeur": "01net.com"
+  },
+  {
+   "titre": "Tyler1 veut plafonner ses dons sur Twitch pour éviter de “surjouer” - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPam9yY1A0Zlphd3o3dlNLekNhWHpCNWZxTG5hYWF1QWFGZDNJV0FNZWFhdVV5VjVhQUhnYmJzNllIVTVNZHpUcFZIM1A3Q28wUW9sekt0ZDdNUFRBR01wNkFvRmtWTHhjYUhDUENnT3R4UEJKNU1YMlhqdExZZ1pNYVZNX2ZqamxOMDVCT0dGa0M4ajFBek9YdG1SajZZOXFZZ2xVX3hnSklzN1RRLUktdDF3?oc=5",
+   "date": "2026-10-28T17:30:28.000Z",
+   "resume": "Tyler1 veut plafonner ses dons sur Twitch pour éviter de “surjouer” Dexerto.fr",
+   "source": "Google Actualités · monétisation et revenus des streamers",
+   "categorie": "createurs",
+   "editeur": "Dexerto.fr"
   },
   {
    "titre": "L’invité mystère de Zack en Roue Libre était… Jiraya - Dexerto.fr",
@@ -3008,19 +2900,19 @@
    "editeur": "Dexerto.fr"
   },
   {
-   "titre": "Z Event 2019 : Découvrez en vidéo le retour en vélo de Kameto - Dexerto.fr",
-   "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxPWUtXUXAxNFptVmpzZEdzS2RmNEJ0YXdOUWpWZm1VSHRLSGRDaUlCeU4wUmdvRnVLVzFwQUFXTlAwVlNDSExIcXJ0aU9HVzZ2aEVKOV9IRVB0OU9nRmZHVGVmcGp1eDl6U3lpbGxrNkZFc2Z4Tk5KX010anVaWWRvZGlMYWp5WW41Q3pabVg1YUVnbWhpNGtSRW5sRi11dw?oc=5",
+   "titre": "Z Event 2019 : plan de table des streameurs et leurs meilleurs donations goals - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNLVYzeEZTaWlySFpwcUdJc2Vrb0JPYk5EM2dSLVpCLXRtaU9sRXpQZlVnZWJPV1h6TzJ5ZG9xRV9sd1pCOVNEQk1HZkhaTWVDT1RiZ2hNYlBJQkpiSUtHTTIwUGZjOUZyaUZpUVBVc3VUc2FhaENNWmlwQUFxMUM0T1ZuRElyZEhN?oc=5",
    "date": "2026-10-28T17:30:28.000Z",
-   "resume": "Z Event 2019 : Découvrez en vidéo le retour en vélo de Kameto Dexerto.fr",
+   "resume": "Z Event 2019 : plan de table des streameurs et leurs meilleurs donations goals Dexerto.fr",
    "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
    "categorie": "evenements",
    "editeur": "Dexerto.fr"
   },
   {
-   "titre": "Z Event 2019 : plan de table des streameurs et leurs meilleurs donations goals - Dexerto.fr",
-   "lien": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNLVYzeEZTaWlySFpwcUdJc2Vrb0JPYk5EM2dSLVpCLXRtaU9sRXpQZlVnZWJPV1h6TzJ5ZG9xRV9sd1pCOVNEQk1HZkhaTWVDT1RiZ2hNYlBJQkpiSUtHTTIwUGZjOUZyaUZpUVBVc3VUc2FhaENNWmlwQUFxMUM0T1ZuRElyZEhN?oc=5",
+   "titre": "Z Event 2019 : Découvrez en vidéo le retour en vélo de Kameto - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxPWUtXUXAxNFptVmpzZEdzS2RmNEJ0YXdOUWpWZm1VSHRLSGRDaUlCeU4wUmdvRnVLVzFwQUFXTlAwVlNDSExIcXJ0aU9HVzZ2aEVKOV9IRVB0OU9nRmZHVGVmcGp1eDl6U3lpbGxrNkZFc2Z4Tk5KX010anVaWWRvZGlMYWp5WW41Q3pabVg1YUVnbWhpNGtSRW5sRi11dw?oc=5",
    "date": "2026-10-28T17:30:28.000Z",
-   "resume": "Z Event 2019 : plan de table des streameurs et leurs meilleurs donations goals Dexerto.fr",
+   "resume": "Z Event 2019 : Découvrez en vidéo le retour en vélo de Kameto Dexerto.fr",
    "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
    "categorie": "evenements",
    "editeur": "Dexerto.fr"
@@ -3098,6 +2990,15 @@
    "editeur": ""
   },
   {
+   "titre": "VALORANT sera de retour à l’Esports World Cup en 2027 - E.SPORT.FR",
+   "lien": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQmExbk51UXZMNWIxa3NLUkVLVXZ4M1ZBWl91M3FfSEZqNDFTREhLZFBrMGN1dExNYVZKNkt2NkVpOFA1OEZyMXNsOVNlSG1VUDlBQWE1ZGp5WUJQam5ZNzRBSmo3S2tLS3c2aG40RDh5WHNiUEpZX29mNmFuZkRkR05JYkV2LVFQNFI3Yk1wR1ZXQQ?oc=5",
+   "date": "2026-10-28T09:00:00.000Z",
+   "resume": "VALORANT sera de retour à l’Esports World Cup en 2027 E.SPORT.FR",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "E.SPORT.FR"
+  },
+  {
    "titre": "How Twitch and Discord Are Shaping Menswear’s Next Generation - The Business of Fashion",
    "lien": "https://news.google.com/rss/articles/CBMilwFBVV95cUxORkFZeERKWEJnRWpuYUpGZFk0SVF1a1VYMVhKVENSVzhQSVo2VTlqYkczYlc4V245TlJzOXJobllaNTlTSGlzQk1XVFZmX2l6elNaR0VmM1FsYndhNXJTdW50Nk9oQnZuZnBZYTZUSGdrNENBMFk2LUgwSkxIaWc5U1Y0YlFESlRaT2k4WEoyQk5DeThIUjZR?oc=5",
    "date": "2026-10-28T07:00:00.000Z",
@@ -3107,13 +3008,22 @@
    "editeur": "The Business of Fashion"
   },
   {
-   "titre": "Palia New Twitch Drops for Hearty Homecoming Update - Nintendo Smash",
-   "lien": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPdl90LWlKYU5rdUtTT1k4ZjRGYk9XSVNnLVhTUWZqbXBMMzFmQWRRZGFiSXBPUTRaa1JmUUN2QzNBQnhUOEtPOFNzc1c1ZlhuVUJBQTMyaG5wUElMZ2w1MjVLRDNPWDNGUDB1N2hpUTB5azFJWG1oWXNydFhXUXlxSTdsWEs?oc=5",
-   "date": "2026-10-27T19:52:16.000Z",
-   "resume": "Palia New Twitch Drops for Hearty Homecoming Update Nintendo Smash",
-   "source": "Google Actualités · Twitch creators (international)",
-   "categorie": "createurs",
-   "editeur": "Nintendo Smash"
+   "titre": "Gamescom 2026 : nos impressions sur le remake de Heroes of Might and Magic III - big-n.fr",
+   "lien": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPSkVNTjJweHJHcnRDb19GMUVMbVF5TXdET2lERmxLSVRidFV5QlB3YnRTLUVrUkVmcTNRTmotaXFWZ0liakVYU0xENnJFNGZtLWNONENIRFZka0haU2tQeFFaQmlHUVhiM2x0djFlWDJHRnpqVFRYTi1mWldLTkZsRmFjcXdzZEcybjNCMW9BOHpPc19B?oc=5",
+   "date": "2026-10-27T16:58:12.000Z",
+   "resume": "Gamescom 2026 : nos impressions sur le remake de Heroes of Might and Magic III big-n.fr",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "big-n.fr"
+  },
+  {
+   "titre": "L'Esports World Cup confirme la présence de VALORANT pour l'édition 2027 - Team-aAa",
+   "lien": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOY3BSRkhpekZ1RVhDZDkwcC1USUQ5eDVLVG9Zd3kyNUdOODVJeTNScHg0V0hfbmJNbm9zdk1Mbnp5Rm93b2QyeW5ZSnE2S3ZPQjduRm10WnBwc3hhWnJPUXNKbEJaSkxQb1pYMi1GNzBrMWVzWnAyQmxHVXV4ZTJWRU1WdDd1aU9vUVFRSFNJU1JDZjRveEdDbk9PcENvTWxtOFlvLVVtMXl6aWpHYndmdVdlYy13dw?oc=5",
+   "date": "2026-10-27T15:20:39.000Z",
+   "resume": "L'Esports World Cup confirme la présence de VALORANT pour l'édition 2027 Team-aAa",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "Team-aAa"
   },
   {
    "titre": "Kai Cenat Net Worth: How Much the Twitch Star Actually Makes",
@@ -3150,6 +3060,24 @@
    "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
    "categorie": "evenements",
    "editeur": "Journal du Geek"
+  },
+  {
+   "titre": "Rayman Legends Retold : nos impressions après la démo de la Gamescom 2026 - big-n.fr",
+   "lien": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNREJfdWxRZk5paHVieVVTSzhZYmNkeWNtenNKYnVMUlQ4NUw0dENnbkNTRzFaZkVtdkJMajJnWW9wWDdZN1JwR1B6MXFmTmZzMHNNNjM2eXVzQ3RJSmo0TzVtNGFfc1hRcDlnNkxqZlNIc05pNURvT2dLTnBNbXlQS2NURGFnNFRha2c?oc=5",
+   "date": "2026-10-27T07:00:00.000Z",
+   "resume": "Rayman Legends Retold : nos impressions après la démo de la Gamescom 2026 big-n.fr",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "big-n.fr"
+  },
+  {
+   "titre": "The Witcher 3: Wild Hunt – Songs of the Past : nos impressions sur le nouveau DLC présenté à la Gamescom 2026 - big-n.fr",
+   "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQU0tKd05sc0FYbWpFYlJxRFg1cGNxMmpLNUNibXdrSEJkQm9IWmlfeGRWQmhGUWozMDZ5QUJZMlk2MjIxX2FyUXpELWtsdkQwVHRWbDlHRld6S2wyQzV6dmxWTjVZbHlpZ1RaTWc2VTVBejdrbEpudUh2RkJxZmM2ZXRWRUs2VGJkRTQ2NUJIQmdhN2dEYnRDOXFWcXFzVkV1bi1KOA?oc=5",
+   "date": "2026-10-27T07:00:00.000Z",
+   "resume": "The Witcher 3: Wild Hunt – Songs of the Past : nos impressions sur le nouveau DLC présenté à la Gamescom 2026 big-n.fr",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "big-n.fr"
   },
   {
    "titre": "Charted: Where Social Media Audiences Skew Male, by Region",
@@ -3350,6 +3278,15 @@
    "editeur": "GinjFo"
   },
   {
+   "titre": "Rostrenen. Les ados invités à fabriquer leur propre LAN party - Unidivers",
+   "lien": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFAxcXBXdmlEUkU3aGxBd2xHWjBsWXJSbDdIV3FOTVloa2hPSjBHNEdJWlBMajVxRW14UXpnd1Y4WjBBVHNKWjJWY292aVZGNVVfVWltS0s4VklNT3Mwa2VjVDM1TXNPcEc2?oc=5",
+   "date": "2026-10-23T07:00:00.000Z",
+   "resume": "Rostrenen. Les ados invités à fabriquer leur propre LAN party Unidivers",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "Unidivers"
+  },
+  {
    "titre": "Mort d'un célèbre influenceur de 30 ans : il s'immole par le feu en plein direct sur Twitch - Voici",
    "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPRnJGMHhtQlJHcDZMdTZBMU51blJWT0VfRDQyMG5kY2lidktzSlU4YjIwRjQ3VzRCQjNfdkZOZmRUZW9hQ05sWUZaVkRLUXl4dTJta1lrN0tRWTFyWDVscGE5TkNVdGZEM3ltNDNCX2xjbVJwTTQtWjBtWWNDSURIN29WZzhXbDlhTGhMSExDOUJhc25IWGJiYVBaWDl4d3VKQlJXZU5lRHJjanhxbmlYUHJpWU1vbnZzQ0lpd0NJaWdiRldoM0hzMHp3?oc=5",
    "date": "2026-10-22T07:00:00.000Z",
@@ -3375,6 +3312,15 @@
    "source": "Google Actualités · streamers et YouTubeurs",
    "categorie": "createurs",
    "editeur": "Le Dauphiné Libéré"
+  },
+  {
+   "titre": "Un streamer de Sion joue pour la bonne cause: un marathon caritatif version Twitch arrive en Suisse romande - Le Nouvelliste",
+   "lien": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOZzE3Z2ZaRk1pN1Q4VkpJNFlTMWNNZ3FtVElIb1VyVjF1WVR5Sy0yVTZVcHQ0ZUNmQ1RoR2JGVFd2N29CZU1CSUR2ZXJJb1d1MlFHd0JiV000RFdSM0NzdE51Mng3bTRTXzhaQVJRakNCempwNDkzS0VhaTFMd0NwcjhtaXYySmlqQmVlNEpCRkNCX0tuWGlKakZwUmVGYUpJV2YwZ21MMTJCUm9hM092Tk1pTXJqZ09MMk5BdWM3eUxnUGlLUV9rYjRQMy1NTHluNWNna1RmNFhZSkg3RllVZl9JMVlMbXBxTVFGaDhuQ2xKUjZlbGpfTnBTTktRNFZLcGRGekw2WDJFaEtZU1M2eg?oc=5",
+   "date": "2026-10-22T07:00:00.000Z",
+   "resume": "Un streamer de Sion joue pour la bonne cause: un marathon caritatif version Twitch arrive en Suisse romande Le Nouvelliste",
+   "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
+   "categorie": "evenements",
+   "editeur": "Le Nouvelliste"
   },
   {
    "titre": "A la Paris Games Week, le grand paradoxe du jeu vidéo en France : une demande dynamique mais des studios en souffrance - Le Monde.fr",
@@ -3440,6 +3386,24 @@
    "editeur": "Les Gens d'Internet"
   },
   {
+   "titre": "Des voleurs devancent le sommet de Barcelone : Messi au cœur du chaos à Paris - Yahoo Actualités",
+   "lien": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOVTZXZ1ZJSkZnbDNaUV90bk9ZMXlwb3BkZE03cEJ0YmJ4aG9oa24xYkI1NnhGLUpHcEF0djYtUlQ1TnRxRGJVRTVmUU1RbVMwRmRwd2JIZC1LOExEVXZaMk5mdHZ0cnhFOE50QjhBTllSYW1pQXNJZjlaeDlhM212VC1SWmM0UzFabnJEM3JReW0?oc=5",
+   "date": "2026-10-20T07:00:00.000Z",
+   "resume": "Des voleurs devancent le sommet de Barcelone : Messi au cœur du chaos à Paris Yahoo Actualités",
+   "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
+   "categorie": "evenements",
+   "editeur": "Yahoo Actualités"
+  },
+  {
+   "titre": "Esports World Cup 2027 : deux nouvelles routes de qualification - FPSNews",
+   "lien": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOT29ENEpwU3lsUjlQakJPS051OXp1aEFOZTRXNU9UZEJqWFNfa0ZrT3NtYWRPRzJDNGFjTWJKemNDeFc0b0VBWk9xSGUyNXluZmJfYV9hRHo2YVpfc2hKbEw5eTJSY1I3aThkTUdQaVdJa19PQ2NNOUF4aDVPNW9vMmVibmZZZzJEeHZoN0dzcURLb1AtN2pRRw?oc=5",
+   "date": "2026-10-20T07:00:00.000Z",
+   "resume": "Esports World Cup 2027 : deux nouvelles routes de qualification FPSNews",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "FPSNews"
+  },
+  {
    "titre": "NFL à Paris : Domingo va diffuser le match sur Twitch et Youtube - Touchdown Actu",
    "lien": "https://news.google.com/rss/articles/CBMinAFBVV95cUxONHE3dVI4ZjVBWTQ3aGd5QUFzWjZ6XzRuVnlON1ZOUFZBVThvcHVIdzA5V1hoUTJyYnM4WDBxZktxU3VEV3psYllkZEg3RnlqWEE2dDByZVpiSnFubGpQWGMyOEY1RVNSeGJRRFF1ZTBfUmdlbWlsSk50MnE1MUJpUDBvNUJzcFdidDJYQ21XdG9ueHVTQ05nTFFoaUU?oc=5",
    "date": "2026-10-19T07:00:00.000Z",
@@ -3465,6 +3429,15 @@
    "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
    "categorie": "createurs",
    "editeur": "Sport Buzz Business"
+  },
+  {
+   "titre": "MILITSIONER - Release Window Trailer | Gamescom 2026 - Gamekult",
+   "lien": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9sMW1XOW1MbEdfNUQ4c2N0bHE3WHMwOFhhQzFDVFA3RzdCbjJTVTQtcnkwTk5qQ3RnUmlFUV91TDNNMDBBMzF5MFVZc194a1ZJYUZQdmZKcEJWSE1leDRhbVZHUzg0cFVLNlJLTXVRbDAtU3lRQnRRMlhvazZfOHc?oc=5",
+   "date": "2026-10-19T07:00:00.000Z",
+   "resume": "MILITSIONER - Release Window Trailer | Gamescom 2026 Gamekult",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "Gamekult"
   },
   {
    "titre": "Votre aventure Pokémon continue : les évolutions et la famille Ectoplasma débarquent aujourd'hui - Twitch Blog",
@@ -3503,6 +3476,15 @@
    "editeur": "Ubisoft"
   },
   {
+   "titre": "Bande-annonce The Witcher 3 arrivera le 15 octobre sur Switch - gamescom 2019 - JeuxVideo.com",
+   "lien": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPR1B0cmJxSUF1am03UHZoUUpSbFI4eE1ob3hhQXpQV3dWN2RPN01neTdoTGVHcU9TTUVhRjJiYUM0NEt1OXk1TG0zWDNNTTF3UzdmZG5qWkRHR1FWRC1OS3ZXa1RwMTdBYVZHcF94T3RiQWQ2Vm41ek9tbGJpbEhuMFJsMlkyeDNUeEhHeHVNblJjaEJmZ1VEMnBoX2wwWWZYaDBoNi1ERm1hZw?oc=5",
+   "date": "2026-10-15T07:00:00.000Z",
+   "resume": "Bande-annonce The Witcher 3 arrivera le 15 octobre sur Switch - gamescom 2019 JeuxVideo.com",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "JeuxVideo.com"
+  },
+  {
    "titre": "Quels streams et plateformes pour regarder les Worlds 2026 ? - Team-aAa",
    "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPcmYtaHhrQnZqczd3S1c0WHVuQ3Z4eDJmd0gzcDNpbjgwLTNtNGRqQjJXcHZwVXRPOTcwaFlxY0hhN3R4SXdON1Y1bmhFRF9rc0xTQ0w4YVJqVG9JcVBEZmVqX19QNUVVb0xZbXNDTlhhTXhBNENRaHd4WE1ZNlN1UmdZQWg3Q1RmQnh4MlZuQUh3RThUSXQ1VnAwTHMwd182?oc=5",
    "date": "2026-10-14T07:00:00.000Z",
@@ -3510,6 +3492,24 @@
    "source": "Google Actualités · monétisation et revenus des streamers",
    "categorie": "createurs",
    "editeur": "Team-aAa"
+  },
+  {
+   "titre": "Nintendo Switch Sports Resort retrouve les commandes gestuelles à la gamescom - Foro3D",
+   "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQTE56OHRDYmgzcjNBMW1fZkNRNEdmeXNKXzRKYkd2MTNsSENWUmhGdTMydDFoNWF2bTR6VzFSc0JuRGRZUVQ5M1REV3JlV1ZqRkpBT2c4SGtYYVRtaHpFRWVUZkVXM2p0ZnZoZ1NTanU5TWpxTnZWaGdPRFVJbkcxM0E2WGRWbkw4Y3NPZlI3LWVDMXR4cHZqbTZWTGlmdDBCRGJMQTZWbFNEZ3p4dVdj?oc=5",
+   "date": "2026-10-13T07:00:00.000Z",
+   "resume": "Nintendo Switch Sports Resort retrouve les commandes gestuelles à la gamescom Foro3D",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "Foro3D"
+  },
+  {
+   "titre": "Esports World Cup à Paris : que reste-t-il des 250 millions d'euros saoudiens ? - Le nouvel Économiste",
+   "lien": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPODlVNlhpdWVUVFJ6R0pTWVRVbXBkTXVyaDM2Tjk0Y09TRzZGWUd6a09xZUZ5THJsVHRHbldnTHF1eXZjYTNPODBCa1A1TU9meHkyTFJhVXhkNndaclVCd2xvLXhENWM1dUotZXJ2VGppMW5WWkEwUFVCMTh3UXVqQ0dzcWl2N0hidnVhZDZxaFJ2OEo2V2hBR2dMU2dVTFlYY2k5Z0JnMUoyMl9QM1V1dkY3SkhkeGdMQ3NkX0RKWGtGVlFiamJBNXVqSHM?oc=5",
+   "date": "2026-10-12T07:00:00.000Z",
+   "resume": "Esports World Cup à Paris : que reste-t-il des 250 millions d'euros saoudiens ? Le nouvel Économiste",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "Le nouvel Économiste"
   }
  ]
 }
