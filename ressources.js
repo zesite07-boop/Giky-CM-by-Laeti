@@ -13,6 +13,8 @@
       r('Twitch Creator Camp', 'https://www.twitch.tv/creatorcamp/fr-fr', 'Les guides officiels de Twitch pour les créateurs.', 'Gratuit'),
       r('Tableau de bord créateur Twitch', 'https://dashboard.twitch.tv', 'Statistiques, modération, gestion du chat.', 'Gratuit'),
       r('Centre de sécurité Twitch', 'https://safety.twitch.tv', 'Règles, harcèlement, raids haineux.', 'Gratuit'),
+      r('Twitch : créer et partager des clips', 'https://help.twitch.tv/s/article/how-to-use-clips', 'Clip Creator, version verticale, sous-titres, partage TikTok et YouTube.', 'Officiel'),
+      r('Twitch : double format vertical', 'https://help.twitch.tv/s/article/dual-format-vertical-video', 'Streamer en horizontal et en vertical pour avoir les deux versions des clips.', 'Officiel'),
       r('AutoMod (aide Twitch)', 'https://help.twitch.tv/s/article/how-to-use-automod', 'Filtrer automatiquement les messages à risque.', 'Gratuit'),
       r('OBS Studio', 'https://obsproject.com', 'Logiciel libre de diffusion et d’enregistrement.', 'Gratuit'),
       r('Streamlabs', 'https://streamlabs.com', 'Alertes, overlays et outils de live.', 'Freemium'),
@@ -30,6 +32,13 @@
       r('Hootsuite', 'https://www.hootsuite.com', 'Suite complète pour gérer plusieurs comptes.', 'Payant'),
       r('TikTok for Business', 'https://www.tiktok.com/business/fr', 'Ressources et publicité TikTok.', 'Gratuit'),
       r('YouTube Creators', 'https://www.youtube.com/creators/', 'Guides officiels pour les créateurs YouTube.', 'Gratuit')
+    ] },
+    { id: 'reseaux', titre: 'Réseaux pro : Facebook, WhatsApp, LinkedIn', astuce: 'Une seule présence pro par réseau, gratuite, et ton profil perso reste à part.', liens: [
+      r('Meta Business Suite', 'https://business.facebook.com/', 'Facebook et Instagram : calendrier, Inbox, statistiques, rôles.', 'Gratuit'),
+      r('Aide Meta Business Suite', 'https://www.facebook.com/business/help/205614130852988', 'Comment fonctionne l’outil, par Meta.', 'Officiel'),
+      r('WhatsApp Business (ressources)', 'https://whatsappbusiness.com/resources/faq/', 'Appli gratuite ou Platform : la FAQ officielle.', 'Officiel'),
+      r('LinkedIn : créer une Page', 'https://www.linkedin.com/help/linkedin/answer/a543852', 'Création d’une Page Entreprise gratuite.', 'Officiel'),
+      r('LinkedIn : le mode créateur', 'https://www.linkedin.com/help/linkedin/answer/a524035', 'Activer le mode créateur sur ton profil.', 'Officiel')
     ] },
     { id: 'creation', titre: 'Créer des visuels et des clips', astuce: 'Prépare 3 modèles (annonce, clip, récap) : tu n’auras plus qu’à changer le texte.', liens: [
       r('Canva', 'https://www.canva.com', 'Visuels, modèles, kits de marque.', 'Freemium'),

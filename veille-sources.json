@@ -1,5 +1,5 @@
 {
-  "_aide": "Sources de la veille. type: rss (RSS ou Atom). categorie: createurs, actu, communaute ou alerte (createurs = ce qui concerne les créateurs de contenu Twitch/YouTube). Pour ajouter une alerte Google : créer l'alerte sur google.com/alerts, choisir « Flux RSS » comme destination, puis coller l'adresse du flux ici avec categorie alerte. Les sources « Google Actualités · <noms> » suivent des créateurs précis : pour en ajouter un, ajouter son nom dans l'une de ces requêtes (4 noms maximum par requête).",
+  "_aide": "Sources de la veille. type: rss (RSS ou Atom). categorie: createurs, actu, communaute ou alerte (createurs = ce qui concerne les créateurs de contenu Twitch/YouTube). Pour ajouter une alerte Google : créer l'alerte sur google.com/alerts, choisir « Flux RSS » comme destination, puis coller l'adresse du flux ici avec categorie alerte. Les sources « Google Actualités · <noms> » suivent des créateurs précis : pour en ajouter un, ajouter son nom dans l'une de ces requêtes (4 noms maximum par requête). Catégories : createurs, evenements (salons, tournois, opérations de marques), decouverte (petits créateurs qui montent), actu, communaute, alerte.",
   "sources": [
     {
       "id": "gnews-twitch-fr",
@@ -126,6 +126,48 @@
       "nom": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
       "categorie": "createurs",
       "url": "https://news.google.com/rss/search?q=Domingo+OR+Maghla+OR+Doigby+OR+Jiraya+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-events-streamers",
+      "nom": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
+      "categorie": "evenements",
+      "url": "https://news.google.com/rss/search?q=TwitchCon+OR+%22Z+Event%22+OR+ZLAN+OR+%22Gamers+Assembly%22+OR+%22%C3%A9v%C3%A9nement+streamers%22+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-events-salons",
+      "nom": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+      "categorie": "evenements",
+      "url": "https://news.google.com/rss/search?q=%22Paris+Games+Week%22+OR+Gamescom+OR+%22Game+Awards%22+OR+%22salon+jeu+vid%C3%A9o%22+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-events-esport",
+      "nom": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+      "categorie": "evenements",
+      "url": "https://news.google.com/rss/search?q=%22Esports+World+Cup%22+OR+%22Karmine+Corp%22+OR+%22tournoi+e-sport%22+OR+%22Gamers+Assembly%22+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-events-marques",
+      "nom": "Google Actualités · marques et streamers (opérations, partenariats, soirées)",
+      "categorie": "evenements",
+      "url": "https://news.google.com/rss/search?q=streamer+partenariat+OR+%22soir%C3%A9e+streamers%22+OR+%22invit%C3%A9%22+OR+%22marque%22+twitch+when%3A14d&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-decouverte-1",
+      "nom": "Google Actualités · petits streamers qui montent",
+      "categorie": "decouverte",
+      "url": "https://news.google.com/rss/search?q=%22petit+streamer%22+OR+%22streamer+%C3%A9mergent%22+OR+%22nouveau+streamer%22+OR+%22r%C3%A9v%C3%A9lation+Twitch%22+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-decouverte-2",
+      "nom": "Google Actualités · clips et moments viraux de streamers",
+      "categorie": "decouverte",
+      "url": "https://news.google.com/rss/search?q=%22clip+viral%22+OR+%22moment+viral%22+streamer+OR+%22buzz%22+twitch+OR+%22p%C3%A9pite%22+streamer+when%3A14d&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-decouverte-3",
+      "nom": "Google Actualités · streamers français à suivre",
+      "categorie": "decouverte",
+      "url": "https://news.google.com/rss/search?q=%22streamer+fran%C3%A7ais%22+OR+%22streameuse%22+%22%C3%A0+suivre%22+OR+%22talents%22+twitch+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
     }
   ]
 }

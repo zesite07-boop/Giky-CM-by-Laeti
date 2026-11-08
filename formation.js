@@ -248,7 +248,7 @@
         <p class="petit">Série douce : un jour de pause ne casse rien.</p></section>
       <h2 class="titre-section">Jouer et s’outiller</h2>
       <div class="grille-jeux">${tuilesJeu()}
-        ${tuile('veille', 'mauve', 'veille', 'Veille', `${etat.idees.length} idée${etat.idees.length > 1 ? 's' : ''} · actus créateurs Twitch`)}
+        ${tuile('veille', 'mauve', 'veille', 'Veille', veilleResume())}
         ${tuile('simulateurs', 'or', 'outils', 'Boîte à outils', 'Recettes, plafonds, devis')}
         ${tuile('ressources', 'turquoise', 'etoile', 'Ressources', `${RS.reduce((n, c) => n + c.liens.length, 0)} outils et liens triés`)}
         <button class="tuile t-turquoise" data-view="pcimages"><span class="tuile-icone">${icone('etoile')}</span><strong>Pourcentages en images</strong><span>7 cartes animées, 3 minutes</span></button>
@@ -888,7 +888,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
 
   /* Veille et idées */
   let veille = { etat: 'idle', data: null };
-  const CAT_VEILLE = [['createurs', 'Créateurs Twitch'], ['', 'Tout'], ['actu', 'Actualités'], ['communaute', 'Communauté'], ['alerte', 'Alertes Google']];
+  const CAT_VEILLE = [['createurs', 'Créateurs Twitch'], ['evenements', 'Événements'], ['decouverte', 'Découverte de petits créateurs'], ['', 'Tout'], ['actu', 'Actualités'], ['communaute', 'Communauté'], ['alerte', 'Alertes Google']];
   function nettoyerVeille(d) {
     const s = (v, n) => typeof v === 'string' ? v.slice(0, n) : '';
     const items = Array.isArray(d && d.items) ? d.items.slice(0, 500).filter(x => x && typeof x === 'object' && /^https?:\/\/[^\s<>"']+$/i.test(x.lien)).map(x => ({
@@ -902,7 +902,16 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     fetch('./data/veille.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error('http'); return r.json(); })
       .then(d => { veille = { etat: 'ok', data: nettoyerVeille(d) }; })
       .catch(() => { veille = { etat: 'erreur', data: veille.data }; })
-      .finally(() => { if (etat.vue === 'veille') majVeilleZone(); });
+      .finally(() => { if (etat.vue === 'veille') majVeilleZone(); else if (etat.vue === 'accueil') render(); });
+  }
+  /* Résumé de la veille pour l’accueil : événements et découvertes des 7 derniers jours. */
+  function veilleResume() {
+    const base = `${etat.idees.length} idée${etat.idees.length > 1 ? 's' : ''} · créateurs, événements, découvertes`;
+    if (veille.etat === 'idle') { chargerVeille(); return base; }
+    if (!veille.data) return base;
+    const lim = Date.now() - 7 * 864e5, recents = c => veille.data.items.filter(x => x.categorie === c && Date.parse(x.date) >= lim).length;
+    const e = recents('evenements'), d = recents('decouverte');
+    return e || d ? `${e} événement${e > 1 ? 's' : ''} · ${d} découverte${d > 1 ? 's' : ''} cette semaine` : base;
   }
   function majVeilleZone() { const z = $('#veille-flux'); if (z) z.innerHTML = fluxVeille(); }
   function ilYa(iso) {
@@ -920,10 +929,10 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     if (veille.etat === 'idle' || (veille.etat === 'chargement' && !veille.data)) return '<p class="petit" role="status">Chargement de la veille…</p>';
     if (!veille.data) return '<p class="alerte-sim" role="status">La veille n’est pas disponible pour l’instant (hors connexion pour la première fois ?). Réessaie plus tard : la boîte à idées marche déjà.</p>';
     const d = veille.data, q = (f.q || '').trim(), mots = sansAccent(q).split(/\s+/).filter(Boolean);
-    const attente = f.cat === 'createurs' && !d.items.some(x => x.categorie === 'createurs'), cat = (attente || q) ? '' : f.cat;
+    const attente = ['createurs', 'evenements', 'decouverte'].includes(f.cat) && !d.items.some(x => x.categorie === f.cat), cat = (attente || q) ? '' : f.cat;
     const liste = d.items.map((x, i) => Object.assign({ i }, x)).filter(x => (!cat || x.categorie === cat) && (!mots.length || mots.every(m => sansAccent(x.titre + ' ' + x.resume + ' ' + x.source + ' ' + x.editeur).includes(m))));
     const pannes = d.sources.filter(s => s.statut !== 'ok'), max = (q || veille.tout) ? 60 : 5;
-    return `${attente ? '<p class="petit" role="status">Les sources spécialisées créateurs Twitch arrivent à la prochaine collecte (dans l’heure). En attendant, tout est affiché.</p>' : ''}<p class="petit">${d.maj ? `Dernière nouveauté ${esc(ilYa(d.maj))}.` : 'Aucune collecte pour l’instant.'} ${d.items.length} éléments de ${d.sources.filter(s => s.statut === 'ok').length} source${d.sources.filter(s => s.statut === 'ok').length > 1 ? 's' : ''}.${veille.etat === 'erreur' ? ' Affichage de la dernière copie : tu es peut-être hors connexion.' : ''}</p>
+    return `${attente ? '<p class="petit" role="status">Cette catégorie arrive à la prochaine collecte (dans l’heure). En attendant, tout est affiché.</p>' : ''}<p class="petit">${d.maj ? `Dernière nouveauté ${esc(ilYa(d.maj))}.` : 'Aucune collecte pour l’instant.'} ${d.items.length} éléments de ${d.sources.filter(s => s.statut === 'ok').length} source${d.sources.filter(s => s.statut === 'ok').length > 1 ? 's' : ''}.${veille.etat === 'erreur' ? ' Affichage de la dernière copie : tu es peut-être hors connexion.' : ''}</p>
       ${pannes.length ? `<details class="bloc-plie"><summary>${pannes.length} source${pannes.length > 1 ? 's' : ''} sans réponse</summary><p class="petit">${pannes.map(s => esc(s.nom)).join(' · ')}. Ce n’est pas grave : les autres continuent, et les anciens éléments sont conservés.</p></details>` : ''}
       ${liste.length ? `<ul class="flux-veille">${liste.slice(0, max).map(x => `<li class="flux-item"><div><p class="petit"><span class="etiquette">${esc(x.editeur || x.source)}</span> ${esc(ilYa(x.date))}</p><h3><a href="${esc(x.lien)}" target="_blank" rel="noopener noreferrer">${esc(x.titre)} <span class="sr-only">(nouvel onglet)</span></a></h3>${x.resume ? `<p class="petit">${esc(x.resume)}</p>` : ''}</div>
         <button class="bouton" data-action="veille-idee" data-i="${x.i}">Garder comme idée</button></li>`).join('')}</ul>${liste.length > max ? (max === 5 ? `<button class="bouton voir-plus" data-action="veille-tout">Voir plus (${liste.length - 5} autres)</button>` : `<p class="minuscule">${liste.length - 60} autres : affine avec le filtre.</p>`) : ''}` : `<p class="petit">${q ? `Rien dans la veille pour « ${esc(q)} » (elle ne garde que les 30 derniers jours).` : 'Rien ne correspond à ce filtre.'}</p>${q ? liensRecherche(q) : ''}`}`;
@@ -934,7 +943,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     if (!pf.veille) pf.veille = { cat: 'createurs', q: '' };
     if (!pf.idee) pf.idee = { titre: '', lien: '', note: '' };
     const i = pf.idee, f = pf.veille;
-    return `<header class="en-tete"><p class="sur-titre">Ma veille · Twitch France</p><h1 tabindex="-1">Veille et idées</h1><p class="intro">Les actualités sur les créateurs de contenu Twitch et YouTube (revenus, règles, plateformes, tendances) arrivent toutes seules, une collecte par heure. Garde ce qui peut devenir un contenu dans ta boîte à idées, puis envoie-le dans le planning.</p></header>
+    return `<header class="en-tete"><p class="sur-titre">Ma veille · Twitch France</p><h1 tabindex="-1">Veille et idées</h1><p class="intro">Les actualités sur les créateurs de contenu Twitch et YouTube (revenus, règles, plateformes, tendances) arrivent toutes seules, une collecte par heure, avec deux catégories en plus : <b>Événements</b> (salons, tournois, soirées de streamers, opérations de marques) et <b>Découverte</b> (petits créateurs qui commencent à buzzer). Garde ce qui peut devenir un contenu dans ta boîte à idées, puis envoie-le dans le planning.</p><details class="bloc-plie"><summary>Repérer un petit créateur qui monte</summary><ul class="liste-simple"><li>Onglet Découverte : les articles et clips qui parlent de nouveaux visages.</li><li>Sur TwitchTracker ou SullyGnome (voir Ressources), regarde les chaînes dont les spectateurs montent d’une semaine à l’autre.</li><li>Cherche un nom dans la barre de recherche ci-dessous, puis propose-le dans Suggestions pour l’ajouter à la veille.</li><li>Avant de contacter : regarde son planning, son ambiance de chat et ses règles sur les clips.</li></ul></details></header>
       <section class="carte"><h2>Ma boîte à idées</h2>
         <p class="petit">Sur Android, partage une vidéo TikTok, un tweet ou une page vers l’application installée : l’idée arrive ici toute seule. Sur iPhone, colle le lien à la main.</p>
         <div class="calcul-champs">${champPf('idee', 'titre', 'Idée', i.titre, 'text', 'placeholder="Réaction au clip du boss, format 3 questions…"')}${champPf('idee', 'lien', 'Lien (facultatif)', i.lien, 'url')}${champPf('idee', 'note', 'Note (facultatif)', i.note)}</div>
