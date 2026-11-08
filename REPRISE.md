@@ -138,3 +138,11 @@ Kit média Twitch et grille de tarifs, certificat imprimable, planning exporté 
 - Business = outils seulement (plus de bascule « Les leçons »). `#/business/lecons` redirige vers Apprendre/Business.
 - Menu latéral plat : Accueil, Apprendre, S'entraîner, Business, Outils, Mon carnet. Les pages secondaires (scénarios, éclair, veille…) s'ouvrent depuis les tuiles.
 - Tests : /home/claude/e2e/runner.py <script> (shim data-view), e2e11.py = domaines.
+
+## v13 (cm-v18) — univers thématiques partagés + Outils unifié
+- 4 univers (`UNIVERS` dans formation.js) : Métier de CM (cm), Clients et vente (com), Finances et facturation (fin), Calculs et pourcentages (calc) + « Tout mélanger » (tous). État `etat.domaine`.
+- Le même sélecteur (`selecteurDomaine`) pilote Apprendre, S'entraîner (quiz éclair, révision, scénarios, question du jour) et les familles d'Outils. Filtres : `dansDomaine` (leçons), `dansDomaineQ` (questions, sans l'examen final), `SC_UNIVERS` (scénarios).
+- Onglet/vue Business supprimé : `ouvrir('business')` → `simulateurs` (redirect en tête de fonction), `#/business/lecons` → Apprendre univers fin. Outils = « Mes outils » (7 familles étiquetées par univers + Veille et ressources).
+- Limites : univers Calculs sans missions/scénarios ; scénarios classés par thème ; l'univers n'est pas dans l'URL.
+- SW cm-v18 + rechargement auto sur `controllerchange` (cache ancien vu chez JT).
+- Tests : Node ok ; e2e, e2e2–e2e11 ok via /home/claude/e2e/runner.py.
