@@ -122,3 +122,12 @@ Kit média Twitch et grille de tarifs, certificat imprimable, planning exporté 
 - Kit prospect en 4 étapes (`kitEtape`, action `kit-etape`) ; `#resultat-kit` n'existe qu'à l'étape 4.
 - Échéance Urssaf : « Comment faire (3 étapes) ».
 - Reste : favoris « Mes 3 outils », suivi unique, glossaire, rappel 1 semaine, cartes image (plafonds, relances, T3).
+
+## v11 (cm-v16) — fin de l'audit
+- Favoris « Mes 3 outils » (`etat.favoris`) + recherche d'outil (datalist) ; étoile dans chaque outil.
+- Suivi unique : nouvel outil `suivi` (Suivi clients) ; plus de liste dans le kit.
+- Rappel d'échéance « dans 1 semaine » (`etat.rappels`, filtre dans `listeAlertes`).
+- Jargon : sigles cliquables (`JARGON`, `jargonner()`), glossaire + sources par thème dans Sources.
+- Visuels de leçon `VISUELS` (t3, b1, b5) ; focus/minuteur/« sauvegardé automatiquement » dans la leçon.
+- Icônes SVG partout (plus d'emoji dans menus/familles) ; XP affiché une fois (accueil + victoire) ; carte « prochaine action » agrandie.
+- Test : /home/claude/e2e/e2e9.py (nouveautés), e2e10.py (rappel avec horloge simulée).

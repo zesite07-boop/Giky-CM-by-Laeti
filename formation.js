@@ -32,6 +32,12 @@
   const parcoursDe = l => C.parcours.find(p => p.id === l.parcours);
   const T = () => etat.devises;
   const IC = {
+    mallette: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/>',
+    dossier: '<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',
+    cible: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',
+    balance: '<path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0zM8 21h8"/>',
+    piece: '<circle cx="12" cy="12" r="9"/><path d="M15 9.5a3 3 0 0 0-5.2 1.2v2.6a3 3 0 0 0 5.2 1.2M8 11.5h5M8 13.5h5"/>',
+    calcul: '<rect x="5" y="2" width="14" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 18h.01M12 18h.01M16 18h.01"/>',
     jeu: '<rect x="2" y="7" width="20" height="11" rx="5"/><path d="M7 10v5M4.5 12.5h5M16 11h.01M18.5 14h.01"/>',
     eclair: '<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
     revision: '<path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v5h-5"/>',
@@ -137,11 +143,11 @@
     }).join('');
     const nbNotes = Object.values(etat.notes).filter(n => n && (n.action || n.echeance)).length;
     return `${lienNav('accueil', '<span class="nav-num">⌂</span>', 'Accueil')}
-      ${groupeMenu('app', '📚', 'Apprendre', `${nbReussies(PARCOURS_ESPACE.apprendre, pr)} / ${nbLecons(PARCOURS_ESPACE.apprendre)} leçons du métier`, lienNav('programme', '<span class="nav-num">☰</span>', 'Toutes les leçons du métier') + lienNav('pcimages', '<span class="nav-num">%</span>', 'Pourcentages en images') + parcours('apprendre'))}
-      ${groupeMenu('jeu', '🎮', 'S’entraîner', 'Quiz · scénarios · missions', lienNav('scenarios', '<span class="nav-num">▶</span>', 'Scénarios') + lienNav('eclair', '<span class="nav-num">⚡</span>', 'Quiz éclair') + lienNav('revision', '<span class="nav-num">↻</span>', 'Révision') + lienNav('jouer', '<span class="nav-num">☰</span>', 'Missions et défis') + parcours('entrainer') + lienNav('final', marque(C.final), 'Épreuve finale'))}
-      ${groupeMenu('biz', '💼', 'Business', 'Mon activité de freelance', lienNav('business', '<span class="nav-num">€</span>', 'Mes outils et leçons business', nA) + parcours('business'))}
-      ${groupeMenu('out', '🧰', 'Outils', 'Veille · ressources · petits outils', lienNav('simulateurs', '<span class="nav-num">€$£</span>', 'Petits outils') + lienNav('veille', '<span class="nav-num">◉</span>', 'Veille et idées') + lienNav('ressources', '<span class="nav-num">★</span>', 'Ressources et sources'))}
-      ${groupeMenu('aff', '🗂️', 'Mes affaires', `Carnet d’actions`, lienNav('carnet', '<span class="nav-num">≡</span>', 'Mon carnet' + (nbNotes ? ` (${nbNotes})` : '')))}`;
+      ${groupeMenu('app', icone('livre', 20), 'Apprendre', `${nbReussies(PARCOURS_ESPACE.apprendre, pr)} / ${nbLecons(PARCOURS_ESPACE.apprendre)} leçons du métier`, lienNav('programme', '<span class="nav-num">☰</span>', 'Toutes les leçons du métier') + lienNav('pcimages', '<span class="nav-num">%</span>', 'Pourcentages en images') + parcours('apprendre'))}
+      ${groupeMenu('jeu', icone('jeu', 20), 'S’entraîner', 'Quiz · scénarios · missions', lienNav('scenarios', '<span class="nav-num">▶</span>', 'Scénarios') + lienNav('eclair', '<span class="nav-num">⚡</span>', 'Quiz éclair') + lienNav('revision', '<span class="nav-num">↻</span>', 'Révision') + lienNav('jouer', '<span class="nav-num">☰</span>', 'Missions et défis') + parcours('entrainer') + lienNav('final', marque(C.final), 'Épreuve finale'))}
+      ${groupeMenu('biz', icone('mallette', 20), 'Business', 'Mon activité de freelance', lienNav('business', '<span class="nav-num">€</span>', 'Mes outils et leçons business', nA) + parcours('business'))}
+      ${groupeMenu('out', icone('outils', 20), 'Outils', 'Veille · ressources · petits outils', lienNav('simulateurs', '<span class="nav-num">€$£</span>', 'Petits outils') + lienNav('veille', '<span class="nav-num">◉</span>', 'Veille et idées') + lienNav('ressources', '<span class="nav-num">★</span>', 'Ressources et sources'))}
+      ${groupeMenu('aff', icone('dossier', 20), 'Mes affaires', `Carnet d’actions`, lienNav('carnet', '<span class="nav-num">≡</span>', 'Mon carnet' + (nbNotes ? ` (${nbNotes})` : '')))}`;
   }
   function blocXp(compact) {
     const x = M.xp(C, etat), sj = M.serie(etat.jours, aujourdhui());
@@ -185,7 +191,7 @@
   function listeAlertes() {
     const y = annee(), vus = new Set(), tout = [];
     for (const e of [].concat(G.echeances(y - 1, etat.echeances), G.echeances(y, etat.echeances), G.echeances(y + 1, etat.echeances))) if (!vus.has(e.id)) { vus.add(e.id); tout.push(e); }
-    return G.alertes(tout, etat.echeancesFaites, aujourdhui());
+    return G.alertes(tout, etat.echeancesFaites, aujourdhui()).filter(a => !(etat.rappels[a.id] && etat.rappels[a.id] > aujourdhui()));
   }
   const alertesFortes = () => listeAlertes().filter(a => a.niveau !== 'passee');
   function prochaineEcheance() {
@@ -201,7 +207,7 @@
   const COMMENT_FAIRE = `<details class="comment-faire"><summary>Comment faire (3 étapes)</summary><ol class="liste-simple"><li>Ouvre <a href="https://www.autoentrepreneur.urssaf.fr" target="_blank" rel="noopener noreferrer">autoentrepreneur.urssaf.fr</a> et connecte-toi.</li><li>Choisis « Déclarer et payer », puis la période concernée.</li><li>Saisis le chiffre d’affaires encaissé (0 s’il n’y en a pas), valide, puis paie.</li></ol></details>`;
   const commentFaire = a => /urssaf/i.test(a.titre) ? COMMENT_FAIRE : '';
   function ligneAlerte(a) {
-    return `<li class="alerte-ligne al-${a.niveau}"><span class="al-point" aria-hidden="true"></span><div><strong>${esc(quand(a))} · ${esc(a.titre)}</strong>${a.fixe ? '' : '<span class="etiquette">Date indicative</span>'}<span class="minuscule">${esc(dateFr(a.date))}</span>${commentFaire(a)}</div><button class="bouton" data-action="echeance-fait" data-id="${esc(a.id)}">C’est fait</button></li>`;
+    return `<li class="alerte-ligne al-${a.niveau}"><span class="al-point" aria-hidden="true"></span><div><strong>${esc(quand(a))} · ${esc(a.titre)}</strong>${a.fixe ? '' : '<span class="etiquette">Date indicative</span>'}<span class="minuscule">${esc(dateFr(a.date))}</span>${commentFaire(a)}</div><div class="al-actions"><button class="bouton" data-action="echeance-fait" data-id="${esc(a.id)}">C’est fait</button><button class="lien-action" data-action="echeance-rappel" data-id="${esc(a.id)}">Me le rappeler dans 1 semaine</button></div></li>`;
   }
   function lignePassee(a) {
     return `<li class="alerte-ligne al-passee"><div><strong>${esc(a.titre)}</strong><span class="minuscule">Date passée le ${esc(dateFr(a.date))}. Tu l’as déjà faite ?</span>${commentFaire(a)}</div><button class="bouton" data-action="echeance-fait" data-id="${esc(a.id)}">Oui, c’est fait</button></li>`;
@@ -295,8 +301,8 @@
   function business() {
     const pr = M.progression(C, etat), ids = PARCOURS_ESPACE.business;
     const seg = `<div class="fam-outils" role="group" aria-label="Business : outils ou leçons">
-      <button class="fam-outil ${sousBiz === 'outils' ? 'active' : ''}" data-action="sous-biz" data-sous="outils" aria-pressed="${sousBiz === 'outils'}"><span class="fam-ico" aria-hidden="true">🧰</span><b>Mes outils</b><small>Kit, devis, cotisations…</small></button>
-      <button class="fam-outil ${sousBiz === 'lecons' ? 'active' : ''}" data-action="sous-biz" data-sous="lecons" aria-pressed="${sousBiz === 'lecons'}"><span class="fam-ico" aria-hidden="true">📘</span><b>Les leçons</b><small>${nbReussies(ids, pr)} / ${nbLecons(ids)} validées</small></button></div>`;
+      <button class="fam-outil ${sousBiz === 'outils' ? 'active' : ''}" data-action="sous-biz" data-sous="outils" aria-pressed="${sousBiz === 'outils'}"><span class="fam-ico" aria-hidden="true">${icone('outils', 22)}</span><b>Mes outils</b><small>Kit, devis, cotisations…</small></button>
+      <button class="fam-outil ${sousBiz === 'lecons' ? 'active' : ''}" data-action="sous-biz" data-sous="lecons" aria-pressed="${sousBiz === 'lecons'}"><span class="fam-ico" aria-hidden="true">${icone('livre', 22)}</span><b>Les leçons</b><small>${nbReussies(ids, pr)} / ${nbLecons(ids)} validées</small></button></div>`;
     const entete = `<header class="en-tete"><p class="sur-titre">Business</p><h1 tabindex="-1">Mon activité de freelance</h1><p class="intro">Trouver des clients, fixer ses prix, déclarer et être payée : les outils et les leçons de ton activité, rien d’autre.</p></header>${seg}`;
     if (sousBiz === 'lecons') return `${entete}<div class="disposition"><div class="pile">${listeParcours(ids, pr)}</div>${panneau(pr)}</div>`;
     return `${entete}${carteAlertes()}${carteRelances()}${panneauOutils('business')}`;
@@ -311,7 +317,7 @@
   }
   function panneau(pr) {
     pr = pr || M.progression(C, etat);
-    return `<aside class="panneau" aria-label="Repères"><section class="carte"><h2>Ton avancée</h2>${blocXp()}<div class="progression-texte"><span>Leçons validées</span><strong>${leconsValidees()} / ${C.lecons.length}</strong></div><progress value="${leconsValidees()}" max="${C.lecons.length}" aria-label="${pr.reussies} leçons validées sur ${pr.total}"></progress>${badges(pr)}</section>
+    return `<aside class="panneau" aria-label="Repères"><section class="carte"><h2>Ton avancée</h2><div class="progression-texte"><span>Leçons validées</span><strong>${leconsValidees()} / ${C.lecons.length}</strong></div><progress value="${leconsValidees()}" max="${C.lecons.length}" aria-label="${pr.reussies} leçons validées sur ${pr.total}"></progress>${badges(pr)}</section>
       <section class="carte"><p class="sur-titre">Comment gagner des XP</p><ul class="liste-simple"><li>10 XP par bonne réponse.</li><li>25 XP par leçon validée.</li><li>5 XP par point de scénario.</li><li>5 XP par bonne réponse au quiz éclair.</li></ul><p class="petit">Validé à 80 % sans erreur critique. Pas de chrono imposé.</p></section>
       <section class="carte"><h2>Besoin de souffler ?</h2><p class="petit">Le mode focus masque tout sauf la leçon. Le texte aéré agrandit l’interlignage. Ta progression est sauvegardée à chaque réponse.</p><div class="actions"><button class="bouton" data-action="focus">${etat.focus ? 'Quitter le mode focus' : 'Activer le mode focus'}</button></div></section></aside>`;
   }
@@ -420,12 +426,53 @@
     const corps = etat.etape === 'exercice' ? renduQuestion(l) : etat.etape === 'ancrage' ? ancrage(l) : cours(l);
     return `<button class="retour" data-view="accueil"><span aria-hidden="true">←</span> Accueil</button>
       <header class="lecon-entete"><div class="meta"><span class="etiquette">${esc(p.nom)}</span><span>${esc(l.code)} · ${esc(l.duree)}</span><span>${esc(statut(l))}</span>${pastilleNiveau(l)}</div><h1 tabindex="-1">${esc(l.titre)}</h1><p class="intro">${esc(l.objectif)}</p></header>
+      <div class="outils-lecon" role="group" aria-label="Réglages de la leçon"><button class="bouton" data-action="focus" aria-pressed="${etat.focus}">Mode focus</button><button class="bouton" data-action="sprint" data-minutes="10">Minuteur 10 min</button><span class="minuscule">Sauvegardé automatiquement</span></div>
       ${etapes()}${corps}`;
   }
   const tableauLecon = t => `<div class="table-defile"><table class="table-cash table-lecon"><caption>${esc(t.legende)}</caption><thead><tr>${t.entetes.map(h => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${t.lignes.map(r => `<tr>${r.map((c, i) => i === 0 ? `<th scope="row">${esc(c)}</th>` : `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  /* Jargon : le sigle devient un bouton ; un appui affiche sa définition. */
+  const JARGON = {
+    TJM: 'Taux journalier moyen : ce que tu factures pour une journée de travail.',
+    BNC: 'Bénéfices non commerciaux : la catégorie de revenus des professions libérales.',
+    BIC: 'Bénéfices industriels et commerciaux : la catégorie des activités commerciales et de services.',
+    CFE: 'Cotisation foncière des entreprises : un impôt local annuel, souvent nul la première année.',
+    CFP: 'Contribution à la formation professionnelle : une petite cotisation incluse dans tes prélèvements.',
+    VFL: 'Versement libératoire : option pour payer l’impôt sur le revenu en même temps que les cotisations.',
+    Acre: 'Aide à la création ou reprise d’entreprise : une réduction de cotisations pendant les débuts d’activité.',
+    SIRET: 'Numéro à 14 chiffres qui identifie ton activité. Il commence par ton SIREN (9 chiffres).',
+    SIREN: 'Numéro à 9 chiffres qui identifie ton entreprise.',
+    TVA: 'Taxe sur la valeur ajoutée : une taxe ajoutée au prix, reversée à l’État. En franchise, tu ne la factures pas.'
+  };
+  const GLOSSAIRE_PLUS = {
+    Acompte: 'Une partie du prix payée avant de commencer le travail.',
+    Avoir: 'Document qui annule tout ou partie d’une facture déjà émise.',
+    Autoliquidation: 'Mention sur la facture d’un client professionnel de l’UE : c’est lui qui déclare la TVA.',
+    Urssaf: 'L’organisme qui collecte tes cotisations sociales.'
+  };
+  const RE_JARGON = new RegExp('\\b(' + Object.keys(JARGON).join('|') + ')\\b');
+  function jargonner(racine) {
+    const zones = racine ? [racine] : [...document.querySelectorAll('.panneau-outil, .cours-bloc')];
+    for (const z of zones) {
+      const w = document.createTreeWalker(z, NodeFilter.SHOW_TEXT), noeuds = [];
+      for (let n = w.nextNode(); n; n = w.nextNode()) noeuds.push(n);
+      for (const n of noeuds) {
+        const m = RE_JARGON.exec(n.nodeValue); if (!m) continue;
+        if (n.parentElement.closest('a,button,label,select,option,textarea,input,summary,h1,h2,h3,legend,caption,th,.jargon')) continue;
+        if (document.querySelector(`.jargon[data-t="${m[1]}"]`)) continue;
+        const apres = n.splitText(m.index); const reste = apres.splitText(m[1].length);
+        const bt = document.createElement('button'); bt.className = 'jargon'; bt.type = 'button'; bt.dataset.action = 'jargon'; bt.dataset.t = m[1]; bt.textContent = m[1]; bt.setAttribute('aria-label', m[1] + ' : définition');
+        apres.replaceWith(bt); void reste;
+      }
+    }
+  }
+  const VISUELS = {
+    t3: () => `<figure class="visuel-lecon" aria-label="Une ligne éditoriale tient sur une page"><figcaption>Ta ligne éditoriale, sur une page</figcaption><div class="vl-trois"><div class="vl-carte vl-a"><b>1</b><strong>Moments du live</strong><span>clips, temps forts</span></div><div class="vl-carte vl-b"><b>2</b><strong>Coulisses</strong><span>setup, préparation</span></div><div class="vl-carte vl-c"><b>3</b><strong>Communauté</strong><span>fan-arts, sondages</span></div></div><div class="vl-ligne"><span>Ton : <em>on dit / on ne dit pas</em></span><span>Rythme : <em>3 posts par semaine, tenables</em></span></div></figure>`,
+    b1: () => `<figure class="visuel-lecon" aria-label="Les seuils du chiffre d’affaires"><figcaption>Où se situent les seuils (chiffre d’affaires annuel)</figcaption>${barrePc('Franchise de TVA : ' + euro(R.tvaBase), Math.round(R.tvaBase / R.plafondServices * 100), '')}${barrePc('Seuil majoré de TVA : ' + euro(R.tvaMajore), Math.round(R.tvaMajore / R.plafondServices * 100), '')}${barrePc('Plafond micro, services : ' + euro(R.plafondServices), 100, '')}</figure>`,
+    b5: () => `<figure class="visuel-lecon" aria-label="De la prestation au retard de paiement"><figcaption>De la prestation au paiement</figcaption><ol class="vl-frise"><li><b>Jour 0</b><span>Tu livres la prestation</span></li><li><b>Jour 0</b><span>Tu envoies la facture, échéance écrite</span></li><li><b>Jour 30</b><span>Échéance sans accord écrit</span></li><li><b>Après</b><span>Pénalités de retard + ${euro(R.indemniteRetard)} (client pro)</span></li></ol></figure>`
+  };
   function cours(l) {
     const outil = { c1: 'pourcent', c2: 'pourcent', c3: 'pourcent', c4: 'pourcent', b2: 'cotis', b3: 'cotis', b4: 'revenu', b5: 'doc', b6: 'treso', b7: 'devises', b8: 'doc', b9: 'budget', p1: 'pipeline', p2: 'pipeline', p7: 'kit', p8: 'kit', t8: 'reporting' }[l.id];
-    return `<section class="carte">${blocMascotte('salut', l.id, `${parole('salut', l.id)} ${l.court}`)}<div class="situation"><p class="sur-titre">La situation</p><p>${esc(l.situation)}</p></div>
+    return `<section class="carte">${blocMascotte('salut', l.id, `${parole('salut', l.id)} ${l.court}`)}<div class="situation"><p class="sur-titre">La situation</p><p>${esc(l.situation)}</p></div>${VISUELS[l.id] ? VISUELS[l.id]() : ''}
       ${l.cours.map(([t, x], i) => `<section class="cours-bloc"><h2><span class="puce-num" aria-hidden="true">${i + 1}</span>${esc(t)}</h2><p>${esc(x)}</p></section>`).join('')}
       ${l.tableau ? tableauLecon(l.tableau) : ''}
       ${blocMascotte('retient', l.id + 'm')}<div class="memo"><strong>À retenir</strong>${esc(l.memo)}</div>
@@ -558,7 +605,7 @@
       <p class="taux-croises" id="taux-croises">${tauxCroises()}</p>
       <p class="minuscule">Le bouton interroge un service public de taux (Frankfurter, données BCE) : c’est la seule requête réseau du module. Taux de référence publiés vers 16 h les jours ouvrés.</p></section>`;
   }
-  const ONGLETS = [['kit', 'Kit prospect'], ['pourcent', 'Pourcentages'], ['devises', 'Convertir'], ['cotis', 'Cotisations'], ['revenu', 'Tarif → revenu'], ['treso', 'Trésorerie'], ['pipeline', 'Prospection'], ['budget', 'Budget'], ['reporting', 'Reporting'], ['doc', 'Devis & facture'], ['recettes', 'Livre des recettes'], ['plafonds', 'Plafonds'], ['echeances', 'Échéances'], ['planning', 'Planning'], ['contrat', 'Contrat & CGV'], ['efacture', 'Facture électronique']];
+  const ONGLETS = [['kit', 'Kit prospect'], ['suivi', 'Suivi clients'], ['pourcent', 'Pourcentages'], ['devises', 'Convertir'], ['cotis', 'Cotisations'], ['revenu', 'Tarif → revenu'], ['treso', 'Trésorerie'], ['pipeline', 'Prospection'], ['budget', 'Budget'], ['reporting', 'Reporting'], ['doc', 'Devis & facture'], ['recettes', 'Livre des recettes'], ['plafonds', 'Plafonds'], ['echeances', 'Échéances'], ['planning', 'Planning'], ['contrat', 'Contrat & CGV'], ['efacture', 'Facture électronique']];
 
   function resultatDevises() {
     const eur = M.enEuros(conv.montant, conv.devise, T());
@@ -1053,7 +1100,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
         <p class="petit">Avec 10 % et 1 %, tu fabriques presque tous les autres : 30 % = 10 % × 3, 12 % = 10 % + 2 × 1 %.</p></details>`;
   }
 
-  const OUTIL_RENDU = { kit: [outilKit, resultatKit], pourcent: [outilPourcent, resultatPourcent], devises: [outilDevises, resultatDevises], cotis: [outilCotis, resultatCotis], revenu: [outilRevenu, resultatRevenu], treso: [outilTreso, resultatTreso], pipeline: [outilPipeline, resultatPipeline], budget: [outilBudget, resultatBudget], reporting: [outilReporting, resultatReporting], doc: [outilDoc, resultatDoc], recettes: [outilRecettes, resultatRecettes], plafonds: [outilPlafonds, resultatPlafonds], echeances: [outilEcheances, resultatEcheances], planning: [outilPlanning, resultatPlanning], contrat: [outilContrat, resultatContrat], efacture: [outilEfacture, resultatEfacture] };
+  const OUTIL_RENDU = { kit: [outilKit, resultatKit], suivi: [outilSuivi, () => ''], pourcent: [outilPourcent, resultatPourcent], devises: [outilDevises, resultatDevises], cotis: [outilCotis, resultatCotis], revenu: [outilRevenu, resultatRevenu], treso: [outilTreso, resultatTreso], pipeline: [outilPipeline, resultatPipeline], budget: [outilBudget, resultatBudget], reporting: [outilReporting, resultatReporting], doc: [outilDoc, resultatDoc], recettes: [outilRecettes, resultatRecettes], plafonds: [outilPlafonds, resultatPlafonds], echeances: [outilEcheances, resultatEcheances], planning: [outilPlanning, resultatPlanning], contrat: [outilContrat, resultatContrat], efacture: [outilEfacture, resultatEfacture] };
 
   /* ---------- Kit de prospection : générateur, copie, suivi des relances ---------- */
   const textareaKit = (id, texte, lignes) => `<textarea id="${id}" readonly rows="${lignes}">${esc(texte)}</textarea>`;
@@ -1097,11 +1144,14 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
         ${g.suivi.map((s, i) => `<details class="bloc-plie"><summary>J+${s.j} · ${esc(s.titre)}</summary>${textareaKit('kit-relance-' + i, s.texte, 9)}<div class="actions">${copier('kit-relance-' + i, 'Relance copiée.')}</div></details>`).join('')}
         <div class="table-defile"><table class="table-cash"><caption>Selon sa réponse</caption><thead><tr><th scope="col">Si…</th><th scope="col">Alors</th></tr></thead><tbody>${g.cas.map(c => `<tr><th scope="row">${esc(c[0])}</th><td>${esc(c[1])}</td></tr>`).join('')}</tbody></table></div>`)}
       <div class="actions"><button class="bouton primaire" data-action="kit-enregistrer">J’ai envoyé ce kit : l’ajouter à mon suivi</button></div>
-      ${suiviKits()}`;
+      <p class="petit">Tu retrouves tous tes envois dans <button class="lien-action" data-action="famille-outil" data-outil="suivi">Suivi clients</button>.</p>`;
+  }
+  function outilSuivi() {
+    return `<p class="petit">Tous tes kits envoyés, au même endroit : l’appli te dit quand relancer. Un kit s’ajoute depuis <button class="lien-action" data-action="famille-outil" data-outil="kit">Kit prospect</button>.</p>${suiviKits()}`;
   }
   function suiviKits() {
     const auj = aujourdhui(), STAT = [['envoye', 'Envoyé'], ['relance', 'Relancé'], ['rdv', 'Rendez-vous'], ['signe', 'Signé'], ['perdu', 'Perdu']];
-    if (!etat.kits.length) return '<p class="petit">Ton suivi est vide : ajoute un kit dès que tu l’as envoyé, l’appli te dit quand relancer.</p>';
+    if (!etat.kits.length) return '<p class="petit">Ton suivi est vide. Prépare un kit, envoie-le, puis ajoute-le ici.</p><div class="actions"><button class="bouton primaire" data-action="famille-outil" data-outil="kit">Préparer un kit</button></div>';
     return `<section class="kit-bloc"><h3>Mon suivi des kits (${etat.kits.length})</h3><ul class="suivi-kits">${etat.kits.map(x => {
       const r = KIT.relanceDue(x.date, x.faites, x.statut, auj);
       const note = r ? `<span class="pastille-kit ${r.retard ? 'retard' : r.due ? 'jour' : ''}">${r.retard ? 'Relance en retard' : r.due ? 'Relance aujourd’hui' : 'Prochaine relance'} : ${esc(r.titre)} · ${esc(dateFr(r.date))}</span>` : `<span class="petit">${x.statut === 'signe' ? 'Gagné, bravo.' : x.statut === 'perdu' ? 'Classé.' : x.statut === 'rdv' ? 'Rendez-vous en cours.' : 'Relances terminées.'}</span>`;
@@ -1117,15 +1167,15 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   }
   function carteRelances() {
     const l = relancesDues(); if (!l.length) return '';
-    return `<section class="alertes-carte" role="region" aria-label="Relances à faire"><h2><span class="al-point" aria-hidden="true"></span>${l.length > 1 ? l.length + ' relances de prospects à faire' : 'Une relance de prospect à faire'}</h2><ul class="alertes-liste">${l.slice(0, 3).map(o => `<li>${esc(o.x.client || 'Client')} : ${esc(o.r.titre)} (prévue le ${esc(dateFr(o.r.date))})</li>`).join('')}</ul><div class="actions"><button class="bouton primaire" data-action="outil" data-outil="kit">Ouvrir mon suivi</button></div></section>`;
+    return `<section class="alertes-carte" role="region" aria-label="Relances à faire"><h2><span class="al-point" aria-hidden="true"></span>${l.length > 1 ? l.length + ' relances de prospects à faire' : 'Une relance de prospect à faire'}</h2><ul class="alertes-liste">${l.slice(0, 3).map(o => `<li>${esc(o.x.client || 'Client')} : ${esc(o.r.titre)} (prévue le ${esc(dateFr(o.r.date))})</li>`).join('')}</ul><div class="actions"><button class="bouton primaire" data-action="outil" data-outil="suivi">Ouvrir mon suivi</button></div></section>`;
   }
 
   /* ---------- Boîte à outils : quatre familles ---------- */
   const FAMILLES = [
-    ['ventes', '🤝', 'Trouver des clients', 'Kit prospect, suivi, devis, contrat', ['kit', 'pipeline', 'doc', 'contrat'], 'business'],
-    ['regles', '🏛️', 'Statut et impôts', 'Cotisations, tarif, plafonds, échéances', ['cotis', 'revenu', 'plafonds', 'echeances', 'efacture'], 'business'],
-    ['argent', '💶', 'Argent au quotidien', 'Trésorerie, budget, recettes', ['treso', 'budget', 'recettes'], 'business'],
-    ['travail', '🧮', 'Outils de travail', 'Pourcentages, devises, planning, rapports', ['pourcent', 'devises', 'planning', 'reporting'], 'outils']
+    ['ventes', 'cible', 'Trouver des clients', 'Kit prospect, suivi des clients, devis, contrat', ['kit', 'suivi', 'pipeline', 'doc', 'contrat'], 'business'],
+    ['regles', 'balance', 'Statut et impôts', 'Cotisations, tarif, plafonds, échéances', ['cotis', 'revenu', 'plafonds', 'echeances', 'efacture'], 'business'],
+    ['argent', 'piece', 'Argent au quotidien', 'Trésorerie, budget, recettes', ['treso', 'budget', 'recettes'], 'business'],
+    ['travail', 'calcul', 'Outils de travail', 'Pourcentages, devises, planning, rapports', ['pourcent', 'devises', 'planning', 'reporting'], 'outils']
   ];
   const espaceOutil = id => familleDe(id)[5];
   const familleDe = id => FAMILLES.find(x => x[4].includes(id)) || FAMILLES[0];
@@ -1133,10 +1183,13 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   function panneauOutils(espace) {
     const o = etat.outil, fam = familleDe(o), fams = FAMILLES.filter(x => x[5] === espace);
     const tabs = ONGLETS.filter(x => fam[4].includes(x[0])).sort((a, b) => fam[4].indexOf(a[0]) - fam[4].indexOf(b[0]));
-    return `${o === 'devises' ? barreTaux() : (['cotis', 'treso', 'budget', 'reporting', 'doc', 'recettes'].includes(o) ? noteTaux() : '')}
-      ${fams.length > 1 ? `<div class="fam-outils" role="group" aria-label="Familles d’outils">${fams.map(x => `<button class="fam-outil ${x === fam ? 'active' : ''}" data-action="famille-outil" data-outil="${x[4][0]}" aria-pressed="${x === fam}"><span class="fam-ico" aria-hidden="true">${x[1]}</span><b>${esc(x[2])}</b><small>${esc(x[3])}</small></button>`).join('')}</div>` : ''}
+    const favs = etat.favoris.filter(id => ONGLETS.some(x => x[0] === id)), estFav = favs.includes(o);
+    const barreFav = `<div class="favoris"><div class="favoris-liste" role="group" aria-label="Mes 3 outils"><span class="favoris-titre">Mes 3 outils</span>${favs.length ? favs.map(id => `<button class="puce-fav ${id === o ? 'active' : ''}" data-action="outil" data-outil="${id}">${esc(ONGLETS.find(x => x[0] === id)[1])}</button>`).join('') : '<span class="petit">Appuie sur l’étoile d’un outil pour l’épingler ici.</span>'}</div>
+      <div class="recherche-outil"><label class="sr-only" for="recherche-outil">Chercher un outil</label><input id="recherche-outil" type="search" list="liste-outils" placeholder="Chercher un outil…" autocomplete="off"><datalist id="liste-outils">${ONGLETS.map(x => `<option value="${esc(x[1])}"></option>`).join('')}</datalist></div></div>`;
+    return `${barreFav}${o === 'devises' ? barreTaux() : (['cotis', 'treso', 'budget', 'reporting', 'doc', 'recettes'].includes(o) ? noteTaux() : '')}
+      ${fams.length > 1 ? `<div class="fam-outils" role="group" aria-label="Familles d’outils">${fams.map(x => `<button class="fam-outil ${x === fam ? 'active' : ''}" data-action="famille-outil" data-outil="${x[4][0]}" aria-pressed="${x === fam}"><span class="fam-ico" aria-hidden="true">${icone(x[1], 22)}</span><b>${esc(x[2])}</b><small>${esc(x[3])}</small></button>`).join('')}</div>` : ''}
       <div class="onglets" role="tablist" aria-label="Outils de la famille ${esc(fam[2])}">${tabs.map(([id, n]) => `<button role="tab" id="onglet-${id}" aria-controls="panneau-outil" aria-selected="${o === id}" tabindex="${o === id ? 0 : -1}" data-action="onglet" data-outil="${id}">${esc(n)}</button>`).join('')}</div>
-      <section class="carte panneau-outil" id="panneau-outil" role="tabpanel" aria-labelledby="onglet-${o}"><h2>${esc(ONGLETS.find(x => x[0] === o)[1])}</h2>${OUTIL_RENDU[o][0]()}</section>`;
+      <section class="carte panneau-outil" id="panneau-outil" role="tabpanel" aria-labelledby="onglet-${o}"><div class="panneau-tete"><h2>${esc(ONGLETS.find(x => x[0] === o)[1])}</h2><button class="etoile-fav ${estFav ? 'on' : ''}" data-action="favori" data-outil="${o}" aria-pressed="${estFav}" aria-label="${estFav ? 'Retirer de' : 'Ajouter à'} mes 3 outils">${icone('etoile', 22)}</button></div>${OUTIL_RENDU[o][0]()}</section>`;
   }
   /* Espace Outils et ressources : veille, ressources, pourcentages en images, puis les outils de travail. */
   function simulateurs() {
@@ -1157,6 +1210,12 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
       <section class="carte"><h2>Garder une copie</h2><p class="petit">Ta progression vit dans ce navigateur. Exporte-la en fichier pour la garder ou changer d’appareil.</p><div class="actions"><button class="bouton" data-action="sauvegarde">Sauvegarder ou restaurer</button><button class="bouton discret" data-action="imprimer">Imprimer le carnet</button></div></section>
       <section class="carte"><h2>Sur ton téléphone, même sans connexion</h2><p class="petit">Installe le module comme une application : il s’ouvre en plein écran et marche hors connexion (seule l’actualisation des taux BCE demande internet). Sur Android et sur ordinateur : bouton « Installer l’app » en haut. Sur iPhone : Partager, puis « Sur l’écran d’accueil ». Pense à exporter ta progression de temps en temps : elle reste sur cet appareil.</p></section></div>`;
   }
+  const THEMES_SRC = [['Statut et cotisations', /^(microSocial|cotisMicro|statut|acre|acreActu|cfp)$/], ['Impôts et TVA', /^(fiscMicro|seuilsMicro|tvaFranchise|tvaImpots|vfl|cfe|declarerCA|assujettis|bofip|bce)/i], ['Factures et paiement', /^(factures|delais|efacture|devises)/i], ['Droit d’auteur et contrats', /^(cession|inpiAuteur|image|influence|contrat)/i]];
+  function sourcesParTheme() {
+    const groupes = new Map([...THEMES_SRC.map(t => [t[0], []]), ['Autres repères', []]]);
+    for (const [cle, src] of Object.entries(S.sources)) { const t = THEMES_SRC.find(x => x[1].test(cle)); groupes.get(t ? t[0] : 'Autres repères').push(src); }
+    return [...groupes].filter(([, l]) => l.length).map(([nom, l]) => `<h3 class="theme-src">${esc(nom)}</h3><ul class="liste-sources">${l.map(x => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(x.nom)} <span class="sr-only">(nouvel onglet)</span></a></li>`).join('')}</ul>`).join('');
+  }
   function sources() {
     const t = R.change;
     const lignes = [
@@ -1174,7 +1233,8 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     ];
     return `<header class="en-tete"><p class="sur-titre">Mes affaires</p><h1 tabindex="-1">Sources officielles</h1><p class="intro">Chiffres vérifiés le ${esc(S.verifie)}. Chaque chiffre est un repère pédagogique : vérifier le taux en vigueur sur la source officielle liée avant de l’appliquer.</p></header>
       <section class="carte"><table class="table-cash table-sources"><caption>Repères ${R.annee}</caption><thead><tr><th scope="col">Repère</th><th scope="col">Valeur</th><th scope="col">Source</th></tr></thead><tbody>${lignes.map(([n, v, s]) => `<tr><th scope="row">${esc(n)}</th><td>${esc(v)}</td><td><a href="${esc(S.sources[s].url)}" target="_blank" rel="noopener noreferrer">Ouvrir <span class="sr-only">${esc(S.sources[s].nom)} (nouvel onglet)</span></a></td></tr>`).join('')}</tbody></table></section>
-      <section class="carte"><h2>Toutes les sources</h2><ul class="liste-sources">${Object.values(S.sources).map(s => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.nom)} <span class="sr-only">(nouvel onglet)</span></a></li>`).join('')}</ul></section>`;
+      <section class="carte"><h2>Toutes les sources, par thème</h2>${sourcesParTheme()}</section>
+      <section class="carte"><h2>Petit glossaire</h2><dl class="glossaire">${Object.entries(Object.assign({}, JARGON, GLOSSAIRE_PLUS)).sort((a, b) => a[0].localeCompare(b[0], 'fr')).map(([t, d]) => `<dt>${esc(t)}</dt><dd>${esc(d)}</dd>`).join('')}</dl></section>`;
   }
 
   /* ---------- Pourcentages en images : cartes à parcourir, une idée par carte ---------- */
@@ -1261,7 +1321,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     let html = v ? v() : accueil();
     const par = PARENT[etat.vue];
     if (etat.vue === 'ressources' || etat.vue === 'sources') {
-      const seg = `<div class="fam-outils" role="group" aria-label="Ressources ou sources officielles"><button class="fam-outil ${etat.vue === 'ressources' ? 'active' : ''}" data-view="ressources" aria-pressed="${etat.vue === 'ressources'}"><span class="fam-ico" aria-hidden="true">★</span><b>Liens et outils</b><small>${RS.reduce((n, c) => n + c.liens.length, 0)} liens triés par usage</small></button><button class="fam-outil ${etat.vue === 'sources' ? 'active' : ''}" data-view="sources" aria-pressed="${etat.vue === 'sources'}"><span class="fam-ico" aria-hidden="true">§</span><b>Sources officielles</b><small>Taux, lois, démarches</small></button></div>`;
+      const seg = `<div class="fam-outils" role="group" aria-label="Ressources ou sources officielles"><button class="fam-outil ${etat.vue === 'ressources' ? 'active' : ''}" data-view="ressources" aria-pressed="${etat.vue === 'ressources'}"><span class="fam-ico" aria-hidden="true">${icone('etoile', 22)}</span><b>Liens et outils</b><small>${RS.reduce((n, c) => n + c.liens.length, 0)} liens triés par usage</small></button><button class="fam-outil ${etat.vue === 'sources' ? 'active' : ''}" data-view="sources" aria-pressed="${etat.vue === 'sources'}"><span class="fam-ico" aria-hidden="true">${icone('balance', 22)}</span><b>Sources officielles</b><small>Taux, lois, démarches</small></button></div>`;
       html = html.replace('</header>', '</header>' + seg);
     }
     return par && !/class="retour"/.test(html) ? `<button class="retour" data-view="${par}"><span aria-hidden="true">←</span> ${LIB_PARENT[par]}</button>${html}` : html;
@@ -1299,7 +1359,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
       ${bandeauAlertes()}
       <button class="haut" data-action="haut" hidden aria-label="Revenir en haut de la page">↑ Haut</button>
       <main id="principal" class="esp-${espaceVue()}">${contenuVue()}<footer class="pied"><span>JTIpilot · Module ${esc(C.titre)} · contenu ${esc(C.version)} revu le ${esc(C.revue)}. Les chiffres légaux et fiscaux sont des repères pédagogiques : vérifier sur la source officielle liée.</span><button class="lien-action" data-view="sources">Sources officielles</button><button class="lien-action" data-view="suggestions">Une idée pour le logiciel ?</button></footer></main></div></div>${barreBas()}`;
-    largeurs(); majMinuteur(); badgeApp(); if (etat.vue === 'pcimages') majPcv();
+    largeurs(); jargonner(); majMinuteur(); badgeApp(); if (etat.vue === 'pcimages') majPcv();
     majAdresse(); majHaut();
     sauver();
     if (focusSel) { const el = $(focusSel); if (el) el.focus({ preventScroll: false }); }
@@ -1308,6 +1368,11 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   const ROUTES = { programme: 'apprendre', jouer: 'entrainer', pcimages: 'pourcentages' };
   const ROUTES_INV = { apprendre: 'programme', entrainer: 'jouer', pourcentages: 'pcimages' };
   const VUES_SIMPLES = ['accueil', 'programme', 'jouer', 'business', 'simulateurs', 'veille', 'ressources', 'pcimages', 'carnet', 'suggestions', 'sources', 'scenarios', 'eclair', 'revision'];
+  function allerOutil(id) {
+    if (!ONGLETS.some(x => x[0] === id)) return;
+    etat.outil = id;
+    if (espaceOutil(id) === 'business') { sousBiz = 'outils'; ouvrir('business'); } else ouvrir('simulateurs');
+  }
   const outilValide = (id, espace) => ONGLETS.some(x => x[0] === id) && espaceOutil(id) === espace ? id : null;
   function adresseDe() {
     const v = etat.vue;
@@ -1459,7 +1524,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     /* Les champs dont le libellé dépend d'un choix demandent un rendu complet. */
     if (g === 'doc' && ['type', 'situation', 'devise'].includes(k)) { render(`#${t.id}`); sauver(); return; }
     const cible = $(`#resultat-${etat.outil}`);
-    if (cible) { cible.innerHTML = OUTIL_RENDU[etat.outil][1](); largeurs(cible); }
+    if (cible) { cible.innerHTML = OUTIL_RENDU[etat.outil][1](); largeurs(cible); jargonner(cible); }
     sauver();
   }
   document.addEventListener('input', e => {
@@ -1490,6 +1555,12 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     if (t.name === 'choix') { const q = qCourante(); const vals = [...document.querySelectorAll('input[name="choix"]:checked')].map(x => Number(x.value)); drafts[q.id] = q.type === 'multiple' ? vals : vals[0]; }
     if (t.matches('[data-sim]') && (t.type === 'checkbox' || t.tagName === 'SELECT')) majSim(t);
     if (t.matches('select[data-pf]')) majPf(t);
+    if (t.id === 'recherche-outil') {
+      const v = t.value.trim().toLowerCase(); if (!v) return;
+      const o = ONGLETS.find(x => x[1].toLowerCase() === v) || ONGLETS.find(x => x[1].toLowerCase().includes(v));
+      if (o) allerOutil(o[0]); else toast('Aucun outil de ce nom. Essaie « devis », « cotisations » ou « kit ».');
+      return;
+    }
     if (t.matches('[data-kit-statut]')) { const x = etat.kits.find(y => y.id === t.dataset.kitStatut); if (x && ['envoye', 'relance', 'rdv', 'signe', 'perdu'].includes(t.value)) { x.statut = t.value; render(`#${t.id}`); } }
     if (t.matches('[data-idee-statut]')) { const x = etat.idees.find(y => y.id === t.dataset.ideeStatut); if (x) { x.statut = ['a-faire', 'en-cours', 'publie'].includes(t.value) ? t.value : 'a-faire'; sauver(); annoncer('Statut mis à jour.'); } }
     if (t.matches('[data-conv="devise"]')) { conv.devise = t.value; $('#resultat-devises').innerHTML = resultatDevises(); }
@@ -1518,7 +1589,16 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     if (a === 'stop-sprint') { if (sprint) clearInterval(sprint.id); sprint = null; render('.sprint summary'); toast('Sprint arrêté. Pas grave : tu reprends quand tu veux.'); return; }
     if (a === 'energie') { etat.energie = b.dataset.energie; render('.energie-bloc [aria-pressed="true"]'); return; }
     if (a === 'qdj') { const lq = toutes.find(x => x.id === b.dataset.lecon); etat.vue = lq.id; etat.derniere = lq.id; etat.etape = 'exercice'; etat.question = Number(b.dataset.i); drafts = {}; render('.question h2'); window.scrollTo(0, 0); return; }
-    if (a === 'outil') { etat.outil = b.dataset.outil; if (espaceOutil(etat.outil) === 'business') { sousBiz = 'outils'; ouvrir('business'); } else ouvrir('simulateurs'); return; }
+    if (a === 'outil') { allerOutil(b.dataset.outil); return; }
+    if (a === 'favori') {
+      const id = b.dataset.outil, i = etat.favoris.indexOf(id);
+      if (i >= 0) etat.favoris.splice(i, 1);
+      else if (etat.favoris.length >= 3) { toast('3 outils au maximum : retire-en un avec l’étoile avant d’en ajouter un autre.'); return; }
+      else etat.favoris.push(id);
+      render(`.etoile-fav`); return;
+    }
+    if (a === 'jargon') { const t = b.dataset.t; toast(`${t} : ${JARGON[t]}`); return; }
+    if (a === 'echeance-rappel') { etat.rappels[b.dataset.id] = new Date(Date.parse(aujourdhui()) + 7 * 864e5).toISOString().slice(0, 10); render(); toast('Ok, je te le rappelle dans une semaine.'); return; }
     if (a === 'haut') { window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); const h1 = document.querySelector('h1'); if (h1) h1.focus({ preventScroll: true }); return; }
     if (a === 'sous-biz') { sousBiz = b.dataset.sous === 'lecons' ? 'lecons' : 'outils'; render(`[data-sous="${sousBiz}"]`); return; }
     if (a === 'pcv-suiv') { pcv.i = Math.min(CARTES_PCV.length - 1, pcv.i + 1); render('.pcv-carte h2'); window.scrollTo(0, 0); return; }
@@ -1541,10 +1621,10 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     if (a === 'kit-enregistrer') {
       const k = etat.kit; if (!k.client.trim()) { toast('Donne un nom au client (case « Nom du client »).'); const c = $('#kit-client'); if (c) c.focus(); return; }
       etat.kits.unshift({ id: nouvelId(), date: aujourdhui(), client: k.client.trim().slice(0, 120), contact: k.contact.slice(0, 80), typeClient: k.typeClient, demande: k.demande, statut: 'envoye', faites: 0 });
-      etat.kits = etat.kits.slice(0, 200); render('.suivi-kits'); toast('Ajouté à ton suivi. Je te dirai quand relancer.'); return;
+      etat.kits = etat.kits.slice(0, 200); etat.outil = 'suivi'; render('.suivi-kits'); toast('Ajouté à ton suivi. Je te dirai quand relancer.'); return;
     }
     if (a === 'kit-relance') { const x = etat.kits.find(y => y.id === b.dataset.id); if (x) { x.faites = Math.min(3, x.faites + 1); x.statut = 'relance'; render(`#st-${x.id}`); toast(x.faites >= 3 ? 'Dernier message envoyé. Le sujet est clos.' : 'Relance notée. Prochaine date mise à jour.'); } return; }
-    if (a === 'kit-supprimer') { etat.kits = etat.kits.filter(y => y.id !== b.dataset.id); render('[data-action="kit-enregistrer"]'); return; }
+    if (a === 'kit-supprimer') { etat.kits = etat.kits.filter(y => y.id !== b.dataset.id); render(); return; }
     if (a === 'onglet') { etat.outil = b.dataset.outil; render(`#onglet-${etat.outil}`); return; }
     if (a === 'maj-taux') { majTaux(b); return; }
     if (a === 'copier') {
