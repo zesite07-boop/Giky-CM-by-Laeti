@@ -115,16 +115,30 @@
     const actif = etat.vue === view;
     return `<button class="nav-lien" data-view="${view}" ${actif ? 'aria-current="page"' : ''}>${num}<span>${esc(libelle)}</span>${pastille ? `<span class="pastille-alerte" aria-label="${pastille} échéance${pastille > 1 ? 's' : ''} à traiter">${pastille}</span>` : ''}</button>`;
   }
+  /* Menu en 4 groupes repliables : Mes affaires, Jouer, Outils, Apprendre. Rien n'est retiré. */
+  const menuOuvert = new Set(['aff', 'jeu', 'out']);
+  function groupesDe(view) {
+    const l = toutes.find(x => x.id === view);
+    if (l) return l.id === 'final' ? ['app'] : ['app', 'app-' + l.parcours];
+    if (['carnet', 'suggestions', 'sources'].includes(view)) return ['aff'];
+    if (['scenarios', 'eclair', 'revision', 'jouer'].includes(view)) return ['jeu'];
+    if (['simulateurs', 'veille', 'ressources', 'pcimages'].includes(view)) return ['out'];
+    if (view === 'programme') return ['app'];
+    return [];
+  }
+  const groupeMenu = (id, puce, titre, sous, corps, imbrique) => `<details class="menu-groupe mg-${imbrique ? 'sous' : id.split('-')[0]}" data-mg="${id}" ${menuOuvert.has(id) ? 'open' : ''}><summary><span class="mg-puce" aria-hidden="true">${puce}</span><span class="mg-titre">${esc(titre)}<small>${esc(sous)}</small></span></summary><div class="mg-corps">${corps}</div></details>`;
   function menu() {
-    const groupes = C.parcours.filter(p => p.id !== 'final').map(p => {
-      const ls = C.lecons.filter(l => l.parcours === p.id);
-      return `<div class="nav-groupe"><p class="sur-titre">${esc(p.nom)}</p>${ls.map(l => lienNav(l.id, marque(l), l.titre)).join('')}</div>`;
+    const pr = M.progression(C, etat), nA = alertesFortes().length;
+    const parcours = C.parcours.filter(p => p.id !== 'final').map(p => {
+      const ls = C.lecons.filter(l => l.parcours === p.id), r = pr.parcours[p.id].reussies;
+      return groupeMenu('app-' + p.id, '', p.nom, `${r} / ${ls.length} validées`, ls.map(l => lienNav(l.id, marque(l), l.titre)).join(''), true);
     }).join('');
+    const nbNotes = Object.values(etat.notes).filter(n => n && (n.action || n.echeance)).length;
     return `${lienNav('accueil', '<span class="nav-num">⌂</span>', 'Accueil')}
-      <div class="nav-groupe"><p class="sur-titre">Jouer et s’outiller</p>${lienNav('simulateurs', '<span class="nav-num">€$£</span>', 'Boîte à outils', alertesFortes().length)}${lienNav('scenarios', '<span class="nav-num">▶</span>', 'Scénarios')}${lienNav('eclair', '<span class="nav-num">⚡</span>', 'Quiz éclair')}${lienNav('revision', '<span class="nav-num">↻</span>', 'Révision espacée')}${lienNav('veille', '<span class="nav-num">◉</span>', 'Veille et idées')}${lienNav('ressources', '<span class="nav-num">★</span>', 'Ressources')}</div>
-      ${groupes}
-      <div class="nav-groupe"><p class="sur-titre">Pour finir</p>${lienNav('final', marque(C.final), 'Épreuve finale')}</div>
-      <div class="nav-groupe"><p class="sur-titre">Mes affaires</p>${lienNav('carnet', '<span class="nav-num">≡</span>', 'Mon carnet')}${lienNav('sources', '<span class="nav-num">§</span>', 'Sources officielles')}${lienNav('suggestions', '<span class="nav-num">✎</span>', 'Mes idées pour le logiciel')}</div>`;
+      ${groupeMenu('aff', '🗂️', 'Mes affaires', `Carnet · idées · sources`, lienNav('carnet', '<span class="nav-num">≡</span>', 'Mon carnet' + (nbNotes ? ` (${nbNotes})` : '')) + lienNav('suggestions', '<span class="nav-num">✎</span>', 'Mes idées pour le logiciel') + lienNav('sources', '<span class="nav-num">§</span>', 'Sources officielles'))}
+      ${groupeMenu('jeu', '🎮', 'Jouer', 'Scénarios · quiz · révision', lienNav('scenarios', '<span class="nav-num">▶</span>', 'Scénarios') + lienNav('eclair', '<span class="nav-num">⚡</span>', 'Quiz éclair') + lienNav('revision', '<span class="nav-num">↻</span>', 'Révision espacée'))}
+      ${groupeMenu('out', '🧰', 'Outils', 'Calculs · veille · ressources', lienNav('simulateurs', '<span class="nav-num">€$£</span>', 'Boîte à outils', nA) + lienNav('pcimages', '<span class="nav-num">%</span>', 'Pourcentages en images') + lienNav('veille', '<span class="nav-num">◉</span>', 'Veille et idées') + lienNav('ressources', '<span class="nav-num">★</span>', 'Ressources'))}
+      ${groupeMenu('app', '📚', 'Apprendre', `${pr.reussies} / ${pr.total} étapes`, lienNav('programme', '<span class="nav-num">☰</span>', 'Tout le programme') + parcours + lienNav('final', marque(C.final), 'Épreuve finale'))}`;
   }
   function blocXp(compact) {
     const x = M.xp(C, etat), sj = M.serie(etat.jours, aujourdhui());
@@ -237,12 +251,15 @@
         ${tuile('veille', 'mauve', 'veille', 'Veille', `${etat.idees.length} idée${etat.idees.length > 1 ? 's' : ''} · actus créateurs Twitch`)}
         ${tuile('simulateurs', 'or', 'outils', 'Boîte à outils', 'Recettes, plafonds, devis')}
         ${tuile('ressources', 'turquoise', 'etoile', 'Ressources', `${RS.reduce((n, c) => n + c.liens.length, 0)} outils et liens triés`)}
+        <button class="tuile t-turquoise" data-view="pcimages"><span class="tuile-icone">${icone('etoile')}</span><strong>Pourcentages en images</strong><span>7 cartes animées, 3 minutes</span></button>
         <button class="tuile t-cerise" data-action="outil" data-outil="pourcent"><span class="tuile-icone">${icone('outils')}</span><strong>Pourcentages</strong><span>Formules, calculatrice, calcul de tête</span></button>
         <button class="tuile t-mauve" data-action="famille" data-id="expert"><span class="tuile-icone">${icone('flamme')}</span><strong>Défis de pro</strong><span>${C.lecons.filter(l => l.parcours === 'expert').length} cas difficiles, niveaux 3 et 4</span></button></div>
+      <h2 class="titre-section">Mes affaires</h2>
+      <div class="grille-jeux">${tuile('carnet', 'mauve', 'livre', 'Mon carnet', `${Object.values(etat.notes).filter(n => n && (n.action || n.echeance)).length} défi${Object.values(etat.notes).filter(n => n && (n.action || n.echeance)).length > 1 ? 's' : ''} noté${Object.values(etat.notes).filter(n => n && (n.action || n.echeance)).length > 1 ? 's' : ''}`)}${tuile('suggestions', 'or', 'etoile', 'Mes idées pour le logiciel', 'Dis à JT ce qui manque')}${tuile('sources', 'turquoise', 'livre', 'Sources officielles', 'Liens vérifiés')}</div>
       ${qj ? `<section class="carte qdj"><div class="tete-qdj"><span class="etiq-cerise">Question du jour · ${esc(qj.l.code)}</span><span class="puce-xp">+10 XP</span></div><h2>${esc(qj.q.titre)}</h2><p>${esc(qj.q.texte)}</p><div class="actions"><button class="bouton primaire" data-action="qdj" data-lecon="${qj.l.id}" data-i="${qj.i}">${repondu(qj.q) ? 'Revoir ma réponse' : 'Y répondre'} <span aria-hidden="true">→</span></button></div></section>` : ''}
       <div class="titre-liste"><h2 class="titre-section">Tout le programme</h2><span class="petit">${C.lecons.length} leçons</span></div>
       <div class="familles">${C.parcours.filter(p => p.id !== 'final').map((p, i) => { const n = C.lecons.filter(l => l.parcours === p.id).length, r = pr.parcours[p.id].reussies; return `<button class="famille ${classes[i % 4]}" data-action="famille" data-id="${p.id}"><strong>${esc(p.nom)}</strong><span class="piste"><span data-w="${Math.max(6, Math.round(100 * r / n))}"></span></span><span class="petit">${r} / ${n}</span></button>`; }).join('')}</div>
-      <div class="liens-bas"><button class="lien-action" data-view="programme">Voir toutes les leçons</button><button class="lien-action" data-view="carnet">Mon carnet</button><button class="lien-action" data-view="suggestions">Mes idées pour le logiciel</button></div></div>`;
+      <div class="liens-bas"><button class="lien-action" data-view="programme">Voir toutes les leçons</button></div></div>`;
   }
   function programme() {
     const pr = M.progression(C, etat);
@@ -975,7 +992,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   }
   function outilPourcent() {
     const p = etat.pourcent, m = PC.MODES.find(x => x.id === p.mode) || PC.MODES[0];
-    return `<p class="petit">Choisis ce que tu cherches et tape tes deux nombres : tu obtiens le résultat, la formule, les touches de la calculatrice et l’astuce pour le faire de tête.</p>
+    return `<p class="carte-images"><button class="bouton primaire" data-view="pcimages">Comprendre en images (3 min)</button><span class="petit">Plus simple, plus visuel : à voir avant les formules.</span></p><p class="petit">Choisis ce que tu cherches et tape tes deux nombres : tu obtiens le résultat, la formule, les touches de la calculatrice et l’astuce pour le faire de tête.</p>
       <div class="calcul-champs">${champSelect('pourcent', 'mode', 'Je veux…', p.mode, PC.MODES.map(x => [x.id, x.nom]))}${champNum('pourcent', 'a', esc(m.a), p.a, -1000000000, 1000000000, 'any')}${champNum('pourcent', 'b', esc(m.b), p.b, -1000000000, 1000000000, 'any')}</div>
       <div id="resultat-pourcent" aria-live="polite">${resultatPourcent()}</div>
       <details class="fiche" open><summary>Fiche des formules : quoi utiliser, et quand</summary><div class="table-defile"><table class="table-cash table-lecon"><caption>Une ligne par besoin. Sur la calculatrice, tape exactement ce qui est écrit.</caption>
@@ -1028,6 +1045,49 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
       <section class="carte"><h2>Toutes les sources</h2><ul class="liste-sources">${Object.values(S.sources).map(s => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.nom)} <span class="sr-only">(nouvel onglet)</span></a></li>`).join('')}</ul></section>`;
   }
 
+  /* ---------- Pourcentages en images : cartes à parcourir, une idée par carte ---------- */
+  const pcv = { i: 0, p: 35, m: 450, t: 20, r: 20, rep: {} };
+  const eur = n => nb(Math.round(n * 100) / 100, Math.abs(n % 1) > 0.0001 ? 2 : 0);
+  const waffle = (n, cls) => `<div class="waffle ${cls || ''}" data-n="${n}" role="img" aria-label="${n} carreaux coloriés sur 100">${Array.from({ length: 100 }, (_, k) => `<i class="${k < n ? 'on' : ''}"></i>`).join('')}</div>`;
+  const barrePc = (lib, w, cls) => `<div class="barre-pc ${cls || ''}"><span class="barre-lib">${lib}</span><span class="barre-piste"><span data-w="${w}"></span></span></div>`;
+  const DEFIS_PCV = [
+    { q: '10 % de 380 €, ça fait…', o: ['3,80 €', '38 €', '380 €'], b: 1, e: '÷ 10 : la virgule recule d’un cran. 380 → 38.' },
+    { q: '50 % de 90 €, ça fait…', o: ['45 €', '50 €', '9 €'], b: 0, e: '50 % = la moitié. 90 ÷ 2 = 45.' },
+    { q: 'Un prix de 50 € avec +20 %, ça fait…', o: ['52 €', '60 €', '70 €'], b: 1, e: '+20 % = × 1,20. 50 × 1,2 = 60. (20 % de 50 = 10, donc 50 + 10.)' },
+  ];
+  const CARTES_PCV = [
+    () => ({ titre: 'Pour cent, c’est « sur 100 »', texte: 'Un pourcentage répond à une seule question : combien de carreaux sur 100 ?', visuel: `<div id="pcv-waffle">${waffle(pcv.p)}</div><p class="pcv-grand"><strong id="pcv-p-txt">${pcv.p} carreaux sur 100 = ${pcv.p} %</strong></p><label for="pcv-p" class="pcv-lab">Glisse pour remplir</label><input id="pcv-p" data-pcv="p" type="range" min="0" max="100" step="1" value="${pcv.p}">` }),
+    () => ({ titre: 'Le truc magique : 10 %', texte: 'Pour 10 %, tu divises par 10. Avec une calculatrice : tu recules la virgule d’un cran.', visuel: `<div class="dix-blocs" aria-hidden="true">${Array.from({ length: 10 }, (_, k) => `<i class="${k === 0 ? 'on' : ''}"></i>`).join('')}</div><label for="pcv-m" class="pcv-lab">Ton montant (€)</label><input id="pcv-m" data-pcv="m" type="number" inputmode="decimal" min="0" max="1000000" value="${pcv.m}">
+      <ul class="echelle" id="pcv-echelle"></ul>` }),
+    () => ({ titre: 'La moitié, le quart, le dixième', texte: 'Trois pourcentages à connaître par cœur : ils se font de tête, sans calculatrice.', visuel: `<div class="trois-waffles"><figure>${waffle(50, 'mini')}<figcaption><strong>50 %</strong><span>÷ 2</span></figcaption></figure><figure>${waffle(25, 'mini')}<figcaption><strong>25 %</strong><span>÷ 4</span></figcaption></figure><figure>${waffle(10, 'mini')}<figcaption><strong>10 %</strong><span>÷ 10</span></figcaption></figure></div>` }),
+    () => ({ titre: 'À la calculatrice', texte: 'Pour prendre un pourcentage d’un nombre : nombre × pourcentage ÷ 100.', visuel: `<p class="pcv-formule" id="pcv-calc"></p><label for="pcv-t" class="pcv-lab">Le pourcentage</label><input id="pcv-t" data-pcv="t" type="range" min="1" max="100" step="1" value="${pcv.t}"><label for="pcv-m2" class="pcv-lab">Le montant (€)</label><input id="pcv-m2" data-pcv="m" type="number" inputmode="decimal" min="0" max="1000000" value="${pcv.m}"><p class="petit">Astuce : « ÷ 100 » revient à reculer la virgule de 2 crans. 20 % = 0,20.</p>` }),
+    () => ({ titre: 'Une hausse ou une baisse = un coefficient', texte: 'Au lieu de calculer puis d’ajouter, tu multiplies une seule fois.', visuel: `<label for="pcv-r" class="pcv-lab">Hausse ou baisse : <strong id="pcv-r-txt"></strong></label><input id="pcv-r" data-pcv="r" type="range" min="-50" max="50" step="5" value="${pcv.r}"><p class="pcv-formule" id="pcv-coef"></p><div id="pcv-barres"></div>` }),
+    () => ({ titre: 'Le piège : +20 % puis −20 %', texte: 'On croit revenir au départ. Mais le deuxième 20 % se calcule sur un nombre plus grand.', visuel: `<div class="piege">${barrePc('Départ : 100 €', 83, '')}${barrePc('+ 20 % → 120 €', 100, 'haut')}${barrePc('− 20 % → 96 €', 80, 'bas')}</div><p class="pcv-grand"><strong>96 €, pas 100 €.</strong></p><p class="petit">Chaque pourcentage s’applique au nombre du moment, pas au départ.</p>` }),
+    () => ({ titre: 'Dans ton métier, ça sert à…', texte: 'Trois situations que tu rencontres vraiment.', visuel: `<div class="cartes-metier"><div><strong>Acompte</strong><span>30 % de 800 €</span><em>800 × 0,30 = 240 €</em></div><div><strong>Remise</strong><span>−15 % sur 60 €</span><em>60 × 0,85 = 51 €</em></div><div><strong>TVA</strong><span>+20 % sur 100 € HT</span><em>100 × 1,20 = 120 € TTC</em></div></div>` }),
+    () => ({ titre: 'À toi de jouer', texte: 'Trois mini-défis, sans note et sans pression.', visuel: DEFIS_PCV.map((d, k) => `<fieldset class="defi-pcv" data-defi="${k}"><legend>${esc(d.q)}</legend><div class="defi-choix">${d.o.map((o, j) => `<button class="bouton ${pcv.rep[k] === j ? (j === d.b ? 'juste' : 'faux') : ''}" data-action="pcv-rep" data-d="${k}" data-j="${j}" ${pcv.rep[k] !== undefined ? 'disabled' : ''}>${esc(o)}</button>`).join('')}</div>${pcv.rep[k] !== undefined ? `<p class="petit" role="status">${pcv.rep[k] === d.b ? 'Bien joué. ' : 'Pas tout à fait. '}${esc(d.e)}</p>` : ''}</fieldset>`).join('') + `<div class="actions"><button class="bouton primaire" data-view="c1">Faire la leçon C1</button><button class="bouton" data-action="outil" data-outil="pourcent">Ouvrir l’outil Pourcentages</button></div>` }),
+  ];
+  function majPcv() {
+    const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+    const w = $('#pcv-waffle .waffle'); if (w) { [...w.children].forEach((c, k) => c.classList.toggle('on', k < pcv.p)); w.dataset.n = pcv.p; w.setAttribute('aria-label', pcv.p + ' carreaux coloriés sur 100'); }
+    set('pcv-p-txt', `${pcv.p} carreaux sur 100 = ${pcv.p} %`);
+    const e = $('#pcv-echelle'); if (e) { const d = pcv.m / 10; e.innerHTML = [['10 %', '÷ 10', d], ['1 %', '÷ 100', d / 10], ['20 %', '10 % × 2', d * 2], ['5 %', '10 % ÷ 2', d / 2], ['50 %', '÷ 2', pcv.m / 2], ['25 %', '÷ 4', pcv.m / 4]].map(([a, b, v]) => `<li><strong>${a}</strong><span>${b}</span><b>${eur(v)} €</b></li>`).join(''); }
+    set('pcv-calc', `${eur(pcv.m)} × ${pcv.t} ÷ 100 = ${eur(pcv.m * pcv.t / 100)} €`);
+    const c = 1 + pcv.r / 100, fin = Math.round(100 * c * 100) / 100;
+    const sg = pcv.r > 0 ? '+' : pcv.r < 0 ? '−' : '', rr = `${sg}${Math.abs(pcv.r)} %`;
+    set('pcv-r-txt', rr);
+    set('pcv-coef', `${rr} = × ${nb(Math.round(c * 100) / 100, 2)}`);
+    const bz = $('#pcv-barres'); if (bz) { bz.innerHTML = barrePc('Avant : 100 €', 100 / 1.5 | 0, '') + barrePc(`Après : ${eur(fin)} €`, Math.round(fin / 1.5), pcv.r >= 0 ? 'haut' : 'bas'); largeurs(bz); }
+  }
+  function vuePcImages() {
+    const n = CARTES_PCV.length, c = CARTES_PCV[pcv.i]();
+    return `<header class="en-tete"><p class="sur-titre">Comprendre en images</p><h1 tabindex="-1">Les pourcentages, en images</h1><p class="intro">${n} cartes, une idée par carte. Tu avances à ton rythme.</p></header>
+      <section class="pcv" aria-roledescription="carrousel" aria-label="Pourcentages en images">
+        <div class="pcv-points" role="group" aria-label="Choisir une carte">${CARTES_PCV.map((_, k) => `<button class="pcv-point ${k === pcv.i ? 'actif' : k < pcv.i ? 'vu' : ''}" data-action="pcv-va" data-i="${k}" aria-label="Carte ${k + 1} sur ${n}" ${k === pcv.i ? 'aria-current="step"' : ''}></button>`).join('')}</div>
+        <article class="pcv-carte" aria-live="polite"><p class="sur-titre">Carte ${pcv.i + 1} sur ${n}</p><div class="pcv-tete">${pcv.i === n - 1 ? `<span class="pcv-mascotte">${mascotte('content')}</span>` : ''}<h2>${esc(c.titre)}</h2></div><p class="pcv-texte">${esc(c.texte)}</p><div class="pcv-visuel">${c.visuel}</div></article>
+        <div class="pcv-nav"><button class="bouton" data-action="pcv-prec" ${pcv.i === 0 ? 'disabled' : ''}>← Avant</button><button class="bouton primaire" data-action="pcv-suiv" ${pcv.i === n - 1 ? 'disabled' : ''}>Suivant →</button></div>
+      </section>`;
+  }
+
   /* ---------- Suggestions d'amélioration : le message part par e-mail vers le développeur ---------- */
   const TYPES_SUG = [['idee', 'Une idée'], ['probleme', 'Un problème'], ['contenu', 'Un contenu qui manque'], ['createur', 'Un créateur à suivre dans la veille'], ['autre', 'Autre chose']];
   const CONTACT = ['zesite07', 'gmail.com'].join('@');
@@ -1054,13 +1114,13 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   function contenuVue() {
     const l = getLecon();
     if (l) return lecon(l);
-    const v = { simulateurs, carnet, sources, programme, jouer, scenarios: vueScenarios, eclair: vueEclair, revision: vueRevision, veille: vueVeille, ressources: vueRessources, suggestions: vueSuggestions }[etat.vue];
+    const v = { simulateurs, carnet, sources, programme, jouer, scenarios: vueScenarios, eclair: vueEclair, revision: vueRevision, veille: vueVeille, ressources: vueRessources, suggestions: vueSuggestions, pcimages: vuePcImages }[etat.vue];
     return v ? v() : accueil();
   }
   function fil() {
     const l = getLecon();
     if (l) return `${esc(parcoursDe(l).nom)}<span>${esc(l.code)}</span>`;
-    return { programme: 'Apprendre<span>Tout le programme</span>', jouer: 'Jouer<span>Jouer pour apprendre</span>', simulateurs: 'Outils<span>Boîte à outils</span>', carnet: 'Mes affaires<span>Mon carnet</span>', sources: 'Mes affaires<span>Sources</span>', scenarios: 'Jouer<span>Scénarios</span>', eclair: 'Jouer<span>Quiz éclair</span>', revision: 'Jouer<span>Révision espacée</span>', veille: 'Ma veille<span>Veille et idées</span>', ressources: 'Outils<span>Ressources</span>', suggestions: 'Mes affaires<span>Mes idées pour le logiciel</span>' }[etat.vue] || 'Module CM<span>Accueil</span>';
+    return { programme: 'Apprendre<span>Tout le programme</span>', jouer: 'Jouer<span>Jouer pour apprendre</span>', simulateurs: 'Outils<span>Boîte à outils</span>', carnet: 'Mes affaires<span>Mon carnet</span>', sources: 'Mes affaires<span>Sources</span>', scenarios: 'Jouer<span>Scénarios</span>', eclair: 'Jouer<span>Quiz éclair</span>', revision: 'Jouer<span>Révision espacée</span>', veille: 'Ma veille<span>Veille et idées</span>', ressources: 'Outils<span>Ressources</span>', suggestions: 'Mes affaires<span>Mes idées pour le logiciel</span>', pcimages: 'Outils<span>Pourcentages en images</span>' }[etat.vue] || 'Module CM<span>Accueil</span>';
   }
   function boutonsBarre() {
     const sombre = document.documentElement.dataset.theme === 'sombre';
@@ -1087,13 +1147,14 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
       <p id="stockage-avertissement" class="stockage-alerte" ${depot.persistant ? 'hidden' : ''}>${esc(depot.avertissement)}</p>
       ${bandeauAlertes()}
       <main id="principal">${contenuVue()}<footer class="pied"><span>JTIpilot · Module ${esc(C.titre)} · contenu ${esc(C.version)} revu le ${esc(C.revue)}. Les chiffres légaux et fiscaux sont des repères pédagogiques : vérifier sur la source officielle liée.</span><button class="lien-action" data-view="sources">Sources</button></footer></main></div></div>${barreBas()}`;
-    largeurs(); majMinuteur(); badgeApp();
+    largeurs(); majMinuteur(); badgeApp(); if (etat.vue === 'pcimages') majPcv();
     sauver();
     if (focusSel) { const el = $(focusSel); if (el) el.focus({ preventScroll: false }); }
   }
   function ouvrir(view, ancrer) {
     const l = toutes.find(x => x.id === view);
     etat.vue = view; etat.question = 0; drafts = {};
+    groupesDe(view).forEach(g => menuOuvert.add(g));
     if (view === 'eclair' && (!eclair || eclair.fini)) nouvelEclair();
     if (view === 'revision') { amorcerRevision(); nouvelleRevision(); }
     if (view !== 'scenarios') jeu = null;
@@ -1207,6 +1268,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   }
   document.addEventListener('input', e => {
     const t = e.target;
+    if (t.matches('[data-pcv]')) { const v = Number(t.value); const k = t.dataset.pcv; if (Number.isFinite(v)) { pcv[k] = k === 'm' ? Math.max(0, Math.min(1000000, v)) : v; if (k === 'm') document.querySelectorAll('[data-pcv="m"]').forEach(x => { if (x !== t) x.value = pcv.m; }); majPcv(); } return; }
     if (t.matches('[data-sug]')) { sugBrouillon[t.dataset.sug] = t.dataset.sug === 'type' ? (TYPES_SUG.some(x => x[0] === t.value) ? t.value : 'idee') : t.value.slice(0, 1000); return; }
     if (t.matches('[data-note]') && t.type !== 'checkbox') {
       const l = getLecon(); if (!l) return;
@@ -1260,6 +1322,10 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     if (a === 'energie') { etat.energie = b.dataset.energie; render('.energie-bloc [aria-pressed="true"]'); return; }
     if (a === 'qdj') { const lq = toutes.find(x => x.id === b.dataset.lecon); etat.vue = lq.id; etat.derniere = lq.id; etat.etape = 'exercice'; etat.question = Number(b.dataset.i); drafts = {}; render('.question h2'); window.scrollTo(0, 0); return; }
     if (a === 'outil') { etat.outil = b.dataset.outil; ouvrir('simulateurs'); return; }
+    if (a === 'pcv-suiv') { pcv.i = Math.min(CARTES_PCV.length - 1, pcv.i + 1); render('.pcv-carte h2'); window.scrollTo(0, 0); return; }
+    if (a === 'pcv-prec') { pcv.i = Math.max(0, pcv.i - 1); render('.pcv-carte h2'); window.scrollTo(0, 0); return; }
+    if (a === 'pcv-va') { pcv.i = Math.max(0, Math.min(CARTES_PCV.length - 1, Number(b.dataset.i) || 0)); render('.pcv-carte h2'); return; }
+    if (a === 'pcv-rep') { pcv.rep[b.dataset.d] = Number(b.dataset.j); render(`[data-defi="${b.dataset.d}"]`); return; }
     if (a === 'echeance-fait') { if (!etat.echeancesFaites.includes(b.dataset.id)) etat.echeancesFaites.push(b.dataset.id); render(); toast('Échéance marquée comme faite.'); return; }
     if (a === 'echeance-defaire') { etat.echeancesFaites = etat.echeancesFaites.filter(x => x !== b.dataset.id); render(); toast('Échéance remise à faire.'); return; }
     if (a === 'suggestion-envoyer') {
@@ -1442,6 +1508,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     } catch (err) { msg.textContent = err.message || 'Import impossible. Ta progression est conservée.'; }
     finally { $('#fichier-progression').value = ''; }
   }
+  document.addEventListener('toggle', e => { const g = e.target.dataset && e.target.dataset.mg; if (g) { if (e.target.open) menuOuvert.add(g); else menuOuvert.delete(g); } });
   document.addEventListener('toggle', e => { if (e.target.classList && e.target.classList.contains('reglages')) reglagesOuvert = e.target.open; }, true);
   if (window.matchMedia) {
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
@@ -1471,6 +1538,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     return true;
   }
   const partage = traiterPartage();
+  groupesDe(etat.vue).forEach(g => menuOuvert.add(g));
   render();
   if (partage) toast('Idée ajoutée depuis le partage.');
 }());

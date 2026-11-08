@@ -14,6 +14,8 @@ Module d'autoformation pour une community manager freelance spécialisée Twitch
 - **Mochi**, mascotte originale : réagit aux bonnes et mauvaises réponses et à la fin des quiz (désactivable dans Réglages).
 - **Outil Pourcentages** (Simulateurs) : 8 modes, formule, touches de calculatrice, calcul de tête, piège à éviter, fiche mémo.
 - Quiz éclair filtrable par niveau.
+- **Pourcentages en images** : 8 cartes animées (carreaux sur 100, curseurs, coefficient, piège, mini-défis).
+- **Menu en 4 groupes repliables** (Mes affaires, Jouer, Outils, Apprendre) : rien n'est retiré.
 - **Alertes d'échéances** : carte clignotante sur l'accueil, bandeau sur les autres pages, pastille sur « Business », bouton « C'est fait » (de 10 jours de retard à 7 jours avant).
 - **Veille créateurs Twitch** : filtre « Créateurs Twitch » par défaut (6 alertes Google ciblées, Tubefilter, Passionfruit).
 - **Mes idées pour le logiciel** : message préparé par e-mail pour JT (objet « [Giky CM] … »), historique local.

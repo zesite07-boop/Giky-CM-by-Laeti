@@ -85,6 +85,8 @@ Limites : fichier d'import 1 Mo ; 1 500 lignes maximum pour les recettes et pour
 
 - **v5 (8/11/2026)** : `G.alertes(liste, faites, auj)` (pur, testé) ; état `echeancesFaites` (ids) et `suggestions` ; `carteAlertes` (accueil), `bandeauAlertes` (autres pages), pastilles `.pastille-alerte` (rail + barre du bas), `navigator.setAppBadge` si disponible. Vue `suggestions` : `mailto:` vers JT (adresse assemblée dans `CONTACT`, formation.js) ; lire les messages en cherchant « [Giky CM] » dans la boîte mail. Veille : catégorie `createurs` (6 alertes Google, Tubefilter, Passionfruit vérifiés ; Blog du Modérateur non vérifiable depuis l'atelier, le journal du workflow dira OK ou ERREUR). Repli : tant qu'aucun élément `createurs` n'existe, la veille affiche tout. SW `cm-v8`.
 
+- **v6 (8/11/2026)** : alertes : `niveau` `passee` (> 3 jours, calme, sans pastille) + ligne « Prochaine échéance » ; veille : recherche sans accents, multi-mots, tous les articles, liens Google/YouTube/Twitch si rien, 3 requêtes de 4 créateurs (collecte 20 par source / 400) ; vue `pcimages` (8 cartes, état `pcv` en mémoire, `majPcv` met à jour curseurs sans re-rendu) ; menu : `groupeMenu`/`menuOuvert` (aff, jeu, out, app + app-<parcours>), accueil : section Mes affaires. SW `cm-v10`.
+
 ## 5. Vérifications faites
 
 - `node tests/moteur.test.js` et `node tests/gestion.test.js` passent (calculs, numérotation, plafonds, échéances, ICS, Leitner, planning, contrat, normalisation défensive, aller-retour export/import, taille maximale).

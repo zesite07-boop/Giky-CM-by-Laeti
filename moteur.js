@@ -136,7 +136,7 @@
       throw new Error('Format non compatible. Utilise une sauvegarde de ce module (version 1).');
     }
     const out = neuf(), lecons = toutes(contenu), ids = lecons.map(l => l.id);
-    out.vue = [...ids, 'accueil', 'carnet', 'simulateurs', 'sources', 'scenarios', 'eclair', 'ressources', 'revision', 'veille', 'programme', 'jouer', 'suggestions'].includes(obj.vue) ? obj.vue : 'accueil';
+    out.vue = [...ids, 'accueil', 'carnet', 'simulateurs', 'sources', 'scenarios', 'eclair', 'ressources', 'revision', 'veille', 'programme', 'jouer', 'suggestions', 'pcimages'].includes(obj.vue) ? obj.vue : 'accueil';
     out.etape = ['cours', 'exercice', 'ancrage'].includes(obj.etape) ? obj.etape : 'cours';
     out.question = Number.isInteger(obj.question) && obj.question >= 0 && obj.question < 20 ? obj.question : 0;
     out.focus = obj.focus === true;
