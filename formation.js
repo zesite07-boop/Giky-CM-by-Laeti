@@ -252,7 +252,6 @@
         ${tuile('simulateurs', 'or', 'outils', 'Boîte à outils', 'Recettes, plafonds, devis')}
         ${tuile('ressources', 'turquoise', 'etoile', 'Ressources', `${RS.reduce((n, c) => n + c.liens.length, 0)} outils et liens triés`)}
         <button class="tuile t-turquoise" data-view="pcimages"><span class="tuile-icone">${icone('etoile')}</span><strong>Pourcentages en images</strong><span>7 cartes animées, 3 minutes</span></button>
-        <button class="tuile t-cerise" data-action="outil" data-outil="pourcent"><span class="tuile-icone">${icone('outils')}</span><strong>Pourcentages</strong><span>Formules, calculatrice, calcul de tête</span></button>
         <button class="tuile t-mauve" data-action="famille" data-id="expert"><span class="tuile-icone">${icone('flamme')}</span><strong>Défis de pro</strong><span>${C.lecons.filter(l => l.parcours === 'expert').length} cas difficiles, niveaux 3 et 4</span></button></div>
       <h2 class="titre-section">Mes affaires</h2>
       <div class="grille-jeux">${tuile('carnet', 'mauve', 'livre', 'Mon carnet', `${Object.values(etat.notes).filter(n => n && (n.action || n.echeance)).length} défi${Object.values(etat.notes).filter(n => n && (n.action || n.echeance)).length > 1 ? 's' : ''} noté${Object.values(etat.notes).filter(n => n && (n.action || n.echeance)).length > 1 ? 's' : ''}`)}${tuile('suggestions', 'or', 'etoile', 'Mes idées pour le logiciel', 'Dis à JT ce qui manque')}${tuile('sources', 'turquoise', 'livre', 'Sources officielles', 'Liens vérifiés')}</div>
