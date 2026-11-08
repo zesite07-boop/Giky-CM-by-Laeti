@@ -119,9 +119,10 @@
   const menuOuvert = new Set(['aff', 'jeu', 'out']);
   function groupesDe(view) {
     const l = toutes.find(x => x.id === view);
-    if (l) return l.id === 'final' ? ['app'] : ['app', 'app-' + l.parcours];
+    if (l) { const e = espaceLecon(l); return l.id === 'final' ? [GROUPE_ESPACE[e]] : [GROUPE_ESPACE[e], 'app-' + l.parcours]; }
     if (['carnet', 'suggestions', 'sources'].includes(view)) return ['aff'];
     if (['scenarios', 'eclair', 'revision', 'jouer'].includes(view)) return ['jeu'];
+    if (view === 'business') return ['biz'];
     if (['simulateurs', 'veille', 'ressources', 'pcimages'].includes(view)) return ['out'];
     if (view === 'programme') return ['app'];
     return [];
@@ -129,16 +130,17 @@
   const groupeMenu = (id, puce, titre, sous, corps, imbrique) => `<details class="menu-groupe mg-${imbrique ? 'sous' : id.split('-')[0]}" data-mg="${id}" ${menuOuvert.has(id) ? 'open' : ''}><summary><span class="mg-puce" aria-hidden="true">${puce}</span><span class="mg-titre">${esc(titre)}<small>${esc(sous)}</small></span></summary><div class="mg-corps">${corps}</div></details>`;
   function menu() {
     const pr = M.progression(C, etat), nA = alertesFortes().length;
-    const parcours = C.parcours.filter(p => p.id !== 'final').map(p => {
+    const parcours = esp => C.parcours.filter(p => PARCOURS_ESPACE[esp].includes(p.id)).map(p => {
       const ls = C.lecons.filter(l => l.parcours === p.id), r = pr.parcours[p.id].reussies;
       return groupeMenu('app-' + p.id, '', p.nom, `${r} / ${ls.length} validées`, ls.map(l => lienNav(l.id, marque(l), l.titre)).join(''), true);
     }).join('');
     const nbNotes = Object.values(etat.notes).filter(n => n && (n.action || n.echeance)).length;
     return `${lienNav('accueil', '<span class="nav-num">⌂</span>', 'Accueil')}
-      ${groupeMenu('aff', '🗂️', 'Mes affaires', `Carnet · idées · sources`, lienNav('carnet', '<span class="nav-num">≡</span>', 'Mon carnet' + (nbNotes ? ` (${nbNotes})` : '')) + lienNav('suggestions', '<span class="nav-num">✎</span>', 'Mes idées pour le logiciel') + lienNav('sources', '<span class="nav-num">§</span>', 'Sources officielles'))}
-      ${groupeMenu('jeu', '🎮', 'Jouer', 'Scénarios · quiz · révision', lienNav('scenarios', '<span class="nav-num">▶</span>', 'Scénarios') + lienNav('eclair', '<span class="nav-num">⚡</span>', 'Quiz éclair') + lienNav('revision', '<span class="nav-num">↻</span>', 'Révision espacée'))}
-      ${groupeMenu('out', '🧰', 'Outils', 'Calculs · veille · ressources', lienNav('simulateurs', '<span class="nav-num">€$£</span>', 'Boîte à outils', nA) + lienNav('pcimages', '<span class="nav-num">%</span>', 'Pourcentages en images') + lienNav('veille', '<span class="nav-num">◉</span>', 'Veille et idées') + lienNav('ressources', '<span class="nav-num">★</span>', 'Ressources'))}
-      ${groupeMenu('app', '📚', 'Apprendre', `${pr.reussies} / ${pr.total} étapes`, lienNav('programme', '<span class="nav-num">☰</span>', 'Tout le programme') + parcours + lienNav('final', marque(C.final), 'Épreuve finale'))}`;
+      ${groupeMenu('app', '📚', 'Apprendre', `${nbReussies(PARCOURS_ESPACE.apprendre, pr)} / ${nbLecons(PARCOURS_ESPACE.apprendre)} leçons du métier`, lienNav('programme', '<span class="nav-num">☰</span>', 'Toutes les leçons du métier') + parcours('apprendre'))}
+      ${groupeMenu('jeu', '🎮', 'S’entraîner', 'Quiz · scénarios · missions', lienNav('scenarios', '<span class="nav-num">▶</span>', 'Scénarios') + lienNav('eclair', '<span class="nav-num">⚡</span>', 'Quiz éclair') + lienNav('revision', '<span class="nav-num">↻</span>', 'Révision espacée') + lienNav('jouer', '<span class="nav-num">☰</span>', 'Missions et défis') + parcours('entrainer') + lienNav('final', marque(C.final), 'Épreuve finale'))}
+      ${groupeMenu('biz', '💼', 'Business', 'Mon activité de freelance', lienNav('business', '<span class="nav-num">€</span>', 'Mes outils et leçons business', nA) + parcours('business'))}
+      ${groupeMenu('out', '🧰', 'Outils et ressources', 'Veille · liens · petits outils', lienNav('simulateurs', '<span class="nav-num">€$£</span>', 'Outils de travail') + lienNav('pcimages', '<span class="nav-num">%</span>', 'Pourcentages en images') + lienNav('veille', '<span class="nav-num">◉</span>', 'Veille et idées') + lienNav('ressources', '<span class="nav-num">★</span>', 'Ressources'))}
+      ${groupeMenu('aff', '🗂️', 'Mes affaires', `Carnet · idées · sources`, lienNav('carnet', '<span class="nav-num">≡</span>', 'Mon carnet' + (nbNotes ? ` (${nbNotes})` : '')) + lienNav('suggestions', '<span class="nav-num">✎</span>', 'Mes idées pour le logiciel') + lienNav('sources', '<span class="nav-num">§</span>', 'Sources officielles'))}`;
   }
   function blocXp(compact) {
     const x = M.xp(C, etat), sj = M.serie(etat.jours, aujourdhui());
@@ -246,33 +248,51 @@
         <div class="milieu"><span class="legende"><span>${x.suivant ? `Vers ${esc(x.suivant.nom)}` : `Niveau ${esc(x.nom)}`}</span><b>${nb(x.points, 0)}${x.suivant ? ` / ${nb(x.suivant.seuil, 0)}` : ''} XP</b></span><span class="jauge-turquoise" role="img" aria-label="${x.pct} % vers le niveau suivant"><span data-w="${x.pct}"></span></span></div>
         <div class="droite"><span class="chiffre">${pr.reussies} / ${pr.total}</span><span class="legende">étapes</span></div></div>
         <p class="petit">Série douce : un jour de pause ne casse rien.</p></section>
-      <h2 class="titre-section">Jouer et s’outiller</h2>
-      <div class="grille-jeux">${tuilesJeu()}
-        ${tuile('veille', 'mauve', 'veille', 'Veille', veilleResume())}
-        ${tuile('simulateurs', 'or', 'outils', 'Boîte à outils', 'Recettes, plafonds, devis')}
-        ${tuile('ressources', 'turquoise', 'etoile', 'Ressources', `${RS.reduce((n, c) => n + c.liens.length, 0)} outils et liens triés`)}
-        <button class="tuile t-turquoise" data-view="pcimages"><span class="tuile-icone">${icone('etoile')}</span><strong>Pourcentages en images</strong><span>7 cartes animées, 3 minutes</span></button>
-        <button class="tuile t-mauve" data-action="famille" data-id="expert"><span class="tuile-icone">${icone('flamme')}</span><strong>Défis de pro</strong><span>${C.lecons.filter(l => l.parcours === 'expert').length} cas difficiles, niveaux 3 et 4</span></button></div>
+      <h2 class="titre-section">Mes espaces</h2>
+      <div class="grille-jeux">${tuile('programme', 'turquoise', 'livre', 'Apprendre', `Les leçons du métier · ${nbReussies(PARCOURS_ESPACE.apprendre, pr)} / ${nbLecons(PARCOURS_ESPACE.apprendre)}`)}
+        ${tuile('jouer', 'cerise', 'eclair', 'S’entraîner', `Quiz, scénarios, missions · ${G.aReviser(etat.revision, aujourdhui()).length} à revoir`)}
+        ${tuile('business', 'or', 'outils', 'Business', `Clients, prix, cotisations · ${nbReussies(PARCOURS_ESPACE.business, pr)} / ${nbLecons(PARCOURS_ESPACE.business)} leçons`)}
+        ${tuile('simulateurs', 'mauve', 'veille', 'Outils et ressources', `Veille · ${veilleResume()}`)}</div>
       <h2 class="titre-section">Mes affaires</h2>
       <div class="grille-jeux">${tuile('carnet', 'mauve', 'livre', 'Mon carnet', `${Object.values(etat.notes).filter(n => n && (n.action || n.echeance)).length} défi${Object.values(etat.notes).filter(n => n && (n.action || n.echeance)).length > 1 ? 's' : ''} noté${Object.values(etat.notes).filter(n => n && (n.action || n.echeance)).length > 1 ? 's' : ''}`)}${tuile('suggestions', 'or', 'etoile', 'Mes idées pour le logiciel', 'Dis à JT ce qui manque')}${tuile('sources', 'turquoise', 'livre', 'Sources officielles', 'Liens vérifiés')}</div>
       ${qj ? `<section class="carte qdj"><div class="tete-qdj"><span class="etiq-cerise">Question du jour · ${esc(qj.l.code)}</span><span class="puce-xp">+10 XP</span></div><h2>${esc(qj.q.titre)}</h2><p>${esc(qj.q.texte)}</p><div class="actions"><button class="bouton primaire" data-action="qdj" data-lecon="${qj.l.id}" data-i="${qj.i}">${repondu(qj.q) ? 'Revoir ma réponse' : 'Y répondre'} <span aria-hidden="true">→</span></button></div></section>` : ''}
-      <div class="titre-liste"><h2 class="titre-section">Tout le programme</h2><span class="petit">${C.lecons.length} leçons</span></div>
-      <div class="familles">${C.parcours.filter(p => p.id !== 'final').map((p, i) => { const n = C.lecons.filter(l => l.parcours === p.id).length, r = pr.parcours[p.id].reussies; return `<button class="famille ${classes[i % 4]}" data-action="famille" data-id="${p.id}"><strong>${esc(p.nom)}</strong><span class="piste"><span data-w="${Math.max(6, Math.round(100 * r / n))}"></span></span><span class="petit">${r} / ${n}</span></button>`; }).join('')}</div>
-      <div class="liens-bas"><button class="lien-action" data-view="programme">Voir toutes les leçons</button></div></div>`;
+    </div>`;
   }
+  /* Espaces : chaque parcours de leçons appartient à un seul espace (Apprendre, S’entraîner ou Business). */
+  const PARCOURS_ESPACE = { apprendre: ['apprendre', 'calculs'], entrainer: ['entrainer', 'expert'], business: ['business', 'clients'] };
+  const VUE_ESPACE = { apprendre: 'programme', entrainer: 'jouer', business: 'business' };
+  const GROUPE_ESPACE = { apprendre: 'app', entrainer: 'jeu', business: 'biz' };
+  const espaceDeParcours = id => Object.keys(PARCOURS_ESPACE).find(k => PARCOURS_ESPACE[k].includes(id)) || 'apprendre';
+  const espaceLecon = l => l.id === 'final' ? 'entrainer' : espaceDeParcours(l.parcours);
+  let sousBiz = 'outils';
+  const listeParcours = (ids, pr) => C.parcours.filter(p => ids.includes(p.id)).map(p => {
+    const ls = C.lecons.filter(l => l.parcours === p.id);
+    return `<section id="fam-${p.id}"><div class="titre-liste"><div><h2>${esc(p.nom)}</h2><p class="petit">${esc(p.image)}</p></div><span class="etiquette">${pr.parcours[p.id].reussies} / ${ls.length} validées</span></div>
+      <div class="ateliers">${ls.map(l => `<article class="atelier-ligne ${M.bilan(l, etat.reponses).reussi ? 'validee' : ''}"><span class="numero">${esc(l.code)}</span><div><h3>${esc(l.titre)}</h3><p class="petit">${esc(l.duree)} · ${esc(statut(l))}</p>${pastilleNiveau(l)}</div><button class="lien-action" data-view="${l.id}" aria-label="${libelleLecon(l)} ${esc(l.code)} : ${esc(l.titre)}">${libelleLecon(l)}</button></article>`).join('')}</div></section>`;
+  }).join('');
+  const nbLecons = ids => C.lecons.filter(l => ids.includes(l.parcours)).length;
+  const nbReussies = (ids, pr) => ids.reduce((n, id) => n + (pr.parcours[id] ? pr.parcours[id].reussies : 0), 0);
   function programme() {
-    const pr = M.progression(C, etat);
-    return `<header class="en-tete"><p class="sur-titre">Apprendre</p><h1 tabindex="-1">Tout le programme</h1><p class="intro">${C.lecons.length} leçons de 8 à 12 minutes, dans l’ordre que tu veux. Chacune se rejoue autant de fois que tu veux.</p></header>
-      <div class="disposition"><div class="pile">${C.parcours.filter(p => p.id !== 'final').map(p => {
-        const ls = C.lecons.filter(l => l.parcours === p.id);
-        return `<section id="fam-${p.id}"><div class="titre-liste"><div><h2>${esc(p.nom)}</h2><p class="petit">${esc(p.image)}</p></div><span class="etiquette">${pr.parcours[p.id].reussies} / ${ls.length} validées</span></div>
-          <div class="ateliers">${ls.map(l => `<article class="atelier-ligne ${M.bilan(l, etat.reponses).reussi ? 'validee' : ''}"><span class="numero">${esc(l.code)}</span><div><h3>${esc(l.titre)}</h3><p class="petit">${esc(l.duree)} · ${esc(statut(l))}</p>${pastilleNiveau(l)}</div><button class="lien-action" data-view="${l.id}" aria-label="${libelleLecon(l)} ${esc(l.code)} : ${esc(l.titre)}">${libelleLecon(l)}</button></article>`).join('')}</div></section>`;
-      }).join('')}
+    const pr = M.progression(C, etat), ids = PARCOURS_ESPACE.apprendre;
+    return `<header class="en-tete"><p class="sur-titre">Apprendre</p><h1 tabindex="-1">Les leçons du métier</h1><p class="intro">${nbLecons(ids)} leçons de 8 à 12 minutes sur le métier de community manager, dans l’ordre que tu veux. Le business est dans l’espace Business, les quiz et missions dans S’entraîner.</p></header>
+      <div class="disposition"><div class="pile">${listeParcours(ids, pr)}</div>${panneau(pr)}</div>`;
+  }
+  function jouer() {
+    const pr = M.progression(C, etat), ids = PARCOURS_ESPACE.entrainer;
+    return `<header class="en-tete"><p class="sur-titre">S’entraîner</p><h1 tabindex="-1">Quiz, scénarios et missions</h1><p class="intro">Ici, on pratique, sans pression et sans chrono imposé. Les leçons à lire sont dans Apprendre et Business.</p></header>
+      <h2 class="titre-section">Quiz et jeux</h2><div class="grille-jeux">${tuilesJeu()}</div>
+      <div class="disposition"><div class="pile">${listeParcours(ids, pr)}
         <section class="carte invitation"><p class="sur-titre">Le boss de fin</p><h2>${esc(C.final.titre)}</h2><p>${esc(C.final.court)} ${C.final.questions.length} questions, 80 % et aucune erreur critique.</p><div class="actions"><button class="bouton primaire" data-view="final">Ouvrir l’épreuve</button><span class="petit">${esc(statut(C.final))}</span></div></section>
       </div>${panneau(pr)}</div>`;
   }
-  function jouer() {
-    return `<header class="en-tete"><p class="sur-titre">Jouer</p><h1 tabindex="-1">Jouer pour apprendre</h1><p class="intro">Trois façons de t’entraîner, sans pression et sans chrono imposé.</p></header><div class="grille-jeux">${tuilesJeu()}</div>`;
+  function business() {
+    const pr = M.progression(C, etat), ids = PARCOURS_ESPACE.business;
+    const seg = `<div class="fam-outils" role="group" aria-label="Business : outils ou leçons">
+      <button class="fam-outil ${sousBiz === 'outils' ? 'active' : ''}" data-action="sous-biz" data-sous="outils" aria-pressed="${sousBiz === 'outils'}"><span class="fam-ico" aria-hidden="true">🧰</span><b>Mes outils</b><small>Kit, devis, cotisations…</small></button>
+      <button class="fam-outil ${sousBiz === 'lecons' ? 'active' : ''}" data-action="sous-biz" data-sous="lecons" aria-pressed="${sousBiz === 'lecons'}"><span class="fam-ico" aria-hidden="true">📘</span><b>Les leçons</b><small>${nbReussies(ids, pr)} / ${nbLecons(ids)} validées</small></button></div>`;
+    const entete = `<header class="en-tete"><p class="sur-titre">Business</p><h1 tabindex="-1">Mon activité de freelance</h1><p class="intro">Trouver des clients, fixer ses prix, déclarer et être payée : les outils et les leçons de ton activité, rien d’autre.</p></header>${seg}`;
+    if (sousBiz === 'lecons') return `${entete}<div class="disposition"><div class="pile">${listeParcours(ids, pr)}</div>${panneau(pr)}</div>`;
+    return `${entete}${carteAlertes()}${carteRelances()}${panneauOutils('business')}`;
   }
   function victoire(l, suivante) {
     const x = M.xp(C, etat);
@@ -563,6 +583,7 @@
       ${ligneTriple(`Il te reste${r.tauxVfl ? ' (impôt payé)' : ' (avant impôt)'}`, r.reste, d, 'total', '', 'EUR')}</div>
       ${barre([['Cotisations', r.cotisations, 'c1'], ['Formation', r.cfp, 'c2'], ['Impôt libératoire', r.impot, 'c3'], ['Pour toi', r.reste, 'c4']])}
       <p class="petit">Taux global appliqué : <strong>${nb(r.global, 1)} %</strong>. Projection sur un an à ce rythme : ${euro(r.annuel)}.</p>
+      <p class="petit">Pas dans ce calcul : ${r.tauxVfl ? '' : `l’impôt sur le revenu (sans versement libératoire, il se calcule sur ${nb(100 - (c.regime === 'bic' ? R.abattementBIC : R.abattementBNC), 0)} % du chiffre d’affaires, après abattement de ${nb(c.regime === 'bic' ? R.abattementBIC : R.abattementBNC, 0)} %) et `}la CFE (exonérée l’année de création et sous ${R.cfeSeuil.toLocaleString('fr-FR')} € de chiffre d’affaires). Le chiffre d’affaires est la base : aucune charge n’est déduite en micro.</p>
       ${r.alertes.map(a => `<p class="alerte-sim">${esc(a)}</p>`).join('')}
       <p class="minuscule">Repères ${R.annee} vérifiés le ${esc(S.verifie)} : vérifier le taux en vigueur sur la source officielle liée. Pour un calcul officiel, utilise le simulateur de l’Urssaf.</p>`;
   }
@@ -1087,20 +1108,27 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
 
   /* ---------- Boîte à outils : quatre familles ---------- */
   const FAMILLES = [
-    ['calc', '🧮', 'Calculer', 'Pourcentages, devises, cotisations, tarif', ['pourcent', 'devises', 'cotis', 'revenu', 'plafonds']],
-    ['argent', '💶', 'Argent et gestion', 'Trésorerie, budget, recettes, échéances', ['treso', 'budget', 'recettes', 'echeances', 'efacture']],
-    ['ventes', '🤝', 'Clients et ventes', 'Kit prospect, prospection, devis, contrat', ['kit', 'pipeline', 'doc', 'contrat']],
-    ['suivi', '📅', 'Suivre et planifier', 'Planning et rapports clients', ['planning', 'reporting']]
+    ['ventes', '🤝', 'Trouver des clients', 'Kit prospect, suivi, devis, contrat', ['kit', 'pipeline', 'doc', 'contrat'], 'business'],
+    ['regles', '🏛️', 'Statut et impôts', 'Cotisations, tarif, plafonds, échéances', ['cotis', 'revenu', 'plafonds', 'echeances', 'efacture'], 'business'],
+    ['argent', '💶', 'Argent au quotidien', 'Trésorerie, budget, recettes', ['treso', 'budget', 'recettes'], 'business'],
+    ['travail', '🧮', 'Outils de travail', 'Pourcentages, devises, planning, rapports', ['pourcent', 'devises', 'planning', 'reporting'], 'outils']
   ];
+  const espaceOutil = id => familleDe(id)[5];
   const familleDe = id => FAMILLES.find(x => x[4].includes(id)) || FAMILLES[0];
-  function simulateurs() {
-    const o = etat.outil, fam = familleDe(o);
+  /* Panneau d’outils d’un espace : familles (si plusieurs), onglets de la famille active, outil affiché. */
+  function panneauOutils(espace) {
+    const o = etat.outil, fam = familleDe(o), fams = FAMILLES.filter(x => x[5] === espace);
     const tabs = ONGLETS.filter(x => fam[4].includes(x[0])).sort((a, b) => fam[4].indexOf(a[0]) - fam[4].indexOf(b[0]));
-    return `<header class="en-tete"><p class="sur-titre">S’outiller · Piloter mon business</p><h1 tabindex="-1">Boîte à outils</h1><p class="intro">${ONGLETS.length} outils rangés en 4 familles. Choisis une famille, puis l’outil. Les taux viennent des sources officielles vérifiées.</p></header>
-      ${barreTaux()}
-      <div class="fam-outils" role="group" aria-label="Familles d’outils">${FAMILLES.map(x => `<button class="fam-outil ${x === fam ? 'active' : ''}" data-action="famille-outil" data-outil="${x[4][0]}" aria-pressed="${x === fam}"><span class="fam-ico" aria-hidden="true">${x[1]}</span><b>${esc(x[2])}</b><small>${esc(x[3])}</small></button>`).join('')}</div>
+    return `${barreTaux()}
+      ${fams.length > 1 ? `<div class="fam-outils" role="group" aria-label="Familles d’outils">${fams.map(x => `<button class="fam-outil ${x === fam ? 'active' : ''}" data-action="famille-outil" data-outil="${x[4][0]}" aria-pressed="${x === fam}"><span class="fam-ico" aria-hidden="true">${x[1]}</span><b>${esc(x[2])}</b><small>${esc(x[3])}</small></button>`).join('')}</div>` : ''}
       <div class="onglets" role="tablist" aria-label="Outils de la famille ${esc(fam[2])}">${tabs.map(([id, n]) => `<button role="tab" id="onglet-${id}" aria-controls="panneau-outil" aria-selected="${o === id}" tabindex="${o === id ? 0 : -1}" data-action="onglet" data-outil="${id}">${esc(n)}</button>`).join('')}</div>
       <section class="carte panneau-outil" id="panneau-outil" role="tabpanel" aria-labelledby="onglet-${o}"><h2>${esc(ONGLETS.find(x => x[0] === o)[1])}</h2>${OUTIL_RENDU[o][0]()}</section>`;
+  }
+  /* Espace Outils et ressources : veille, ressources, pourcentages en images, puis les outils de travail. */
+  function simulateurs() {
+    return `<header class="en-tete"><p class="sur-titre">Outils et ressources</p><h1 tabindex="-1">Mes outils de travail</h1><p class="intro">Veille, liens utiles et petits outils du quotidien. Ce qui touche à ton activité de freelance (clients, prix, cotisations) est dans Business.</p></header>
+      <div class="grille-jeux">${tuile('veille', 'mauve', 'veille', 'Veille', veilleResume())}${tuile('ressources', 'turquoise', 'etoile', 'Ressources', `${RS.reduce((n, c) => n + c.liens.length, 0)} outils et liens triés`)}${tuile('pcimages', 'cerise', 'etoile', 'Pourcentages en images', '7 cartes animées, 3 minutes')}</div>
+      <h2 class="titre-section">Petits outils</h2>${panneauOutils('outils')}`;
   }
 
   /* ---------- Carnet et sources ---------- */
@@ -1204,13 +1232,13 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   function contenuVue() {
     const l = getLecon();
     if (l) return lecon(l);
-    const v = { simulateurs, carnet, sources, programme, jouer, scenarios: vueScenarios, eclair: vueEclair, revision: vueRevision, veille: vueVeille, ressources: vueRessources, suggestions: vueSuggestions, pcimages: vuePcImages }[etat.vue];
+    const v = { simulateurs, business, carnet, sources, programme, jouer, scenarios: vueScenarios, eclair: vueEclair, revision: vueRevision, veille: vueVeille, ressources: vueRessources, suggestions: vueSuggestions, pcimages: vuePcImages }[etat.vue];
     return v ? v() : accueil();
   }
   function fil() {
     const l = getLecon();
     if (l) return `${esc(parcoursDe(l).nom)}<span>${esc(l.code)}</span>`;
-    return { programme: 'Apprendre<span>Tout le programme</span>', jouer: 'Jouer<span>Jouer pour apprendre</span>', simulateurs: 'Outils<span>Boîte à outils</span>', carnet: 'Mes affaires<span>Mon carnet</span>', sources: 'Mes affaires<span>Sources</span>', scenarios: 'Jouer<span>Scénarios</span>', eclair: 'Jouer<span>Quiz éclair</span>', revision: 'Jouer<span>Révision espacée</span>', veille: 'Ma veille<span>Veille et idées</span>', ressources: 'Outils<span>Ressources</span>', suggestions: 'Mes affaires<span>Mes idées pour le logiciel</span>', pcimages: 'Outils<span>Pourcentages en images</span>' }[etat.vue] || 'Module CM<span>Accueil</span>';
+    return { programme: 'Apprendre<span>Les leçons du métier</span>', jouer: 'S’entraîner<span>Quiz et missions</span>', business: 'Business<span>Mon activité</span>', simulateurs: 'Outils<span>Outils de travail</span>', carnet: 'Mes affaires<span>Mon carnet</span>', sources: 'Mes affaires<span>Sources</span>', scenarios: 'S’entraîner<span>Scénarios</span>', eclair: 'S’entraîner<span>Quiz éclair</span>', revision: 'S’entraîner<span>Révision espacée</span>', veille: 'Ma veille<span>Veille et idées</span>', ressources: 'Outils<span>Ressources</span>', suggestions: 'Mes affaires<span>Mes idées pour le logiciel</span>', pcimages: 'Outils<span>Pourcentages en images</span>' }[etat.vue] || 'Module CM<span>Accueil</span>';
   }
   function boutonsBarre() {
     const sombre = document.documentElement.dataset.theme === 'sombre';
@@ -1224,11 +1252,13 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
         <p class="minuscule">Ta progression reste dans ce navigateur. Seul le bouton « Actualiser les taux BCE » contacte un service externe, à ta demande.</p></div></details>`;
   }
   function barreBas() {
-    const v = etat.vue, actif = { accueil: v === 'accueil', apprendre: !!getLecon() || v === 'programme' || v === 'final', jouer: ['jouer', 'scenarios', 'eclair', 'revision'].includes(v), business: ['simulateurs', 'ressources'].includes(v), veille: v === 'veille' };
+    const v = etat.vue, l = getLecon(), e = l ? espaceLecon(l) : '';
+    const actif = { accueil: v === 'accueil', apprendre: e === 'apprendre' || v === 'programme', jouer: e === 'entrainer' || ['jouer', 'scenarios', 'eclair', 'revision', 'final'].includes(v), business: e === 'business' || v === 'business', outils: ['simulateurs', 'ressources', 'veille', 'pcimages'].includes(v) };
     const nA = alertesFortes().length;
     const t = (id, vue, ic, lib) => `<button data-view="${vue}" ${actif[id] ? 'aria-current="page"' : ''}>${icone(ic, 22)}${lib}${id === 'business' && nA ? `<span class="pastille-alerte" aria-label="${nA} échéance${nA > 1 ? 's' : ''} à traiter">${nA}</span>` : ''}</button>`;
-    return `<nav class="bas" aria-label="Navigation principale">${t('accueil', 'accueil', 'accueil', 'Accueil')}${t('apprendre', 'programme', 'livre', 'Apprendre')}${t('jouer', 'jouer', 'jeu', 'Jouer')}${t('business', 'simulateurs', 'outils', 'Business')}${t('veille', 'veille', 'veille', 'Veille')}</nav>`;
+    return `<nav class="bas" aria-label="Navigation principale">${t('accueil', 'accueil', 'accueil', 'Accueil')}${t('apprendre', 'programme', 'livre', 'Apprendre')}${t('jouer', 'jouer', 'jeu', 'S’entraîner')}${t('business', 'business', 'outils', 'Business')}${t('outils', 'simulateurs', 'veille', 'Outils')}</nav>`;
   }
+
   function render(focusSel) {
     appliquerTheme(); amorcerRevision();
     document.body.classList.toggle('focus', etat.focus);
@@ -1244,6 +1274,8 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
   function ouvrir(view, ancrer) {
     const l = toutes.find(x => x.id === view);
     etat.vue = view; etat.question = 0; drafts = {};
+    if (view === 'business' && espaceOutil(etat.outil) !== 'business') etat.outil = 'kit';
+    if (view === 'simulateurs' && espaceOutil(etat.outil) !== 'outils') etat.outil = 'pourcent';
     groupesDe(view).forEach(g => menuOuvert.add(g));
     if (view === 'eclair' && (!eclair || eclair.fini)) nouvelEclair();
     if (view === 'revision') { amorcerRevision(); nouvelleRevision(); }
@@ -1406,13 +1438,14 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     if (a === 'theme') { const sombre = document.documentElement.dataset.theme === 'sombre'; etat.theme = sombre ? 'clair' : 'sombre'; render('.barre [data-action="theme"]'); annoncer(etat.theme === 'sombre' ? 'Mode sombre activé.' : 'Mode clair activé.'); return; }
     if (a === 'mascotte') { etat.mascotte = !mascotteActive(); render('.barre [data-action="mascotte"]'); annoncer(etat.mascotte ? 'Mascotte affichée.' : 'Mascotte masquée.'); return; }
     if (a === 'aere') { etat.aere = !etat.aere; render('.barre [data-action="aere"]'); annoncer(etat.aere ? 'Texte aéré activé.' : 'Texte aéré désactivé.'); return; }
-    if (a === 'famille') { ouvrir('programme'); const el = document.getElementById('fam-' + b.dataset.id); if (el) el.scrollIntoView(); return; }
+    if (a === 'famille') { ouvrir(VUE_ESPACE[espaceDeParcours(b.dataset.id)]); if (espaceDeParcours(b.dataset.id) === 'business') { sousBiz = 'lecons'; render(); } const el = document.getElementById('fam-' + b.dataset.id); if (el) el.scrollIntoView(); return; }
     if (a === 'veille-tout') { veille.tout = true; majVeilleZone(); return; }
     if (a === 'sprint') { lancerSprint(Number(b.dataset.minutes) || 10); return; }
     if (a === 'stop-sprint') { if (sprint) clearInterval(sprint.id); sprint = null; render('.sprint summary'); toast('Sprint arrêté. Pas grave : tu reprends quand tu veux.'); return; }
     if (a === 'energie') { etat.energie = b.dataset.energie; render('.energie-bloc [aria-pressed="true"]'); return; }
     if (a === 'qdj') { const lq = toutes.find(x => x.id === b.dataset.lecon); etat.vue = lq.id; etat.derniere = lq.id; etat.etape = 'exercice'; etat.question = Number(b.dataset.i); drafts = {}; render('.question h2'); window.scrollTo(0, 0); return; }
-    if (a === 'outil') { etat.outil = b.dataset.outil; ouvrir('simulateurs'); return; }
+    if (a === 'outil') { etat.outil = b.dataset.outil; if (espaceOutil(etat.outil) === 'business') { sousBiz = 'outils'; ouvrir('business'); } else ouvrir('simulateurs'); return; }
+    if (a === 'sous-biz') { sousBiz = b.dataset.sous === 'lecons' ? 'lecons' : 'outils'; render(`[data-sous="${sousBiz}"]`); return; }
     if (a === 'pcv-suiv') { pcv.i = Math.min(CARTES_PCV.length - 1, pcv.i + 1); render('.pcv-carte h2'); window.scrollTo(0, 0); return; }
     if (a === 'pcv-prec') { pcv.i = Math.max(0, pcv.i - 1); render('.pcv-carte h2'); window.scrollTo(0, 0); return; }
     if (a === 'pcv-va') { pcv.i = Math.max(0, Math.min(CARTES_PCV.length - 1, Number(b.dataset.i) || 0)); render('.pcv-carte h2'); return; }
