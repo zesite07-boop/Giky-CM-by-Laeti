@@ -1,25 +1,25 @@
 {
- "maj": "2026-11-08T01:26:34.523Z",
+ "maj": "2026-11-08T07:04:39.067Z",
  "sources": [
   {
    "id": "gnews-twitch-fr",
    "nom": "Google Actualités · Twitch France",
    "statut": "ok",
-   "nb": 54,
+   "nb": 53,
    "message": ""
   },
   {
    "id": "gnews-streamers",
    "nom": "Google Actualités · streamers et streaming",
    "statut": "ok",
-   "nb": 62,
+   "nb": 61,
    "message": ""
   },
   {
    "id": "gnews-jeux-sorties",
    "nom": "Google Actualités · sorties jeux vidéo",
    "statut": "ok",
-   "nb": 95,
+   "nb": 98,
    "message": ""
   },
   {
@@ -63,9 +63,111 @@
    "statut": "ok",
    "nb": 25,
    "message": ""
+  },
+  {
+   "id": "gnews-createurs-twitch",
+   "nom": "Google Actualités · créateurs de contenu Twitch",
+   "statut": "ok",
+   "nb": 11,
+   "message": ""
+  },
+  {
+   "id": "gnews-streamers-youtubeurs",
+   "nom": "Google Actualités · streamers et YouTubeurs",
+   "statut": "ok",
+   "nb": 8,
+   "message": ""
+  },
+  {
+   "id": "gnews-monetisation",
+   "nom": "Google Actualités · monétisation et revenus des streamers",
+   "statut": "ok",
+   "nb": 10,
+   "message": ""
+  },
+  {
+   "id": "gnews-regles-twitch",
+   "nom": "Google Actualités · règles, modération et sanctions Twitch",
+   "statut": "ok",
+   "nb": 34,
+   "message": ""
+  },
+  {
+   "id": "gnews-multiplateforme",
+   "nom": "Google Actualités · Twitch, YouTube et Kick",
+   "statut": "ok",
+   "nb": 5,
+   "message": ""
+  },
+  {
+   "id": "gnews-creators-en",
+   "nom": "Google Actualités · Twitch creators (international)",
+   "statut": "ok",
+   "nb": 26,
+   "message": ""
+  },
+  {
+   "id": "tubefilter",
+   "nom": "Tubefilter (économie des créateurs)",
+   "statut": "ok",
+   "nb": 12,
+   "message": ""
+  },
+  {
+   "id": "passionfruit",
+   "nom": "Passionfruit (créateurs)",
+   "statut": "ok",
+   "nb": 10,
+   "message": ""
+  },
+  {
+   "id": "blogdumoderateur",
+   "nom": "Blog du Modérateur (réseaux sociaux)",
+   "statut": "ok",
+   "nb": 30,
+   "message": ""
+  },
+  {
+   "id": "gnews-createurs-1",
+   "nom": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "statut": "ok",
+   "nb": 69,
+   "message": ""
+  },
+  {
+   "id": "gnews-createurs-2",
+   "nom": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "statut": "ok",
+   "nb": 52,
+   "message": ""
+  },
+  {
+   "id": "gnews-createurs-3",
+   "nom": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "statut": "ok",
+   "nb": 30,
+   "message": ""
   }
  ],
  "items": [
+  {
+   "titre": "WoW Forever a-t-il relancé World of Warcraft ? Twitch et bêta face à l'âge d'or de 2010 - GeeksLands",
+   "lien": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4wMDF3YW12QVdwQnNxZzc4Yl9rempBMFF0RFphNDl5Vi1mZTRPXzR0R0lLdU5tZnloNzBmbEZjSW9hcTdNVm90RXJPTlU0OEx5SDdHc3BVU2U4dGotd3FWa0p0UFhQRTNVWHAzRA?oc=5",
+   "date": "2026-11-08T05:30:00.000Z",
+   "resume": "WoW Forever a-t-il relancé World of Warcraft ? Twitch et bêta face à l'âge d'or de 2010 GeeksLands",
+   "source": "Google Actualités · règles, modération et sanctions Twitch",
+   "categorie": "createurs",
+   "editeur": "GeeksLands"
+  },
+  {
+   "titre": "Twitch usernames",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xqnln1/twitch_usernames/",
+   "date": "2026-11-08T02:29:31.000Z",
+   "resume": "I read through the twitch username policy, however it does not mention about requesting a name to be freed up, for example \"Accountname123\" shows: This channel has been closed by the user. is it possible to request for the name to be freed…",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
+   "editeur": ""
+  },
   {
    "titre": "Calendrier de L’Institut Saison 2, dates et heure de sortie des épisodes en France",
    "lien": "https://www.dexerto.fr/films-series/calendrier-linstitut-saison-2-sortie-episodes-1663578/",
@@ -92,6 +194,15 @@
    "source": "Google Actualités · sorties jeux vidéo",
    "categorie": "alerte",
    "editeur": "EGW.News"
+  },
+  {
+   "titre": "Les 25 heures qui courent : Où regarder la backyard de Clem Qui Court en direct sur Twitch ? - stadion.com",
+   "lien": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPV05EbHpNSExEOWtZalpsQ29EVk54TlUwWjBVNm9zdTBzNU5zbnkwWU5nb0dvYjJOVGtfQ2R1eF96ZDVtakczOWZxbUFTenF5c28wUEE1cnV5MGU5WWc3dkF3Z1cyV0xwWGd2cW5TUWtjbEFEZlpTSjRzOHd5LTZycS1za1pCSXBRMXAzTHZVakt4UFVuR3B3UDBKbEtYUjJlRWluN0dwRDdBTHpWa0NKd3dEaw?oc=5",
+   "date": "2026-11-07T20:40:35.000Z",
+   "resume": "Les 25 heures qui courent : Où regarder la backyard de Clem Qui Court en direct sur Twitch ? stadion.com",
+   "source": "Google Actualités · créateurs de contenu Twitch",
+   "categorie": "createurs",
+   "editeur": "stadion.com"
   },
   {
    "titre": "Streaming advice for someone who just has a laptop!",
@@ -247,15 +358,6 @@
    "editeur": ""
   },
   {
-   "titre": "Abandonner son chat ou son couple : que seriez-vous prêt à sacrifier pour jouer à GTA 6 une semaine plus tôt - RTBF",
-   "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNSTllOWRuVTY4WjVaakp3eHMwa3NaUXRYd0wwM1dIdVZsMTZUcC1EZElVSTJIcjNRVnNjeXhKTGlwdXV0ZDVIeWZTQUhIRHVMd1dBM2E0TzJXcEVSandNaFFSbmlQYm8tdFI2OFVZU19kOUc5dWtrS1dMNXdwMHpZaW1DRFB5d25UMXRDZWtVRlp4LTN1Mkowb3hkcHN1Nl9zRzM0YXVlSk9IZ0RBenZPX3RQTkZzZjJVSnZMd3dKRlk2YjR2dzFWZHQ5eEIwUVRwcUpsZUthbm8waTQ?oc=5",
-   "date": "2026-11-07T16:03:44.000Z",
-   "resume": "Abandonner son chat ou son couple : que seriez-vous prêt à sacrifier pour jouer à GTA 6 une semaine plus tôt RTBF",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "RTBF"
-  },
-  {
    "titre": "Dans 20-30 ans, y’en aura plus : voici comment sauvegarder vous-même les sites web de notre époque",
    "lien": "https://www.numerama.com/tech/2366929-dans-20-30-ans-yen-aura-plus-voici-comment-sauvegarder-vous-meme-les-sites-web-de-notre-epoque.html",
    "date": "2026-11-07T16:02:00.000Z",
@@ -400,6 +502,15 @@
    "editeur": ""
   },
   {
+   "titre": "\"Elle était beaucoup plus âgée que moi\" : 3 ans après sa rupture avec l'influenceuse Mexicaine La Sirène, Inoxtag s'explique - Public.fr",
+   "lien": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOa1U0bDdkNWpJM1p6X1hpZUp5Skx5RHN5RnQzZ1JsY2tYVmZtUXJiTXZ2MFBVNnJDMXUyOTlhSWJDOHR2RDZWUEt1V2dJejdfNFVEX1ZPS29Vd1VKempwMlctZnhDT2E0eW9vRHBWeGtZMll3UEpUYUphRy16clllcnlZQTZUX3JCRU9OY3pibzkwaWE1Wm1Cc3BHMzFWMWVaWkExckhYd2pwOWQzZzgzM0J5amJ2MlNEWnhNelFqNnlfSjIyNDJ6MFB5eXdsRkItQ0lyOXZB?oc=5",
+   "date": "2026-11-07T13:00:04.000Z",
+   "resume": "\"Elle était beaucoup plus âgée que moi\" : 3 ans après sa rupture avec l'influenceuse Mexicaine La Sirène, Inoxtag s'explique Public.fr",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "Public.fr"
+  },
+  {
    "titre": "Steam : débordé par les soumissions, Valve durcit la vérification des jeux avant sortie - GeeksLands",
    "lien": "https://news.google.com/rss/articles/CBMickFVX3lxTFBVdEdEa3ExZGxxZFJnTVZmYkNHdERvdlBybGllWF9yb0JJbW5CVHFCN2dnZUM3cDlaOGpVUXhVaFJJRHhMWWhtdGU0VXgzM3JhenlBS0VyamxVa3I2Qk92RFR4SGtFOFk4VE9qNXM0WXBjQQ?oc=5",
    "date": "2026-11-07T13:00:00.000Z",
@@ -535,6 +646,15 @@
    "editeur": ""
   },
   {
+   "titre": "Influenceurs et créateurs de contenus : leur business explose en France et atteint 9 milliards d'euros en 2026 - NextPlz",
+   "lien": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNSmZhRzdLS1ZuYVFaNmZjRm4zRWNsN2tWOWZQWVdURU9iWENIMWRxSUt3anFQTG12aUFvM1oxVzVzWHF6WGdRUjdMX01yeWxBdTJHTzNENDJfQlRyOVVWY0JvMXYwbWE0TnlMaDhWS3BPUXpVU0Z0UHVkdjk1VVJLT2hGU3Mzd25BWGd4RW1GZVVxalYyZUxVbk1lbEdsUzNwV01UalYzaExmRk50N1hpX3Vrdzk2R2NCVWpXSmYySzBzbU9zVmlxTzV1UmcwWlZmQ1l0NGptR3ZhUGRRbHc?oc=5",
+   "date": "2026-11-07T11:00:00.000Z",
+   "resume": "Influenceurs et créateurs de contenus : leur business explose en France et atteint 9 milliards d'euros en 2026 NextPlz",
+   "source": "Google Actualités · créateurs de contenu Twitch",
+   "categorie": "createurs",
+   "editeur": "NextPlz"
+  },
+  {
    "titre": "Ubisoft veut \"traiter les joueurs comme des rois\" : ne pas jouer à GTA 6 à sa sortie sera récompensé dans Rainbow Six Siege",
    "lien": "https://www.gamekult.com/actualite/ubisoft-veut-traiter-les-joueurs-comme-des-rois-ne-pas-jouer-a-gta-6-a-sa-sortie-sera-recompense-dans-rainbow-six-siege-3050872694.html",
    "date": "2026-11-07T10:29:00.000Z",
@@ -589,6 +709,24 @@
    "editeur": ""
   },
   {
+   "titre": "\"Zelda, Ocarina of Time\" : Nintendo dévoile son remake, pourquoi est-il le meilleur jeu vidéo de tous les temps ? - La Provence",
+   "lien": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPZkxkRTZGOHJkeFNQZUpKRk5WY05DSVF4YXVjSjEzREUxazJBQy1fZTdTdHA4V1hlT1djRXZGc25sLUFuMUlKbW1SeUxVelY5bThhbndyOXh4Y3d6NW9DNDBwR1NVZXFYU2I3MTY5N3BBU2RYWTY5cll4blN1N18wWWlOMDBKdGo0cWNWcTRwVmlBQ0Z5ZGVOaTVWTWdNQmtPZk1KUnV1VHVZSU1vNVl0amlPVHlwTFNIQ1NnTlpFcHlibzd6NnFHMkhzRjFVbmw4b0doUlA1SDFOUFpoNHZ5N3hlQ3d1dF9KZzZoRTVaNldSWTdUN0Jv?oc=5",
+   "date": "2026-11-07T09:48:21.000Z",
+   "resume": "\"Zelda, Ocarina of Time\" : Nintendo dévoile son remake, pourquoi est-il le meilleur jeu vidéo de tous les temps ? La Provence",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "La Provence"
+  },
+  {
+   "titre": "Après son lancement réussi à Amiens avec Michou, Wanted de M6 aura une saison 2 - Courrier picard",
+   "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPUC1OZmhneTVwd210RjhsZ0ZLd2JRMmx5Vmh0QkY2Vi1sY1VSelJxS01hdmJLaTAtRFFwVWxxWHlDS2gta2VoM2RhcUIyOVlpbFNIdjI2UF9OYkZEY3hmTWtWcy15WU9uRlBCZ0g5MkZsQm9ZZnp0b29GOXp6RUtVU1Nqc0VZQUhmeE1LajBpb3ZPVGN1TmlMWkpnZnVJVlFuTWd0Yzd1U1JVSFc0Y20zcHNMR3B2S1RtTUVteFZQbnpDNFV5MUItcm56dUtvV193?oc=5",
+   "date": "2026-11-07T09:45:07.000Z",
+   "resume": "Après son lancement réussi à Amiens avec Michou, Wanted de M6 aura une saison 2 Courrier picard",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "Courrier picard"
+  },
+  {
    "titre": "This Button only saves 30 seconds of footage, but sometimes I need longer to get the full clip, is their any way to increase how much footage is saved",
    "lien": "https://www.reddit.com/r/Twitch/comments/1xq2jow/this_button_only_saves_30_seconds_of_footage_but/",
    "date": "2026-11-07T09:39:55.000Z",
@@ -598,10 +736,28 @@
    "editeur": ""
   },
   {
+   "titre": "Zelda: Ocarina of Time, où jouer à Paris ce week-end après la sortie du remake ? - Sortir à Paris",
+   "lien": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQOUFDZDU3bzdnQjRmTVd4bm93d3QzZHJ4Wkh5QnBLZTdBZGM2LXRqdGNsTGQ5M1BFblcyOHBUM1FtY0R3WlNUOWY4MXpkMzVMam1kRm1tUHFqT2RFNTRnNGlCX3daTUFJQXpPZnMyOXhNZ25jRFdmbGF6RTctR3M0dldUaE9ySWZDX0Vpd2V5R1VwV1FZUlNSd05DSG1yR1RXTkxsQ3Z0TnpZWWdxa182ZGthcmpqSTFHRTFvV3R0YUNKY1Z4VFo4QUx2SktzdmdHTlE?oc=5",
+   "date": "2026-11-07T09:35:54.000Z",
+   "resume": "Zelda: Ocarina of Time, où jouer à Paris ce week-end après la sortie du remake ? Sortir à Paris",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Sortir à Paris"
+  },
+  {
    "titre": "Temple de l'Ombre Zelda Ocarina of Time : Comment finir ce donjon ?",
    "lien": "https://www.jeuxvideo.com/news/2112349/temple-de-l-ombre-zelda-ocarina-of-time-comment-finir-ce-donjon.htm",
    "date": "2026-11-07T09:30:09.000Z",
    "resume": "Découvrez le cheminement du Temple de l'Ombre, l'un des donjons principaux les plus difficiles du remake Switch 2 de Zelda OOT. Pour le traverser, vous devrez bien utiliser vos Lunettes de Vérité, récupérées au fond du puits du village de…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Abandonnée pendant 30 heures, cette IA s'est mise à créer des jeux vidéo pour s'occuper",
+   "lien": "https://www.jeuxvideo.com/news/2112467/abandonnee-pendant-30-heures-cette-ia-s-est-mise-a-creer-des-jeux-video-pour-s-occuper.htm",
+   "date": "2026-11-07T09:30:08.000Z",
+   "resume": "Abandonner une intelligence artificielle sur une île déserte pendant 30 heures sans aucune directive ? Des chercheurs du MIT l'ont fait avec le modèle Claude Opus 4.7. Pour combattre l'ennui, la machine a purement et simplement... inventé…",
    "source": "jeuxvideo.com",
    "categorie": "actu",
    "editeur": ""
@@ -614,6 +770,15 @@
    "source": "Numerama",
    "categorie": "actu",
    "editeur": ""
+  },
+  {
+   "titre": "À l’école Henri-Millez de Louvil, on pense, on ponce et on construit le mobilier de la cour de récré - La Voix du Nord",
+   "lien": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOVUExakZEeXBBZURKQi05WVNaN1ZqWWtvUEVZVm4xMEhBN3JFNllCVXVDV2lpWVM5V3k4TU9iX1M3TlZsanZBbXBqNkFobDliSC02M3hOYVFmR2szSHJfNi1vLVFFbVdnaktHS1l3WUpibHJQR0xvX2dRMmgyeDN1RXRKTEhCcDZuSHNJazllT29BcXBBT3lMN0pFQkJZVlFtMzFuTzRtMm43S3BCN3U2MWZMUThXWTIwSlhzckctU2FIWDhMZE8zS2t4R2VpQQ?oc=5",
+   "date": "2026-11-07T09:27:18.000Z",
+   "resume": "À l’école Henri-Millez de Louvil, on pense, on ponce et on construit le mobilier de la cour de récré La Voix du Nord",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "La Voix du Nord"
   },
   {
    "titre": "El Niño record : 2027 a 96 % de chances de battre tous les records de chaleur",
@@ -640,6 +805,33 @@
    "resume": "Has anyone noticed that the latest BTTV update no longer Auto Claims Channel Points? I updated tonight and seems to no longer be working. Am I just dumb submitted by /u/WashInformal5004 [link] [comments]",
    "source": "Reddit · r/Twitch",
    "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "Ces promos Xbox sont dingues : notre top 10 des jeux incontournables (et à prix cassés) à ne pas rater - JeuxVideo.com",
+   "lien": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQRVc1blltdWFMS1hJeFFIVGdXUlJUV2JBWmdVT1dCVjQ5UjQ5RFRMdFRadEtlYWpVN00zVHJQYXFTS2VUbm5PNWFKcU4wbXQxVHNjR2VjVzd6WldDN1hQVGozcE9lTnh0M1dtZnVOQldRWC1GeXVTOXk4aW9BVTJfM05TNmlmaXBPMUVMTEF4UFkxMXFNUzZZdDBnM3pPM3BoR1dvZ1BRQjJhSm52STJlSW1mNFlnSFlmUXM5NUZOZlQtSHJJWkNvRUVKMTJTazdONnp4Ui1XNHA?oc=5",
+   "date": "2026-11-07T08:30:07.000Z",
+   "resume": "Ces promos Xbox sont dingues : notre top 10 des jeux incontournables (et à prix cassés) à ne pas rater JeuxVideo.com",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "JeuxVideo.com"
+  },
+  {
+   "titre": "Ces promos Xbox sont dingues : notre top 10 des jeux incontournables (et à prix cassés) à ne pas rater",
+   "lien": "https://www.jeuxvideo.com/news/2113007/ces-promos-xbox-sont-dingues-notre-top-10-des-jeux-incontournables-et-a-prix-casses-a-ne-pas-rater.htm",
+   "date": "2026-11-07T08:30:07.000Z",
+   "resume": "Avec la sortie de GTA 6 et le retour d'Ocarina of Time, nos comptes en banque risquent de se rappeler de ce mois de novembre 2026. Heureusement, Microsoft brade plus de 1 200 jeux Xbox : voici notre Top 10 ultime pour enrichir votre biblio…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Fond du puits Zelda Ocarina of Time : Comment accéder au Temple de l'Ombre ?",
+   "lien": "https://www.jeuxvideo.com/news/2112330/fond-du-puits-zelda-ocarina-of-time-comment-acceder-au-temple-de-l-ombre.htm",
+   "date": "2026-11-07T08:30:07.000Z",
+   "resume": "Une fois que le problème des Zora en Link adulte est réglé, dans le remake Switch 2 de Ocarina of Time, vous verrez que de la fumée sort du Village Cocorico. Allez directement sur place pour voir ce qui se passe, cela va vous mettre sur le…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
    "editeur": ""
   },
   {
@@ -670,6 +862,51 @@
    "editeur": ""
   },
   {
+   "titre": "Le synopsis d’Avengers : Doomsday n’est pas très rassurant pour Marvel",
+   "lien": "https://www.journaldugeek.com/2026/11/07/le-synopsis-davengers-doomsday-nest-pas-tres-rassurant-pour-marvel/",
+   "date": "2026-11-07T07:09:32.000Z",
+   "resume": "C'est ce que l'on pouvait craindre à la découverte de la première bande-annonce, ça devient de plus en plus concret. Le MCU, même avec son film ultime, va réduire son multivers à peau de chagrin.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "A peine sorti, le nouveau jeu The Legend of Zelda : Ocarina of Time est l’un des best-seller du moment sur Cdiscount - Le Figaro",
+   "lien": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNNTFnRzVjcWdEUTdJNjRWbk9aZ1BoeC16YS04VWlTUENvWFIybUxRc3lIcFl6a3RqTzBJXzc0VzhoWm5UZnJtT3lrcV9adU5wclFxUXlKM1BEOTJ5YklKNHhoOW95YWdzVGNKZ0tNZWY4c1Z6Rm1IalBCZ2tVc0FOMnVFc3RQbllXdmpMMTYxdHlyM1ZETHdhbHhTZXpONWk5VmY5QkFDTGZNMmVqSml3WlBxNmFUTmpIVmJiMXJBbnRXOWpxVU5MS2pRUzlYTkU1SEI4SzdMbnJMbWtxVnB5cFhtOWhNQnZuVTBFOGpUbkRGVG1Ca2RLaVA5VQ?oc=5",
+   "date": "2026-11-07T07:05:00.000Z",
+   "resume": "A peine sorti, le nouveau jeu The Legend of Zelda : Ocarina of Time est l’un des best-seller du moment sur Cdiscount Le Figaro",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Le Figaro"
+  },
+  {
+   "titre": "Zelda Ocarina of Time sur Switch 2 : Nintendo a gardé les temps de chargement pour faire comme à l'époque, mais ont-il vraiment eu le choix - JeuxVideo.com",
+   "lien": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQSTJoS05HOFN3WjRjeW5kb0pfYm9POUtfUmNoc0MzbWZjZzM5RVpXcjBUelZnWEQ4akQtTmJ3d3lwMk96ems4YWU2TDEzYXNxYzNRLWZzMnNxSmI0N015Rk05aU1lekFfRFF3T3g2YXJzbVRGdEc4QlUwdzRQbHkta3VES2djOGZJVV85ZVhVTHE2N1RVTEtTd3VlYnhBNE44Wm5kZzF0N2hXSmxacWJiemlrakRyam5oYkdvXzV2akRYSTkwLW5FSkItVzZ2MDBoOUVObVZNWUh4NzU2bWpUQ1c0TUNsZ2x2X1h1R1ZJVWtCWDc2a3o5MTFYcXR6VExxSW5XWFRPRjkya2c?oc=5",
+   "date": "2026-11-07T06:40:07.000Z",
+   "resume": "Zelda Ocarina of Time sur Switch 2 : Nintendo a gardé les temps de chargement pour faire comme à l'époque, mais ont-il vraiment eu le choix JeuxVideo.com",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "JeuxVideo.com"
+  },
+  {
+   "titre": "Zelda Ocarina of Time sur Switch 2 : Nintendo a gardé les temps de chargement pour faire comme à l'époque, mais ont-il vraiment eu le choix ?",
+   "lien": "https://www.jeuxvideo.com/news/2113129/zelda-ocarina-of-time-sur-switch-2-nintendo-a-garde-les-temps-de-chargement-pour-faire-comme-a-l-epoque-mais-ont-il-vraiment-eu-le-choix.htm",
+   "date": "2026-11-07T06:40:07.000Z",
+   "resume": "Sorti le 5 novembre 2026 sur Nintendo Switch 2, le remake de The Legend of Zelda : Ocarina of Time déchaîne déjà les passions. 28 ans après la sortie du jeu original, le maintien d'écrans de transition entre les régions emblématiques d'Hyr…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Gaming : les expériences à tester d'urgence à Paris et en Île-de-France pour les fans de jeux-vidéo - Sortir à Paris",
+   "lien": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNdjhCX1pNek5RUnRxNWZ2c1loWlk1bmw2Vk0tejk4eUdLRWxyZHFZTU4zV3NDdkc5RUdFa2RmUWpJeHhLWFNMeEQ1RFFQbWtmbkpQM1EtWWdlTFMwZDFPM0szdkxmT2x4MkVVRU56NHhfdkhhYXM4aU40SVljNVdfQm80Z1hLeXpScFhSQ0pPcUFYZnZwUTB3eDdoV19mb0dCejNnSFNEdlJaNzBWUkJqT1FMeDFNZGYwWGI1bXBsMmtOOEpVMHJScHlTNTJ3bnpQQzcyelliYlduSUo0cmV6RTU2UnByS3hiMlhz?oc=5",
+   "date": "2026-11-07T06:17:52.000Z",
+   "resume": "Gaming : les expériences à tester d'urgence à Paris et en Île-de-France pour les fans de jeux-vidéo Sortir à Paris",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Sortir à Paris"
+  },
+  {
    "titre": "Vers le Rafale du futur, une facture à l’élu qui veut taxer les gigaoctets et la preuve secrète d’OpenAI – le recap’ tech de la semaine",
    "lien": "https://www.numerama.com/tech/2369173-vers-le-rafale-du-futur-une-facture-a-lelu-qui-veut-taxer-les-gigaoctets-et-la-preuve-secrete-dopenai-le-recap-tech-de-la-semaine.html",
    "date": "2026-11-07T06:05:00.000Z",
@@ -677,6 +914,15 @@
    "source": "Numerama",
    "categorie": "actu",
    "editeur": ""
+  },
+  {
+   "titre": "\"Une dramaturgie naturelle\" : de Clem Qui Court à Squeezie, pourquoi les créateurs de contenu envahissent l'événementiel sportif - RTL",
+   "lien": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNcmNncm9WS05PWHNrN0VjbTV3LWwxYU9wdWdIRFotOXhwNmx3c3dnQlVSLW1MZTJucjNyeUp3VmEzYzhnc0NwTnM1Y181b1hNdjQyM3FXODRxRzVPenlvbERNNVhHemRtanJjcUFqUmxWdHU0OV9qYmxTQUpqRi1KY3ZVSnlOSHVxT3EtRTRLc0VxaE9vaDJRempJSEZHR0c1dDhTVmt4dEt1QWxBX0dhR3k5b0ZicUdGbDVpcW5FeklpM3VRQkYtMVItdjlpMjRaWk1mLVFjQ3laNEpiaVMtc3RWWlN4aVk4NFc3a3BKTGtiWTNyLTFKS3RZWHFLazBfNVE?oc=5",
+   "date": "2026-11-07T06:01:00.000Z",
+   "resume": "\"Une dramaturgie naturelle\" : de Clem Qui Court à Squeezie, pourquoi les créateurs de contenu envahissent l'événementiel sportif RTL",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "RTL"
   },
   {
    "titre": "Clap de fin pour le Tesla Cybertruck : chronique d’un échec industriel annoncé",
@@ -706,6 +952,15 @@
    "editeur": ""
   },
   {
+   "titre": "Hasan Piker (Creator) - Rolling Stone",
+   "lien": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBlMFdjZWVNNmVUX19CN3Z2bGxWeVBWZGVOVF91WVBBenFadVdRME95SnBNYXM1Y1ZEZ3V6b2c4ZHk0c1A1STc3TkJwT3J1anF6cE4tNlRn?oc=5",
+   "date": "2026-11-07T04:11:41.000Z",
+   "resume": "Hasan Piker (Creator) Rolling Stone",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "Rolling Stone"
+  },
+  {
    "titre": "Why can’t I access past broadcasts on the TV app when I can on the computer?",
    "lien": "https://www.reddit.com/r/Twitch/comments/1xpvfcr/why_cant_i_access_past_broadcasts_on_the_tv_app/",
    "date": "2026-11-07T02:41:11.000Z",
@@ -724,12 +979,102 @@
    "editeur": ""
   },
   {
+   "titre": "Have you heard? Ethan and Hila’s divorce, Harvard’s creator summit, and Brandon Herrera’s defeat.",
+   "lien": "https://www.tubefilter.com/2026/11/06/have-you-heard-ethan-hila-klein-harvard-creator-brandon-herrera/",
+   "date": "2026-11-06T23:55:11.000Z",
+   "resume": "Each week, we handpick a selection of stories to give you a snapshot of trends, updates, business moves, and more from around the creator industry. This week, infidelity is bringing an end to a high-profile creator marriage, the Ivy League…",
+   "source": "Tubefilter (économie des créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "Who Is iShowSpeed? Inside the Life and Career of the YouTube Streaming Sensation - WIN.GG",
+   "lien": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE8yWFotdnQ3NVNjZ05PZkFKY2R0NHNpWEQzOG5YYlgyWU9IcWFIaWh2d19tTDVyelNyLXdSSXVEWGVrVW1sV1VrbA?oc=5",
+   "date": "2026-11-06T23:16:23.000Z",
+   "resume": "Who Is iShowSpeed? Inside the Life and Career of the YouTube Streaming Sensation WIN.GG",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "WIN.GG"
+  },
+  {
+   "titre": "UTA, FaZe vets launch ISO as a “new partner for talent”",
+   "lien": "https://www.tubefilter.com/2026/11/06/iso-new-talent-management-agency-faze-uta-execs/",
+   "date": "2026-11-06T22:50:16.000Z",
+   "resume": "A new talent firm is launching with a stacked roster of luminaries from the worlds of streaming, social media, and content creation. Mike Lee and Darren Yan are the leaders of ISO, which is kicking off with a roster of 90 top creators. ISO…",
+   "source": "Tubefilter (économie des créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
    "titre": "Twitch drops",
    "lien": "https://www.reddit.com/r/Twitch/comments/1xpq9nn/twitch_drops/",
    "date": "2026-11-06T22:34:17.000Z",
    "resume": "I just watched all the required hours for the over watch drops i have received all the rewards for one campaign but there is 2 going on right now that over lap and I havent seen any progress to the other campaign is this a visual bug or a…",
    "source": "Reddit · r/Twitch",
    "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "The E.U. wants a new For You Page so that its citizens don’t get stuck in TikTok rabbit holes",
+   "lien": "https://www.tubefilter.com/2026/11/06/european-union-eu-digital-services-act-tiktok-for-you-page-fyp/",
+   "date": "2026-11-06T21:22:20.000Z",
+   "resume": "Does the European Union have the authority to mandate changes to TikTok's For You Page? The continental body is making that claim. The E.U. announced on Wednesday that the addictive design of the FYP violates the Digital Services Act. A pr…",
+   "source": "Tubefilter (économie des créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "Will AI slop overwhelm creators? Mark Rober isn’t worried–but his team is using AI as a “thought partner” in production",
+   "lien": "https://www.tubefilter.com/2026/11/06/mark-rober-youtuber-content-creator-crunchlabs-gen-ai/",
+   "date": "2026-11-06T21:05:23.000Z",
+   "resume": "Mark Rober told Business Insider he thinks his content has a “moat” that will keep it safe from being affected by the AI slop deluge. But, at the same time, he’s said his team is using generative AI as a “thought partner” for writing, and…",
+   "source": "Tubefilter (économie des créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "Ce site recense plus de 600 films gratuits et légaux, de La Ligne verte à Dernier train pour Busan",
+   "lien": "https://www.journaldugeek.com/2026/11/06/ce-site-recense-plus-de-600-films-gratuits-et-legaux-de-la-ligne-verte-a-dernier-train-pour-busan/",
+   "date": "2026-11-06T20:01:19.000Z",
+   "resume": "CinéLibre rassemble sur une seule page les films disponibles gratuitement en replay sur France.tv, Arte, TF1+, M6+ et d’autres plateformes françaises.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Non, Waze et Google Maps ne sont pas obligés de vous faire rouler moins vite, voici pourquoi",
+   "lien": "https://www.journaldugeek.com/2026/11/06/non-waze-et-google-maps-ne-sont-pas-obliges-de-vous-faire-rouler-moins-vite-voici-pourquoi/",
+   "date": "2026-11-06T19:39:16.000Z",
+   "resume": "En août 2022, un décret obligeait les applications de navigation à afficher l’impact environnemental de chaque trajet et à proposer un itinéraire à 20 km/h de moins sur autoroute. Le Conseil d’État l’a annulé un an plus tard, à la demande…",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Clem qui court réunit 100 participants pour les « 25h qui courent », son événement caritatif sur Twitch - Les Gens d'Internet",
+   "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNOEhFZlpsR1h1YWFRQXExZFBuSXVucEhlTUtCN1dXRzc4T3VMTjZUSFpLX2tWalo0aExVTlhtWmZuNzRJRHlEMGExMWxvS08tLWVDcU9oZnFGaTRnd0ZHQ0FMR0diVUVHTnJLZUhVVmFrUjNHUHljLXpVRUNQd3QwMGlLQlpoaEMzeXJrLWxzYy0yQVRYVnZkanpKbUkzcnhoRkRSNnN5R3l1VEd1MkVjNUhsd1hqUkRLUGFWVkhjSmJzV2o1d3VuaXcwT1VNNVJR0gHWAUFVX3lxTE5ncE9MTDRKazNabUV5RF9KWTBlOEFCeVk5OXRxazF0NndiVGkwc3d3YlNDeHRRU3RrbzJZQjVFQVIySVhJZldMMUJhdTZrakVXdkRPaXFlVVYzV2wzMFR5MlR6V1NmLXpqYkRYNDcxM0NMOW53MXdKN3JSWUkwTmpscjFlOU81VUtTMWh0bGxPZS1aZjNiVDBNX0lFYXBub19kbkQ4WFlFRUE2cWVkcUZya3dWbnN6UkhxTnJkYlVvdllnUmVwY1B2cmI1OVF",
+   "date": "2026-11-06T19:17:57.000Z",
+   "resume": "Clem qui court réunit 100 participants pour les « 25h qui courent », son événement caritatif sur Twitch Les Gens d'Internet",
+   "source": "Google Actualités · créateurs de contenu Twitch",
+   "categorie": "createurs",
+   "editeur": "Les Gens d'Internet"
+  },
+  {
+   "titre": "Tim Robbins (Silo) et Giancarlo Esposito (Breaking Bad) rejoignent la série Godzilla d’Apple TV",
+   "lien": "https://www.journaldugeek.com/2026/11/06/tim-robbins-silo-et-giancarlo-esposito-breaking-bad-rejoignent-la-serie-godzilla-dapple-tv/",
+   "date": "2026-11-06T19:04:17.000Z",
+   "resume": "Apple TV n'en a pas terminé avec les Kaiju. La plateforme développe une série Monsterverse avec Wyatt Russell et recrute les stars de Silo et Breaking Bad pour porter le projet.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Quels sont les jeux gratuits sur Amazon en novembre 2026 ?",
+   "lien": "https://www.journaldugeek.com/2026/11/06/quels-sont-les-jeux-gratuits-sur-amazon-en-novembre-2026/",
+   "date": "2026-11-06T18:28:10.000Z",
+   "resume": "Du sport américain à la pelle, un remake Disney et un très gros RPG planqué dans la liste. Amazon a sorti l’artillerie lourde ce mois-ci.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
    "editeur": ""
   },
   {
@@ -751,6 +1096,24 @@
    "editeur": ""
   },
   {
+   "titre": "GTA 6 Online : le patron de Twitch évoque une date de sortie imminente après ses discussions avec Rockstar - La Crème Du Gaming",
+   "lien": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPeURaMGtWc3VqWHY0bkFwcXBEdmNZWGgtN0R4NWpZaHc5YkpXVWRwcmtmNVE4X2NJSlVMaGVmNXhZVk1HUWFKcFFtUEtHa3lwb2Uyb0RUTFpzSlRrOHhRY2NkUmluQ2JhZEFZSlhwVjFLQk1YRGdJT2xVcV94RHZ4SGpPdnZaUWl5NWxEYUZtTXJfbmpTakMtdkhhV1JNdTBFdFh2bXI2b0lZelQzSXFwaDJ0NlQ2djZtSldjUU92Y3NGZ2tDUjhYd1l1NHd6WXRtU3MydGhpQ2RfTEZPblM2R3hrWUJGTHdQYVBIX0l5N2NmTVFK?oc=5",
+   "date": "2026-11-06T17:30:43.000Z",
+   "resume": "GTA 6 Online : le patron de Twitch évoque une date de sortie imminente après ses discussions avec Rockstar La Crème Du Gaming",
+   "source": "Google Actualités · règles, modération et sanctions Twitch",
+   "categorie": "createurs",
+   "editeur": "La Crème Du Gaming"
+  },
+  {
+   "titre": "Mario Ponce-Enrile raconte Frank Sinatra, Velours - Ville de Paris",
+   "lien": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNdkYySTg4ZVFtaERKSV9GYzZoMnU3QmNNRC1hSF85T3ZEOWJFU19jV2tpVlE2dlg3TFJod2ZLU2NsenRzT3VsOGE2dzJIazcxZmFnZFJ5a3ZTX0lLckxUQXJjSDRnZVU1ZW5Id1ZZdG14UDhBWjNMdzlKTmVpb2xxUERESXVPSDRJRHkzcF9LMEU3SXlrZVdNNVUtNA?oc=5",
+   "date": "2026-11-06T17:22:08.000Z",
+   "resume": "Mario Ponce-Enrile raconte Frank Sinatra, Velours Ville de Paris",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "Ville de Paris"
+  },
+  {
    "titre": "Codes 1M Clicks To Escape (Novembre 2026)",
    "lien": "https://www.dexerto.fr/roblox/codes-1m-clicks-to-escape-1663582/",
    "date": "2026-11-06T17:09:18.000Z",
@@ -760,6 +1123,15 @@
    "editeur": ""
   },
   {
+   "titre": "Kameto, patron de la Karmine Corp, avant le quart des Worlds de League of Legends contre T1 : «Je crois vraiment qu'on peut aller au bout» - L'Équipe",
+   "lien": "https://news.google.com/rss/articles/CBMijgJBVV95cUxNWVVGZXY3SDFLVDk4d1FGTmNjaFd4bmVsR0ViYVJjaTg5dXZzSzYyVUNYNGpOYm9iRnE5TnJIM3pwMkRQeTl5ZzhoQlZXZHBFNzNscXgzZ0ZwMURXUGVtbEtPbUtDd0sya3ptZ1NKbGdIZjdHWVFYNnhtU2VCXzU3aTZ5Sk5LQmtZbTdibUV2UWo1Z3BmblZiUElBSzN1NlgxVHhLWjZ0LUhTS3NBOEItZG9XVG01MUV3TUt5TW1oc1BOTTJaTDhyMWhUaklUaVJHcGJKdkdlWm11SW9oYnpwWTYxc3BraEpZdVNmMk1iTENYS2QyVXlic2N1RHJGRkt4VU5GX2hUbVhVZU5MYlE?oc=5",
+   "date": "2026-11-06T17:00:00.000Z",
+   "resume": "Kameto, patron de la Karmine Corp, avant le quart des Worlds de League of Legends contre T1 : «Je crois vraiment qu'on peut aller au bout» L'Équipe",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "L'Équipe"
+  },
+  {
    "titre": "« Être une femme, ça aide » : l’astronaute Sophie Adenot raconte comment son corps a vécu l’espace",
    "lien": "https://www.numerama.com/sciences/2369573-etre-une-femme-ca-aide-lastronaute-sophie-adenot-raconte-comment-son-corps-a-vecu-lespace.html",
    "date": "2026-11-06T16:45:00.000Z",
@@ -767,6 +1139,15 @@
    "source": "Numerama",
    "categorie": "actu",
    "editeur": ""
+  },
+  {
+   "titre": "\"Mais t'as gagné combien ?\" : un enfant pousse Inoxtag à révéler combien lui a rapporté son documentaire Kaizen - RTL",
+   "lien": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNd2ZXclBRb1RLd0tYMjc1aUp2N0tLcWZMOEdQN3V6RXVkaHcxdVpTVmxLai16N0hsaExGcmRocmlZRjhNeFJRZTJ3VXdrUWFRUHhTOHMyNjdYTjdaMkZpX1hPeWR1ZmJWZkh5VUxXaEVjQVZJVjZmS2h1ZEhMbkFNNHJWbUdPWHFiSjVfLVRsQ3VvTkc2dnQzT0x1Y3EwaER5N0J5eHVVTXJrWmZYWWlaMklmMHAtamtTXzROQzN3Vlp1MU1SOTJaUnVFYVRCa0U1cTkyVTJXaVRPcVlfR1hSVW5kZVNQUzFOWnYyU2xB?oc=5",
+   "date": "2026-11-06T16:29:30.000Z",
+   "resume": "\"Mais t'as gagné combien ?\" : un enfant pousse Inoxtag à révéler combien lui a rapporté son documentaire Kaizen RTL",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "RTL"
   },
   {
    "titre": "Black Friday 2026 : voici les seules offres qui méritent votre argent chez Amazon, Fnac, Boulanger",
@@ -787,6 +1168,42 @@
    "editeur": ""
   },
   {
+   "titre": "Voici le lien Twitch de Clemquicourt pour suivre sa Backyard en direct - u-Trail",
+   "lien": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQQmh0NDZWbnFFTXdWMjh3bXdobGNOMjZBcnlldVFlQXFjdjROaWwybmRJbjhqYzRDcmc4RDd1U3BrR2dPWEZGZjRVTVdFaEJyY2s1aEp2SUk0dlgzUUotZEZNclY0aVdMUTVKdC1HZUUxMHA5QmRRMklIVkxsRHNkZG8tNGFfWXpEblpiRFozd0tIOUc4MzczU3hCTkg?oc=5",
+   "date": "2026-11-06T15:58:38.000Z",
+   "resume": "Voici le lien Twitch de Clemquicourt pour suivre sa Backyard en direct u-Trail",
+   "source": "Google Actualités · règles, modération et sanctions Twitch",
+   "categorie": "createurs",
+   "editeur": "u-Trail"
+  },
+  {
+   "titre": "Clemquicourt et les 25 heures qui courent : direct sur Twitch, résultats, favoris et polémiques - u-Trail",
+   "lien": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9ZVWR6eUE2b3ppcl9LeEdwVzRoQ0V6MDFRREtOY2VYS3lxS2FlWnc1dVZsdWgzYzltdzlvT1FkZkkwaU90czlfM3FlS2pMQVV3RUpiTDVuQVhOQXRXZ1N1OFN4THF4NEpzdk5TNg?oc=5",
+   "date": "2026-11-06T15:18:36.000Z",
+   "resume": "Clemquicourt et les 25 heures qui courent : direct sur Twitch, résultats, favoris et polémiques u-Trail",
+   "source": "Google Actualités · règles, modération et sanctions Twitch",
+   "categorie": "createurs",
+   "editeur": "u-Trail"
+  },
+  {
+   "titre": "Perplexity lance Teammates, des agents IA pour les « tâches de longue haleine »",
+   "lien": "https://www.blogdumoderateur.com/perplexity-lance-teammates-agents-ia-taches-longue-haleine/",
+   "date": "2026-11-06T14:44:36.000Z",
+   "resume": "Alimentés par Computer, ces agents planifient les projets, suivent leur avancement et rendent compte de leurs résultats. Ils sont pour l'instant réservés aux abonnés Perplexity Max.",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Ce célèbre Youtubeur sera bientôt en dédicace près de Toulouse, 500 places sont ouvertes pour le rencontrer - ladepeche.fr",
+   "lien": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOaEFFMnk3TE9lMjZ6bElrT2kwQWpyVE1pLUVDOEtFTVV5RVRfLWZEX3phZnEyXzg1NnNIOVpVOUlnTmNSQVNvODFGejhiV2Z6ZTN3dHdiUEpHRkZCNGFTSV9QaVFxUFdqTTZCaTlSZFdGN2dRZEFfM3N6VFlMQnU2dmM2YUhlT056OGdVSkt4TzRFUFNKSjZNWGluNGpGTllpZVp3amg3NU9vM2JMSGJpVk5XMUUyLVlPWFpvZTRBbkloazgwZnd3NVl6Z29kNzd3TVhmTkczNW4xZ3VpQlJoYXlhSTNrcHpHZkpv?oc=5",
+   "date": "2026-11-06T14:39:00.000Z",
+   "resume": "Ce célèbre Youtubeur sera bientôt en dédicace près de Toulouse, 500 places sont ouvertes pour le rencontrer ladepeche.fr",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "ladepeche.fr"
+  },
+  {
    "titre": "Sega : des résultats timides au premier semestre, mais Stranger Than Heaven et Persona 4 Revival suscitent un énorme intérêt",
    "lien": "https://www.gamekult.com/actualite/sega-des-resultats-timides-au-premier-semestre-mais-stranger-than-heaven-et-persona-4-revival-suscitent-un-enorme-interet-3050872831.html",
    "date": "2026-11-06T14:15:00.000Z",
@@ -794,6 +1211,24 @@
    "source": "Gamekult",
    "categorie": "actu",
    "editeur": ""
+  },
+  {
+   "titre": "Derniers séismes, Santo Domingo Armenta, Oaxaca, Mexique, pendant les derniers 7 jours - Volcano Discovery",
+   "lien": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPcXJPMGFmbHlVckFOYWtxWkxsZHp3Rm5qNHlraEVpUkJ6UllzOVJXOGVvR3lhaTczOUF5UmtHalUwLTRiMkpYZGp4dFhDaHZMMjZaSjJLWVJlN1pBQ2pfYXQtd0N2emI0RFVzMnhfa3ZsWXkxMGdoZ196ZDhMS1BuOFMweXJJQ2VHNEE?oc=5",
+   "date": "2026-11-06T13:55:58.000Z",
+   "resume": "Derniers séismes, Santo Domingo Armenta, Oaxaca, Mexique, pendant les derniers 7 jours Volcano Discovery",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Volcano Discovery"
+  },
+  {
+   "titre": "The FinalSlam : Amine et Squeezie sur le ring à Nanterre - Sortir à Paris",
+   "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNSnY3ek1mbGl5dHM2bFYxakkxMG56NWEwQ2F1YVNNRl9FWC1LRlVzUDJ4VWM5NEVfZXBVQWd1WmgwX1J4UVlBWEdXYXRfYmdLZ3lybHFxUmhJeU5IaFBScmZLYXlYckdfZTNubVphdlRkQm8tUFp1ellZWGxOTVN3a1FCTnlGN1ktNFJkS0wtT2pGdzJPNzktRmhRalZxT2pXRUY5TEFKcEJBSkljSjdWOWp5RzR6djg?oc=5",
+   "date": "2026-11-06T13:55:05.000Z",
+   "resume": "The FinalSlam : Amine et Squeezie sur le ring à Nanterre Sortir à Paris",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "Sortir à Paris"
   },
   {
    "titre": "Question for 9070XT users",
@@ -832,6 +1267,15 @@
    "editeur": ""
   },
   {
+   "titre": "Wanted sur M6 : Issa Doumbia, Adil Rami et Michou l'emportent, une deuxième saison déjà officialisée - Télé Star",
+   "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQcGJyNTdKWmE5MU5SbzBfV0xjVUltdjZjZXRWeVJINGV5djlaQWZuVXhwdDlXeE1DU0I1eHpxcU1aY1p5MnFEYURrcTZ5LTFVaG1UV0tTU042X0dlSXM3b0ZEN1Q3eVJ0dDJ3bDRqVXNKRkxueFZIcXo3eEVkQjFTLUItYjd6ZURkWGpTNVJiWDNfcGMzT053SWVkSTNWdERsanBxRFZoUnBpSElxM2xHN253azItM3dIWjZueHpMUmk1Sm9Tc0llUXhTVFE1UEY3?oc=5",
+   "date": "2026-11-06T12:00:48.000Z",
+   "resume": "Wanted sur M6 : Issa Doumbia, Adil Rami et Michou l'emportent, une deuxième saison déjà officialisée Télé Star",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "Télé Star"
+  },
+  {
    "titre": "Patch note MAJ Modern Warfare 4 Saison 1",
    "lien": "https://www.dexerto.fr/call-of-duty/patch-note-maj-modern-warfare-4-saison-1-1663519/",
    "date": "2026-11-06T11:58:01.000Z",
@@ -839,6 +1283,15 @@
    "source": "Dexerto FR",
    "categorie": "actu",
    "editeur": ""
+  },
+  {
+   "titre": "Kick’s October update brings events hub, OG badges amid creator backlash - WIN.GG",
+   "lien": "https://news.google.com/rss/articles/CBMib0FVX3lxTE42YkI0MUxsVFhTOHN0YTlORWRaZlBTV0NPaTctX29xN05BbE45N3o3WG1TZVljYzdBUWsxelVqaU1hX0tBZFVrbmh5eDRNVVl2bV9ueERmQ0d2YVR2NFhCV1JQY3hxQlZ3S3RUb1ByOA?oc=5",
+   "date": "2026-11-06T11:24:06.000Z",
+   "resume": "Kick’s October update brings events hub, OG badges amid creator backlash WIN.GG",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "WIN.GG"
   },
   {
    "titre": "Xbox : l'appli PC fait peau neuve",
@@ -859,11 +1312,38 @@
    "editeur": ""
   },
   {
+   "titre": "M6 renouvelle Wanted pour une saison 2 ! Michou, Adil Rami et Issa Doumbia ont-ils réussi à attraper les personnalités en fuite - Voici",
+   "lien": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNN2RRVXNUd280d2JTRWEweEt6TU5mXzNJWHpBdDE3Q3pEY2FFczFMSVJLRWZTT0JVci1lb0E3cUZqOFNlNFRmd0dGTkVHZ3dxaXU5LUwwOEk0N05GRHoxU0Nmb1lnLVNGVEtCZWpiZzg1M1Q3VG15NGlORWVad3dJS2F2VlZYdHdsZkZnSHNqemJHVGZMQXVnb3p5bC05LU5LeVhUdTFlcHNIemJ2S2ZQOUo3RzlqOTVLSjV3Zl9OY1lyRFBUWFI2R251ZnZJeDd0bmRIZzhOc2lHV1ZCZ0d1UVdUaS1qeF9YQjQyZTVXN2VMazBYeHc?oc=5",
+   "date": "2026-11-06T10:17:00.000Z",
+   "resume": "M6 renouvelle Wanted pour une saison 2 ! Michou, Adil Rami et Issa Doumbia ont-ils réussi à attraper les personnalités en fuite Voici",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "Voici"
+  },
+  {
    "titre": "Équilibrage des armes de Modern Warfare 4 Saison 1",
    "lien": "https://www.dexerto.fr/call-of-duty/equilibrage-armes-modern-warfare-4-saison-1-1663509/",
    "date": "2026-11-06T09:55:32.000Z",
    "resume": "Découvrez tous les buffs et nerfs des armes de la Saison 1 de Modern Warfare 4 : fusils d’assaut, mitraillettes, fusils à pompe et équilibrages Apex.",
    "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Anthropic dévoile Personal Finance, un outil pour suivre et gérer ses finances avec Claude",
+   "lien": "https://www.blogdumoderateur.com/anthropic-devoile-personal-finance-outil-suivre-gerer-finances-claude/",
+   "date": "2026-11-06T09:42:49.000Z",
+   "resume": "Près de six mois après OpenAI, Anthropic propose à son tour une fonctionnalité dédiée aux finances personnelles. Elle est d'abord déployée en bêta aux États-Unis, pour les abonnés Pro, Max et Ultra.",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "OpenAI lance GPT-6 Cyber, un modèle d’IA dédié à la recherche de failles de sécurité",
+   "lien": "https://www.blogdumoderateur.com/openai-lance-gpt-6-cyber/",
+   "date": "2026-11-06T09:42:22.000Z",
+   "resume": "OpenAI étoffe son offre dédiée à la sécurité avec un modèle classé « critique », qui conçoit des attaques fonctionnelles. Mozilla a déjà publié des correctifs pour de nombreuses failles détectées dans Firefox.",
+   "source": "Blog du Modérateur (réseaux sociaux)",
    "categorie": "actu",
    "editeur": ""
   },
@@ -895,6 +1375,60 @@
    "editeur": ""
   },
   {
+   "titre": "Swello permet désormais d’analyser les performances des publications sur TikTok",
+   "lien": "https://www.blogdumoderateur.com/swello-permet-analyser-performances-publications-tiktok/",
+   "date": "2026-11-06T08:30:27.000Z",
+   "resume": "Déjà disponible sur Instagram, Facebook et les pages professionnelles LinkedIn, l'analyse des statistiques de Swello s'étend désormais à TikTok.",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Comment suivre Les 25 heures qui courent en direct live sur Twitch ? - Reference Trail",
+   "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOWTZJY0lqMmo2SDhNeUpVNVpYT1BhOVdtMG5zdDMtOUhEQUF3d21OckxPRUgyTTQyNmhpanpwMDVtU085bW5KVmZsWXF1cTAxNF84OXRaWFJsT3pJcjJfN0l4X3BZd20xNkJjRnpEck15LXRfZVQxRVFmd1l3aVctc1Izdm05NFFEcE9YU0pHZkdsOFhQaXEwb2Fn?oc=5",
+   "date": "2026-11-06T08:15:31.000Z",
+   "resume": "Comment suivre Les 25 heures qui courent en direct live sur Twitch ? Reference Trail",
+   "source": "Google Actualités · créateurs de contenu Twitch",
+   "categorie": "createurs",
+   "editeur": "Reference Trail"
+  },
+  {
+   "titre": "Reporting social media : le guide pour créer et automatiser son tableau de bord avec Data Studio",
+   "lien": "https://www.blogdumoderateur.com/guide-reporting-social-media-data-studio/",
+   "date": "2026-11-06T08:11:13.000Z",
+   "resume": "Comment créer un reporting social media vraiment utile, et l’automatiser sans perdre en fiabilité ? Bryan Coder partage sa méthode pour construire un tableau de bord sur mesure avec Data Studio.",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Twitch Streamer HAchubby Shares Heartbreaking Cancer Diagnosis And Announces Major Plans For Treatment - NDTV Sports",
+   "lien": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQeXB0TDFvTy1hU2FXa2ROX2JRYWd4c0R6UTB1cE1nTEtSODVQbW5KLVVvLUJXMTcwS2dFQnhqTW5YdVRXc2hJOVpZR0Y0VlpBOTVmZW8zVUFiN2JzbG1DZXl4emVYNzY3OXo5UDNmSGxLMTNVMTl5SFRxN1RCT05wYXpWZW9rbm9YR2pnV2ZId2F0MHhicFVlWWl4U0YySm5qSi1WMW9TUXF2OV9PaE15ZE01LUVONU96YjJQS3ozZU9rU3M3cWp3eWZKdjl1VVM5bEJWRUp6eTFLZldObWpEZ3AwSDVOQQ?oc=5",
+   "date": "2026-11-06T08:10:46.000Z",
+   "resume": "Twitch Streamer HAchubby Shares Heartbreaking Cancer Diagnosis And Announces Major Plans For Treatment NDTV Sports",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "NDTV Sports"
+  },
+  {
+   "titre": "Mémoire cash - Dragon Ball GT Final Bout, le délicat passage à la 3D",
+   "lien": "https://www.gamekult.com/actualite/dragon-ball-gt-final-bout-le-delicat-passage-a-la-3d-101-3050866567.html",
+   "date": "2026-11-06T08:00:00.000Z",
+   "resume": "Sorti en 1997 sur PlayStation, Dragon Ball GT : Final Bout (ou simplement Dragon Ball Final Bout) marque un point de bascule : dernier jeu Dragon Ball du XXe siècle, premier en 3D, et dernier soupir d’une série en pleine crise d’identité.…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Wanted : attrape-moi si tu peux sur M6 : Michou, Adil Rami et Issa Doumbia resserrent l'étau sur les fugitifs - Serie News",
+   "lien": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPdnFrcU1CNTh5OGwzVVQzeE5sSnRzN29RQWp0dnpiZVlGQjRWR1IwNHJDX05ILTlNbnU3Xzc3d3VHOVJtd0U3NWxvWW1oUXNaX0phQzdRLTNXaU5DaVdCeEJHUF9rR0QySWsxbUhwYVhJOFFFbjBHb2xkS2R0X3owM29WYkZCbEp3N2ZSNUFJemx1dFlKTTB3Z0g0aXVNVjFWa19Sb2dBYjdrVjhIWnVFcklQRmxhc3NDQWpFOUFsUEFJOGstbnFKQUw2R2VfaDdCb3gtTzMwMUhER1NRVmN2ck9jMEV5bFlrSlI4?oc=5",
+   "date": "2026-11-06T08:00:00.000Z",
+   "resume": "Wanted : attrape-moi si tu peux sur M6 : Michou, Adil Rami et Issa Doumbia resserrent l'étau sur les fugitifs Serie News",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "Serie News"
+  },
+  {
    "titre": "What is a “V-Tuber”",
    "lien": "https://www.reddit.com/r/Twitch/comments/1xp74rg/what_is_a_vtuber/",
    "date": "2026-11-06T07:50:12.000Z",
@@ -902,6 +1436,51 @@
    "source": "Reddit · r/Twitch",
    "categorie": "communaute",
    "editeur": ""
+  },
+  {
+   "titre": "Après quelques semaines de test, le FSR 4 est désormais disponible sur XBOX",
+   "lien": "https://www.gamekult.com/actualite/apres-quelques-semaines-de-test-le-fsr-4-est-desormais-disponible-sur-xbox-3050872817.html",
+   "date": "2026-11-06T07:03:00.000Z",
+   "resume": "Le FSR 4 fut d'abord accessible auprès des possesseurs de ROG Xbox Ally, avant une mise en service sur les \"vraies\" consoles Xbox Series X/S de salon. Nous y voici désormais, avec un accès possible via tout l'écosystème XBOX.",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "« Les 25 heures qui courent » : avec sa Backyard caritative, l’influenceur Clem qui court veut réunir stars du trail et d’Internet - Le Monde.fr",
+   "lien": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOSVhIU1RCcm55NTlHNjRGZHhKTXJxRmNUTGNhSUtlYkhOSGlRaUdXRzlQQ0hXaG52VElqOVExa3RaTzFiT2Y5UnZkX2FobUUwLTl3RmdVNkdzZ19KelhNcGkyTzNJaVNPTlVQUTVrWTI2d29ONFU0SHFFdlZfSmpodmlRTENIdEtpaTQ1M19mV2o1c0tvQXBQNWxjQ1FIOFlMNERLemlfT25pSmxsX0xqRlFkMlRRbjRZRWdYZjIyUTNEV3RzZWFMZjRyeWtSd2JrU25vajI5VUVMZ3U5LVVOQnVEZGZPRHA5UVVBbkxyQTdnLXZYaXJBbDJfaw?oc=5",
+   "date": "2026-11-06T07:00:02.000Z",
+   "resume": "« Les 25 heures qui courent » : avec sa Backyard caritative, l’influenceur Clem qui court veut réunir stars du trail et d’Internet Le Monde.fr",
+   "source": "Google Actualités · streamers et YouTubeurs",
+   "categorie": "createurs",
+   "editeur": "Le Monde.fr"
+  },
+  {
+   "titre": "Malgré la crise de la mémoire, Nintendo exclut une nouvelle hausse du prix de la Switch 2",
+   "lien": "https://www.gamekult.com/actualite/malgre-la-crise-de-la-memoire-nintendo-exclut-toujours-une-nouvelle-hausse-du-prix-de-la-switch-2-3050872815.html",
+   "date": "2026-11-06T06:12:00.000Z",
+   "resume": "Le bilan du premier semestre de l'exercice 2027 publié hier fut l'occasion pour Nintendo de revenir sur la pénurie de mémoire qui touche absolument toute l'industrie, en livrant un discours finalement plutôt rassurant : le géant nippon n'e…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Wanted sur M6 : qui a gagné le jeu ? Les fugitifs ou les gardiens ? - TV-Programme.com",
+   "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNRElpdERLLXZuMUpyOGJoc1BoNFVCbEdxOFpuVG1uLXEtVS1TaGRONHVSc1pwUFltTUlyeFdicHJaSHdKY0RzbGJBX2Z6bGRMTVNHTjEzZUtkMUthVVgxNkYyampzdzJNWWlrSS1ORmc0dWg3VG1vbUhaWlZlNkZ3YTVTVTNwUW44SlRfQzd1Qkk3MnlRcEdUMWtjLWRKbHM?oc=5",
+   "date": "2026-11-06T06:07:16.000Z",
+   "resume": "Wanted sur M6 : qui a gagné le jeu ? Les fugitifs ou les gardiens ? TV-Programme.com",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "TV-Programme.com"
+  },
+  {
+   "titre": "ENTRETIEN. Clem qui court : « Je veux qu’on reparte de ma backyard avec les yeux humides et pleins de nouveaux copains » - Ouest-France",
+   "lien": "https://news.google.com/rss/articles/CBMimwJBVV95cUxPSFZraEx1UzFfMmZNSVgzX05UQmhnMkJ6ZkdBbXEyVE1Bc21EUUhSbXZWTjlBMkxjQU9JS2EwYjdkZVExV1lCM09mNmJhYlFuY2FWdnN3R2ZDU1ZGdUJhN3RtMFJwbHJBRU93LVk2LXJjRXRIX21iNDU4SWJXUjd4YzRMZWRGRGtBei03d3JMSHNCYmhFLWJ0SmtwOTRXQ0EtbVVGaHJjX2xBLTFtaUlBWG96Q0xpOEJnaFM1dXJZRHhab3IwYi1HZ0JlcC1pNkE4OW92U0dPN1c5aGdvVjFlc0VPbXFYS0drVTMtM1pDbWd1ZGRKUGp5WDNpa1NhUHpjNkkyU091d2pIOGlFUExmODg5X2hCdV9hYllZ?oc=5",
+   "date": "2026-11-06T06:00:41.000Z",
+   "resume": "ENTRETIEN. Clem qui court : « Je veux qu’on reparte de ma backyard avec les yeux humides et pleins de nouveaux copains » Ouest-France",
+   "source": "Google Actualités · règles, modération et sanctions Twitch",
+   "categorie": "createurs",
+   "editeur": "Ouest-France"
   },
   {
    "titre": "[Firefox browser] Collapsing chatbox causes it to no longer be accessed later, the arrow to open chat is no longer at the top-left corner.",
@@ -913,6 +1492,15 @@
    "editeur": ""
   },
   {
+   "titre": "Richard Vlasyev launches Raidpop to help streamers grow on twitch ahead of GTA6 launch - USA Today",
+   "lien": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOUXViZ1hxQXNIUklXQ3JFY2hnSGlEeWpjcGxDdVdTdkVNcGpyZnZTb2xLZTlTb0lVRHRIdWpxUkQ5YkY0c1BtZE9IZ3JjWWMyelJfQ2RTNExuUmx0andaR2dGWUdjWjltcDRocWMzMFZRZ3FoTTdrMEVnZVdmMDl5SEtRSXJZLXp5ZURoUmlvWnZRYW5hRWN1cDJvVGVDWkhtM0ZmUlJ4QnF5RGVLeHRsWFlqRWQtQnozcFN1U0E2OEJySTFMWmNtNUlXaXdyT3lzeDNCTQ?oc=5",
+   "date": "2026-11-06T05:09:03.000Z",
+   "resume": "Richard Vlasyev launches Raidpop to help streamers grow on twitch ahead of GTA6 launch USA Today",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "USA Today"
+  },
+  {
    "titre": "report phishing emails?",
    "lien": "https://www.reddit.com/r/Twitch/comments/1xp4dd5/report_phishing_emails/",
    "date": "2026-11-06T05:01:46.000Z",
@@ -920,6 +1508,15 @@
    "source": "Reddit · r/Twitch",
    "categorie": "communaute",
    "editeur": ""
+  },
+  {
+   "titre": "What happened to HAchubby? Streamer opens up about her cancer diagnosis - Sportskeeda",
+   "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOQVhGVzM0YXE3blhwVHFXYzl4Ri1ZV2kxQzY5dEo0cUxBNEZ4amVhaWJtSVhHb2VhcGNVc0RYX0Y0Y0ctdTdZUWFsbjB3and6cXozMkRFdzhyVzZBZ3RCUkdSV3hBTjBUMHBsaURwNWJ0TU0tc2tPNHdESWFKZWFLZDN0cGVXd2JTc285RWxhV0NzUWwyYld3NmlIaktFakljUUE?oc=5",
+   "date": "2026-11-06T04:09:00.000Z",
+   "resume": "What happened to HAchubby? Streamer opens up about her cancer diagnosis Sportskeeda",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "Sportskeeda"
   },
   {
    "titre": "PS5 app LAG",
@@ -940,10 +1537,100 @@
    "editeur": ""
   },
   {
+   "titre": "Google, TikTok, and Meta are suing California to stop a law that bans “psychologically exploitative features” for kids under 16",
+   "lien": "https://www.tubefilter.com/2026/11/05/google-meta-tiktok-california-lawsuit-ab-1709/",
+   "date": "2026-11-06T01:05:08.000Z",
+   "resume": "Google, TikTok, and Meta have each filed suit against California in an attempt to block enforcement of a law that protects kids under 16 from “psychologically exploitative features” on social media platforms. Governor Gavin Newsom signed t…",
+   "source": "Tubefilter (économie des créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
    "titre": "Connecting Prime Issue",
    "lien": "https://www.reddit.com/r/Twitch/comments/1xozfob/connecting_prime_issue/",
    "date": "2026-11-06T00:49:18.000Z",
    "resume": "I’ve been trying to reconnect my amazon account to my twitch for a while now and it keeps telling me “Your login can only be used on the Amazon Shopping app, or by logging in to Amazon.com online” but i’ve tried to login in every way and i…",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "YouTube’s biggest creators join forces to support the Susan Wojcicki Foundation’s critical mission: changing the conversation about lung cancer",
+   "lien": "https://www.tubefilter.com/2026/11/05/youtube-creators-susan-wojcicki-foundation-youtube-channel-launch-lung-cancer-research/",
+   "date": "2026-11-06T00:16:33.000Z",
+   "resume": "In August 2024, YouTube‘s former longtime CEO, Susan Wojcicki, passed away at age 56. She battled non-small-cell lung cancer for two years and left behind one heck of a legacy. Now Susan’s husband Dennis Troper and her sisters, Dr. Janet W…",
+   "source": "Tubefilter (économie des créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "TikTok Shop now has a standalone app in four Southeast Asian markets",
+   "lien": "https://www.tubefilter.com/2026/11/05/tiktok-shop-standalone-app-southeast-asia-ecommerce/",
+   "date": "2026-11-05T23:26:25.000Z",
+   "resume": "According to one estimate, the ecommerce market in Southeast Asia will generate $226 billion of gross merchandise value in 2026. TikTok Shop already accounts for a sizable chunk of that GMV, but ByteDance's ecommerce hub is looking to incr…",
+   "source": "Tubefilter (économie des créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "Stream, meet sea: Carnival is integrating Twitch into its cruises",
+   "lien": "https://www.tubefilter.com/2026/11/05/play-carnival-celebration-cruise-ijustine-twitch/",
+   "date": "2026-11-05T22:59:57.000Z",
+   "resume": "When Dolly Parton and Kenny Rogers sang about \"Islands in the Stream,\" I don't think they were talking about Twitch, but Carnival Cruise Line has other ideas. The Florida-based travel company will stream on the open seas with Play Carnival…",
+   "source": "Tubefilter (économie des créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "How do I make my StreamElements chat box look fancy like this?",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xow4d1/how_do_i_make_my_streamelements_chat_box_look/",
+   "date": "2026-11-05T22:20:06.000Z",
+   "resume": "https://preview.redd.it/12y3tntqcvzh1.png?width=285&format=png&auto=webp&s=c105679b3153bacbaf3ef3c3f803f220fdef7b85 I don't know how to do it, is it some custom CSS script? How do I get those? submitted by /u/Zeether [link] [comments]",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "«Wanted» : qui des gardiens ou des fugitifs ont remporté la première saison du jeu de M6 ? - TV Magazine",
+   "lien": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOWThXZlFMQmcteEJGdF9SMG94ZnJnaXRfRF9TZ1UtZVZ1OFM5MWp1bmVOeWdxanR5SUpuQ2RqZzlQazBTQUlHWXZoOXVUZE1qbnEwWjRSc0c0YWNNR3NhczZWX3FCcmZ2bDdZME9nc3pTYUpBT1VoUzktYmtQLWlsQjBjbWVzVzFzY2d0bDNEWWM3Q0M1azlnU1RTMXVVMHJIS1pQeDdJU0pYSVVKakFfS1Zxc2plck9tOVdyZTRCZkZpcHZhcmhQOU9CRXA2NTNmVllsU1RGLWFkUQ?oc=5",
+   "date": "2026-11-05T22:15:00.000Z",
+   "resume": "«Wanted» : qui des gardiens ou des fugitifs ont remporté la première saison du jeu de M6 ? TV Magazine",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "TV Magazine"
+  },
+  {
+   "titre": "How to Twitch/YouTube Stream from Windows 7?",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xovve6/how_to_twitchyoutube_stream_from_windows_7/",
+   "date": "2026-11-05T22:09:45.000Z",
+   "resume": "I want proper answers please, not just crap about upgrading my OS. Real suggestions about how to Stream from Windows 7 ONLY. submitted by /u/DMNS_Diablo [link] [comments]",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "Some students watch thousands of irrelevant videos during class. Can YouTube solve that problem?",
+   "lien": "https://www.tubefilter.com/2026/11/05/youtube-classroom-report-student-education-video/",
+   "date": "2026-11-05T21:38:23.000Z",
+   "resume": "Platforms like YouTube have become ubiquitous in classrooms. A recent report from Gallup found that 96% of students are equipped with devices that are meant to enhance their learning. Reality, however, is not so straightforward. Some stude…",
+   "source": "Tubefilter (économie des créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "10 Twitch rules every streamer should know from its Community Guidelines - qz.com",
+   "lien": "https://news.google.com/rss/articles/CBMiakFVX3lxTE51bW4tUTQzVm40NFhXOVZ2TEUzMzN2d2ltbGlrajdIandKYzUzYVByRkszbDNJRzMtbVl5cXpFSkZ3T3Z4ckh4UEtlNFVVVW9ibWlYcnFZWmZYTWFidTY4SHcxNEZLdGxpaEE?oc=5",
+   "date": "2026-11-05T20:09:12.000Z",
+   "resume": "10 Twitch rules every streamer should know from its Community Guidelines qz.com",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "qz.com"
+  },
+  {
+   "titre": "What's up with this \"discount\"?",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xos3s7/whats_up_with_this_discount/",
+   "date": "2026-11-05T19:39:00.000Z",
+   "resume": "There's a button saying to gift all current followers watching the channel. It has £269.46 (about what I'd expect that to cost for 50 gift subs) crossed out and the actual price is an insane £2483.46? Is it gifting each sub for like a whol…",
    "source": "Reddit · r/Twitch",
    "categorie": "communaute",
    "editeur": ""
@@ -958,6 +1645,60 @@
    "editeur": ""
   },
   {
+   "titre": "Wing Commander, Theme Hospital, Ultima : EA balance 25 titres cultes sur Steam, à petits prix",
+   "lien": "https://www.gamekult.com/actualite/wing-commander-theme-hospital-ultima-ea-balance-25-titres-cultes-sur-steam-a-petits-prix-3050872768.html",
+   "date": "2026-11-05T18:30:00.000Z",
+   "resume": "Electronic Arts a décidé de faire vibrer la corde nostalgique des joueurs PC. L'éditeur vient d'annoncer l'arrivée de 25 titres cultes de son catalogue rétro sur Steam, GOG et l'EA App. Parmi cette généreuse cargaison de pixels, on retient…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "YouTube Shopping, LinkedIn, CNC... L'avenir de la Creator Economy se dessine à la Paris Creator Week - CB News",
+   "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPM3RnUzFBUjRORDZxb21ZNFBxOS1vdmZ1SzFrUExGY3FaV294RHRFZUFCTUxxS3RfRXhiV0NlTnlldlFuWXVkVVBjVFJzaDBnZEtEWEFrMUIwN08zYmU1aURuc0JMRndmNW55ZE1sM256ZEFsM1F0TDlfdFo4a1YydG1RZnlvNll1NnpWZzVRU2dGZy0tYTF3RWZTYzdMTXJhbjl0STNpdml0eFpuYzJ4VTRR?oc=5",
+   "date": "2026-11-05T18:26:02.000Z",
+   "resume": "YouTube Shopping, LinkedIn, CNC... L'avenir de la Creator Economy se dessine à la Paris Creator Week CB News",
+   "source": "Google Actualités · règles, modération et sanctions Twitch",
+   "categorie": "createurs",
+   "editeur": "CB News"
+  },
+  {
+   "titre": "Ultime bafouille - GTA 6 : de Miami Vice à Spring Breakers, comment le cinéma a façonné Vice City",
+   "lien": "https://www.gamekult.com/actualite/gta-6-de-miami-vice-a-spring-breakers-comment-le-cinema-a-faconne-vice-city-3050872419.html",
+   "date": "2026-11-05T18:01:00.000Z",
+   "resume": "En 2002, pour prêter sa voix à Lance Vance, l'associé flambeur de Tommy Vercetti dans Grand Theft Auto : Vice City, Rockstar engage Philip Michael Thomas. Autrement dit Ricardo Tubbs, l'équipier de Don Johnson dans Miami Vice (Deux flics à…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Quête principale Zelda Ocarina of Time : Comment finir tous les donjons et l'histoire du remake Switch 2 ?",
+   "lien": "https://www.jeuxvideo.com/news/2112560/quete-principale-zelda-ocarina-of-time-comment-finir-tous-les-donjons-et-l-histoire-du-remake-switch-2.htm",
+   "date": "2026-11-05T16:30:08.000Z",
+   "resume": "Pour vous accompagner durant votre (re)découverte du Royaume d'Hyrule dans le remake Switch 2 de Zelda OOT, nous vous proposons un walkthrough complet de la quête principale à l'écrit, mais aussi en vidéo. Voici la solution de toutes les é…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Instagram lance enfin Edits sur Mac",
+   "lien": "https://www.blogdumoderateur.com/instagram-lance-edits-mac/",
+   "date": "2026-11-05T16:29:49.000Z",
+   "resume": "Instagram déploie une version Mac de son application de montage vidéo. Elle est pensée pour les projets plus longs et promet de nouvelles fonctionnalités exclusives.",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Le CNC relance son aide aux créateurs de contenu après une polémique sur son impartialité - France 24",
+   "lien": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQN1hrX25DdDRLa3JicVA1NWNiaFFNRjlEUnJvS2tTTDlzMzdnMjY3Wm1uYlZ6cmpKendWbFJvMnVfbmk1bmFLN2wzUmExNjZHeGdoWWh2U1VKSk55aUJqNmVLVFAxTGlaUlVQV3pvelZ6eXZqMTVIQ2oxbXoyWmRwLWVpTkpDczZLM0pOQ0dBS1ZpbXNtZVpCZ1FYTVIzZVhCNGI2Nmx3WThBV1IxM1BZUy0weE1VYTItdjZ3VkwydUI5UWZ0dmszWVh5dy1XUWc5LV8teUpiMF9WQVNPM3plOERsYU9fME4wRE1aSnEwQXl6RlVs?oc=5",
+   "date": "2026-11-05T16:08:00.000Z",
+   "resume": "Le CNC relance son aide aux créateurs de contenu après une polémique sur son impartialité France 24",
+   "source": "Google Actualités · créateurs de contenu Twitch",
+   "categorie": "createurs",
+   "editeur": "France 24"
+  },
+  {
    "titre": "Le patron de GTA 6 justifie les reports du jeu en évoquant le fiasco de Cyberpunk 2077",
    "lien": "https://www.dexerto.fr/gta/patron-gta-6-justifie-reports-jeu-en-evoquant-fiasco-cyberpunk-2077-1663457/",
    "date": "2026-11-05T15:24:56.000Z",
@@ -967,6 +1708,24 @@
    "editeur": ""
   },
   {
+   "titre": "Inoxtag révèle la vidéo qui lui a rapporté le plus d'argent sur YouTube - DHnet",
+   "lien": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPZDdqZ0NjQ0tHeW40S19MT3ItOTRoRGhVeE5icUI4ZFdzM2J4a2xvQkNidDNvSHlZbTBoWkg5Z1pReFBjTThWX1pwdFQ1TThWcFAxSThKNUR3bnRhVHdEcXREcGZMa0kxc2hnQ3F2c3AycFgwcFMtd1RVLUxlOUtYRVR4YldRVEYxQnk3VjF3ZXB6SF8zc1h1WTdEcHFsck9VMXV3OWlaMUUtbnoxSEJseUJCYTgyTkxoZDlVSlpCR1VMNlJTZTJLcmRBMkJEUHl6dnRaMldkc2tweHBlVV9hWQ?oc=5",
+   "date": "2026-11-05T15:11:00.000Z",
+   "resume": "Inoxtag révèle la vidéo qui lui a rapporté le plus d'argent sur YouTube DHnet",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "DHnet"
+  },
+  {
+   "titre": "« Tes barres sont ultra-transformées » : Inoxtag critique les protéines « pas assez clean » de Tibo InShape - La Voix du Nord",
+   "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNOXY2cVVqcE12d3lOU2dxSEIyMW91NE4zUjlLTWx3QjRpSjc2a2lTRWhpVTk3NlZmc0hCajF1Q05pMXhkZUppS1cxY3FGNjc4YThhTUJDYVNWSjZ4X2syeEk1RFlKdHhvblM3LVRsa192WGlqWWU0LTFsSjZDTHM5bWktU1ltTUdGWTN2OEpIbERLUTlRTGlBWEl2a3ZwaW8tSWRkTldYMS1PaEZxTnNIS2tDQ0FFd1NFSjZxb2F6N2dfYVBQRkQ4dGln?oc=5",
+   "date": "2026-11-05T14:56:46.000Z",
+   "resume": "« Tes barres sont ultra-transformées » : Inoxtag critique les protéines « pas assez clean » de Tibo InShape La Voix du Nord",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "La Voix du Nord"
+  },
+  {
    "titre": "The Elder Scrolls 6 vend déjà des produits dérivés alors que le jeu est encore loin de sortir",
    "lien": "https://www.dexerto.fr/jeux-video/the-elder-scrolls-6-vend-deja-produits-derives-alors-que-jeu-est-loin-de-sortir-1663449/",
    "date": "2026-11-05T13:51:41.000Z",
@@ -974,6 +1733,24 @@
    "source": "Dexerto FR",
    "categorie": "actu",
    "editeur": ""
+  },
+  {
+   "titre": "Glitch, or horrible incompetent new update?",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xohxck/glitch_or_horrible_incompetent_new_update/",
+   "date": "2026-11-05T12:55:01.000Z",
+   "resume": "Twitch mobile just changed layout a bit, and it just feels off and zooomed out, but worst, categories have messed up? It uses to show categories with viewers first, amd I could see them all Now I can see just a few of them, and in random o…",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "« Environ 1 million » d’euros : Inoxtag révèle quelle vidéo lui a rapporté le plus d’argent sur YouTube - Le Parisien",
+   "lien": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPNXZ2WWZsQnlFanhhbzg0S09zeGROTnNKOWVLRXJ6M01fMkY0NXJIYjZuZHVwYUpfOEhJZE1XWlZFc1pyeHV0SXk4VU1Pc1FBYk9iRXplLTVBQzhxQVR1bkp2WjJYVzVWMUFObm1SSHZqalNYMjZHYkVFUll4WFNhV19qS2h2M084Sll5Q0l3d2FsWHk2RHhkeldiSEdEamtPYmttUW9kd21pN281bzBOM3ZwdDNUazJLNnhZbjI5VDR2UU9hb3BZd3ptbUp2RjhhUUd0eUVUZGlTRWNMREtILTE5MkFvVkRQRkZDOUdxTTg2d2ZNN2dyRWJXX2FaZ2RraGx0YWhld0x2alE?oc=5",
+   "date": "2026-11-05T12:45:00.000Z",
+   "resume": "« Environ 1 million » d’euros : Inoxtag révèle quelle vidéo lui a rapporté le plus d’argent sur YouTube Le Parisien",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "Le Parisien"
   },
   {
    "titre": "Codes Ragdoll Sandbox (Novembre 2026)",
@@ -1003,6 +1780,33 @@
    "editeur": ""
   },
   {
+   "titre": "Most Subscribed YouTubers (2026): MrBeast Pulls Away as Kids’ Channels Stall",
+   "lien": "https://passionfru.it/most-subscribed-youtubers-167059/",
+   "date": "2026-11-05T11:05:18.000Z",
+   "resume": "MrBeast is the most subscribed YouTuber, with 525 million subscribers, about 374 million more than the next creator. See the top 25 as of November 5, 2026. The post Most Subscribed YouTubers (2026): MrBeast Pulls Away as Kids’ Channels Sta…",
+   "source": "Passionfruit (créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "Michou à la Coupe du monde de football 2026 : le journalisme est-il mort ? - franceinfo",
+   "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNQlFyU1dvM3BsMHA1d0M2Nl9CbmlkVmE5aERCbUFqLVl5cER6aEFtUHBZNkdvNFlpODJKUGlQMnRQc0tENENIRXhIbXd3VVB3RHRRUUlEdFZwc3RMRlhZQnRLUmYtREp4eE1LRm03dWdTOGtzbUFLZml6VUhXb3hyVkFrcWZsdUR1M1NKMXRRYnBwek1abEd0UGNmb3Rsdk9jdU1KdFZjYjRPcVpSUUlKVzdPMFlENU9pYUFIbFpIUGhVNnZTd1pqTU9lcEpnUFhXUjFqd0s0aw?oc=5",
+   "date": "2026-11-05T10:12:24.000Z",
+   "resume": "Michou à la Coupe du monde de football 2026 : le journalisme est-il mort ? franceinfo",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "franceinfo"
+  },
+  {
+   "titre": "Avec GPT-Image-2.6, ChatGPT peut générer des GIF",
+   "lien": "https://www.blogdumoderateur.com/gpt-image-2-6-chatgpt-generer-gif/",
+   "date": "2026-11-05T09:52:22.000Z",
+   "resume": "Disponible dans ChatGPT, Codex et l’API, le nouveau modèle de génération d’images d’OpenAI gagne en vitesse et peut désormais \"mettre les images en mouvement\".",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
    "titre": "Codes Steal A Balut (Novembre 2026)",
    "lien": "https://www.dexerto.fr/roblox/codes-steal-a-balut-1663403/",
    "date": "2026-11-05T09:51:56.000Z",
@@ -1012,11 +1816,200 @@
    "editeur": ""
   },
   {
+   "titre": "Pangram lance deux modèles pour repérer les images et les vidéos générées par IA",
+   "lien": "https://www.blogdumoderateur.com/pangram-modeles-reperer-images-videos-generees-ia/",
+   "date": "2026-11-05T09:51:38.000Z",
+   "resume": "Connu pour repérer les textes écrits par IA, Pangram étend sa détection aux images et aux vidéos, accessible via son tableau de bord, son extension Chrome et son API.",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Positive annonce l’acquisition de Humanlinker pour renforcer son offre CRM",
+   "lien": "https://www.blogdumoderateur.com/positive-annonce-acquisition-humanlinker/",
+   "date": "2026-11-05T08:27:47.000Z",
+   "resume": "Avec cette acquisition, Positive couvre désormais tout le cycle de vente, de la prospection enrichie par l'IA au suivi des opportunités dans noCRM.",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Wanted sur M6 : le dénouement de la finale du 5 novembre et le replay - Sortir à Paris",
+   "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQM1k0VzhGaGR5S3lSdnBjUXRFT0JVeGZrYmUtc2pIQmFGVTM3T1RtMkI4VmZKUURtb3FWTml5anREeHF5akdKTmxoSTJpc3Q1aTlGN09DeHFQNVR4THdNVklUa0tCSjFHcEY2bnhGYlRsMzllV3o4cGJJbnlVSTM3OFhnRXBpNXpGU19LQjdwVGFCVldjWUdEeGpNUGxWMTV4dUs5Z0RuVmswQ21HR3dUVUdoSEs5WThzMVlHMkZYRFJtY3puSWc?oc=5",
+   "date": "2026-11-05T08:00:00.000Z",
+   "resume": "Wanted sur M6 : le dénouement de la finale du 5 novembre et le replay Sortir à Paris",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "Sortir à Paris"
+  },
+  {
+   "titre": "Wanted sur M6 : Michou, Adil Rami et Issa Doumbia traquent seize célébrités en cavale pendant quatre jours - Serie News",
+   "lien": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOWnBlb1hmcUZvenpRd09ISmxHVEVZdUxkcVZjeDAtNjUxaXB4d3cyQ1A5dllET1VXaHQ5RkVoQkduZnE4X01UT2VSQy1YUUlVZnVLY1VpNTJWdjZ5RW8wckpVZk1scE5IZGx4QUtqOXU1LUFib29rdXVVbGlGbGs3SmxiZGFJWWMzbWVjNkhMT2RrRVhvWnFTN2l1VW9wT19YNlhHSFAtTnBOalR6RHk2enljN2RpME80MDRrM0RpaC1YNWhmUEs2LTB4bGZfQXBCUFNNY2tLRTJPTDdISk9BcHg0Z2JSV1psNkI0?oc=5",
+   "date": "2026-11-05T08:00:00.000Z",
+   "resume": "Wanted sur M6 : Michou, Adil Rami et Issa Doumbia traquent seize célébrités en cavale pendant quatre jours Serie News",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "Serie News"
+  },
+  {
+   "titre": "Netflix might want its new AI search to drum up more “quality” viewership",
+   "lien": "https://www.tubefilter.com/2026/11/05/netflix-ai-discovery-search-algorithm/",
+   "date": "2026-11-05T07:07:15.000Z",
+   "resume": "Netflix‘s new strategy for combating YouTube‘s commanding share of living room TVs is to insist that it’s not the quantity of viewership, but the quality. And it might be trying to pump up those quality views with a new recommendation tool…",
+   "source": "Tubefilter (économie des créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "Wanted - Attrape-moi si tu peux ! sur M6+ : nos programmes en streaming - M6+",
+   "lien": "https://news.google.com/rss/articles/CBMidEFVX3lxTFByaEF1VV9RaHdpTkhvQ3JqVzVzcDk5QjhPU1NrX1l4WTk5NWE1Vkdkd3lva0RNdW85V2FxcWdteHl6UXVlbmRuSmEtS2FDNEpLSzNUYnhYWXFRMEZCVTdzdDVKLVRSM2JsMmUzaFF3NVlMS01i?oc=5",
+   "date": "2026-11-05T06:56:34.000Z",
+   "resume": "Wanted - Attrape-moi si tu peux ! sur M6+ : nos programmes en streaming M6+",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "M6+"
+  },
+  {
+   "titre": "7 chaînes YouTube à suivre pour se former à l’IA",
+   "lien": "https://www.blogdumoderateur.com/7-chaines-youtube-former-ia/",
+   "date": "2026-11-05T06:00:26.000Z",
+   "resume": "Entre tutoriels, interviews et vulgarisation, YouTube regorge de ressources pour comprendre et utiliser l’IA. Voici sept chaînes à découvrir.",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Sites Like OnlyFans: 9 Best Alternatives for Fans & Creators",
+   "lien": "https://passionfru.it/best-onlyfans-alternatives-for-creators-123478/",
+   "date": "2026-11-05T00:45:00.000Z",
+   "resume": "18+ only. We may earn a commission from links on this page. Let’s face it: OnlyFans is a household name. Since launching in 2016 it has become the default place to subscribe to creators, and the default place for creators to sell. But bein…",
+   "source": "Passionfruit (créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "Reddit tests new search ads",
+   "lien": "https://www.tubefilter.com/2026/11/04/reddit-search-ads-test-ai-answer-engine-optimization/",
+   "date": "2026-11-04T23:39:59.000Z",
+   "resume": "In a blog post published on November 3, Reddit revealed that it's testing a new ad product. Alongside a \"select group of eligible advertisers,\" the social platform is experimenting with paid media posts that show up in its search results.…",
+   "source": "Tubefilter (économie des créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "Midterm election traffic spiked on Twitch, but Hasan Piker can’t hold a candle to Steve Kornacki",
+   "lien": "https://www.tubefilter.com/2026/11/04/2026-midterm-election-hasan-piker-steve-kornacki/",
+   "date": "2026-11-04T22:35:00.000Z",
+   "resume": "The 2026 U.S. midterm elections resulted in a historic victory for Democrats, but liberals weren't the only big winners on the night of November 3. Streamers across YouTube, Twitch, Kick, and Rumble picked up more viewership than they've e…",
+   "source": "Tubefilter (économie des créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "Begin Again in Azeroth: World of Warcraft: Forever Is Here - Twitch Blog",
+   "lien": "https://news.google.com/rss/articles/CBMie0FVX3lxTFByb2YteFRpMFNTTmk1V2ZVd2FiMXljdnVsdlBYbms1ejctdnVIcGpVNkZTX2RiMmxtR2tQZDZYc25NYnN0ZzFmNVF6ODltTkM0ZU5TOTJiaUdVdGxYTUZ5cnFuT1FDRjVVU1FZOS1kZVlpSWR1Y0FHdmtncw?oc=5",
+   "date": "2026-11-04T19:30:52.000Z",
+   "resume": "Begin Again in Azeroth: World of Warcraft: Forever Is Here Twitch Blog",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "Twitch Blog"
+  },
+  {
    "titre": "GTA 6 aurait déjà généré 750 millions de dollars avant même sa sortie",
    "lien": "https://www.dexerto.fr/gta/gta-6-aurait-deja-genere-750-millions-dollars-avant-meme-sortie-1663381/",
    "date": "2026-11-04T17:47:11.000Z",
    "resume": "GTA 6 aurait déjà généré 751 millions de dollars grâce à 7,7 millions de précommandes avant même sa sortie officielle.",
    "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Les plus gros budgets de transfert dans Football Manager 27",
+   "lien": "https://www.dexerto.fr/football-manager/football-manager-27-plus-gros-budgets-transfert-1663364/",
+   "date": "2026-11-04T16:21:34.000Z",
+   "resume": "Découvrez les clubs les plus riches de FM27 et choisissez la meilleure équipe pour lancer votre carrière.",
+   "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "5 choses à savoir sur L’Impératrice remariée, le K-drama événement de Disney+",
+   "lien": "https://www.dexerto.fr/films-series/5-choses-a-savoir-limperatrice-remariee-k-drama-webtoon-1663365/",
+   "date": "2026-11-04T15:54:52.000Z",
+   "resume": "L’Impératrice remariée fait des débuts remarqués sur Disney+ : voici cinq choses à connaître sur la série et ses origines.",
+   "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Les meilleurs entraîneurs et staffs à recruter dans Football Manager 27",
+   "lien": "https://www.dexerto.fr/football-manager/football-manager-27-meilleurs-membres-staff-1663331/",
+   "date": "2026-11-04T13:51:30.000Z",
+   "resume": "Découvrez quels sont les meilleurs entraîneurs de FM27 et renforcez votre staff pour faire progresser vos joueurs et votre équipe.",
+   "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Il humilie l'élite de Twitch sans jamais montrer son visage : qui est le mystérieux joueur OP ? - Consollection",
+   "lien": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPeHpIOFl5ZmxpRTJCdnBBWmRYOXBMOGpIREo4TG1lN193UV9tY3FSQi1SYV9NVkkzUzJ6Nk1lTVdEQkRQTVJMNExuMVRhMFJleU9LYTMtRXB0THBnZW1PX2pxYW5KSnNzZUdWSVM0ejliRlJ5UG9fSkduY2tlMjBHVkFXYUI0djBmaWdyU182OEs1MHhxbFo1QXJrS3lWdUpuU1VESjd4VUZ1ZVVwaUF5WV9iR1JVbUV3YmxBUlo4QnZoQQ?oc=5",
+   "date": "2026-11-04T13:43:18.000Z",
+   "resume": "Il humilie l'élite de Twitch sans jamais montrer son visage : qui est le mystérieux joueur OP ? Consollection",
+   "source": "Google Actualités · règles, modération et sanctions Twitch",
+   "categorie": "createurs",
+   "editeur": "Consollection"
+  },
+  {
+   "titre": "Comment jouer à GTA 6 en avance sur Xbox et PS5 avec l’astuce de la Nouvelle-Zélande",
+   "lien": "https://www.dexerto.fr/gta/comment-jouer-gta-6-en-avance-xbox-ps5-astuce-nouvelle-zelande-1663318/",
+   "date": "2026-11-04T12:55:20.000Z",
+   "resume": "Découvrez comment jouer à GTA 6 en avance sur Xbox et PS5 grâce à l’astuce de la Nouvelle-Zélande, avec les étapes et l’heure de déblocage en France.",
+   "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "\"Kaizen\" : Inoxtag révèle combien d'argent lui a rapporté son projet totalement fou - puremedias",
+   "lien": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNN3NvdEw2clN2eWNDSU1OZ2hEN25JNVJILU5Bb2c1S0lKY296T0xZZ1ktNVZYQktzZlk2bWw1SlJpdTBNLW5lUU1yUXBmREp5WTlQOE9FLTNwZ2dXTmg0Mlo0aXVlbGs1dHdYRWRhZVpsVXhJQkNMQy1sbEpNdTdOT1ZjYWduRDNONkU3cG1PVncxbzBIaDZKWWVJeTNfVGdhTGdMd3d4NnpDaERTdE5BMg?oc=5",
+   "date": "2026-11-04T12:15:00.000Z",
+   "resume": "\"Kaizen\" : Inoxtag révèle combien d'argent lui a rapporté son projet totalement fou puremedias",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "puremedias"
+  },
+  {
+   "titre": "Calendrier de Singapura, dates et heure de sortie des épisodes du thriller de Canal+",
+   "lien": "https://www.dexerto.fr/films-series/calendrier-singapura-sortie-episodes-1663321/",
+   "date": "2026-11-04T11:18:53.000Z",
+   "resume": "Canal+ propose un thriller intense, et pour ne rien rater de Singapura, on vous présente le calendrier de sortie des épisodes.",
+   "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Influence marketing : les contenus citant des marques génèrent de plus en plus de vues",
+   "lien": "https://www.blogdumoderateur.com/influence-marketing-contenus-citant-marques-generent-plus-vues/",
+   "date": "2026-11-04T10:37:06.000Z",
+   "resume": "Selon la deuxième édition du Baromètre de l’influence du CPA et de l’UMICC, les publications mentionnant une marque sont plus consultées qu’il y a un an, mais suscitent un peu moins d’engagement.",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "LinkedIn lance un tableau qui centralise les performances de tous vos posts",
+   "lien": "https://www.blogdumoderateur.com/linkedin-tableau-centralise-performances-posts/",
+   "date": "2026-11-04T09:32:59.000Z",
+   "resume": "Impressions, abonnés gagnés, enregistrements, portée hors réseau… LinkedIn rassemble ses statistiques créateurs dans l’onglet Dashboard et ajoute une vue par post.",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Harnais, superintelligence, alignement… Flavien Chervet décrypte les concepts IA derrière la BD HELO",
+   "lien": "https://www.blogdumoderateur.com/harnais-superintelligence-alignement-flavien-chervet-decrypte-concepts-ia-derriere-bd-helo/",
+   "date": "2026-11-04T06:00:52.000Z",
+   "resume": "Prospectiviste en IA, auteur et conférencier, Flavien Chervet revient sur les réflexions à l’origine du tome 2 de HELO, la BD d’anticipation sur l’IA générale, et sur ce qu’elle dit des débats actuels, de l’ambition de créer des systèmes p…",
+   "source": "Blog du Modérateur (réseaux sociaux)",
    "categorie": "actu",
    "editeur": ""
   },
@@ -1030,13 +2023,823 @@
    "editeur": "franceinfo"
   },
   {
+   "titre": "Exclu. Nous étions avec Inoxtag sur le tournage d'Au tableau ! : \"On n'a jamais vu ça en 9 ans d'émission\" - Télé-Loisirs",
+   "lien": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOOWg2ZUF1YnpyVE52cDBfa2VzbzRySmJndnYzS19abW9QU3RJRXVmU0R1Y3hqUExkU0phbm94RGtaU3R4SXg2NGJJN2lHUEJZcFpfMTF5ak96TVJDR2lCSWJYVGduUFhwaktPY0czZUZFbFlMcFoxOGJYWWJyNEZiZ0pPSGtQQy1Id2F4QjVLY2czaDRvaG1ZdzJ5ckl0SDNqMjF3X0k2N0phVUpTT1ZLbEdhVjhrVkxsYUQ4QXBNM0VwdGlpR1BXb3NFVFVQa29NX012MXhOWWZjYllL?oc=5",
+   "date": "2026-11-04T05:00:00.000Z",
+   "resume": "Exclu. Nous étions avec Inoxtag sur le tournage d'Au tableau ! : \"On n'a jamais vu ça en 9 ans d'émission\" Télé-Loisirs",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "Télé-Loisirs"
+  },
+  {
+   "titre": "Final days to vote for your favorite Arkansas creators in the Arkansas Creator Awards - KATV",
+   "lien": "https://news.google.com/rss/articles/CBMijwJBVV95cUxPbW1jUkhiVkRqNGhMblQ0bUdBV3FYZ2ZydEZEc3JnMkdsOEgzZkw4TW9rMGloMVF6Vm5vX2w4cGZqWnFSbXF6dmktZTlzenpPNVBEWkdzVkdlMEpNclVrdjEyOGdxTXd5VDQ4M1hVM05idjEwRzBESl82VmpRSVdQemVBVFNTRThqaU1QNVppUS15YVFPc29ibnlHcElSclN4RGVoUFpSZUdVWnFiYWpxb2I4VUFBTTU4QW93R21tRFJxaGZaX2Z6X3VsSWgteGtDOXhBX1JTdFpFbTRRNk9obmlUUVhfbUl6cnJWMW43TnU4cWNpRVBOMHRpMjZ6Q3d4VkFNbXZST3pGalNCY2Y0?oc=5",
+   "date": "2026-11-03T22:55:35.000Z",
+   "resume": "Final days to vote for your favorite Arkansas creators in the Arkansas Creator Awards KATV",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "KATV"
+  },
+  {
+   "titre": "The Division 2: Echoes of Central Park - Drops Twitch - Ubisoft",
+   "lien": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPeEtPUDNKYTAxVkxXRWFvTWRlYUM0UFdzaG1tamdTenBoZXBsT3FodzFqbEE1SGtwUGgwOXVaaFpXZzE3SGJlRllCNTZ2ZnN5T3luM3lZb2hLb0JWdjh5VC1JVVBuY3R0VFdWNzlxZjdVNEJPN3oyS2lrSjUxTEpFUjk2OWFKWWZaTnNvUjZ0cF93OE9qUUg0d21FZmZWbkhMZkhNSVBYNmRiQnI4R1JDN1U3eGlGQ2lZdTI2dEtocTduNDBMQW5lTzBRSTVhdkU?oc=5",
+   "date": "2026-11-03T22:30:49.000Z",
+   "resume": "The Division 2: Echoes of Central Park - Drops Twitch Ubisoft",
+   "source": "Google Actualités · créateurs de contenu Twitch",
+   "categorie": "createurs",
+   "editeur": "Ubisoft"
+  },
+  {
+   "titre": "[Podcasts] LE DEBAT : Doit-on revoir les règles de vote du ballon d'Or ? – 03/11 - RMC Sport",
+   "lien": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPbXlLM2ZaR0E2dWIxOTVVdnZvMnF4eW1XcDB0eVJBbmdrQ0F6YlZyMGUtbGdXZTg1WUFLZGlHT2dCUGF3ZDlweC1ZRUlCRzRDQk1obm9wWkxZa1o2VUZzLVlaa1hMWk1ZenI2cHlWTkptYWs5SDFoS0hMUzZjcXhvOS1PaS1JWkFkMW5OZVFEeEQ4SzRPVV9uRC1HWE1oVl9Dc3dyODNKQjVaWVdYbkJqT3ZUcjZlX05XR29xWTFaT1lxVVJtcXRLOFNHMzJNb093cUloZ0UwV3VDQQ?oc=5",
+   "date": "2026-11-03T18:46:21.000Z",
+   "resume": "[Podcasts] LE DEBAT : Doit-on revoir les règles de vote du ballon d'Or ? – 03/11 RMC Sport",
+   "source": "Google Actualités · règles, modération et sanctions Twitch",
+   "categorie": "createurs",
+   "editeur": "RMC Sport"
+  },
+  {
+   "titre": "« Wanted : attrape-moi si tu peux » tire déjà sa révérence sur M6 après la polémique des pancartes d'Amiens - Tavu Radio",
+   "lien": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPTFRvTmVOd2htY0RITGkyaXNxM1p0d0x6NUZFcDh5NHcwMHRNdlpLZ1puVTV2b0pVTHN2OW4yakI4aFBCeHhoaEpGSDBpWTlOLTBJaWY1bmVIb3RsTnA4N2VOODZJQ3RESjd3MW1xN180TWdtWGlWWVhuRzFBYlU3TWk2b3M1MHRBOXBKVXBFYUg0N2M?oc=5",
+   "date": "2026-11-03T18:26:32.000Z",
+   "resume": "« Wanted : attrape-moi si tu peux » tire déjà sa révérence sur M6 après la polémique des pancartes d'Amiens Tavu Radio",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "Tavu Radio"
+  },
+  {
+   "titre": "« Il était accompagné d'amateurs » : la vidéo d'Inoxtag dans un gouffre critiquée par des spéléologues - Le Progrès",
+   "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNOXdRR09PWkdTMGoyQThlRUdkREpqUVdRcFJBMWNXdmZFcENEbzg1b01JYUVkVG8tSVh5V09rUTdKQ1k0MGRMT200RUtGTXNoTVpsN2E4ZkZYU3RjaUdJWU9NQ2diRmxMcUdFdkRZc052OExwTUpyaDZsaVJwSU0tVkhLVEtubnZ5MDNuZHFRU2hENFg2aFV3OEU3VkFBay1jX2wzQWNfb3BBQVFsZll3M3B1SXktbUhPZWFqd0FOOWZBR2hVQzFzZHQ0TEhZQV9MdThKaGswMA?oc=5",
+   "date": "2026-11-03T17:20:00.000Z",
+   "resume": "« Il était accompagné d'amateurs » : la vidéo d'Inoxtag dans un gouffre critiquée par des spéléologues Le Progrès",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "Le Progrès"
+  },
+  {
+   "titre": "Inoxtag s'offre son premier rôle au cinéma dans un thriller avec Juliette Binoche - BFM",
+   "lien": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNRlRXVThFYk9BbzJ6cWpXcldHMkRxMDR6LWI3VTc1SUNxNk9lNkQ4WE8zNF9fNF9pQU5BUU5nTXpZZV9ESkRxZWU2aVVmWk9IZDNfNUgtODVmUEdyZkY2ZUd3LVRzVF9PNGFRcXBsTlBKU2V2dEd6YU5oQ2FoVWFZTkM0RTdXZVZrVXRnTjhxYk9FNVprdVBCMWt3OWI2MFg4UHE1VEE3MmZabjZYZzI3bnVQZ1gwYlNkU2NhWGVvMmRQbXJyS19fWmNVY2RsbmpvZzRPQ2U5VWJ4TzY1QmNB?oc=5",
+   "date": "2026-11-03T16:25:34.000Z",
+   "resume": "Inoxtag s'offre son premier rôle au cinéma dans un thriller avec Juliette Binoche BFM",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "BFM"
+  },
+  {
+   "titre": "Inoxtag va jouer avec Juliette Binoche dans un thriller rural - Les Inrocks",
+   "lien": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNWXYtamkxQ1B5SnRJWEZDSkpGTzBvTnJxYWZOVVNCcHRfT3hpdExlcnl2YlhiSHVhbTNYRW9JUWE4NUlVSm9iMGlDYlhxUy11ZjNNdTY4R2J6ZUZ6cTRRV2xXQlBmMkNIblRBQkc2RktCVmhUYi1IdVBtLWRYSzF4aVRrSkRmTnVRUlpFdERwVEtMaDZtN2dB?oc=5",
+   "date": "2026-11-03T15:18:00.000Z",
+   "resume": "Inoxtag va jouer avec Juliette Binoche dans un thriller rural Les Inrocks",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "Les Inrocks"
+  },
+  {
+   "titre": "Inoxtag décroche un rôle au cinéma face à Juliette Binoche dans un thriller - MCE TV",
+   "lien": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNeVZSRUZxNFB3Sy1lZWtKelB2bkgwQVR3cDVVemFzZFEwMEdncVBYcTVGRS05WVJGWlNNbzhtU3d3SmZ5ajV6cXJHQnl6VXNxejYtNEdoUFVqRmNUZ3M0VnNoLWxVZUpING9wSHdIS1dCU29wUmtGbkRwN3ptQmJPUXNFTE5HRmFWYjh6N1BwZG9JcE0?oc=5",
+   "date": "2026-11-03T15:02:37.000Z",
+   "resume": "Inoxtag décroche un rôle au cinéma face à Juliette Binoche dans un thriller MCE TV",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "MCE TV"
+  },
+  {
+   "titre": "Après l'Everest, Inoxtag explore une grotte et s'attire de nouvelles critiques - Le Dauphiné Libéré",
+   "lien": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNMDR4VU5Cd2ZRMU1hXzIxTnFEa0wtWHowM0U3NTVGTWxpSTBFWXRycHF0Y0tKTEo4YWl0RE1EVUd3U3ljUHYzNExHUUN4S0NNQXJVUTN3S2NVdXdHbi1heENQd1N5SnJMUEllLU9mOXBtRHVUelR4bzVjVXJBUG1ZLVVhQm9scnptUWlNZGdxVjRVQW51UnEtUUhhdmJCUGtoWFRrZ0w2UTBtM2ZiM2NPVUJlUWFla01XTE5Z?oc=5",
+   "date": "2026-11-03T13:58:07.000Z",
+   "resume": "Après l'Everest, Inoxtag explore une grotte et s'attire de nouvelles critiques Le Dauphiné Libéré",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "Le Dauphiné Libéré"
+  },
+  {
+   "titre": "Twitch Streamer Sues Amazon Over Alleged AI Training - TechRepublic",
+   "lien": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSkR2LUpfRlRKMUJxM19NT3BSaHd0aWNtdElrVWpLSWo0emMxYXNaZDFaQ0Q4NGYweDdlZW1pOXVDUVhteEtNZDVicVNpZ3ZhN2dUeGFndktoUjBUSVBrVl8zNnlqZkUwYVN0WEdQQWRKR1hSV0JxLXYxYllxZE5jMjFUWGM4UWZCaTVtY2V0Q2xldw?oc=5",
+   "date": "2026-11-03T10:46:19.000Z",
+   "resume": "Twitch Streamer Sues Amazon Over Alleged AI Training TechRepublic",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "TechRepublic"
+  },
+  {
+   "titre": "Crimson Desert offre encore du contenu gratuit, mais c'est votre dernière chance - Gameblog",
+   "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQMElJNVdmcTJwUkpHV1lsRWJYMWxDeXdCbVlpdDZoR01STmFhVkhOdHVTcnh6X1ZpblgtWE1tbXA1RlNLck0xaFBWQWY4QjBVR2xCazJxYkxsVXhaUkhCdTh4dFhYaDZDNGU0U2REMkt3VGdEcXExOGJUU2F1UmYtdm4waENvbndNZ1NmOVA1c0RwbkNKZnIwVUpR?oc=5",
+   "date": "2026-11-03T10:08:29.000Z",
+   "resume": "Crimson Desert offre encore du contenu gratuit, mais c'est votre dernière chance Gameblog",
+   "source": "Google Actualités · règles, modération et sanctions Twitch",
+   "categorie": "createurs",
+   "editeur": "Gameblog"
+  },
+  {
+   "titre": "API SMS : comment ça marche et comment l’intégrer ?",
+   "lien": "https://www.blogdumoderateur.com/api-sms-comment-ca-marche/",
+   "date": "2026-11-03T09:12:24.000Z",
+   "resume": "Une API SMS permet à une entreprise d’envoyer automatiquement des SMS depuis ses propres outils. SMSFactor explique son fonctionnement et la manière de l’intégrer.",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Newsjacking, UGC, dark posting : maîtrisez-vous vraiment le vocabulaire du social media manager ?",
+   "lien": "https://www.blogdumoderateur.com/quiz-vocabulaire-social-media-manager/",
+   "date": "2026-11-03T09:09:18.000Z",
+   "resume": "Les acronymes et anglicismes obscurs du social media n’ont aucun secret pour vous ? Testez vos connaissances avec notre quiz.",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Comment HappyVore mise sur l’humour et la positivité pour se démarquer sur les réseaux sociaux",
+   "lien": "https://www.blogdumoderateur.com/comment-happyvore-mise-humour-positivite-se-demarquer-reseaux-sociaux/",
+   "date": "2026-11-03T09:05:31.000Z",
+   "resume": "Laura Wawerka, responsable marque et communication chez HappyVore, est l’invitée du podcast Follow Back, produit par Swello en partenariat avec BDM. Elle y décrypte la stratégie social media de la marque végétale et sa gestion des haters.",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "3,6 millions d'euros réglés... la Fifa aurait payé les impôts d'Infantino aux États-Unis - RMC Sport",
+   "lien": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOYlVqNDVuTHhmWVhEOVhER1R5WUUxQ2o3bkdwSWhncy1YamdfYS00Yi0tUlV5dlRqdlVsY0dUY3lPR29rQl9PbGN0VXFVVm1fakF0ejRCREhVazBxbG9GYnpFdUd4cHF0ejhfdEtEX3NWV2pFLUI5TnNFVDQ3SndpMnY0dDBmVE93YnZabkwzbi13QzVLYzBUbXg5VDZoQ19ZM29IOXo5ZDR2dUhhcDB6Nk5IUUkyTVZBZC14Mm9iSjBkSDRNalpQVkhyd3NCSlFILUc0dnBxLUhMQQ?oc=5",
+   "date": "2026-11-03T08:59:49.000Z",
+   "resume": "3,6 millions d'euros réglés... la Fifa aurait payé les impôts d'Infantino aux États-Unis RMC Sport",
+   "source": "Google Actualités · règles, modération et sanctions Twitch",
+   "categorie": "createurs",
+   "editeur": "RMC Sport"
+  },
+  {
+   "titre": "Les dessous de l’affaire BigBangs06 : un streamer qui arnaque sa communauté ? - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOYkhVcTQ4MkQyMHFPX0RFS3hlanFFUFM3bXBzbE9XLU9TMjRSNkNBZlkxb2RHeDNRNDJhanlJdlRSaXdQYlNpaU5MMHdrNXVsaXBWaldva2daYi1QYXFYd3ZFQmZJcjBLNktEdlhLaFViMTI2eG43amJqcjVubEZSUG1OZzM2bG8?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Les dessous de l’affaire BigBangs06 : un streamer qui arnaque sa communauté ? Dexerto.fr",
+   "source": "Google Actualités · streamers et YouTubeurs",
+   "categorie": "createurs",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Tyler1 veut plafonner ses dons sur Twitch pour éviter de “surjouer” - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPam9yY1A0Zlphd3o3dlNLekNhWHpCNWZxTG5hYWF1QWFGZDNJV0FNZWFhdVV5VjVhQUhnYmJzNllIVTVNZHpUcFZIM1A3Q28wUW9sekt0ZDdNUFRBR01wNkFvRmtWTHhjYUhDUENnT3R4UEJKNU1YMlhqdExZZ1pNYVZNX2ZqamxOMDVCT0dGa0M4ajFBek9YdG1SajZZOXFZZ2xVX3hnSklzN1RRLUktdDF3?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Tyler1 veut plafonner ses dons sur Twitch pour éviter de “surjouer” Dexerto.fr",
+   "source": "Google Actualités · monétisation et revenus des streamers",
+   "categorie": "createurs",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Une streameuse en larmes après avoir été à nouveau bannie “par erreur” - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQQVpjR1Qzay1SR0s0cVh1XzlLaE1XVjdhUWdoZUVqaS1HVUdwVE56b0RHVWthSEM1RHVXblNYT1E5QWdPZG84Mnlfb0hpdDBhQ3ZwQ0VYMkdKemtBWHlsaUNBMDdhT3d1UFBGdmd0X3RfaV8zYnBScXdEOEZpU1BWZS1NMDB4UHF3WDNUOVVEVkcyZw?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Une streameuse en larmes après avoir été à nouveau bannie “par erreur” Dexerto.fr",
+   "source": "Google Actualités · règles, modération et sanctions Twitch",
+   "categorie": "createurs",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Mushway finalement débanni de Twitch – Un retour chez Lunary à prévoir ? - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPclp5WGJPX2VYYWZUODNrSnFGWTNMcmRXblJjQ1dTOWZ3ZHBQdklmeGpfdHhfSjNKT1pwY1h2ZWN0Uk1qTjlmN1lQTWkzZGdZdGZpMVVDRWx1a3N0Q0pxUV81OWloWnJ5eS1OUWJEdnJzVEd2Y3AxVk5hSENwRlFxamlsXzFDSzA3VGc?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Mushway finalement débanni de Twitch – Un retour chez Lunary à prévoir ? Dexerto.fr",
+   "source": "Google Actualités · règles, modération et sanctions Twitch",
+   "categorie": "createurs",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "s1mple à nouveau banni de Twitch, il incendie la plateforme sur Twitter - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQU0lqWFFKaERRV3FrUEs5RjBtX2xpTzBwc01nS3E0NGJxYllSY1JET1REUHJ5NUZfeWJJQ25tNXNFeGRNSDU1RnVVcTZSTEN4Z1phX05jbVlxdjRZVU9XanIzREgwUnB2aGtLOXRPVEtJRkhjS1JBcnlxbUtIeF84UGM5cHpSclktcTZZOUZkNVNKLXA2Z1NhWTZBdERBTm0zc3c3MTlPMDd4TW8?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "s1mple à nouveau banni de Twitch, il incendie la plateforme sur Twitter Dexerto.fr",
+   "source": "Google Actualités · règles, modération et sanctions Twitch",
+   "categorie": "createurs",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Suite à son ban Twitch, GameMixTreize se lance sur Mixer - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOVC11Rnc0UV9IOXNOUlNTNVRsTmJPVjRVNjJldmVLOTl5cF81MkdOYkxNRnotZFFxNHFhclZtT2pTOTluam5KSW5LSmR4dXBBU2ZiZUxyUDBIdnRXc2cyR3I5ZjkzS2V3c1dpNzE2WmxYVXdYV2JxUDhIT2taWWh1TVhzY0ZmT0xvbzRwZ1ZaSENvcGpSelJON3AyU1o5N3NMdFVjVw?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Suite à son ban Twitch, GameMixTreize se lance sur Mixer Dexerto.fr",
+   "source": "Google Actualités · règles, modération et sanctions Twitch",
+   "categorie": "createurs",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Soutenu par plus de 500 000 personnes sur Fortnite, combien Michou gagne-t-il d’argent ? - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQYzM4c2lVelM3M2RkcTVRWmYxbTRoOXNPMC1QQ1dURUR3YzJneXpxUTE2N2REYUxtOXljQVI2WExOUW91R1lQRlFjOUJuUmdxWDlXc1NaYWZ5dFo2VHF5c2RwUmNYMFBWWFR3RkhrakhNdC1ickZsWTFOUEpKSVFKOXBSSElnS3BkQkZEUXRNcm5wLUdzM25YbmdOTHF0TXllVUR3QWZvek9jOHJI?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Soutenu par plus de 500 000 personnes sur Fortnite, combien Michou gagne-t-il d’argent ? Dexerto.fr",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Doigby élu “Homme de la saison 1” sur le stream de Squeezie - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPWDllRmhGUFEtX2JaclhzSjlkV0hTVHpZbXdoWFFPWnprLU4zcEhmSVltMVVQVlc1bWVQQTZCc0tDUjNOTXJ0VGxCVEZxN096aWxBQ2FNTTZzWnYxcE9jam44VlBROF9uSXV5VzJrdG0wNEU5WGFPbEJqUm9XUHIxeTRhb2hkVDVCVm53RFVDTVM?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Doigby élu “Homme de la saison 1” sur le stream de Squeezie Dexerto.fr",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Dexerto.fr"
+  },
+  {
    "titre": "Dead by Daylight fait polémique, Behaviour admet ses torts - INFINITY AREA",
    "lien": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQcl8xOHZuemk1M2NORTRKWmZEcFZodUhfaUlXclQxSWdxZHB0VE51UVVPWUxFUUhvRkRFME9YZkFUN0JwekRKbEF1VzRTVURXVDZ6TnR3ZXZ5N3FlTjBEVjAwLWJKbS02aXVSUkhxNjNHNmJBRklEbVJmT053ZFNJcWJDc2tmb214azRYTUxDYjY2dFhaQ1E?oc=5",
    "date": "2026-11-03T07:56:00.000Z",
    "resume": "Dead by Daylight fait polémique, Behaviour admet ses torts INFINITY AREA",
-   "source": "Google Actualités · streamers et streaming",
-   "categorie": "alerte",
+   "source": "Google Actualités · règles, modération et sanctions Twitch",
+   "categorie": "createurs",
    "editeur": "INFINITY AREA"
+  },
+  {
+   "titre": "Les infrastructures numériques peuvent-elles suivre l’essor de l’IA ?",
+   "lien": "https://www.blogdumoderateur.com/infrastructures-numeriques-suivre-essor-ia/",
+   "date": "2026-11-03T06:00:47.000Z",
+   "resume": "Maher El Fekih, président de Colt Technology Services France, explique à BDM pourquoi la connectivité limite désormais l’IA, au même titre que l’énergie et les GPU.",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Télécharger Twitch (gratuit) Windows, Android, iOS - Clubic",
+   "lien": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBCNWVEMWFvajk0VXdNWXFpallDQ2VmNDhTd1psYmwwOUJhV1ZvdFM2VDBkMUV4eWxrckducDlrSmdXZmpYM2JRSGFfa1VrUkhKdWtiQXJrcGxFU2E3U1htUnZ2QzBXZnR6M0U3czRsRC1hazhtVWIxTU53?oc=5",
+   "date": "2026-11-03T03:00:00.000Z",
+   "resume": "Télécharger Twitch (gratuit) Windows, Android, iOS Clubic",
+   "source": "Google Actualités · créateurs de contenu Twitch",
+   "categorie": "createurs",
+   "editeur": "Clubic"
+  },
+  {
+   "titre": "Le succès XXL de The Blood Island, le dernier projet d'Inoxtag - INfluencia",
+   "lien": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOVWxtZXh4XzdvTkNWanV3ZjRXcXVCdmVPYXBRc2RzN2RkeWt0R0dXOGh3NlJuR2V6azZWNVdTYWZVSDN5cjlfOFVWOVVORk9nYXNPX1BjOG40Sm52TWpvemNsUm9BcHcwWTU3ZnQ4cFEwVjI4MkVWMGNzLS1aOG9YX18yN0pXVzQ?oc=5",
+   "date": "2026-11-02T18:55:39.000Z",
+   "resume": "Le succès XXL de The Blood Island, le dernier projet d'Inoxtag INfluencia",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "INfluencia"
+  },
+  {
+   "titre": "Le youtubeur Inoxtag s’essaye au cinéma et décroche son premier rôle dans un thriller - Le Parisien",
+   "lien": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQU3FBcXI4RG1zNmJ2VExudHAtYkhwZlVFakRyem0wTVlDR3Q4anNWa2hLdUlLaDZvWnBwQ2tYRDUyeVM1WFBmQUNxV25BVlVrR25GRWJiU0ExTlBVMVV3Z3czUVZ5TERHOTZqVUgtZ25mTEgxdjNqZEtwTXB4cnpvMm1ReTd6UXNSRFhMVXkwSXU1WmwteGlucDBtVFpjTFN3aG9wczl2bGM0VVhkako2OU5HZUN4dl9tQS1zZ0l0a2txQWFHOFVUTGdKNGd5WEtZRmx0Z1lmSDFubjJ2bm9vZ2FVWHpURVNGbXIwWlQ4T05lQjlIdl85a21SS0ExZncyaU9zeVpR?oc=5",
+   "date": "2026-11-02T18:48:12.000Z",
+   "resume": "Le youtubeur Inoxtag s’essaye au cinéma et décroche son premier rôle dans un thriller Le Parisien",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "Le Parisien"
+  },
+  {
+   "titre": "Adobe offre un an de Firefly, Acrobat et Semrush aux startups : comment en profiter",
+   "lien": "https://www.blogdumoderateur.com/adobe-offre-firefly-acrobat-semrush-startups/",
+   "date": "2026-11-02T17:00:44.000Z",
+   "resume": "Adobe lance Adobe for Startups, un programme qui donne accès gratuitement pendant 12 mois à Firefly Pro Plus, Acrobat Studio et Semrush. Il s'adresse aux startups de moins de cinq ans ayant levé moins de 15 millions de dollars.",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "L’influenceur Inoxtag décroche un premier rôle au cinéma dans un thriller avec Juliette Binoche - Le Figaro",
+   "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQcEg0eFFuX2hTRGZBeHdXdmVwemlwLUl0RDI5Vkg2THJ3dWxiNkpnVVJZT29kbzE5RzRYd1Q5dUo5ei1EUzBxYnNBSWxEVGpWSEwtZkw3bWJEYUtnWWpaakpYWjZLZ2g2VmJTN0ZvUTZjamI3S2VHSFlKQ1FYRFZCZkE4X2pZWUgweERGbXZDeXFRaXYtSVJiazFJZm9ZbHBKTTVCQTVGT190blFSVGVjdE1QdDhRaTVySDdHTkFwQXBtNnBxNy1zVFN5RE1SdFh0?oc=5",
+   "date": "2026-11-02T16:05:17.000Z",
+   "resume": "L’influenceur Inoxtag décroche un premier rôle au cinéma dans un thriller avec Juliette Binoche Le Figaro",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "Le Figaro"
+  },
+  {
+   "titre": "Squeezie : Infos, Actualités et Setup du Youtubeur/Streamer - ActuStream",
+   "lien": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1fdFZjZ1o5VElKMkYyU3I5bGdCOXEtY0lsSDR4Zlprd3ZDRThNcURsczBGbnpWUkNpQld0ZHNacEdlUmIydVFsRmpISTRNdWF0MUE?oc=5",
+   "date": "2026-11-02T12:58:39.000Z",
+   "resume": "Squeezie : Infos, Actualités et Setup du Youtubeur/Streamer ActuStream",
+   "source": "Google Actualités · streamers et YouTubeurs",
+   "categorie": "createurs",
+   "editeur": "ActuStream"
+  },
+  {
+   "titre": "Inoxtag : 2 ans après le phénomène Kaizen, il va jouer son premier grand rôle au cinéma dans un film inattendu - AlloCiné",
+   "lien": "https://news.google.com/rss/articles/CBMifkFVX3lxTE40bERvd2Fhc1RQZUU2NE1JVDdhS1BITEJYY0gxaWRxLWlnbjJIVTlQaHJpNjlqQUdWNS1IYmdIaUxzUE8wbXpfQnRzd1FLUnlQRGViaW5feHZUYWU4V0hZWVVqSjcxMHcwQ2hud2dlSnViM2V3c0NLT3dLOG5Idw?oc=5",
+   "date": "2026-11-02T11:56:29.000Z",
+   "resume": "Inoxtag : 2 ans après le phénomène Kaizen, il va jouer son premier grand rôle au cinéma dans un film inattendu AlloCiné",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "AlloCiné"
+  },
+  {
+   "titre": "Insolite. Inoxtag dans un gouffre en Savoie : la vidéo cumule plus d’un million de vues en quatre jours - Le Dauphiné Libéré",
+   "lien": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNUU1Sa21lRHZmMV91T0N3djZyMXM5cmVnUUZHcktJMWhrcUJ6TUNvNUpSRE1oQXJkNFhGYzlrRnZFMGJZQlZ0YXFxNnNuSHloN2NhaUNaNTVvVUg2cEdWLVZGc2wyWG52QnFZODhnanRjNVowcHFuZk9kVThNXzRrQ2o0VllCQWlqSmd1ME5wNXJRLTNIdUNsTERHTkRpTUtKMUt0dmxsbkxGN3pZdk9DazdMUUJNNTQxNzRNNkNVVkRqVVNwcnFfWS1ualg1NEY3TnBENw?oc=5",
+   "date": "2026-11-02T10:24:00.000Z",
+   "resume": "Insolite. Inoxtag dans un gouffre en Savoie : la vidéo cumule plus d’un million de vues en quatre jours Le Dauphiné Libéré",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "Le Dauphiné Libéré"
+  },
+  {
+   "titre": "Comment l’IA change les règles du marketing d’influence, de la sélection à la mesure : la vision de Stellar",
+   "lien": "https://www.blogdumoderateur.com/ia-change-marketing-influence-selection-mesure-vision-stellar/",
+   "date": "2026-11-02T09:48:20.000Z",
+   "resume": "Analyse des contenus, recommandations personnalisées, prédictions, agents IA… De la sélection des créateurs à la mesure des campagnes, l’IA fait évoluer les plateformes de marketing d’influence. Stellar détaille sa vision et la nouvelle di…",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "IA : les meilleurs modèles pour le code et le développement web en novembre 2026",
+   "lien": "https://www.blogdumoderateur.com/ia-meilleurs-modeles-code-developpement-web-novembre-2026/",
+   "date": "2026-11-02T09:37:12.000Z",
+   "resume": "Grâce à Claude Opus 5.5, Anthropic conserve la tête de la WebDev Arena. Mais OpenAI, Google, Meta et Moonshot se rapprochent dangereusement.",
+   "source": "Blog du Modérateur (réseaux sociaux)",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Domingo Miotti, ouvreur de Montpellier, rejoint l’Italie pour affronter les Springboks à Turin - Quinze Ovalie",
+   "lien": "https://news.google.com/rss/articles/CBMicEFVX3lxTE4zeDItRzlRZ0Z3Y29YZHRkUkk2SHI2WFo4NmZmUjNlZWhCajg0bS1xNDRhRjlFdmNxa1FPM0RLbHkyNnpoOElKemFsVTJZMWNTSGpOeUlRS25SZDJKR1ZGdmNIX1RnbmgzRWJKdmpYVm0?oc=5",
+   "date": "2026-11-02T08:26:22.000Z",
+   "resume": "Domingo Miotti, ouvreur de Montpellier, rejoint l’Italie pour affronter les Springboks à Turin Quinze Ovalie",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Quinze Ovalie"
+  },
+  {
+   "titre": "Top 20 Twitch Streamers (November 2026) – Most followed channels - Dexerto",
+   "lien": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOR3FiRjJnYThCQTI1Zk56UmJ3bHhwWUFxS2J3QV9Ja1haSGl6UE16a1dtbHYzcXhqVkJ3MG5tZkVnSzV2X2dxR1VIZDJfdG5TdVhMSzQzcGo5b01CQkVBelVNVXhBc2MycTMtX2FMbmpTZE9CNnBWQzNwQnE1QUhjUnpxVVRXa1hjQWdz?oc=5",
+   "date": "2026-11-02T08:00:00.000Z",
+   "resume": "Top 20 Twitch Streamers (November 2026) – Most followed channels Dexerto",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "Dexerto"
+  },
+  {
+   "titre": "Séisme faible mag. 3.7 - 46 km au nord de Santo Domingo Zanatepec, Oaxaca, Mexique, Sunday, 1 Nov 2026, à 20:56 (Heure Mexico_City) - Volcano Discovery",
+   "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQU1VwYkdsWDk1dGtzUTZJOXVuTUo1WjNOMGZkUUNtY2pLemJhTE5RSVJJU1lMUGotUXg4Rk5JWm5NSlpMQjd3bWdGRG9iTlNSVlhDR1h1Z1lpRGtLeEpmTkNpRndPdnVtUVpCbXFJWExZNHpEYUFIUDEtRjVKMUR1WjdEZmhCbGJOT0tvOG4zaXpQS1ZXV3V3cV9sampVRVNDNkM0XzBSY0ZaYmVmREYzWlNBclgza1ZjbWF0YTVTaFFiN0ZQcWpOdW1xdHRQRlhI?oc=5",
+   "date": "2026-11-02T06:30:19.000Z",
+   "resume": "Séisme faible mag. 3.7 - 46 km au nord de Santo Domingo Zanatepec, Oaxaca, Mexique, Sunday, 1 Nov 2026, à 20:56 (Heure Mexico_City) Volcano Discovery",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Volcano Discovery"
+  },
+  {
+   "titre": "Absent pour des raisons familiales, le Toulousain Ange Capuozzo rappelé par l’Italie - Blog RCT",
+   "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdHQxdXM5Qlh0NnRqOHFpNkZ4N09rZ05uZjJqaFhZNEZJV1RUVk9MU09iUms2Y1pSRzlnMEpncGRDZnowM2pGUzN3WlJXeThwbVNpejhzMUFWT09BUk9FYXgzZEpLX3VndndQeTF6YTdXZFp5VXFBNUlRTFR6aWpQczduTGRHU2VNelZ2Ri1kUXZEUTliZVV6QndIbTdZdGQxcG5VTzByOTc4V1Jt?oc=5",
+   "date": "2026-11-01T18:06:00.000Z",
+   "resume": "Absent pour des raisons familiales, le Toulousain Ange Capuozzo rappelé par l’Italie Blog RCT",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Blog RCT"
+  },
+  {
+   "titre": "Convoqué avec l'Italie, l'Argentin Domingo Miotti peut désormais marcher dans les pas de Diego Dominguez - Rugbypass.com",
+   "lien": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQOXUwa3hDZGNXcTF0bWtaZVhCZjZwZFcxcGtKN19mbDdrMlV4VC1yanlyTTBaeU54UGdtVVZpYVVkeEZneUFNeHJyZzJDVzZpdXpPRGlScElHODN5ZkJVUHRQbjREN3BKQ0dEVGE3T2w1MERqWnFhd0FNcXM4akIzOFBNd0xBVTBTMVV0eG1CQWhQM3p6NXpTeHRyNUN6a2U1RlI5ei1ubjFBOTF0Y1dqVjMzSk9BTmN2clE2X2dBQVJvVmRJSFp3TnBIajYzZjhDeEE?oc=5",
+   "date": "2026-11-01T17:00:52.000Z",
+   "resume": "Convoqué avec l'Italie, l'Argentin Domingo Miotti peut désormais marcher dans les pas de Diego Dominguez Rugbypass.com",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Rugbypass.com"
+  },
+  {
+   "titre": "Sélection surprise en Italie : l’ouvreur du MHR Domingo Miotti appelé pour affronter les champions du monde sud-africains - Midi Libre",
+   "lien": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNX0pHYjhGek9vZXhPWVBCcUZxOWdTcDlybUJFSTRXOXVyeTBTazI4MkJIbWY2MVpHUXI3MEdFT3lUWUxGdF94WF9lR1pkMzVZSWNhSjJsdXJRRzRLeW5hN0dVMWJNbXFQRFRWTTNzRmN3VTNDVkFtUTFfUDhqQ1dES3phUXZzNHhlRnRYVzVLeTdLdlR5MHNXVVJPSm1NYmFKeDgtSGctWU8xNXBYNWRKbDJkYlR2UDhEYUZ3ZW95UHZhY1V4T1daOE9FdGp6cjJITmpCSUpYNEhpdC04Vk1udjRUTDE1a1hubnM0eWcxM0RIRW94UVJMeWlnMA?oc=5",
+   "date": "2026-11-01T16:24:00.000Z",
+   "resume": "Sélection surprise en Italie : l’ouvreur du MHR Domingo Miotti appelé pour affronter les champions du monde sud-africains Midi Libre",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Midi Libre"
+  },
+  {
+   "titre": "This Twitch streamer has the best production value of all time - Dexerto",
+   "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOam9yTnpqOXVnTkN0c0VmOWdHZlNwck1xbnhTMEQ1YXA5UVpkTk1hMVVwUmt5N1FxaUoySDNlN3JEa25NMzJJZzduRHpYQTVuZWFpMGs1LU91NzFIZWQ4N1VSM0NlUEs3Z2pfOGpueDMzVkl3eDFrYnFTOTlJbERqN2drdkJPVENwX2NveW55TkVXSUgtZUJqN1owMFNSb1dCaE9FVTZTQV9KNTd0?oc=5",
+   "date": "2026-10-31T23:28:19.000Z",
+   "resume": "This Twitch streamer has the best production value of all time Dexerto",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "Dexerto"
+  },
+  {
+   "titre": "Squeezie répond à une internaute qui l’insulte de « gauchi*sse » (vidéo) - Le Tribunal du Net",
+   "lien": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPdm5xN1B4cjJLUjUySHNLcF9jdmRfN1hXd1I5bHNRZnZ5a3huMFVTLUxnbk9vdUJKa0NNWEJLdzhCa3ZjQmt6N3dfRUNsM1ZveXJuR1FZR2t2YXpUQWY2NjQzT3JwT0V6MHpTcHVxWnRjWGJlNGU4c3pvX0ZPOW5pNkEySWE5ZV9oQ3EyNFpNZzF3QQ?oc=5",
+   "date": "2026-10-31T15:51:00.000Z",
+   "resume": "Squeezie répond à une internaute qui l’insulte de « gauchi*sse » (vidéo) Le Tribunal du Net",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "Le Tribunal du Net"
+  },
+  {
+   "titre": "\"On se tire une balle dans le pied\": le coup de gueule de Cédric Heymans contre les changements de règles incessants au rugby - RMC Sport",
+   "lien": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPT3plYy03V09QSFV3RHNnQ2lyWUR3MjBPZkpQMmpIb1dDOWVhcDgtWEtQbWVyVXI0U3UyX2RKU19xUHk4d2IyUkdwT0hPaWpScDZ4RDg1a18tdTFPMUFhOERkQ05QVG5rNGtjSjRXR2xkNGp1TWd0bEdNZFpzT1JPV0pENWdBeEF2aENrelVsY0NIU1ZpNEVSdV9Zci1VWFMzd1l5eVlkV2NGeUo2NkpqLWVWcXNhMm9CWC01b0IyVXMxbmlQandzb0s1Rk5qUzlWZjFMV0xPUEppSF9mV0xYNHg1UVR4anhuUEZsVmFpR3llUU5EU2FRT29SYkNTZVRQSlE3djNXd1NrRTRQVkMyZg?oc=5",
+   "date": "2026-10-31T12:03:07.000Z",
+   "resume": "\"On se tire une balle dans le pied\": le coup de gueule de Cédric Heymans contre les changements de règles incessants au rugby RMC Sport",
+   "source": "Google Actualités · règles, modération et sanctions Twitch",
+   "categorie": "createurs",
+   "editeur": "RMC Sport"
+  },
+  {
+   "titre": "The Blood Island : pour Halloween, Inoxtag dévoile une vidéo spéciale avec Squeezie, Michou, Amine et LeGrandJD - Diverto",
+   "lien": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOMUxmTXBJb3VNOUUzVi1fSjZjdmZqcG9rbTMwV2d2MVVTNjhSSy1SVjNqMThfZ3VWMTItMXBTYVo5QlEwN2p5VFgtVERuVlFXN1d4QmJRT2RCTlRZTGhJU2VuUEQ4bDBBd05QQXNIOWtUVTZENEFfMFVVZ3dJbXlsOVBCVTBhZ3VDbnE3djVCZVFNTjFzSTY3MC1lOFYzZjhINGh0LWh3dndCSVNobXd6QTl6d2U3djdvMGtoZWVwWVFTbU14TGpSZS1vZUdNc1dNU3pqd1VWc2c3UDRMUmpzTFJpd2hVOGw4d21DRllERVUxRHZ0eHNCZXkwaw?oc=5",
+   "date": "2026-10-31T10:50:00.000Z",
+   "resume": "The Blood Island : pour Halloween, Inoxtag dévoile une vidéo spéciale avec Squeezie, Michou, Amine et LeGrandJD Diverto",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "Diverto"
+  },
+  {
+   "titre": "Worlds 2026 : « Ne perds pas tes c**Illes Ibai » lâche Kameto avant le Bo3 entre la Karmine Corp et Movistar KOI - Team-aAa",
+   "lien": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOLXprSVh3RlZpdHpMZlpUYWhadnFNTmhkSmcwemt6UGlSZkRDeFdOU2d4ZXFBeHNNLTlaWm10TkhPN2NhdFRCeThDeEo2dEtqVEhMbUVOQ0l0eWNrOWlzWTUtNWR3ZkVNTURxOG1rSlQwdHhkbkptTjJGUmxiZ01yQ013OTJMbE1sbmpEZUlsVTFUZDdVbW1SVmE3d3lha1BGSFZkZ0I4UlNUV2Faamg3UDZfTDczXzAzVFppSElsdGRZNDc5Z2FwLWkzRjR0enVaNnc5di1DWEQ1U3lDdGptUTc4Vms?oc=5",
+   "date": "2026-10-31T08:53:14.000Z",
+   "resume": "Worlds 2026 : « Ne perds pas tes c**Illes Ibai » lâche Kameto avant le Bo3 entre la Karmine Corp et Movistar KOI Team-aAa",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "Team-aAa"
+  },
+  {
+   "titre": "Amine et Squeezie vont en découdre sur un ring de catch à la Plenitude Arena - sportmag",
+   "lien": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQTGdleTBHek9wdTFKdHBEcFV5Q2pJS05sdllranNfOHpyMU5WV0pvSVJ2elpTMjltbWtMV2RYbklZTUU3Z0F1ekNvNm9Xcjl6cmYwQlFyQ2ZXc3UzM1JaTEN6UHFwQjZsRG1KRHBjYmhzbzVrZGFqOVV0Sy1lTDVxMTZkWjNaWTNfZTdudnpIWjRrWHRUTy1TWE82MUJ6d2ZIS3pZ0gGoAUFVX3lxTE5XU29Mc29kLWp0cktwSU8wLTlsZGdranZCRFdia0JaY3ZuZGtRNHRCSm5vZXJyRW9wRGtrZkNVMmZrZ2o1MEhDUng2TUVRazdYTmRPbExPTENKSERTVmJvb2FiRGplbjF1am1lV1NDNk9oN3BaZUQ2M1pWN2Y3NEw5Ym1oeVlBQ0lOMVN1WlJ3TVdFTmdDMlp3RzZYeENVQ2hybHlxMGhucA?oc=5",
+   "date": "2026-10-31T07:00:00.000Z",
+   "resume": "Amine et Squeezie vont en découdre sur un ring de catch à la Plenitude Arena sportmag",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "sportmag"
+  },
+  {
+   "titre": "GTA Online Twitch Drops: Free Grotti Supercar Reward - Techgenyz",
+   "lien": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE4yaGNZWHBSSS1yWU1RSWszOGxhWEw1M0ZtZzJJUmpwRi1HOU5sNEMxUmdNTjloc0kwZVhBS0FOV3k4UU41VUhEcVlaV0NiWTlJRERNZ1pCMFZ0Zw?oc=5",
+   "date": "2026-10-31T04:21:18.000Z",
+   "resume": "GTA Online Twitch Drops: Free Grotti Supercar Reward Techgenyz",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "Techgenyz"
+  },
+  {
+   "titre": "Top 5 most famous permanent Twitch bans: Biggest perma-banned streamers - Dexerto",
+   "lien": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOWndDWnBqUFNDNEttTXZJZEwyTGdJdlNvTnFlYzdHbTBORHU3YXFCZ04xOGdXWG52SFgxUGVwWXJJOVpBT3JBNGFuQVhwcmxxZ09Mbm1oTlB2Q1pjOWw4SjJhRk1QckNFRWhQY0NWZUxYeWdjRTZlMzdPNjVqTUVXS2lGd3AtM3BlY1VubWI5SGNELXRNOG9Uc1dtUWU2QzBQb3pTN2JUNUFYcUJoYjJxdmJxRQ?oc=5",
+   "date": "2026-10-30T23:20:14.000Z",
+   "resume": "Top 5 most famous permanent Twitch bans: Biggest perma-banned streamers Dexerto",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "Dexerto"
+  },
+  {
+   "titre": "Top 20 Kick Streamers (November 2026) – Most followed channels - Dexerto",
+   "lien": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1Bc09vSTctX3BYU3NWYW1Dc3VVWVQxN05vT3d2Y0tDNV91eWl1emR5VWdvbGZ0RWtVZkoyaFZjdDcxaEtIOV9hSHhIYXBaRk9YT0oxaVlUSFR0SjdYT1VfUVRGODBpM0RnYnBMZjl0TWh4Uk5n?oc=5",
+   "date": "2026-10-30T22:35:18.000Z",
+   "resume": "Top 20 Kick Streamers (November 2026) – Most followed channels Dexerto",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "Dexerto"
+  },
+  {
+   "titre": "Worlds 2026 : la Karmine Corp qualifiée pour les quarts après sa victoire contre Movistar KOI - Team-aAa",
+   "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNOGc3SDJzcmFmUFBtbVo1Q21nSWU3OVNsNWpGejJfMWU4c0tzLXIxM0tWRF9palNvZThfdWRPNktQM0JKUm5DQWhuaDVJd3FtY21GUmZFN2x1a1o1VDFsWjY1UF9UUTlMNzNNeUQxVU5CVnRVRTMxZ3VqbmlqTDRDaE1tQm5mcFpTU0pGblRpYUhKaEtqNnZiV2FQSVN5VjljZllXRTZDOVY4Vmxi?oc=5",
+   "date": "2026-10-30T21:52:04.000Z",
+   "resume": "Worlds 2026 : la Karmine Corp qualifiée pour les quarts après sa victoire contre Movistar KOI Team-aAa",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "Team-aAa"
+  },
+  {
+   "titre": "[Podcasts] Le gros débat : Ultra-domination du PSG, faut-il des règles anti-PSG ? (Partie 2) – 30/10 - RMC Sport",
+   "lien": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxONVI5a1dIcVlWTFdnU1VmalVrRExUMkduOFhLOURNQVJpaGZUNHlsXy16emhZaHFyVTVtTVI2M3NPQ3JJZXhSVExYQUJlNkFVUnJTNlI1RGJGb0lCTllfZjNhQkxFRENuYjNhdkpIbzhYdW1NUmpJM3o0b2tCRXdUZk53VEFTcHhHYUZZVVdVTFRJNWNPc1hucDVBdDhQcWF6NkRlcGptM3ZxMVFLcXk5OGpvM3dYS1dCbERFNUNUMnRHcThHaUdCTnZXbWVlV0sxUlNtdFZuekpEX0RuWDlqR3VBZnowcThMOWpGakJNdnBIOTl2VXlj?oc=5",
+   "date": "2026-10-30T16:30:02.000Z",
+   "resume": "[Podcasts] Le gros débat : Ultra-domination du PSG, faut-il des règles anti-PSG ? (Partie 2) – 30/10 RMC Sport",
+   "source": "Google Actualités · règles, modération et sanctions Twitch",
+   "categorie": "createurs",
+   "editeur": "RMC Sport"
+  },
+  {
+   "titre": "Most Followed Person on Instagram (2026): Ronaldo Keeps Growing as Most Stars Shrink",
+   "lien": "https://passionfru.it/most-followed-person-instagram-166809/",
+   "date": "2026-10-30T16:19:54.000Z",
+   "resume": "Cristiano Ronaldo is the most followed person on Instagram, with 679.8M followers, about 162M more than Messi. See the top 25 as of October 30, 2026. The post Most Followed Person on Instagram (2026): Ronaldo Keeps Growing as Most Stars Sh…",
+   "source": "Passionfruit (créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "Twitch Splits Suspensions Into Streaming and Chat Penalties, Citing Data on Low Reoffense Rates - Net Influencer",
+   "lien": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPY0g5bHl4Vmd0WXkxbFJRZ1VyaVNRVldGbDlYbmRyOHYxM3VicENsbmg4Mzh5c2dVOVk1NEF3Q2xTQjh3SmJ4bjhOUmN4MG1oSzVfaV90YVlmbXFDWFFaYUpxVGtja2loWEVzTGVNa2NJWi1CUzloTXM5bE0wZzNTb1YzcXNOT0VxQ05uamg2clhIeFkxS2JweFh2UE80eGx3Z1BoZjFKS2pPSlBtU3dGbEl5clNRZnJLdk4xLXFSNDRQaTQ?oc=5",
+   "date": "2026-10-30T12:49:53.000Z",
+   "resume": "Twitch Splits Suspensions Into Streaming and Chat Penalties, Citing Data on Low Reoffense Rates Net Influencer",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "Net Influencer"
+  },
+  {
+   "titre": "L’ancien patron de Movistar Plus, Domingo Corral, revient sur son accord avec HBO et explique pourquoi une télévision de qualité peut aussi être commerciale - Mezha.net",
+   "lien": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQQkI0akFkdW5ET2tCbmVkWXhNUmRnbS1aTnFuamg1dDBrZzM0UVdDbFhseC1PQmxWV3NkU25JVnZ3dW40U2tyakluZ0U0UEVPUUZoXzNJQmhlU1FQU1dfWHl2bzBnQS1haUpaNkVUNWIxOHgxdGhGRWdHRk84dXk4TzgwRUt4anFocUxKeU5vdDZRRGY1?oc=5",
+   "date": "2026-10-30T09:16:18.000Z",
+   "resume": "L’ancien patron de Movistar Plus, Domingo Corral, revient sur son accord avec HBO et explique pourquoi une télévision de qualité peut aussi être commerciale Mezha.net",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Mezha.net"
+  },
+  {
+   "titre": "OBS Studio vs Streamlabs : Gratuit, 2x Moins de RAM [2026] - shattered.io",
+   "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE8zOFJMSUpmWHZaR0Nwel9zVEhKaEktRXJibWRkOHN4cnh2dEZoX2pSNU9VQ203T0lqVjFnTFJ4UHBXWWFVaEVpUUF0RmVTV21rQ2JONjE1M0plcS1tWGc?oc=5",
+   "date": "2026-10-30T07:00:00.000Z",
+   "resume": "OBS Studio vs Streamlabs : Gratuit, 2x Moins de RAM [2026] shattered.io",
+   "source": "Google Actualités · Twitch, YouTube et Kick",
+   "categorie": "createurs",
+   "editeur": "shattered.io"
+  },
+  {
+   "titre": "Cinna and Deshae Frost Tease Moves to Kick | Latest Details - WIN.GG",
+   "lien": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1TNXAtM3hXQlpqcmhTTzNDUzFEN2hmMUYtZEgxZXhyQzYxd0ZIWmg1WVdtNjU2WG1FZFVlcmo2UDB4WlU3c09GVVVPeTZqNjRrMmE3T2Jn?oc=5",
+   "date": "2026-10-30T07:00:00.000Z",
+   "resume": "Cinna and Deshae Frost Tease Moves to Kick | Latest Details WIN.GG",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "WIN.GG"
+  },
+  {
+   "titre": "Livestream viewership records: Highest peak viewers on Twitch, YouTube & Kick of all-time - Dexerto",
+   "lien": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNbFk2WVdFbWExQVgtVFNuOUNLczA0MWRmOUltYkN0SnlQOXFRdkI5Nmd5TWNueVV3SExnQl9UdVFvcEZ5cUZEQk1aWkpfNjBUdll4SG5zVHpZRTExYm04LUZXeWNiYUJFWnVnY043Mi1CaVE1UjVWeDJQb1lJVE5kSGM1Z1BVZG5vZlZvU1RjR1ZTUm4tWDlsYjl0SW1VQmhGUW9McU1iOVVQcV81bk5RcmVpaw?oc=5",
+   "date": "2026-10-30T07:00:00.000Z",
+   "resume": "Livestream viewership records: Highest peak viewers on Twitch, YouTube & Kick of all-time Dexerto",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "Dexerto"
+  },
+  {
+   "titre": "Why has Hasan been banned by Twitch? Streamer responds to controversial ban [UPDATED] - Dexerto",
+   "lien": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdnFJRHpVMUI4c1ZSNVI4Ql9zendpUXFUMlp4bU9Wb0dTenNaWXFSd3FOTzZvYjlzQkVxaEtzX2VwUkdSQXZpNmlFVFc5ZGZwZ3d5VmpkUTk4ekV5QVFEeTBjNHJFbEVCWDVGXzhSTVlwOE9HdkJ4OTdiSTRldnJidDZXQTNEYXZON190b2pqMWhDaEk5T1phRmZ5Q1daOHV1RGhyWVJiVWNVa3p2WnFLdTA0WXQ2WlFaVFlEMA?oc=5",
+   "date": "2026-10-29T18:48:10.000Z",
+   "resume": "Why has Hasan been banned by Twitch? Streamer responds to controversial ban [UPDATED] Dexerto",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "Dexerto"
+  },
+  {
+   "titre": "Télécharger Kick: Live Streaming pour Web, iOS, Android - Telecharger.com - 01net.com",
+   "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNajQ2Y2hJZk5GRVRjRlhzTjJhQlVhdU9QME1QdWQ0RTNYal94SWpLYXdIVjkyQnFJd3FUQnpHV1BZMHZJUW1jeFA1Z3VHMEswQkNKTlBrZGdkZUxycTIzRzZWSk5BemduMXhCMDk0emMwWTAtb0JCOGdLMWttS2ZOT2FSNjRZYWZ1QkRsakhRZTFlcW1qelo4U093?oc=5",
+   "date": "2026-10-29T07:00:00.000Z",
+   "resume": "Télécharger Kick: Live Streaming pour Web, iOS, Android - Telecharger.com 01net.com",
+   "source": "Google Actualités · Twitch, YouTube et Kick",
+   "categorie": "createurs",
+   "editeur": "01net.com"
+  },
+  {
+   "titre": "GGCON: onKOL Brings TwitchCon-like Experience to Creators and Online Communities - Gadget Pilipinas",
+   "lien": "https://news.google.com/rss/articles/CBMic0FVX3lxTE13dGY4aUdQMVR5OUJaMi10RWp0UHlZTHpWYk12ZHlFZ0M2T0VSYUlCVjZHQWxOMGVxUUc5YUJXTDNLTHZsbS1PeTVoRlI2ajhvQy1PUGptWklVN0VMY2pVS2NwX1d4aUU5QTNKTXVmeWF3SEk?oc=5",
+   "date": "2026-10-29T07:00:00.000Z",
+   "resume": "GGCON: onKOL Brings TwitchCon-like Experience to Creators and Online Communities Gadget Pilipinas",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "Gadget Pilipinas"
+  },
+  {
+   "titre": "L’invité mystère de Zack en Roue Libre était… Jiraya - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQcXVqNU9fYldwdTVkaDZQaTQ1V2dTcENGNXpZV0QzWjFJMWtRMnNTcmJoNGRwMEtzSW9oYl9aWXpudWoxWlk3UW16SlkwcGpGNFBBVlhZVlJQbXBxVTJST3IyRUFHYl82RTFtQ3FkRm1qODV0RGFCQ2tfREJDYjVxYnBTQmpEVDlmQXh0SGxLMA?oc=5",
+   "date": "2026-10-28T17:30:28.000Z",
+   "resume": "L’invité mystère de Zack en Roue Libre était… Jiraya Dexerto.fr",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Maghla va lancer son émission spéciale horreur en studio - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxQamZfZG4yTml3cFVGcGR3UlhwcXVYd1Etbko5a2lxMEZmNjFPOVl2cGthVEVBUTlSM21fQnVTYWxkUk12QWVBbXZZeGRLcy1Uc2pMQXIxbDBRYnZzb2xUSmwxZHVmUnhBclAxR1lQX3pKZDZTQ2J2WTBIaDlRWE15MkZYUDcwWlZzMkdwMjJhU3B0YVk5SDdJUHNXTnBiQQ?oc=5",
+   "date": "2026-10-28T17:30:28.000Z",
+   "resume": "Maghla va lancer son émission spéciale horreur en studio Dexerto.fr",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "DominGo révèle les deux joueurs qu’il sponsorise pour la TrackMania Cup 2019 - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQWkJyTUNxS3h2QXVvQkFiSmFMUVlnOHF2TjRseFI1dlAyUVNqdjhoTFhOUW9teXFOTnVES0pVQ1VHUGFmTUR0czM4aXlTbnZBNTR5VlRvbkFWS3B3bzZPelg0LTdHZGF5VEtIT2F6RUliQUtTdEtkZ2g3ZFNueUlBclNrY3IyelBJSUM1d0VDTEp6aDFINVRhSlpUbUFBenZ5ZHJXQzdqQQ?oc=5",
+   "date": "2026-10-28T17:30:28.000Z",
+   "resume": "DominGo révèle les deux joueurs qu’il sponsorise pour la TrackMania Cup 2019 Dexerto.fr",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Die besten Omegle-Alternativen für Erwachsene zum zufälligen Video-Chat",
+   "lien": "https://passionfru.it/de/die-besten-omegle-alternativen-166382/",
+   "date": "2026-10-28T10:51:52.000Z",
+   "resume": "Nur ab 18. Für Links auf dieser Seite erhalten wir möglicherweise eine Provision. Seit November 2023 ist Omegle offline. Nach 14 Jahren hat der Betreiber die Seite wegen rechtlicher und finanzieller Probleme sowie wegen Missbrauchs abgesch…",
+   "source": "Passionfruit (créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "Cam2Cam Chat, Cam2Cam Sex und Cam2Cam kostenlos: Was gratis ist und was Geld kostet (2026)",
+   "lien": "https://passionfru.it/de/cam2cam-166376/",
+   "date": "2026-10-28T10:18:32.000Z",
+   "resume": "Nur ab 18. Für Links auf dieser Seite erhalten wir möglicherweise eine Provision. Cam2Cam bedeutet, dass beide Seiten ihre Webcam einschalten und sich live sehen. Der Begriff steht für zwei verschiedene Angebote, und wer sie verwechselt, z…",
+   "source": "Passionfruit (créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "Kai Cenat Net Worth: How Much the Twitch Star Actually Makes",
+   "lien": "https://passionfru.it/kai-cenat-net-worth-166668/",
+   "date": "2026-10-27T12:57:44.000Z",
+   "resume": "Kai Cenat's net worth is usually put at $35 million to $45 million, but nobody shows the math. Here's what Forbes, TIME and his subathons actually tell us. The post Kai Cenat Net Worth: How Much the Twitch Star Actually Makes appeared firs…",
+   "source": "Passionfruit (créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "Placido Domingo a invité Nayden Todorov à diriger l'Operalia à Shanghai - БНР Новини",
+   "lien": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPdklpSnU2em9GZzg0Wl9kaFk0aGFDcWZLdXhhUEVpdVB5SGp6MnhtZlR0Z3E4QmdXQmE2b3lQdHAtaGN4ekxLMGN2bDc1NGpqQy1DZEdQOHk3d3RlTVhOWVlJU3FBeWVPWUhrNEJkd19KTTctdGk0NGxQb3F1UlJnVFBEQzRMakpYV1dRSU5YbkhXWUx1d2pwQ205U0VCLWgzRE9CNEdvQQ?oc=5",
+   "date": "2026-10-27T11:43:07.000Z",
+   "resume": "Placido Domingo a invité Nayden Todorov à diriger l'Operalia à Shanghai БНР Новини",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "БНР Новини"
+  },
+  {
+   "titre": "What Is a Performative Male? The Matcha, Tote Bag and Clairo Starter Pack, Explained",
+   "lien": "https://passionfru.it/performative-male-166662/",
+   "date": "2026-10-27T10:24:38.000Z",
+   "resume": "A performative male is a guy who takes up \"soft\" tastes like matcha and feminist books to win over women. Where the meme came from, and where it went. The post What Is a Performative Male? The Matcha, Tote Bag and Clairo Starter Pack, Expl…",
+   "source": "Passionfruit (créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "Charted: Where Social Media Audiences Skew Male, by Region",
+   "lien": "https://passionfru.it/social-media-gender-by-region-166656/",
+   "date": "2026-10-26T23:35:41.000Z",
+   "resume": "Men make up 54.4% of social media user identities worldwide. Only three regions have a female majority, and the gap is widest in Southern Asia at 65% male. The post Charted: Where Social Media Audiences Skew Male, by Region appeared first…",
+   "source": "Passionfruit (créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "What Does Rage Bait Mean? Oxford’s Word of the Year, Explained",
+   "lien": "https://passionfru.it/rage-bait-meaning-166643/",
+   "date": "2026-10-26T12:09:51.000Z",
+   "resume": "Rage bait is content made to make you angry so you'll engage. What the word means, why it works, the TikTok \"rage bait questions\" trend and how not to bite. The post What Does Rage Bait Mean? Oxford’s Word of the Year, Explained appeared f…",
+   "source": "Passionfruit (créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "Sophie Rain Net Worth: What She Has Actually Made on OnlyFans",
+   "lien": "https://passionfru.it/sophie-rain-net-worth-166633/",
+   "date": "2026-10-26T08:55:39.000Z",
+   "resume": "Sophie Rain has shown $110 million in gross OnlyFans earnings. Here's what's left after OnlyFans' cut, what she says she's worth, and which numbers to ignore. The post Sophie Rain Net Worth: What She Has Actually Made on OnlyFans appeared…",
+   "source": "Passionfruit (créateurs)",
+   "categorie": "createurs",
+   "editeur": ""
+  },
+  {
+   "titre": "Qu’est-ce que Twitch et comment ça fonctionne? - Proximus",
+   "lien": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQY3E0QVgwNVpTVDF1T2cwenI5ZkFJSDFBNG1HWTNDUkJjcXdNTXZJRUYwVEN0bFpTTG9ZTGJsZW1nNVk2bWIyalFPSlpNUlR3QTNjZk04c0U1VTZLLUpuSThaOWhEWVZ6TEFkTkQ2dmluV255eGdWSVlFb1FKZFlJUGtn?oc=5",
+   "date": "2026-10-26T07:00:00.000Z",
+   "resume": "Qu’est-ce que Twitch et comment ça fonctionne? Proximus",
+   "source": "Google Actualités · créateurs de contenu Twitch",
+   "categorie": "createurs",
+   "editeur": "Proximus"
+  },
+  {
+   "titre": "Meurt Komanche à 30 ans : qui était le streamer qui a propulsé les Squid Craft Games avec AuronPlay et Rubius - Demócrata",
+   "lien": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOV3NnUjBPSUgtdVk4UHZBMXlPYXdDV2pZVXVwWmVTVkdlb1JWclB6QklqYmlvNE5fU0lvejV5U1NZN3hRV2N1UTd5Z3NhTWlGSVNtSEtCLW1Zc2d6U284MUJKdlRDcDFOSWM4OUdDZUtSLWdTeGxjeVVhZkJYQ3hJeExrbVZHVHJJR2JXblg3czdrVDNVcFJIOW9CX1FfYmlUaWxUWlVXOGhmdDAtZVgxQ0oyNW0xSWczN1ZPZmRPckk1dnE0NEhZ0gHMAUFVX3lxTE5kQjE4OXRiMTU5d1RjbUVrZ0VHZEJuU09yeFp2MXhoT1BvVl9wMWE3SmxlWXV1bU9ic2NyaU9SRjZaT2hWbFRES29ueXlWNFdOdEduWHlqa2ZwVWlQcU9lMktTOWIzbGNRQXlUOURIbjludVNGZS14dTJidkNXUTRiUmNaWWtKMjFpMk5fZzkxNjdfQi05ZXdEUFVVcG10c3pzd0liOVNKOWJpXzVMdDR1Z1Fqbkh5eDFxcXZFVnc3UUlVOTFYS19WWFgtOA?oc=5",
+   "date": "2026-10-26T07:00:00.000Z",
+   "resume": "Meurt Komanche à 30 ans : qui était le streamer qui a propulsé les Squid Craft Games avec AuronPlay et Rubius Demócrata",
+   "source": "Google Actualités · Twitch, YouTube et Kick",
+   "categorie": "createurs",
+   "editeur": "Demócrata"
+  },
+  {
+   "titre": "Sonya Yoncheva et Domingo Hindoyan à la conquête des États-Unis - БНР Новини",
+   "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxPNEZBd0c2WG9ILXF4WmdyVG93R0N1OGRnWm1BcVNQVjM1cm1WSVJyMVZWUDFlZHo2bkJWQ3gxR25FNHota2xoRmpYUmc5blRXTm1UaWtlWGFVb0ZUR0FBREJSTmtybENCRnBMczk2M3k1eG9YT0NvV3p1MHhieHU5N2l5RWVsd0ppRGhpZnplUkFwb2JWWHFBMlYyVGpSZw?oc=5",
+   "date": "2026-10-25T11:00:00.000Z",
+   "resume": "Sonya Yoncheva et Domingo Hindoyan à la conquête des États-Unis БНР Новини",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "БНР Новини"
+  },
+  {
+   "titre": "\"Un mariage de raison\": des Bleuets avec Zack Nani à la NFL avec Domingo, comment les créateurs de contenu s’invitent dans la bataille des droits sportifs - BFM",
+   "lien": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxOM3ZPc3dVNndsbk5iWGNLY3p1Q0dta0EzSTRHZ09rMWlTM1VtYTc5OU5VUEREaC1QWDJ3cjV5andtaEI5am9HTHRRcl9CSnhsYWVRaktyUktmMTVFcmdJa0FJOGJJcmZhV3JFaUpWVXRzLWJ3VUJfdzUzaVJnbGF3WHFZemJPS3pGZm5DYjZpZ1A2N3ByTVljUEVqWXlLY3QxSk5kU010emhyeU9ycmVFcERwdTlNOXF1dDlIeVdrdUYyNlBYUjg0YU1NU3BmT3ZPQkk4cU5lOU53aDNWRTZScmdlZ3pKVDFoQUprd04xd0lkRVFNWWxzUmVRUVZpbzA0UXQ5dk9mM1VJbUE1ekozQ2xtc1BYZVowQldEZHlaRnY4VlVRbVpGRVd0M3dmazA5bGg2dk12QmpKQVotVnA2cVFTSmg0cjV3?oc=5",
+   "date": "2026-10-24T07:00:00.000Z",
+   "resume": "\"Un mariage de raison\": des Bleuets avec Zack Nani à la NFL avec Domingo, comment les créateurs de contenu s’invitent dans la bataille des droits sportifs BFM",
+   "source": "Google Actualités · créateurs de contenu Twitch",
+   "categorie": "createurs",
+   "editeur": "BFM"
+  },
+  {
+   "titre": "La nouvelle carrière de Dele Alli sur Twitch : le virage de l’ancienne star de Tottenham tombée dans l’oubli vers le streaming en direct est-il une alternative viable au football ou un motif d’inquié…",
+   "lien": "https://news.google.com/rss/articles/CBMi8AJBVV95cUxPclkxTnlmdXRqOXVOYXFnYVVZX01Tc3NvNmhjOGlRNEprbVhvME9XbkNXanBxdlQ4Uk15ZWlNZW5aVXRVOXVoRlNzaTlrbnpJeDV2WE14TFR2ejBOTno0RGpJOUd1RzdmQVZRcXh5WjRveVpoSy1COFdXY2NuOHVubWozaXQzRDU4MDc1eEM2bmNmZDJjT0tTQUVvek9VQjRuX3I4NXl4UGVvbGE3bWxKWGhDRDl0NmlpT3RfUHlmVHNaWW0zRUdzamFhZS1DdTBlUWhDNnc0dV9ncm1xTFZyYm5ZeW5XWGM5eGxVZE90dFpSWjBfeF9uZ1FPSzN3M0xJN1JpUTJnRmVCUG5Pa2M4UnQ1Tmx4RVZqVi1TbWptZ2xoYUJfNmpDUWZRZXVSY3lXb2JfVWo1a2RJazdzTVdfaFlVaXNWNTVPQnkyUUN0Y0JPSUZvazczOVFGRXJsREpOWGFUaGpqOUp3UjlUNW9NQQ?oc=5",
+   "date": "2026-10-24T07:00:00.000Z",
+   "resume": "La nouvelle carrière de Dele Alli sur Twitch : le virage de l’ancienne star de Tottenham tombée dans l’oubli vers le streaming en direct est-il une alternative viable au football ou un motif d’inquiétude ? Goal.com",
+   "source": "Google Actualités · monétisation et revenus des streamers",
+   "categorie": "createurs",
+   "editeur": "Goal.com"
+  },
+  {
+   "titre": "NFL Paris Game : Le streamer incontournable Domingo va diffuser le choc Steelers - Saints en direct sur Twitch et YouTube - Tavu Radio",
+   "lien": "https://news.google.com/rss/articles/CBMid0FVX3lxTE96clZRRFVxbEg2OUNMX0dmNmJfNFdiUERKVXp5SzU3U0xoeHJpUW5mdF9MS05zSGtMam5rU1FUSGVMQmRpdTNpSTBxQnBuVXhvQkp0TkNmQmg3REpzOEVQSUJJM3VveEk1RXlZMnJJbmE0S1hobklz?oc=5",
+   "date": "2026-10-24T07:00:00.000Z",
+   "resume": "NFL Paris Game : Le streamer incontournable Domingo va diffuser le choc Steelers - Saints en direct sur Twitch et YouTube Tavu Radio",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Tavu Radio"
+  },
+  {
+   "titre": "Mort d'un célèbre influenceur de 30 ans : il s'immole par le feu en plein direct sur Twitch - Voici",
+   "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPRnJGMHhtQlJHcDZMdTZBMU51blJWT0VfRDQyMG5kY2lidktzSlU4YjIwRjQ3VzRCQjNfdkZOZmRUZW9hQ05sWUZaVkRLUXl4dTJta1lrN0tRWTFyWDVscGE5TkNVdGZEM3ltNDNCX2xjbVJwTTQtWjBtWWNDSURIN29WZzhXbDlhTGhMSExDOUJhc25IWGJiYVBaWDl4d3VKQlJXZU5lRHJjanhxbmlYUHJpWU1vbnZzQ0lpd0NJaWdiRldoM0hzMHp3?oc=5",
+   "date": "2026-10-22T07:00:00.000Z",
+   "resume": "Mort d'un célèbre influenceur de 30 ans : il s'immole par le feu en plein direct sur Twitch Voici",
+   "source": "Google Actualités · streamers et YouTubeurs",
+   "categorie": "createurs",
+   "editeur": "Voici"
+  },
+  {
+   "titre": "Manuel Otto, créateur du jeu « Stick Run », s’est immolé par le feu en direct sur la plateforme Twitch - Le Parisien",
+   "lien": "https://news.google.com/rss/articles/CBMimAJBVV95cUxONTN3Tlo0Z19GUmh2WHR1WXRBc2NFQXQ2X3VvV09WUTVvaWI3WlJtVnhaVm9lSFB3X2tFZE9pNnEwVTR5VENyRGxWME1RSzg4d2VfQ043VmhvTExLY3UzeXV6T3VZWTlyOHQxcEtzalpkcnJwZ3FpY3BPQ1oxamU2aXA4OVlwYjQzdWVLUzd1RWhqOFM3V05HOVBOc2gyMUZGWTdubUhfanp4bmNrZFo4ZUZLcDVLaTJNMHVSN0NoTjhKeEdxZU4xanBqbGtQZ1lwcHRiTFZ3TmFrS3ZYWXp6c3hIQ21CQnVWQmdqVlh5MXlrdldzNVE4UjhZcVh2aTZqdFdMTHlIMmcxNnpaYTJyc250aVVENUho?oc=5",
+   "date": "2026-10-22T07:00:00.000Z",
+   "resume": "Manuel Otto, créateur du jeu « Stick Run », s’est immolé par le feu en direct sur la plateforme Twitch Le Parisien",
+   "source": "Google Actualités · streamers et YouTubeurs",
+   "categorie": "createurs",
+   "editeur": "Le Parisien"
+  },
+  {
+   "titre": "Allemagne. Un influenceur de 30 ans s'immole par le feu en plein direct sur Twitch - Le Dauphiné Libéré",
+   "lien": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNLWxacVFUYWRsQjlsaW1vYk80OWFFNVMzMl9vbDVOTzFuWmc3QWFCU2VJdldXTlRHc3BOUUV0Q3VDYnhBQW5nLTg4dXlmcGhEY0hSd1R1RkxtNEhGUElTZlNhM1RtMlFicmFOUmNqUXFsM1JzREFLbXZYYlV6UVRMbU8yVWxZZVpTeEExNEdzZ2NTWUJqQkFhSXhqeURsSzhiWkVoQl9Bd09VdDQ0anVvc0VPUnMyQnVP?oc=5",
+   "date": "2026-10-22T07:00:00.000Z",
+   "resume": "Allemagne. Un influenceur de 30 ans s'immole par le feu en plein direct sur Twitch Le Dauphiné Libéré",
+   "source": "Google Actualités · streamers et YouTubeurs",
+   "categorie": "createurs",
+   "editeur": "Le Dauphiné Libéré"
+  },
+  {
+   "titre": "Le “streamer” Domingo diffuse le NFL Paris Game sur Twitch et YouTube - Ecran total",
+   "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQcFNaRVNzOFIzODJyQmNEcklublRha1Bnd2lnNk1ndk5lRXVJcThEQ25yUlVQdVBpRHJTMW5vbzR0NjViREN3SFpNZ3NEbUpOVEdVMmZNX3p0X2ZpSXdiekZpTVNCYmZUSzZiSnNMYTYtTmJvU3p5QkRiVzhFQ25yQnc1aHdibDA3QXgtaFkxUWgxWVItOExKSENaVmF5WlpqU0pkMA?oc=5",
+   "date": "2026-10-21T07:00:00.000Z",
+   "resume": "Le “streamer” Domingo diffuse le NFL Paris Game sur Twitch et YouTube Ecran total",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Ecran total"
+  },
+  {
+   "titre": "S'abonner pour obtenir des badges de chat Apple TV et Ted Lasso - Twitch Blog",
+   "lien": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeENIdFhKUm1KV3NNTnFFZ3JQNm13SjA4em1JV2ZUMmZuckdJZVhvUzVYaFV1d2RwRjY1TnowcFBOWkc5ZlM1QUFpYkNYU1MtdlplUDRSd2lfcFdueXZyVmt5YUhpRGNReEc4SHRad3c3VUs0YmNxaUZzYnF2bGh5V0plSmt1X0w4Sm5R?oc=5",
+   "date": "2026-10-20T07:00:00.000Z",
+   "resume": "S'abonner pour obtenir des badges de chat Apple TV et Ted Lasso Twitch Blog",
+   "source": "Google Actualités · monétisation et revenus des streamers",
+   "categorie": "createurs",
+   "editeur": "Twitch Blog"
+  },
+  {
+   "titre": "Andrea et Tatiana Casiraghi : après des mois de discrétion, le couple réapparaît ensemble en Colombie - Point de Vue",
+   "lien": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPbWI3eDZQSFF3clhNdzNZU3JrQ3dISVM4NDJKdmRmWWRJVnRZNlRRbzE2d3hoeV80b1pkQTFRaVlHdHl1LWJjYnVKS0RjS3NocW9fcjd5S1AtdVJzNF9mQ04zSDRGV09RbVZqb3lrRTdCa2xmRWNYc3pIOE42blFtbU9BcEh5djhDSlNySUNvczRFcHppTlhtZVpBVm5jUGE0a0ZKaU9NREU0elFyaVZ0b1JsWU96MGJNOV9ncTQyMm9aVHFXblZEVHNvMVMzdTBmVUdj?oc=5",
+   "date": "2026-10-20T07:00:00.000Z",
+   "resume": "Andrea et Tatiana Casiraghi : après des mois de discrétion, le couple réapparaît ensemble en Colombie Point de Vue",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Point de Vue"
+  },
+  {
+   "titre": "Domingo obtient les droits de diffusion du premier match de la NFL en France - Les Gens d'Internet",
+   "lien": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaXg3Y0FWVld4eWo2Yl9QRVN2ZENVWUptQlZQWm9GMEVIcHdjUW9DRWYtc0txU2VpdWN6d3JQUjdIclpNZ1lNSTVLS2JubEU1eTlDQS1OdmF1UVBlS0dSSlp5dVBWLXk4RVhxeUVmV2lva0hFRFlXc3k1SmF4RVRzbjNORXg1b2xONlVMYTRDT294VzN1alRvTkhCTERvVlYwSlQyN2xrSGdoZjlxR2xwR1RsUE3SAboBQVVfeXFMTW9OVGg5Z0Fkc0k3T3V1MS00b2pzSGtzNzFxT2F1bEpnbWFWYUZ3VVpQYXJuMk5fRGNod2NSVGVwWjN5UlFWWU4tLUgyNk9meDk4a3VxTl96MTBNSVRrWUxCcHdNVVpRS004eVo3YnJjQlVORjIxb0dYNGt4VTVvYkc2bEYwYjlpMHVrLUQ0bVg4VGhXc2RYaWxQQmFtTUFibmg1MkhkMnRmUXNKaVQ2UFNQQXF6aUJpZ2NB?oc=5",
+   "date": "2026-10-20T07:00:00.000Z",
+   "resume": "Domingo obtient les droits de diffusion du premier match de la NFL en France Les Gens d'Internet",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Les Gens d'Internet"
+  },
+  {
+   "titre": "NFL à Paris : Domingo va diffuser le match sur Twitch et Youtube - Touchdown Actu",
+   "lien": "https://news.google.com/rss/articles/CBMinAFBVV95cUxONHE3dVI4ZjVBWTQ3aGd5QUFzWjZ6XzRuVnlON1ZOUFZBVThvcHVIdzA5V1hoUTJyYnM4WDBxZktxU3VEV3psYllkZEg3RnlqWEE2dDByZVpiSnFubGpQWGMyOEY1RVNSeGJRRFF1ZTBfUmdlbWlsSk50MnE1MUJpUDBvNUJzcFdidDJYQ21XdG9ueHVTQ05nTFFoaUU?oc=5",
+   "date": "2026-10-19T07:00:00.000Z",
+   "resume": "NFL à Paris : Domingo va diffuser le match sur Twitch et Youtube Touchdown Actu",
+   "source": "Google Actualités · streamers et YouTubeurs",
+   "categorie": "createurs",
+   "editeur": "Touchdown Actu"
+  },
+  {
+   "titre": "YouTube Live ou Twitch : la valeur des rediffusions - quasa.io",
+   "lien": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOLVNsMExPY1A0NkJ0blRZWmZXWkt1eWVZLTJiN0hFZ1V6TFVvcWJ6NHFLOG5wdWVtdV92d1NDbjE3Z3J1N3RSZUEwejRCOHdtZWxzakl0S0EtTU1jSlo4ZFJMTmozTWhPdjV6SXhVbnhSUVBFSkRGSFlKZ1hXZUVTRGJEUm4tZjBVVGY3Y21kX1pFOEZxZF9Sdg?oc=5",
+   "date": "2026-10-19T07:00:00.000Z",
+   "resume": "YouTube Live ou Twitch : la valeur des rediffusions quasa.io",
+   "source": "Google Actualités · monétisation et revenus des streamers",
+   "categorie": "createurs",
+   "editeur": "quasa.io"
+  },
+  {
+   "titre": "NFL Paris Game 2026 : Domingo diffusera le match Steelers – Saints en direct sur Twitch et YouTube - Sport Buzz Business",
+   "lien": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOZW5NQm1QU3N0MHJnaGtOUG5JdWNFaWJJVFJLWmVDZVV0elZUS2FPSFI4NVVjRDk3dnRodUxPdVRFZHpOSGdqc3I3SFM2S2h6anRnWm1KOFJqVWN3TVpqYnh4UzlZenpnSndJNjc5eExXMk5SODEzcUlVVkJLd0dSQ1Y4QXRfSDYzV2hMc0t2NHBoU3FnQnhOcDI5TXBqd29ZQ1REa1BVNEpDRHBCRlBLXzFnWVIzd3dYTnQ2Z1huMkJJQW8ya0g0QW0zLS0?oc=5",
+   "date": "2026-10-19T07:00:00.000Z",
+   "resume": "NFL Paris Game 2026 : Domingo diffusera le match Steelers – Saints en direct sur Twitch et YouTube Sport Buzz Business",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Sport Buzz Business"
+  },
+  {
+   "titre": "Votre aventure Pokémon continue : les évolutions et la famille Ectoplasma débarquent aujourd'hui - Twitch Blog",
+   "lien": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBSYkpTN2o4aXQxZnh3emZjYU1UOEtrc2VTRkhLS1pFbmxjeWJEN2dhQTFuU3BYZC1EdElwYjJjVTFpUVpiOTQwRmpnTWFQTVZNbzRpZWIwM3hiOGNBUDV0amt3YnVibnZjVU1hdC1uOGlaZkZpS2oyb09DN3dFZw?oc=5",
+   "date": "2026-10-16T07:00:00.000Z",
+   "resume": "Votre aventure Pokémon continue : les évolutions et la famille Ectoplasma débarquent aujourd'hui Twitch Blog",
+   "source": "Google Actualités · monétisation et revenus des streamers",
+   "categorie": "createurs",
+   "editeur": "Twitch Blog"
+  },
+  {
+   "titre": "Une génération manette en main - La Vie éco",
+   "lien": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBDRUhtTXZVS1pXSE1vZEpXdnFWWmtmVnlXV08zVkprUi12T21PWnhhbm9mNHJsTkZOWEptTXZ0c2dmcUN3dngwZFMzb0JRZl9zcWtCd184VmxUQ2VzclA0ZTNGbkREaUpjQ1ktWGdjanhpeF9xeWc?oc=5",
+   "date": "2026-10-16T07:00:00.000Z",
+   "resume": "Une génération manette en main La Vie éco",
+   "source": "Google Actualités · Twitch, YouTube et Kick",
+   "categorie": "createurs",
+   "editeur": "La Vie éco"
   },
   {
    "titre": "Streamers français les plus suivis en 2026, notre sélection - Gaming Campus",
@@ -1046,6 +2849,24 @@
    "source": "Google Actualités · Twitch France",
    "categorie": "alerte",
    "editeur": "Gaming Campus"
+  },
+  {
+   "titre": "The Division 2 : drops Twitch de l'événement Lune rouge déchaînée - Ubisoft",
+   "lien": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPeVF1QzgyLVQ1aGJHZEJtT0tnVnVmT2FSa3UzNzlzOXVMby1XUnJ5ZDVvVUVDeC1KUXJ5RnBGTUZ5bEVjcGlhZGh1RUZWcFR0NjEwaVRla1VsV0wxVW1VY3pweGo0QVRlVEpsMzJQdHdCN1dkeVZKY05HYktYZDA3SWY4Tko4bHFESHVJSHdHVWxmU0h2MWFJY1R2aHl6VUJkRGRmWTFZcmFVamtvamRiYkN4WkY0OHYtcXBYZHFoM2NKM3RYZHpiY3JKTHZqc3NsSXd0STNXbV9pRURRTVF6WF9VZ243M2dQbEE?oc=5",
+   "date": "2026-10-15T07:00:00.000Z",
+   "resume": "The Division 2 : drops Twitch de l'événement Lune rouge déchaînée Ubisoft",
+   "source": "Google Actualités · créateurs de contenu Twitch",
+   "categorie": "createurs",
+   "editeur": "Ubisoft"
+  },
+  {
+   "titre": "Quels streams et plateformes pour regarder les Worlds 2026 ? - Team-aAa",
+   "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPcmYtaHhrQnZqczd3S1c0WHVuQ3Z4eDJmd0gzcDNpbjgwLTNtNGRqQjJXcHZwVXRPOTcwaFlxY0hhN3R4SXdON1Y1bmhFRF9rc0xTQ0w4YVJqVG9JcVBEZmVqX19QNUVVb0xZbXNDTlhhTXhBNENRaHd4WE1ZNlN1UmdZQWg3Q1RmQnh4MlZuQUh3RThUSXQ1VnAwTHMwd182?oc=5",
+   "date": "2026-10-14T07:00:00.000Z",
+   "resume": "Quels streams et plateformes pour regarder les Worlds 2026 ? Team-aAa",
+   "source": "Google Actualités · monétisation et revenus des streamers",
+   "categorie": "createurs",
+   "editeur": "Team-aAa"
   }
  ]
 }
