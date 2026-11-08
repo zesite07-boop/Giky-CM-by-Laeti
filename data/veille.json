@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-08T07:04:39.067Z",
+ "maj": "2026-11-08T07:24:54.666Z",
  "sources": [
   {
    "id": "gnews-twitch-fr",
@@ -75,7 +75,7 @@
    "id": "gnews-streamers-youtubeurs",
    "nom": "Google Actualités · streamers et YouTubeurs",
    "statut": "ok",
-   "nb": 8,
+   "nb": 9,
    "message": ""
   },
   {
@@ -147,9 +147,67 @@
    "statut": "ok",
    "nb": 30,
    "message": ""
+  },
+  {
+   "id": "gnews-events-streamers",
+   "nom": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
+   "statut": "ok",
+   "nb": 9,
+   "message": ""
+  },
+  {
+   "id": "gnews-events-salons",
+   "nom": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "statut": "ok",
+   "nb": 54,
+   "message": ""
+  },
+  {
+   "id": "gnews-events-esport",
+   "nom": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "statut": "ok",
+   "nb": 79,
+   "message": ""
+  },
+  {
+   "id": "gnews-events-marques",
+   "nom": "Google Actualités · marques et streamers (opérations, partenariats, soirées)",
+   "statut": "ok",
+   "nb": 22,
+   "message": ""
+  },
+  {
+   "id": "gnews-decouverte-1",
+   "nom": "Google Actualités · petits streamers qui montent",
+   "statut": "ok",
+   "nb": 1,
+   "message": ""
+  },
+  {
+   "id": "gnews-decouverte-2",
+   "nom": "Google Actualités · clips et moments viraux de streamers",
+   "statut": "ok",
+   "nb": 1,
+   "message": ""
+  },
+  {
+   "id": "gnews-decouverte-3",
+   "nom": "Google Actualités · streamers français à suivre",
+   "statut": "ok",
+   "nb": 7,
+   "message": ""
   }
  ],
  "items": [
+  {
+   "titre": "IEM Beijing : la finale The MongolZ – MOUZ en direct - E.SPORT.FR",
+   "lien": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdTFOYUdPeU9pb3FIeVNHNkJMZWJjSWkzem5NaEoyM1U1OWc0cVVadHRLZTBLcTctTnBiSlZ6QmtYZVEtOXpGc3JFOGlwM1J6Rml3amhQNUhXX3VtVzdzWHBZNWhPREFiYTFGVkFzRkNHZEEtRVI3blN5eTRXcmxIcFNjaGVnM0haR3Q3UQ?oc=5",
+   "date": "2026-11-08T07:15:00.000Z",
+   "resume": "IEM Beijing : la finale The MongolZ – MOUZ en direct E.SPORT.FR",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "E.SPORT.FR"
+  },
   {
    "titre": "WoW Forever a-t-il relancé World of Warcraft ? Twitch et bêta face à l'âge d'or de 2010 - GeeksLands",
    "lien": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4wMDF3YW12QVdwQnNxZzc4Yl9rempBMFF0RFphNDl5Vi1mZTRPXzR0R0lLdU5tZnloNzBmbEZjSW9hcTdNVm90RXJPTlU0OEx5SDdHc3BVU2U4dGotd3FWa0p0UFhQRTNVWHAzRA?oc=5",
@@ -158,6 +216,15 @@
    "source": "Google Actualités · règles, modération et sanctions Twitch",
    "categorie": "createurs",
    "editeur": "GeeksLands"
+  },
+  {
+   "titre": "EmilyCC, la streameuse qui diffuse sa vie en direct sur Twitch depuis cinq ans - Le Monde.fr",
+   "lien": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNUUc2S1FFY2ZVVEhlNUZyc2tPbUpBeEp3MGhKM1lwT3EzTmVzZ1ZtTWdlbkdwT3lIeENERTVDVzZCdVRCNXlONVd2TE9WcDdDU2ctQWo3N0JidTFIWkE0WVItcTl1RE1OVTgwNjJoRmtUczNJak1JMVJndnBxTjVENVdFZGRZcUpuYlphVkVlcU5hTTBKLWo1SV9fZnBva1FDdGVCNTMxN0tJLVlCcm5ZdGtOUThxcUU0Ymd3ZE1XZ3puN3NGZ0xVOTdlZjdqVDljb2RJU0hyVEhNRktYUUpBeg?oc=5",
+   "date": "2026-11-08T05:20:07.000Z",
+   "resume": "EmilyCC, la streameuse qui diffuse sa vie en direct sur Twitch depuis cinq ans Le Monde.fr",
+   "source": "Google Actualités · streamers français à suivre",
+   "categorie": "decouverte",
+   "editeur": "Le Monde.fr"
   },
   {
    "titre": "Twitch usernames",
@@ -250,6 +317,33 @@
    "editeur": ""
   },
   {
+   "titre": "« Cette année a été vraiment difficile » : Reapered fait le bilan de la Karmine Corp - E.SPORT.FR",
+   "lien": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOSHI1bFlkZXNEeHZyeFBfUmNHc3hxeFBURHMxMm8zX2FVdXVENndXVWg3UWFKUUQ0cjhDYUV1LU40ckxXa2lCckVJN2p0M2M3b1lOeW1HdHVqQTlsaGhrenJaa1VTRmk1ZnlOV0dBOVRKckJzRnNnYlJFZGhHWFNzTEJuMGkzY0xZUXplcERQQUFMdU5YeWliR28yTXpSVTlmOU13U3h4MmdpbDVHeThFSC1uQ1E?oc=5",
+   "date": "2026-11-07T19:00:00.000Z",
+   "resume": "« Cette année a été vraiment difficile » : Reapered fait le bilan de la Karmine Corp E.SPORT.FR",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "E.SPORT.FR"
+  },
+  {
+   "titre": "Karmine Corp aux Worlds 2026 : du Play-In à T1, le bilan d'un premier parcours mondial - GeeksLands",
+   "lien": "https://news.google.com/rss/articles/CBMib0FVX3lxTE03Q25NWW1GWTNVSkJlUlNFZnRicVVHb0tCcFE3UGdxMXdGQzJRM3Q2TkNfSG9JdDd3YXd5U0J0OWVWN0NFdmd5MGV0QUJTUktmbjNNUkZfald5aThPVWVzbTdTdXlYLWhxNmN4cklySQ?oc=5",
+   "date": "2026-11-07T19:00:00.000Z",
+   "resume": "Karmine Corp aux Worlds 2026 : du Play-In à T1, le bilan d'un premier parcours mondial GeeksLands",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "GeeksLands"
+  },
+  {
+   "titre": "Mercato LoL LEC : très courtisé en LCK et LPL, kyeahoo négocierait une prolongation au prix fort avec la Karmine Corp - Team-aAa",
+   "lien": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOZTRqRV9ma2t1MU1hQmo0Sk9PQmxwUENrSVVXQkF0T0huNVE0NU5yVENHZzhGdFp5eEpRbW5wRUR5QXhJdGJuMWtnOFY0TVFhemlRODdqQmpWVml2dTVDSUxHZzNmX1NJX1puTFRVSmpsdFdFSk5zSEFtbC1hOVdSS2VrZUdEdHc2aVA3bXZvUTA5SWtXaktPelpGbkRnQXZoemt1Y2hIOTBHN0tPM09yb05pclFFWG9iSjVpakRMVkRwdFFUeWVUNEZxMC0xZ3o4ZEdjaENPaVc5YTQ5clZPaXlicm5ydnJJeHlyTVM3cUI?oc=5",
+   "date": "2026-11-07T18:30:48.000Z",
+   "resume": "Mercato LoL LEC : très courtisé en LCK et LPL, kyeahoo négocierait une prolongation au prix fort avec la Karmine Corp Team-aAa",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "Team-aAa"
+  },
+  {
    "titre": "Stranger Things revient sur Netflix : on décrypte le teaser de la nouvelle série",
    "lien": "https://www.journaldugeek.com/2026/11/07/le-vrai-spin-off-de-stranger-things-arrive-en-2028-et-il-a-un-titre/",
    "date": "2026-11-07T18:27:32.000Z",
@@ -302,6 +396,15 @@
    "source": "jeuxvideo.com",
    "categorie": "actu",
    "editeur": ""
+  },
+  {
+   "titre": "Sources: Looki re-signe avec Karmine Corp Blue en LFL 2027 - Howl.Link",
+   "lien": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE9oS0ljYjZDcDRFN05rRS14YjI2NnpvcnJxTmhUeXRrNGRyTnR4VF9kbkNPYVAzWmFkejlV?oc=5",
+   "date": "2026-11-07T17:34:00.000Z",
+   "resume": "Sources: Looki re-signe avec Karmine Corp Blue en LFL 2027 Howl.Link",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "Howl.Link"
   },
   {
    "titre": "Le jour où les astronautes d’Apollo 11 ont suivi un entraînement spécial pour ne pas dire de gros mots",
@@ -374,6 +477,15 @@
    "source": "Google Actualités · sorties jeux vidéo",
    "categorie": "alerte",
    "editeur": "JeuxVideo.com"
+  },
+  {
+   "titre": "Caliste après l'élimination de la Karmine Corp aux Worlds : « Je ferai tout pour revenir et gagner ce foutu trophée » - L'Équipe",
+   "lien": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNWmpBLW1zcFdRYnJKbHlUVzA4djEtbmVZUGVXR0pnd0JieXFPUmo1UlVyd3JlclREOVQ2TzZ4NDJOQW9TRDlidjJPM2lOYWE5SXhWXzQwdk9QY21ib25IZks3Z3kwNTdQckFIUzdyZlBKMUFKUjZIcmtvaXRLU3czRzV0LUttZzRzdW5RcWowamJneE1qQXBTclhVWWU4Zkh5OFNmQ0xQR3R3NGJ3aURoRm1nUEJELV9IVjVkdEZzOUtFZ3pFQm40VDBTd0hXNU51ajdlaWt4RlNSODRJdjFoVEtrSW5XR1c5RjZtcGRuZE1XZw?oc=5",
+   "date": "2026-11-07T15:54:53.000Z",
+   "resume": "Caliste après l'élimination de la Karmine Corp aux Worlds : « Je ferai tout pour revenir et gagner ce foutu trophée » L'Équipe",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "L'Équipe"
   },
   {
    "titre": "Quarts de coeur Zelda Ocarina of Time : Où trouver tous les fragments du remake Switch 2 ?",
@@ -475,6 +587,15 @@
    "editeur": ""
   },
   {
+   "titre": "Plus de 200 geeks en décousent à La Hune à Saint-Benoît - lanouvellerepublique.fr",
+   "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNWXF2U0dtYTlQTDQtN1I0RmZrTXJvNHo3bVdUeWh1T0FVakZuUUh1bFJJTC1Ld3dhajR1VHlXYUJTWFFSN3ZWTzd0RU9OU0FTTkF2Mi1aMDZSaFRKZV9fa0d4MUUtOGNPMWJibDM3blJqdWZRTTN3YjhKZVYySHhHUkdDc1h5aFk3SFU5blN6MlVVUWV5anZRWHgtdG43ZEtUQlFpYWlQWU13VS1mc2VPTU1aUUhsV0JldWVJcVZWZkk2V2tBZUVzT2tR?oc=5",
+   "date": "2026-11-07T14:00:00.000Z",
+   "resume": "Plus de 200 geeks en décousent à La Hune à Saint-Benoît lanouvellerepublique.fr",
+   "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
+   "categorie": "evenements",
+   "editeur": "lanouvellerepublique.fr"
+  },
+  {
    "titre": "Temple de l'Esprit Zelda Ocarina of Time : Comment finir ce donjon ?",
    "lien": "https://www.jeuxvideo.com/news/2112394/temple-de-l-esprit-zelda-ocarina-of-time-comment-finir-ce-donjon.htm",
    "date": "2026-11-07T13:30:08.000Z",
@@ -482,6 +603,24 @@
    "source": "jeuxvideo.com",
    "categorie": "actu",
    "editeur": ""
+  },
+  {
+   "titre": "Worlds 2026: Karmine Corp vs. T1 – Quarterfinal Player Ratings - Sheep Esports",
+   "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPbmZ0M3c4bUI5bU5IRXBtam42aTIzZnJEaWVLanRLblpuX2dibWk5MTl3VzI0NWo3RzRLVE1RWUE4bTZxaGJkNVVrbDJtdUlaYjhsaXB4RGZvZ184V3cxYkJZMGVaRWlQTzFPU280amg3SkxYalltRzUtcjhhR2lXS1BQN1p2UFVFamY2UnFLbzlnRUdLWG1qckxtZVB0X2xNVmVFYg?oc=5",
+   "date": "2026-11-07T13:30:00.000Z",
+   "resume": "Worlds 2026: Karmine Corp vs. T1 – Quarterfinal Player Ratings Sheep Esports",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "Sheep Esports"
+  },
+  {
+   "titre": "Worlds 2026 : l'élimination de la Karmine Corp par T1 dépasse les 2,7 millions de spectateurs - Team-aAa",
+   "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPYVV3YWE5Yjc5LUdRaFN6anBhbl94NU93NUE2ajUzX0ZhZjVub3dTMC03S3VDVmlTbnRTLURIZm9UVkNoNUl5OEoxa3phbDRPOXVMOHNfYk5aYm9xblM0T193NUkwSXRQbk9qempVbE1CM2M2c2NWUmVGQ1RnenZYZ2FKeHpIRGE3N0RBWk0zUTl3cTJRTU90elJEVlViYldqN2VjVUE4S3VmWXRMZzEwMWxKVTVEZGk1RXA4NURDN3MwNXNSY29RYU44dHFhOE1p?oc=5",
+   "date": "2026-11-07T13:23:35.000Z",
+   "resume": "Worlds 2026 : l'élimination de la Karmine Corp par T1 dépasse les 2,7 millions de spectateurs Team-aAa",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "Team-aAa"
   },
   {
    "titre": "Final Fantasy 10 a directement été inspiré par Star Wars et ses courses de pods",
@@ -574,6 +713,15 @@
    "editeur": ""
   },
   {
+   "titre": "Worlds 2026 : la Karmine Corp éliminée par T1, le rêve européen s’arrête en route - MCE TV",
+   "lien": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5GT1pJb0tWS09lcHpWTHVJNlFtdmdyMFpWbEE2QnQzVEVrQlo0RUc2R2NsdjJxaXZUYUtKdlV5LVI0SklVMmRpaHhyLUY1T2NGVGFkYnplYVFiQjVlR2VZQTJlUlNtblc2OXRJR2hLejRjS2ZUTWc?oc=5",
+   "date": "2026-11-07T12:03:04.000Z",
+   "resume": "Worlds 2026 : la Karmine Corp éliminée par T1, le rêve européen s’arrête en route MCE TV",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "MCE TV"
+  },
+  {
    "titre": "Ce jeu à l’humour noir assumé est déjà l’un de nos coups de cœur de l’année !",
    "lien": "https://www.journaldugeek.com/test/ce-jeu-a-lhumour-noir-assume-est-deja-lun-de-nos-coups-de-coeur-de-lannee/",
    "date": "2026-11-07T12:00:50.000Z",
@@ -581,6 +729,15 @@
    "source": "Journal du Geek",
    "categorie": "actu",
    "editeur": ""
+  },
+  {
+   "titre": "Faker prévient Bilibili Gaming : « C’est dommage pour eux de tomber sur T1 » - E.SPORT.FR",
+   "lien": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPcEdQUjFSV05tNE9KUkdRUjBOYmZJUlJtZnQ1TnoyVUpiR29NSFg2cEN1UC11clVvcERyVFRSQkliTGx3T1A5VzJSdWZpbnFGandQM1g0dXRGRjJlclhnVzFnNTV6TkFneWlkdEpFek95eTRBY1ZuVWV0dTZ4bUtKTUxHRUtnSDhPRTRqZFR2Q0ppQ004cU9GUWNNM09ZTXZKN3doWWIwckY?oc=5",
+   "date": "2026-11-07T12:00:00.000Z",
+   "resume": "Faker prévient Bilibili Gaming : « C’est dommage pour eux de tomber sur T1 » E.SPORT.FR",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "E.SPORT.FR"
   },
   {
    "titre": "À bord de sa station spatiale, la Chine frôle le zéro absolu et bat un record du monde",
@@ -608,6 +765,15 @@
    "source": "Google Actualités · sorties jeux vidéo",
    "categorie": "alerte",
    "editeur": "Le Parisien"
+  },
+  {
+   "titre": "La Karmine Corp fait honneur à la France aux Worlds de League of Legends - Fédération Française de la Lose",
+   "lien": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPbFZtc2xGNFoxalBUUzdERmhYN1hWX1lYSjJYZmdPOG82UHk5WWtfYW1rd1RiUVVpWjJCaWtNTUd1NzRQSjNiWjgybFNEbXhmdUZuejdiRkVxa1VFTF9rUTFZRWM2ZmY1NG9yUHVFWXRHbmFNcmFZdWhLNl8xRWRhZnpGaldZMlJrWTBPd0VLdDlVa0QzaW9r?oc=5",
+   "date": "2026-11-07T11:41:06.000Z",
+   "resume": "La Karmine Corp fait honneur à la France aux Worlds de League of Legends Fédération Française de la Lose",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "Fédération Française de la Lose"
   },
   {
    "titre": "Forteresse Gerudo Zelda Ocarina of Time : Comment atteindre le Temple de l'Esprit ?",
@@ -653,6 +819,15 @@
    "source": "Google Actualités · créateurs de contenu Twitch",
    "categorie": "createurs",
    "editeur": "NextPlz"
+  },
+  {
+   "titre": "Worlds 2026 : les réactions des membres de la Karmine Corp après l'élimination face à T1 - Team-aAa",
+   "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQSjZMNy1FTlNoWWhiRTh5bUV4N0JnZEJSYTdGRjVUVTQtVnc2enU1eWlwTkpOSEtTb08xU2YyS2RBeXcwblp4ZTI5SVpwemlLQ2FyWER5STlsNmpkWnh4U3Z6ZXBCb1BOVjRfRU5nR2VkcF83c1FPLTJnQlFtdzBkREk3TFVjU0x6RS1RZnZmSUhQaVgyWFUxQVZxeHlMNmdjaHJOQmhjdWY5T3prZlZ1U3NzVHNfN05uX0FObzBxak5TbVZTTkRLX2Z3?oc=5",
+   "date": "2026-11-07T10:56:14.000Z",
+   "resume": "Worlds 2026 : les réactions des membres de la Karmine Corp après l'élimination face à T1 Team-aAa",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "Team-aAa"
   },
   {
    "titre": "Ubisoft veut \"traiter les joueurs comme des rois\" : ne pas jouer à GTA 6 à sa sortie sera récompensé dans Rainbow Six Siege",
@@ -781,6 +956,15 @@
    "editeur": "La Voix du Nord"
   },
   {
+   "titre": "Du Play-In à Los Angeles aux quarts : la Karmine Corp, dernier Européen des Worlds 2026, stoppée par T1 (3-1) - Le Tribunal du Net",
+   "lien": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOcERCdEk5NkN3bW5yVzlYOXdCYkc5clBsdlRrWFptYUYxWTVSY1FHY0luTmNsbDBaX2JzdW04alg4Qy05RzBYLWFNTzdXRDZuZzJ6c0lMbThfb3JzOUh2bk1Xdi1zNjAtNnhBVzVReVRVcXFPZ3RJdEFmX2tzRHlzV3Y3UkM4bFR0cDc0emZMYw?oc=5",
+   "date": "2026-11-07T09:19:00.000Z",
+   "resume": "Du Play-In à Los Angeles aux quarts : la Karmine Corp, dernier Européen des Worlds 2026, stoppée par T1 (3-1) Le Tribunal du Net",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "Le Tribunal du Net"
+  },
+  {
    "titre": "El Niño record : 2027 a 96 % de chances de battre tous les records de chaleur",
    "lien": "https://www.numerama.com/sciences/2369951-el-nino-record-2027-a-96-de-chances-de-battre-tous-les-records-de-chaleur.html",
    "date": "2026-11-07T09:05:00.000Z",
@@ -853,6 +1037,15 @@
    "editeur": ""
   },
   {
+   "titre": "Worlds League of Legends - T1 douche les espoirs européens en éliminant la Karmine Corp des Worlds - La Libre.be",
+   "lien": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxQcEhJbGtoRVRKcEZxUWRtQndyWEpHS2VlNjd4bjh3VG1CQnJ4c05LM05FQjdxbktjM09nWTgxcG9kZHVabVBveWVFMmtIeDZqdm0xSlJWRVNBVnFyX2J5V0ZoS3RSOTRPa1NqWVpLS2FSQi00MncwLUdVNzFOVk1hV3Vjald1MFowYjZnUVBQV1RRbFRITkJBV01FN3NCSl9XV043NVQ0WEY2T25LSEJFRGtmdDdzN1VCMUt4X1U0aGpMNkhocFgtS0hWQkRCM2ItTHdYS2NnYml3X3EyM2RjZmtYZVFMdDE3VTM4OUlmY2pRNjVUVUZCZ3JjdlhXSWhUY0xfdkxtMzc?oc=5",
+   "date": "2026-11-07T08:04:00.000Z",
+   "resume": "Worlds League of Legends - T1 douche les espoirs européens en éliminant la Karmine Corp des Worlds La Libre.be",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "La Libre.be"
+  },
+  {
    "titre": "Mémoire cash - GoldenEye 007, quand le FPS a changé de dimension sur console",
    "lien": "https://www.gamekult.com/actualite/goldeneye-007-quand-le-fps-a-change-de-dimension-sur-console-101-3050866583.html",
    "date": "2026-11-07T08:00:00.000Z",
@@ -880,6 +1073,15 @@
    "editeur": "Le Figaro"
   },
   {
+   "titre": "Worlds 2026 : la Karmine Corp tombe les armes à la main face à T1 - E.SPORT.FR",
+   "lien": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNcmZXT3JFOWRYODV0X21halM4ZV9yM29ibTA5dlZmQUZLaW85elFLQlFrVm0wSTNIUk5aZ0RsZi1FMzdxYVVzWnZlVnpQRTJBUU5CU2NjRmdVSGtxb3pFbG5LdFkxaW5pRUxqN29aRENackZYU0NZbEtSWWs5V0xmcVpKbXg1UnE1T0F1enBvVk5DcmhKQ2lEMFV4WkY2bWd3TGtaZlFIUQ?oc=5",
+   "date": "2026-11-07T07:00:00.000Z",
+   "resume": "Worlds 2026 : la Karmine Corp tombe les armes à la main face à T1 E.SPORT.FR",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "E.SPORT.FR"
+  },
+  {
    "titre": "Zelda Ocarina of Time sur Switch 2 : Nintendo a gardé les temps de chargement pour faire comme à l'époque, mais ont-il vraiment eu le choix - JeuxVideo.com",
    "lien": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQSTJoS05HOFN3WjRjeW5kb0pfYm9POUtfUmNoc0MzbWZjZzM5RVpXcjBUelZnWEQ4akQtTmJ3d3lwMk96ems4YWU2TDEzYXNxYzNRLWZzMnNxSmI0N015Rk05aU1lekFfRFF3T3g2YXJzbVRGdEc4QlUwdzRQbHkta3VES2djOGZJVV85ZVhVTHE2N1RVTEtTd3VlYnhBNE44Wm5kZzF0N2hXSmxacWJiemlrakRyam5oYkdvXzV2akRYSTkwLW5FSkItVzZ2MDBoOUVObVZNWUh4NzU2bWpUQ1c0TUNsZ2x2X1h1R1ZJVWtCWDc2a3o5MTFYcXR6VExxSW5XWFRPRjkya2c?oc=5",
    "date": "2026-11-07T06:40:07.000Z",
@@ -898,6 +1100,15 @@
    "editeur": ""
   },
   {
+   "titre": "Aux Mondiaux de League of Legends, la Karmine Corp chute avec les honneurs face à T1 - L'Équipe",
+   "lien": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNTnBqV0x2OUh5NWprbVhOenRHSFVYaDlBekItV0tPV1F5eG9DSVBCVmZGTVpfZldjVFJXQ2lHSC0tRkk4MWU2UEg5UTk0U0o3Rzd5bHlzSXg4emZkR2d4YURDZTRFbmdjZ3owSDNqMXZ0eDdTZzM1YWQ5eG1mUlQtZDFQdFJiOV9FSkNLZUU3aFBUM3BINW1YakJYMmVRX0dQam9uNXNNMkRpbGpLcUZVeXlEZ0pYejVBRlJ0VHBIM2ZzTUJrX0xKbw?oc=5",
+   "date": "2026-11-07T06:36:55.000Z",
+   "resume": "Aux Mondiaux de League of Legends, la Karmine Corp chute avec les honneurs face à T1 L'Équipe",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "L'Équipe"
+  },
+  {
    "titre": "Gaming : les expériences à tester d'urgence à Paris et en Île-de-France pour les fans de jeux-vidéo - Sortir à Paris",
    "lien": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNdjhCX1pNek5RUnRxNWZ2c1loWlk1bmw2Vk0tejk4eUdLRWxyZHFZTU4zV3NDdkc5RUdFa2RmUWpJeHhLWFNMeEQ1RFFQbWtmbkpQM1EtWWdlTFMwZDFPM0szdkxmT2x4MkVVRU56NHhfdkhhYXM4aU40SVljNVdfQm80Z1hLeXpScFhSQ0pPcUFYZnZwUTB3eDdoV19mb0dCejNnSFNEdlJaNzBWUkJqT1FMeDFNZGYwWGI1bXBsMmtOOEpVMHJScHlTNTJ3bnpQQzcyelliYlduSUo0cmV6RTU2UnByS3hiMlhz?oc=5",
    "date": "2026-11-07T06:17:52.000Z",
@@ -907,6 +1118,24 @@
    "editeur": "Sortir à Paris"
   },
   {
+   "titre": "\"On dirait qu'on est des sauvages\" : des lycéens de Seine-Saint-Denis dénoncent le traitement médiatique - Actu.fr",
+   "lien": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOcndOajMySU9zcmFRMmFWZF8zcWFTdzV6Rm5QbzI3b05JRkhxenlqTEFjZjY4T3gxM1RQYUhLNmlVdUdsdlpzWWJ2SkF1dTJTajB1eE9BejFBMlZKaEZDaU5WWWpuQjJXeTdfSTh2a0pIbWNQbGVqdnJwWmFKc0ZiclRzTlZiVkpyX0ZsWUJZclpFM1F1Mk1fVVEzekhWYm9yTnpNaUZfTWNETld4MzZzQkdzV3JsZENDQ2NULWgxaFlPNHc3MGNlRlUtTlItREo3dVRMMmYwSDJwRWt2ZHVhV3J5enZnN1h3NGdxWnZyZzYyVmli?oc=5",
+   "date": "2026-11-07T06:16:02.000Z",
+   "resume": "\"On dirait qu'on est des sauvages\" : des lycéens de Seine-Saint-Denis dénoncent le traitement médiatique Actu.fr",
+   "source": "Google Actualités · marques et streamers (opérations, partenariats, soirées)",
+   "categorie": "evenements",
+   "editeur": "Actu.fr"
+  },
+  {
+   "titre": "IEM Beijing : The MongolZ – NAVI en direct - E.SPORT.FR",
+   "lien": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBLWnVRQ21xQ3NxVkxsRC12QU80cTExVEVOaE1DN2RkUkxUc19qSENISFNucmMtQ19Bb3MxOVJJVVNtVm82cmNpV0k4UE9OeU1zVUxnQUNXWVJCQmg5RGdUR2ZNajhGU2pMbUNHcXd1bURsT0tITlluMUlNWmdpNEU?oc=5",
+   "date": "2026-11-07T06:15:00.000Z",
+   "resume": "IEM Beijing : The MongolZ – NAVI en direct E.SPORT.FR",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "E.SPORT.FR"
+  },
+  {
    "titre": "Vers le Rafale du futur, une facture à l’élu qui veut taxer les gigaoctets et la preuve secrète d’OpenAI – le recap’ tech de la semaine",
    "lien": "https://www.numerama.com/tech/2369173-vers-le-rafale-du-futur-une-facture-a-lelu-qui-veut-taxer-les-gigaoctets-et-la-preuve-secrete-dopenai-le-recap-tech-de-la-semaine.html",
    "date": "2026-11-07T06:05:00.000Z",
@@ -914,6 +1143,15 @@
    "source": "Numerama",
    "categorie": "actu",
    "editeur": ""
+  },
+  {
+   "titre": "Worlds 2026 : fin de parcours pour la Karmine Corp, éliminée par T1 - Team-aAa",
+   "lien": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNNGN3SEZRejhpa2kzV2EzLTVOT2pCM0RELUtDRHI1UjJ1QVZFOEZrOU02WDF1N252SFZUS3hRVzUtdHpVTm83U3lkZ09saGlsMzlqSGRTR0ZHanI2cGlMekN2ajJQdTJoTy0wSWlIQ25qclBUbG0wYkd3NEs4d2hsTjRLaWVOc3JycDM3WnliejdGSUoybHJmZTJYQVpzQXMxTVl1Ymx6MGtscm5YOEE?oc=5",
+   "date": "2026-11-07T06:02:00.000Z",
+   "resume": "Worlds 2026 : fin de parcours pour la Karmine Corp, éliminée par T1 Team-aAa",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "Team-aAa"
   },
   {
    "titre": "\"Une dramaturgie naturelle\" : de Clem Qui Court à Squeezie, pourquoi les créateurs de contenu envahissent l'événementiel sportif - RTL",
@@ -977,6 +1215,15 @@
    "source": "Reddit · r/Twitch",
    "categorie": "communaute",
    "editeur": ""
+  },
+  {
+   "titre": "Worlds 2026 : la Karmine Corp éliminée 3-1 par T1 en quart de finale - GeeksLands",
+   "lien": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9sM3pjY3pycTkwekhBdHhnNHZ1YzVRTTRXZTdONjlURjFXNWFuemxrWkZNOW4zOFRORTV4WjJhMmtKMDdNdlNkdXJwUmZ2OWI0N3JDcU1ZNk0zSWxGamlmZ29QVFJ6bDItRVEyS0pEeGltMXM?oc=5",
+   "date": "2026-11-07T01:53:31.000Z",
+   "resume": "Worlds 2026 : la Karmine Corp éliminée 3-1 par T1 en quart de finale GeeksLands",
+   "source": "Google Actualités · e-sport (tournois, Esports World Cup, Karmine Corp…)",
+   "categorie": "evenements",
+   "editeur": "GeeksLands"
   },
   {
    "titre": "Have you heard? Ethan and Hila’s divorce, Harvard’s creator summit, and Brandon Herrera’s defeat.",
@@ -1942,6 +2189,15 @@
    "editeur": ""
   },
   {
+   "titre": "La passion du jeu vidéo va réunir 260 geeks ce week-end à la Gamers Assembly de Saint-Benoît - lanouvellerepublique.fr",
+   "lien": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxPYUgwM0ZpYjhYZU5QNzAxa0dZaWhBcElueVFXZU5YVHM2OEdMT3FXQXZEZUNEbzRGNXVWTENKU3o0elRWdzBqUF9jcURDdy1QTnhuUUZadDRNQ3ZTLTFicWg4MHZKWndDMmUtbFY3a213bmh4LXcyczR6dHM4SVVuMGViOFVBam55YnFvUVJqTjhqbnFnYWJ2REo3cWRQaldNZm5VQ2d4NkZfS21XcnREcU92TWVreVN2UWhabUllOXE4UzBlRHpwOE1rT0dabEpnUGdVeUFLaXUxQlltM1NwclUybHVpUGdacVZVVmtXMzQ0SUEzVWFrM3B3dw?oc=5",
+   "date": "2026-11-04T14:30:00.000Z",
+   "resume": "La passion du jeu vidéo va réunir 260 geeks ce week-end à la Gamers Assembly de Saint-Benoît lanouvellerepublique.fr",
+   "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
+   "categorie": "evenements",
+   "editeur": "lanouvellerepublique.fr"
+  },
+  {
    "titre": "Les meilleurs entraîneurs et staffs à recruter dans Football Manager 27",
    "lien": "https://www.dexerto.fr/football-manager/football-manager-27-meilleurs-membres-staff-1663331/",
    "date": "2026-11-04T13:51:30.000Z",
@@ -2003,6 +2259,15 @@
    "source": "Blog du Modérateur (réseaux sociaux)",
    "categorie": "actu",
    "editeur": ""
+  },
+  {
+   "titre": "Retournez à Azeroth : World of Warcraft: Forever débarque - Twitch Blog",
+   "lien": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9FZXZnM0hZWUZxN2lfTlltblVyMGdackl0SXp3M3RSbXhXOFMxT2o3TDBYZnJYWFFVOWExU0taSEo1OFNRNHdkb0dOa2lQTUpEQUU0aFNMVG9xMWNwOWtLNm4xbG1lYjZNWnNHRWZoZHlhaEhyMnFqYU5haGlLY0U?oc=5",
+   "date": "2026-11-04T08:00:00.000Z",
+   "resume": "Retournez à Azeroth : World of Warcraft: Forever débarque Twitch Blog",
+   "source": "Google Actualités · marques et streamers (opérations, partenariats, soirées)",
+   "categorie": "evenements",
+   "editeur": "Twitch Blog"
   },
   {
    "titre": "Harnais, superintelligence, alignement… Flavien Chervet décrypte les concepts IA derrière la BD HELO",
@@ -2176,6 +2441,15 @@
    "editeur": "Dexerto.fr"
   },
   {
+   "titre": "Squeezie, Cyprien, McFly et Carlito se moquent en live de Neoxi - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPaGhXS1d3akExMUY5eW1xMWtqVjd1alpkNkJ1SFotWTZFMktqS05IMEY2aGg3SFN5MFpyYkJwZzdUNS1DN3pzYWQ3Rmp4VElXcS1pQnh5OW9iUzJFay1CdXdBV0Q0eFFqZjJIUUtpU3BOX0FXc1htZXlwVTU1bXlxRW04XzRBUjhzTkhVWU02SXZhMlFyYlFGYTc5QmtDYVhE?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Squeezie, Cyprien, McFly et Carlito se moquent en live de Neoxi Dexerto.fr",
+   "source": "Google Actualités · streamers et YouTubeurs",
+   "categorie": "createurs",
+   "editeur": "Dexerto.fr"
+  },
+  {
    "titre": "Tyler1 veut plafonner ses dons sur Twitch pour éviter de “surjouer” - Dexerto.fr",
    "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPam9yY1A0Zlphd3o3dlNLekNhWHpCNWZxTG5hYWF1QWFGZDNJV0FNZWFhdVV5VjVhQUhnYmJzNllIVTVNZHpUcFZIM1A3Q28wUW9sekt0ZDdNUFRBR01wNkFvRmtWTHhjYUhDUENnT3R4UEJKNU1YMlhqdExZZ1pNYVZNX2ZqamxOMDVCT0dGa0M4ajFBek9YdG1SajZZOXFZZ2xVX3hnSklzN1RRLUktdDF3?oc=5",
    "date": "2026-11-03T08:00:00.000Z",
@@ -2236,6 +2510,114 @@
    "resume": "Doigby élu “Homme de la saison 1” sur le stream de Squeezie Dexerto.fr",
    "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
    "categorie": "createurs",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Polémique autour du Z Event accusé de ne pas inclure les minorités – La communauté réagit - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQSklvWlBzZWNsTTlzdF91TmJyRnBpSDFMN0lXcVRDWHVPc2VsV0l5OGJPVjVvQlg0UGRJYVpqLUs4RHNwWnhBUG5QcTdsakFab05nbWZvTnpGSGJxYUhQUkp6S0xVZGFxWlJWRlRjMXBzeFdtNTlrRHl5M1l4VXRyQU9EZElaY1UyQWF1dnV1S09ibHE1V1hhSDZaeTJ1aGJwU3FUYzQzNlpnaElZRkNPNHRFMWNvbEk?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Polémique autour du Z Event accusé de ne pas inclure les minorités – La communauté réagit Dexerto.fr",
+   "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
+   "categorie": "evenements",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Z Event 2019 : Quand l’armée de Squeezie détruit les streamers du monde entier - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOTDZsaXdHZDBSbVo5MXR0cWNFLUNlTmI3RjRzdlpROWs3RlhmWGVlaFRZS253VXYxSEVSQVMxcTFWUG5ZeW9KTTE5cWt2RnllZ0RpYmp0WnlMYktZd0dlMThuV080Zy1sbUctT3ZZcDFXRm1hS2hXWFNIY2dMWjVkZXlCV2NZazFBNUxOZFRmcno4LUpSVml6VU54UDlmZ1hhSFVpVG91NzRYRGM1dVZUSw?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Z Event 2019 : Quand l’armée de Squeezie détruit les streamers du monde entier Dexerto.fr",
+   "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
+   "categorie": "evenements",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Z Event 2020 : Tous les donations goals des streamers - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOR1RXdFRYZDJrWnpJUDc2dmpkSGdaQTV4cHJkcWVyZks2RzZWUldna0xFQmw4c2poMWVSX0lMVERlM0tqX2tGMmthQXY5ZjhLdUpUYXN5RHRMaGF3ZGZra1YwTUQxd3JFa0c1Zm5wRDQ4cjNBSWNPZkw1UlBwOEtHSXlkR3M5bEk0eFkwSWlYUjFFSl9uMHRCOWFLZy01R2M?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Z Event 2020 : Tous les donations goals des streamers Dexerto.fr",
+   "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
+   "categorie": "evenements",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Pokimane explique pourquoi elle avait besoin d’un garde du corps à la TwitchCon - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNblFrSmlDajduZjdCMFV5UlJfZ3FMREgtdVBTaDFFVDRXVjB3WmVEMTJ0VXZTMlI1ZXJuMlN1ZVVLbURmRTNKV1V3Ny1GZ2lLOUo3cFg3bHpyNDc2bndNajNSQ1lBdWRGd0VzdXdrRkxvRzM1TzNZSGZnUlY2WHh0c1p1UnJOcjBmNV9TVFhkeDgyRGEyOEpkekNBTFUwMGxqbzlwRFNzeHNpR1hx?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Pokimane explique pourquoi elle avait besoin d’un garde du corps à la TwitchCon Dexerto.fr",
+   "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
+   "categorie": "evenements",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Top 20 des plus gros pics d’audience jamais enregistrés sur Twitch - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBibnVlb1FqUlQ1d3dVbVFPdGp1Vmc3UU1qbm80eFJwS0ZOdnFuTEc2R1lVTHdHenFwWlI1R0FUTkVyWkR3dHEzRXR0Q0ZmMlExdkJhdDlUX1FmSjlWOHNWWUZjN1Z3b1ZYQTFIeXZkalBHS2thTjVoc21XRmZLUW8?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Top 20 des plus gros pics d’audience jamais enregistrés sur Twitch Dexerto.fr",
+   "source": "Google Actualités · marques et streamers (opérations, partenariats, soirées)",
+   "categorie": "evenements",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Le best-of ultime de Domingo sur Twitch dans l’Hebdomingo #100 - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOSHJVanVvRm40NnN3MG8tNnJyOGhoby1QbWRtQk5VZ21uVVdCRGNVYjRHWlltenNGUWFQZGktQkdCNlpQLXFOaWRGcHFveHVBQmpyOFNCT0FYZ0JPVkkzWkxveEJpQ0dUR29SQV9VcURuU0hzSTNlVDdQSk9TaFF1M2gwUFFWYVN0YVdiWGlWb2R0dWVj?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Le best-of ultime de Domingo sur Twitch dans l’Hebdomingo #100 Dexerto.fr",
+   "source": "Google Actualités · marques et streamers (opérations, partenariats, soirées)",
+   "categorie": "evenements",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Tfue est le streamer le plus regardé de 2019 - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPazhfWHVIcWlPTWRTTFhncE1tV0loaW1XdF9QZTRkT2tEUTh3U2cxdXJQQld4dzYwMjRraVVMcWRTXzUyVnlIN3dReVgwSkZYZWt1TkZiRHhaNmFtOU1wcFduTkNfcGFDVHkwcHpaejNpTlRLNWpwSDlxMnZHMTduODFxaDlnNUhFQV9uQUtfTzVSdWFTcXc?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Tfue est le streamer le plus regardé de 2019 Dexerto.fr",
+   "source": "Google Actualités · marques et streamers (opérations, partenariats, soirées)",
+   "categorie": "evenements",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Un streamer s’est fait bannir sa chaîne Twitch à cause d’une cascade réalisée en live - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNYXNDdDRPVURDbGFpUWtnYkt1R3JqdlcyMFg1cTNHb2RnOGk5Y1YzeWVBbHI4Z1JjcXAxT3NqNkFkWlFnd2pKQU1icnRkYlFEYktkTzJxUWU5a3ljLVhBSkFWODd6SFA3ck5LcjhULThTallnbjE0MVk1WGtNOTVSRlRQZW9QMTU0aVJ1bWhVc1VXTXhua1pWbHhB?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Un streamer s’est fait bannir sa chaîne Twitch à cause d’une cascade réalisée en live Dexerto.fr",
+   "source": "Google Actualités · marques et streamers (opérations, partenariats, soirées)",
+   "categorie": "evenements",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Alderiate fait son grand retour sur Twitch - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPWEJRRzRlMVBNVDJoTV9VTVJoR2wzYlFzQXlTZ2ctTGJZd1dWMHVYUlZfNk9YYlo1c1ZzaXRXRDdycjd6bmVXQXlvZlpfeEc1Q0lxWno1bzhMaFZ5ZDhxRF93WmJyNmFBZmt4ZGFJc21LdUNWclJPTXFSZE1TQjRCVm8yaGdfM21hNlN5OGpwRnBGUQ?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Alderiate fait son grand retour sur Twitch Dexerto.fr",
+   "source": "Google Actualités · marques et streamers (opérations, partenariats, soirées)",
+   "categorie": "evenements",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Twitch : Le filtre beauté d’une streameuse bug en plein live et révèle son vrai visage - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOdF96MFM2QjZMeDBpX2JBNGdic3drTUxzTFp1M0d1WWVnak5VRm1KZkZ0aFUzOExnbmFwTTh3WWZzektkSUFBbzB4MXhuM1NBX0ZoOS1yd1NLWXNaeS01Tm85YUhsanJxek9Db1FxS2YzdGdLOWd3ZkZiUnJDTU1GZk92TGxFb1JPWUZSU2YzYkdsbUFkd1hMU1FCX18zVGNrMXQtbUF5ZUFrREVXOXJrNg?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Twitch : Le filtre beauté d’une streameuse bug en plein live et révèle son vrai visage Dexerto.fr",
+   "source": "Google Actualités · marques et streamers (opérations, partenariats, soirées)",
+   "categorie": "evenements",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Un streamer hallucine en rencontrant un enfant vulgaire sur VR Chat - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPUFBaN1pwTDZYWVktbnlLeE5yQzRiYllrV0YzV1o2amZfV1JVcWNXR0dZZTI5Tm1EN0h5M0dLb2pXemh2cEh5bnJSdXFZU202QkM5a3VHLTBnU0NBUkNENkhjRWM5ZHBfVGFNbXpGX2xSQmNUM0lCN2dwQk5jZDZCZUNtLVVQTjZmX056SE9nNVhVOUV0MjVIVzI4c1BScGRlaWhiMTkwaXhWd1lrVTl4aTV0MzM?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Un streamer hallucine en rencontrant un enfant vulgaire sur VR Chat Dexerto.fr",
+   "source": "Google Actualités · marques et streamers (opérations, partenariats, soirées)",
+   "categorie": "evenements",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Sardoche banni de Twitch pour son comportement auto-destructeur - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOcDdORFYyZi12Z0FJS19ueXVDaUEya3lXQ3BKb1JkM1lRZVk3dmZCc3JjV3d4anZhNjNoNE8wOThrYVNGQ00ySkgxMF9zV1Y5QmFVTi1lVmVzQXNwWG9LUlVuZUhTY0lJSk5zSVd1YTNHbWZzenREOTZ1RWJzSFdRbG1JU0Mwci1INjUtYURCV2JRb0tGS1BYZk1CZE1FQmc?oc=5",
+   "date": "2026-11-03T08:00:00.000Z",
+   "resume": "Sardoche banni de Twitch pour son comportement auto-destructeur Dexerto.fr",
+   "source": "Google Actualités · marques et streamers (opérations, partenariats, soirées)",
+   "categorie": "evenements",
    "editeur": "Dexerto.fr"
   },
   {
@@ -2374,6 +2756,15 @@
    "editeur": "Volcano Discovery"
   },
   {
+   "titre": "Shanling SM1.3R HD : DAC R2R, écran 2K et Wi-Fi 6 pour ce nouveau streamer Hi-Fi - Planet Sans Fil",
+   "lien": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNNXBQTFoxM3poTTM4Z2xPZVV6SmUwMlJSeWxwam9iWkluRzgtSXpocllzWnRpWm91cUlSRlp4Nl8taEV1WjJHU1duNkd3UEx1R3o5dlpXWUowOGRzcVRWZ3hLVWt6MHJVSFJMdFZqY2Zib1FlWjhybmlxczRVMWNoX1Q3RU9Ub3liZXI4ZHo4NzVkT3hyQ0E?oc=5",
+   "date": "2026-11-02T05:52:08.000Z",
+   "resume": "Shanling SM1.3R HD : DAC R2R, écran 2K et Wi-Fi 6 pour ce nouveau streamer Hi-Fi Planet Sans Fil",
+   "source": "Google Actualités · petits streamers qui montent",
+   "categorie": "decouverte",
+   "editeur": "Planet Sans Fil"
+  },
+  {
    "titre": "Absent pour des raisons familiales, le Toulousain Ange Capuozzo rappelé par l’Italie - Blog RCT",
    "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdHQxdXM5Qlh0NnRqOHFpNkZ4N09rZ05uZjJqaFhZNEZJV1RUVk9MU09iUms2Y1pSRzlnMEpncGRDZnowM2pGUzN3WlJXeThwbVNpejhzMUFWT09BUk9FYXgzZEpLX3VndndQeTF6YTdXZFp5VXFBNUlRTFR6aWpQczduTGRHU2VNelZ2Ri1kUXZEUTliZVV6QndIbTdZdGQxcG5VTzByOTc4V1Jt?oc=5",
    "date": "2026-11-01T18:06:00.000Z",
@@ -2491,6 +2882,15 @@
    "editeur": "Team-aAa"
   },
   {
+   "titre": "Sorties jeux vidéo novembre 2026 : les nouveautés attendues sur PC et consoles - Sortir à Paris",
+   "lien": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPWlBsWmdBZml4b3VoSEtpeWpnTVEySmpNWGtpVWtRRXB0enpLRXBDWUx0VVZLeGZmSjhXYkhacmxtQ0RTSkdWMzNETFJrYUE3RzdrMmQxMnMzX0dVal9Mb3dwTzZwV3hReUdNT3BuWmhRdVJrTFVOck9MbUpnUF95LWhJR2J5eENBMTk2VGJfTldjSlFsSWlMRmZVaGFBZ2Q0eXRDaS1EX1dtVGRGMHZoQzdNbFZzenBiRGJLYmFiRk1mRVM4dnF1TDM0ZWR5WDVlX2c?oc=5",
+   "date": "2026-10-30T17:01:37.000Z",
+   "resume": "Sorties jeux vidéo novembre 2026 : les nouveautés attendues sur PC et consoles Sortir à Paris",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "Sortir à Paris"
+  },
+  {
    "titre": "[Podcasts] Le gros débat : Ultra-domination du PSG, faut-il des règles anti-PSG ? (Partie 2) – 30/10 - RMC Sport",
    "lien": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxONVI5a1dIcVlWTFdnU1VmalVrRExUMkduOFhLOURNQVJpaGZUNHlsXy16emhZaHFyVTVtTVI2M3NPQ3JJZXhSVExYQUJlNkFVUnJTNlI1RGJGb0lCTllfZjNhQkxFRENuYjNhdkpIbzhYdW1NUmpJM3o0b2tCRXdUZk53VEFTcHhHYUZZVVdVTFRJNWNPc1hucDVBdDhQcWF6NkRlcGptM3ZxMVFLcXk5OGpvM3dYS1dCbERFNUNUMnRHcThHaUdCTnZXbWVlV0sxUlNtdFZuekpEX0RuWDlqR3VBZnowcThMOWpGakJNdnBIOTl2VXlj?oc=5",
    "date": "2026-10-30T16:30:02.000Z",
@@ -2507,6 +2907,15 @@
    "source": "Passionfruit (créateurs)",
    "categorie": "createurs",
    "editeur": ""
+  },
+  {
+   "titre": "Paris Games Week 2026 : le COMCYBER-MI en première ligne sur le front de la cybersécurité - Ministère de l'Intérieur",
+   "lien": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOd1cyWWRucnJxTm4xcG1fdnhUTXdvZHRQS1RDNXROMC1MajBlcm0zVzhaTzB4eXhuR1RQQWZRODExcE5sUzFfa05jU0tfWXZIdVViaWZicnVUbUd5bjV4UW1TM3FUQW9SWXo1dVJvd3VwV1V2WENnbThWTE9GWWFDSnVfQ0dhc29GV2tiR0RGdHRZeEhDWHUyMlJsSWpIbm1JOXIwbGxKZV93NDNnLWIzUWk5ZVBTeDZNdXR5V1ViYUNmZXZ4NjRfckxBYnBJTmQtQXNiR3NPZ0pUb3EzVmFISlRlMFE4Q1lEdnBIcUNrZ1FJeGc?oc=5",
+   "date": "2026-10-30T15:11:20.000Z",
+   "resume": "Paris Games Week 2026 : le COMCYBER-MI en première ligne sur le front de la cybersécurité Ministère de l'Intérieur",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "Ministère de l'Intérieur"
   },
   {
    "titre": "Twitch Splits Suspensions Into Streaming and Chat Penalties, Citing Data on Low Reoffense Rates - Net Influencer",
@@ -2554,15 +2963,6 @@
    "editeur": "Dexerto"
   },
   {
-   "titre": "Why has Hasan been banned by Twitch? Streamer responds to controversial ban [UPDATED] - Dexerto",
-   "lien": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdnFJRHpVMUI4c1ZSNVI4Ql9zendpUXFUMlp4bU9Wb0dTenNaWXFSd3FOTzZvYjlzQkVxaEtzX2VwUkdSQXZpNmlFVFc5ZGZwZ3d5VmpkUTk4ekV5QVFEeTBjNHJFbEVCWDVGXzhSTVlwOE9HdkJ4OTdiSTRldnJidDZXQTNEYXZON190b2pqMWhDaEk5T1phRmZ5Q1daOHV1RGhyWVJiVWNVa3p2WnFLdTA0WXQ2WlFaVFlEMA?oc=5",
-   "date": "2026-10-29T18:48:10.000Z",
-   "resume": "Why has Hasan been banned by Twitch? Streamer responds to controversial ban [UPDATED] Dexerto",
-   "source": "Google Actualités · Twitch creators (international)",
-   "categorie": "createurs",
-   "editeur": "Dexerto"
-  },
-  {
    "titre": "Télécharger Kick: Live Streaming pour Web, iOS, Android - Telecharger.com - 01net.com",
    "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNajQ2Y2hJZk5GRVRjRlhzTjJhQlVhdU9QME1QdWQ0RTNYal94SWpLYXdIVjkyQnFJd3FUQnpHV1BZMHZJUW1jeFA1Z3VHMEswQkNKTlBrZGdkZUxycTIzRzZWSk5BemduMXhCMDk0emMwWTAtb0JCOGdLMWttS2ZOT2FSNjRZYWZ1QkRsakhRZTFlcW1qelo4U093?oc=5",
    "date": "2026-10-29T07:00:00.000Z",
@@ -2570,15 +2970,6 @@
    "source": "Google Actualités · Twitch, YouTube et Kick",
    "categorie": "createurs",
    "editeur": "01net.com"
-  },
-  {
-   "titre": "GGCON: onKOL Brings TwitchCon-like Experience to Creators and Online Communities - Gadget Pilipinas",
-   "lien": "https://news.google.com/rss/articles/CBMic0FVX3lxTE13dGY4aUdQMVR5OUJaMi10RWp0UHlZTHpWYk12ZHlFZ0M2T0VSYUlCVjZHQWxOMGVxUUc5YUJXTDNLTHZsbS1PeTVoRlI2ajhvQy1PUGptWklVN0VMY2pVS2NwX1d4aUU5QTNKTXVmeWF3SEk?oc=5",
-   "date": "2026-10-29T07:00:00.000Z",
-   "resume": "GGCON: onKOL Brings TwitchCon-like Experience to Creators and Online Communities Gadget Pilipinas",
-   "source": "Google Actualités · Twitch creators (international)",
-   "categorie": "createurs",
-   "editeur": "Gadget Pilipinas"
   },
   {
    "titre": "L’invité mystère de Zack en Roue Libre était… Jiraya - Dexerto.fr",
@@ -2608,6 +2999,87 @@
    "editeur": "Dexerto.fr"
   },
   {
+   "titre": "Z Event 2019 : Gotaga revient sur le don de Ninja - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNYnpqME1pVDdSeHFqakt6SXE4R0pqemN0aFZJRGdKeEFlX01pX0FRWkJodUoyUUpMbUt1UzV1LTdqQ1hGWXhqUnlIRlpBSnB3Wk9QMVY3X0NEODFPcXdxdC1ESmhUWVFEVmdHUUp6bG96aGYyY1pWeVp6N09NRjBiWnd1cVo3WndFdHY1Yg?oc=5",
+   "date": "2026-10-28T17:30:28.000Z",
+   "resume": "Z Event 2019 : Gotaga revient sur le don de Ninja Dexerto.fr",
+   "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
+   "categorie": "evenements",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Z Event 2019 : Découvrez en vidéo le retour en vélo de Kameto - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxPWUtXUXAxNFptVmpzZEdzS2RmNEJ0YXdOUWpWZm1VSHRLSGRDaUlCeU4wUmdvRnVLVzFwQUFXTlAwVlNDSExIcXJ0aU9HVzZ2aEVKOV9IRVB0OU9nRmZHVGVmcGp1eDl6U3lpbGxrNkZFc2Z4Tk5KX010anVaWWRvZGlMYWp5WW41Q3pabVg1YUVnbWhpNGtSRW5sRi11dw?oc=5",
+   "date": "2026-10-28T17:30:28.000Z",
+   "resume": "Z Event 2019 : Découvrez en vidéo le retour en vélo de Kameto Dexerto.fr",
+   "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
+   "categorie": "evenements",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Z Event 2019 : plan de table des streameurs et leurs meilleurs donations goals - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNLVYzeEZTaWlySFpwcUdJc2Vrb0JPYk5EM2dSLVpCLXRtaU9sRXpQZlVnZWJPV1h6TzJ5ZG9xRV9sd1pCOVNEQk1HZkhaTWVDT1RiZ2hNYlBJQkpiSUtHTTIwUGZjOUZyaUZpUVBVc3VUc2FhaENNWmlwQUFxMUM0T1ZuRElyZEhN?oc=5",
+   "date": "2026-10-28T17:30:28.000Z",
+   "resume": "Z Event 2019 : plan de table des streameurs et leurs meilleurs donations goals Dexerto.fr",
+   "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
+   "categorie": "evenements",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Après un clip viral Summit1G dément les rumeurs de son départ de Twitch - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQTEtGWERWRjdFeGVjZWdDNUlGQzZ4MGlZMjFENGVUQ0Q0bVF2LWxkelVPUExuRXkzbWhpbzY2SnNBLXpRQzRKTXMtVWxPeTctMk9hb05tdXFWOTlRNVNobXNmU0c5LThNNnlodVlvakNFQ0NGaV9jYkNOTXlOTERmRm1UbWcxYk1IcHRNQ2g5amp3X0E2XzMtdU11a1NhdGpZSUFucm1UelpnNW8zUVcwOGVKQXVCYTU5Mmc?oc=5",
+   "date": "2026-10-28T17:30:28.000Z",
+   "resume": "Après un clip viral Summit1G dément les rumeurs de son départ de Twitch Dexerto.fr",
+   "source": "Google Actualités · clips et moments viraux de streamers",
+   "categorie": "decouverte",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Twitch : la streameuse Anita a trollé un coéquipier qui était énervé par son syndrome de Tourette - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQbjlMbG9YTXB3SjBNS2NnTU9ma0NBOWVDVEplZmFDYlQ3NzNEbTh5bnprOXVjTlJPcnhJRlFJXzRKZVVpRkxHalRYelY0NWpBLVQ1R29YMXBVSXdEYl9qQXVGNDRzTUQwcFZTaG1RbWpYdXNfUmU1SktPOWFQZWlvb0ljbHFQeFFlVjJUTUM0WF9xaEVSc2Z2SjFCLVEyZTM0U29fWjBNSU5fZ0tU?oc=5",
+   "date": "2026-10-28T17:30:28.000Z",
+   "resume": "Twitch : la streameuse Anita a trollé un coéquipier qui était énervé par son syndrome de Tourette Dexerto.fr",
+   "source": "Google Actualités · streamers français à suivre",
+   "categorie": "decouverte",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "BillieChou fait remarquer l’absence de streameuse dans le top 20 Twitch Fr et fait réagir la communauté - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQb0UyQmgyZU5KTk9Kb05QNmVSUnMydHgwSHJ0bC1XcF9UdGdqLWliMHhnMUlHblNBYWtxTlVCV180dDVseGN3QkZMZ1NQSWozdVUzYnFndEZGalUyYkNPaERyb1I0dVlqY21qbERwODNQU2ZXM0ptQ0FwWUdvWnYwS2ltMXo4WWFwMERLdzVjekJYaTFwQjBQYWZEZ05LbjJPWGhLQVhmSzRkSkNsb3NXcjlWdlZzM3lQSkw3QkxVamh3dU9Rdmx6RjhSWTlBYTBS?oc=5",
+   "date": "2026-10-28T17:30:28.000Z",
+   "resume": "BillieChou fait remarquer l’absence de streameuse dans le top 20 Twitch Fr et fait réagir la communauté Dexerto.fr",
+   "source": "Google Actualités · streamers français à suivre",
+   "categorie": "decouverte",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Une streameuse IRL attaquée à Londres à la suite d’abus racistes en Allemagne - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPWXlwOVhNYXNoV0dIUGVHM2ZIZmQtQzRtMUxWV3FyVnJTd0VRcW1RWEotaE9uSkg3X0RJeUZ6Mzdmbmg3R2dGaUxVbnJ1OU9DN1Y4Y3BRbDJZVGctY2tDeWlwcUVPcTFWcF83b2M0cHZ6bFFiNnMteGRfSlQtMVhvUVJrTWh3WUlwOGM2SnRtd0liTUZVQXJDQmJRdXdtQ1J5Y2xuVnRXeEl4NDg?oc=5",
+   "date": "2026-10-28T17:30:28.000Z",
+   "resume": "Une streameuse IRL attaquée à Londres à la suite d’abus racistes en Allemagne Dexerto.fr",
+   "source": "Google Actualités · streamers français à suivre",
+   "categorie": "decouverte",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Une streameuse choquée qu’on essaye de lui vendre de la drogue en live - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZDc2Wk5wd2VGWEJxSTRvMmFLbEVoNU1MX0RueVluZ3NLNU56QWhwSXR3QXFscnZHd0xmNDl3UzlVVl9VMC1ob1R1WkdYSWhXSmZsN2hyd0tfb2NSaEt5WXJzWHhqWnBSWUFpSE1yRUtPZjI2bGRQREViMzc2UTRQcGhjMWVyclhmc3piT1h2b2w4WWtiZ040NVNEcTBPSnEyVENRaXBXcTg1THNUclNIYzd3am94U2M?oc=5",
+   "date": "2026-10-28T17:30:28.000Z",
+   "resume": "Une streameuse choquée qu’on essaye de lui vendre de la drogue en live Dexerto.fr",
+   "source": "Google Actualités · streamers français à suivre",
+   "categorie": "decouverte",
+   "editeur": "Dexerto.fr"
+  },
+  {
+   "titre": "Une streameuse a été bannie après avoir affirmé qu’il n’existait que deux genres sexuels - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQaEhGbUowcklfbGJoOXJYdHdvQUhBeVkzOURpR1VPYjB2VW96OWJFcE9sZnplaUVLMFhUZjVTcXFVVzRGaFByUEFRNnZxSllvS3hrR2FVTFR3Vy1xZnhzcnZFTFR5MlNJd20xellSNlhicnppcEZYVE1jY1ktSGdUMkp2eG1HX1hjU0RPNmdUTG9kTW9QbDFMelhJZmk1ZGhBVVBnb3A5dDNrd0ozLW5TU1pvdUZ4UXBXSHc1Nk5B?oc=5",
+   "date": "2026-10-28T17:30:28.000Z",
+   "resume": "Une streameuse a été bannie après avoir affirmé qu’il n’existait que deux genres sexuels Dexerto.fr",
+   "source": "Google Actualités · streamers français à suivre",
+   "categorie": "decouverte",
+   "editeur": "Dexerto.fr"
+  },
+  {
    "titre": "Die besten Omegle-Alternativen für Erwachsene zum zufälligen Video-Chat",
    "lien": "https://passionfru.it/de/die-besten-omegle-alternativen-166382/",
    "date": "2026-10-28T10:51:52.000Z",
@@ -2624,6 +3096,24 @@
    "source": "Passionfruit (créateurs)",
    "categorie": "createurs",
    "editeur": ""
+  },
+  {
+   "titre": "How Twitch and Discord Are Shaping Menswear’s Next Generation - The Business of Fashion",
+   "lien": "https://news.google.com/rss/articles/CBMilwFBVV95cUxORkFZeERKWEJnRWpuYUpGZFk0SVF1a1VYMVhKVENSVzhQSVo2VTlqYkczYlc4V245TlJzOXJobllaNTlTSGlzQk1XVFZmX2l6elNaR0VmM1FsYndhNXJTdW50Nk9oQnZuZnBZYTZUSGdrNENBMFk2LUgwSkxIaWc5U1Y0YlFESlRaT2k4WEoyQk5DeThIUjZR?oc=5",
+   "date": "2026-10-28T07:00:00.000Z",
+   "resume": "How Twitch and Discord Are Shaping Menswear’s Next Generation The Business of Fashion",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "The Business of Fashion"
+  },
+  {
+   "titre": "Palia New Twitch Drops for Hearty Homecoming Update - Nintendo Smash",
+   "lien": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPdl90LWlKYU5rdUtTT1k4ZjRGYk9XSVNnLVhTUWZqbXBMMzFmQWRRZGFiSXBPUTRaa1JmUUN2QzNBQnhUOEtPOFNzc1c1ZlhuVUJBQTMyaG5wUElMZ2w1MjVLRDNPWDNGUDB1N2hpUTB5azFJWG1oWXNydFhXUXlxSTdsWEs?oc=5",
+   "date": "2026-10-27T19:52:16.000Z",
+   "resume": "Palia New Twitch Drops for Hearty Homecoming Update Nintendo Smash",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "Nintendo Smash"
   },
   {
    "titre": "Kai Cenat Net Worth: How Much the Twitch Star Actually Makes",
@@ -2653,6 +3143,15 @@
    "editeur": ""
   },
   {
+   "titre": "Paris Games Week 2026 : malgré de bonnes décisions, la fréquentation fait du surplace - Journal du Geek",
+   "lien": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPTVU3QXB6WXQ1T1J1UzNaTjUtMDF6NUp1QzZlRW5reEN6c3duZHRCZ2ZNSlVvekVFcGxiZDh0RmFLWV9YWWJFMU9KdVE4VHM1UWxXNXd2WWtPcTkxV0NlQ3lPMkl1cWJOY3VPYWxuN2tYcFlpVktMUHA4Ul9EZ2xsbnpLb0l6aVhNVHRGMU9TM0JBNzU2UmpjTHVOYnZhVGh5SmMxZUZSeWRJNnN5Vjd4YXlFcElnSTRFNGprQ3pGS2w5QQ?oc=5",
+   "date": "2026-10-27T07:00:00.000Z",
+   "resume": "Paris Games Week 2026 : malgré de bonnes décisions, la fréquentation fait du surplace Journal du Geek",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "Journal du Geek"
+  },
+  {
    "titre": "Charted: Where Social Media Audiences Skew Male, by Region",
    "lien": "https://passionfru.it/social-media-gender-by-region-166656/",
    "date": "2026-10-26T23:35:41.000Z",
@@ -2669,6 +3168,15 @@
    "source": "Passionfruit (créateurs)",
    "categorie": "createurs",
    "editeur": ""
+  },
+  {
+   "titre": "Billet Paris Games Week 2027 à Paris Expo Porte de Versailles | Réservation & Billetterie | Expo Paris 2026 - expo.paris",
+   "lien": "https://news.google.com/rss/articles/CBMigwFBVV95cUxORUpqWnhYNENTbmIzUDRUOV9SMWZxck5uLXBicmtEeFFyM19ReXhjRzZTQUs0elNJWWhwWm5WejlSbDJKX0ZjN1VEcF9Kc2M1X25QZzlmb0tzZmZZQ1ZVS3A5cjFrb2FLdThJWWN4Zy1zMEdtNmg0QWwxaUo2TUZrVm9hdw?oc=5",
+   "date": "2026-10-26T10:57:50.000Z",
+   "resume": "Billet Paris Games Week 2027 à Paris Expo Porte de Versailles | Réservation & Billetterie | Expo Paris 2026 expo.paris",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "expo.paris"
   },
   {
    "titre": "Sophie Rain Net Worth: What She Has Actually Made on OnlyFans",
@@ -2707,6 +3215,24 @@
    "editeur": "БНР Новини"
   },
   {
+   "titre": "Paris Games Week : le jeu vidéo séduit toutes les générations - mesinfos",
+   "lien": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNRzV1NW9mWUtNSlg3Q3g0Q1B1aFJjNzgyZGpwY3hhTVVHTkZTaHJvTGRELXctaFNWNUV0dkVrb19nLXZ3alZsRXNxdF9kLUZoLTF2bVhNeXJWTUNqaGZ2SGJNWnQ3NEp2REZBTjI2bk8tcXVORFcxanZlSVNRMFJGYmJ3ME1kTlFaU3VUelNHMmlNT3ZIOV9HWVBkUkNRb3g3SFM4QUZB?oc=5",
+   "date": "2026-10-25T07:00:00.000Z",
+   "resume": "Paris Games Week : le jeu vidéo séduit toutes les générations mesinfos",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "mesinfos"
+  },
+  {
+   "titre": "Paris Games Week 2026 : 15 ans de passion du jeu vidéo, ça se fête ! - www.francetelevisions.fr",
+   "lien": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNdkZGNy1VNDF3R1Q4djFFSTh1MTBZNTdhb1QzLURFYm50TDZ5T1EzLWZyQVVLTGVoem9jRzZDNTlyUlFFNVQ2X3ROeFAxX2pzQ1BCcm0ySThyRjhSMC1hU3BJYlhXMU9MMXFKVzJjczNKUG83bHgwUlY1NElnMFUyeUhSNmFCN2xxMUtIajhBVlByTG1YUjVrVzR4a2xxQmNkWmwyTXhXd0lhWXRYSndJeHJFUmY5WUtGNVVTWnA4allYb2x2ZWRhZ3BYOTNmU3dUR3lV?oc=5",
+   "date": "2026-10-25T07:00:00.000Z",
+   "resume": "Paris Games Week 2026 : 15 ans de passion du jeu vidéo, ça se fête ! www.francetelevisions.fr",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "www.francetelevisions.fr"
+  },
+  {
    "titre": "\"Un mariage de raison\": des Bleuets avec Zack Nani à la NFL avec Domingo, comment les créateurs de contenu s’invitent dans la bataille des droits sportifs - BFM",
    "lien": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxOM3ZPc3dVNndsbk5iWGNLY3p1Q0dta0EzSTRHZ09rMWlTM1VtYTc5OU5VUEREaC1QWDJ3cjV5andtaEI5am9HTHRRcl9CSnhsYWVRaktyUktmMTVFcmdJa0FJOGJJcmZhV3JFaUpWVXRzLWJ3VUJfdzUzaVJnbGF3WHFZemJPS3pGZm5DYjZpZ1A2N3ByTVljUEVqWXlLY3QxSk5kU010emhyeU9ycmVFcERwdTlNOXF1dDlIeVdrdUYyNlBYUjg0YU1NU3BmT3ZPQkk4cU5lOU53aDNWRTZScmdlZ3pKVDFoQUprd04xd0lkRVFNWWxzUmVRUVZpbzA0UXQ5dk9mM1VJbUE1ekozQ2xtc1BYZVowQldEZHlaRnY4VlVRbVpGRVd0M3dmazA5bGg2dk12QmpKQVotVnA2cVFTSmg0cjV3?oc=5",
    "date": "2026-10-24T07:00:00.000Z",
@@ -2734,6 +3260,96 @@
    "editeur": "Tavu Radio"
   },
   {
+   "titre": "Paris Games Week : Atlantis Studio dévoile son jeu d'horreur - mesinfos",
+   "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQZ3ZGaWtpMUd5NXV1bTVyakVsazJXYWRCNm5OMUhKZzlVeDF2OFNTQklZdkF1QllLTEdBc3hwY2hvN3NBLW9tTFhYM1RfWlVpUFowQXB4UWtNQXMzdzhFb0pNcXNPWG1LdzBwZmx6N3lwN0hGWFJvaFh5VURHSFVUSDRfSkREeFdORklIMjBiMk5PdlFGWms0SXNTWmZzR2lnV3VSaw?oc=5",
+   "date": "2026-10-24T07:00:00.000Z",
+   "resume": "Paris Games Week : Atlantis Studio dévoile son jeu d'horreur mesinfos",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "mesinfos"
+  },
+  {
+   "titre": "Bienvenue dans le Game - Paris Games Week: trois pépites françaises à tester sur le stand Game France - RFI",
+   "lien": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPSS05Zm1Ebld4YTlWU2VPQVNpMDhBSEI4dVdZb1RjbnFPdmJJd0tMU196anRaSDQzU3VaYjZab25hdEVrUDhRS0lPbHhZZUViMUphX2lfMjdpbE9ldDE3VXplZXMwVEFyQUY2RDRBVnR6aE5oYkxBLXYxWFR6Y1R0S3dBcFd5eWNhYmZVY0VNMnZndWlhRlNFdUt5YTBESzF3Y1d3UU5KWEVQcTk2cllmc0lNZm56OEU5U0p3Y1NidDhkc1ZPRnBpMlNnZ0R1OGJXMm1yTHczSkFDY1N3c2NuV3BxOXlmaVJp?oc=5",
+   "date": "2026-10-24T07:00:00.000Z",
+   "resume": "Bienvenue dans le Game - Paris Games Week: trois pépites françaises à tester sur le stand Game France RFI",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "RFI"
+  },
+  {
+   "titre": "« La fin d’un voyage » : les révélations à la Paris Games Week du réalisateur de « Final Fantasy VII Revelation » - La Voix du Nord",
+   "lien": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPcVhoMERjS3lzV1NRS1ZBbXpmZ19rNDhyZGxVejNQMS1YLVRleGFmTmIwR2htWW9SYlNSUVByTnJPMkRWU0FIU1ZSb2hPbjYxbWI1Y0ZzUE4tNHZmWVZMWUp0S1RRQ2tydUg4MTdSSGNlT0UwWFdXeG55SkwxY2FOdGdxMWtDUWVraTlhalJ6cDdOLU41czJTQ1VBajZMT0V1ZVlKVGFEaXI4V2NoSC1KRnBHQnVqWHhTUHA5UGI4cGRhOWRHNUpBR2dWNmEtMHRROE92MVJpMXY?oc=5",
+   "date": "2026-10-24T07:00:00.000Z",
+   "resume": "« La fin d’un voyage » : les révélations à la Paris Games Week du réalisateur de « Final Fantasy VII Revelation » La Voix du Nord",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "La Voix du Nord"
+  },
+  {
+   "titre": "Paris Games Week 2026 : priorité au jeu - https://www.republikgroup.com/",
+   "lien": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOc2ZQeWRxVG5pWEU5N3I0d2Z1Zm9ScjNRZUhJSnY4Q3BIZnVBOUdtZ0w5QlVyUG82WERwcjBWdklvZE9TVW5BTFBPTGpDa1ZEejBrb3RsNDJGZ0pRdFBKUmNnM0FCd0lPTmVhb0NRQ2xZRVgzbW1TVTlrZ3I3NXd2MUVOb1VCUERBelltV2dnbUxnSzBkb0lJN0MzR1RDZndvWGE1NTJlRTVzQ2ZXcEh3VXh3RW16QQ?oc=5",
+   "date": "2026-10-23T09:51:52.000Z",
+   "resume": "Paris Games Week 2026 : priorité au jeu https://www.republikgroup.com/",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "https://www.republikgroup.com/"
+  },
+  {
+   "titre": "PGW Business by CMS 2026 - Espaces| PGW - Paris Games Week",
+   "lien": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9ZREUyUlZ6b0lqREZYOGktbWdCSFp4cDNoS0RJREJDdHZ6RzV5UU5oOU1FUVl3a1BVd3ZaSlpzbnl0ZTNEZGpQQ1VxaGFBSVdJM0trU29rZGFNcFRjMkxLRC01ck8?oc=5",
+   "date": "2026-10-23T07:00:00.000Z",
+   "resume": "PGW Business by CMS 2026 - Espaces| PGW Paris Games Week",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "Paris Games Week"
+  },
+  {
+   "titre": "Le Pavillon Game France à la Paris Games Week 2026 - cnc.fr",
+   "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPdnUxWXVLUkFSZWtvT21jSWZjcVRsWmNSdHc1LW90aDB1RnVUUUNCZF9nTXY2SEctVE5BaXNTRFQ2VVV1dTlIR2FUQkUxUmhobzFydjdGREFkUU1kZF9NYTdHc21WeE5KaFdaLXllVG5fLTAxYnhBRjcwb3FQOEpzMkFVb1BMVU1HQ25TZVVnMjEwTFlNREloaUFDNHRjeFk?oc=5",
+   "date": "2026-10-23T07:00:00.000Z",
+   "resume": "Le Pavillon Game France à la Paris Games Week 2026 cnc.fr",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "cnc.fr"
+  },
+  {
+   "titre": "À la Paris Games Week, la communauté geek encore sous le choc des pillages - lejdd.fr",
+   "lien": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPVEZGTVR6S2tXSGFCRXJsOFp4bTkxbHR0dUdDT2w2dlFaV1o5dEFUSFhHdllBQThfQThuWTFPXy1QM3poNkJqYjhJbG43VlhOWW5uTEV5Q2c5V2VQQVY4ZVpiaUdZTWVPbVhEeWlvNDVnTUVSVWlXMExZMDl1UUVvanNnZVVVTHlYUTAyV3RPRjMtY1NGdTUzNk42VjRXcGRPMFdDaTRIM1hZdWo5RFE?oc=5",
+   "date": "2026-10-23T07:00:00.000Z",
+   "resume": "À la Paris Games Week, la communauté geek encore sous le choc des pillages lejdd.fr",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "lejdd.fr"
+  },
+  {
+   "titre": "Paris Games Week : le jeu vidéo français n’a jamais été aussi créatif - Bpifrance",
+   "lien": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQYkt4eDBmWGlWODU1ZlBONDlpaTRxVTVzVENZaHU3dnVVdmE4bjRWTmx0eEUxUWlfX3ljdHBZczhRWEZ3VjhwZkNWNFJDU2RZN1h6dGNrT1M5eHVBbHVHaHJUUDVrWmNUOFBXelJmUE5qQjdpcHo1aWF5Z0c4a2RkbFQ2enQ0ZjF4Z0F0VUZEQ3ZHd21aeTRlV0FycVdaejhMTS1ZTVZwUUN4dW1sYWtvNA?oc=5",
+   "date": "2026-10-23T07:00:00.000Z",
+   "resume": "Paris Games Week : le jeu vidéo français n’a jamais été aussi créatif Bpifrance",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "Bpifrance"
+  },
+  {
+   "titre": "Paris Games Week : la jeunesse prend la relève - BFM",
+   "lien": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQTFd6UTF0RlJFTHF6eWFpSGxVel9mYmNsMFE3a0ZHQ1NFSWxMekVGb2Q2bkFNZWJ5R3pzREh4U3BPX1RtM0tHcDdITG90aE5HR2RtbDV2eHF0blNRSnVxUTVZblNkWXBkdnRMVDREMk0yZnhHNWhrMl95ZERPcmZqdGlhdGRRUnQ4VzB4ODctZjNreWJ3NTFsaGt2ZzZncDl3ZjFsS2tvRVZBX2JyczZSZ05ydGh1ZWV2OHIwRWZ2MUNWa0w3ZlF0MDFRbHpJTy1pMVNMaDVaTTc?oc=5",
+   "date": "2026-10-23T07:00:00.000Z",
+   "resume": "Paris Games Week : la jeunesse prend la relève BFM",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "BFM"
+  },
+  {
+   "titre": "Paris Games Week 2026 : le jeu vidéo attire les joueurs, mais les studios français restent fragiles - GinjFo",
+   "lien": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNa2lZX0FrMXFVQlNMTUFKalRLWUJEcWNQWEJjeDZjVlBRRXcwVHpYOVAyR05PN2ZSRnBSTGlTYXFnZUEydjRWNUpjYVpJWTdiTjlRZmNVOVlRMnFmSXVNZGZwb1h3TTlKc0pvOTZjWHdiMlc4N3dEMzBjTjdaTzZxaThsT1BNOHBMM0lxWEVDdzJaZkhqWTlJZTRSdmZxeF9hUm5JYUdsSFpvaGd2NzE5NXJZSlNubFJZcTlhX2djdE9kX3I2bEl4dURSOXlMQndkb0xmblRhV244WjZrZGZ0Qk9MbzBWZXZoelNJcWhKQ0dGZnk5OFBvWV9wN3MxZHc?oc=5",
+   "date": "2026-10-23T07:00:00.000Z",
+   "resume": "Paris Games Week 2026 : le jeu vidéo attire les joueurs, mais les studios français restent fragiles GinjFo",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "GinjFo"
+  },
+  {
    "titre": "Mort d'un célèbre influenceur de 30 ans : il s'immole par le feu en plein direct sur Twitch - Voici",
    "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPRnJGMHhtQlJHcDZMdTZBMU51blJWT0VfRDQyMG5kY2lidktzSlU4YjIwRjQ3VzRCQjNfdkZOZmRUZW9hQ05sWUZaVkRLUXl4dTJta1lrN0tRWTFyWDVscGE5TkNVdGZEM3ltNDNCX2xjbVJwTTQtWjBtWWNDSURIN29WZzhXbDlhTGhMSExDOUJhc25IWGJiYVBaWDl4d3VKQlJXZU5lRHJjanhxbmlYUHJpWU1vbnZzQ0lpd0NJaWdiRldoM0hzMHp3?oc=5",
    "date": "2026-10-22T07:00:00.000Z",
@@ -2759,6 +3375,33 @@
    "source": "Google Actualités · streamers et YouTubeurs",
    "categorie": "createurs",
    "editeur": "Le Dauphiné Libéré"
+  },
+  {
+   "titre": "A la Paris Games Week, le grand paradoxe du jeu vidéo en France : une demande dynamique mais des studios en souffrance - Le Monde.fr",
+   "lien": "https://news.google.com/rss/articles/CBMikwJBVV95cUxQRlpQdDY5Mmg1TjlmdHp0SEpjYVBULWxjZ0g1MnNhc0oyWkJwd0lDRTJMTEVoWTM1UkI5YXFQTW9NaGhRRThkMG5OY2pucGM3VGpPNmNvX0dCdDZZUlZGMGRmcHlySXgzSHRid1cxSzVlbFlFMjA3VTRJTVhzVnZYUmh3bWt2MVFRQnpGY1ByYWg4bEZHcl9mcnVueDJ4enNQd2FSOXFtWThoa3hsM0VaWlFUaVVMVXRfNVpteVU0NWkyYWU3ajRKOHBucjdxNnBRU2V4TVN0dHE3a0hzMnEwelI3eDVUOWd0V2VBeEdnS0pGcUtiTTZzbnRFWDlxQkM0T3h1N21yS2EwTXlkRXl0QnRidw?oc=5",
+   "date": "2026-10-22T07:00:00.000Z",
+   "resume": "A la Paris Games Week, le grand paradoxe du jeu vidéo en France : une demande dynamique mais des studios en souffrance Le Monde.fr",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "Le Monde.fr"
+  },
+  {
+   "titre": "Une situation « très dégradée » : la Paris Games Week célèbre une filiale française du jeu vidéo en difficulté - Ouest-France",
+   "lien": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPTHJRY0xuMlVPcFhMNzBobi1ia0c0OVpuMTQ4c2RqOWYyT19SaE52YzRubWJqZjBOM2F2ZzlKTGRneWhUdjVVQ042MWJPUVRZYklZSHh0a1lqUjQzZDZ2Y0gzMjRHWW1BVTFjUVBTdlBhVUhKeXVZTjcycUpPZTJCdG1WZU8yVHdHMTh1LXMyX1J1Q2ZxS09OYkxzQWhNSkZPak9jbGo0YzMzR1FrVzkwZDJSOTJpNmFRZzZrcFRkalZiVUE0a3BBUF9lVEdfMy1UNG5RaUU0YjdVdzU2c0tMckNyOVc3MjMwQm1OcmVMS3ZhQXV0bjNRN3p6bTZVWlQwY0ZsaDB5NFZjMkZfQW5NMXA0WUVJUQ?oc=5",
+   "date": "2026-10-22T07:00:00.000Z",
+   "resume": "Une situation « très dégradée » : la Paris Games Week célèbre une filiale française du jeu vidéo en difficulté Ouest-France",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "Ouest-France"
+  },
+  {
+   "titre": "Paris Games Week 2026 : à vous de jouer ! - Région Ile-de-France",
+   "lien": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPcVNYdWtuN1BROGNRdzJOV3J5U3dzM1h6WXhObXFMNVdLQ091bXNmT1FUUzFQU0U3TVBNUVJUYWxqUHc4VWN5NlJvemxRdG94S1MtYW9aMkFjU2pmQ1NZcFlDOXZyTEZfdFQ5Z1VHOWw4Tm9TYjNlMnU4UnV2cGVsNkRGellpZWVpWGJvYQ?oc=5",
+   "date": "2026-10-22T07:00:00.000Z",
+   "resume": "Paris Games Week 2026 : à vous de jouer ! Région Ile-de-France",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "Région Ile-de-France"
   },
   {
    "titre": "Le “streamer” Domingo diffuse le NFL Paris Game sur Twitch et YouTube - Ecran total",
