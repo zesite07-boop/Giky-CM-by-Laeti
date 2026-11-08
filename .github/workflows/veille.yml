@@ -17,6 +17,9 @@ jobs:
         with:
           node-version: 20
       - name: Collecter les flux
+        env:
+          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+          TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
         run: node scripts/veille.js
       - name: Enregistrer si la veille a changé
         run: |

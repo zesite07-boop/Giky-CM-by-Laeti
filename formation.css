@@ -638,3 +638,32 @@ textarea[data-sug]{width:100%;min-height:140px;font:inherit}
 .nav-lien{position:relative}
 .nav-lien .pastille-alerte{margin-left:auto}
 @media(prefers-reduced-motion:reduce){.menu-groupe>summary::after{transition:none}}
+
+/* v8 : familles d'outils, kit prospect */
+.fam-outils{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s3);margin:var(--s5) 0 var(--s3)}
+@media(min-width:760px){.fam-outils{grid-template-columns:repeat(4,1fr)}}
+.fam-outil{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s1);text-align:left;padding:var(--s3) var(--s4);min-height:92px;border:2px solid var(--ligne);border-radius:16px;background:var(--surface,#fff);color:inherit;cursor:pointer}
+.fam-outil b{font-size:var(--text-base)}.fam-outil small{color:var(--secondaire);font-size:var(--text-xs,.78rem);line-height:1.3}
+.fam-ico{font-size:1.4rem}
+.fam-outil.active{border-color:var(--accent);background:var(--accent-clair)}
+.fam-outil:hover{border-color:var(--accent)}
+.kit-bloc{margin-top:var(--s6);padding-top:var(--s4);border-top:1px solid var(--ligne)}.kit-bloc h3{margin-bottom:var(--s3)}
+.kit-bloc textarea{width:100%;font:inherit;padding:var(--s3);border:1px solid var(--ligne);border-radius:12px;background:var(--fond-doux,transparent);color:inherit}
+.kit-bloc input[readonly]{width:100%;margin-bottom:var(--s3)}
+.suivi-kits{list-style:none;padding:0;margin:0;display:grid;gap:var(--s3)}
+.suivi-kit{display:flex;flex-wrap:wrap;gap:var(--s3);justify-content:space-between;align-items:center;padding:var(--s3) var(--s4);border:1px solid var(--ligne);border-radius:14px}
+.suivi-actions{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center}
+.pastille-kit{display:inline-block;margin-top:var(--s1);padding:2px var(--s3);border-radius:999px;background:var(--accent-clair);font-size:var(--text-sm)}
+.pastille-kit.jour{background:var(--or-fond,#fff3cd)}.pastille-kit.retard{background:var(--rose-fond,#fde2e2)}
+/* Mochi dans les cours : salut, réflexion, clignement */
+.m-vague{transform-box:view-box;transform-origin:96px 84px;animation:m-vague 1.1s ease-in-out 3}
+@keyframes m-vague{0%,100%{transform:rotate(0)}25%{transform:rotate(-16deg)}75%{transform:rotate(12deg)}}
+.m-salut{animation:m-hoche .8s ease 1}.m-pense{animation:m-reflechit 2.4s ease-in-out infinite}
+@keyframes m-reflechit{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-3px) rotate(-2deg)}}
+.m-bulle{fill:#fff;stroke:var(--accent);stroke-width:2}.m-bulle-g{animation:m-bulle 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes m-bulle{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.mascotte .m-oeil{transform-box:fill-box;transform-origin:center;animation:m-clin 5s infinite}
+@keyframes m-clin{0%,93%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+.mascotte-cours{padding:var(--s2) var(--s3);margin:var(--s3) 0 var(--s4);background:var(--accent-clair);border-radius:16px}.mascotte-cours .mascotte{width:64px;height:64px}
+.m-attentif,.m-rassure,.m-content,.m-fete{animation-fill-mode:both}
+@media(prefers-reduced-motion:reduce){.m-vague,.m-salut,.m-pense,.m-bulle-g,.mascotte .m-oeil{animation:none}}

@@ -1,5 +1,5 @@
 {
-  "_aide": "Sources de la veille. type: rss (RSS ou Atom). categorie: createurs, actu, communaute ou alerte (createurs = ce qui concerne les créateurs de contenu Twitch/YouTube). Pour ajouter une alerte Google : créer l'alerte sur google.com/alerts, choisir « Flux RSS » comme destination, puis coller l'adresse du flux ici avec categorie alerte. Les sources « Google Actualités · <noms> » suivent des créateurs précis : pour en ajouter un, ajouter son nom dans l'une de ces requêtes (4 noms maximum par requête). Catégories : createurs, evenements (salons, tournois, opérations de marques), decouverte (petits créateurs qui montent), actu, communaute, alerte.",
+  "_aide": "Sources de la veille. type: rss (RSS ou Atom). categorie: createurs, actu, communaute ou alerte (createurs = ce qui concerne les créateurs de contenu Twitch/YouTube). Pour ajouter une alerte Google : créer l'alerte sur google.com/alerts, choisir « Flux RSS » comme destination, puis coller l'adresse du flux ici avec categorie alerte. Les sources « Google Actualités · <noms> » suivent des créateurs précis : pour en ajouter un, ajouter son nom dans l'une de ces requêtes (4 noms maximum par requête). Catégories : createurs, evenements (salons, tournois, opérations de marques), decouverte (petits créateurs qui montent), actu, communaute, alerte. « createurs_suivis » : liste de noms de créateurs (français ou non) cherchés automatiquement dans l'actualité, par lots de 4 ; pour en suivre un de plus, ajouter son nom à cette liste. Facultatif : avec les secrets TWITCH_CLIENT_ID et TWITCH_CLIENT_SECRET dans le dépôt, la veille ajoute aussi les chaînes françaises en direct de taille moyenne (pistes de petits créateurs).",
   "sources": [
     {
       "id": "gnews-twitch-fr",
@@ -168,6 +168,36 @@
       "nom": "Google Actualités · streamers français à suivre",
       "categorie": "decouverte",
       "url": "https://news.google.com/rss/search?q=%22streamer+fran%C3%A7ais%22+OR+%22streameuse%22+%22%C3%A0+suivre%22+OR+%22talents%22+twitch+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-decouverte-4",
+      "nom": "Google Actualités · streamers qui gagnent le plus d’abonnés",
+      "categorie": "decouverte",
+      "url": "https://news.google.com/rss/search?q=%22gagn%C3%A9+le+plus+d%27abonn%C3%A9s%22+OR+%22plus+forte+croissance%22+OR+%22explose+sur+Twitch%22+streamers+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
+    },
+    {
+      "id": "gnews-decouverte-5",
+      "nom": "Google Actualités · nouvelle star de Twitch",
+      "categorie": "decouverte",
+      "url": "https://news.google.com/rss/search?q=%22nouvelle+star%22+OR+%22nouvelle+figure%22+OR+%22ascension%22+OR+%22d%C3%A9barque%22+streameuse+OR+streamer+twitch+when%3A30d&hl=fr&gl=FR&ceid=FR:fr"
     }
+  ],
+  "createurs_suivis": [
+    "Inespnj",
+    "PunisherEnLive",
+    "Mawkzy",
+    "Mastu",
+    "Anyme023",
+    "IkariuTV",
+    "TheKAIRI78",
+    "Kaatsup",
+    "Little Big Whale",
+    "Cameliaaa92",
+    "KmSenKangoo",
+    "Fausthea",
+    "Etoiles",
+    "Ultia",
+    "MisterMV",
+    "Aminematue"
   ]
 }

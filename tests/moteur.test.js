@@ -6,7 +6,7 @@ require('../contenu-business.js'); require('../contenu-clients.js'); require('..
 require('../contenu-calculs.js'); require('../contenu-expert.js'); require('../contenu-expert-2.js');
 const C = globalThis.CMContenu, M = require('../moteur.js'), S = require('../sources.js');
 const lecons = M.toutes(C);
-assert.strictEqual(C.lecons.length, 47, '29 leçons de base + 4 de calculs + 10 défis de pro + 3 réseaux pro + clipping');
+assert.strictEqual(C.lecons.length, 49, '29 leçons de base + 4 de calculs + 10 défis de pro + 3 réseaux pro + clipping');
 const ids = new Set();
 for (const l of lecons) {
   assert(!ids.has(l.id), 'id unique ' + l.id); ids.add(l.id);
@@ -42,7 +42,7 @@ const p = M.calculerPipeline(M.neuf().pipeline); assert(p && p.contactsNecessair
 const e = M.neuf(); e.reponses.t1q1 = 1; e.notes.t1 = { action: 'x', echeance: 'y', fait: true };
 const back = M.importer(JSON.stringify(e), C); assert.strictEqual(back.reponses.t1q1, 1); assert(back.notes.t1.fait);
 assert.throws(() => M.importer('{', C)); assert.throws(() => M.importer('{"version":9}', C));
-const pr = M.progression(C, back); assert.strictEqual(pr.total, 48);
+const pr = M.progression(C, back); assert.strictEqual(pr.total, 50);
 
 { // ---------- v2 : devises, outils, jeu ----------
 const near = (a, b, eps) => assert(Math.abs(a - b) < (eps || 0.01), `${a} ≈ ${b}`);

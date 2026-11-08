@@ -29,3 +29,19 @@ assert.strictEqual(tout[0].categorie, 'alerte'); assert.strictEqual(tout[1].sour
 const beaucoup = assembler([{ source: sA, items: Array.from({ length: 40 }, (_, i) => ({ titre: 't' + i, lien: 'https://e.fr/' + i, date: NOW, resume: '', editeur: '' })) }], NOW);
 assert.strictEqual(beaucoup.length, 20, '20 par source maximum');
 console.log('OK veille');
+/* Créateurs suivis et chaînes en direct (v8) */
+{
+  const { sourcesCreateurs, streamsVersItems } = require('../scripts/veille.js');
+  const src = sourcesCreateurs({ createurs_suivis: ['A', 'B', 'C', 'D', 'E', 'Little Big Whale'] });
+  assert.strictEqual(src.length, 2, 'lots de 4 noms'); assert.ok(src.every(s => s.categorie === 'decouverte' && /^https:\/\/news\.google\.com\/rss\/search\?q=/.test(s.url)));
+  assert.ok(decodeURIComponent(src[1].url.replace(/\+/g, ' ')).includes('"Little Big Whale"')); assert.deepStrictEqual(sourcesCreateurs({}), []);
+  const flux = [{ user_login: 'Petit', user_name: 'Petit', viewer_count: 120, game_name: 'Minecraft', title: 'Je découvre' }, { user_login: 'gros', user_name: 'Gros', viewer_count: 90000, title: 'x' },
+    { user_login: 'minus', user_name: 'Minus', viewer_count: 3, title: 'x' }, { user_login: 'bad link!', user_name: 'Bad', viewer_count: 100, title: 'x' }, { user_login: 'moyen', user_name: 'Moyen', viewer_count: 800, title: 'Live' }];
+  const its = streamsVersItems(flux, [{ lien: 'https://www.twitch.tv/petit', date: '2026-11-01T00:00:00.000Z' }], NOW);
+  assert.strictEqual(its.length, 2, 'ni trop gros, ni trop petit, ni identifiant douteux');
+  assert.strictEqual(its[0].lien, 'https://www.twitch.tv/moyen'); assert.strictEqual(its[1].date, '2026-11-01T00:00:00.000Z', 'date de première apparition conservée');
+  assert.strictEqual(its[1].titre, 'Petit : 120 spectateurs en direct sur Minecraft');
+  const tout = assembler([{ source: { nom: 'T', categorie: 'decouverte', max: 40 }, items: Array.from({ length: 30 }, (_, i) => ({ titre: 't' + i, lien: 'https://x.fr/' + i, date: NOW, resume: '', editeur: '' })) }], NOW);
+  assert.strictEqual(tout.length, 30, 'plafond par source modulable');
+  console.log('OK veille créateurs suivis');
+}

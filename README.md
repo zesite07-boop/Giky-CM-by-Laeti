@@ -4,7 +4,7 @@ Module d'autoformation pour une community manager freelance spécialisée Twitch
 
 ## Contenu (version 3.0)
 
-- 6 parcours, 47 leçons + épreuve finale, 285 questions avec une explication pour chaque option, 4 niveaux de difficulté (1 facile → 4 expert) :
+- 6 parcours, 49 leçons + épreuve finale, 297 questions avec une explication pour chaque option, 4 niveaux de difficulté (1 facile → 4 expert) :
   - Apprendre le métier (T1 à T8)
   - S'entraîner sur des missions (M1 à M6)
   - Piloter mon business (B1 à B9, dont B7 « Clients à l'étranger : dollars et livres sterling », B8 « Devis et facture pas à pas », B9 « Budget pro et reporting client »)

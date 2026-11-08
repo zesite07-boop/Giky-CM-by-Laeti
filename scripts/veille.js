@@ -57,13 +57,54 @@ function parseFeed(xml, maintenantIso) {
 function assembler(parSource, maintenantIso) {
   const limite = Date.parse(maintenantIso) - JOURS * 864e5, vus = new Set(), tout = [];
   for (const { source, items } of parSource) {
-    for (const it of items.slice().sort((a, z) => z.date.localeCompare(a.date)).slice(0, MAX_PAR_SOURCE)) {
+    for (const it of items.slice().sort((a, z) => z.date.localeCompare(a.date)).slice(0, source.max || MAX_PAR_SOURCE)) {
       if (Date.parse(it.date) < limite || vus.has(it.lien)) continue;
       vus.add(it.lien);
       tout.push({ titre: it.titre, lien: it.lien, date: it.date, resume: it.resume, source: source.nom, categorie: source.categorie, editeur: it.editeur || '' });
     }
   }
   return tout.sort((a, z) => z.date.localeCompare(a.date)).slice(0, MAX_TOTAL);
+}
+/* Créateurs suivis par leur nom : une recherche Google Actualités par lot de 4 noms. Ajouter un nom = une ligne dans "createurs_suivis". */
+function sourcesCreateurs(config) {
+  const noms = (config.createurs_suivis || []).map(n => String(n).trim()).filter(Boolean);
+  const lots = [];
+  for (let i = 0; i < noms.length; i += 4) lots.push(noms.slice(i, i + 4));
+  return lots.map((lot, i) => {
+    const q = '(' + lot.map(n => '"' + n.replace(/"/g, '') + '"').join(' OR ') + ') (twitch OR streamer OR streameuse OR streaming) when:30d';
+    return { id: 'suivis-' + (i + 1), nom: 'Google Actualités · créateurs suivis : ' + lot.join(', '), categorie: 'decouverte',
+      url: 'https://news.google.com/rss/search?q=' + encodeURIComponent(q).replace(/%20/g, '+') + '&hl=fr&gl=FR&ceid=FR:fr' };
+  });
+}
+/* Chaînes françaises en direct (ni les plus grosses, ni les toutes petites), à partir de la réponse de l'API Twitch. */
+function streamsVersItems(streams, anciens, maintenantIso, min = 25, max = 1500, limite = 40) {
+  const dates = new Map((anciens || []).map(i => [i.lien, i.date]));
+  return (streams || []).filter(s => s && s.user_login && /^[a-z0-9_]{2,25}$/i.test(s.user_login) && s.viewer_count >= min && s.viewer_count <= max)
+    .sort((a, z) => z.viewer_count - a.viewer_count).slice(0, limite).map(s => {
+      const lien = 'https://www.twitch.tv/' + s.user_login.toLowerCase();
+      return { titre: texte(`${s.user_name || s.user_login} : ${s.viewer_count} spectateurs en direct${s.game_name ? ' sur ' + s.game_name : ''}`, 200), lien,
+        date: dates.get(lien) || maintenantIso, resume: texte(s.title, 240), editeur: 'Twitch' };
+    });
+}
+/* Facultatif : actif seulement si TWITCH_CLIENT_ID et TWITCH_CLIENT_SECRET existent (secrets du dépôt). */
+async function chargerTwitch(env, anciens, maintenantIso) {
+  const id = env.TWITCH_CLIENT_ID, secret = env.TWITCH_CLIENT_SECRET;
+  if (!id || !secret) return null;
+  const t = await fetch('https://id.twitch.tv/oauth2/token', { method: 'POST', signal: AbortSignal.timeout(15000),
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ client_id: id, client_secret: secret, grant_type: 'client_credentials' }) });
+  if (!t.ok) throw new Error('Jeton Twitch refusé (HTTP ' + t.status + ')');
+  const jeton = (await t.json()).access_token, streams = [];
+  let curseur = '';
+  for (let page = 0; page < 6; page++) {
+    const r = await fetch('https://api.twitch.tv/helix/streams?language=fr&first=100' + (curseur ? '&after=' + encodeURIComponent(curseur) : ''),
+      { signal: AbortSignal.timeout(15000), headers: { 'Client-Id': id, Authorization: 'Bearer ' + jeton } });
+    if (!r.ok) throw new Error('API Twitch HTTP ' + r.status);
+    const j = await r.json();
+    streams.push(...(j.data || []));
+    curseur = j.pagination && j.pagination.cursor;
+    if (!curseur) break;
+  }
+  return streamsVersItems(streams, anciens, maintenantIso);
 }
 async function telecharger(url) {
   const rep = await fetch(url, { redirect: 'follow', signal: AbortSignal.timeout(15000),
@@ -80,7 +121,8 @@ async function main() {
   let ancien = { maj: null, sources: [], items: [] };
   try { ancien = JSON.parse(fs.readFileSync(fichier, 'utf8')); } catch (_) { /* premier passage */ }
   const parSource = [], statuts = [];
-  for (const source of config.sources) {
+  const SOURCE_TWITCH = { id: 'twitch-direct', nom: 'Twitch · chaînes françaises en direct (25 à 1 500 spectateurs)', categorie: 'decouverte', max: 40 };
+  for (const source of [...config.sources, ...sourcesCreateurs(config)]) {
     if (!/^https:\/\//.test(source.url)) { statuts.push({ id: source.id, nom: source.nom, statut: 'erreur', nb: 0, message: 'Adresse non https' }); continue; }
     try {
       const items = parseFeed(await telecharger(source.url), maintenant);
@@ -93,6 +135,12 @@ async function main() {
       statuts.push({ id: source.id, nom: source.nom, statut: 'erreur', nb: gardes.length, message: String(e.message || e).slice(0, 120) });
     }
   }
+  if (process.env.TWITCH_CLIENT_ID && process.env.TWITCH_CLIENT_SECRET) {
+    try {
+      const its = await chargerTwitch(process.env, (ancien.items || []).filter(i => i.source === SOURCE_TWITCH.nom), maintenant);
+      parSource.push({ source: SOURCE_TWITCH, items: its }); statuts.push({ id: SOURCE_TWITCH.id, nom: SOURCE_TWITCH.nom, statut: 'ok', nb: its.length, message: '' });
+    } catch (e) { statuts.push({ id: SOURCE_TWITCH.id, nom: SOURCE_TWITCH.nom, statut: 'erreur', nb: 0, message: String(e.message || e).slice(0, 120) }); }
+  }
   const items = assembler(parSource, maintenant);
   const resultat = { maj: maintenant, sources: statuts, items };
   const memeContenu = JSON.stringify({ s: ancien.sources, i: ancien.items }) === JSON.stringify({ s: statuts, i: items });
@@ -100,5 +148,5 @@ async function main() {
   for (const s of statuts) console.log(`${s.statut === 'ok' ? 'OK    ' : 'ERREUR'} ${s.nom} (${s.nb})${s.message ? ' : ' + s.message : ''}`);
   if (!statuts.some(s => s.statut === 'ok')) { console.error('Aucune source n’a répondu.'); process.exitCode = 1; }
 }
-module.exports = { parseFeed, assembler, texte };
+module.exports = { parseFeed, assembler, texte, sourcesCreateurs, streamsVersItems };
 if (require.main === module) main().catch(e => { console.error(e); process.exit(1); });

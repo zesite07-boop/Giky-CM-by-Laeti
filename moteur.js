@@ -12,12 +12,13 @@
   const MAX_FICHIER = 1000000;
   const G = (typeof module === 'object' && module.exports) ? require('./gestion.js') : globalThis.CMGestion;
   const P = (typeof module === 'object' && module.exports) ? require('./pourcentages.js') : globalThis.CMPourcent;
+  const KIT = (typeof module === 'object' && module.exports) ? require('./kit.js') : globalThis.CMKit;
   const SEUIL = 80;
   const texte = (v, n) => typeof v === 'string' ? v.slice(0, n || 1500) : '';
   const nombre = (v, min, max) => typeof v === 'number' && Number.isFinite(v) && v >= min && v <= max;
 
   const DEVISES = ['EUR', 'USD', 'GBP'];
-  const OUTILS = ['devises', 'cotis', 'revenu', 'treso', 'pipeline', 'budget', 'reporting', 'doc', 'recettes', 'plafonds', 'echeances', 'planning', 'contrat', 'efacture', 'pourcent'];
+  const OUTILS = ['kit', 'devises', 'cotis', 'revenu', 'treso', 'pipeline', 'budget', 'reporting', 'doc', 'recettes', 'plafonds', 'echeances', 'planning', 'contrat', 'efacture', 'pourcent'];
   const ID_RE = /^[A-Za-z0-9_-]{1,40}$/, ISO_RE = /^\d{4}-\d{2}-\d{2}$/;
   const SITUATIONS = ['franchise', 'tva-fr', 'ue-pro', 'hors-ue-pro'];
   function defauts() {
@@ -40,6 +41,8 @@
         lignes: [{ desc: 'Animation du serveur Discord (1 mois)', qte: 1, pu: 600 }, { desc: 'Clips verticaux sous-titrés', qte: 8, pu: 40 }],
         penalites: 'trois fois le taux d’intérêt légal', notes: '' },
       pourcent: { mode: 'part', a: 450, b: 20 },
+      kit: { moi: '', marque: '', portfolio: '', email: '', client: '', contact: '', chaine: '', typeClient: 'streamer-moyen', demande: 'complet', ton: 'auto', preuve: '',
+        offre1: 350, offre2: 600, offre3: 1000, tva: 'franchise', validite: 30, acompte: 30, delai: 30 },
       plafonds: { anterieur: 0, caN1: 0 },
       echeances: { periodicite: 'mois', cfe: true },
       contrat: { prestataire: { nom: '', siret: '', adresse: '', email: '' }, client: { nom: '', adresse: '', representant: '' },
@@ -57,7 +60,7 @@
       reponses: {}, notes: {}, derniere: null,
       theme: null, aere: false, mascotte: true, energie: null, debut: '', sauvegarde: '', jours: [], outil: 'devises',
       scenarios: {}, eclair: { meilleur: 0, parties: 0, bonnes: 0 },
-      recettes: [], planning: [], revision: {}, idees: [], echeancesFaites: [], suggestions: [],
+      recettes: [], planning: [], revision: {}, kits: [], idees: [], echeancesFaites: [], suggestions: [],
       revenu: { tjm: 250, jours: 3, semaines: 45, regime: 'bnc', vfl: false, acre: false, frais: 1200 },
       treso: { solde: 1500, provision: 28, depenses: 1600, ca: [2500, 900, 3200, 1800, 0, 2600] },
       pipeline: { contacts: 6, reponse: 25, rdv: 50, signature: 30, panier: 900, objectif: 3000 }
@@ -207,6 +210,10 @@
     for (const k of ['anterieur', 'caN1']) if (!nombre(out.plafonds[k], 0, 1e9)) out.plafonds[k] = 0;
     out.echeances = fusion(d.echeances, obj.echeances); out.echeances.periodicite = enumere(out.echeances.periodicite, ['mois', 'trimestre'], 'mois');
     out.contrat = fusion(d.contrat, obj.contrat);
+    out.kit = fusion(d.kit, obj.kit);
+    out.kit.typeClient = enumere(out.kit.typeClient, Object.keys(KIT.TYPES_CLIENT), 'streamer-moyen'); out.kit.demande = enumere(out.kit.demande, Object.keys(KIT.DEMANDES), 'complet');
+    out.kit.ton = enumere(out.kit.ton, ['auto', 'tu', 'vous'], 'auto'); out.kit.tva = enumere(out.kit.tva, ['franchise', 'tva'], 'franchise');
+    for (const [k, mx] of [['offre1', 1e7], ['offre2', 1e7], ['offre3', 1e7], ['validite', 365], ['acompte', 100], ['delai', 365]]) if (!nombre(out.kit[k], 0, mx)) out.kit[k] = d.kit[k];
     out.pourcent = fusion(d.pourcent, obj.pourcent); out.pourcent.mode = enumere(out.pourcent.mode, P.MODES_IDS, 'part');
     out.contrat.devise = enumere(out.contrat.devise, DEVISES, 'EUR'); out.contrat.modalite = enumere(out.contrat.modalite, ['mois', 'mission', 'forfait'], 'mois');
     out.contrat.tva = enumere(out.contrat.tva, ['franchise', 'tva', 'etranger'], 'franchise'); out.contrat.type = enumere(out.contrat.type, ['contrat', 'cgv'], 'contrat');
@@ -233,6 +240,16 @@
         if (!x || typeof x !== 'object' || !ID_RE.test(x.id) || vus.has(x.id) || !ISO_RE.test(x.date)) continue;
         vus.add(x.id);
         out.planning.push({ id: x.id, date: x.date, heure: /^\d{2}:\d{2}$/.test(x.heure) ? x.heure : '', client: texte(x.client, 80), type: enumere(x.type, Object.keys(G.TYPES_PLANNING), 'post'), titre: texte(x.titre, 120), fait: x.fait === true });
+      }
+    }
+    if (Array.isArray(obj.kits)) {
+      const vus = new Set();
+      for (const x of obj.kits.slice(0, 200)) {
+        if (!x || typeof x !== 'object' || !ID_RE.test(x.id) || vus.has(x.id) || !ISO_RE.test(x.date)) continue;
+        vus.add(x.id);
+        out.kits.push({ id: x.id, date: x.date, client: texte(x.client, 120), contact: texte(x.contact, 80), typeClient: enumere(x.typeClient, Object.keys(KIT.TYPES_CLIENT), 'streamer-moyen'),
+          demande: enumere(x.demande, Object.keys(KIT.DEMANDES), 'complet'), statut: enumere(x.statut, ['envoye', 'relance', 'rdv', 'signe', 'perdu'], 'envoye'),
+          faites: Number.isInteger(x.faites) && x.faites >= 0 && x.faites <= 3 ? x.faites : 0 });
       }
     }
     if (Array.isArray(obj.echeancesFaites)) out.echeancesFaites = [...new Set(obj.echeancesFaites.filter(x => typeof x === 'string' && /^[A-Za-z0-9_-]{1,60}$/.test(x)))].slice(0, 400);

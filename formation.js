@@ -3,7 +3,7 @@
 (function () {
   'use strict';
   const C = window.CMContenu, M = window.CMMoteur, S = window.CMSources, R = S.reperes;
-  const SC = window.CMScenarios || [], RS = window.CMRessources || [], G = window.CMGestion, PC = window.CMPourcent;
+  const SC = window.CMScenarios || [], RS = window.CMRessources || [], G = window.CMGestion, PC = window.CMPourcent, KIT = window.CMKit;
   const depot = M.stockage(() => window.localStorage, C);
   let etat = depot.etat, drafts = {}, dernierFocus = null;
   let combo = 0, eclair = null, jeu = null, conv = { montant: 500, devise: 'USD' }, sprint = null, toastTimer = null;
@@ -238,7 +238,7 @@
     return `<div class="accueil-colonne"><h1 class="sr-only" tabindex="-1">Accueil du module community manager</h1>
       <div class="salut"><span class="logo-cm" aria-hidden="true">CM</span><div><p>Module community manager</p><strong>Salut Laetitia</strong></div><span class="pastille-niveau">${icone('etoile', 16)} Niv. ${x.niveau}</span></div>
       ${rappelSauvegarde()}
-      ${carteAlertes()}
+      ${carteAlertes()}${carteRelances()}
       <section class="energie-bloc"><h2>Ton énergie du jour ?</h2><div class="energie-choix" role="group" aria-label="Niveau d’énergie">${Object.entries(ENERGIES).map(([k, v]) => `<button class="energie-btn e-${k}" data-action="energie" data-energie="${k}" aria-pressed="${e === k}"><span class="barres" aria-hidden="true">${[1, 2, 3].map(i => `<i class="${i <= v[2] ? 'on' : ''}"></i>`).join('')}</span>${esc(v[0])}<small>${esc(v[1])}</small></button>`).join('')}</div></section>
       <section class="prochaine" aria-label="Ta prochaine action"><span class="etiq">${esc(a.etiq)}</span><h2>${esc(a.titre)}</h2><p class="meta">${esc(a.meta)}</p><p>${esc(a.texte)}</p>
         <button class="bouton-cerise" data-view="${esc(a.vue)}">${esc(a.bouton)} ${icone('fleche', 20)}</button><button class="bouton secondaire" data-action="sprint" data-minutes="10">Sprint de 10 minutes</button></section>
@@ -314,6 +314,9 @@
 
   /* ---------- Mochi, la mascotte (SVG sans script ni style en ligne) ---------- */
   const PAROLES = {
+    salut: ['Salut ! On voit ça ensemble, un bloc après l’autre.', 'Coucou. Lis à ton rythme, il n’y a pas de chrono.', 'Prêt·e ? Une idée à la fois, c’est suffisant.', 'Je suis là : si un bloc est flou, relis-le puis passe aux questions.'],
+    pense: ['Prends ton temps. Relis la situation, puis choisis.', 'Hmm… Quelle serait la réaction d’un pro ?', 'Pas de piège caché : pense à ton client d’abord.', 'Respire, imagine le message que tu enverrais.'],
+    retient: ['Si tu ne retiens que ça, c’est déjà beaucoup.', 'Le plus important tient en quelques mots : ceux-là.', 'À garder en tête pour les questions.'],
     fete: ['Série en or ! Tu es en feu.', 'Là, c’est du niveau pro. Bravo !', 'High five virtuel : tu l’as bien mérité.', 'Propre, rapide, juste. On continue ?', 'Tu me fais danser, là !'],
     content: ['Bien vu, ça rentre.', 'Exactement ça. Mochi approuve.', 'Net. Une de plus dans la poche.', 'Ça, c’est le bon réflexe métier.', 'Tu l’as : ça se retient mieux après un succès.'],
     rassure: ['Pas grave : une erreur, c’est un souvenir qui s’installe.', 'Regarde la réponse, respire, on y revient tout à l’heure.', 'Même les pros se trompent ici. Tu t’en souviendras mieux.', 'On ne te juge pas, on apprend. Prochaine !', 'Cette question reviendra en révision : tu auras ta revanche.'],
@@ -329,21 +332,29 @@
   function mascotte(humeur) {
     const yeuxBase = '<circle class="m-oeil" cx="47" cy="66" r="4.5"/><circle class="m-oeil" cx="73" cy="66" r="4.5"/><circle class="m-reflet" cx="48.6" cy="64.4" r="1.5"/><circle class="m-reflet" cx="74.6" cy="64.4" r="1.5"/>';
     const yeux = {
-      content: yeuxBase,
+      content: yeuxBase, salut: yeuxBase,
+      pense: '<circle class="m-oeil" cx="47" cy="62" r="4.5"/><circle class="m-oeil" cx="73" cy="62" r="4.5"/><circle class="m-reflet" cx="48.6" cy="60.2" r="1.5"/><circle class="m-reflet" cx="74.6" cy="60.2" r="1.5"/><path class="m-trait fin" d="M66 53 Q73 48 80 52"/>',
       fete: '<path class="m-trait" d="M41 69 Q47 59 53 69"/><path class="m-trait" d="M67 69 Q73 59 79 69"/>',
       rassure: yeuxBase + '<path class="m-trait fin" d="M40 57 Q47 52 54 58"/><path class="m-trait fin" d="M66 58 Q73 52 80 57"/>',
       attentif: '<circle class="m-oeil" cx="47" cy="66" r="5.5"/><circle class="m-oeil" cx="73" cy="66" r="5.5"/><circle class="m-reflet" cx="48.8" cy="64" r="1.8"/><circle class="m-reflet" cx="74.8" cy="64" r="1.8"/><path class="m-trait fin" d="M40 56 L54 56"/><path class="m-trait fin" d="M66 56 L80 56"/>'
     }[humeur];
     const bouche = {
-      content: '<path class="m-trait" d="M52 78 Q60 87 68 78"/>',
+      content: '<path class="m-trait" d="M52 78 Q60 87 68 78"/>', salut: '<path class="m-bouche" d="M50 76 Q60 92 70 76 Z"/>',
+      pense: '<path class="m-trait" d="M54 82 Q60 79 67 82"/>',
       fete: '<path class="m-bouche" d="M48 76 Q60 98 72 76 Z"/>',
       rassure: '<path class="m-trait" d="M53 81 Q60 86 67 81"/>',
       attentif: '<path class="m-trait" d="M54 83 L66 83"/>'
     }[humeur];
-    const bras = humeur === 'fete'
+    const bras = humeur === 'salut'
+      ? '<g class="m-vague"><path class="m-bras" d="M96 84 Q110 74 108 52"/><circle class="m-corps" cx="108" cy="49" r="7"/></g><ellipse class="m-corps" cx="22" cy="92" rx="9" ry="7"/>'
+      : humeur === 'pense'
+      ? '<path class="m-bras" d="M24 90 Q28 84 44 86"/><circle class="m-corps" cx="46" cy="85" r="6"/><ellipse class="m-corps" cx="98" cy="92" rx="9" ry="7"/>'
+      : humeur === 'fete'
       ? '<path class="m-bras" d="M24 82 Q8 70 10 46"/><path class="m-bras" d="M96 82 Q112 70 110 46"/><circle class="m-corps" cx="10" cy="43" r="7"/><circle class="m-corps" cx="110" cy="43" r="7"/>'
       : '<ellipse class="m-corps" cx="22" cy="92" rx="9" ry="7"/><ellipse class="m-corps" cx="98" cy="92" rx="9" ry="7"/>';
     const extra = {
+      salut: '<circle class="m-etoile" cx="20" cy="26" r="3"/>',
+      pense: '<g class="m-bulle-g"><circle class="m-bulle" cx="104" cy="26" r="13"/><path class="m-trait fin" d="M99 22 Q99 17 104 17 Q109 17 109 22 Q109 26 104 28 L104 30"/><circle class="m-oeil" cx="104" cy="34" r="1.3"/></g>',
       fete: '<path class="m-etoile" d="M18 22 l2.4 5 5.4 .8 -3.9 3.8 .9 5.4 -4.8 -2.6 -4.8 2.6 .9 -5.4 -3.9 -3.8 5.4 -.8z"/><path class="m-etoile" d="M102 14 l2 4.2 4.5 .7 -3.3 3.2 .8 4.5 -4 -2.2 -4 2.2 .8 -4.5 -3.3 -3.2 4.5 -.7z"/><circle class="m-etoile" cx="60" cy="9" r="3"/>',
       content: '<path class="m-etoile" d="M100 22 l2 4.2 4.5 .7 -3.3 3.2 .8 4.5 -4 -2.2 -4 2.2 .8 -4.5 -3.3 -3.2 4.5 -.7z"/>',
       rassure: '<path class="m-coeur" d="M100 36 C92 28 92 20 98 20 C101 20 102 23 100 25 C102 23 107 20 110 24 C112 28 106 33 100 36 Z"/>',
@@ -357,7 +368,7 @@
       <circle class="m-joue" cx="37" cy="77" r="5.5"/><circle class="m-joue" cx="83" cy="77" r="5.5"/>${yeux}${bouche}${extra}</svg>`;
   }
   /* Mochi et sa phrase. Vide si la mascotte est désactivée dans les réglages. */
-  const blocMascotte = (humeur, graine) => mascotteActive() ? `<div class="mascotte-bloc">${mascotte(humeur)}<p class="mascotte-parole">${esc(parole(humeur, graine))}</p></div>` : '';
+  const blocMascotte = (humeur, graine, texte) => mascotteActive() ? `<div class="mascotte-bloc ${/^(salut|pense|retient)$/.test(humeur) ? 'mascotte-cours' : ''}">${mascotte(humeur === 'retient' ? 'content' : humeur)}<p class="mascotte-parole">${esc(texte || parole(humeur, graine))}</p></div>` : '';
 
   function feedbackQuestion(q, val) {
     const ok = M.correcte(q, val);
@@ -387,11 +398,11 @@
   }
   const tableauLecon = t => `<div class="table-defile"><table class="table-cash table-lecon"><caption>${esc(t.legende)}</caption><thead><tr>${t.entetes.map(h => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${t.lignes.map(r => `<tr>${r.map((c, i) => i === 0 ? `<th scope="row">${esc(c)}</th>` : `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
   function cours(l) {
-    const outil = { c1: 'pourcent', c2: 'pourcent', c3: 'pourcent', c4: 'pourcent', b2: 'cotis', b3: 'cotis', b4: 'revenu', b5: 'doc', b6: 'treso', b7: 'devises', b8: 'doc', b9: 'budget', p1: 'pipeline', p2: 'pipeline', t8: 'reporting' }[l.id];
-    return `<section class="carte"><div class="situation"><p class="sur-titre">La situation</p><p>${esc(l.situation)}</p></div>
+    const outil = { c1: 'pourcent', c2: 'pourcent', c3: 'pourcent', c4: 'pourcent', b2: 'cotis', b3: 'cotis', b4: 'revenu', b5: 'doc', b6: 'treso', b7: 'devises', b8: 'doc', b9: 'budget', p1: 'pipeline', p2: 'pipeline', p7: 'kit', p8: 'kit', t8: 'reporting' }[l.id];
+    return `<section class="carte">${blocMascotte('salut', l.id, `${parole('salut', l.id)} ${l.court}`)}<div class="situation"><p class="sur-titre">La situation</p><p>${esc(l.situation)}</p></div>
       ${l.cours.map(([t, x], i) => `<section class="cours-bloc"><h2><span class="puce-num" aria-hidden="true">${i + 1}</span>${esc(t)}</h2><p>${esc(x)}</p></section>`).join('')}
       ${l.tableau ? tableauLecon(l.tableau) : ''}
-      <div class="memo"><strong>À retenir</strong>${esc(l.memo)}</div>
+      ${blocMascotte('retient', l.id + 'm')}<div class="memo"><strong>À retenir</strong>${esc(l.memo)}</div>
       ${outil ? `<div class="actions"><button class="bouton" data-action="outil" data-outil="${outil}">Tester dans la boîte à outils</button></div>` : ''}
       <div class="actions"><button class="bouton primaire" data-action="exercice">${M.bilan(l, etat.reponses).fini ? 'Revoir mes réponses' : 'Passer aux questions'} <span aria-hidden="true">→</span></button><span class="petit">${l.questions.length} questions · sans chrono</span></div>
       ${liensSources(l.sources)}</section>`;
@@ -399,7 +410,7 @@
   function renduQuestion(l) {
     const q = l.questions[etat.question], faite = repondu(q), val = faite ? etat.reponses[q.id] : drafts[q.id];
     const ok = faite && M.correcte(q, val);
-    return `<section class="carte question">${pointsQuestions(l)}<p class="q-compteur">${esc(l.code)} · Question ${etat.question + 1} sur ${l.questions.length}${q.critique ? ' · <span class="drapeau">point critique</span>' : ''}</p><h2 tabindex="-1">${esc(q.titre)}</h2><p>${esc(q.texte)}</p>
+    return `<section class="carte question">${pointsQuestions(l)}<p class="q-compteur">${esc(l.code)} · Question ${etat.question + 1} sur ${l.questions.length}${q.critique ? ' · <span class="drapeau">point critique</span>' : ''}</p><h2 tabindex="-1">${esc(q.titre)}</h2><p>${esc(q.texte)}</p>${!faite ? blocMascotte('pense', q.id) : ''}
       <form id="form-question" data-mode="lecon" novalidate>${champsQuestion(q, val, faite)}<p id="erreur-question" class="validation" role="alert"></p>${!faite ? '<div class="actions"><button type="submit" class="bouton primaire">Vérifier</button></div>' : ''}</form>${faite ? feedbackQuestion(q, val) : ''}
       ${faite ? `<div class="actions"><button class="bouton primaire" data-action="suivante">${etat.question === l.questions.length - 1 ? 'Voir mon bilan' : 'Question suivante'} <span aria-hidden="true">→</span></button>${!ok ? '<button class="bouton discret" data-action="reessayer-question">Réessayer</button>' : ''}</div>` : ''}
       <div class="actions"><button class="bouton discret" data-action="cours">Revoir le cours</button>${etat.question > 0 ? '<button class="bouton discret" data-action="precedente">Question précédente</button>' : ''}</div></section>`;
@@ -409,7 +420,7 @@
     const idx = toutes.indexOf(l), suivante = toutes.slice(idx + 1).find(x => !M.bilan(x, etat.reponses).reussi) || toutes.find(x => !M.bilan(x, etat.reponses).reussi);
     const message = b.reussi ? 'Leçon validée. +25 XP.' : b.critiques ? `${b.critiques} erreur${b.critiques > 1 ? 's' : ''} critique${b.critiques > 1 ? 's' : ''} : la leçon n’est pas validée, même avec un bon score.` : `Il faut 80 % pour valider. Tu y es presque.`;
     return `<section class="carte"><p class="sur-titre">Ton bilan</p><div class="resume-score"><p class="score">${b.score} %<span> · ${b.bonnes} / ${b.total} bonnes réponses</span></p></div>
-      ${b.reussi ? victoire(l, suivante) : `<div class="feedback ${b.critiques ? 'critique' : 'erreur'}"><h3>${esc(message)}</h3><p>Relis le cours, puis rejoue la leçon. Tes notes sont conservées.</p></div>`}
+      ${b.reussi ? victoire(l, suivante) : `<div class="feedback ${b.critiques ? 'critique' : 'erreur'}">${blocMascotte(b.critiques ? 'attentif' : 'rassure', l.id + 'b')}<h3>${esc(message)}</h3><p>Relis le cours, puis rejoue la leçon. Tes notes sont conservées.</p></div>`}
       <section class="cours-bloc"><h2>Ton mini-défi</h2><p>${esc(l.defi)}</p></section>
       <div class="champ"><label for="note-action">Mon action concrète</label><textarea id="note-action" data-note="action" maxlength="1500" placeholder="Ce que je fais pour de vrai…">${esc(note.action)}</textarea></div>
       <div class="deux-champs"><div class="champ"><label for="note-echeance">Pour quand ?</label><input id="note-echeance" data-note="echeance" type="text" maxlength="120" value="${esc(note.echeance)}" placeholder="Ex. jeudi soir"></div>
@@ -519,7 +530,7 @@
       <p class="taux-croises" id="taux-croises">${tauxCroises()}</p>
       <p class="minuscule">Le bouton interroge un service public de taux (Frankfurter, données BCE) : c’est la seule requête réseau du module. Taux de référence publiés vers 16 h les jours ouvrés.</p></section>`;
   }
-  const ONGLETS = [['pourcent', 'Pourcentages'], ['devises', 'Convertir'], ['cotis', 'Cotisations'], ['revenu', 'Tarif → revenu'], ['treso', 'Trésorerie'], ['pipeline', 'Prospection'], ['budget', 'Budget'], ['reporting', 'Reporting'], ['doc', 'Devis & facture'], ['recettes', 'Livre des recettes'], ['plafonds', 'Plafonds'], ['echeances', 'Échéances'], ['planning', 'Planning'], ['contrat', 'Contrat & CGV'], ['efacture', 'Facture électronique']];
+  const ONGLETS = [['kit', 'Kit prospect'], ['pourcent', 'Pourcentages'], ['devises', 'Convertir'], ['cotis', 'Cotisations'], ['revenu', 'Tarif → revenu'], ['treso', 'Trésorerie'], ['pipeline', 'Prospection'], ['budget', 'Budget'], ['reporting', 'Reporting'], ['doc', 'Devis & facture'], ['recettes', 'Livre des recettes'], ['plafonds', 'Plafonds'], ['echeances', 'Échéances'], ['planning', 'Planning'], ['contrat', 'Contrat & CGV'], ['efacture', 'Facture électronique']];
 
   function resultatDevises() {
     const eur = M.enEuros(conv.montant, conv.devise, T());
@@ -1013,12 +1024,83 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
         <p class="petit">Avec 10 % et 1 %, tu fabriques presque tous les autres : 30 % = 10 % × 3, 12 % = 10 % + 2 × 1 %.</p></details>`;
   }
 
-  const OUTIL_RENDU = { pourcent: [outilPourcent, resultatPourcent], devises: [outilDevises, resultatDevises], cotis: [outilCotis, resultatCotis], revenu: [outilRevenu, resultatRevenu], treso: [outilTreso, resultatTreso], pipeline: [outilPipeline, resultatPipeline], budget: [outilBudget, resultatBudget], reporting: [outilReporting, resultatReporting], doc: [outilDoc, resultatDoc], recettes: [outilRecettes, resultatRecettes], plafonds: [outilPlafonds, resultatPlafonds], echeances: [outilEcheances, resultatEcheances], planning: [outilPlanning, resultatPlanning], contrat: [outilContrat, resultatContrat], efacture: [outilEfacture, resultatEfacture] };
+  const OUTIL_RENDU = { kit: [outilKit, resultatKit], pourcent: [outilPourcent, resultatPourcent], devises: [outilDevises, resultatDevises], cotis: [outilCotis, resultatCotis], revenu: [outilRevenu, resultatRevenu], treso: [outilTreso, resultatTreso], pipeline: [outilPipeline, resultatPipeline], budget: [outilBudget, resultatBudget], reporting: [outilReporting, resultatReporting], doc: [outilDoc, resultatDoc], recettes: [outilRecettes, resultatRecettes], plafonds: [outilPlafonds, resultatPlafonds], echeances: [outilEcheances, resultatEcheances], planning: [outilPlanning, resultatPlanning], contrat: [outilContrat, resultatContrat], efacture: [outilEfacture, resultatEfacture] };
+
+  /* ---------- Kit de prospection : générateur, copie, suivi des relances ---------- */
+  const textareaKit = (id, texte, lignes) => `<textarea id="${id}" readonly rows="${lignes}">${esc(texte)}</textarea>`;
+  function outilKit() {
+    const k = etat.kit;
+    return `<p class="petit">Choisis le client et la demande : le message, les pièces du portfolio, les 3 offres et les relances se construisent tout seuls. Relis toujours avant d’envoyer.</p>
+      <details class="bloc-plie" open><summary>1. Le client</summary><div class="calcul-champs deux">
+        ${champSelect('kit', 'typeClient', 'Type de client', k.typeClient, Object.entries(KIT.TYPES_CLIENT).map(([v, x]) => [v, x.nom]))}${champSelect('kit', 'demande', 'Type de demande', k.demande, Object.entries(KIT.DEMANDES))}
+        ${champTexte('kit', 'client', 'Nom du client (pour ton suivi)', k.client, 120)}${champTexte('kit', 'contact', 'Prénom du contact', k.contact, 80)}
+        ${champTexte('kit', 'chaine', 'Chaîne ou événement', k.chaine, 120)}${champSelect('kit', 'ton', 'Tutoiement ou vouvoiement', k.ton, [['auto', 'Automatique selon le client'], ['tu', 'Tutoiement'], ['vous', 'Vouvoiement']])}</div></details>
+      <details class="bloc-plie" open><summary>2. Toi</summary><div class="calcul-champs deux">
+        ${champTexte('kit', 'moi', 'Ton prénom et nom', k.moi, 80)}${champTexte('kit', 'marque', 'Ton activité', k.marque, 80, 'Ex. Giky CM')}
+        ${champTexte('kit', 'portfolio', 'Lien de ton portfolio', k.portfolio, 200, 'https://')}${champTexte('kit', 'email', 'Ton e-mail pro', k.email, 120)}
+        ${champTexte('kit', 'preuve', 'Une preuve chiffrée (facultatif)', k.preuve, 300, 'Ex. J’ai fait passer une chaîne de 800 à 1 400 abonnés en 3 mois.')}</div></details>
+      <details class="bloc-plie"><summary>3. Tes tarifs</summary><div class="calcul-champs deux">
+        ${champNum('kit', 'offre1', 'Offre 1 · Essentiel (€)', k.offre1, 0, 10000000, 10)}${champNum('kit', 'offre2', 'Offre 2 · Régulier (€)', k.offre2, 0, 10000000, 10)}${champNum('kit', 'offre3', 'Offre 3 · Complet (€)', k.offre3, 0, 10000000, 10)}
+        ${champSelect('kit', 'tva', 'TVA', k.tva, [['franchise', 'Franchise de TVA (art. 293 B)'], ['tva', 'Je facture la TVA (prix HT)']])}
+        ${champNum('kit', 'validite', 'Validité du devis (jours)', k.validite, 0, 365, 1)}${champNum('kit', 'acompte', 'Acompte (%)', k.acompte, 0, 100, 5)}${champNum('kit', 'delai', 'Délai de paiement (jours)', k.delai, 0, 365, 1)}</div></details>
+      <div id="resultat-kit" aria-live="polite">${resultatKit()}</div>
+      ${liensSources(['delais', 'influenceContrat', 'tvaFranchise'])}`;
+  }
+  function resultatKit() {
+    const k = etat.kit, g = KIT.genererKit(k), auj = aujourdhui();
+    const bloc = (titre, contenu) => `<section class="kit-bloc"><h3>${titre}</h3>${contenu}</section>`;
+    const copier = (id, msg) => `<button class="bouton" data-action="copier" data-cible="#${id}" data-msg="${msg}">Copier</button>`;
+    const mail = `mailto:?subject=${encodeURIComponent(g.objet)}&body=${encodeURIComponent(g.message).slice(0, 1800)}`;
+    return `<p class="petit">Ton utilisé : <b>${g.tonUtilise === 'tu' ? 'tutoiement' : 'vouvoiement'}</b>. Les crochets [ ] sont à compléter.</p>
+      ${bloc('1. Le message', `<label for="kit-objet">Objet</label><input id="kit-objet" readonly value="${esc(g.objet)}">${textareaKit('kit-message', g.message, 14)}
+        <div class="actions">${copier('kit-message', 'Message copié. Colle-le dans ton mail.')}<a class="bouton" href="${mail}">Ouvrir dans ma messagerie</a></div>`)}
+      ${bloc('2. Les pièces du portfolio à joindre', `<ol class="liste-simple">${g.portfolio.map(p => `<li>${esc(p)}</li>`).join('')}</ol>${textareaKit('kit-pieces', KIT.textePortfolio(g), Math.min(8, g.portfolio.length + 1))}<div class="actions">${copier('kit-pieces', 'Liste copiée.')}</div>
+        <p class="minuscule">Mets chaque pièce sur une page, avec le résultat chiffré en premier. Moins de 5 pièces : on les regarde vraiment.</p>`)}
+      ${bloc('3. Tes trois offres', `<div class="table-defile"><table class="table-cash"><caption>Offres adaptées à la demande</caption><thead><tr>${g.offres.map(o => `<th scope="col">${esc(o.nom)}</th>`).join('')}</tr></thead>
+        <tbody><tr>${g.offres.map(o => `<td><strong>${esc(nb(o.prix, 0))} €${k.tva === 'tva' ? ' HT' : ''}</strong><ul class="liste-simple">${o.contenu.map(c => `<li>${esc(c)}</li>`).join('')}</ul></td>`).join('')}</tr></tbody></table></div>
+        <p class="petit">${esc(g.mentions)}</p>${textareaKit('kit-offres', KIT.texteOffres(g, k), 12)}<div class="actions">${copier('kit-offres', 'Offres copiées.')}</div>`)}
+      ${bloc('4. Le plan de relances', `<p class="petit">Envoi aujourd’hui, puis ${KIT.datesSuivi(auj).map(d => `J+${d.j} (${esc(dateFr(d.date))})`).join(', ')}. Jamais plus de trois messages.</p>
+        ${g.suivi.map((s, i) => `<details class="bloc-plie"><summary>J+${s.j} · ${esc(s.titre)}</summary>${textareaKit('kit-relance-' + i, s.texte, 9)}<div class="actions">${copier('kit-relance-' + i, 'Relance copiée.')}</div></details>`).join('')}
+        <div class="table-defile"><table class="table-cash"><caption>Selon sa réponse</caption><thead><tr><th scope="col">Si…</th><th scope="col">Alors</th></tr></thead><tbody>${g.cas.map(c => `<tr><th scope="row">${esc(c[0])}</th><td>${esc(c[1])}</td></tr>`).join('')}</tbody></table></div>`)}
+      <div class="actions"><button class="bouton primaire" data-action="kit-enregistrer">J’ai envoyé ce kit : l’ajouter à mon suivi</button></div>
+      ${suiviKits()}`;
+  }
+  function suiviKits() {
+    const auj = aujourdhui(), STAT = [['envoye', 'Envoyé'], ['relance', 'Relancé'], ['rdv', 'Rendez-vous'], ['signe', 'Signé'], ['perdu', 'Perdu']];
+    if (!etat.kits.length) return '<p class="petit">Ton suivi est vide : ajoute un kit dès que tu l’as envoyé, l’appli te dit quand relancer.</p>';
+    return `<section class="kit-bloc"><h3>Mon suivi des kits (${etat.kits.length})</h3><ul class="suivi-kits">${etat.kits.map(x => {
+      const r = KIT.relanceDue(x.date, x.faites, x.statut, auj);
+      const note = r ? `<span class="pastille-kit ${r.retard ? 'retard' : r.due ? 'jour' : ''}">${r.retard ? 'Relance en retard' : r.due ? 'Relance aujourd’hui' : 'Prochaine relance'} : ${esc(r.titre)} · ${esc(dateFr(r.date))}</span>` : `<span class="petit">${x.statut === 'signe' ? 'Gagné, bravo.' : x.statut === 'perdu' ? 'Classé.' : x.statut === 'rdv' ? 'Rendez-vous en cours.' : 'Relances terminées.'}</span>`;
+      return `<li class="suivi-kit"><div><strong>${esc(x.client || 'Client sans nom')}</strong><p class="petit">${esc(KIT.TYPES_CLIENT[x.typeClient].nom)} · ${esc(KIT.DEMANDES[x.demande])} · envoyé le ${esc(dateFr(x.date))}</p>${note}</div>
+        <div class="suivi-actions"><label class="sr-only" for="st-${esc(x.id)}">Statut de ${esc(x.client)}</label><select id="st-${esc(x.id)}" data-kit-statut="${esc(x.id)}">${STAT.map(([v, n]) => `<option value="${v}" ${x.statut === v ? 'selected' : ''}>${n}</option>`).join('')}</select>
+        ${r ? `<button class="bouton" data-action="kit-relance" data-id="${esc(x.id)}">Relance faite</button>` : ''}<button class="bouton discret" data-action="kit-supprimer" data-id="${esc(x.id)}" aria-label="Retirer ${esc(x.client)} du suivi">Retirer</button></div></li>`;
+    }).join('')}</ul></section>`;
+  }
+  /* Relances dues : alimentent la carte de l’accueil. */
+  function relancesDues() {
+    const auj = aujourdhui();
+    return etat.kits.map(x => ({ x, r: KIT.relanceDue(x.date, x.faites, x.statut, auj) })).filter(o => o.r && o.r.due);
+  }
+  function carteRelances() {
+    const l = relancesDues(); if (!l.length) return '';
+    return `<section class="alertes-carte" role="region" aria-label="Relances à faire"><h2><span class="al-point" aria-hidden="true"></span>${l.length > 1 ? l.length + ' relances de prospects à faire' : 'Une relance de prospect à faire'}</h2><ul class="alertes-liste">${l.slice(0, 3).map(o => `<li>${esc(o.x.client || 'Client')} : ${esc(o.r.titre)} (prévue le ${esc(dateFr(o.r.date))})</li>`).join('')}</ul><div class="actions"><button class="bouton primaire" data-action="outil" data-outil="kit">Ouvrir mon suivi</button></div></section>`;
+  }
+
+  /* ---------- Boîte à outils : quatre familles ---------- */
+  const FAMILLES = [
+    ['calc', '🧮', 'Calculer', 'Pourcentages, devises, cotisations, tarif', ['pourcent', 'devises', 'cotis', 'revenu', 'plafonds']],
+    ['argent', '💶', 'Argent et gestion', 'Trésorerie, budget, recettes, échéances', ['treso', 'budget', 'recettes', 'echeances', 'efacture']],
+    ['ventes', '🤝', 'Clients et ventes', 'Kit prospect, prospection, devis, contrat', ['kit', 'pipeline', 'doc', 'contrat']],
+    ['suivi', '📅', 'Suivre et planifier', 'Planning et rapports clients', ['planning', 'reporting']]
+  ];
+  const familleDe = id => FAMILLES.find(x => x[4].includes(id)) || FAMILLES[0];
   function simulateurs() {
-    const o = etat.outil;
-    return `<header class="en-tete"><p class="sur-titre">S’outiller · Piloter mon business</p><h1 tabindex="-1">Boîte à outils</h1><p class="intro">${ONGLETS.length} outils pour décider avec des chiffres, en euros, dollars et livres sterling. Les taux viennent des sources officielles vérifiées le ${esc(S.verifie)} : ce sont des repères pédagogiques, pas un conseil fiscal.</p></header>
+    const o = etat.outil, fam = familleDe(o);
+    const tabs = ONGLETS.filter(x => fam[4].includes(x[0])).sort((a, b) => fam[4].indexOf(a[0]) - fam[4].indexOf(b[0]));
+    return `<header class="en-tete"><p class="sur-titre">S’outiller · Piloter mon business</p><h1 tabindex="-1">Boîte à outils</h1><p class="intro">${ONGLETS.length} outils rangés en 4 familles. Choisis une famille, puis l’outil. Les taux viennent des sources officielles vérifiées.</p></header>
       ${barreTaux()}
-      <div class="onglets" role="tablist" aria-label="Outils">${ONGLETS.map(([id, n]) => `<button role="tab" id="onglet-${id}" aria-controls="panneau-outil" aria-selected="${o === id}" tabindex="${o === id ? 0 : -1}" data-action="onglet" data-outil="${id}">${esc(n)}</button>`).join('')}</div>
+      <div class="fam-outils" role="group" aria-label="Familles d’outils">${FAMILLES.map(x => `<button class="fam-outil ${x === fam ? 'active' : ''}" data-action="famille-outil" data-outil="${x[4][0]}" aria-pressed="${x === fam}"><span class="fam-ico" aria-hidden="true">${x[1]}</span><b>${esc(x[2])}</b><small>${esc(x[3])}</small></button>`).join('')}</div>
+      <div class="onglets" role="tablist" aria-label="Outils de la famille ${esc(fam[2])}">${tabs.map(([id, n]) => `<button role="tab" id="onglet-${id}" aria-controls="panneau-outil" aria-selected="${o === id}" tabindex="${o === id ? 0 : -1}" data-action="onglet" data-outil="${id}">${esc(n)}</button>`).join('')}</div>
       <section class="carte panneau-outil" id="panneau-outil" role="tabpanel" aria-labelledby="onglet-${o}"><h2>${esc(ONGLETS.find(x => x[0] === o)[1])}</h2>${OUTIL_RENDU[o][0]()}</section>`;
   }
 
@@ -1303,6 +1385,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     if (t.name === 'choix') { const q = qCourante(); const vals = [...document.querySelectorAll('input[name="choix"]:checked')].map(x => Number(x.value)); drafts[q.id] = q.type === 'multiple' ? vals : vals[0]; }
     if (t.matches('[data-sim]') && (t.type === 'checkbox' || t.tagName === 'SELECT')) majSim(t);
     if (t.matches('select[data-pf]')) majPf(t);
+    if (t.matches('[data-kit-statut]')) { const x = etat.kits.find(y => y.id === t.dataset.kitStatut); if (x && ['envoye', 'relance', 'rdv', 'signe', 'perdu'].includes(t.value)) { x.statut = t.value; render(`#${t.id}`); } }
     if (t.matches('[data-idee-statut]')) { const x = etat.idees.find(y => y.id === t.dataset.ideeStatut); if (x) { x.statut = ['a-faire', 'en-cours', 'publie'].includes(t.value) ? t.value : 'a-faire'; sauver(); annoncer('Statut mis à jour.'); } }
     if (t.matches('[data-conv="devise"]')) { conv.devise = t.value; $('#resultat-devises').innerHTML = resultatDevises(); }
     if (t.matches('[data-note="fait"]')) { const l = getLecon(); etat.notes[l.id] = Object.assign({ action: '', echeance: '', fait: false }, etat.notes[l.id], { fait: t.checked }); sauver(); annoncer(t.checked ? 'Défi marqué comme réalisé.' : 'Défi marqué à faire.'); }
@@ -1312,7 +1395,7 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     const tab = e.target.closest && e.target.closest('[role="tab"]'); if (!tab) return;
     if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(e.key)) return;
     e.preventDefault();
-    const ids = ONGLETS.map(x => x[0]); let i = ids.indexOf(etat.outil);
+    const ids = familleDe(etat.outil)[4]; let i = ids.indexOf(etat.outil);
     i = e.key === 'Home' ? 0 : e.key === 'End' ? ids.length - 1 : (i + (e.key === 'ArrowRight' ? 1 : -1) + ids.length) % ids.length;
     etat.outil = ids[i]; render(`#onglet-${ids[i]}`);
   });
@@ -1346,11 +1429,19 @@ Décision pour le mois prochain : ${r.decision || 'à compléter'}`;
     }
     if (a === 'suggestion-renvoyer') { const s = etat.suggestions.find(x => x.id === b.dataset.id); if (s) { s.envoye = true; sauver(); ouvrirMail(s); } return; }
     if (a === 'suggestion-supprimer') { etat.suggestions = etat.suggestions.filter(x => x.id !== b.dataset.id); render('h1'); return; }
+    if (a === 'famille-outil') { etat.outil = b.dataset.outil; render(`.fam-outil[data-outil="${b.dataset.outil}"]`); return; }
+    if (a === 'kit-enregistrer') {
+      const k = etat.kit; if (!k.client.trim()) { toast('Donne un nom au client (case « Nom du client »).'); const c = $('#kit-client'); if (c) c.focus(); return; }
+      etat.kits.unshift({ id: nouvelId(), date: aujourdhui(), client: k.client.trim().slice(0, 120), contact: k.contact.slice(0, 80), typeClient: k.typeClient, demande: k.demande, statut: 'envoye', faites: 0 });
+      etat.kits = etat.kits.slice(0, 200); render('.suivi-kits'); toast('Ajouté à ton suivi. Je te dirai quand relancer.'); return;
+    }
+    if (a === 'kit-relance') { const x = etat.kits.find(y => y.id === b.dataset.id); if (x) { x.faites = Math.min(3, x.faites + 1); x.statut = 'relance'; render(`#st-${x.id}`); toast(x.faites >= 3 ? 'Dernier message envoyé. Le sujet est clos.' : 'Relance notée. Prochaine date mise à jour.'); } return; }
+    if (a === 'kit-supprimer') { etat.kits = etat.kits.filter(y => y.id !== b.dataset.id); render('[data-action="kit-enregistrer"]'); return; }
     if (a === 'onglet') { etat.outil = b.dataset.outil; render(`#onglet-${etat.outil}`); return; }
     if (a === 'maj-taux') { majTaux(b); return; }
     if (a === 'copier') {
       const el = $(b.dataset.cible); if (!el) return;
-      try { await navigator.clipboard.writeText(el.value); toast('Rapport copié. Colle-le dans ton mail ou ton Notion.'); }
+      try { await navigator.clipboard.writeText(el.value); toast(b.dataset.msg || 'Rapport copié. Colle-le dans ton mail ou ton Notion.'); }
       catch (err) { el.focus(); el.select(); toast('Texte sélectionné : fais Ctrl+C (ou Cmd+C) pour le copier.'); }
       return;
     }

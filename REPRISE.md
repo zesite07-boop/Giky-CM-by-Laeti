@@ -20,7 +20,7 @@ Site statique (GitHub Pages, `.nojekyll`). Pas de build. Scripts classiques char
 | `formation.css` | Styles (variables `--accent`, `--ligne`, etc., mode sombre via `data-theme`) |
 | `theme.js` | Thème système avant affichage |
 | `sources.js` | **Source de vérité** des liens officiels et des repères chiffrés (`reperes`) |
-| `contenu.js` + `contenu-*.js` | 6 parcours, 47 leçons, 285 questions, épreuve finale |
+| `contenu.js` + `contenu-*.js` | 6 parcours, 49 leçons, 297 questions, épreuve finale |
 | `scenarios.js` | 12 scénarios à embranchements |
 | `ressources.js` | 66 ressources en 11 catégories |
 | `gestion.js` | **Nouveau (v3)** : calculs purs des outils de gestion, révision, contrat, checklist |
@@ -110,4 +110,6 @@ Kit média Twitch et grille de tarifs, certificat imprimable, planning exporté 
 - `contenu-reseaux.js` : B10 Facebook Pro (Meta Business Suite), B11 WhatsApp Business, B12 LinkedIn en pro (parcours Business) et T9 Le clipping Twitch (parcours Apprendre). Sources officielles ajoutées dans `sources.js` (clés meta*, wa*, li*, twitchClips, twitchDual, twitchDevClips). Rien de payant n'est obligatoire.
 - Veille : catégories `evenements` et `decouverte` (7 nouvelles sources Google Actualités dans `veille-sources.json`), onglets dédiés, tuile d'accueil avec le compte de la semaine, MAX_TOTAL 700. Pour ajouter un créateur : suggestion « Un créateur à suivre » -> à ajouter dans `veille-sources.json` (max 4 noms par requête).
 - Non vérifié (accès refusé) : sites officiels des événements (Z Event, TwitchCon, Paris Games Week) -> aucun lien direct, passage par la collecte.
-- SW cm-v11. 47 leçons, 285 questions.
+- SW cm-v11. 49 leçons, 297 questions.
+
+- **v8 (8/11/2026)** : `kit.js` (UMD `CMKit`, testé) génère le kit prospect (6 types de client × 6 demandes, ton auto, 3 offres, mentions TVA/acompte/délai, relances J+3/J+7/J+14) ; état `kits` (suivi des envois, rappels `relanceDue` sur l'accueil). Boîte à outils découpée en 4 familles (`FAMILLES`, `famille-outil`). Mochi : humeurs `salut`/`pense`, présente dans les cours (`mascotte-cours`) et réactive aux réponses. Leçons P7 et P8 (kit de prospection). Veille : liste `createurs_suivis` (noms cherchés par lots de 4 dans Google Actualités, catégorie découverte) ; option API Twitch (secrets `TWITCH_CLIENT_ID` / `TWITCH_CLIENT_SECRET` → chaînes FR en direct de 25 à 1 500 spectateurs). SW `cm-v12`. 50 leçons, 297 questions.

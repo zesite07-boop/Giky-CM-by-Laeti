@@ -216,6 +216,98 @@
         ['Tu risques de payer ou de publier sans droit.', 'Oui : tarif, limites, conditions, droits.', 'Le prix ne garantit rien.'],
         1, 'Outil = comparer l’offre, les conditions et les droits avant d’utiliser.')
     ]
+  },
+  {
+    id: 'p7', code: 'P7', parcours: 'clients', niveau: 2, titre: 'Construire ton kit de prospection', duree: '12 min',
+    court: 'Un message, des preuves, trois offres, des conditions claires : tout dans un kit court.',
+    objectif: 'Assembler un kit que ton prospect peut lire en deux minutes et comprendre sans te poser de question.',
+    situation: 'Un streamer de 400 spectateurs t’a répondu : « Envoie-moi ce que tu proposes. » Tu as un portfolio, un tarif en tête, mais rien de prêt. Tu veux envoyer quelque chose de net aujourd’hui.',
+    cours: [
+      ['Un kit, pas un catalogue', 'Un kit est court, adapté à une personne et à une demande. Il tient en deux minutes de lecture. Si tu envoies tout ce que tu sais faire, le prospect ne sait plus quoi choisir et ne choisit rien.'],
+      ['Les quatre pièces', '1) Un message personnalisé (pourquoi lui, ce que tu proposes). 2) Trois à cinq pièces de portfolio qui correspondent à sa demande, résultat chiffré en premier. 3) Trois offres claires. 4) Des conditions simples : prix, TVA, validité, acompte, paiement.'],
+      ['Trois offres, pas dix', 'Une offre Essentiel, une Régulière et une Complète. La plupart des gens choisissent celle du milieu : mets-y ce que tu veux vraiment vendre. Écris pour chaque offre ce qui est livré, jamais « sur mesure » sans détail.'],
+      ['Les conditions qui rassurent', 'Écris si tu factures la TVA ou si tu es en franchise (mention « TVA non applicable, art. 293 B du CGI »), la durée de validité du devis, l’acompte et le délai de paiement. Ces lignes évitent les discussions plus tard. Le détail légal est dans les sources.'],
+      ['Les bonnes pièces de portfolio', 'Choisis des pièces qui répondent à sa demande : clips avant/après pour des formats courts, un exemple de charte pour la modération, un calendrier d’un mois pour une ligne éditoriale. Cinq pièces maximum. Une pièce sans résultat chiffré ne prouve presque rien.'],
+      ['L’envoi', 'Un seul e-mail, un objet précis, des liens plutôt que de lourdes pièces jointes, et un seul appel à l’action (un créneau de quinze minutes). Relis à voix haute : si tu bloques, ton prospect bloquera aussi.']
+    ],
+    tableau: { legende: 'Le kit en un coup d’œil', entetes: ['Pièce', 'Ce qu’elle contient'], lignes: [
+      ['Message', 'Pourquoi lui, ce que tu proposes, un seul appel à l’action'],
+      ['Portfolio', '3 à 5 pièces adaptées, résultat chiffré en premier'],
+      ['Offres', 'Essentiel, Régulier, Complet, avec ce qui est livré'],
+      ['Conditions', 'TVA, validité, acompte, délai de paiement'],
+      ['Relances', 'J+3, J+7, J+14 : trois messages maximum']
+    ] },
+    memo: 'Un kit = un message, 3 à 5 pièces, 3 offres, des conditions, un plan de relances. Court, adapté, chiffré. Un seul appel à l’action.',
+    defi: 'Ouvre la boîte à outils, famille Clients et ventes, outil « Kit prospect », remplis-le pour un vrai prospect et relis chaque pièce à voix haute.',
+    sources: ['tvaFranchise', 'delais', 'influenceContrat'],
+    questions: [
+      ch('p7q1', 'Trop de choix', 'Un prospect reçoit ton portfolio complet de 25 pièces. Quel est le risque principal ?',
+        ['Il est impressionné et signe aussitôt.', 'Il ne sait plus quoi choisir et ne répond pas.', 'Il pense que tu es trop chère.'],
+        ['Rare : trop d’éléments dispersent.', 'Oui : un choix trop large paralyse.', 'Ce n’est pas le sujet.'],
+        1, 'Un kit court et adapté se lit ; un catalogue complet se range.'),
+      mu('p7q2', 'Les pièces d’un kit', 'Quelles pièces trouve-t-on dans un bon kit de prospection ? (3 réponses)',
+        ['Un message personnalisé.', 'Trois à cinq pièces de portfolio adaptées.', 'Trois offres claires.', 'Ta déclaration d’impôts.', 'Dix pages sur ton parcours.'],
+        ['Oui.', 'Oui, avec le résultat chiffré en premier.', 'Oui : Essentiel, Régulier, Complet.', 'Non : sans rapport avec la vente.', 'Non : trop long.'],
+        [0, 1, 2], 'Message, preuves adaptées et trois offres : le trio du kit.'),
+      ch('p7q3', 'L’offre du milieu', 'Dans tes trois offres, laquelle mets-tu en avant ?',
+        ['La moins chère, pour être sûre de vendre.', 'Celle du milieu : elle contient ce que tu veux vraiment vendre.', 'La plus chère, jamais les autres.'],
+        ['Tu te dévalues.', 'Oui : la plupart des clients choisissent la médiane.', 'Tu perds ceux qui ont un petit budget.'],
+        1, 'Place dans l’offre médiane ce que tu veux vraiment vendre.'),
+      nb('p7q4', 'L’acompte', 'Ton offre Régulière est à 600 € avec 30 % d’acompte. Quel acompte demandes-tu ? (en €)', 180, 0, '€', '600 × 30 % = 180 €.'),
+      ch('p7q5', 'Les mentions', 'Tu es en franchise de TVA. Que mets-tu sur tes offres ?',
+        ['Rien, c’est évident.', '« Prix nets, TVA non applicable, art. 293 B du CGI », la validité, l’acompte et le délai de paiement.', 'Un prix TTC avec 20 % de TVA.'],
+        ['Tu laisses place au doute.', 'Oui : les conditions claires évitent les litiges.', 'Faux : en franchise tu ne factures pas la TVA.'],
+        1, 'En franchise, indique la mention de l’article 293 B et tes conditions.', true),
+      ch('p7q6', 'L’envoi', 'Comment envoies-tu ton kit ?',
+        ['Dix pièces jointes lourdes et trois appels à l’action.', 'Un e-mail avec des liens, un objet précis et un seul créneau proposé.', 'Un message vocal de huit minutes.'],
+        ['Trop lourd et confus.', 'Oui : lisible, léger, une seule action.', 'Personne ne l’écoutera.'],
+        1, 'Un seul e-mail, des liens, un seul appel à l’action.')
+    ]
+  },
+  {
+    id: 'p8', code: 'P8', parcours: 'clients', niveau: 2, titre: 'Adapter ton kit et suivre tes envois', duree: '12 min',
+    court: 'Le même kit ne s’envoie pas à un petit streamer et à une marque : adapter, relancer, mesurer.',
+    objectif: 'Adapter ton kit au type de client et à la demande, puis suivre chaque envoi avec trois relances maximum.',
+    situation: 'Tu as envoyé cinq kits cette semaine : un petit streamer, une équipe e-sport, une marque. Trois jours plus tard, personne n’a répondu. Tu ne sais pas qui relancer ni quand.',
+    cours: [
+      ['Adapter selon le client', 'Petit streamer : tutoiement, ton simple, offre d’entrée de gamme, bénéfice « tu gagnes du temps ». Streamer confirmé : exemples sur ses propres contenus. Gros streamer ou structure : vouvoiement, process, fiabilité. Marque ou agence : reporting, conformité, résultats. Organisateur : rétroplanning et date limite. Équipe e-sport : contenus hors des matchs.'],
+      ['Adapter selon la demande', 'Clips : avant/après de trois clips. Modération : charte et grille de sanctions. Ligne éditoriale : calendrier d’un mois. Audit : audit anonymisé en exemple. Événement : rétroplanning de J-30 à J+7. Les pièces changent, la structure du kit reste la même.'],
+      ['Le plan de relances', 'J+3 : relance courte. J+7 : relance avec une idée concrète pour lui. J+14 : clôture polie. Jamais plus de trois messages. Chaque relance apporte quelque chose de nouveau ou clôt le sujet.'],
+      ['Suivre chaque envoi', 'Note pour chaque client : date d’envoi, statut (envoyé, relancé, rendez-vous, signé, perdu) et prochaine relance. Le suivi de l’appli te montre ce qui est dû aujourd’hui. Sans suivi, les relances s’oublient, et c’est là que se perdent les contrats.'],
+      ['Réagir aux réponses', '« C’est trop cher » : ne baisse pas le prix, propose l’offre du dessous ou retire un élément. « Je vais y réfléchir » : propose une date de rappel. « Oui » : envoie le devis dans l’heure. Pas de réponse : applique le plan, puis classe.'],
+      ['Mesurer et améliorer', 'Sur vingt kits, compte combien de réponses, de rendez-vous, de signatures. Si peu de réponses : améliore l’accroche. Peu de rendez-vous : revois les offres. Peu de signatures : revois le prix et les conditions. Ces taux alimentent l’outil de prospection.']
+    ],
+    tableau: { legende: 'Adapter le ton et l’angle', entetes: ['Client', 'Ton', 'Angle'], lignes: [
+      ['Petit streamer', 'Tutoiement', 'Gagner du temps, offre d’entrée'],
+      ['Streamer confirmé', 'Tutoiement', 'Exemples sur ses contenus'],
+      ['Gros streamer ou structure', 'Vouvoiement', 'Process et fiabilité'],
+      ['Marque ou agence', 'Vouvoiement', 'Reporting et conformité'],
+      ['Organisateur', 'Vouvoiement', 'Rétroplanning et dates'],
+      ['Équipe e-sport', 'Vouvoiement', 'Contenus hors des matchs']
+    ] },
+    memo: 'Adapter le ton et les pièces. Relances à J+3, J+7, J+14, jamais plus de trois. Ne baisse pas ton prix : change l’offre. Mesure tes taux sur vingt envois.',
+    defi: 'Envoie un kit, ajoute-le à ton suivi, et note dans ton agenda les trois dates de relance.',
+    sources: ['delais', 'tvaFranchise'],
+    questions: [
+      ch('p8q1', 'Le ton', 'Tu écris à une marque que tu ne connais pas. Quel ton choisis-tu ?',
+        ['Le tutoiement, plus chaleureux.', 'Le vouvoiement, avec un message court et professionnel.', 'Aucun message, tu attends.'],
+        ['Risqué avec une marque inconnue.', 'Oui : formel, court, avec un exemple de reporting.', 'Tu ne décroches rien en attendant.'],
+        1, 'Marque ou agence : vouvoiement, reporting et conformité.'),
+      nb('p8q2', 'Les relances', 'Combien de messages au maximum envoies-tu à un prospect sans réponse (kit compris) ?', 4, 0, 'messages', 'Le kit initial puis trois relances (J+3, J+7, J+14) : quatre messages au plus.'),
+      ch('p8q3', 'Trop cher', 'Un streamer te répond : « C’est trop cher pour moi. » Que fais-tu ?',
+        ['Tu baisses ton prix de moitié tout de suite.', 'Tu lui proposes l’offre du dessous ou tu retires un élément, sans changer ton tarif.', 'Tu ne réponds plus.'],
+        ['Tu dévalues ton travail et ton prix de référence.', 'Oui : tu ajustes le contenu, pas la valeur.', 'Tu perds un client possible.'],
+        1, 'On ajuste l’offre, pas le prix d’une prestation.'),
+      ch('p8q4', 'Relance utile', 'Quelle relance à J+7 est la plus efficace ?',
+        ['« Je relance au cas où vous auriez vu mon mail. »', 'Une idée concrète sur sa chaîne, utilisable tout de suite, puis une question.', 'Trois messages d’un coup.'],
+        ['Rien de nouveau pour lui.', 'Oui : tu apportes de la valeur.', 'Tu deviens insistante.'],
+        1, 'Chaque relance apporte une idée nouvelle ou clôt le sujet.'),
+      nb('p8q5', 'Les taux', 'Sur 20 kits envoyés, 25 % reçoivent une réponse. Combien de réponses ?', 5, 0, 'réponses', '20 × 25 % = 5 réponses.'),
+      ch('p8q6', 'Peu de signatures', 'Sur vingt kits : 8 réponses, 5 rendez-vous, 0 signature. Que revois-tu en premier ?',
+        ['Ton accroche.', 'Tes prix et tes conditions.', 'La couleur de ton logo.'],
+        ['Elle fonctionne : tu as des réponses.', 'Oui : l’étape qui bloque est la décision.', 'Aucun lien.'],
+        1, 'Beaucoup de rendez-vous sans signature : revois offres, prix et conditions.')
+    ]
   }
   ];
   C.lecons.push(...NOUVELLES);
