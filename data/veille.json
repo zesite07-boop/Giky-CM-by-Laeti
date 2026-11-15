@@ -1,18 +1,18 @@
 {
- "maj": "2026-11-15T09:24:10.427Z",
+ "maj": "2026-11-15T17:09:34.855Z",
  "sources": [
   {
    "id": "gnews-twitch-fr",
    "nom": "Google Actualités · Twitch France",
    "statut": "ok",
-   "nb": 58,
+   "nb": 60,
    "message": ""
   },
   {
    "id": "gnews-streamers",
    "nom": "Google Actualités · streamers et streaming",
    "statut": "ok",
-   "nb": 66,
+   "nb": 63,
    "message": ""
   },
   {
@@ -75,7 +75,7 @@
    "id": "gnews-streamers-youtubeurs",
    "nom": "Google Actualités · streamers et YouTubeurs",
    "statut": "ok",
-   "nb": 8,
+   "nb": 9,
    "message": ""
   },
   {
@@ -89,7 +89,7 @@
    "id": "gnews-regles-twitch",
    "nom": "Google Actualités · règles, modération et sanctions Twitch",
    "statut": "ok",
-   "nb": 34,
+   "nb": 33,
    "message": ""
   },
   {
@@ -131,42 +131,42 @@
    "id": "gnews-createurs-1",
    "nom": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
    "statut": "ok",
-   "nb": 78,
+   "nb": 79,
    "message": ""
   },
   {
    "id": "gnews-createurs-2",
    "nom": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
    "statut": "ok",
-   "nb": 50,
+   "nb": 48,
    "message": ""
   },
   {
    "id": "gnews-createurs-3",
    "nom": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
    "statut": "ok",
-   "nb": 33,
+   "nb": 34,
    "message": ""
   },
   {
    "id": "gnews-events-streamers",
    "nom": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
    "statut": "ok",
-   "nb": 10,
+   "nb": 11,
    "message": ""
   },
   {
    "id": "gnews-events-salons",
    "nom": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
    "statut": "ok",
-   "nb": 79,
+   "nb": 81,
    "message": ""
   },
   {
    "id": "gnews-events-esport",
    "nom": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
    "statut": "ok",
-   "nb": 30,
+   "nb": 31,
    "message": ""
   },
   {
@@ -236,11 +236,524 @@
    "id": "suivis-4",
    "nom": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
    "statut": "ok",
-   "nb": 32,
+   "nb": 31,
    "message": ""
   }
  ],
  "items": [
+  {
+   "titre": "La Chine favorise les SUV énormes, l’Europe les petites voitures électriques",
+   "lien": "https://www.journaldugeek.com/2026/11/15/la-chine-favorise-les-suv-enormes-leurope-les-petites-voitures-electriques/",
+   "date": "2026-11-15T17:03:42.000Z",
+   "resume": "Deux marchés, deux directions. Alors que les constructeurs chinois multiplient les lancements de grands SUV, l’Union européenne prépare des règlements pour avantager les petites voitures électriques. D’un côté, des modèles dépassant allègr…",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "To 'smaller' creators - do not link your Instagram page to your Facebook",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xx0cdo/to_smaller_creators_do_not_link_your_instagram/",
+   "date": "2026-11-15T16:51:37.000Z",
+   "resume": "So I've followed a smaller content creator I met in a game we mutually played and casually watch them. The other day, I see her Facebook - with her attached personal info including current location and public posts - show up in my facebook…",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "Un nouveau jeu vidéo Blade Runner d'envergure serait en préparation selon les producteurs de Blade Runner 2099 - big-n.fr",
+   "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxOLWZZVGI3VjMyX1RjeXJxSE9kdDVLYzRtZmNiWTJTNXV4WXFheFQ2alBrZjhHNXhiLUR4bENJWTlpdnptWk9abWh0RHpFRGNveTlXT1A5dUxGZnBWUFBaTGlOSmJqZXp5bVVGWEZXdk5IVExiZnl6Nk9RUTdaLVMxTVpQdzdLUlRHclB5YnZneno4UG42OFVydUFUcjRrdw?oc=5",
+   "date": "2026-11-15T16:49:35.000Z",
+   "resume": "Un nouveau jeu vidéo Blade Runner d'envergure serait en préparation selon les producteurs de Blade Runner 2099 big-n.fr",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "big-n.fr"
+  },
+  {
+   "titre": "Il fallait s'y attendre : GTA 6 pourrait être censuré dans certains pays",
+   "lien": "https://www.gamekult.com/actualite/il-fallait-s-y-attendre-gta-6-pourrait-etre-censure-dans-certains-pays-3050872967.html",
+   "date": "2026-11-15T16:33:00.000Z",
+   "resume": "Vous n'êtes pas sans savoir que le très dodu GTA VI peut déjà être téléchargé sur PS5 et Xbox Series, en attendant le déverrouillage tant attendu le 19 novembre. Selon de premières analyses menées par des dataminers, certaines versions int…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "PlayStation offre aux abonnés une dernière chance de jouer gratuitement à GTA 5 avant la sortie de GTA 6 - La Crème Du Gaming",
+   "lien": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNRFpwUFJHUGFjd0FBcnVJQ3FZdENUa25pWGlvODh6Smx5bVpjT04zU0o4ZlhqN1RELXdXcDdoWmEwSjUwWWhkSXZ1NlpjRGZKNVdKV3A2ZV9UXzh2dWY0OGEzWEpEbHR1T2hwZERrdkFRWUxHY1p4RERjNXJvZFI4TGtiOThkSmpuRDIzelBESmxkUEE4amtvT3l6TFJEU19jOFpYVG5XWnRwVVdQX0JRN1pYcXRTeXlzODg0LTE1eWNNODJhbWZFNWprSkl6RHBzeTJ2MXl1SDZyb3IxWXBNT1RVS2cyamV5X3hzQXJ5SW56dl9w?oc=5",
+   "date": "2026-11-15T16:30:52.000Z",
+   "resume": "PlayStation offre aux abonnés une dernière chance de jouer gratuitement à GTA 5 avant la sortie de GTA 6 La Crème Du Gaming",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "La Crème Du Gaming"
+  },
+  {
+   "titre": "France-Turquie : où voir le match de foot en direct et en streaming ?",
+   "lien": "https://www.numerama.com/pop-culture/2373649-france-turquie-ou-voir-le-match-de-foot-en-direct-et-en-streaming.html",
+   "date": "2026-11-15T16:02:00.000Z",
+   "resume": "L'Équipe de France n'est pas encore qualifiée pour les quarts de finale de la Ligue des nations, en raison de sa défaite face à l'Italie. Mais les Bleus reçoivent la Turquie, 0 point au compteur, pour la dernière journée. Le match est diff…",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Depuis son opération du cerveau, il voit les yeux de son chat sur les visages humains",
+   "lien": "https://www.journaldugeek.com/2026/11/15/depuis-son-operation-du-cerveau-il-voit-les-yeux-de-son-chat-sur-les-visages-humains/",
+   "date": "2026-11-15T16:00:23.000Z",
+   "resume": "Pour Karl, les yeux de son chat Luna peuvent apparaître sur les visages des personnes qu’il croise. Ce trouble rare, survenu après une opération du cerveau, intéresse des chercheurs qui étudient notre perception des visages. Ils ont utilis…",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Blerp and Twitch",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xwyn2t/blerp_and_twitch/",
+   "date": "2026-11-15T15:43:51.000Z",
+   "resume": "I stream off my ps5 using a capture card for my laptop, and broadcast through obs studios. I recently set up blerp for Alerts, channel points, and bits. However when someone tried using the channel points today to bonk my pngmodel it didnt…",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "Chant des Tempêtes Zelda Ocarina of Time : Comment obtenir cette mélodie ?",
+   "lien": "https://www.jeuxvideo.com/news/2114465/chant-des-tempetes-zelda-ocarina-of-time-comment-obtenir-cette-melodie.htm",
+   "date": "2026-11-15T15:30:09.000Z",
+   "resume": "Découvrez comment apprendre le chant des tempêtes dans le remake Switch 2 de Zelda OOT. Cela vous permettra de débloquer certaines zones secrètes du monde, mais vous permettra également d'accéder à l'un des donjons de la quête principale.",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "How do you deal with doxxing?",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xwy900/how_do_you_deal_with_doxxing/",
+   "date": "2026-11-15T15:27:31.000Z",
+   "resume": "Hey im not going to get into who i am or what my channel is. Im a Twitch Partner and for the first time in all my years of streaming i had my full Name doxxed. It seems like my location is still private, but it was a really bad scare. I ha…",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "À la TV ce soir : 3 films à regarder ce dimanche 15 novembre 2026",
+   "lien": "https://www.journaldugeek.com/2026/11/15/a-la-tv-ce-soir-3-films-a-regarder-ce-dimanche-15-novembre-2026/",
+   "date": "2026-11-15T15:00:56.000Z",
+   "resume": "Ce dimanche soir, la télévision ne gâte pas les amateurs de genre, mais quelques valeurs sûres tirent leur épingle du jeu.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Fable ne sait pas se vendre auprès des joueurs, s'en est même étrange. D'une ambiance colorée on passe désormais à une atmosphère sombre et peu séduisante - JeuxVideo.com",
+   "lien": "https://news.google.com/rss/articles/CBMioAJBVV95cUxQM1VrdUxNZF9NS0NWbC1wbG4yV2FGcGZXMDJ0MmhhZVlfR2hxUDhkaTQ2a1RNOVlqMmxLbW1JVUNmMlZsTENYR3NLTFp6Y2dtdFRmSEJzTWxGNVBsYk9WQnhYeTB3Yi1DOGtVdEVvZXZBb3dIS0tsT3VvRHgtZmJCaDR0S3NZRklJMEtrdDl3T0szX0YxNkR1by1tMUROb2pVSkFYelA2MUJyWERvMXZOcnF5TjFDeVhpbWw5SXRJdFlpOTdTTGI0eWVYc2M4OWxIblExbDB0eG5GLVRiQ2hCcGJPd2lsWkY5bEViTlNEX25zNEF3VWZCTHpHMGVTUi13Wkp1dDVOOXlIM3AxQnI3QzNzX050S2Y0RUJMY29SZVY?oc=5",
+   "date": "2026-11-15T15:00:09.000Z",
+   "resume": "Fable ne sait pas se vendre auprès des joueurs, s'en est même étrange. D'une ambiance colorée on passe désormais à une atmosphère sombre et peu séduisante JeuxVideo.com",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "JeuxVideo.com"
+  },
+  {
+   "titre": "Fable ne sait pas se vendre auprès des joueurs, s'en est même étrange. D'une ambiance colorée on passe désormais à une atmosphère sombre et peu séduisante",
+   "lien": "https://www.jeuxvideo.com/news/2114234/fable-ne-sait-pas-se-vendre-aupres-des-joueurs-s-en-est-meme-etrange-d-une-ambiance-coloree-on-passe-desormais-a-une-atmosphere-sombre-et-peu-seduisante.htm",
+   "date": "2026-11-15T15:00:09.000Z",
+   "resume": "À trois mois de sa sortie fixée au 23 février 2027, le reboot de Fable s'est offert une nouvelle vidéo de quatre minutes lors des 25 ans de Xbox. Mais entre atmosphère lugubre, rythme lent et choix radicaux, cette séquence peine à convainc…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Les gamers n’en reviennent pas : le nouveau jeu GTA 6 est à prix renversant sur ce site juste avant sa sortie le 19 novembre - Le Parisien",
+   "lien": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxPM3JhWkZVYXhEaUJ1bjRWM3RnemxoNmFodTAyNHRZSlpXOHB6czNKenlyQ0gxTjQ3NlV4N3BXVmlvN1N0WG1QV0hncFJOclBibUhOM2k3OE5SYlBuNTR3azB5aFJYWXNWaGFEekYyZWplSkxyN1ljVFpubzlYN09odVB5Smx0RFhEV2UtdUpLMXd3djdRWlh0SlFPd3J6akZGOW1ZdXB6cm9qbE1ZSEszTk5yOU5YblZzYXJOQVJyUHhrSHZudXZxRlhfenY1RVVCTHFwX3JMc3VXRXN1cmdYUTBIYmFrcm8zZDF2ZEJ6UGRXeU40ZVhiSXJmSEtRb3ZjZ0xfS0VkRGFkeTFucXA5ZkxnMVRXZjJPeGJzYkswcHV4NWhWWDYyel9DT0xrR24wZmpMVzNkRWEwUHRkcWNFYXlDckpuRG5L?oc=5",
+   "date": "2026-11-15T15:00:00.000Z",
+   "resume": "Les gamers n’en reviennent pas : le nouveau jeu GTA 6 est à prix renversant sur ce site juste avant sa sortie le 19 novembre Le Parisien",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Le Parisien"
+  },
+  {
+   "titre": "Jeu vidéo : \"GTA Online\", la machine à cash de Rockstar - Quid.ma",
+   "lien": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOMV8zTWMxT3BxSWtnNWxtU0FmdUhGd054akFCZVlXcjd6cWJhUDd1SUhxLWxFVWhiajE5ek1HeXJyTWIzSmJ5bnB3RE5UVElma21haEZhM21HdG5ac0xBNGhjRTZnaHFKM2p1YmdoM3R3a2kzWHRJaFdpanNWSHBHRA?oc=5",
+   "date": "2026-11-15T14:53:00.000Z",
+   "resume": "Jeu vidéo : \"GTA Online\", la machine à cash de Rockstar Quid.ma",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Quid.ma"
+  },
+  {
+   "titre": "Something really weird happened to me in twitch I can't even explain it",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xwxe6u/something_really_weird_happened_to_me_in_twitch_i/",
+   "date": "2026-11-15T14:51:57.000Z",
+   "resume": "So im a badge collector in twitch so everyday I check for new badge to see wish one coming up so I saw jordan x space jam badge is coming up so I when to badge collector twitch channel to ask where I can see the stream and get the badge bu…",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "PSG. « Pendant six mois je suis un streamer » : Khvicha Kvaratskhelia donne de ses nouvelles sur Twitch - Ouest-France",
+   "lien": "https://news.google.com/rss/articles/CBMikwJBVV95cUxQXzYxSjVZLVpVZU5XckdwQmQ3MUJWdnZ0bW1NN1Y1MEdwOGEtS1dwd0VRYnE4MV9ib0JZNjViWDJldG1XNGxHQWk1MGpBQmUycjBYbF82Y1l0cVhCU3VZRUhKeWxTZ2NweHFZSk1jaUFNaHp4RnotR3Y4X3lPNGVMVkFsU2d5Y3hwYmhCTEZrUUdSVG5QLXpoNXkwUW1IOHdzN0wwa0YzclpWR2ZydzF5azN0N1BnZXhNQWdIb2QtVWVabUlyN1dvZXNSeVlwTzBwTHpTd2lzQUMzWUdTdVk5LTFBZ1FEcnZOcE9GUFhuSW9QTVNjSF9lNjZoWVRycUw0dTU4aEc5MUpManJzVVZ4ZUN6Yw?oc=5",
+   "date": "2026-11-15T14:50:15.000Z",
+   "resume": "PSG. « Pendant six mois je suis un streamer » : Khvicha Kvaratskhelia donne de ses nouvelles sur Twitch Ouest-France",
+   "source": "Google Actualités · streamers et streaming",
+   "categorie": "alerte",
+   "editeur": "Ouest-France"
+  },
+  {
+   "titre": "Blue Prince, Sable, Routine… Une ancienne prof fonde sa boîte dans le jeu vidéo, avec succès",
+   "lien": "https://www.gamekult.com/actualite/blue-prince-sable-routine-une-ancienne-prof-fonde-sa-boite-dans-le-jeu-video-avec-succes-3050872929.html",
+   "date": "2026-11-15T14:44:00.000Z",
+   "resume": "Relayé par la BBC pour atterrir dans nos colonnes, l'admirable portrait de Jarvs Tasker émane de courage et de bon sens. Dans une ère où l'industrie vidéoludique, en crise, ferme des studios à tours de bras, son implication passionnée dans…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Has anyone else ever experienced this?",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xwx189/has_anyone_else_ever_experienced_this/",
+   "date": "2026-11-15T14:36:23.000Z",
+   "resume": "Today I woke up to go to work and found an email from Twitch saying I’ve been banned indefinitely. The reason given is that my account is a \"bot or automated account.\" Honestly, I have no idea what that’s about—as far as I know, I’m human.…",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "Cette étoile brillait fort tous les 113 jours et on sait enfin pourquoi",
+   "lien": "https://www.numerama.com/sciences/2372635-cette-etoile-brillait-fort-tous-les-113-jours-et-on-sait-enfin-pourquoi.html",
+   "date": "2026-11-15T14:31:00.000Z",
+   "resume": "Une étoile particulièrement instable interrogeait les scientifiques depuis près de quinze ans. Une étude publiée ce lundi 9 novembre, appuyée sur le télescope Chandra, trouve enfin une explication à son étrange comportement : un compagnon…",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "À quelques jours de sa sortie, GTA 6 subit une nouvelle fuite : 34 chansons et des stars mondiales dévoilées - La Crème Du Gaming",
+   "lien": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNV3JsVXo4aHdvVmZPS19udU4yN1lMVGp3a3I5RUtQb1lwMmFEZ0tBRnh0LUZTeUc2WlRfQV9mdzkzOUVPaWlTclAyak5BWjNBMlpTMDVJa0o4aFczVlgzRnhXazNTaE5zbnk2ZElrcjVEeF9tdTFiWkQ0VEotSk0xSGt3Nm4xbi1SdGQ3SWppRzlsQy01WDZQQ2Q0d09GX2p4NVBNRFA1MXV4T005MXZncF9HbU1DbHpJZW5uQU83UU1jRjVtdUtaTk5iTHhHT2NUNWp5X3hJckxQYzl2SU5HdFBFckM0M2VMYjRiQVEwb2tncWZIM1E?oc=5",
+   "date": "2026-11-15T14:30:46.000Z",
+   "resume": "À quelques jours de sa sortie, GTA 6 subit une nouvelle fuite : 34 chansons et des stars mondiales dévoilées La Crème Du Gaming",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "La Crème Du Gaming"
+  },
+  {
+   "titre": "Lecturas domingo XXXIII del tiempo ordinario (A) - www.omnesmag.com",
+   "lien": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZkVDMElWbHYzcTNDNklkMFpBWUxHV205cnU4dVZFNC11V29heWFsRXdUVC1zX3VfT3h6VHpZaFdDY09FZDVxVmJTLW5fZks2UnlsM3dWVDlIc3hBVDVoUzlzd2NGWklDbTJwNzc2UmZOcWJJbXphZWVfeHJBaExHSTMtYmZrem9PMlloNnN6V1pndGZpbU1VWW81YjZrOVR3Qnhtbm9QbGFqUmRIWHFVWUVTQWRTT3JTUWc?oc=5",
+   "date": "2026-11-15T14:29:10.000Z",
+   "resume": "Lecturas domingo XXXIII del tiempo ordinario (A) www.omnesmag.com",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "www.omnesmag.com"
+  },
+  {
+   "titre": "Squeezie : « J'ai tout donné, j'espère que le divertissement aura été à la hauteur » - Catch-Newz",
+   "lien": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaktsdE9qZnFzRVAyQ0h5bHp4X2JuWXRuRUhiZTNzSUEtV3hIVWlXVkdVRTNEdHhiRmlkb25zeXhWdnlBVDJScHRiVFhFcDFXblJqWEZMSDVQM1B6d1NqZjJQVF9xcGY0bnMxSUNBSWhPZlRzdFlVM3Znb01mdzJDRDViLTR5bDM3X1hyQ2IwTDR1YWNSOXFfYkVyaGtFMmFIeGpIRGZoaWNfUWxOLU9LNWNnb0RORmJZQWVId25WaW8?oc=5",
+   "date": "2026-11-15T14:17:43.000Z",
+   "resume": "Squeezie : « J'ai tout donné, j'espère que le divertissement aura été à la hauteur » Catch-Newz",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "Catch-Newz"
+  },
+  {
+   "titre": "How do I access the TwitchCon livestreams/ Vods",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xwwkda/how_do_i_access_the_twitchcon_livestreams_vods/",
+   "date": "2026-11-15T14:16:12.000Z",
+   "resume": "Hello! I really wanted to watch the “dungeon delivery” podcast panel live stream at TwitchCon last night (14.11.2026) at the nomnom theater at 3:30-4:30 pm. I live across the world and the panel would have started at 3 am for me, so I was…",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "Kiki Zelda Ocarina of Time : Où trouver le chien de la Citadelle d'Hyrule ?",
+   "lien": "https://www.jeuxvideo.com/news/2114459/kiki-zelda-ocarina-of-time-ou-trouver-le-chien-de-la-citadelle-d-hyrule.htm",
+   "date": "2026-11-15T14:08:09.000Z",
+   "resume": "Découvrez l'emplacement de Kiki dans le remake Switch 2 de Zelda OOT. Cela vous permettra de récolter un nouveau quart de coeur de la citadelle d'Hyrule, de quoi vous rapprocher encore un peu plus de la complétion de la quête du 100%.",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Vidéo Replay : APEX Legends, Project Motor Racing, TankRat, Yu-Gi-Oh! - MaXoE",
+   "lien": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNR2MwLXU0MzFOYnNFU2pLYUNaeENpX2lNeF9FZEFfeVN1eE13SldOSUs1UUNlci0wYkFXVXVFcW14WVdJcXU2cmdicXRjZDhOS1hvVGhRYzZHR19Cd3dDbUtvbDRGel9hYXBkZjlHbTg4YUxRdlVkWHoxdVAwZkJDVU5sUmdDYWJ5TEdaOFNjQnRJeF9DZFpmaGdfaHF2dnZQbHUwWDlIbmZEVGZnNEdqWG1YYmVoZw?oc=5",
+   "date": "2026-11-15T14:06:15.000Z",
+   "resume": "Vidéo Replay : APEX Legends, Project Motor Racing, TankRat, Yu-Gi-Oh! MaXoE",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "MaXoE"
+  },
+  {
+   "titre": "Sans ce film vieux de 44 ans, pas de Cyberpunk 2077. En 2026, une série étend son univers sur Amazon Prime Video - JeuxVideo.com",
+   "lien": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxObTFsZ0JMVDBvbkhBeUVlVHd3Z19iTnRvZ1JxbTdZSVRWRWkySGI0X0d1ZVBDYkdQNE1hSGtackVONzdYV0piMmgtdFl4bDJYa2ZJbkdZU0Z3bWlzWGxDMU9ENDFFQXdRRklLSHJSdnhJRjZmckxSWjltZmt3STNJeUlOcWlqbWwtX3JFNks0YkREYTV3c1JEekVGTGNzWXZJR1dMVkxhZWxoWXlnSlZrS014LTZIcTFjd2ZXaUx3bU05LU1uVFF2Q1pZdkF4ZHdKMW52MUJUTk9zWVROd2ZoQnZzSkcwVEk?oc=5",
+   "date": "2026-11-15T14:04:03.000Z",
+   "resume": "Sans ce film vieux de 44 ans, pas de Cyberpunk 2077. En 2026, une série étend son univers sur Amazon Prime Video JeuxVideo.com",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "JeuxVideo.com"
+  },
+  {
+   "titre": "116 drones sous-marins chinois dans le grand bain, c’est un record",
+   "lien": "https://www.journaldugeek.com/2026/11/15/116-drones-sous-marins-chinois-dans-le-grand-bain-cest-un-record/",
+   "date": "2026-11-15T14:03:59.000Z",
+   "resume": "Faire nager 116 robots ensemble, sans intervention humaine : c’est le record décroché par une équipe chinoise dans une piscine. Une démonstration de navigation autonome qui intéresse aussi bien les spécialistes des fonds marins que les mil…",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Les Game Awards 2026 annoncent leurs nommés le 17 novembre, deux jours avant GTA 6 - Foro3D",
+   "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOSHJsWENOVWJjUGRWNDJsWUJzWERjRWlDUWkwWXhyaFRPeDJPRHpfc3RpakY2N1gzREJDQlJCYWxuMF9Ea2VtaE9aVV9mWkRuVldDZTkzS3BPc3ZJelVlemJnTkR6d3EwcklEbF95N1llbnVHY2NETHNGdjZnSHBmc091c0NDM3dmb3dxYzlGYzJPYXdIc0RGWTBVQXBRNnBpeE5TVHhyM3YteGxXMWEzM3BR?oc=5",
+   "date": "2026-11-15T13:28:13.000Z",
+   "resume": "Les Game Awards 2026 annoncent leurs nommés le 17 novembre, deux jours avant GTA 6 Foro3D",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "Foro3D"
+  },
+  {
+   "titre": "Let’s be honest",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xwvg7m/lets_be_honest/",
+   "date": "2026-11-15T13:25:42.000Z",
+   "resume": "Streamer here!! I feel Twitch has shown a side that is insanely toxic. Long story short, I’m a streamer and have streamer friends. Said friends shout me out when I’m in channel and as do I to them. Recently I had someone say they felt I wa…",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "We need your help: Academic survey about toxicity on Twitch",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xwvbf3/we_need_your_help_academic_survey_about_toxicity/",
+   "date": "2026-11-15T13:19:21.000Z",
+   "resume": "Hi, we are researchers in linguistics based at Simon Fraser University in Canada! We're interested in toxic communication on Twitch and want to ask Twitch users (14 and older, English-speaking) about their perception of what kind of emotes…",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "Squeezie, Amine et Kameto vantent le chocolat Plesh : 1,79 € la bouchée, déjà épuisé en ligne - Toutes les Box",
+   "lien": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNX1ZqYW1ERHZWdFBQdzlDNF95aS1yWTY3ekx4ZGFZQXVUR2RfY040OWFaYzZTM1pXbzEyZXNzcTNjNVYya3ZNSks3YXhnQVVkdUpSTG5jRk9VRUtZT21Hb243Z19yNGZsWUhTSjBUYlhqb0YwVk1MTFZvUElCaC1jUTRmMTY5Zw?oc=5",
+   "date": "2026-11-15T13:13:44.000Z",
+   "resume": "Squeezie, Amine et Kameto vantent le chocolat Plesh : 1,79 € la bouchée, déjà épuisé en ligne Toutes les Box",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "Toutes les Box"
+  },
+  {
+   "titre": "Les émissions de CO₂ vont baisser en 2026, mais le compte n’y est pas",
+   "lien": "https://www.journaldugeek.com/2026/11/15/les-emissions-de-co%e2%82%82-vont-baisser-en-2026-mais-le-compte-ny-est-pas/",
+   "date": "2026-11-15T13:02:56.000Z",
+   "resume": "Les émissions mondiales de CO₂ devraient légèrement reculer en 2026, selon de premières estimations. Une bonne nouvelle à prendre avec précaution : cette baisse tient surtout aux perturbations des approvisionnements d'énergie, et ne suffit…",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Ils vont monter à bord, mais les astronautes n’ont pas le droit de voir la fusée : le rituel le plus paradoxal des lancements Soyouz",
+   "lien": "https://www.numerama.com/sciences/2371751-ils-vont-monter-a-bord-mais-les-astronautes-nont-pas-le-droit-de-la-voir-le-rituel-le-plus-paradoxal-des-lancements-soyouz.html",
+   "date": "2026-11-15T13:01:00.000Z",
+   "resume": "Quelques jours avant chaque décollage d'un Soyouz depuis Baïkonour, l'équipage n'a pas le droit de voir sa fusée partir vers le pas de tir.",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "« Zelda », « Rayman », « Gears of War »… Les sorties de jeux vidéo de la fin de l’année, à prévoir sous le sapin - Ouest-France",
+   "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxPWU5rZWdKRk1nMENONWlCaGU4TzJDV3lhWGFXblk0WEU5UG91c2xpd2FwS3pIWmpsUVJBYjVLSmRSX1pHLTBxNGlObTAzcW5QX2RWT04xVEZkbHk3TktscHozNGxiNlVFX0lqQ3R0WkpSSHl3MFAwMVFOZWQ3OGFON2pkamQ4aVFIWWNfRVRCWGZlMTVJVkIzZVpJalhTZ2JRQ1B3bExtcmJCRFBqVTJELXpPSEJOVFRNQXF2VGx0RjVOUVRWODhseDZPWnRsdVBIUnRkRUVQQnFKV1dST2lZOVgtZHV2aHpQNDJscU45Sjh4UGc1dEpnaWdxQUE1ZkdVRWRfZUlCeGhlZw?oc=5",
+   "date": "2026-11-15T13:00:12.000Z",
+   "resume": "« Zelda », « Rayman », « Gears of War »… Les sorties de jeux vidéo de la fin de l’année, à prévoir sous le sapin Ouest-France",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Ouest-France"
+  },
+  {
+   "titre": "Super Meat Boy : le jeu culte de 2010 fait sans filet - SpiritGamer",
+   "lien": "https://news.google.com/rss/articles/CBMibkFVX3lxTFByNkNfWDA4eDBSa0RRdkpHTXMtN29SZW0tTWdkS2FyUjRIcmhON0RNbHBCb1o1TVNNeU1IWVhsNktkX28xUUswY3M5dWxFM001VmZabjVnQ2g1RzZKT0pWbnVHSWV1VHV0NU8yR1dB?oc=5",
+   "date": "2026-11-15T13:00:00.000Z",
+   "resume": "Super Meat Boy : le jeu culte de 2010 fait sans filet SpiritGamer",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "SpiritGamer"
+  },
+  {
+   "titre": "« GTA Online » : à quelques jours de la sortie de « GTA VI », les joueurs du mode en ligne se préparent à « la dernière danse » - Le Monde.fr",
+   "lien": "https://news.google.com/rss/articles/CBMivgJBVV95cUxOQWVaQ0d1SWx2cGJlZXRncjkxaFkya1F1eFk2QTZkX3NIaFl5c1M1WFczTldpeWRHem4yWm1KSGxmZzVJbk5nY0pjSllpVFdpUWxxVU02MEVlR2pBbTVmZHJ3YVFCNkx6QnR5X0RzMWZPQ0g2T1JfLURuSDkxQlpReHJPZ0VZNTUwOS1QTUNLeVRPOVZnUnNXZndLTXRCcDN0d2c3Q2llb2tPbS1FdmZ2eVN3dDNYcGtjMU1XamhvYkY2NVFDRXc0MTRzRlhoSERnODd1NWxJanYtVU9kV003VTlRV0VNTzFKMzBuajEyTDd4aV9kM1JiOUN3QUVkQ0h4TUUwLXRVQi1YeE9xN0JBM2NhNi1ERV9RcUJBMU5nVnFHN3lYcWJweC1EMTlOLXg3TGxURUtSNDVLcVRIdWc?oc=5",
+   "date": "2026-11-15T12:54:55.000Z",
+   "resume": "« GTA Online » : à quelques jours de la sortie de « GTA VI », les joueurs du mode en ligne se préparent à « la dernière danse » Le Monde.fr",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Le Monde.fr"
+  },
+  {
+   "titre": "« GTA VI » : Sam Houser dévoile enfin son jeu - Les Echos",
+   "lien": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPcEc3eUJpcUFjeWhKYkNGYzFzbWNwUU92Uy05SGd1NzhKV1YxRExqUllQRzREenpaUmpCRzhuQWZUdTMyeldEcFNueU5DZ25nZ3g1UEhESV9OVXJGMVFzVGp4RXdaVUlkQjExZm1wc1BEbmZKaklOWWVCYTU2SW5NeENSQVhHc1ROYnhiZXVQY3UyOWprSEhJ?oc=5",
+   "date": "2026-11-15T12:45:08.000Z",
+   "resume": "« GTA VI » : Sam Houser dévoile enfin son jeu Les Echos",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Les Echos"
+  },
+  {
+   "titre": "Katsuhiro Harada (Tekken) est fatigué de la Xbox Series S, \"l'enfant faiblard\" de Microsoft",
+   "lien": "https://www.gamekult.com/actualite/katsuhiro-harada-tekken-est-fatigue-de-la-xbox-series-s-l-enfant-faiblard-de-microsoft-3050872925.html",
+   "date": "2026-11-15T12:44:00.000Z",
+   "resume": "Moins puissante et plus limitée que la Xbox Series X, mais aussi beaucoup plus accessible, la Xbox Series S est une belle porte d'entrée pour les joueurs, et un défi technique supplémentaire pour les développeurs. Pour Katsuhiro Harada, pr…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Records Gaming : à 40 millions d’exemplaires, il est le MMO le plus vendu de tous les temps - RTBF",
+   "lien": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPallqT1kwcmdGeGhyYzFPTmp6Yi1DZHN4cEhVdHZocGdtYi1HMnBwM2kxbVFXX09YNElaUGJoa1A3Wl9WRFVjNG1EM0RqU0FOY2JTRFVqSEMyd2EzT05Wc1dkTHhTeW0zQUNXM2hnVW5PTnp1aVJCUXJQcjl6dDl1bG5UY2xaaUdJZ05Md1M3SUVndG1nVGJtcHhXVElTSUh4aW9vXzhfU2xIUGE0eF9ia1dGdllCQy1JY0NaTTEyNnVRQjA?oc=5",
+   "date": "2026-11-15T12:40:53.000Z",
+   "resume": "Records Gaming : à 40 millions d’exemplaires, il est le MMO le plus vendu de tous les temps RTBF",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "RTBF"
+  },
+  {
+   "titre": "Pourquoi vous avez froid chez vous à 20 °C (et comment arrêter de grelotter sans faire exploser la facture)",
+   "lien": "https://www.journaldugeek.com/2026/11/15/pourquoi-vous-avez-froid-chez-vous-a-20-c-et-comment-arreter-de-grelotter-sans-faire-exploser-la-facture/",
+   "date": "2026-11-15T12:25:24.000Z",
+   "resume": "Vous rentrez du travail, le thermostat indique fièrement “20 °C”, juste un degré au-dessus de la température officiellement recommandée par l’ADEME pour l’hiver. Et pourtant, vous attrapez tout de suite le plaid, les grosses chaussettes et…",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Colman Domingo et les prothèses qui le transforment en Michael Jackson - Foro3D",
+   "lien": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOb25LN210Qmo1WFg1QzJ4VVZJNU5RMHFMc01yZklManZKaW1SZk5NTTBqM0ZNay1yNEJjTlliQ2lCa3I4aDNSYTl3eVkxaG9zRUFtZ0xkTHBWNloxVlpUZDF6STk0TFBsclVnQ3NIeTFFN091dnFpZUNJTTNFTFdFU1ZZbHFyNXRNTlczWmp1NnRDbmtHckNiTUxEQlBlV0VOYmRsSGNBcFJnZVVPQVE?oc=5",
+   "date": "2026-11-15T12:19:11.000Z",
+   "resume": "Colman Domingo et les prothèses qui le transforment en Michael Jackson Foro3D",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Foro3D"
+  },
+  {
+   "titre": "TwitchCon 2026 : le hosting fait son retour, des clips de cinq minutes et plus de communauté - Foro3D",
+   "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQmtOUGE3TGlHT2ZKYS1HeDFUdG9TSFdSeVA3bXNBcG5qdVZJTnJidEIxajZKRmtXNjFONmJHb0FFOVpQb0NyUjQ5TmdwVzN5MmV6eUw2X052N3RTbzFOeHpBOEY3b19nQ1BMb25ja3laM0haUFE0R2ljbkU0UHZDS1NiQkUxb283MTQ1S1MtU0FORFV5TEtiNU9hdUdtTHo2SjBmNnNxeGtER1NIOXM0WU9B?oc=5",
+   "date": "2026-11-15T12:19:11.000Z",
+   "resume": "TwitchCon 2026 : le hosting fait son retour, des clips de cinq minutes et plus de communauté Foro3D",
+   "source": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
+   "categorie": "evenements",
+   "editeur": "Foro3D"
+  },
+  {
+   "titre": "FinalSlam : carte des combats, heure et chaîne TV pour voir Squeezie et Inoxtag au catch - MCE TV",
+   "lien": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNWmllYkRaYXVUeWIwOWpYVjlFcEJ0MWxVX1A0angwOUprV243WXd5MFVKYTkzZVZTR1BVMnZIUVkxbzZtX3BKcHp4Y1RKUDIzY01paVRnUjh6dHRIZFB4cHkwLXJoOUxPdnp3YzlGeWhFUVBnZ2ZUVHU5ZWFldmFLU2NfY29RU2Ix?oc=5",
+   "date": "2026-11-15T12:01:39.000Z",
+   "resume": "FinalSlam : carte des combats, heure et chaîne TV pour voir Squeezie et Inoxtag au catch MCE TV",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "MCE TV"
+  },
+  {
+   "titre": "PS5 : ce jeu d'horreur sorti en octobre est désormais jouable gratuitement, sans PS Plus - La Crème Du Gaming",
+   "lien": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOMEhuaUdnMWlIX0p4aTk5anNCN29yVmZnZEVDMm5kSm1idzlNbmh1cmVOUVBUdXItc2x3ZGVQQlJoT04tZVRmcnZXVWZHNlJWOTRKS19tZTFyZjlrdTF1cElobWU1V2w3RUl6a2RjY0pLcHVabXhsY2xWUG9jcTdQTk9PQTVZQkJJS21mQks1SGMxSjEtX2R4a1dvY1NsdWgyU0hQRzlpV3B6OG5Wc0JJbndRelBRRV9DSTBEQjRRVVVWaHpKbFR6MmVLeVhtaGhXSHF3SFBuQmk2T25NNk03WXphTkdrNXZZQ1BSSU5aVTNMV1Jt?oc=5",
+   "date": "2026-11-15T12:00:07.000Z",
+   "resume": "PS5 : ce jeu d'horreur sorti en octobre est désormais jouable gratuitement, sans PS Plus La Crème Du Gaming",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "La Crème Du Gaming"
+  },
+  {
+   "titre": "Les « Real » Game Awards s’arrêtent et le jeu s’en porte mieux - Fun Academy",
+   "lien": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNNmNQQ3pja1ZmRXJ2a1FsaTJKREVER3NFUzliY25PRmFrYllRQ19yaWpuX2xGTTRhajYtNmFZUDJMODdlanBhZ3VNWTIzOWdNeHlwVmlZd1JJbmxCeGJIcTdwZ2tySTNjRExPU2tSY2c0Q2dMU3ZPaGs4RC1WS0xqYk1EbkNhb1dkMWJB?oc=5",
+   "date": "2026-11-15T11:58:07.000Z",
+   "resume": "Les « Real » Game Awards s’arrêtent et le jeu s’en porte mieux Fun Academy",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
+   "editeur": "Fun Academy"
+  },
+  {
+   "titre": "Validé par le CNRS, ce jeu vidéo a été conçu pour prendre soin de votre cerveau",
+   "lien": "https://www.jeuxvideo.com/news/2111213/valide-par-le-cnrs-ce-jeu-video-a-ete-concu-pour-prendre-soin-de-votre-cerveau.htm",
+   "date": "2026-11-15T11:50:08.000Z",
+   "resume": "Derrière ce jeu mobile gratuit et mignon se cache un outil clinique développé avec le CNRS.",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Meilleurs mangas shôjo : voici notre top 10 des œuvres incontournables à lire absolument",
+   "lien": "https://www.numerama.com/pop-culture/2371755-meilleurs-mangas-shojo-voici-notre-top-10-des-oeuvres-incontournables-a-lire-absolument.html",
+   "date": "2026-11-15T11:15:00.000Z",
+   "resume": "Longtemps résumé aux histoires d'amour et aux romances lycéennes, le shôjo est pourtant bien plus riche qu'il n'y paraît. Du drame familial à la fantasy, en passant par les récits initiatiques et les histoires fantastiques, cette catégorie…",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "FaZe Clan règne sur Osaka et complète sa collection de trophées - E.SPORT.FR",
+   "lien": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNeGNFQ2VhZDZUZWdWVHNmc3U4bkxhRDdhQW5hUm9jZjZYZEl6OWlvanZrUUszXzhZYS1FMTVCTC1zX2ZjZndDa3ZRdERNdXFCVzhpbW9NUkx2QkNVRmRxb05kamJmNmFzUHRjRkNPSE91Qjc2WU5pWFRTM1NpVHlhWjlPaU9ROVNpM1VJR2t6YmNGNXVNNFZndHZoYkZERDZhcFFvRkpPUQ?oc=5",
+   "date": "2026-11-15T11:00:00.000Z",
+   "resume": "FaZe Clan règne sur Osaka et complète sa collection de trophées E.SPORT.FR",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "E.SPORT.FR"
+  },
+  {
+   "titre": "Ce jeu indépendant fait trembler «Les Sims» - Watson",
+   "lien": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNME9aWk9iUFN3Rk1NaFEzeEx5QWViX05MaGRiV3M3Q3NnbUgtSVZCUnJ2WGJadVJZOUdnVHY3dFcxZ0JuT0ZNVTlyNEh6M1gyMThlWkQ5YkdxQzhDOVZTbHAyNGNxeklwT3NjYXQ0cFJmNHRmcUtwMTVVZkk3NW9semN2b0xTdDNuV1dtbWpMVUpGd25iSURnaFh2VVFxelVyVU1HZTRZd1RNT2NDX192ZzEyMXNRM28xdmpfSXdTcDM?oc=5",
+   "date": "2026-11-15T10:59:00.000Z",
+   "resume": "Ce jeu indépendant fait trembler «Les Sims» Watson",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Watson"
+  },
+  {
+   "titre": "Marvel 1943 : Rise of Hydra : Skydance assure que le jeu vidéo n'est \"pas annulé\" - COMICSBLOG.fr",
+   "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQUWM3amRTNS00UVZaTEFEamVGQklRY2NCY0FtQzB0QmxQalI2bEF6YW5OMHZCM2lpeUVpZmFvMHRYOTN6cUI5Nnh2OXR4SHlMZTNlQzF4aVlNQjJwYTNIX3UyNTZtbDZIUDBsa3lVQ1VjUUJZTU5XQXpNVjNWYkFQVkhPMlZfX3M5bDhOTGc0emlhdENjb2xBTGo0OVgyMlh6UWt1cVY1UUpfTTcybWhB?oc=5",
+   "date": "2026-11-15T10:25:00.000Z",
+   "resume": "Marvel 1943 : Rise of Hydra : Skydance assure que le jeu vidéo n'est \"pas annulé\" COMICSBLOG.fr",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "COMICSBLOG.fr"
+  },
+  {
+   "titre": "\"Vendre des boîtes vides, ça ne vaut pas la peine\" : GTA 6 divise les boutiques de jeux vidéo - RTL Lëtzebuerg",
+   "lien": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZUZEZ2RfN1ctWThYcEpzdnlrZnIyVTE4b0o0dGcxVlA5UE9BWnAySU1NQ2Nwa0FKZzhhaGVXT0FGMGxGaWpOb2JyMTZsSmFTUkZzdlNCN3JLbTlYMUIyQk5EODFMUHZiMDRvczJ2THZXYzdmZTg1RkNxN0tTYlV5SDd1NmZPbUQyakY1Y1RHZGtNdEpPR0tBTzBhWWdjdzBXalFuVEhXVXRMX1RKd0lVMkZkbjRhY2VqTkN2TnBDeGVXWWY0NGh0VktoRWVoVGM?oc=5",
+   "date": "2026-11-15T10:24:00.000Z",
+   "resume": "\"Vendre des boîtes vides, ça ne vaut pas la peine\" : GTA 6 divise les boutiques de jeux vidéo RTL Lëtzebuerg",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "RTL Lëtzebuerg"
+  },
+  {
+   "titre": "Plesch : Est ce la marque de chocolat de Squeezie, Amine et Kameto ? - Ayther",
+   "lien": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA5VnVEN3pCa09aYXF0dUc0dExPM1ZsUmNPLUx3WDk4ZTFIdkJwV1FEX1BxLU5YMnM2enBTc2hBNXdOM1JqTFpKemxISmJGSkwwd2ZLTWJPUmhWNmM?oc=5",
+   "date": "2026-11-15T10:20:25.000Z",
+   "resume": "Plesch : Est ce la marque de chocolat de Squeezie, Amine et Kameto ? Ayther",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "Ayther"
+  },
+  {
+   "titre": "La police retrouve un cambrioleur grâce à la trace de la console portable qu'il a volée",
+   "lien": "https://www.gamekult.com/actualite/la-police-retrouve-un-cambrioleur-grace-a-la-trace-de-la-console-portable-qu-il-a-volee-3050872924.html",
+   "date": "2026-11-15T10:07:00.000Z",
+   "resume": "En Espagne, la police a collaboré avec un fabricant de consoles, tenu secret, pour retrouver un cambrioleur. Celui-ci a été effectivement retrouvé, puis arrêté, au terme d'une enquête numérique \"complexe et continue\".",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Disney+ propose ses abonnements à 30 % de réduction, mais ça ne durera pas",
+   "lien": "https://www.numerama.com/pop-culture/2240235-vous-avez-manque-la-derniere-promo-disney-elle-est-deja-de-retour.html",
+   "date": "2026-11-15T10:00:00.000Z",
+   "resume": "[Deal du jour] Disney+ remet ses trois abonnements mensuels en promotion. Les prix baissent pendant deux mois, à condition de s’abonner avant la date limite.",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Am I just getting too old/grumpy for twitch?",
+   "lien": "https://www.reddit.com/r/Twitch/comments/1xwrh74/am_i_just_getting_too_oldgrumpy_for_twitch/",
+   "date": "2026-11-15T09:39:27.000Z",
+   "resume": "I've been around since 2012. There are trends or things I don't like. And sometimes they pass or I just learn to deal with it. But the recentish trend of emotes/words making a sound is just outright irritating. It makes the stream no longe…",
+   "source": "Reddit · r/Twitch",
+   "categorie": "communaute",
+   "editeur": ""
+  },
+  {
+   "titre": "GTA 6 sur Twitch et Kick : comment tenter de gagner l'Édition Ultime offerte aux spectateurs - GeeksLands",
+   "lien": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9Tc2hkVmVMTS1rSkhRdWpycUstaGo5NUlVMzdwT2RuWHBPb3NXVXAzcFFuYmtwSG9VTHU5ZG8zcFo1clQ0eVBlcTBsYzZHTjEycUF0SjM4ZFFYZw?oc=5",
+   "date": "2026-11-15T09:21:53.000Z",
+   "resume": "GTA 6 sur Twitch et Kick : comment tenter de gagner l'Édition Ultime offerte aux spectateurs GeeksLands",
+   "source": "Google Actualités · Twitch France",
+   "categorie": "alerte",
+   "editeur": "GeeksLands"
+  },
   {
    "titre": "Sortie de GTA VI : pourquoi le jeu est un « mastodonte » économique - Ouest-France",
    "lien": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPUmQwaEJ6elgyZlNXQTByNnc3emhMdWtGSm8weHBNSmE3eUQyak9uSGh3RGlETTRqS2NSdy1BeEdqRVFlZU52d2cxTzJoYnBNT2ZRdUluTFRuUXZTSnZEOVFhWkFmWGI5N2pFVl9qVkU5ejZxTHliR1hqUmNQa2trdWFqQXdia0FPcXEyNlY4RkZSWHhpTWZnSE84WGFsdXNqamluUl9UTExKQkFPRlBaR3NkUGJuMlZOaTdOeFc3a1U0TkppemtTV3dZd25xd1Nib20ycllMd1h6c0I4?oc=5",
@@ -249,6 +762,15 @@
    "source": "Google Actualités · sorties jeux vidéo",
    "categorie": "alerte",
    "editeur": "Ouest-France"
+  },
+  {
+   "titre": "Xbox Game Pass : 8 jeux first-party débarquent aujourd’hui dans la formule Essential - Xboxygen",
+   "lien": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPTDFFVnFfXzAyUUVZbWZ2M01CV25sNVVsLU5SYTNWWjI4QXlRa1ZQbmFnbXlnbEdzQWZWMTlaSnd4RXJVVUU5UE8ycTNuYTF3cEJzTUVTZFQxd2l0Zi1ITzItc1VSNjBSdEViaXkwU3MyN0s5bDhjRG9jeFgyM1AtcVNUbTdXazl1dHlocUhFM3EtcndTSHpyRlZjdHUyeEpRakxIbW1FMzF4T1Y2cjRveWZMS3llVlRMVmc?oc=5",
+   "date": "2026-11-15T09:14:44.000Z",
+   "resume": "Xbox Game Pass : 8 jeux first-party débarquent aujourd’hui dans la formule Essential Xboxygen",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "Xboxygen"
   },
   {
    "titre": "Cette app française connaît mieux votre Tesla que l’app Tesla",
@@ -267,6 +789,15 @@
    "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
    "categorie": "createurs",
    "editeur": "puremedias"
+  },
+  {
+   "titre": "GTA 6 Online : sortie en 2027, transfert et fonctionnalités - BlogNT",
+   "lien": "https://news.google.com/rss/articles/CBMilgFBVV95cUxORjJaMlFLajBaYkhmdVFjVm9ySWh3dC1ZczBUbzdPUEZJWU1iR1JUMWRyX3hIdGZrbGxSR0JzYWUtZXJpanpCYTlxMERwQ1FxN1A3ekgydk1GNFdHdGRBcTZVNTZEZVpPeC1NZllhMmppX1RpYXZLeXpFRGtYOUxwa190UFRuY1FiYzNwaUpvWDhmd3NmVXc?oc=5",
+   "date": "2026-11-15T08:30:00.000Z",
+   "resume": "GTA 6 Online : sortie en 2027, transfert et fonctionnalités BlogNT",
+   "source": "Google Actualités · sorties jeux vidéo",
+   "categorie": "alerte",
+   "editeur": "BlogNT"
   },
   {
    "titre": "Situation compliquée pour Nintendo : Zelda Ocarina of Time déjà porté sur PC (avec du multijoueur)",
@@ -296,15 +827,6 @@
    "editeur": ""
   },
   {
-   "titre": "VIDÉO. GTA VI : une cryptomonnaie derrière les fuites du jeu - Ouest-France",
-   "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOT0dyc2RGZWkxT05CQ0VHY1FwbnBEU21WajI0RVNOVWg2Q2NkUlVUVmRIVEpJeFFucV9qOVBEZEg1ejhhR1pUTG1LSkRkZDA4eEl1eXN0enpyeG4wU1dyYU1KUFRocDJyMEtTeVVZNl9SaGk0S1pGV3VuZGhoTTZFZkF0TnpJSWZBWkpNNXFJMTc3SU9ZQmhMM1NzSmk2MEF1OVVwUWFBZEo1RExIRzR1a2tlX3FTSDlrQ0dNSVNXNFp3R0FvUWxnWTUyN25MTDZkVlB1RndnNA?oc=5",
-   "date": "2026-11-15T08:00:00.000Z",
-   "resume": "VIDÉO. GTA VI : une cryptomonnaie derrière les fuites du jeu Ouest-France",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "Ouest-France"
-  },
-  {
    "titre": "Mémoire cash - Alors que l'avenir de la série s'écrira chez Activision, retour sur l'aura du tout premier Halo",
    "lien": "https://www.gamekult.com/actualite/alors-que-l-avenir-de-la-serie-s-ecrira-chez-activision-retour-sur-l-aura-du-tout-premier-halo-101-3050866624.html",
    "date": "2026-11-15T08:00:00.000Z",
@@ -332,15 +854,6 @@
    "editeur": "Toutes les Box"
   },
   {
-   "titre": "GTA 6 au bureau ou en télétravail : peut-on vraiment jouer pendant ses heures de travail? - DHnet",
-   "lien": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQaHN3cnJ0WDZoanlxWWFhRE9HZERGUE9Mb1YtSy1mZmwwTWhiVnVUYkc4UXdYcXFTRlNjak9NQXlHOHgwSXA0LWhMb19TS2NqN2dndVd1QzBLd2hpZS14Y0pYV2FvRmRsRGRrdUd4Q2lOalY2MEprTURMdm1IQ3BGOVhjYnI0S2ZybnA0ZzBlem1DdVNQdUlWSGdrYzE1NWtCSFk4bFRIM292TkhHbWdhMmRuYlc5UEg0MzVxZ0dRR1R6UEVFVGFWWnJNLTlCaFRUR3dSRWtrVjRaTTNXSmxoZ3JveGVsQWo0cEEyanA5cjhZRnA5M1c4?oc=5",
-   "date": "2026-11-15T07:03:00.000Z",
-   "resume": "GTA 6 au bureau ou en télétravail : peut-on vraiment jouer pendant ses heures de travail? DHnet",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "DHnet"
-  },
-  {
    "titre": "Pass Navigo dans Google Wallet : six fonctionnalités qui ne marchent toujours pas",
    "lien": "https://www.journaldugeek.com/2026/11/15/pass-navigo-dans-google-wallet-six-fonctionnalites-qui-ne-marchent-toujours-pas/",
    "date": "2026-11-15T07:00:30.000Z",
@@ -348,15 +861,6 @@
    "source": "Journal du Geek",
    "categorie": "actu",
    "editeur": ""
-  },
-  {
-   "titre": "Sortie de « GTA VI » : « Ce jeu vidéo raconte une société en état de crise perpétuelle » - Le Nouvel Obs",
-   "lien": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZVZGdFJDcEMxMThMbEtkbFBWUjdFbVk4UmZfVzg5YWV4V0E4eGhNOGc0OGpLdXF2OUdiYTBDQ2VQclgyR24tbkJvQ0xBTkNYZEdQaEM2UVE3NXdtalBlSF81RFhFeE53d292bWsxbVFNX2ZXaS1wVDFLcC1JM2szck9QLTh3eGhJTnFvWUVGdTVHejFxLVRXakEtYzZ1OWZ0N0RHZHhzdkkzcnd2UjNiVUEyaElyYlRycXZrMlZLdzBCODN5eklYS0ZzMVdyZTQ?oc=5",
-   "date": "2026-11-15T07:00:09.000Z",
-   "resume": "Sortie de « GTA VI » : « Ce jeu vidéo raconte une société en état de crise perpétuelle » Le Nouvel Obs",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "Le Nouvel Obs"
   },
   {
    "titre": "The FinalSlam : Amine et Squeezie sur le ring ce samedi - Sortir à Paris",
@@ -377,15 +881,6 @@
    "editeur": "Netflix News"
   },
   {
-   "titre": "\"Ce n'est pas un simple jeu vidéo\" : comment les fans se préparent à la sortie de \"GTA VI\" après treize ans d'attente - franceinfo",
-   "lien": "https://news.google.com/rss/articles/CBMilwJBVV95cUxNVUxhN2FGWW1MeGpuUTdnVDNyLVFBSThMLTAybk4xVEoyUUd4X2xJQ0dsbzRmYmo5clVKNmhaQkQwYTNxVXJhdm1LWHlJeHBLZ0thR2t4TXc0bkpyVHctSFZQQ1VpVkRSRm5HS3FMZkNneXZWS1hhQkpJSTJhSkpldmRfZXhvT1ByMXg2aHVyaXNWY0xXZ01mWnVIZ3lqanhqb1hUSnFLSnpjem1VWGZyWENZVjBPZTVJdzRZWE5NSUNBb0JPTWk3c1kwTDgwTWlueE84OEYxRmwxeEJvTjRnUWJkemNsaDFsSzlxd2JTUUxjZnRweURGREtMMGh3ZF8zRGhjQ01LcTU0NURUYVVCT1FPenNDUW8?oc=5",
-   "date": "2026-11-15T05:49:52.000Z",
-   "resume": "\"Ce n'est pas un simple jeu vidéo\" : comment les fans se préparent à la sortie de \"GTA VI\" après treize ans d'attente franceinfo",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "franceinfo"
-  },
-  {
    "titre": "Préchargement GTA 6 : le son du jeu est plus gros que toutes les données de The Legend of Zelda Breath of the Wild !",
    "lien": "https://www.jeuxvideo.com/news/2114255/prechargement-gta-6-le-son-du-jeu-est-plus-gros-que-toutes-les-donnees-de-the-legend-of-zelda-breath-of-the-wild.htm",
    "date": "2026-11-15T05:15:07.000Z",
@@ -404,15 +899,6 @@
    "editeur": ""
   },
   {
-   "titre": "10 chiffres à savoir sur la série de jeu vidéo Grand Theft Auto dont un nouveau titre sortira le 19 novembre - Le Journal de Montréal",
-   "lien": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPSU5CUkxMZkhFOFBHSXJtS2Z6OUtqVVZkY2U1Z3ZpUDJkcWdpaUJrc3NDYzRyRDdaYURrbTUtdmVpZW1KcXRmWXdld0pobFdOeUE1Wm52TGhEc1ExT0l0aFNJZVJyNWhxWURuUnNrYUM2ZkRGcF9OVDRGR1VrcVZLWm5XXzZtQ1d1NXVlRUs1S1gxNVVoSHNwVFA2d0pIc2VZMFA5YUtXelhoZnJiWGZhcjNBaHVlcmlxN0RWTGw3SngyWEkzMkFlbTM0QjQyVDhjMTNPVmZsVFktTnpjXzVHT1RjaUpXbnJi?oc=5",
-   "date": "2026-11-15T05:00:00.000Z",
-   "resume": "10 chiffres à savoir sur la série de jeu vidéo Grand Theft Auto dont un nouveau titre sortira le 19 novembre Le Journal de Montréal",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "Le Journal de Montréal"
-  },
-  {
    "titre": "StreamElements command not working even though (I believe) everything is typed out correctly?",
    "lien": "https://www.reddit.com/r/Twitch/comments/1xwm19x/streamelements_command_not_working_even_though_i/",
    "date": "2026-11-15T04:12:38.000Z",
@@ -422,15 +908,6 @@
    "editeur": ""
   },
   {
-   "titre": "Jeux vidéo. “Grand Theft Auto VI” sort le 19 novembre : attendez-vous à des absences au bureau - Courrier international",
-   "lien": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNWTBQeEpPVmk1RkQwREJnZDNQNzB0NlBRSmJCTW5VNk9KeG5ibHE1Y0ZRMlg5M0s0Y2dXb0c1c2g3VmRwVGdmWnVKaEg3SndkWUM4NTBsZkVJS0FnbE0zUHRYWF9hQnBsUzFQcmZyZmRDTEM4OXBNcHF6TWxxZ2dZTG9xZE5hVGhrWDFKS1pDby0yY2FWY05tVXExUEVpQXlTenhxQW5CUGl0R0ZmZV8tWHM2bkF4SWtsa2tpckR4eC1yZ1NENHpjeFZzYUpsMTNxSTRmbGpRb1kwQQ?oc=5",
-   "date": "2026-11-15T04:00:09.000Z",
-   "resume": "Jeux vidéo. “Grand Theft Auto VI” sort le 19 novembre : attendez-vous à des absences au bureau Courrier international",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "Courrier international"
-  },
-  {
    "titre": "Struggling to figure out Stream Together Virtual Camera with OBS",
    "lien": "https://www.reddit.com/r/Twitch/comments/1xwjtyk/struggling_to_figure_out_stream_together_virtual/",
    "date": "2026-11-15T02:15:51.000Z",
@@ -438,6 +915,15 @@
    "source": "Reddit · r/Twitch",
    "categorie": "communaute",
    "editeur": ""
+  },
+  {
+   "titre": "Combien de spectateurs pour FinalSlam ? - Catch-Newz",
+   "lien": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQb0RmM0VKa1paNUtLck1nZ3F2ZEtLamh4eENsd05mVXgxRUVoOFdmTjlSU0xBdGtuZ243TE13amExRVdKQVBBRG14ZmNyMnpDUjFXSVh0Z3MwS25lendFMUhvSWIyV3hvVDlJaHdHX3ZudFN5cHR2V0NobmRTUUNqSnlhLUxRVFM2ZldHSE1R?oc=5",
+   "date": "2026-11-15T01:59:53.000Z",
+   "resume": "Combien de spectateurs pour FinalSlam ? Catch-Newz",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "Catch-Newz"
   },
   {
    "titre": "Résultats de FinalSlam - VoxCatch",
@@ -512,15 +998,6 @@
    "editeur": "JVFrance"
   },
   {
-   "titre": "League of Legends : New Dawn, la nouvelle version du jeu phare de Riot Games, arrive en 2027 - JeuxVideo.com",
-   "lien": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOMF9iTVhoaFdzT1FPVFF1bkFrNlBHejh1ZXdIWXliUUh6N3otczRjRkdlTU10UHNuNW5DV3lFQ3laZDlTNG9jdlFoazNiaGVQbnhieVNhSWw2b0M5OXc5NVh4SDhIc3ZWYldRRjBLV0pTT2tyWVhfTlozYkJkUms4YkRxZGV3MlA5cWtaWjFmUGp2RFFyWnhjWnl5QUpUX3JWQTh6LXhRVUJIUldoOEMxRHBMZmJfWWlIWDdMeGlUR0FGckNiMHBFVmhBSQ?oc=5",
-   "date": "2026-11-14T22:02:58.000Z",
-   "resume": "League of Legends : New Dawn, la nouvelle version du jeu phare de Riot Games, arrive en 2027 JeuxVideo.com",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "JeuxVideo.com"
-  },
-  {
    "titre": "League of Legends : New Dawn, la nouvelle version du jeu phare de Riot Games, arrive en 2027",
    "lien": "https://www.jeuxvideo.com/news/2114302/league-of-legends-new-dawn-la-nouvelle-version-du-jeu-phare-de-riot-games-arrive-en-2027.htm",
    "date": "2026-11-14T22:02:58.000Z",
@@ -537,15 +1014,6 @@
    "source": "Google Actualités · Twitch creators (international)",
    "categorie": "createurs",
    "editeur": "Net Influencer"
-  },
-  {
-   "titre": "FinalSlam - Le combat tant attendu de Squeezie contre Amine - TF1+",
-   "lien": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNdkhBWTNoQUJxbFBfRVRzVjZJTWFpb0R0LXlOcC12eEZxVWRRYnBtbnVlU2ZmVGx6M1J3aVY4LWE3RXQyTjI0dFkxZmM1WUFFTUxyT1ljVldiTEJXbmZQcFNxbDUyQS1vcjh4RnRNbGJxcFZ1dUgzaWpZeElXTDEyQzVBMnQxb3RmVU4xY1M5QTZGcUIyOEpseEh6WVFEemhwX3JSZDFrLW1TQlpHSUFtUQ?oc=5",
-   "date": "2026-11-14T22:00:00.000Z",
-   "resume": "FinalSlam - Le combat tant attendu de Squeezie contre Amine TF1+",
-   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
-   "categorie": "createurs",
-   "editeur": "TF1+"
   },
   {
    "titre": "Le streamer Domingo veut copier les 25 Heures qui courent - u-Trail",
@@ -566,15 +1034,6 @@
    "editeur": ""
   },
   {
-   "titre": "Il y a 15 ans, le jeu vidéo qui a révolutionné les grands RPG solos est sorti : voici pourquoi Skyrim est si unique - JeuxVideo.com",
-   "lien": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOTzFEOEhEY0pjYjZmc0FIRTlENTRRWHdlRVBEQllwZWl6azI1WXVHNmk3c1pmNzlyQUYxVmFrY3N3RzdJSE5lZGpRZWs0SlhhMjJQblpDMmZqWVROMHlIZGZEdm5NV0tqcDh5eHF5ZFRZamdiTTJ0TjFQQmw5dC0wSmRud3dYREl6MGE2QjRyTXd0cWJfQlo2TEdPbTk4VlV2SzNWb0xZR3J6X2JrcG15ZzMzdklET21tMkJYbUg1dWRfWWJmc1pEWFJxTllvcjJ0RGhVM0hnaUJjWi01SXItNVRtTW1qRWpVRUo4?oc=5",
-   "date": "2026-11-14T21:20:07.000Z",
-   "resume": "Il y a 15 ans, le jeu vidéo qui a révolutionné les grands RPG solos est sorti : voici pourquoi Skyrim est si unique JeuxVideo.com",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "JeuxVideo.com"
-  },
-  {
    "titre": "Il y a 15 ans, le jeu vidéo qui a révolutionné les grands RPG solos est sorti : voici pourquoi Skyrim est si unique",
    "lien": "https://www.jeuxvideo.com/news/2113967/il-y-a-15-ans-le-jeu-video-qui-a-revolutionne-les-grands-rpg-solos-est-sorti-voici-pourquoi-skyrim-est-si-unique.htm",
    "date": "2026-11-14T21:20:07.000Z",
@@ -593,13 +1052,22 @@
    "editeur": "Tribuna.com"
   },
   {
-   "titre": "PSG - Achraf Hakimi appelle Khvicha Kvaratskhelia en plein live Twitch et reçoit une pluie de louanges ! - MadeInParisiens",
-   "lien": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPZ1JZZnJuRVgtZm9pLUJKdl94NFBLVjBtVWpyOVlnWnVQWG5FLUszLUJrQmo1UzVQX2RMdlRiTXhnYXk4bUNSc2dSTm9wLU1hWVptQ094VXg2WXV4RFF2NkZIY3h3TWQ0VEUybmJSODlodVN5ZTQ2Wjl0ajJ2bS1td3BBMEkzSF9HeWY5TFBNZjlmdmpCMnRjV2lxeDlSVjVRWVo4bTRjZHZjWG9qNDRJNHMyNGF0ZTlaUm1Ec2NiUzNONnZzZHVkblNHSEhVMm9OWE5LQjhvUEJvNG4wS0VQWGdNcEFoalpOWlc1V2hpTEpuMkozRURVZ213?oc=5",
+   "titre": "PSG - Achraf Hakimi appelle Khvicha Kvaratskhelia en plein live Twitch et reçoit une véritable déclaration d'amour ! - MadeInFoot",
+   "lien": "https://news.google.com/rss/articles/CBMigwJBVV95cUxPcjhGNTNFMDBkcUJ0RHpSd2loUlZFVmg1QTRSS1FuQUNHR09xblZmc1hEdE90elJtUFZpUGU1VEpaLWoxUENNSFZNckh0Z3NjTkJCWU0xUkVwNkt2MWdrd2dUekdEXzctZ1djZmszR3ZSZ0hTVmV1ZHNPcm5SUno1YmZaaExoRi1tTm1XR0RBVURpLVB6cHd3aXFlUGtPSXZ6NW1UU1Y2VFRKRXF0S0lQX2ljUUgwSlFHczdUUU5CUF9NcGJpT2dyTWRyN3JzdFA4aXZQSXNwdWQxSklvYzZhVDVkUkxTYk5WSGpKQTNHZFlFWG9mNG1zMU5WUXhhTnNnZ1lN?oc=5",
    "date": "2026-11-14T20:59:00.000Z",
-   "resume": "PSG - Achraf Hakimi appelle Khvicha Kvaratskhelia en plein live Twitch et reçoit une pluie de louanges ! MadeInParisiens",
+   "resume": "PSG - Achraf Hakimi appelle Khvicha Kvaratskhelia en plein live Twitch et reçoit une véritable déclaration d'amour ! MadeInFoot",
    "source": "Google Actualités · Twitch France",
    "categorie": "alerte",
-   "editeur": "MadeInParisiens"
+   "editeur": "MadeInFoot"
+  },
+  {
+   "titre": "FinalSlam - Le combat tant attendu de Squeezie contre Amine - TF1+",
+   "lien": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNdkhBWTNoQUJxbFBfRVRzVjZJTWFpb0R0LXlOcC12eEZxVWRRYnBtbnVlU2ZmVGx6M1J3aVY4LWE3RXQyTjI0dFkxZmM1WUFFTUxyT1ljVldiTEJXbmZQcFNxbDUyQS1vcjh4RnRNbGJxcFZ1dUgzaWpZeElXTDEyQzVBMnQxb3RmVU4xY1M5QTZGcUIyOEpseEh6WVFEemhwX3JSZDFrLW1TQlpHSUFtUQ?oc=5",
+   "date": "2026-11-14T20:58:00.000Z",
+   "resume": "FinalSlam - Le combat tant attendu de Squeezie contre Amine TF1+",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
+   "editeur": "TF1+"
   },
   {
    "titre": "GTA 6 Streamer Mode: Music Copyright on Twitch and YouTube - MNEEMO",
@@ -674,15 +1142,6 @@
    "editeur": "Bleeding Cool News"
   },
   {
-   "titre": "GTA 6 : à Pau, des préventes exceptionnelles pour « le jeu vidéo de la décennie » [vidéo] - La République des Pyrénées",
-   "lien": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPclR5OURQY1R6MkZKUDduOHVkZFNoS3Z3Z0ZBNG5CVnNrMlVwY0lpR21DRGUzemFYQkwtSDVUN3R6am9qT1JiU0VkVFBqMU5RQXN0REduYjZXX1l0T05rRXRhb1RmRFRuUlhKYUNGZEFJRW1ubmx5NnJXTzg3T2hWUmZvOUJ6S2VoTVo4ZUJxX0ZOOGhSbkRBQkJYTlQzaDlFWjMyWFUxUW8zdU9taEp5TlhCUXVEQmJHWHhITDNmaWppNjJzcC1RSWljWmMyVDJRRlpDMnBtNG1VeGdYc2dyd3Q1blZhaGl0clRYSg?oc=5",
-   "date": "2026-11-14T18:17:41.000Z",
-   "resume": "GTA 6 : à Pau, des préventes exceptionnelles pour « le jeu vidéo de la décennie » [vidéo] La République des Pyrénées",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "La République des Pyrénées"
-  },
-  {
    "titre": "Rouge infernal Phantom Blade Zero : Comment obtenir cette arme ?",
    "lien": "https://www.jeuxvideo.com/news/2113551/rouge-infernal-phantom-blade-zero-comment-obtenir-cette-arme.htm",
    "date": "2026-11-14T18:15:09.000Z",
@@ -690,15 +1149,6 @@
    "source": "jeuxvideo.com",
    "categorie": "actu",
    "editeur": ""
-  },
-  {
-   "titre": "Xbox veut sauver le jeu vidéo avec des publicités: la bonne idée que personne n'avait demandée - GeeksLands",
-   "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQYU51WXN6MmFKSUh5OWpLRnZRUk9iLXVkMUJGZXNlSV93WlBzaXpmZ0JKdDNnbEJJRThPSkhJOWVSNWhPdHJLVzJkQWZiUFMyaXVweHRUdWJwTjZtY1BTd0sxUk5lbmJuWlRfU3kxdy05TWFLdkZ6d0Z1TzhnMno2akk1SF9taE5ZMTRqc0hkUDV2a2RCM1hUSW1Ea1BOZzhfcllERVFGSHJEeGc3UWwtQ25HTEo0VEE?oc=5",
-   "date": "2026-11-14T18:00:00.000Z",
-   "resume": "Xbox veut sauver le jeu vidéo avec des publicités: la bonne idée que personne n'avait demandée GeeksLands",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "GeeksLands"
   },
   {
    "titre": "Is Tainted Grail: Fall of Avalon safe to play c Twitch?",
@@ -714,8 +1164,8 @@
    "lien": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxON0wwTGZlTDdlYVowdGhVRHFsWGxTZEpyUTRiYm9nMUhJSnlQcDQ2SW9Oakp1QV9XcVVzX0RPdHY3V2FzX2xrcEdneGRmS3pwOXRqZ3JPUVNXd044UGUtYTZpbFNGWGtqWVdWbGc4WklscjZ3T3dpYnlVWVVQbF9fX215SmttZnhvbDJtREU5YjZVSGw4YmViREhWbHpyOHdRM1JGSTI2V0gtQl8xTnZTaUtabFhDSy1ZTTNCOFBpVXQ2NGhCNUxQWlVjazlQdXNfWDBEei1SbUY0UQ?oc=5",
    "date": "2026-11-14T17:50:00.000Z",
    "resume": "Final Slam : Amine et Squeezie débarquent sur TMC, qui sont les invités de l'évènement ce soir ? (14 novembre 2026) Stars Actu",
-   "source": "Google Actualités · streamers et streaming",
-   "categorie": "alerte",
+   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "categorie": "createurs",
    "editeur": "Stars Actu"
   },
   {
@@ -800,15 +1250,6 @@
    "editeur": ""
   },
   {
-   "titre": "Un romancier a transposé le jeu vidéo GTA en polar pour adolescents - JHM",
-   "lien": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQcXRjUG5MeVVWVmFmNUZtQzhTdTBTYzliekNSel9pcjNYeGV3bFZ5dF9NRkVCS2pFT3l1N2ZEdi1ZX1dmWC1FREx4WmJYdXlTLVZEQmlUc1VITE55Z00yaXFsZE5HazFaYWNva0NSUnRjQkZUNkhVV1FVdndVcWdWblg3Zk02cXhNazhR?oc=5",
-   "date": "2026-11-14T16:48:21.000Z",
-   "resume": "Un romancier a transposé le jeu vidéo GTA en polar pour adolescents JHM",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "JHM"
-  },
-  {
    "titre": "The Final Slam sur TMC : Amine et Squeezie montent sur le ring ce soir - Femin Actu",
    "lien": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9RSXdpUjdMVm1GTXF4SnZrTS1UTEhMNzFQTXJNZkFmdzVIREZQWl9wRm9WQ1pxU25tR1V4eHhKWmVENnVGcl9EU1FpZHo3SGdHSW1YakpJSDlqUEJCZFZxR0dkY1BfZktk?oc=5",
    "date": "2026-11-14T16:40:03.000Z",
@@ -836,24 +1277,6 @@
    "editeur": ""
   },
   {
-   "titre": "“Grand Theft Auto VI” sème la zizanie chez les élus de Miami - Courrier international",
-   "lien": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQYzFUTERCSEY3c2dDUEstblp1ZERJd00zM0N4aWpBZTNFajVtd0J5bnlaSk80SG1zbjJvSFZnbmtzc1ptaXo4ZjkyNVB4RnVaRWZMMWhsWlBDeWNIWUFyYzVWZDhRTEtjdzlQb2lGWmctdmUwSTlSTDlScF9JNGNhaHRfZUFmclpfQUV0NFRyQ2QzRm9kRzdla2JBTVpqSEpCM1lLblRqdDJPRlRGejlSUG9LcTc2bTV6aVMycExR?oc=5",
-   "date": "2026-11-14T16:16:06.000Z",
-   "resume": "“Grand Theft Auto VI” sème la zizanie chez les élus de Miami Courrier international",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "Courrier international"
-  },
-  {
-   "titre": "Rob Run : le jeu gratuit qui s'inspire de GTA 6 et qui cartonne sur Steam vaut-il le coup d'oeil - JeuxVideo.com",
-   "lien": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQZkstdXl1WHptcXRWS1FYbG5XUEhSekdFWmpZOUVadlMyZ05kcEFjcjV5czVSWU5BRjFUTU00VkpRU3c0eUIxVTFZU3ZSM0g1VFNhb1BBdDZYUDQyS2V1bEdTdTdNSjhpRDF3WEZGckFqbUl2NnRUd09seTdnTjNDajhRenVJdTJpa1dLWGViUmMweDlGcXk4b2dYOEdidkUtTTdsQkFhLWszZ2RWRmFMOTRvNnE5eUQ3SUlZSzJNRlI2em0yazdhRTFueHEyMmV6amdv?oc=5",
-   "date": "2026-11-14T16:15:07.000Z",
-   "resume": "Rob Run : le jeu gratuit qui s'inspire de GTA 6 et qui cartonne sur Steam vaut-il le coup d'oeil JeuxVideo.com",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "JeuxVideo.com"
-  },
-  {
    "titre": "Rob Run : le jeu gratuit qui s'inspire de GTA 6 et qui cartonne sur Steam vaut-il le coup d'oeil ?",
    "lien": "https://www.jeuxvideo.com/news/2114298/rob-run-le-jeu-gratuit-qui-s-inspire-de-gta-6-et-qui-cartonne-sur-steam-vaut-il-le-coup-d-oeil.htm",
    "date": "2026-11-14T16:15:07.000Z",
@@ -870,15 +1293,6 @@
    "source": "Numerama",
    "categorie": "actu",
    "editeur": ""
-  },
-  {
-   "titre": "Final Fight CD, The King of Fighters et Kingdom Hearts : la semaine musicale du jeu vidéo - Rom-Game.fr",
-   "lien": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQZndyRTQ3Yko5a084b3BFSDJ2S2hlbGdDdkVBbUVxQ3c1NWNHN2VtLWY2SWJ0Z05MOGJxNk5HU1RudnVJcDBJbnRqXzh4Z1dLQ0l0M3pOYnZ3YWJ5aTNVd2x6X1c3bXJkdElLMVQ3QkVwMFpEZlk4Vm90YW9LSGdIaE1qaWlrOGQyUEVqUkNjVDVFSERHM3BNOFlFS0pQc1pUMzZJVlZYZnk3b2w0T3c?oc=5",
-   "date": "2026-11-14T16:12:00.000Z",
-   "resume": "Final Fight CD, The King of Fighters et Kingdom Hearts : la semaine musicale du jeu vidéo Rom-Game.fr",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "Rom-Game.fr"
   },
   {
    "titre": "La première Ferrari électrique a déjà trouvé tous ses clients pour 2027",
@@ -957,7 +1371,7 @@
    "lien": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPSUlERkdNZTU5R1pjQUQ0OFUtOGVhaGZvN1NHX25rS1ZNTmJLeXRZUzM1UENsWWxWYXNwQ1ZSSjNmVjRrM1FYRHV6bEVTTk1xSUJEa0VKZ2Zud2kxNXBCQTdsbDl0TnpHVTNUYlMwWUVsdGtCTU02anhmMThvb2k3QWZXQW1fWWNnLWpxeFM3MzRyR2txTUZDd0ducnFGNUYwbnFvSEoxYkc5Nk11bjNKOUdHYkJqa0dWZ2xSajlZZ1JiYUNXUjg2WlJ1QV9ZZlRLRGt1SWg0eXY1U0dOVkl3LW55UjlSNW9BS3Rfeg?oc=5",
    "date": "2026-11-14T15:00:09.000Z",
    "resume": "Squeezie, Mister V et Inoxtag se lancent dans le catch : “La jonction parfaite entre divertissement et sport réel” Télérama",
-   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
    "categorie": "createurs",
    "editeur": "Télérama"
   },
@@ -998,29 +1412,11 @@
    "editeur": ""
   },
   {
-   "titre": "GTA 6, le blockbuster qui fait trembler le marché: \"On en vend comme des petits pains ! On peut s'attendre à un ralentissement de l'économie\" - DHnet",
-   "lien": "https://news.google.com/rss/articles/CBMitgJBVV95cUxQZFplX05CUEFOZGhWLUhFbmltZFN6aHhWaTFTN1lES2JZVThXN3hfVU1BZzdWTkkxVGg4V1drZEtYYlp0bjBhSnIwUHNNRUZyeEc2azh1MXVDbHRucldNSHRhMjNYNTlWckFqTE5aTXp2TjYwZHQwSWFrZDMyblZZRThKc3ZuMFU5Mi1sdGt0Q0Z4aVltUFhMSGN2aEZkY3RzQVVycFNERDZzaHVNc2IzeTNZNWFYZ0xzSFRnaEJHNHNNV0tSZ0JDTFB3SGN1ei16SFpqM2Q5aWpkeE4xc1V0MlplT3RXTFpmRjR4ZGNvMUkxSGYwQzdXTURPUjdyZnFsZlVESWEzaExaZVFsUkp2Q3J1WUNvYVU4ak9tbXltZ0tYNU1ZXzB5UFlzUmtfRFNYX1owa2V3?oc=5",
-   "date": "2026-11-14T14:05:00.000Z",
-   "resume": "GTA 6, le blockbuster qui fait trembler le marché: \"On en vend comme des petits pains ! On peut s'attendre à un ralentissement de l'économie\" DHnet",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "DHnet"
-  },
-  {
    "titre": "Le « Starlink russe » commence à servir contre l’Ukraine",
    "lien": "https://www.journaldugeek.com/2026/11/14/le-starlink-russe-commence-a-servir-contre-lukraine/",
    "date": "2026-11-14T14:02:03.000Z",
    "resume": "La Russie utilise déjà Rassvet, son alternative à Starlink, pour ses communications militaires au-dessus de l’Ukraine. Le réseau reste modeste, mais il pourrait améliorer la précision des drones russes et compliquer leur interception.",
    "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "J’ai appris à aimer Phantom Blade Zero",
-   "lien": "https://www.numerama.com/pop-culture/2370715-test-de-phantom-blade-zero-sur-ps5-pro.html",
-   "date": "2026-11-14T14:00:00.000Z",
-   "resume": "J'ai une relation que l'on pourra qualifier de toxique avec Phantom Blade Zero. Je l'ai tant aimé. Je l'ai tant détesté aussi. J'aurais aimé en faire mon jeu de l'année 2026, mais certains de ses défauts m'en empêchent. Il n'en demeure pas…",
-   "source": "Numerama",
    "categorie": "actu",
    "editeur": ""
   },
@@ -1038,8 +1434,8 @@
    "lien": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPNkhRdzdRa2xWa3pNT1hKa2ptQ2dKd0lKSkNJb3BSNXBXXzg1ZC11Z2pxdTdLdFZsRGljVnZRUS1DRWtDdVVpSGZsSHNUS1F1MzhEQ1BrUlJRUDdPY05wOUlSakV0LVh6UE9ZUE1NaVpORHZZZWZlSldwWmt1VDVNajR0dW8xM25jQmd6Y2xmZkN4ZHFQVXpNTzgwSTlheHN5aFdER0lfbk1MX2wxN2Q4eUVBWmptV3FBUk13ak1mTlhFUlNtemMyQWhKV2tIdTg?oc=5",
    "date": "2026-11-14T13:23:55.000Z",
    "resume": "Les nommés aux Game Awards 2026 seront annoncés le mardi 17 novembre par Geoff Keighley Switch-Actu",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
+   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
+   "categorie": "evenements",
    "editeur": "Switch-Actu"
   },
   {
@@ -1056,7 +1452,7 @@
    "lien": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPZFBINEpuQzBCU2JnSENzMklwN1JPaFNWaXVQcVVwcU9fWVFLNmJ2T2o4TTExTnlFeFRIVmhhS1c0cUxSc2U3a3NtUlFmNVBEdTk3X2FRNW5KNGdCcHdvRTljWmN6dDdnOWZqVmg3TlpuN0NSdTh6NHJkbHpnaG5za2hzSkcza1dGYld3Y2RlT0p6ck5EbDYzLUNjZzJaVllPajRvbjA3Szl0VmRPakdZZXFGaTI1ZDlHUEJRN3J4d21wY3hGd04wbmc4cDdLaVU0ZTNxVFUwSFdRMm9DeUJ1WjVsQnRxM3R3NklGaWhR?oc=5",
    "date": "2026-11-14T13:11:18.000Z",
    "resume": "Catch : The Final Slam, sur quelle chaîne regarder les combats d'AmineMaTue, Squeezie, Inoxtag, Mister V, Anyme et les autres Diverto",
-   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
    "categorie": "createurs",
    "editeur": "Diverto"
   },
@@ -1068,24 +1464,6 @@
    "source": "Google Actualités · règles, modération et sanctions Twitch",
    "categorie": "createurs",
    "editeur": "Stars Actu"
-  },
-  {
-   "titre": "Squeezie : événement en prime time à la TV ce samedi 14 novembre 2026 - Toutelatele",
-   "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPZFFscU5mcll6TjltVmRnSWxUX2U3QmNrXzBFOFpKMGxJSUJwNVVHcHlFMEdVRWd2YUQ5SkQyRnFENGV2VFdtX0dsbm43Ti1fQWpzVDNtUlExdmdVWXZQU1VvSnFvZG95WFVQQm00NDBrbkVmU2FCTmRmaWdzSmlTVUpXRTBGaXp0bVFTQi1OcG83VzNIOVBDZFVXTjhmNXFjWDRDYk1LQ1g1eDFJeXdF?oc=5",
-   "date": "2026-11-14T13:05:00.000Z",
-   "resume": "Squeezie : événement en prime time à la TV ce samedi 14 novembre 2026 Toutelatele",
-   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
-   "categorie": "createurs",
-   "editeur": "Toutelatele"
-  },
-  {
-   "titre": "J’ai laissé Gemini me coacher pour mon premier marathon : il m’a menti avec aplomb",
-   "lien": "https://www.numerama.com/tech/2372409-jai-laisse-gemini-me-coacher-pour-mon-premier-marathon-il-ma-menti-avec-aplomb.html",
-   "date": "2026-11-14T13:03:00.000Z",
-   "resume": "Cinq mois de préparation, des dizaines de fichiers CSV commentés, un plan pyramidal impeccable sur le papier… et une explosion au 22e kilomètre que Gemini n'avait pas vue venir. Claude lui, avait tout anticipé. Retour d'expérience sur mon…",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
   },
   {
    "titre": "Amazon veut remettre un robot dans votre salon",
@@ -1115,24 +1493,6 @@
    "editeur": ""
   },
   {
-   "titre": "Team Meat annonce « Super Meat Boy Again+ » - EGW.News",
-   "lien": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPRExPSXE5MEg4OGJGT1hNUW03bUg5NFNObUNDcExTdHJNNlkyWjkteVI0ckFTQkxDSXF6VDlYVHNUU05rbnprUk5uNnhtbV9tUjJ5aFI0MzQybW9QZTdfajhjUWh4S2NYeW9DNGc5c1dDQldhbHVXR09lV1ZvTGJxZEc3YUhGak1WeUxxQjVtc0dKdw?oc=5",
-   "date": "2026-11-14T12:08:00.000Z",
-   "resume": "Team Meat annonce « Super Meat Boy Again+ » EGW.News",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "EGW.News"
-  },
-  {
-   "titre": "Black Friday 2026 : voici la technique la plus rapide pour vérifier si un message provient vraiment d’Amazon",
-   "lien": "https://www.numerama.com/cyberguerre/2374317-black-friday-2026-voici-la-technique-la-plus-rapide-pour-verifier-si-un-message-provient-vraiment-damazon.html",
-   "date": "2026-11-14T12:05:00.000Z",
-   "resume": "Avant le Black Friday, les faux messages qui se font passer pour Amazon se multiplient. La plateforme propose une adresse mail pour vérifier en quelques instants si un mail, un SMS ou un appel vient bien d’elle.",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "Navigo : si vous avez un téléphone Samsung, ne cliquez surtout pas sur la migration vers Google Wallet",
    "lien": "https://www.journaldugeek.com/2026/11/14/navigo-si-vous-avez-un-telephone-samsung-ne-cliquez-surtout-pas-sur-la-migration-vers-google-wallet/",
    "date": "2026-11-14T12:00:27.000Z",
@@ -1142,56 +1502,11 @@
    "editeur": ""
   },
   {
-   "titre": "Wolfenstein 3 : l'annonce qu'on attendait tous enfin officialisée - La Crème Du Gaming",
-   "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNWE94Uk82d1pOYWl3SF9fWldnaEl4Z2ZzakFCS2EtXzlYdUFEVElLZ3lKV19jUXFsVVE0UXhrNlZIZVd5VDhzdVYzT0dIUUhnUUFLeTVVd2ticndYclJBY3dXMVhaVVBLMzR0X1hPR3V0VW9IZXo3U2dCRFJFSnZfS3BrNUJ0VkJnRUZlNzJUdldBSWFNQVZHZVJZOFhCVzZjZ1lFaWhSTExnUjR6NmJF?oc=5",
-   "date": "2026-11-14T12:00:25.000Z",
-   "resume": "Wolfenstein 3 : l'annonce qu'on attendait tous enfin officialisée La Crème Du Gaming",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "La Crème Du Gaming"
-  },
-  {
-   "titre": "GTA 6 : « On a prévu les sandwichs, les sodas… », ces fans ont posé des jours de congé dès la sortie du jeu vidéo - Le Parisien",
-   "lien": "https://news.google.com/rss/articles/CBMijwJBVV95cUxOWWMxRnVxTTZ2dGZzRHhTQXlsVjZPdUNNNDZfVlFlci1ZLWplSnJhWTdzdGYtZHZSYkZMclo3clZGdGpLV1E3MnRQWFdpUjFtTmlDMXRqREFoazYwUWdxcXJaN09Rb1dObmNpMkxyRkk3UUtRRXNsUWxCdC0tS2U1WlBia3AxREdfRkZwS25JTFV5MEh0VGZQem1QWVNDWHVQV2lSbmFyMjl0MFd6eDRuWThBSklPckJCN0REeDJIMlBmRmRIYVVEOGtaN1h6U3dlTWFRWWgtVE45YWNyN3UwNHIxZ2otTkUyemhieDIwQWh1SXRqNXk3dGJTQWVVUGhrMFg0d2V4OE9iZGJPRVFZ?oc=5",
-   "date": "2026-11-14T12:00:00.000Z",
-   "resume": "GTA 6 : « On a prévu les sandwichs, les sodas… », ces fans ont posé des jours de congé dès la sortie du jeu vidéo Le Parisien",
-   "source": "Google Actualités · sorties jeux vidéo",
-   "categorie": "alerte",
-   "editeur": "Le Parisien"
-  },
-  {
-   "titre": "Tout était parti d'un défi ! Ce samedi soir en direct sur TMC, The FinalSlam, avec Squeezie, Amine, Inoxtag, MisterV... - LeBlogTVNews",
-   "lien": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOOUVvQkNqQTJJWG95djdjWjdDZFg1VVpKQ1hZWjB2NUZZT1ZLLUlsM0tNczlHaXNtSTJzOTdxcmh1U0JPTVVYaklrVkJsSVZ3b29xbDFaU2RybkhzZ3R0V0hHd24zZGdRd2Z2cENPTW5MVG4zRHBwQ1JJdjJoUUppWFJ0M0Fwb25ScVZOc21kOVdZWjR6aEs0SGhzZlRYSTZLbW5yQ2x6VUtTcURjN0ZhM2ZaZ0hfUmMtSWt5N1JlSVg4dUdQNTFWa19Mb3RFYlJsd1F3ZEJsdUE5X1piamdXZ0NLUnViQQ?oc=5",
-   "date": "2026-11-14T11:53:18.000Z",
-   "resume": "Tout était parti d'un défi ! Ce samedi soir en direct sur TMC, The FinalSlam, avec Squeezie, Amine, Inoxtag, MisterV... LeBlogTVNews",
-   "source": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
-   "categorie": "createurs",
-   "editeur": "LeBlogTVNews"
-  },
-  {
    "titre": "Le prochain processeur AMD va révolutionner le jeu vidéo, mais à quel prix ?",
    "lien": "https://www.jeuxvideo.com/news/2113946/le-prochain-processeur-amd-va-revolutionner-le-jeu-video-mais-a-quel-prix.htm",
    "date": "2026-11-14T11:50:06.000Z",
    "resume": "AMD vient de dévoiler sa future architecture Zen 6. Avec plus de cœurs regroupés au même endroit, des fréquences en hausse et une mémoire cache massive, les prochains processeurs Ryzen promettent un vrai bond en avant pour le jeu vidéo, ma…",
    "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Númenor dans Les Anneaux de pouvoir : ce qu’il est advenu de l’île de Tolkien dans Le Seigneur des anneaux",
-   "lien": "https://www.numerama.com/pop-culture/1107026-numenor-dans-les-anneaux-de-pouvoir-ce-quil-est-advenu-de-lile-de-tolkien-dans-le-seigneur-des-anneaux.html",
-   "date": "2026-11-14T11:38:54.000Z",
-   "resume": "Númenor est apparue dès l'épisode 3 de la saison 1 des Anneaux de pouvoir, en 2022. Dans la saison 3, lancée ce mercredi 11 novembre 2026 sur Prime Video, l'île est au bord de la guerre civile. Ce royaume, à peine cité dans Le Seigneur des…",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Panne géante : Microsoft balaie la théorie d’un agent IA qui aurait dérapé",
-   "lien": "https://www.numerama.com/tech/2374527-panne-geante-microsoft-balaie-la-theorie-dun-agent-ia-qui-aurait-derape.html",
-   "date": "2026-11-14T11:15:33.000Z",
-   "resume": "Dans un message publié sur X, Microsoft présente ses excuses pour la panne mondiale de Microsoft 365. Selon l'entreprise, il s'agit d'un « problème technique » sans lien avec une cyberattaque ni avec l'IA ou ses agents.",
-   "source": "Numerama",
    "categorie": "actu",
    "editeur": ""
   },
@@ -1367,6 +1682,15 @@
    "editeur": ""
   },
   {
+   "titre": "Derniers séismes, Santo Domingo, République dominicaine, pendant les derniers 30 jours - Volcano Discovery",
+   "lien": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZkthTmlfZXhjX2czZTZreGYtUDI2eHlHUlNPRll4UjE2eG84Wl96U0U3Y2lpcDhxci1hYkM5SlNPUm1MWE13dE9Ed0REY2ZIRXE4d1QwaS1sbnpBM2JRd2NuV3FFcVZCVHdZblNHQ2FlQWVfaTJ1Z2pnU1h0dGNHZFpJMldPSms0?oc=5",
+   "date": "2026-11-14T08:29:03.000Z",
+   "resume": "Derniers séismes, Santo Domingo, République dominicaine, pendant les derniers 30 jours Volcano Discovery",
+   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
+   "categorie": "createurs",
+   "editeur": "Volcano Discovery"
+  },
+  {
    "titre": "La cérémonie des Game Awards 2026 sera diffusée en live sur Roblox, avec possibilité de voter et d'obtenir du merch virtuel - IGN France",
    "lien": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQM2dPdExMTlN5Wnd0LVJIQUNhbHNZVjIwTTBXMS1wSEV1SEpVbGhpYXhIS1hQX2M3S09wUjRxVXZBUnhwYWJrN2kzaVNyU2ZoQjZXSUViS2F2SkIxWHk0ZFQ2S0FyMWJxQndQOE9JQ3ljejZaRGRQbGlXWkNpNWRNTjdmUHZ6LS03OGhoRm9ERHpDVWZjMG44MXkzVWVvZDl1RHg4UEZmMHJDREtGZE1hSmo4RVBFWG5CSF9VeGNpdU13NlBoT045bWVwTFI?oc=5",
    "date": "2026-11-14T08:22:00.000Z",
@@ -1403,15 +1727,6 @@
    "editeur": "Je Bosse en Grande Distribution"
   },
   {
-   "titre": "Le jour de sortie de GTA 6, vous allez pouvoir jouer gratuitement à l'un des meilleurs jeux vidéo sur la saga Alien",
-   "lien": "https://www.jeuxvideo.com/news/2114274/le-jour-de-sortie-de-gta-6-vous-allez-pouvoir-jouer-gratuitement-a-l-un-des-meilleurs-jeux-video-sur-la-saga-alien.htm",
-   "date": "2026-11-14T07:40:09.000Z",
-   "resume": "Alors qu’aucun gros studio n’a osé sortir de jeu en même temps que GTA 6, Epic Games Store propose un titre gratuit le même jour, et c’est l’un des meilleurs jeux Alien !",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "C’est un record ! Ce sabre laser Star Wars s’est vendu à près de 5 millions de dollars",
    "lien": "https://www.journaldugeek.com/2026/11/14/cest-un-record-ce-sabre-laser-star-wars-sest-vendu-a-pres-de-5-millions-de-dollars/",
    "date": "2026-11-14T06:03:46.000Z",
@@ -1430,39 +1745,12 @@
    "editeur": "Martin Cid Magazine"
   },
   {
-   "titre": "Sans ce film vieux de 44 ans, pas de Cyberpunk 2077. En 2026, une série étend son univers sur Amazon Prime Video",
-   "lien": "https://www.jeuxvideo.com/news/2114269/sans-ce-film-vieux-de-44-ans-pas-de-cyberpunk-2077-en-2026-une-serie-etend-son-univers-sur-amazon-prime-video.htm",
-   "date": "2026-11-14T05:55:10.000Z",
-   "resume": "En Occident, le cyberpunk a deux pères. Blade Runner, le film de Ridley Scott sorti en 1982, et Neuromancien, le roman de William Gibson publié deux ans plus tard. À eux deux, ils ont fixé les codes et l’esthétique d’un genre tout entier.…",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "Mémoire cash - Sonic Spinball : un premier spin-off frustrant pondu en 9 mois pour Noël 1993",
    "lien": "https://www.gamekult.com/actualite/sonic-spinball-un-premier-spin-off-frustrant-pondu-en-9-mois-pour-noel-1993-3050872863.html",
    "date": "2026-11-14T05:00:00.000Z",
    "resume": "Dans le sillage du succès immédiat de Sonic the Hedgehog en juin 1991, il n'aura pas fallu attendre longtemps pour que la mascotte de Sega devienne une machine à pondre des suites et des spin-offs. Ainsi, en novembre 1993, Sonic sortait dé…",
    "source": "Gamekult",
    "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Twitch Channel points reward section is 2 wide and not 3 wide",
-   "lien": "https://www.reddit.com/r/Twitch/comments/1xvt2u3/twitch_channel_points_reward_section_is_2_wide/",
-   "date": "2026-11-14T04:21:49.000Z",
-   "resume": "I have tried disabling all plug-ins yet I can't seem to find what the problem is. submitted by /u/kople101366 [link] [comments]",
-   "source": "Reddit · r/Twitch",
-   "categorie": "communaute",
-   "editeur": ""
-  },
-  {
-   "titre": "How do I start streaming GTA 6 on PS5 without a webcam and make clips from my gameplay?",
-   "lien": "https://www.reddit.com/r/Twitch/comments/1xvso23/how_do_i_start_streaming_gta_6_on_ps5_without_a/",
-   "date": "2026-11-14T03:59:36.000Z",
-   "resume": "Hey everyone! I’ve wanted to start streaming for a while, and I recently got GTA 6 on PS5, so I figured I’d finally give it a shot. I have a PS5 and a gaming PC. My goal is to start streaming on Twitch and eventually try TikTok LIVE too. I…",
-   "source": "Reddit · r/Twitch",
-   "categorie": "communaute",
    "editeur": ""
   },
   {
@@ -1475,24 +1763,6 @@
    "editeur": "WeRSM"
   },
   {
-   "titre": "can’t renew my twitch turbo",
-   "lien": "https://www.reddit.com/r/Twitch/comments/1xvqn5v/cant_renew_my_twitch_turbo/",
-   "date": "2026-11-14T02:14:58.000Z",
-   "resume": "how do i fix this? i’m on iphone submitted by /u/Donjuliah [link] [comments]",
-   "source": "Reddit · r/Twitch",
-   "categorie": "communaute",
-   "editeur": ""
-  },
-  {
-   "titre": "Do founders badges still exist on new channels?",
-   "lien": "https://www.reddit.com/r/Twitch/comments/1xvqjl2/do_founders_badges_still_exist_on_new_channels/",
-   "date": "2026-11-14T02:09:52.000Z",
-   "resume": "A friend just hit Affiliate, but the subscription tab is showing the normal chat badge. And I can't find the founders settings anywhere in my personal dashboard. (I seem to remember there once being a setting to remove founders badges for…",
-   "source": "Reddit · r/Twitch",
-   "categorie": "communaute",
-   "editeur": ""
-  },
-  {
    "titre": "Plus de 10 000 codes gratuits pour GTA 6 Ultimate Edition à venir dans les drops Twitch en direct - Notebookcheck.fr",
    "lien": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNa2xIaW5vcXdaSTR0b3phR0hadThKNVhpaHViMkI4VzVOMnZKMHFlTnNUSXc1NGxnY2xucGtReTU0d3lPNURnTXAyMXUxVGpnaGdQWWhKX1VFdnNTWXB3MzY2aGpHZ1ZNR19UOUNRNjN2Ym42Rzc4bmVyWmt2UHlWekVUVUFDTlA0UmhNWE0ydzNrUnRLQ0RpSFByVjJGaWlWVEZmei02Mjg2azdMVUk0NjVxNXJJRTFNQWdRaHhsT0dhc040cUlybFRsajlzTk9SVEM3TWZlcWxCQQ?oc=5",
    "date": "2026-11-14T01:52:00.000Z",
@@ -1500,15 +1770,6 @@
    "source": "Google Actualités · Twitch, YouTube et Kick",
    "categorie": "createurs",
    "editeur": "Notebookcheck.fr"
-  },
-  {
-   "titre": "Lecturas domingo XXXIII del tiempo ordinario (A) - www.omnesmag.com",
-   "lien": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZkVDMElWbHYzcTNDNklkMFpBWUxHV205cnU4dVZFNC11V29heWFsRXdUVC1zX3VfT3h6VHpZaFdDY09FZDVxVmJTLW5fZks2UnlsM3dWVDlIc3hBVDVoUzlzd2NGWklDbTJwNzc2UmZOcWJJbXphZWVfeHJBaExHSTMtYmZrem9PMlloNnN6V1pndGZpbU1VWW81YjZrOVR3Qnhtbm9QbGFqUmRIWHFVWUVTQWRTT3JTUWc?oc=5",
-   "date": "2026-11-14T00:33:45.000Z",
-   "resume": "Lecturas domingo XXXIII del tiempo ordinario (A) www.omnesmag.com",
-   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
-   "categorie": "createurs",
-   "editeur": "www.omnesmag.com"
   },
   {
    "titre": "TwitchCon highlights live-streaming culture, bringing top content creators, gamers, more to San Diego - Times of San Diego",
@@ -1536,15 +1797,6 @@
    "source": "Google Actualités · Twitch creators (international)",
    "categorie": "createurs",
    "editeur": "GameRant"
-  },
-  {
-   "titre": "everytime twitch ask me cookies",
-   "lien": "https://www.reddit.com/r/Twitch/comments/1xvmp89/everytime_twitch_ask_me_cookies/",
-   "date": "2026-11-13T23:08:14.000Z",
-   "resume": "https://preview.redd.it/fivmmnbjog1i1.png?width=1102&format=png&auto=webp&s=65e52d9dea2c3c7f9bcef878e7e7182781330430 https://preview.redd.it/f417vikjog1i1.png?width=1583&format=png&auto=webp&s=21bc42f0a48eef47c730b819f4bdf4f21af61bf7 nvm i…",
-   "source": "Reddit · r/Twitch",
-   "categorie": "communaute",
-   "editeur": ""
   },
   {
    "titre": "The $4 million Internet Invitational might become golf’s next big thing — or another bogey",
@@ -1592,15 +1844,6 @@
    "editeur": "Télé Satellite et Numérique"
   },
   {
-   "titre": "GTA 6 : votre précommande est en retard, que faut-il faire ?",
-   "lien": "https://www.jeuxvideo.com/news/2114266/gta-6-votre-precommande-est-en-retard-que-faut-il-faire.htm",
-   "date": "2026-11-13T21:20:08.000Z",
-   "resume": "Vous pensiez avoir l’esprit tranquille parce que vous avez effectué votre précommande de Grand Theft Auto 6 des mois à l’avance ? Rassurez-vous, vous n’étiez pas les seuls à penser ça. À quelques jours de la sortie, des témoignages et des…",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "The Game Awards 2026 sera diffusée sur Roblox pour la première fois - Mezha.net",
    "lien": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOSklPaFo0blVCOWstXzB1R2ZubGZ0bjJ1MFhZaHdwc2pBRDF1Mi1pQlBLSFdLSFRYLXVnMTU3T3Z2V1ExUDcwQlZSOXEySGdoNEZUSk1pUnhQdTh5S0tic0taclg5azRjLU5OTnhQeFlveGZjbkJWVWd4X3VaN2cwN3kzeWJadU1wQTR0aEszWWtwNXVxNURz?oc=5",
    "date": "2026-11-13T21:18:06.000Z",
@@ -1619,40 +1862,13 @@
    "editeur": ""
   },
   {
-   "titre": "TwitchCon SD 2026 Affiliate Gift",
-   "lien": "https://www.reddit.com/r/Twitch/comments/1xvj54o/twitchcon_sd_2026_affiliate_gift/",
-   "date": "2026-11-13T20:42:58.000Z",
-   "resume": "Get it from the second floor info booth by the pixel pit stop. It’s a telescoping phone mount with a glasses/screen cleaning cloth and another tab-like object with the Twitch logo. Anyone in comments know what that last one might be? submi…",
-   "source": "Reddit · r/Twitch",
-   "categorie": "communaute",
-   "editeur": ""
-  },
-  {
-   "titre": "Le Baldur's Gate 3 de la SF : ce RPG est le jeu que j'attends le plus début 2027 !",
-   "lien": "https://www.jeuxvideo.com/news/2114232/le-baldur-s-gate-3-de-la-sf-ce-rpg-est-le-jeu-que-j-attends-le-plus-debut-2027.htm",
-   "date": "2026-11-13T20:40:08.000Z",
-   "resume": "D’un côté, Warhammer 40.000, un univers que je connais très bien. De l’autre, Baldur’s Gate 3, un jeu de rôle que je considère comme le meilleur dans sa catégorie. Quand un CRPG ambitieux promet de réunir les deux, difficile de rester de m…",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "What do you need to start streaming on ps5?",
-   "lien": "https://www.reddit.com/r/Twitch/comments/1xviwtj/what_do_you_need_to_start_streaming_on_ps5/",
-   "date": "2026-11-13T20:34:01.000Z",
-   "resume": "So I got a ps5, a macbook, a phone and a HyperX Cloud III headset What do I need so I can start streaming on twitch or other platforms with a somewhat limited budget? I don’t want to start off and invest like 1.000€ instantly. I am not sur…",
-   "source": "Reddit · r/Twitch",
-   "categorie": "communaute",
-   "editeur": ""
-  },
-  {
-   "titre": "As a viewer, how do i turn off drops?",
-   "lien": "https://www.reddit.com/r/Twitch/comments/1xviwep/as_a_viewer_how_do_i_turn_off_drops/",
-   "date": "2026-11-13T20:33:32.000Z",
-   "resume": "I have turned of drops and notifications on all channels i watch... but i keep getting drops still on those cahnnels. Its anoying to get reminders and the more or less constant \"Here is another useless item for you...\" submitted by /u/Bogu…",
-   "source": "Reddit · r/Twitch",
-   "categorie": "communaute",
-   "editeur": ""
+   "titre": "Twitch Kicks Off TwitchCon San Diego With 5-Minute Clips, the Return of Hosting and Collectible Emotes - Net Influencer",
+   "lien": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQTEZPanlpM0I4ZlVlLVdpeFNhY2NpTjV3cE5fVXdUaFA5Z191ak1faTNWOG84ekUwSkFzRml3U2pFMGJxbVIySDVYaGZPWWg0d3NOOG1lTkgxZGdacFRTMHctQmYwRFFBdmllS1pSbFM3ckFkd1hHLUxYUnpsNTlob2J0czFrSlk2VnA3Rm9md2FTeXZ5c2JkaTU5THM2UmpyRVAzcmF5ZFNwR0dCTEFGTUdEUQ?oc=5",
+   "date": "2026-11-13T20:13:15.000Z",
+   "resume": "Twitch Kicks Off TwitchCon San Diego With 5-Minute Clips, the Return of Hosting and Collectible Emotes Net Influencer",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "Net Influencer"
   },
   {
    "titre": "La liste des nominés des Game Awards 2026 sera dévoilée la semaine prochaine - EGW.News",
@@ -1680,15 +1896,6 @@
    "source": "Google Actualités · Twitch creators (international)",
    "categorie": "createurs",
    "editeur": "Twitch Blog"
-  },
-  {
-   "titre": "‘We’re not trying to be TwitchTok’: Twitch adds new short-form video feature - Digiday",
-   "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPc0JCclpscjVLeWd5djU0Z2ZfMnBIUTcxaXZCaFJHd0gxNUlhMDNYRkNzdE5xSWVNVWZ6U0t0Vk1tenZINF9yZWFONG1KVC1KR2pwVjJNa1puakpXb0xLRjFYaGNXb3ZzVFU2SDcybHRwd1hreXlLc2dFMUE1RHkzZ29TeXhPdXBsY1E4amdvT0VjVlhXel9IX1lIeFNXSnJS?oc=5",
-   "date": "2026-11-13T19:16:42.000Z",
-   "resume": "‘We’re not trying to be TwitchTok’: Twitch adds new short-form video feature Digiday",
-   "source": "Google Actualités · Twitch creators (international)",
-   "categorie": "createurs",
-   "editeur": "Digiday"
   },
   {
    "titre": "God of War : Sons of Sparta déboule enfin sur PS4, le metroidvania s'enrichit de deux modes bonus",
@@ -1745,15 +1952,6 @@
    "editeur": "Dexerto"
   },
   {
-   "titre": "Cette vignette payante va être obligatoire pour tous les automobilistes dans quelques mois seulement",
-   "lien": "https://www.journaldugeek.com/2026/11/13/cette-vignette-payante-sera-bientot-obligatoire-pour-tous-les-automobilistes-des-lannee-prochaine/",
-   "date": "2026-11-13T18:23:02.000Z",
-   "resume": "À partir du 1er mai 2027, les automobilistes devront payer une vignette pour se rendre dans cet endroit particulier, très apprécié des frontaliers.",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "The Game Awards annoncera les nommés de 2026 le 17 novembre ; la diffusion en direct à la télévision sur PS5 s’ajoute au streaming - Mezha.net",
    "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOYmpER1hkamI3MGxJb1BaeFVyVlRZci1nanlPSVRXOGhDZ0dsQlhWWkZ3UTMwS2FqWWRLakZhWGZNTTBNWlBfSDRsaTRwZDhRd3FMUlE4RTF1YTNWVEdTT3kyX3BjQTBTX3BBOXQ3RWJyQlFheDB6ZDZSVFhpdExQc2ZGZzZrNWZweXBVQWFLblNnSjI0WFRPazh3?oc=5",
    "date": "2026-11-13T18:13:04.000Z",
@@ -1761,24 +1959,6 @@
    "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
    "categorie": "evenements",
    "editeur": "Mezha.net"
-  },
-  {
-   "titre": "I’ve tried literally everything",
-   "lien": "https://www.reddit.com/r/Twitch/comments/1xveyj9/ive_tried_literally_everything/",
-   "date": "2026-11-13T18:03:01.000Z",
-   "resume": "I’ve used twitch drops for the longest time for Overwatch from my ps5. But all of a sudden it’s not connecting. Ive spent the last hour unlinking, relinking, clearing caches, and it hasn’t worked. The ps5 says it’s linked, twitch says it’s…",
-   "source": "Reddit · r/Twitch",
-   "categorie": "communaute",
-   "editeur": ""
-  },
-  {
-   "titre": "Prédit il y a 40 ans, ce mystérieux signal venu des profondeurs de la Voie lactée vient enfin d’être détecté grâce à James Webb",
-   "lien": "https://www.journaldugeek.com/2026/11/13/predit-40-ans-mysterieux-signal-venu-profondeurs-voie-lactee-enfin-detre-detecte-james-webb/",
-   "date": "2026-11-13T18:02:47.000Z",
-   "resume": "Le télescope spatial James Webb, en plus de nous fournir de superbes images du cosmos, vient d’offrir une confirmation, légèrement tardive, à deux chercheurs qui, dans les années 1980, avaient trouvé une exception à une règle de la physiqu…",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
   },
   {
    "titre": "Crazy Taxi World Tour - Trailer de la carte de l'Inde - IGN France",
@@ -1808,29 +1988,11 @@
    "editeur": ""
   },
   {
-   "titre": "Avengers : Doomsday : Ryan Reynolds et Hugh Jackman ont participé à l’écriture du film",
-   "lien": "https://www.journaldugeek.com/2026/11/13/avengers-doomsday-hugh-jackman-et-ryan-reynolds-au-scenario/",
-   "date": "2026-11-13T17:43:10.000Z",
-   "resume": "Les deux acteurs sont crédités au scénario du film des frères Russo. La confirmation d'un retour des personnages pour en découdre avec Victor Von Doom ?",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "Vindictus : Defying Fate fait les présentations en vidéo et sortira aussi sur PS5",
    "lien": "https://www.gamekult.com/actualite/vindictus-defying-fate-fait-les-presentations-en-video-et-sortira-aussi-sur-ps5-3050872965.html",
    "date": "2026-11-13T17:05:00.000Z",
    "resume": "Annoncé en mars 2024 alors que Nexon lui-même ne savait pas encore vraiment quelle forme le jeu prendrait, Vindictus : Defying Fate a bien avancé depuis, au fil de ses différentes sessions de tests. Avec une sortie désormais fixée à 2027,…",
    "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Test de la Cricut StickerPix Print+Cut : la machine à stickers qui manquait à nos vies",
-   "lien": "https://www.journaldugeek.com/test/test-de-la-cricut-stickerpix-printcut-la-machine-a-stickers-qui-manquait-a-nos-vies/",
-   "date": "2026-11-13T17:00:05.000Z",
-   "resume": "Fini l'imprimante jet d'encre et les repères d'alignement. La marque reine du DIY sort enfin une machine qui fait tout toute seule, pour un résultat professionnel.",
-   "source": "Journal du Geek",
    "categorie": "actu",
    "editeur": ""
   },
@@ -1849,15 +2011,6 @@
    "date": "2026-11-13T16:42:21.000Z",
    "resume": "Découvrez comment fonctionne l’indice de recherche dans GTA 6 et la signification des différentes étoiles.",
    "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Votre Tesla Model 3 a peut-être un airbag non conforme : voici comment le savoir",
-   "lien": "https://www.journaldugeek.com/2026/11/13/votre-tesla-model-3-a-peut-etre-un-airbag-non-conforme-voici-comment-le-savoir/",
-   "date": "2026-11-13T16:33:46.000Z",
-   "resume": "Tesla rappelle des Model 3 fabriquées entre juin 2024 et mai 2026 à cause d’un airbag qui ne respecte pas un règlement européen sur les chocs latéraux. La correction passe par une mise à jour à distance, gratuite.",
-   "source": "Journal du Geek",
    "categorie": "actu",
    "editeur": ""
   },
@@ -1887,33 +2040,6 @@
    "source": "Google Actualités · Twitch creators (international)",
    "categorie": "createurs",
    "editeur": "Complex"
-  },
-  {
-   "titre": "GAT Expo Santo Domingo réunira des associations, des opérateurs et des experts pour analyser l'avenir du jeu - Yogonet",
-   "lien": "https://news.google.com/rss/articles/CBMiowJBVV95cUxQOVk2aW5UdEhpREJ0Ymtkei1CNEZzWW1vU3RITUZFODkxc3BVUXpIY0hDS0xpRkQ0ZVpIRTZYYnRSWnNPY1RkdVJtMW1zTGZ3cG9RUUwtX2hzbTJacVdMSHVTNXZqaWxsWDlKZ01XYkxYaVlLSkM2NkIwNTFKMk5MdmJ6NVlMbDBzLTRybldadHZsR1Y5d3lsWHljUzR0TG5JRmE1bkZQNVpKV1JlbWhseGFrTllIcWRkNTBKOFZVVVNZWThjN2dSRVZyZXJzLV9pcnV6Skc3dFBUeVVNeENWZDNrU2FOanhpQVVBMXFIYlFBLVBlWThVUzdPZ2JZVEp1MEcyb18yaUxqWVJGU2lhNFFSa2wwNEFoV3lkbjZOdi1PUDQ?oc=5",
-   "date": "2026-11-13T16:13:05.000Z",
-   "resume": "GAT Expo Santo Domingo réunira des associations, des opérateurs et des experts pour analyser l'avenir du jeu Yogonet",
-   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
-   "categorie": "createurs",
-   "editeur": "Yogonet"
-  },
-  {
-   "titre": "D’après les rumeurs, Star Wars Jedi 3 sera officiellement présenté aux Game Awards 2026 - EGW.News",
-   "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOOFBlYXA1VHU3WXQ3cERTcS1jNEhQVnM3enhMWEdhREhXUVZNdXlWNFllT21wRFI5djZpcjZZdTNrbDUwTnJ3MDNOZGQ1Q3RUczh3M0ZaMjdMbzZkY0c5azNGQVh0MHNKaXp0MHJENFA3XzN2N080WmE0UnFkaUNQODZaaXNuZUVTQ0NQUHFrdXRYWjl1bXBkMjlKdmFQa2c?oc=5",
-   "date": "2026-11-13T15:52:59.000Z",
-   "resume": "D’après les rumeurs, Star Wars Jedi 3 sera officiellement présenté aux Game Awards 2026 EGW.News",
-   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
-   "categorie": "evenements",
-   "editeur": "EGW.News"
-  },
-  {
-   "titre": "KPop Demon Hunters annonce un concert unique en France",
-   "lien": "https://www.journaldugeek.com/2026/11/13/kpop-demon-hunters-annonce-un-concert-unique-en-france/",
-   "date": "2026-11-13T15:50:14.000Z",
-   "resume": "Pour sa tournée mondiale, le Golden World Tour va faire passer en France. Les billets seront mis en vente dans quelques jours et Netflix espère faire le plein après le succès de son film d'animation.",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
   },
   {
    "titre": "Codes Steal a PC (Novembre 2026)",
@@ -1970,15 +2096,6 @@
    "editeur": ""
   },
   {
-   "titre": "Game Awards 2026 : Geoff Keighley annonce un partenariat qui sonne comme un indice - gamewave",
-   "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQVlBFeWtPclBzbnBvMDFXblB5Qmo5OTh4WlBvcWxPY2VKNXg4WE9TWlpaYXVSRWs2UHQ2Wkw5bEZBeXdfRFpBNWdIX2JqRlF3RnUzeGZFRmFOZ2hldXljUXF5bTh5MzlULUszQ0w2LW93bzF6RmtERnJBSTVIRVVFVVYwYkZ5VXBpWWZsMW9hNWEyc0xWdVlFdy1lTmhGVGdZYTY2RkM3Z2hmUUFwSVE5UU13?oc=5",
-   "date": "2026-11-13T14:10:00.000Z",
-   "resume": "Game Awards 2026 : Geoff Keighley annonce un partenariat qui sonne comme un indice gamewave",
-   "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
-   "categorie": "evenements",
-   "editeur": "gamewave"
-  },
-  {
    "titre": "Chaturbate Alternativen: Die besten Cam-Seiten wie Chaturbate (2026)",
    "lien": "https://passionfru.it/de/chaturbate-alternativen-167387/",
    "date": "2026-11-13T13:48:38.000Z",
@@ -1986,15 +2103,6 @@
    "source": "Passionfruit (créateurs)",
    "categorie": "createurs",
    "editeur": ""
-  },
-  {
-   "titre": "GTA 6 gratuit : 10 000 exemplaires Ultimate Edition sont à gagner sur PS5 et Xbox - La Crème Du Gaming",
-   "lien": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNM1VBZVluckRIcjk5Qm82aXVKTDg3ZzBKaFFDdEk2blVyN1pMZkZYLWp4TFp3a2gtQmVwYVdBRC04Z0hOV3JuTC1qci1SRFZvcTdoTE1LN3pFejdBcHVLcWRQU3FxWEdUcXpYOWJFYXc2ekRKNGM2d1NUcVBpeTZuR2JlNDFxdTdGd1NaZE1jVWtURUplVlFfbENWM1Q3UGM0c1J6bDdtXzNXbHBFeG9kSmFOZ0JYRUs1WTA2bHQyNzU2Qno2RkdQQW1hRjlyNzlOclBz?oc=5",
-   "date": "2026-11-13T13:30:50.000Z",
-   "resume": "GTA 6 gratuit : 10 000 exemplaires Ultimate Edition sont à gagner sur PS5 et Xbox La Crème Du Gaming",
-   "source": "Google Actualités · streamers et streaming",
-   "categorie": "alerte",
-   "editeur": "La Crème Du Gaming"
   },
   {
    "titre": "\"C’était très excitant\" : Baghera Jones débarque sur France Télévisions avec un documentaire événement à 650 000 euros ! - AlloCiné",
@@ -2024,24 +2132,6 @@
    "editeur": "FranceTvPro.fr"
   },
   {
-   "titre": "Why a game studio is approaching its TwitchCon presence as a discovery play | exclusive - GamesBeat",
-   "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxORDBhT0NQZkxfVTd6NUtKbXdoa0JVUHRobG9iaHNPR29PbVpuTWdwU1FjdVlhemNKQlhMU3d2ZEdpdGVLT3huVklQVFE1cnRBcUd6cm5BMktIUzFNbEVQT0wxU1IxT2lHMzdEMUtxSndESDhYaHFpV3lHZUYwOHlWUG1XZ1lPOE5hd1phNW92R2NreHRmOGF2LXlMOUtFQ3hjZkhTY092ZExVZ2FhTGMyTG82czg0MUN1U3dDaTBLVQ?oc=5",
-   "date": "2026-11-13T13:16:01.000Z",
-   "resume": "Why a game studio is approaching its TwitchCon presence as a discovery play | exclusive GamesBeat",
-   "source": "Google Actualités · Twitch creators (international)",
-   "categorie": "createurs",
-   "editeur": "GamesBeat"
-  },
-  {
-   "titre": "Toujours en accès anticipé, Slay the Spire 2 ajoute un nouveau personnage et deux nouveaux modes de jeu dans sa branche bêta",
-   "lien": "https://www.gamekult.com/actualite/toujours-en-acces-anticipe-slay-the-spire-2-ajoute-un-nouveau-personnage-et-deux-nouveaux-modes-de-jeu-dans-sa-branche-beta-3050872960.html",
-   "date": "2026-11-13T13:12:00.000Z",
-   "resume": "Mega Crit a publié la version bêta v0.113.0 de Slay the Spire 2, la plus grosse mise à jour du jeu à ce jour : elle apporte notamment un nouveau personnage, l’Insensé (The Fool), deux modes de jeu, une série d’événements, de cartes et de r…",
-   "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "GTA 6 pourrait faire des jeux physiques les nouveaux vinyles du gaming",
    "lien": "https://www.dexerto.fr/gta/gta-6-pourrait-faire-jeux-physiques-les-nouveaux-vinyles-du-gaming-1663996/",
    "date": "2026-11-13T13:10:50.000Z",
@@ -2060,15 +2150,6 @@
    "editeur": ""
   },
   {
-   "titre": "Digital Fairness Act : Bruxelles propose de bannir le pay-to-win pour les mineurs et d’imposer le vrai prix des monnaies virtuelles",
-   "lien": "https://www.gamekult.com/actualite/digital-fairness-act-bruxelles-propose-de-bannir-le-pay-to-win-pour-les-mineurs-et-d-imposer-le-vrai-prix-des-monnaies-virtuelles-3050872952.html",
-   "date": "2026-11-13T12:03:00.000Z",
-   "resume": "Cette semaine, la Commission européenne a présenté sa proposition de Digital Fairness Act (DFA), une mise à jour majeure des règles de protection des consommateurs. Elle l'accompagne par ailleurs d'une révision du règlement sur la coopérat…",
-   "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "Celio dévoile une troisième collection exclusive avec Inoxtag - Les Gens d'Internet",
    "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxON3A3RnNodjF0SzNpeVB4dHZRUGtDUm94VEhoN0IxY0d5cEZ2NWlqWldlQlRUb3hhaDdCSUZlMkp4emNHUVFicDZYclctSEFkXzlmei02V2VDazdITkF3d0JTanFvcGtSRU9FMjZ4VXlfUm95SThzZjhCblpqQ184MV9JT0xSQnQwU1prdm45WThMaWRfNWJhUnZLMkxwWUnSAaQBQVVfeXFMUHV6ajJieHhweEgyNHZ4dFl0VlEwc0ZEUWdSVllGaE52MnVtTVdkY0V3NENneHdEWFVBeDQyYVM0eXZqSWl4OHlqZ3NGeVZpbkRmM3lzRzh6NDktRmVxcm9jWXd5Mi13VGNnOUg3R29tZmNFUFEtQ0Y3cGE0VDB4WlNSclg0NFp5bE4zN3pzVHRzRDJseEhQRWtNMDVqa1VFd2ItNHE?oc=5",
    "date": "2026-11-13T11:35:55.000Z",
@@ -2076,24 +2157,6 @@
    "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
    "categorie": "createurs",
    "editeur": "Les Gens d'Internet"
-  },
-  {
-   "titre": "Paradox Interactive (Crusader Kings) : le PDG historique démissionne",
-   "lien": "https://www.gamekult.com/actualite/paradox-interactive-crusader-kings-le-pdg-historique-demissionne-3050872947.html",
-   "date": "2026-11-13T11:16:00.000Z",
-   "resume": "Fredrik Wester, figure historique de Paradox Interactive, s'apprête à céder son fauteuil de président-directeur général. Dès le 4 janvier 2027, son actuel bras droit et directeur général adjoint, Mattias Lilja, prendra officiellement les r…",
-   "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Fatal Fury : City of the Wolves exhume son film d'animation et ramène l'antagoniste Laocorn",
-   "lien": "https://www.gamekult.com/actualite/fatal-fury-city-of-the-wolves-exhume-son-film-d-animation-et-ramene-l-antagoniste-laocorn-3050872943.html",
-   "date": "2026-11-13T10:03:00.000Z",
-   "resume": "Après le crossover avec Tokyo Revengers, Fatal Fury : City of the Wolves revient à ses racines et dévoile le gameplay de Laocorn Gaudeamus, antagoniste de l'obscur film animé de 1994, qui est jouable pour la première fois en 32 ans.",
-   "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
   },
   {
    "titre": "Avec Gemini 4 Hydrogen, Google Search s’offre une mise à jour majeure",
@@ -2283,15 +2346,6 @@
    "source": "Google Actualités · Twitch creators (international)",
    "categorie": "createurs",
    "editeur": "IndianEagle"
-  },
-  {
-   "titre": "GTA 6, 10 000 copies gratuites mises en jeu sur KICK - INFINITY AREA",
-   "lien": "https://news.google.com/rss/articles/CBMijgFBVV95cUxONDA0UDFob1czcEljc200TUc4MzZHT2J2QVUzckR0REVzcmJpenM2OWU3eFlZNVlBT1FJQWNzdnpJdkNJOFk3b3VSeWgwSndZU0hTcmVKOUxvd182elA0ZU1ZOGVBQ202U0V5dVE0dzNUR0NaRDY3SUpjQXBtWGhJaHBVWnRCRnVIUGRBYV9R?oc=5",
-   "date": "2026-11-12T13:51:00.000Z",
-   "resume": "GTA 6, 10 000 copies gratuites mises en jeu sur KICK INFINITY AREA",
-   "source": "Google Actualités · streamers et streaming",
-   "categorie": "alerte",
-   "editeur": "INFINITY AREA"
   },
   {
    "titre": "FinalSlam 2026 : Heure et chaines pour regarder le show en direct - Catch-Newz",
@@ -2726,6 +2780,15 @@
    "editeur": ""
   },
   {
+   "titre": "TwitchCon 2026 in San Diego: Meetups, panels and parties to check out - KPBS",
+   "lien": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxONVlaUmc1TnBlbnI0SlFqR0FSM1RLMjZ1aGpRU081RmhNazYxT3h5djM5VjhiLS1ZRHRtWmlhSGthakRacUFQUGZ3ZVFkMWV2QUFJQnI1OHFEU0lncWN3b3lCVFhfaUttV3UxZ19pX24wLVh1MTl6bnd6bU9PcDBzNk9uUlJmakJ2ajZndnFFZ2FsaWNoOFBRRDNuSGJBN2JwaWJzS0N5SjFTbEk3aUwzbGtSTkVmZVhy?oc=5",
+   "date": "2026-11-10T20:22:00.000Z",
+   "resume": "TwitchCon 2026 in San Diego: Meetups, panels and parties to check out KPBS",
+   "source": "Google Actualités · Twitch creators (international)",
+   "categorie": "createurs",
+   "editeur": "KPBS"
+  },
+  {
    "titre": "SEO : Google déploie une mise à jour majeure de ses algorithmes (November 2026 Core Update)",
    "lien": "https://www.blogdumoderateur.com/seo-google-november-2026-core-update/",
    "date": "2026-11-10T18:38:01.000Z",
@@ -2753,13 +2816,13 @@
    "editeur": ""
   },
   {
-   "titre": "Vodafone enregistre une lourde perte nette liée à l’Allemagne mais relève ses prévisions annuelles - Euronews.com",
+   "titre": "Vodafone enregistre une lourde perte nette liée à l’Allemagne mais relève ses prévisions annuelles - Euronews",
    "lien": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOa0QybHpSZ2pZU0R1THJQTTBzR0RpN25vSFUwNXctX05IT1g2WHR5OTQ1T3dWd29wZWVublVQbWVXdlBMQmdpLTdvZ3lEMjFEUDAyZ2R1dVpkMDc0V29Hck8zUzBYMDhianRvVVBXYy1hUWJsNllyMTVSYlZ4UnN2Z3dLVUlCcjVzZFBwZDR2WXNsN2Zpcjl6UFMzY24weC1UaF9YdVJ0ejBKSjJ0ZkJGZDBhYWxkc0NrTjlsY05rT20wRFk?oc=5",
    "date": "2026-11-10T12:22:21.000Z",
-   "resume": "Vodafone enregistre une lourde perte nette liée à l’Allemagne mais relève ses prévisions annuelles Euronews.com",
+   "resume": "Vodafone enregistre une lourde perte nette liée à l’Allemagne mais relève ses prévisions annuelles Euronews",
    "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
    "categorie": "evenements",
-   "editeur": "Euronews.com"
+   "editeur": "Euronews"
   },
   {
    "titre": "« Tous mes amis ont créé leur compte Twitch » : Quand « GTA 6 » devient une vocation pour le streaming - Yahoo Actualités",
@@ -3041,24 +3104,6 @@
    "editeur": "stadion.com"
   },
   {
-   "titre": "Clem qui court réunit 100 participants pour les « 25h qui courent », son événement caritatif sur Twitch - Les Gens d'Internet",
-   "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNOEhFZlpsR1h1YWFRQXExZFBuSXVucEhlTUtCN1dXRzc4T3VMTjZUSFpLX2tWalo0aExVTlhtWmZuNzRJRHlEMGExMWxvS08tLWVDcU9oZnFGaTRnd0ZHQ0FMR0diVUVHTnJLZUhVVmFrUjNHUHljLXpVRUNQd3QwMGlLQlpoaEMzeXJrLWxzYy0yQVRYVnZkanpKbUkzcnhoRkRSNnN5R3l1VEd1MkVjNUhsd1hqUkRLUGFWVkhjSmJzV2o1d3VuaXcwT1VNNVJR0gHWAUFVX3lxTE5ncE9MTDRKazNabUV5RF9KWTBlOEFCeVk5OXRxazF0NndiVGkwc3d3YlNDeHRRU3RrbzJZQjVFQVIySVhJZldMMUJhdTZrakVXdkRPaXFlVVYzV2wzMFR5MlR6V1NmLXpqYkRYNDcxM0NMOW53MXdKN3JSWUkwTmpscjFlOU81VUtTMWh0bGxPZS1aZjNiVDBNX0lFYXBub19kbkQ4WFlFRUE2cWVkcUZya3dWbnN6UkhxTnJkYlVvdllnUmVwY1B2cmI1OVF",
-   "date": "2026-11-06T19:17:57.000Z",
-   "resume": "Clem qui court réunit 100 participants pour les « 25h qui courent », son événement caritatif sur Twitch Les Gens d'Internet",
-   "source": "Google Actualités · créateurs de contenu Twitch",
-   "categorie": "createurs",
-   "editeur": "Les Gens d'Internet"
-  },
-  {
-   "titre": "Esports World Cup 2027 : les échecs de retour, Magnus Carlsen vise un triplé historique - E.SPORT.FR",
-   "lien": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNZXc1UXNNRFp6dmk4bWgzNEJabjhyREdNTG5oZ0pvOVM1ZE12dUNqcFQyUFE1WEYxWGNWaW50MlZhM1d6RU5RcEg2T292T0w0bVNpTmg0eE1RU1lKMDZ6UkhtVVFuQzlUREkwTjVBYnNIdzhINTFyX1FsUTMzb2JpcE4ycFNfVUV1YUpPSFhKN3NVZS1nT204Nl9xV3YybEUxbEdRcnM2Y1JYdUp6RU1Oa1U1dnJvWWFKTjREag?oc=5",
-   "date": "2026-11-06T17:00:00.000Z",
-   "resume": "Esports World Cup 2027 : les échecs de retour, Magnus Carlsen vise un triplé historique E.SPORT.FR",
-   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
-   "categorie": "evenements",
-   "editeur": "E.SPORT.FR"
-  },
-  {
    "titre": "Comment suivre Les 25 heures qui courent en direct live sur Twitch ? - Reference Trail",
    "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOWTZJY0lqMmo2SDhNeUpVNVpYT1BhOVdtMG5zdDMtOUhEQUF3d21OckxPRUgyTTQyNmhpanpwMDVtU085bW5KVmZsWXF1cTAxNF84OXRaWFJsT3pJcjJfN0l4X3BZd20xNkJjRnpEck15LXRfZVQxRVFmd1l3aVctc1Izdm05NFFEcE9YU0pHZkdsOFhQaXEwb2Fn?oc=5",
    "date": "2026-11-06T08:00:00.000Z",
@@ -3066,6 +3111,15 @@
    "source": "Google Actualités · créateurs de contenu Twitch",
    "categorie": "createurs",
    "editeur": "Reference Trail"
+  },
+  {
+   "titre": "Clem qui court réunit 100 participants pour les « 25h qui courent », son événement caritatif sur Twitch - Les Gens d'Internet",
+   "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNOEhFZlpsR1h1YWFRQXExZFBuSXVucEhlTUtCN1dXRzc4T3VMTjZUSFpLX2tWalo0aExVTlhtWmZuNzRJRHlEMGExMWxvS08tLWVDcU9oZnFGaTRnd0ZHQ0FMR0diVUVHTnJLZUhVVmFrUjNHUHljLXpVRUNQd3QwMGlLQlpoaEMzeXJrLWxzYy0yQVRYVnZkanpKbUkzcnhoRkRSNnN5R3l1VEd1MkVjNUhsd1hqUkRLUGFWVkhjSmJzV2o1d3VuaXcwT1VNNVJR0gHWAUFVX3lxTE5ncE9MTDRKazNabUV5RF9KWTBlOEFCeVk5OXRxazF0NndiVGkwc3d3YlNDeHRRU3RrbzJZQjVFQVIySVhJZldMMUJhdTZrakVXdkRPaXFlVVYzV2wzMFR5MlR6V1NmLXpqYkRYNDcxM0NMOW53MXdKN3JSWUkwTmpscjFlOU81VUtTMWh0bGxPZS1aZjNiVDBNX0lFYXBub19kbkQ4WFlFRUE2cWVkcUZya3dWbnN6UkhxTnJkYlVvdllnUmVwY1B2cmI1OVF",
+   "date": "2026-11-06T08:00:00.000Z",
+   "resume": "Clem qui court réunit 100 participants pour les « 25h qui courent », son événement caritatif sur Twitch Les Gens d'Internet",
+   "source": "Google Actualités · créateurs de contenu Twitch",
+   "categorie": "createurs",
+   "editeur": "Les Gens d'Internet"
   },
   {
    "titre": "« Les 25 Heures qui courent » : avec sa Backyard caritative, l’influenceur Clem qui court veut réunir stars du trail et d’Internet - Le Monde.fr",
@@ -3104,15 +3158,6 @@
    "editeur": "Ville de Paris"
   },
   {
-   "titre": "Ce célèbre Youtubeur sera bientôt en dédicace près de Toulouse, 500 places sont ouvertes pour le rencontrer - ladepeche.fr",
-   "lien": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOaEFFMnk3TE9lMjZ6bElrT2kwQWpyVE1pLUVDOEtFTVV5RVRfLWZEX3phZnEyXzg1NnNIOVpVOUlnTmNSQVNvODFGejhiV2Z6ZTN3dHdiUEpHRkZCNGFTSV9QaVFxUFdqTTZCaTlSZFdGN2dRZEFfM3N6VFlMQnU2dmM2YUhlT056OGdVSkt4TzRFUFNKSjZNWGluNGpGTllpZVp3amg3NU9vM2JMSGJpVk5XMUUyLVlPWFpvZTRBbkloazgwZnd3NVl6Z29kNzd3TVhmTkczNW4xZ3VpQlJoYXlhSTNrcHpHZkpv?oc=5",
-   "date": "2026-11-06T08:00:00.000Z",
-   "resume": "Ce célèbre Youtubeur sera bientôt en dédicace près de Toulouse, 500 places sont ouvertes pour le rencontrer ladepeche.fr",
-   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
-   "categorie": "createurs",
-   "editeur": "ladepeche.fr"
-  },
-  {
    "titre": "\"Mais t'as gagné combien ?\" : un enfant pousse Inoxtag à révéler combien lui a rapporté son documentaire Kaizen - RTL",
    "lien": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNd2ZXclBRb1RLd0tYMjc1aUp2N0tLcWZMOEdQN3V6RXVkaHcxdVpTVmxLai16N0hsaExGcmRocmlZRjhNeFJRZTJ3VXdrUWFRUHhTOHMyNjdYTjdaMkZpX1hPeWR1ZmJWZkh5VUxXaEVjQVZJVjZmS2h1ZEhMbkFNNHJWbUdPWHFiSjVfLVRsQ3VvTkc2dnQzT0x1Y3EwaER5N0J5eHVVTXJrWmZYWWlaMklmMHAtamtTXzROQzN3Vlp1MU1SOTJaUnVFYVRCa0U1cTkyVTJXaVRPcVlfR1hSVW5kZVNQUzFOWnYyU2xB?oc=5",
    "date": "2026-11-06T08:00:00.000Z",
@@ -3138,6 +3183,15 @@
    "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
    "categorie": "evenements",
    "editeur": "games.gg"
+  },
+  {
+   "titre": "Esports World Cup 2027 : les échecs de retour, Magnus Carlsen vise un triplé historique - E.SPORT.FR",
+   "lien": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNZXc1UXNNRFp6dmk4bWgzNEJabjhyREdNTG5oZ0pvOVM1ZE12dUNqcFQyUFE1WEYxWGNWaW50MlZhM1d6RU5RcEg2T292T0w0bVNpTmg0eE1RU1lKMDZ6UkhtVVFuQzlUREkwTjVBYnNIdzhINTFyX1FsUTMzb2JpcE4ycFNfVUV1YUpPSFhKN3NVZS1nT204Nl9xV3YybEUxbEdRcnM2Y1JYdUp6RU1Oa1U1dnJvWWFKTjREag?oc=5",
+   "date": "2026-11-06T08:00:00.000Z",
+   "resume": "Esports World Cup 2027 : les échecs de retour, Magnus Carlsen vise un triplé historique E.SPORT.FR",
+   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
+   "categorie": "evenements",
+   "editeur": "E.SPORT.FR"
   },
   {
    "titre": "EN DIRECT – Backyard de Clemquicourt : Mathieu Blanchard abandonne après 4 boucles, déjà 100 000 € récoltés - u-Trail",
@@ -3194,15 +3248,6 @@
    "editeur": "Le Parisien"
   },
   {
-   "titre": "« Tes barres sont ultra-transformées » : Inoxtag critique les protéines « pas assez clean » de Tibo InShape - La Voix du Nord",
-   "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNOXY2cVVqcE12d3lOU2dxSEIyMW91NE4zUjlLTWx3QjRpSjc2a2lTRWhpVTk3NlZmc0hCajF1Q05pMXhkZUppS1cxY3FGNjc4YThhTUJDYVNWSjZ4X2syeEk1RFlKdHhvblM3LVRsa192WGlqWWU0LTFsSjZDTHM5bWktU1ltTUdGWTN2OEpIbERLUTlRTGlBWEl2a3ZwaW8tSWRkTldYMS1PaEZxTnNIS2tDQ0FFd1NFSjZxb2F6N2dfYVBQRkQ4dGln?oc=5",
-   "date": "2026-11-05T08:00:00.000Z",
-   "resume": "« Tes barres sont ultra-transformées » : Inoxtag critique les protéines « pas assez clean » de Tibo InShape La Voix du Nord",
-   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
-   "categorie": "createurs",
-   "editeur": "La Voix du Nord"
-  },
-  {
    "titre": "Inoxtag révèle la vidéo qui lui a rapporté le plus d'argent sur YouTube - DHnet",
    "lien": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPZDdqZ0NjQ0tHeW40S19MT3ItOTRoRGhVeE5icUI4ZFdzM2J4a2xvQkNidDNvSHlZbTBoWkg5Z1pReFBjTThWX1pwdFQ1TThWcFAxSThKNUR3bnRhVHdEcXREcGZMa0kxc2hnQ3F2c3AycFgwcFMtd1RVLUxlOUtYRVR4YldRVEYxQnk3VjF3ZXB6SF8zc1h1WTdEcHFsck9VMXV3OWlaMUUtbnoxSEJseUJCYTgyTkxoZDlVSlpCR1VMNlJTZTJLcmRBMkJEUHl6dnRaMldkc2tweHBlVV9hWQ?oc=5",
    "date": "2026-11-05T08:00:00.000Z",
@@ -3210,6 +3255,15 @@
    "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
    "categorie": "createurs",
    "editeur": "DHnet"
+  },
+  {
+   "titre": "« Tes barres sont ultra-transformées » : Inoxtag critique les protéines « pas assez clean » de Tibo InShape - La Voix du Nord",
+   "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNOXY2cVVqcE12d3lOU2dxSEIyMW91NE4zUjlLTWx3QjRpSjc2a2lTRWhpVTk3NlZmc0hCajF1Q05pMXhkZUppS1cxY3FGNjc4YThhTUJDYVNWSjZ4X2syeEk1RFlKdHhvblM3LVRsa192WGlqWWU0LTFsSjZDTHM5bWktU1ltTUdGWTN2OEpIbERLUTlRTGlBWEl2a3ZwaW8tSWRkTldYMS1PaEZxTnNIS2tDQ0FFd1NFSjZxb2F6N2dfYVBQRkQ4dGln?oc=5",
+   "date": "2026-11-05T08:00:00.000Z",
+   "resume": "« Tes barres sont ultra-transformées » : Inoxtag critique les protéines « pas assez clean » de Tibo InShape La Voix du Nord",
+   "source": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
+   "categorie": "createurs",
+   "editeur": "La Voix du Nord"
   },
   {
    "titre": "Influence, streaming, fandoms : ce que les marques doivent retenir de l’étude Kantar - J'ai un pote dans la com",
@@ -3306,7 +3360,7 @@
    "lien": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOYkhVcTQ4MkQyMHFPX0RFS3hlanFFUFM3bXBzbE9XLU9TMjRSNkNBZlkxb2RHeDNRNDJhanlJdlRSaXdQYlNpaU5MMHdrNXVsaXBWaldva2daYi1QYXFYd3ZFQmZJcjBLNktEdlhLaFViMTI2eG43amJqcjVubEZSUG1OZzM2bG8?oc=5",
    "date": "2026-11-03T08:00:00.000Z",
    "resume": "Les dessous de l’affaire BigBangs06 : un streamer qui arnaque sa communauté ? Dexerto.fr",
-   "source": "Google Actualités · monétisation et revenus des streamers",
+   "source": "Google Actualités · streamers et YouTubeurs",
    "categorie": "createurs",
    "editeur": "Dexerto.fr"
   },
@@ -3419,15 +3473,6 @@
    "editeur": "Dexerto.fr"
   },
   {
-   "titre": "Fatal Fury de retour à l’Esports World Cup 2027 - E.SPORT.FR",
-   "lien": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNM2Q1RFFuWXUyZ0FRS3JmdzZVd3piMVhEWGZKNEx0Vmd2b1ROMndPWmJPc2QzRU1QT1A2YmFVN3V4em9kTDlXQ0lROTFndE5IZnEwR3VIcmVhZ3d4bkVmbFEtaGZHRVMxVFZ3d00xNlZiUllSY0p0dmVKZ2xEY25YSkpNN1ZQU0NwTFE?oc=5",
-   "date": "2026-11-03T08:00:00.000Z",
-   "resume": "Fatal Fury de retour à l’Esports World Cup 2027 E.SPORT.FR",
-   "source": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
-   "categorie": "evenements",
-   "editeur": "E.SPORT.FR"
-  },
-  {
    "titre": "Le défi fou d’un streamer Twitch : stream 19h par jour pendant un mois - Dexerto.fr",
    "lien": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPdTdpVzR0ajctRTF5Vm5tLVFQVDNMeWtaeU9kbHJLSW1fSDZBNEVXNFpfUDg1RXlWYXN4QTJtWkd6Vnd3MXhPRFhVVDhIa1BPdmUwQXVpR21yY3pWVzFudUc5LXhwVHUzQkRzRm1zRlNSbzVIYTFqSVhfNkk1a05rZXY1SkFjbXBBZVA5c0xXYkZ4R0RzUG5lUVBnQ3Q5dUdIclRyWndKbW11NHdCcUFkd2c5dzA?oc=5",
    "date": "2026-11-03T08:00:00.000Z",
@@ -3446,19 +3491,10 @@
    "editeur": "Dexerto.fr"
   },
   {
-   "titre": "Une streameuse choquée qu’on essaye de lui vendre de la drogue en live - Dexerto.fr",
-   "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZDc2Wk5wd2VGWEJxSTRvMmFLbEVoNU1MX0RueVluZ3NLNU56QWhwSXR3QXFscnZHd0xmNDl3UzlVVl9VMC1ob1R1WkdYSWhXSmZsN2hyd0tfb2NSaEt5WXJzWHhqWnBSWUFpSE1yRUtPZjI2bGRQREViMzc2UTRQcGhjMWVyclhmc3piT1h2b2w4WWtiZ040NVNEcTBPSnEyVENRaXBXcTg1THNUclNIYzd3am94U2M?oc=5",
+   "titre": "Quand Vald fait écouter “Gotaga” au French Monster en direct sur Twitch - Dexerto.fr",
+   "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPTnFQdll0ampudWxkaUUwS3djN0Fjb2N0YVdHQ09RaDBKQ2FuQVRXY2lDZmdBU1VHbnRsVFp5WFI5MGdocjM1ZEtFZTREd1hHakl2VU5JMXMxNWp0T2xsbzQ0ZXhCX29KMnRKTHVOZmpmMUMteHRRTFhPcXFKc3lva1N0TGlCYnF3OEQxXzFNY2l2amdwY1h6Wnh3TXNaUDh5NjgzaDREY3hTa1FZNHJXbWVUNXpYQXc?oc=5",
    "date": "2026-11-03T08:00:00.000Z",
-   "resume": "Une streameuse choquée qu’on essaye de lui vendre de la drogue en live Dexerto.fr",
-   "source": "Google Actualités · marques et streamers (opérations, partenariats, soirées)",
-   "categorie": "evenements",
-   "editeur": "Dexerto.fr"
-  },
-  {
-   "titre": "Twitch : Un streamer reçoit littéralement de la mer*e par la poste - Dexerto.fr",
-   "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQeHVWLWxldEx5ZWhlaWhfOGlmeEM2VzBrRXprczBkYlV4bkotQWdQSnBkNnpNbXNZMUkwSmtGV25DMzFLRUs1TzE3M2sxbHNrSjRJSmhCOFVUTXRXQXFmaTM4N01vSGVjYUlkUGlYYXNzejIzaWNGZzRDdkdMVzBhR1FhaWJOTWVmQTZZcjM5OHRxaG8zYkwxbTFR?oc=5",
-   "date": "2026-11-03T08:00:00.000Z",
-   "resume": "Twitch : Un streamer reçoit littéralement de la mer*e par la poste Dexerto.fr",
+   "resume": "Quand Vald fait écouter “Gotaga” au French Monster en direct sur Twitch Dexerto.fr",
    "source": "Google Actualités · marques et streamers (opérations, partenariats, soirées)",
    "categorie": "evenements",
    "editeur": "Dexerto.fr"
@@ -3716,15 +3752,6 @@
    "editeur": "Demócrata"
   },
   {
-   "titre": "TF1 fait fermer la chaîne Twitch d’un des plus célèbres vidéastes français après le lancement de son \"Koh-Lanta RP\" - Public.fr",
-   "lien": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOaFhyYUYyLThCa1c3Z1JyeDNhMF9BTEdVajI4QVBXcGdyMnVSZVJyNFJMT1l4a0JMd2l2bFVPZko0Vy1sRHBQdHAxcko4WTVEOGpCdFRxalZtdnN5aUVEYkxWTjY4cW1helZqOTZoY0J6RVhfQk9HZWxFM0RzT2FHcmdBRnlVX0ZLWjdkekNTZzFGSnB5aUtIbXhOclVldG5pM0hrQ0hUMHBhWXlHYnZtLVd1MHlFSm5MQl9XYWI5ajVsR2t1MVo3YmE3SWZBYVU?oc=5",
-   "date": "2026-10-26T07:00:00.000Z",
-   "resume": "TF1 fait fermer la chaîne Twitch d’un des plus célèbres vidéastes français après le lancement de son \"Koh-Lanta RP\" Public.fr",
-   "source": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
-   "categorie": "decouverte",
-   "editeur": "Public.fr"
-  },
-  {
    "titre": "The FinalSlam : Les places du show d’AmineMaTue en vente ce lundi - VoxCatch",
    "lien": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBnSWM4b2pWcHhtTW1YWFB6dDU4MDNER3A0NXBnOGJvZjI3RjFqT3B6VmVUWWVmc0o3R05ucVdKT1JnNk5KVzJla0tXblpZZzJ4em5zSFQ5a1JVTVBNSWtoZFcwLTh3TDl2M1lJZDBiSUMwcy1DOGc?oc=5",
    "date": "2026-10-26T07:00:00.000Z",
@@ -3732,15 +3759,6 @@
    "source": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
    "categorie": "decouverte",
    "editeur": "VoxCatch"
-  },
-  {
-   "titre": "Sonya Yoncheva et Domingo Hindoyan à la conquête des États-Unis - БНР Новини",
-   "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxPNEZBd0c2WG9ILXF4WmdyVG93R0N1OGRnWm1BcVNQVjM1cm1WSVJyMVZWUDFlZHo2bkJWQ3gxR25FNHota2xoRmpYUmc5blRXTm1UaWtlWGFVb0ZUR0FBREJSTmtybENCRnBMczk2M3k1eG9YT0NvV3p1MHhieHU5N2l5RWVsd0ppRGhpZnplUkFwb2JWWHFBMlYyVGpSZw?oc=5",
-   "date": "2026-10-25T11:00:00.000Z",
-   "resume": "Sonya Yoncheva et Domingo Hindoyan à la conquête des États-Unis БНР Новини",
-   "source": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
-   "categorie": "createurs",
-   "editeur": "БНР Новини"
   },
   {
    "titre": "VIDÉO. Le premier jeu « Tomb Raider », avec Lara Croft, fête ses 30 ans - Ouest-France",
