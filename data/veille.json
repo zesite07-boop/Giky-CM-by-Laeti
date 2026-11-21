@@ -1,26 +1,26 @@
 {
- "maj": "2026-11-21T09:48:31.242Z",
+ "maj": "2026-11-21T17:30:25.586Z",
  "sources": [
   {
    "id": "gnews-twitch-fr",
    "nom": "Google Actualités · Twitch France",
-   "statut": "ok",
-   "nb": 63,
-   "message": ""
+   "statut": "erreur",
+   "nb": 12,
+   "message": "HTTP 503"
   },
   {
    "id": "gnews-streamers",
    "nom": "Google Actualités · streamers et streaming",
-   "statut": "ok",
-   "nb": 71,
-   "message": ""
+   "statut": "erreur",
+   "nb": 10,
+   "message": "HTTP 503"
   },
   {
    "id": "gnews-jeux-sorties",
    "nom": "Google Actualités · sorties jeux vidéo",
-   "statut": "ok",
-   "nb": 100,
-   "message": ""
+   "statut": "erreur",
+   "nb": 20,
+   "message": "HTTP 503"
   },
   {
    "id": "dexerto-fr",
@@ -67,44 +67,44 @@
   {
    "id": "gnews-createurs-twitch",
    "nom": "Google Actualités · créateurs de contenu Twitch",
-   "statut": "ok",
-   "nb": 22,
-   "message": ""
+   "statut": "erreur",
+   "nb": 16,
+   "message": "HTTP 429"
   },
   {
    "id": "gnews-streamers-youtubeurs",
    "nom": "Google Actualités · streamers et YouTubeurs",
-   "statut": "ok",
-   "nb": 10,
-   "message": ""
+   "statut": "erreur",
+   "nb": 9,
+   "message": "HTTP 503"
   },
   {
    "id": "gnews-monetisation",
    "nom": "Google Actualités · monétisation et revenus des streamers",
-   "statut": "ok",
-   "nb": 10,
-   "message": ""
+   "statut": "erreur",
+   "nb": 7,
+   "message": "HTTP 503"
   },
   {
    "id": "gnews-regles-twitch",
    "nom": "Google Actualités · règles, modération et sanctions Twitch",
-   "statut": "ok",
-   "nb": 32,
-   "message": ""
+   "statut": "erreur",
+   "nb": 14,
+   "message": "HTTP 503"
   },
   {
    "id": "gnews-multiplateforme",
    "nom": "Google Actualités · Twitch, YouTube et Kick",
-   "statut": "ok",
-   "nb": 9,
-   "message": ""
+   "statut": "erreur",
+   "nb": 5,
+   "message": "HTTP 503"
   },
   {
    "id": "gnews-creators-en",
    "nom": "Google Actualités · Twitch creators (international)",
-   "statut": "ok",
-   "nb": 31,
-   "message": ""
+   "statut": "erreur",
+   "nb": 20,
+   "message": "HTTP 503"
   },
   {
    "id": "tubefilter",
@@ -130,117 +130,477 @@
   {
    "id": "gnews-createurs-1",
    "nom": "Google Actualités · Squeezie, Gotaga, Kameto, Michou",
-   "statut": "ok",
-   "nb": 66,
-   "message": ""
+   "statut": "erreur",
+   "nb": 20,
+   "message": "HTTP 503"
   },
   {
    "id": "gnews-createurs-2",
    "nom": "Google Actualités · Inoxtag, Ponce, Locklear, Zerator",
-   "statut": "ok",
-   "nb": 51,
-   "message": ""
+   "statut": "erreur",
+   "nb": 18,
+   "message": "HTTP 503"
   },
   {
    "id": "gnews-createurs-3",
    "nom": "Google Actualités · Domingo, Maghla, Doigby, Jiraya",
-   "statut": "ok",
-   "nb": 35,
-   "message": ""
+   "statut": "erreur",
+   "nb": 19,
+   "message": "HTTP 503"
   },
   {
    "id": "gnews-events-streamers",
    "nom": "Google Actualités · événements de streamers (TwitchCon, Z Event, ZLAN…)",
-   "statut": "ok",
-   "nb": 11,
-   "message": ""
+   "statut": "erreur",
+   "nb": 9,
+   "message": "HTTP 503"
   },
   {
    "id": "gnews-events-salons",
    "nom": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
-   "statut": "ok",
-   "nb": 100,
-   "message": ""
+   "statut": "erreur",
+   "nb": 20,
+   "message": "HTTP 503"
   },
   {
    "id": "gnews-events-esport",
    "nom": "Google Actualités · événements e-sport (LAN, salons, tournois ouverts)",
-   "statut": "ok",
+   "statut": "erreur",
    "nb": 19,
-   "message": ""
+   "message": "HTTP 503"
   },
   {
    "id": "gnews-events-marques",
    "nom": "Google Actualités · marques et streamers (opérations, partenariats, soirées)",
-   "statut": "ok",
-   "nb": 27,
-   "message": ""
+   "statut": "erreur",
+   "nb": 11,
+   "message": "HTTP 503"
   },
   {
    "id": "gnews-decouverte-1",
    "nom": "Google Actualités · petits streamers qui montent",
-   "statut": "ok",
+   "statut": "erreur",
    "nb": 0,
-   "message": ""
+   "message": "HTTP 503"
   },
   {
    "id": "gnews-decouverte-2",
    "nom": "Google Actualités · clips et moments viraux de streamers",
-   "statut": "ok",
+   "statut": "erreur",
    "nb": 1,
-   "message": ""
+   "message": "HTTP 503"
   },
   {
    "id": "gnews-decouverte-3",
    "nom": "Google Actualités · streamers français à suivre",
-   "statut": "ok",
-   "nb": 2,
-   "message": ""
+   "statut": "erreur",
+   "nb": 1,
+   "message": "HTTP 503"
   },
   {
    "id": "gnews-decouverte-4",
    "nom": "Google Actualités · streamers qui gagnent le plus d’abonnés",
-   "statut": "ok",
+   "statut": "erreur",
    "nb": 0,
-   "message": ""
+   "message": "HTTP 503"
   },
   {
    "id": "gnews-decouverte-5",
    "nom": "Google Actualités · nouvelle star de Twitch",
-   "statut": "ok",
-   "nb": 10,
-   "message": ""
+   "statut": "erreur",
+   "nb": 7,
+   "message": "HTTP 503"
   },
   {
    "id": "suivis-1",
    "nom": "Google Actualités · créateurs suivis : Inespnj, PunisherEnLive, Mawkzy, Mastu",
-   "statut": "ok",
-   "nb": 3,
-   "message": ""
+   "statut": "erreur",
+   "nb": 2,
+   "message": "HTTP 503"
   },
   {
    "id": "suivis-2",
    "nom": "Google Actualités · créateurs suivis : Anyme023, IkariuTV, TheKAIRI78, Kaatsup",
-   "statut": "ok",
-   "nb": 10,
-   "message": ""
+   "statut": "erreur",
+   "nb": 8,
+   "message": "HTTP 503"
   },
   {
    "id": "suivis-3",
    "nom": "Google Actualités · créateurs suivis : Little Big Whale, Cameliaaa92, KmSenKangoo, Fausthea",
-   "statut": "ok",
+   "statut": "erreur",
    "nb": 0,
-   "message": ""
+   "message": "HTTP 503"
   },
   {
    "id": "suivis-4",
    "nom": "Google Actualités · créateurs suivis : Etoiles, Ultia, MisterMV, Aminematue",
-   "statut": "ok",
-   "nb": 23,
-   "message": ""
+   "statut": "erreur",
+   "nb": 7,
+   "message": "HTTP 503"
   }
  ],
  "items": [
+  {
+   "titre": "Deux Tesla en FSD bloquées, les mauvais élèves du contrôle technique allemand et les freins à l’achat : le récap Vroom de la semaine",
+   "lien": "https://www.numerama.com/vroom/2380109-deux-tesla-en-fsd-bloquees-les-mauvais-eleves-du-controle-technique-allemand-et-les-freins-a-lachat-le-recap-vroom-de-la-semaine.html",
+   "date": "2026-11-21T17:20:00.000Z",
+   "resume": "À la une sur Vroom cette semaine : le FSD fait des miracles mais échoue parfois aussi, MG ne fait pas mieux que Tesla au contrôle technique allemand et la désinformation freine les achats d'électriques.",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "BBC, CNN, Zoom, Air France… Ces sites très populaires ont distribué des logiciels malveillants",
+   "lien": "https://www.journaldugeek.com/2026/11/21/bbc-cnn-zoom-air-france-ces-sites-tres-populaires-ont-distribue-des-logiciels-malveillants/",
+   "date": "2026-11-21T17:01:43.000Z",
+   "resume": "Pas besoin de traîner sur des sites douteux pour risquer de se faire pirater. Des dizaines de sites très fréquentés ont ainsi diffusé du code malveillant à leurs visiteurs. En cause, une faille chez un prestataire commun. Et les pirates ne…",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Comment ouvrir le coffre-fort du bowling Kingpin dans GTA 6",
+   "lien": "https://www.dexerto.fr/gta/comment-ouvrir-coffre-fort-bowling-kingpin-gta-6-1664665/",
+   "date": "2026-11-21T16:45:19.000Z",
+   "resume": "Découvrez le code du coffre du bowling Kingpin dans GTA 6 et où trouver sa combinaison pour récupérer le butin à Port Gellhorn.",
+   "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Sega Rally 2 : un circuit caché découvert presque trente ans plus tard, et il est jouable",
+   "lien": "https://www.gamekult.com/actualite/sega-rally-2-un-circuit-cache-decouvert-presque-trente-ans-plus-tard-et-il-est-jouable-3050873054.html",
+   "date": "2026-11-21T16:35:00.000Z",
+   "resume": "Le sacro-saint Sega Rally 2 a soufflé tout récemment ses vingt-huit bougies, et qui aurait pu croire qu'il avait du rab au garage ? En fouillant les tréfonds du jeu, le datamineur Fred.Archi s'est aperçu de la présence d'un circuit caché.…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "8 ans après sa sortie, le meilleur jeu Dragon Ball Z de tous les temps va être amélioré : pourquoi refuse-t-il de mourir ?",
+   "lien": "https://www.jeuxvideo.com/news/2115092/8-ans-apres-sa-sortie-le-meilleur-jeu-dragon-ball-z-de-tous-les-temps-va-etre-ameliore-pourquoi-refuse-t-il-de-mourir.htm",
+   "date": "2026-11-21T16:15:08.000Z",
+   "resume": "Huit ans après son lancement, Dragon Ball FighterZ reste le meilleur jeu de Dragon Ball Z et continue d’être joué. Alors que d'autres titres sont paru entre temps, Bandai Namco vient d’officialiser l’arrivée prochaine d’une nouvelle mise à…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Robots tueurs autonomes : ce que les armées délèguent vraiment aux machines",
+   "lien": "https://www.numerama.com/tech/2379739-robots-tueurs-autonomes-ou-en-sommes-nous-vraiment.html",
+   "date": "2026-11-21T16:01:00.000Z",
+   "resume": "Du 16 au 20 novembre, l’ONU tient une conférence sur l’encadrement des armes autonomes. L’autonomie militaire existe déjà à toutes les étapes de la chaîne d’engagement : observation, identification, sélection et frappe des cibles. L’enjeu…",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "J'ai résisté à World of Warcraft pendant 22 ans, mais j'ai craqué pour Forever : mon avis de noob",
+   "lien": "https://www.jeuxvideo.com/news/2115989/j-ai-resiste-a-world-of-warcraft-pendant-22-ans-mais-j-ai-craque-pour-forever-mon-avis-de-noob.htm",
+   "date": "2026-11-21T16:00:08.000Z",
+   "resume": "World of Warcraft Forever est sorti et… je dois l’admettre, je me suis laissé aspirer dans le vortex. En 22 ans, je n’y avais jamais plongé, mais Wow Forever a réussi là où les autres extensions et même Classic n’avait pas réussi à me conv…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Windows 11 sur un iPhone pliant : un responsable de Google l’a fait",
+   "lien": "https://www.journaldugeek.com/2026/11/21/windows-11-sur-un-iphone-pliant-un-responsable-de-google-la-fait/",
+   "date": "2026-11-21T15:58:13.000Z",
+   "resume": "Un responsable de Google a fait tourner Windows 11 sur l’iPhone pliant d’Apple, avec l’aide de Gemini. Son projet WindowsiOS transforme le smartphone en minuscule ordinateur portable, clavier et trackpad compris. Une expérience aussi amusa…",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "GTA 6 et Zelda au cœur d’une guerre de review bombing qui tourne au ridicule",
+   "lien": "https://www.dexerto.fr/jeux-video/gta-6-et-zelda-au-coeur-guerre-review-bombing-qui-tourne-au-ridicule-1664655/",
+   "date": "2026-11-21T15:58:06.000Z",
+   "resume": "GTA 6 et Zelda Ocarina of Time sont victimes d’une guerre de review bombing sur Metacritic. Découvrez pourquoi leurs notes utilisateurs s’effondrent.",
+   "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "GTA 6 : Comment réussir un braquage de banque ?",
+   "lien": "https://www.jeuxvideo.com/news/2116146/gta-6-comment-reussir-un-braquage-de-banque.htm",
+   "date": "2026-11-21T15:51:07.000Z",
+   "resume": "Les braquages de banque sont un excellent moyen d'engranger énormément d'argent en très peu de temps dans GTA VI. Mais c'est aussi une activité à très haut risque, que vous ne pourrez réussir qu'en ayant suffisamment avancé dans les chapit…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "J'ai passé 3 jours sur GTA 6 et je n'ai toujours rien fait. Comme dans la vraie vie, le jeu me fait procrastiner",
+   "lien": "https://www.jeuxvideo.com/news/2115984/j-ai-passe-3-jours-sur-gta-6-et-je-n-ai-toujours-rien-fait-comme-dans-la-vraie-vie-le-jeu-me-fait-procrastiner.htm",
+   "date": "2026-11-21T15:40:07.000Z",
+   "resume": "Presque soixante-douze heures après le lancement officiel de Grand Theft Auto 6, le pourcentage de mon avancée s’approche à peine des 20%. Ce n’est pas un manque d’envie ou de motivation quant à la découverte du scénario autour de Jason et…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Où trouver l’OVNI dans GTA 6 et comment résoudre le mystère des extraterrestres",
+   "lien": "https://www.dexerto.fr/gta/easter-egg-ovni-gta-6-1664644/",
+   "date": "2026-11-21T15:02:25.000Z",
+   "resume": "Découvrez où trouver l’OVNI dans GTA 6, comment accéder à la base extraterrestre, résoudre ses énigmes et obtenir les récompenses.",
+   "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Meta voudrait vous faire payer 300 $ pour parler à un porte-clés",
+   "lien": "https://www.journaldugeek.com/2026/11/21/meta-voudrait-vous-faire-payer-300-pour-parler-a-un-porte-cles/",
+   "date": "2026-11-21T15:00:19.000Z",
+   "resume": "Meta veut absolument que tout le monde utilise son assistant IA Muse. Quitte à l'intégrer dans un porte-clés vendu au prix fort ! Présenté en septembre, le Muse Charm pourrait coûter 300 $, avec un forfait 5G gratuit pendant un an. Meta va…",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Le boss le plus macabre de Zelda Ocarina of Time a une tragique histoire cachée",
+   "lien": "https://www.jeuxvideo.com/news/2115164/le-boss-le-plus-macabre-de-zelda-ocarina-of-time-a-une-tragique-histoire-cachee.htm",
+   "date": "2026-11-21T15:00:07.000Z",
+   "resume": "Derrière ce boss d'Ocarina of Time se cache une histoire sinistre, peu connue du grand public...",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Fallout 1 s'offre un remaster HD fait par un fan",
+   "lien": "https://www.gamekult.com/actualite/fallout-1-s-offre-un-remaster-hd-fait-par-un-fan-3050873041.html",
+   "date": "2026-11-21T14:45:00.000Z",
+   "resume": "Paraît-il que l'on est jamais mieux servi que par soi-même : un développeur solo est donc en train de faire, tout seul comme un grand, Fallout HD Project, remaster complet et ultra-attentionné de Fallout 1. Alors que le titre n'a jamais ét…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Faut-il mettre fin à Dragon Quest sans Akira Toriyama ?",
+   "lien": "https://www.numerama.com/pop-culture/2377107-faut-il-mettre-fin-a-dragon-quest-sans-akira-toriyama.html",
+   "date": "2026-11-21T14:31:00.000Z",
+   "resume": "Yasunori Mitsuda, le compositeur de Chrono Trigger, estime que la disparition d’Akira Toriyama pose une question difficile pour l’avenir de Dragon Quest : la saga peut-elle vraiment continuer sans l’un de ses piliers historiques ?",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Apple veut que son IA prenne le contrôle de votre Mac",
+   "lien": "https://www.journaldugeek.com/2026/11/21/apple-veut-que-son-ia-prenne-le-controle-de-votre-mac/",
+   "date": "2026-11-21T14:03:57.000Z",
+   "resume": "Apple ne veut pas laisser OpenAI, Meta et Google se partager le marché des agents IA autonomes. Une offre d'emploi publiée cette semaine confirme que le constructeur développe son propre assistant, capable de naviguer sur le web, de contrô…",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Kyle GTA 6 : Comment finir la mission secondaire secrète de Hulk au chapitre 2 ?",
+   "lien": "https://www.jeuxvideo.com/news/2116138/kyle-gta-6-comment-finir-la-mission-secondaire-secrete-de-hulk-au-chapitre-2.htm",
+   "date": "2026-11-21T14:01:09.000Z",
+   "resume": "Rockstar s'est complètement lâché sur les missions secondaires de GTA 6, avec des objectifs de fous et de nombreuses références à la pop culture. Dans ce guide, nous verrons le fil de missions secondaires secret de Kyle, un agriculteur pas…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Test xTool C1 Color Cutter : une vraie alternative à Cricut, et bien plus complète !",
+   "lien": "https://www.journaldugeek.com/test/test-xtool-c1-color-cutter-une-vraie-alternative-a-cricut-et-bien-plus-complete/",
+   "date": "2026-11-21T13:47:46.000Z",
+   "resume": "La xTool C1 Color Cutter scanne, imprime en couleur et découpe à la lame dans une seule machine, sans repères d'alignement ni imprimante séparée. Annoncée fin octobre 2026, elle est proposée à partir de 449 euros.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Codes Stand Out (Novembre 2026)",
+   "lien": "https://www.dexerto.fr/roblox/codes-stand-out-1664636/",
+   "date": "2026-11-21T13:45:27.000Z",
+   "resume": "Voici tous les codes actifs dans Roblox Stand Out actifs qui offrent des flèches et des Dalas pour débloquer de nouveaux Stands.",
+   "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "GTA 6 : comment assister à l’attaque des aliens en OVNI ?",
+   "lien": "https://www.journaldugeek.com/2026/11/21/gta-6-comment-assister-a-lattaque-des-aliens-en-ovni/",
+   "date": "2026-11-21T13:31:49.000Z",
+   "resume": "Voici comment rencontrer les aliens et assister à une véritable attaque d'OVNI sur GTA 6 avec un bunker secret !",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "GTA 6 : Comment activer la conduite automatique ?",
+   "lien": "https://www.jeuxvideo.com/news/2116133/gta-6-comment-activer-la-conduite-automatique.htm",
+   "date": "2026-11-21T13:10:09.000Z",
+   "resume": "Découvrez comment activer la conduite automatique pendant vos trajets dans cette nouvelle astuce rapide de GTA VI. Une option de confort bien pratique pour ceux qui veulent suivre le scénario sans avoir à faire attention à la route devant…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Vous avez fait votre contrôle technique chez Sécuritest ? Vos données pourraient avoir fuité",
+   "lien": "https://www.journaldugeek.com/2026/11/21/vous-avez-fait-votre-controle-technique-chez-securitest-vos-donnees-pourraient-avoir-fuite/",
+   "date": "2026-11-21T13:02:29.000Z",
+   "resume": "SGS confirme un incident de cybersécurité touchant les réservations en ligne de Sécuritest, Auto Sécurité France et Vérif’Autos. Des coordonnées et des plaques d’immatriculation pourraient avoir été consultées. Un pirate avance des chiffre…",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Les Anneaux de pouvoir saison 3 : les petits secrets du générique, qui délaisse les énigmes cachées",
+   "lien": "https://www.numerama.com/pop-culture/2376969-les-anneaux-de-pouvoir-saison-3-les-petits-secrets-du-generique-qui-abandonne-les-enigmes-cachees.html",
+   "date": "2026-11-21T13:02:00.000Z",
+   "resume": "Depuis l'épisode 2 de la saison 3, mis en ligne le 11 novembre 2026 sur Prime Video, Les Anneaux de pouvoir a un nouveau générique, beaucoup plus sombre. Ses créateurs ont cette fois renoncé aux symboles cachés que les fans décortiquaient…",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "GTA 6 : comment échapper à la police avec Lucia dans le prologue ?",
+   "lien": "https://www.jeuxvideo.com/news/2116114/gta-6-comment-echapper-a-la-police-avec-lucia-dans-le-prologue.htm",
+   "date": "2026-11-21T12:40:09.000Z",
+   "resume": "Dès l'entame de GTA 6, on se retrouve propulsé dans une course-poursuite aux commandes de Lucia. Mais est-il réellement possible de semer les forces de l'ordre lors de ce prologue pour réécrire le destin de l'héroïne ? La réponse tient en…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Quand Les Chroniques de Riddick était annulé et que les développeurs eux-mêmes n'étaient pas au courant",
+   "lien": "https://www.gamekult.com/actualite/quand-les-chroniques-de-riddick-etait-annule-et-que-les-developpeurs-eux-memes-n-etaient-pas-au-courant-3050873040.html",
+   "date": "2026-11-21T12:21:00.000Z",
+   "resume": "Si vous jouiez sur Xbox ou PC dans les années 2000, on espère que vous avez eu la chance de plonger dans The Chronicles of Riddick : Escape from Butcher Bay, jeu culte s'il en est signé Starbreeze Studios. Une très belle surprise qui a mar…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "GTA 6 : Où trouver le Bigfoot et le rencontrer ?",
+   "lien": "https://www.journaldugeek.com/2026/11/21/gta-6-ou-trouver-le-bigfoot-et-le-rencontrer/",
+   "date": "2026-11-21T12:02:43.000Z",
+   "resume": "Découvrez notre guide complet pour les missions du BigFoot, de votre rencontre, jusqu'à la confrontation avec la bête !",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Après Mandy, les joueurs de GTA 6 tombent sous le charme d’un autre personnage",
+   "lien": "https://www.dexerto.fr/gta/apres-mandy-joueurs-gta-6-tombent-sous-charme-autre-personnage-1664629/",
+   "date": "2026-11-21T12:02:21.000Z",
+   "resume": "Après Mandy, les joueurs de GTA 6 craquent déjà pour Vicki, une barmaid gothique de Port Gellhorn qui fait sensation sur les réseaux sociaux.",
+   "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "GTA 6 bloqué à 30 FPS ? Pour 250 € de plus vous pouvez atteindre le saint graal des 60 FPS",
+   "lien": "https://www.jeuxvideo.com/news/2115043/gta-6-bloque-a-30-fps-pour-250-de-plus-vous-pouvez-atteindre-le-saint-graal-des-60-fps.htm",
+   "date": "2026-11-21T11:50:09.000Z",
+   "resume": "Maintenant c'est acté, GTA 6 tourne à 30 images par seconde, même sur une PS5 Pro vendue à prix d'or. Face à cette limite technique, des passionnés bricolent une solution pour doubler la fluidité. Mais bon, vous allez le voir, le résultat…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Profil criminel GTA 6 : Comment fonctionne ce système de moral qui impacte l'histoire",
+   "lien": "https://www.jeuxvideo.com/news/2116124/profil-criminel-gta-6-comment-fonctionne-ce-systeme-de-moral-qui-impacte-la-fin-du-jeu.htm",
+   "date": "2026-11-21T11:50:08.000Z",
+   "resume": "Découvrez comment fonctionne le système de moral de GTA VI, sobrement intitule profil criminel. En vous penchant dessus, vous aurez un impact décisif sur la conclusion de l'histoire de Jason et Lucia : on vous explique également comment in…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Les chiffres de GTA 6 donnent déjà le tournis : 3,79 milliards de dollars et 32,5 millions d’unités vendus",
+   "lien": "https://www.jeuxvideo.com/news/2116125/les-chiffres-de-gta-6-donnent-deja-le-tournis-3-79-milliards-de-dollars-et-32-5-millions-d-unites-vendus.htm",
+   "date": "2026-11-21T11:18:54.000Z",
+   "resume": "Quarante-huit heures après le retour tant attendu à Vice City, Take-Two Interactive et Rockstar Games dévoilent les premiers bilans commerciaux de Grand Theft Auto VI. Avec 3,79 milliards de dollars générés dès son jour de lancement et 32,…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Comment obtenir dans GTA 6 la Mitsubishi Eclipse de Fast and Furious",
+   "lien": "https://www.dexerto.fr/gta/comment-obtenir-mitsubishi-eclipse-fast-and-furious-gta-6-1664622/",
+   "date": "2026-11-21T11:17:49.000Z",
+   "resume": "Découvrez où trouver la Mitsubishi Eclipse de Paul Walker dans GTA 6, comment la voler et l’enregistrer gratuitement dans votre garage.",
+   "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Base militaire GTA 6 : Où la trouver, comment y entrer ?",
+   "lien": "https://www.jeuxvideo.com/news/2116117/base-militaire-gta-6-ou-la-trouver-comment-y-entrer.htm",
+   "date": "2026-11-21T11:10:08.000Z",
+   "resume": "Bien sûr que GTA VI a une base militaire et bien sûr que vous êtes nombreux à vouloir y faire un tour pour votre dose de sensations fortes. Dans ce guide, on vous dit où elle se trouve, mais aussi comment vous pouvez y entrer le plus facil…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Où trouver et acheter le chapeau d’Arthur Morgan dans GTA 6 ?",
+   "lien": "https://www.journaldugeek.com/2026/11/21/ou-trouver-et-acheter-le-chapeau-darthur-morgan-dans-gta-6/",
+   "date": "2026-11-21T11:00:37.000Z",
+   "resume": "Vous pouvez trouver une très belle référence à Red Dead Redemption II dans GTA 6 avec le chapeau d'Arthur Morgan !",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "GTA 6 : ça commence, accusé d’être woke, le jeu se fait torpiller par des milliers d’avis négatifs",
+   "lien": "https://www.numerama.com/pop-culture/2380577-gta-6-ca-commence-accuse-detre-woke-le-jeu-se-fait-torpiller-par-des-milliers-davis-negatifs.html",
+   "date": "2026-11-21T10:51:14.000Z",
+   "resume": "À peine quarante-huit heures après sa sortie triomphale, ce jeudi 19 novembre sur PS5 et Xbox Series X/S, GTA 6 n'échappe pas au rituel toxique des grosses sorties vidéoludiques. La page Metacritic du jeu est déjà prise d'assaut par des mi…",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Comment fonctionne le profil criminel dans GTA 6",
+   "lien": "https://www.dexerto.fr/gta/profil-criminel-gta-6-1664616/",
+   "date": "2026-11-21T10:25:09.000Z",
+   "resume": "Découvrez comment fonctionne le profil criminel dans GTA 6, ses cinq niveaux, les actions qui modifient votre réputation et leurs conséquences.",
+   "source": "Dexerto FR",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "GTA 6 : comment jouer en vue à la première personne ?",
+   "lien": "https://www.jeuxvideo.com/news/2115872/gta-6-comment-jouer-en-vue-a-la-premiere-personne.htm",
+   "date": "2026-11-21T10:20:08.000Z",
+   "resume": "Dans Grand Theft Auto 6, il est possible de changer la vue pour passer de la troisième personne à la première personne, mais ça demande d’effectuer une manipulation bien précise ! Dans cet article, on vous explique la démarche pour y parve…",
+   "source": "jeuxvideo.com",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Parce qu'il n'est jamais trop tard : Red Dead Redemption 2 s'offre un mod avec du ray tracing",
+   "lien": "https://www.gamekult.com/actualite/parce-qu-il-n-est-jamais-trop-tard-red-dead-redemption-2-s-offre-un-mod-avec-du-ray-tracing-3050873012.html",
+   "date": "2026-11-21T10:09:00.000Z",
+   "resume": "GTA 6 vient tout juste de sortir, oui, mais n'oublions pas pour autant ce bon vieux Red Dead Redemption 2, savamment entretenu par sa communauté. Le jeu de Rockstar vient de se doter d'un mod rajoutant le ray tracing, ce qui est toujours b…",
+   "source": "Gamekult",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Dans le top film Netflix, Jessica Chastain avec son gros gun, on mate ou pas ?",
+   "lien": "https://www.journaldugeek.com/critique/dans-le-top-film-netflix-jessica-chastain-avec-son-gros-gun-on-mate-ou-pas/",
+   "date": "2026-11-21T10:00:53.000Z",
+   "resume": "On se retrouve pour notre petite séance hebdomadaire en compagnie du top des visionnages des plateformes de streaming et cette fois, on plonge à corps perdu dans le thriller country de Jessica Chastain sur Netflix.",
+   "source": "Journal du Geek",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Amazon brade d’énormes sets Lego pour le Black Friday : voici notre top 5",
+   "lien": "https://www.numerama.com/pop-culture/2379973-amazon-brade-denormes-sets-lego-pour-le-black-friday.html",
+   "date": "2026-11-21T10:00:00.000Z",
+   "resume": "[Deal du jour] Des répliques géantes de vaisseaux de Star Wars et Star Trek, aux monuments emblématiques du cinéma, en passant par les univers de Marvel, Harry Potter ou encore Nintendo, Lego propose des sets spectaculaires issues de la po…",
+   "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
   {
    "titre": "Maman, j’ai raté l’avion : 34 ans après, Macaulay Culkin accepte enfin un nouveau film, c’est officiel",
    "lien": "https://www.numerama.com/pop-culture/2380567-maman-jai-rate-lavion-34-ans-apres-macaulay-culkin-accepte-enfin-un-nouveau-film-cest-officiel.html",
@@ -274,6 +634,15 @@
    "date": "2026-11-21T08:45:00.000Z",
    "resume": "Treize ans d’attente, à peine deux jours de jeu, et déjà des centaines de découvertes. Grand Theft Auto 6 (GTA 6) n’a pas fini de livrer ses secrets. Astuces pour bien démarrer, easter eggs, records et réactions, suivez en direct tout ce q…",
    "source": "Numerama",
+   "categorie": "actu",
+   "editeur": ""
+  },
+  {
+   "titre": "Si vous n'avez pas 80€ pour GTA 6, ce film au cinéma peut vous faire vivre une expérience qui s'en rapproche",
+   "lien": "https://www.jeuxvideo.com/news/2115815/si-vous-n-avez-pas-80-pour-gta-6-ce-film-au-cinema-peut-vous-faire-vivre-une-experience-qui-s-en-rapproche.htm",
+   "date": "2026-11-21T08:40:07.000Z",
+   "resume": "GTA 6 vient de sortir, et tout le monde semble avoir pris la route de Leonida… ou presque. Entre son prix de 80 euros et la console de dernière génération qu’il réclame, le jeu de Rockstar Games reste hors de portée d’une partie du public.…",
+   "source": "jeuxvideo.com",
    "categorie": "actu",
    "editeur": ""
   },
@@ -566,15 +935,6 @@
    "editeur": "Ouest-France"
   },
   {
-   "titre": "GTA 6 : toutes les scènes censurées",
-   "lien": "https://www.jeuxvideo.com/news/2116086/gta-6-toutes-les-scenes-censurees.htm",
-   "date": "2026-11-20T19:10:08.000Z",
-   "resume": "Disponible depuis plus de 48h, GTA 6 ne propose pas tout à fait la même aventure selon votre fuseau horaire. Entre retouches vestimentaires improbables, options disparues des menus et filtrages imprévus sur les réseaux, certains joueurs dé…",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "Programme Artemis : pour préparer ses prochaines missions lunaires, la NASA vient de tester l’un des moteurs les plus puissants de sa fusée SLS",
    "lien": "https://www.journaldugeek.com/2026/11/20/programme-artemis-preparer-prochaines-missions-lunaires-nasa-tester-lun-moteurs-plus-puissants-fusee-sls/",
    "date": "2026-11-20T19:01:41.000Z",
@@ -598,15 +958,6 @@
    "date": "2026-11-20T18:30:00.000Z",
    "resume": "Le Black Friday fait baisser le prix de Mario + The Lapins Crétins Sparks of Hope sur Switch. Un jeu de stratégie qui ne se prend jamais au sérieux (mais qui l'est !), et qui a de quoi séduire toute la famille.",
    "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Donnie GTA 6 : Pouvez-vous sauver ce personnage du chapitre 1 ?",
-   "lien": "https://www.jeuxvideo.com/news/2116081/donnie-gta-6-pouvez-vous-sauver-ce-personnage-du-chapitre-1.htm",
-   "date": "2026-11-20T18:15:07.000Z",
-   "resume": "Découvrez ce qu'il advient de Donnie dans GTA VI et si vous pouvez faire quelque chose pour influer sur son destin dans ce nouveau guide. Il s'agit de l'un des personnages centraux du chapitre 1, un Flagada Jones des temps modernes, le nez…",
-   "source": "jeuxvideo.com",
    "categorie": "actu",
    "editeur": ""
   },
@@ -683,24 +1034,6 @@
    "editeur": "JeuxVideo.com"
   },
   {
-   "titre": "Fusil de sniper GTA 6 : Où trouver la meilleure arme pour débuter au chapitre 1 ?",
-   "lien": "https://www.jeuxvideo.com/news/2116013/fusil-de-sniper-gta-6-ou-trouver-une-arme-avec-silencieux.htm",
-   "date": "2026-11-20T17:45:09.000Z",
-   "resume": "Obtenir un fusil de précision à longue distance muni d'un silencieux pour ne pas alerter la police vous simplifiera grandement la vie dans Grand Theft Auto. Dans ce guide, découvrez la position de la première arme de ce type sur la carte.",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Les différentes versions de GTA 6 : quelle est la meilleure ? Une console est à éviter",
-   "lien": "https://www.jeuxvideo.com/news/2115683/les-differentes-versions-de-gta-6-quelle-est-la-meilleure-une-console-est-a-eviter.htm",
-   "date": "2026-11-20T17:45:09.000Z",
-   "resume": "Oui oui on sait, GTA 6 tournera sûrement mieux que nulle part ailleurs sur un gros PC gamer. Sauf que pour l'instant, le jeu n'est dispo que sur consoles et tout internet râle à cause des 30 FPS imposées par Rockstar. Une question légitime…",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "Près de 8 millions de spectateurs en simultané: GTA 6 a établi de nouveaux records de streaming quelques minutes seulement après son lancement - BFM",
    "lien": "https://news.google.com/rss/articles/CBMiogJBVV95cUxQcnZFQU4yaUNDRF83bUhSemxpWHhLdVdNeUl3WGR6SklsTS0xTEJFQi1kZzJXU1hILU5LNEVXMi1SZzJ3ZVhxZ2NMaFRVVVBndlNIelNDNTFidU5mbEhoZlBKb1h3M1FSdVRIc1dRemdwZlBQZ2FQY0ZZQ0hqb2pPVmppRDg2MUlSY3dqY1ROVmFVMDlnNjIzMnFzamVlZDByOW5hb0RYNHd0WDJ6VGRDal9pSE9HNDZGT2Q2emUySFlxQ1A1LTA1N2hscm9SMy1UdnNkaEdkMDBiVWJjVHNtQ1JfMEtXQXc5OEJ2RkRiRDVuakoxemlFQjdQYUNUUW5PYnh2ZGxzUG1rNUtKeE5BVHNjRk9LOVBDVk1QX1pCMWctdw?oc=5",
    "date": "2026-11-20T17:43:58.000Z",
@@ -746,15 +1079,6 @@
    "editeur": "L'Indépendant"
   },
   {
-   "titre": "Chapitre 2 GTA 6 : Comment finir toutes les missions principales ?",
-   "lien": "https://www.jeuxvideo.com/news/2115971/chapitre-2-gta-6-comment-finir-toutes-les-missions-principales.htm",
-   "date": "2026-11-20T17:12:09.000Z",
-   "resume": "Les choses sérieuses vont enfin commencer dans GTA VI, après la conclusion tonitruante du premier chapitre. Dans cette soluce, nous verrons les missions principales une à une, avec des guides dédiés et des astuces pour finir les plus impor…",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "Horror Game Awards, The Alters, Death Stranding : le Débrief - SpiritGamer",
    "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBxQWFTM1VmM3o0clQ2TEhMZC01VFNGX21ZMWN3N3FjbmNjWFV0TUQwd3U2X1JtWmVTcE9XazFjM2hFUzdyLTV4VkxjQUMwOUxTYWVhS3lZM1E2dG14VGc?oc=5",
    "date": "2026-11-20T17:09:00.000Z",
@@ -771,15 +1095,6 @@
    "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
    "categorie": "evenements",
    "editeur": "Superchicane"
-  },
-  {
-   "titre": "Test xTool C1 Color Cutter : une très bonne alternative à Cricut !",
-   "lien": "https://www.journaldugeek.com/test/test-xtool-c1-color-cutter-une-tres-bonne-alternative-a-cricut/",
-   "date": "2026-11-20T17:03:46.000Z",
-   "resume": "La xTool C1 Color Cutter scanne, imprime en couleur et découpe à la lame dans une seule machine, sans repères d'alignement ni imprimante séparée. Annoncée fin octobre 2026, elle est proposée à partir de 449 euros.",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
   },
   {
    "titre": "Plesh débarque en France avec Squeezie et Amine… mais ce n’est pas leur marque - La Réclame",
@@ -845,15 +1160,6 @@
    "editeur": ""
   },
   {
-   "titre": "Top des morts les plus insolites dans GTA 6 : le jeu peut vraiment vous tuer n'importe comment",
-   "lien": "https://www.jeuxvideo.com/news/2115939/top-des-morts-les-plus-insolites-dans-gta-6-le-jeu-peut-vraiment-vous-tuer-n-importe-comment.htm",
-   "date": "2026-11-20T16:15:08.000Z",
-   "resume": "Dans cet article, on vous montre les \"meilleures pires\" morts de GTA 6 ! Si on m'avait dit que Jason pouvait clamser comme ça...",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "GTA 6 : 25 millions de ventes, 2,36 milliards de dollars… les chiffres fous de son lancement",
    "lien": "https://www.numerama.com/pop-culture/2380025-gta-6-25-millions-de-ventes-236-milliards-de-dollars-les-chiffres-fous-de-son-lancement.html",
    "date": "2026-11-20T16:15:00.000Z",
@@ -890,38 +1196,11 @@
    "editeur": ""
   },
   {
-   "titre": "Un Graal des maths vacille : un chercheur d’Anthropic revendique avoir résolu l’hypothèse de Riemann avec l’IA Claude",
-   "lien": "https://www.numerama.com/tech/2380265-un-graal-des-maths-tombe-un-chercheur-danthropic-revendique-avoir-resolu-lhypothese-de-riemann-avec-lia-claude.html",
-   "date": "2026-11-20T16:08:44.000Z",
-   "resume": "Un problème à un million de dollars, ouvert depuis 1859, résolu avec une IA ? Levent Alpöge, mathématicien employé par Anthropic, affirme ce vendredi 20 novembre avoir démontré l'hypothèse de Riemann avec Claude. Pour toute preuve, il livr…",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "Explication de la fin de Sœurs de sort, tout le monde vit-il heureux pour toujours ?",
    "lien": "https://www.dexerto.fr/films-series/soeurs-de-sort-explication-fin-1664578/",
    "date": "2026-11-20T16:05:02.000Z",
    "resume": "Le film Sœurs de sort réinvente le conte Cendrillon, mais laisse quelques questions en suspens : on vous explique la fin.",
    "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "GTA 6 : 10 astuces et conseils pour bien débuter à Vice City sans rien dépenser !",
-   "lien": "https://www.journaldugeek.com/dossier/gta-6-10-astuces-et-conseils-pour-bien-debuter-a-vice-city-sans-rien-depenser/",
-   "date": "2026-11-20T16:02:04.000Z",
-   "resume": "Il y a tant à faire dans GTA 6 qu'il peut être difficile de savoir par quoi commencer. Voici donc notre guide de 10 astuces et conseils qui vous permettront de démarrer votre partie avec tout ce qu'il faut pour survivre.",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Black Friday : les meilleures offres de ce vendredi (EN DIRECT)",
-   "lien": "https://www.numerama.com/tech/2374925-black-friday-les-meilleures-offres-en-direct.html",
-   "date": "2026-11-20T16:00:20.000Z",
-   "resume": "Black Friday 2026 : Amazon, Boulanger et la Fnac ont déjà lancé leurs promos. Nous trions en direct celles qui valent vraiment le coup.",
-   "source": "Numerama",
    "categorie": "actu",
    "editeur": ""
   },
@@ -933,60 +1212,6 @@
    "source": "Google Actualités · sorties jeux vidéo",
    "categorie": "alerte",
    "editeur": "JeuxVideo.com"
-  },
-  {
-   "titre": "Feng Shui GTA 6 : Quel choix faire lors de cette mission et comment terminer les jeux video ?",
-   "lien": "https://www.jeuxvideo.com/news/2115965/feng-shui-gta-6-quel-choix-faire-lors-de-cette-mission-et-comment-terminer-les-jeux-video.htm",
-   "date": "2026-11-20T15:50:09.000Z",
-   "resume": "Cal, l'ami beauf et complotiste de Jason s'invite pour une soirée décalée et bien arrosée chez lui. Cela comprend des sessions de jeu vidéo, mais aussi le déplacement complexe d'une table basse. Découvrez que faire dans ce guide.",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Album GTA 6 : les CD et vinyles de la bande originale sont sortis, voici où les trouver",
-   "lien": "https://www.numerama.com/pop-culture/2334979-album-gta-6-les-cd-et-vinyles-de-la-bande-originale-sont-sortis-voici-ou-les-trouver.html",
-   "date": "2026-11-20T15:43:01.000Z",
-   "resume": "GTA 6 tourne enfin sur vos consoles, et sa musique peut désormais aussi tourner sur votre platine ou votre lecteur de disque. L’album officiel sort aujourd’hui en CD et en vinyle : voici où l’acheter.",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Erreur CE-108255-1 sur GTA 6 : comment régler le crash sur PS5 ?",
-   "lien": "https://www.journaldugeek.com/2026/11/20/erreur-ce-108255-1-sur-gta-6-comment-regler-le-crash-sur-ps5/",
-   "date": "2026-11-20T15:31:44.000Z",
-   "resume": "GTA 6 est enfin là, mais pour certains joueurs PS5, le premier passage à Vice City s’arrête très vite. En cause, un code d’erreur que les habitués de la console connaissent déjà.",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Le LEGO dont rêve tous les fans de Pokémon est en promo pour le Black Friday",
-   "lien": "https://www.jeuxvideo.com/news/2115966/le-lego-dont-reve-tous-les-fans-de-pokemon-est-en-promo-pour-le-black-friday.htm",
-   "date": "2026-11-20T15:30:10.000Z",
-   "resume": "À l'occasion du Black Friday, le titanesque coffret LEGO Pokémon réunissant Dracaufeu, Florizarre et Tortank profite d'une première remise immédiate chez Amazon, faisant passer la facture sous la barre des 585 €.",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Où écouter la bande originale de GTA 6 en streaming avec Justice et Dua Lipa ?",
-   "lien": "https://www.numerama.com/pop-culture/2380051-ou-ecouter-la-bande-originale-de-gta-6-en-streaming-avec-justice-et-dua-lipa.html",
-   "date": "2026-11-20T15:29:59.000Z",
-   "resume": "Grand Theft Auto VI : The Album, la bande originale officielle de GTA 6, est disponible en streaming depuis ce vendredi 20 novembre 2026. L'album réunit 34 morceaux inédits, signés Justice, Dua Lipa, Lana Del Rey ou Travis Scott.",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Argent GTA 6 : Comment devenir riche rapidement ?",
-   "lien": "https://www.jeuxvideo.com/news/2115907/argent-gta-6-comment-devenir-riche-rapidement.htm",
-   "date": "2026-11-20T15:20:08.000Z",
-   "resume": "Se faire une place au soleil à Vice City demande un compte en banque bien rempli pour financer vos planques, vos véhicules et votre arsenal. Découvrez toutes les méthodes dans ce guide pour amasser rapidement un paquet de dollars dans Gran…",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
   },
   {
    "titre": "Un glitch dans GTA 6 permet de jouer à la première personne",
@@ -1007,56 +1232,11 @@
    "editeur": "Gadget Review"
   },
   {
-   "titre": "GTA 6 : un fast-food va reproduire le même burger avec 7 steaks que dans le jeu",
-   "lien": "https://www.journaldugeek.com/2026/11/20/gta-6-un-fast-food-va-reproduire-le-meme-burger-avec-7-steaks-que-dans-le-jeu/",
-   "date": "2026-11-20T15:02:45.000Z",
-   "resume": "Burger Shot l’a parodié, Burger King contre-attaque : « Ils nous ont copié, alors on les copie ». Sept steaks, et un concours pour croquer dedans, à condition de manger d’abord celui de GTA VI.",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Les 3 records battus par GTA 6 : trafic internet, spectateurs sur Twitch, ventes...",
-   "lien": "https://www.jeuxvideo.com/news/2115844/les-3-records-battus-par-gta-6-trafic-internet-spectateurs-sur-twitch-ventes.htm",
-   "date": "2026-11-20T15:00:10.000Z",
-   "resume": "Treize ans d'attente, des millions de joueurs impatients et une sortie qui semblait presque trop grande pour être vraie. GTA 6 est enfin là. Le moins qu'on puisse dire, c'est que Rockstar Games n'a pas fait les choses à moitié. La preuve a…",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Les Anneaux de pouvoir fait-elle vraiment n’importe quoi avec les Nazgûl ?",
-   "lien": "https://www.journaldugeek.com/2026/11/20/les-anneaux-de-pouvoir-vient-elle-vraiment-de-trahir-tolkien/",
-   "date": "2026-11-20T14:53:48.000Z",
-   "resume": "La saison 3 des Anneaux de pouvoir est au cœur d'une controverse. Un élément concernant les Nazgûl énerve beaucoup les fans de Tolkien et surtout de la trilogie de Peter Jackson. Mais les scénaristes ont-ils vraiment trahi la mythologie du…",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Bowling GTA 6 : Quel est le code du coffre de ce braquage du chapitre 2 ?",
-   "lien": "https://www.jeuxvideo.com/news/2115958/bowling-gta-6-quel-est-le-code-du-coffre-de-ce-braquage-du-chapitre-2.htm",
-   "date": "2026-11-20T14:51:08.000Z",
-   "resume": "L'un des braquages secondaires du chapitre 2 de GTA VI va vous faire entrer en plein territoire ennemi pour une grosse séquence de baston. Au bout du chemin, une arme unique et un coffre dont le code est particulièrement bien caché. On voi…",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "Ubisoft se démène entre réduction des effectifs, remaniement des Creative Houses et lancement d'une filiale dédiée à l'IA générative",
    "lien": "https://www.gamekult.com/actualite/ubisoft-se-demene-entre-reduction-des-effectifs-remaniement-des-creative-houses-et-lancement-d-une-filiale-dediee-a-l-ia-generative-3050873086.html",
    "date": "2026-11-20T14:50:00.000Z",
    "resume": "Ubisoft a dévoilé ses résultats financiers pour le semestre fiscal clos le 30 septembre 2026. Porté par quelques points positifs, comme le succès d'Assassin's Creed Black Flag Resynced, le groupe français continue de poser les bases de sa…",
    "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "On ne verra jamais les scènes coupées de L’Odyssée",
-   "lien": "https://www.numerama.com/pop-culture/2379933-pourquoi-on-ne-verra-jamais-les-scenes-coupees-de-lodyssee.html",
-   "date": "2026-11-20T14:49:51.000Z",
-   "resume": "Comme tous les films, L'Odyssée a des scènes qui ont été coupées. Mais, contrairement à beaucoup de films, on ne les verra jamais. Le réalisateur Christopher Nolan a expliqué pourquoi cette semaine, au moment où le film sort en DVD, Blu-ra…",
-   "source": "Numerama",
    "categorie": "actu",
    "editeur": ""
   },
@@ -1070,24 +1250,6 @@
    "editeur": ""
   },
   {
-   "titre": "GTA 6 : où trouver la voiture l’Ecplise de Paul Walker en mode Fast and Furious",
-   "lien": "https://www.journaldugeek.com/2026/11/20/gta-6-ou-trouver-la-voiture-lecplise-de-paul-walker-en-mode-fast-and-furious/",
-   "date": "2026-11-20T14:34:54.000Z",
-   "resume": "Il y a un garage de Vice City qui fait beaucoup parler depuis la sortie du jeu. Ce qui est caché dedans va plaire aux fans de tuning des années 2000, et il y a une petite surprise dans le coffre.",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Critique Hunger Games : Lever de soleil sur la moisson est-il le meilleur film de la saga ?",
-   "lien": "https://www.journaldugeek.com/critique/hunger-games-lever-de-soleil-sur-la-moisson-est-il-le-meilleur-film-de-la-saga/",
-   "date": "2026-11-20T14:33:03.000Z",
-   "resume": "Avec Hunger Games : Lever de soleil sur la moisson, Francis Lawrence signe peut-être l'adaptation la plus aboutie de toute la saga. Critique.",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "TwitchCon 2026 : la plateforme mise sur la communauté, le jeu collectif et la publicité interactive - J'ai un pote dans la com",
    "lien": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdHMxR2dSLS1OQ2U0dVA4Y0l2WGo0RVZ0ZmZCZGRaM1R5UjFSWXlTa2g1OUJzQ2w2SjVoR2dJWWNxQW1PRlVaT1V6NWhCNWtCbGFnTVFlN3BkLTVCbGxoSVRUdEhfc1RDQ0tYVE5PVEFyWDVlUnM3WHFfb0dLLVZVVWxKRWg0NUhSTER1Qg?oc=5",
    "date": "2026-11-20T14:31:48.000Z",
@@ -1097,33 +1259,6 @@
    "editeur": "J'ai un pote dans la com"
   },
   {
-   "titre": "Les Anneaux de pouvoir : c’est quoi le Thangorodrim, ces volcans de Tolkien où tout a mal tourné pour Galadriel",
-   "lien": "https://www.numerama.com/pop-culture/2379923-les-anneaux-de-pouvoir-cest-quoi-le-thangorodrim-ces-volcans-de-tolkien-ou-tout-a-mal-tourne-pour-galadriel.html",
-   "date": "2026-11-20T14:21:00.000Z",
-   "resume": "L'épisode 5 de la saison 3 des Anneaux de pouvoir, revient sur le passé de Celeborn et Galadriel au Thangorodrim. Chez J. R. R. Tolkien, ces trois volcans bâtis par Morgoth s'effondrent à la fin du Premier Âge.",
-   "source": "Numerama",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Comment enregistrer une nouvelle voiture dans GTA 6 ?",
-   "lien": "https://www.jeuxvideo.com/news/2115932/comment-enregistrer-une-nouvelle-voiture-dans-gta-6.htm",
-   "date": "2026-11-20T14:15:10.000Z",
-   "resume": "Découvrez comment changer de voiture dans GTA VI avec de nouveaux enregistrements de véhicules. Le premier est gratuit, mais remplir votre collection va rapidement vous couter des milliers de dollars. On voit comment débloquer cette foncti…",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "YOMY, ce robot français sert la pâtée de votre chat sans frigo et il reconnaît même sa tête !",
-   "lien": "https://www.journaldugeek.com/2026/11/20/yomy-ce-robot-francais-sert-la-patee-de-votre-chat-sans-frigo-et-il-reconnait-meme-sa-tete/",
-   "date": "2026-11-20T14:03:47.000Z",
-   "resume": "YOMY, une start-up française, commercialise depuis septembre un robot qui distribue pâtée et croquettes en petits repas tout au long de la journée. La pâtée y est conservée sans réfrigération, et une caméra reconnaît jusqu’à trois chats po…",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "On classe les pires récupérations des politiques pour la sortie de GTA VI - 20 Minutes",
    "lien": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQVllFVFRCcE5oU1NwcnFaZ0lWTGJhY0xaTlQ2MjdzQ2VZTWhHNm1md3RINi1FVUJmNUZvTTNnbG44dlQ5ek1RNC03U0dVSEtoc0ZjcnlYZFZadGF3OTRWTC1BQTRpMzliamFndFNVbkwwMkZ2N3lRaGVIcnUzdU1jell0NHRXRFJQT0ZnT2NjOXBISi1WdlgxSVI3OFlTeThjTHNxbFFuTmpGTzJORFNxS0x1QUtoUTlFUk9MRGRkQkJhM01MQUk5ajRiX1c?oc=5",
    "date": "2026-11-20T13:45:00.000Z",
@@ -1131,15 +1266,6 @@
    "source": "Google Actualités · sorties jeux vidéo",
    "categorie": "alerte",
    "editeur": "20 Minutes"
-  },
-  {
-   "titre": "DLC Disney Dreamlight Valley The Keepsake Sea : comment ajuster la taille des décors flottants et régler le problème des coraux ?",
-   "lien": "https://www.jeuxvideo.com/news/2115860/dlc-disney-dreamlight-valley-the-keepsake-sea-comment-ajuster-la-taille-des-decors-flottants-et-regler-le-probleme-des-coraux.htm",
-   "date": "2026-11-20T13:39:30.000Z",
-   "resume": "Le nouveau DLC de Disney Dreamlight Valley a débarqué le 18 novembre 2026, et vu la quantité de choses à faire, on va être occupé un bon moment ! Cependant, j'ai repéré un bug dans la version PC qui risque de bloquer votre progression dans…",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
   },
   {
    "titre": "Tout sur la saison 3 de MobLand après le final enflammé de la saison 2",
@@ -1160,15 +1286,6 @@
    "editeur": "www.unitedrocknations.com"
   },
   {
-   "titre": "L’Âge de Glace change de maison : Disney dévoile une bande-annonce qui devrait rassurer les fans",
-   "lien": "https://www.journaldugeek.com/2026/11/20/lage-de-glace-change-de-maison-disney-devoile-une-bande-annonce-qui-devrait-rassurer-les-fans/",
-   "date": "2026-11-20T13:33:09.000Z",
-   "resume": "L'une des franchises les plus emblématiques des années 2000 reprend du service, mais cette fois-ci chez Disney. L'Âge de Glace 6 s'offre une nouvelle bande-annonce et elle est plutôt encourageante.",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "Shinji Mikami (Resident Evil) et Hyung-Tae Kim (Stellar Blade) ne sont pas du tout d'accord à propos de l'IA générative",
    "lien": "https://www.gamekult.com/actualite/shinji-mikami-resident-evil-et-hyung-tae-kim-stellar-blade-ne-sont-pas-du-tout-d-accord-a-propos-de-l-ia-generative-3050873091.html",
    "date": "2026-11-20T13:15:00.000Z",
@@ -1185,24 +1302,6 @@
    "source": "Google Actualités · sorties jeux vidéo",
    "categorie": "alerte",
    "editeur": "L'Éclaireur Fnac"
-  },
-  {
-   "titre": "Bigfoot GTA 6 : Où trouver le Singe qui pue et que faut-il faire ?",
-   "lien": "https://www.jeuxvideo.com/news/2115885/bigfoot-gta-6-ou-trouver-le-singe-qui-pue-et-que-faut-il-faire.htm",
-   "date": "2026-11-20T13:05:08.000Z",
-   "resume": "En plus des OVNI, des aliens, des MAGA et d'autres monstruosités inhumaines, Grand Theft Auto VI réintroduit un grand singe mystérieux aux pouvoirs inquiétants et aux nombreux surnoms : Sasquash, Big Foot, Singe-qui-pue, Skunk Ape, mais au…",
-   "source": "jeuxvideo.com",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Après la cyberattaque de la Commission Européenne, la France se prépare au pire",
-   "lien": "https://www.journaldugeek.com/2026/11/20/apres-la-cyberattaque-de-la-commission-europeenne-la-france-se-prepare-au-pire/",
-   "date": "2026-11-20T13:01:52.000Z",
-   "resume": "Entre administrations paralysées, données personnelles compromises et entreprises ciblées, les cyberattaques inquiètent le gouvernement français.",
-   "source": "Journal du Geek",
-   "categorie": "actu",
-   "editeur": ""
   },
   {
    "titre": "Jeux vidéo pour les enfants : notre sélection ludique adaptée aux jeunes gamers - Sortir à Paris",
@@ -1565,15 +1664,6 @@
    "editeur": "Midi Libre"
   },
   {
-   "titre": "Netflix surfe sur le succès de KPop Demon Hunters avec Sœurs de sort : que vaut le film ? (Critique)",
-   "lien": "https://www.dexerto.fr/films-series/soeurs-de-sort-critique-1664487/",
-   "date": "2026-11-19T17:09:45.000Z",
-   "resume": "Présenté comme le petit nouveau après KPop Demon Hunters, Sœurs de sort propose sa revisite des contes de fées : notre avis.",
-   "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "Charts USA : Call of Duty a-t-il une nouvelle fois sous-performé avec Modern Warfare 4 ?",
    "lien": "https://www.gamekult.com/actualite/charts-usa-call-of-duty-a-t-il-une-nouvelle-fois-sous-performe-avec-modern-warfare-4-3050873081.html",
    "date": "2026-11-19T17:05:00.000Z",
@@ -1619,60 +1709,6 @@
    "editeur": ""
   },
   {
-   "titre": "Critique de Yellowjackets Saison 4, conclusion en beauté ou atterrissage raté ?",
-   "lien": "https://www.dexerto.fr/films-series/yellowjackets-saison-4-critique-1664436/",
-   "date": "2026-11-19T16:00:00.000Z",
-   "resume": "Yellowjackets a écopé de nombreuses critiques au fil des ans, rendant les enjeux de sa dernière saison très élevés : notre avis.",
-   "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Comment trouver le Skunk Ape, le Bigfoot de GTA 6",
-   "lien": "https://www.dexerto.fr/gta/skunk-ape-bigfoot-gta-6-1664398/",
-   "date": "2026-11-19T15:54:55.000Z",
-   "resume": "Découvrez où trouver le Skunk Ape, le légendaire Bigfoot de GTA 6, et comment déclencher cette mystérieuse rencontre dans les marécages de Leonida.",
-   "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Lever de soleil sur la moisson rectifie une erreur du premier Hunger Games avec Katniss",
-   "lien": "https://www.dexerto.fr/films-series/lever-de-soleil-sur-la-moisson-rectifie-erreur-premier-hunger-games-1664394/",
-   "date": "2026-11-19T15:41:21.000Z",
-   "resume": "Les origines du geai moqueur de Katniss changent entre les livres et les films, mais le dernier Hunger Games raccroche enfin les wagons.",
-   "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Ubisoft : encore 166 licenciements à Montréal et Québec",
-   "lien": "https://www.gamekult.com/actualite/ubisoft-encore-166-licenciements-a-montreal-et-quebec-3050873082.html",
-   "date": "2026-11-19T15:37:00.000Z",
-   "resume": "Coupe, coupe et re-coupe, Ubisoft désintègre 166 postes supplémentaires dans ses studios de Montréal (Assassin's Creed Shadows) et Québec (Immortals Fenyx Rising).",
-   "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Comment récupérer tous les bonus de l’édition Ultimate de GTA 6",
-   "lien": "https://www.dexerto.fr/gta/comment-recuperer-bonus-edition-ultimate-gta-6-1664392/",
-   "date": "2026-11-19T15:14:41.000Z",
-   "resume": "Découvrez comment récupérer tous les bonus de l’édition Ultimate de GTA 6, avec leurs emplacements et les chapitres nécessaires.",
-   "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Les joueurs de GTA 6 craquent pour un personnage qui pourrait être une tueuse en série",
-   "lien": "https://www.dexerto.fr/gta/joueurs-gta-6-craquent-pour-personnage-qui-pourrait-etre-tueuse-en-serie-1664386/",
-   "date": "2026-11-19T14:34:07.000Z",
-   "resume": "Mandy fait craquer les joueurs de GTA 6, mais plusieurs indices inquiétants suggèrent qu’elle pourrait cacher un terrible secret.",
-   "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "Game Awards 2026 : quels jeux de course sont nommés, et Forza Horizon 6 peut-il gagner ? - Blog-Moteur",
    "lien": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9lZXV6Rjd2Vk5yTS13a2ZGbF9LM1N0NVkxMDVJWjB2NEFtOGJPUWJpalRRT2RxaFg1LWtWbm1BS0F5WmpKWW5wdERSbDVHaDh2TTVNaG1YLS1wd2dHZXhxaE9EM3YtbEtVbUxxb2s1bjhWa21zNnB1SFpB?oc=5",
    "date": "2026-11-19T14:29:21.000Z",
@@ -1680,24 +1716,6 @@
    "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
    "categorie": "evenements",
    "editeur": "Blog-Moteur"
-  },
-  {
-   "titre": "Nvidia : l'ex-PDG Jensen Huang quémande son retour, le conseil d'administration dit « non »",
-   "lien": "https://www.gamekult.com/actualite/nvidia-l-ex-pdg-jensen-huang-quemande-son-retour-le-conseil-d-administration-dit-non-3050873069.html",
-   "date": "2026-11-19T14:02:00.000Z",
-   "resume": "Publiquement soutenu par le président Donald Trump et les PDGs de la Silicon Valley, Jensen Huang n'arrive cependant pas à convaincre le conseil d'administration d'Nvidia de le réembaucher après ses coucheries.",
-   "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
-   "titre": "Lenore Dove est-elle la fille cachée de Lucy Gray Baird dans Hunger Games Lever de soleil sur la moisson",
-   "lien": "https://www.dexerto.fr/films-series/lenore-dove-lucy-gray-baird-hunger-games-1664381/",
-   "date": "2026-11-19T13:36:18.000Z",
-   "resume": "Le nouveau film de la saga Hunger Games se penche à nouveau sur les Covey et relance les théories autour du destin de Lucy Gray.",
-   "source": "Dexerto FR",
-   "categorie": "actu",
-   "editeur": ""
   },
   {
    "titre": "Discord, Steam, Twitch : comment les plateformes ont transformé les communautés de joueurs ? - GameHope.com",
@@ -1718,15 +1736,6 @@
    "editeur": "Actualitesjeuxvideo.fr"
   },
   {
-   "titre": "Blade Runner : un jeu AAA en réflexion chez les ayants-droits",
-   "lien": "https://www.gamekult.com/actualite/blade-runner-un-jeu-aaa-en-reflexion-chez-les-ayants-droits-3050873068.html",
-   "date": "2026-11-19T13:03:00.000Z",
-   "resume": "Après l'annulation de Blade Runner 2033 : Labyrinth chez Annapurna, la franchise culte de cyberpunk reste appelée à revenir sur nos écrans d'après une interview inédite pour la sortie de Blade Runner 2099.",
-   "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
-  },
-  {
    "titre": "The Game Awards 2026 : GTA 6 domine les nominations, découvrez les grands favoris de cette édition - Le Café du Geek",
    "lien": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNWDhEX1gxQ3FRQngyRnVCUkJyVGEzNzNIdXhTTHJ4dVFJQVA4WUhqLVY5RGhlZU5DS0ozc0pnTE9JVDh6aElBNEhFS0NKMndoNktMZkNPTzdGY3MyTzh1eFdGYUUyQlVQSUUwd1JyNktGcFNaQ0QySUQxTnNNaXVWN24ydFE1d1ctQklXLWJLVnFZMXZYTmUzbFlJRkdRbVc2MmEtMFl1MzVTaER3VE9jRzJ1NjZ6VThONVdaQg?oc=5",
    "date": "2026-11-19T12:04:29.000Z",
@@ -1734,15 +1743,6 @@
    "source": "Google Actualités · salons jeu vidéo (Gamescom, Paris Games Week, Game Awards…)",
    "categorie": "evenements",
    "editeur": "Le Café du Geek"
-  },
-  {
-   "titre": "Nouvelle vague de licenciements chez Netflix Games, qui « repense sa manière d'aborder le jeu vidéo » en interne",
-   "lien": "https://www.gamekult.com/actualite/nouvelle-vague-de-licenciements-chez-netflix-games-qui-repense-sa-maniere-d-aborder-le-jeu-video-en-interne-3050873065.html",
-   "date": "2026-11-19T12:02:00.000Z",
-   "resume": "Encore des coupes chez Netflix Games, qui ne cesse de chercher son étoile polaire sans la trouver. Ce serait bien de chercher sans supprimer régulièrement des postes cependant.",
-   "source": "Gamekult",
-   "categorie": "actu",
-   "editeur": ""
   },
   {
    "titre": "Christian Louboutin : “Colman Domingo est le plus fidèle des amis dont un homme puisse rêver” - GQ France",
